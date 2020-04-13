@@ -1,0 +1,28 @@
+{
+  "name": "greenpeace/planet4-child-theme-nordic",
+  "description": "Planet4 Child theme for GP Nordic",
+  "type":"wordpress-theme",
+  "minimum-stability" : "stable",
+  "license": "GPL-3.0+",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/greenpeace/planet4-child-theme-nordic/issues",
+    "wiki": "https://github.com/greenpeace/planet4-child-theme-nordic/wiki",
+    "source": "https://github.com/greenpeace/planet4-child-theme-nordic"
+  },
+  "extra": {
+    "installer-paths": {
+      "../../plugins/{$name}/": [
+        "wpackagist-plugin/*",
+        "type:wordpress-plugin"
+      ]
+    }
+  },
+  "require": {
+  }
+}
