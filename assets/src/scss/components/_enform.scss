@@ -1,0 +1,61 @@
+#en__field_supporter_NOT_TAGGED_21,
+#en__field_supporter_emailAddress,
+#en__field_supporter_firstName,
+#en__field_supporter_lastName,
+#en__field_supporter_phoneNumber {
+  color: rgba(14, 28, 46, .62);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 0.6px solid rgba(126, 137, 147, 0.22);
+  border-radius: 2px;
+}
+
+.enform form .submit {
+  margin: 20px 0;
+  line-height: 1.1;
+}
+
+#p4en_form_save_button {
+  line-height: 2;
+}
+
+#en__field_supporter_NOT_TAGGED_21:active,
+#en__field_supporter_NOT_TAGGED_21:focus,
+#en__field_supporter_NOT_TAGGED_21:hover,
+#en__field_supporter_NOT_TAGGED_21:hover:active:focus,
+#en__field_supporter_emailAddress:active,
+#en__field_supporter_emailAddress:focus,
+#en__field_supporter_emailAddress:hover,
+#en__field_supporter_emailAddress:hover:active:focus,
+#en__field_supporter_firstName:active,
+#en__field_supporter_firstName:focus,
+#en__field_supporter_firstName:hover,
+#en__field_supporter_firstName:hover:active:focus,
+#en__field_supporter_lastName:active,
+#en__field_supporter_lastName:focus,
+#en__field_supporter_lastName:hover,
+#en__field_supporter_lastName:hover:active:focus,
+#en__field_supporter_phoneNumber:active,
+#en__field_supporter_phoneNumber:focus,
+#en__field_supporter_phoneNumber:hover,
+#en__field_supporter_phoneNumber:hover:active:focus {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.thankyou .page-section-header {
+  line-height: 1.2;
+}
+
+.thankyou .sub-section .social-media .share-btn {
+  width: 32% !important;
+  padding: 2px 0 10px !important;
+}
+@media screen and (max-width: 745px) {
+  .thankyou.full-width {
+    left: 0 !important;
+    padding: 1% !important;
+  }
+}
+
+.share-buttons .share-btn {
+  padding-bottom: 12px;
+}
