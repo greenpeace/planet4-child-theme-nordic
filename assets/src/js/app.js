@@ -1,1 +1,32 @@
-import 'bootstrap';
+// import 'bootstrap';
+
+jQuery(document).ready(function() {
+  /* using jQuery, because $ upsets WordPress */
+
+  /* empty fields hotfix */
+  $("#p4en_form input[type=text], #p4en_form input[type=email]").val("");
+
+  /* fill in UTM hotfix */
+  if (location.search) {
+    $("input[name='supporter.NOT_TAGGED_27']").val(location.search)
+  }
+
+  /* check/uncheck hidden opt-in values along with rendered checkbox */
+  $("[name='supporter.questions.547127'], [name='supporter.questions.547128'], [name='supporter.questions.547129'], [name='supporter.questions.547130' ").change(function() {
+    if (this.checked) {
+      $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("Y")
+    } else {
+      $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("")
+    }
+  });
+
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  jQuery('.rotate-arrow').on('click', function() {
+    jQuery(this)
+      .find('[data-fa-i2svg]')
+      .toggleClass('fa-angle-down')
+      .toggleClass('fa-angle-right');
+  });
+});
