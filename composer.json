@@ -2,6 +2,7 @@
   "name": "greenpeace/planet4-child-theme-nordic",
   "description": "Planet4 Child theme for GP Nordic",
   "type":"wordpress-theme",
+  "version":"0.1",
   "minimum-stability" : "stable",
   "license": "GPL-3.0+",
   "repositories": [

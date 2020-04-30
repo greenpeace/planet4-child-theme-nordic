@@ -14,6 +14,7 @@
   line-height: 1.1;
 }
 
+
 #p4en_form_save_button {
   line-height: 2;
 }
@@ -45,9 +46,13 @@
   line-height: 1.2;
 }
 
+.thankyou .sub-section .form-group {
+	margin: 2em 0;
+}
+
 .thankyou .sub-section .social-media .share-btn {
-  width: 32% !important;
-  padding: 2px 0 10px !important;
+  width: 24%;
+  padding: 2px 0 15px;
 }
 @media screen and (max-width: 745px) {
   .thankyou.full-width {
@@ -58,4 +63,12 @@
 
 .share-buttons .share-btn {
   padding-bottom: 12px;
+}
+
+.form-caption p {
+	font-size: 1.25rem;
+}
+
+body:not(.wp-admin) input[type="checkbox"]:checked + .custom-control-description::after {
+	top: 7px !important;
 }
