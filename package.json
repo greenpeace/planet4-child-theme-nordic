@@ -1,6 +1,5 @@
 {
   "name": "planet4-child-theme-nordic",
-  "version": "1.0.0",
   "description": "Planet4 Child theme for GP Nordic",
   "main": "index.js",
   "dependencies": {
