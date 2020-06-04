@@ -1,7 +1,9 @@
 #accordeonQA {
-   li, p, ul {
-  font-family: sans-serif;
-}
+  li,
+  p,
+  ul {
+    font-family: sans-serif;
+  }
 }
 
 #collapse1 > div > ul > li,
@@ -9,7 +11,6 @@
 #collapse3 > div > ul > li {
   padding-bottom: 20px;
 }
-
 
 #accordeonQA a.collapsed:hover {
   background: linear-gradient(45deg, rgba(234, 21, 129, 0.6), rgba(10, 23, 187, 0.6) 100%);
@@ -106,15 +107,15 @@
   /* transform: matrix(-1, 0, 0, -1, 0, 0); */
 }
 
-.rotate-arrow{
-    -moz-transition: all 0.2s linear;
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear;
+.rotate-arrow {
+  -moz-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
-.rotate-arrow.down{
-    -ms-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+.rotate-arrow.down {
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }

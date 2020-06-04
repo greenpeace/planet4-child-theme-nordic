@@ -12,12 +12,15 @@ jQuery(document).ready(function() {
   }
 
   /* check/uncheck hidden opt-in values along with rendered checkbox */
-  $("[name='supporter.questions.547127'], [name='supporter.questions.547128'], [name='supporter.questions.547129'], [name='supporter.questions.547130' ").change(function() {
+  var gdpr = $(" [name='supporter.questions.547127'], [name='supporter.questions.547128'], [name='supporter.questions.547129'], [name='supporter.questions.547130']");
+
+  gdpr.change(function() {
     if (this.checked) {
-      $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("Y")
+      $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("Y");
     } else {
-      $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("")
+      $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("");
     }
+    // console.log($("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val());
   });
 
 });

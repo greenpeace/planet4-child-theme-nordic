@@ -14,8 +14,18 @@ Text Domain: planet4-child-theme-denmark
     Display which theme is active right now in bottom right corner
     See also planet4-child-theme. Feel free to drop or hide display
 */
+
+// Base
+@import "base/_variables";
+@import "base/_colors";
+@import "base/_mixins";
+@import "base/_fonts";
+@import "base/_typography";
+
+// Components
 @import "components/_body";
+// @import "components/_buttons";
 @import "components/_navbar";
-@import "components/_fonts";
 @import "components/_accordion";
+// @import "components/_forms";
 @import "components/_enform";

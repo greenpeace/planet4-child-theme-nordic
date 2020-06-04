@@ -1,42 +1,96 @@
-.top-navigation {
-  background: rgba(255,255,255,.8);
-}
-
-.navbar-dropdown .nav-link,
-.top-navigation button {
-  color: rgb(7,67,101);
-}
-
-.country-dropdown-toggle:hover,
-.navbar-dropdown .active .nav-link,
-.navbar-dropdown .nav-link:hover {
-  color: #074365;
-}
-
-.country-list .active a, .country-list a:hover {
-	color: #6c0;
-	text-decoration: none;
-}
-
-.top-navigation .btn-donate {
-  background: #66cc00;
-  color: #fff !important;
-}
-
-.country-dropdown-toggle::after {
-  background: url("https://www.greenpeace.org/finland/wp-content/themes/planet4-master-theme/images/down-arrow-green.svg") no-repeat center center !important;
-}
+// Styleguide Layout.navbar
+$menu-height-small: 3.375rem;
+$menu-height-large: 3.75rem;
+$min-height: 40px;
+$navbar-default-height: 60px;
 
 .page-header-content {
   display: block !important;
   margin-top: 20px;
 }
-@media only screen and (max-width: 992px) and (min-width: 575px) {
-  .navbar-dropdown .nav-link,
-  .top-navigation button,
-  button.country-dropdown-toggle {
+
+nav#header.top-navigation.navbar {
+  background: $dark-white !important;
+  a {
+    color: $dark-blue;
+
+    &:hover {
+      color: $dark-green;
+    }
+  }
+  .btn-donate {
+    margin-top: 10px;
+    height: 40px;
+    background: #66cc00;
     color: #fff;
   }
+}
+@media (min-width: 992px) {
+  .navbar-dropdown .nav-link:active,
+  .navbar-dropdown .nav-link:focus,
+  .navbar-dropdown .nav-link:hover {
+    border-bottom: 2px solid #66cc00;
+  }
+}
+
+button.country-dropdown-toggle,
+button.country-dropdown-toggle.open {
+  color: $dark-blue;
+
+  &:focus {
+    color: $dark-blue;
+  }
+
+  &:active,
+  &:hover {
+    color: $dark-green;
+  }
+}
+
+.navbar-search-toggle,
+button.btn-navbar-toggle {
+  color: $dark-blue;
+}
+@media screen and (max-width: 991px) {
+  .navbar-dropdown {
+    background: $dark-white url(https://www.planet4.test/wp-content/themes/planet4-master-theme/images/dropdown-gradient.svg) no-repeat;
+
+    .nav-link {
+      &:active,
+      &:hover {
+        border: left 1px 1px solid $gp-green;
+      }
+    }
+  }
+
+  .btn-navbar-toggle,
+  .country-dropdown-toggle,
+  .country-dropdown-toggle.open {
+    background-color: $dark-white !important;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+  }
+}
+// .navbar-dropdown .nav-link:hover {
+//   color: $dark-green;
+// }
+//
+
+.country-list {
+  background-color: #fff;
+
+  .country-group-letter {
+    color: $dark-green;
+  }
+
+  a:hover {
+    color: $dark-green;
+    text-decoration: none;
+  }
+}
+
+.country-dropdown-toggle::after {
+  background: url("https://www.greenpeace.org/finland/wp-content/themes/planet4-master-theme/images/down-arrow-green.svg") no-repeat center center !important;
 }
 
 .navbar-search-toggle {

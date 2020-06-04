@@ -4,6 +4,12 @@
   "type":"wordpress-theme",
   "minimum-stability" : "stable",
   "license": "GPL-3.0+",
+  "authors": [
+    {
+      "name": "Greenpeace Nordic",
+      "email": "skoleva@greenpeace.org"
+    }
+  ],
   "repositories": [
     {
       "type": "composer",
