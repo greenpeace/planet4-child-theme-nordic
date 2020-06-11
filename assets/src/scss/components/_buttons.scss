@@ -1,0 +1,24 @@
+@media screen and (max-width: 991px) {
+  .btn-navbar-toggle {
+    cursor: pointer;
+    color: $gp-green;
+    background-color: transparent;
+    transition: background-color color font-weight 100ms;
+    display: inline-block;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $dark-green;
+      box-shadow: none;
+      background-color: #00000080;
+      border: 1px solid transparent;
+    }
+    @include small-and-up {
+      background-color: $dark-white;
+      border-radius: 0;
+      border: 1px solid transparent;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+    }
+  }
+}
