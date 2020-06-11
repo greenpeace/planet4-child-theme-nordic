@@ -4,20 +4,18 @@
  * Additional code for the child theme goes in here.
  */
 
-add_action('wp_enqueue_scripts', 'enqueue_child_styles', PHP_INT_MAX);
 
-function enqueue_child_styles()
-{
+function enqueue_child_styles() {
+    $theme_version = wp_get_theme()->get( 'Version' );
     $css_creation = filectime(get_stylesheet_directory() . '/style.css');
     wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', array(), '4.4.1');
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', ['parent-style'], $css_creation);
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', ['bootstrap','parent-style'], $css_creation, $theme_version);
 
 }
 
-add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
+add_action('wp_enqueue_scripts', 'enqueue_child_styles', 1);
 
-function enqueue_child_scripts()
-{
+function enqueue_child_scripts()  {
     wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js', [], '3.5.0', true);
     wp_enqueue_script('jquery');
     wp_register_script('popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"', [], '1.16.0', true);
@@ -28,6 +26,8 @@ function enqueue_child_scripts()
     wp_enqueue_script('child-js');
 
 }
+
+add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
 
 /**
  * Font Awesome Kit Setup
