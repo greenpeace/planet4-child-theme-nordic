@@ -6,10 +6,9 @@
 
 
 function enqueue_child_styles() {
-    $theme_version = wp_get_theme()->get( 'Version' );
     $css_creation = filectime(get_stylesheet_directory() . '/style.css');
     wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', array(), '4.4.1');
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', ['bootstrap','parent-style'], $css_creation, $theme_version);
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', ['bootstrap','parent-style'], $css_creation);
 
 }
 
