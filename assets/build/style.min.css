@@ -224,21 +224,45 @@ html {
 a {
   cursor: pointer; }
 
+@media screen and (max-width: 991px) {
+  .btn-navbar-toggle {
+    cursor: pointer;
+    color: #66cc00;
+    background-color: transparent;
+    transition: background-color color font-weight 100ms;
+    display: inline-block; }
+    .btn-navbar-toggle:active, .btn-navbar-toggle:focus, .btn-navbar-toggle:hover {
+      color: #448107;
+      box-shadow: none;
+      background-color: #00000080;
+      border: 1px solid transparent; } }
+  @media screen and (max-width: 991px) and (min-width: 576px) {
+    .btn-navbar-toggle {
+      background-color: #fffffff0;
+      border-radius: 0;
+      border: 1px solid transparent;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); } }
+
 .page-header-content {
-  display: block !important;
+  display: block;
   margin-top: 20px; }
 
 nav#header.top-navigation.navbar {
-  background: #ffffffcc !important; }
+  background: #fffffff0; }
   nav#header.top-navigation.navbar a {
     color: #074365; }
-    nav#header.top-navigation.navbar a:hover {
+    nav#header.top-navigation.navbar a:active, nav#header.top-navigation.navbar a:focus, nav#header.top-navigation.navbar a:hover {
       color: #448107; }
   nav#header.top-navigation.navbar .btn-donate {
     margin-top: 10px;
     height: 40px;
     background: #66cc00;
     color: #fff; }
+
+.top-navigation a.nav-link {
+  color: #074365; }
+  .top-navigation a.nav-link:active, .top-navigation a.nav-link:focus, .top-navigation a.nav-link:hover {
+    color: #448107; }
 
 @media (min-width: 992px) {
   .navbar-dropdown .nav-link:active,
@@ -248,7 +272,8 @@ nav#header.top-navigation.navbar {
 
 button.country-dropdown-toggle,
 button.country-dropdown-toggle.open {
-  color: #074365; }
+  color: #074365;
+  transition: 0.3s; }
   button.country-dropdown-toggle:focus,
   button.country-dropdown-toggle.open:focus {
     color: #074365; }
@@ -257,21 +282,22 @@ button.country-dropdown-toggle.open {
   button.country-dropdown-toggle.open:hover {
     color: #448107; }
 
-.navbar-search-toggle,
 button.btn-navbar-toggle {
   color: #074365; }
 
-@media screen and (max-width: 991px) {
-  .navbar-dropdown {
-    background: #ffffffcc url(https://www.planet4.test/wp-content/themes/planet4-master-theme/images/dropdown-gradient.svg) no-repeat; }
-    .navbar-dropdown .nav-link:active, .navbar-dropdown .nav-link:hover {
-      border: left 1px 1px solid #66cc00; }
-  .btn-navbar-toggle,
-  .country-dropdown-toggle,
-  .country-dropdown-toggle.open {
-    background-color: #ffffffcc !important;
-    border: 1px solid transparent;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); } }
+.navbar-search-toggle {
+  height: 1.4rem;
+  margin-top: 1.1rem; }
+  .navbar-search-toggle:active, .navbar-search-toggle:hover {
+    height: 1.9rem;
+    margin-top: 0.8rem;
+    transition: 0.3s; }
+
+.navbar-search-toggle.open {
+  transition: 0.3s; }
+
+.nav-search-wrap {
+  background: rgba(76, 77, 79, 0.39); }
 
 .country-list {
   background-color: #fff; }
@@ -280,6 +306,34 @@ button.btn-navbar-toggle {
   .country-list a:hover {
     color: #448107;
     text-decoration: none; }
+
+@media screen and (max-width: 991px) {
+  .navbar-dropdown {
+    background: #fffffff0; }
+    .navbar-dropdown .nav-link:active, .navbar-dropdown .nav-link:hover {
+      border: left 1px 1px solid #66cc00; }
+  .country-dropdown-toggle,
+  .country-dropdown-toggle.open {
+    background-color: #fffffff0;
+    border: none;
+    box-shadow: none; }
+    .country-dropdown-toggle:hover,
+    .country-dropdown-toggle.open:hover {
+      background: #fffffff0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); } }
+
+.btn-navbar-toggle {
+  background: none;
+  border: none;
+  box-shadow: none; }
+  .btn-navbar-toggle:active, .btn-navbar-toggle:focus, .btn-navbar-toggle:hover {
+    color: #448107;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    background-color: #fffffff0;
+    border: 1px solid transparent; }
+
+.navbar-dropdown-toggle[aria-expanded="true"] {
+  background-color: rgba(0, 0, 0, 0.3); }
 
 .country-dropdown-toggle::after {
   background: url("https://www.greenpeace.org/finland/wp-content/themes/planet4-master-theme/images/down-arrow-green.svg") no-repeat center center !important; }

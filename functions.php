@@ -4,13 +4,13 @@
  * Additional code for the child theme goes in here.
  */
 
-add_action('wp_enqueue_scripts', 'enqueue_child_styles', 99);
+add_action('wp_enqueue_scripts', 'enqueue_child_styles', PHP_INT_MAX);
 
 function enqueue_child_styles()
 {
     $css_creation = filectime(get_stylesheet_directory() . '/style.css');
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', [], $css_creation);
     wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', array(), '4.4.1');
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', ['parent-style'], $css_creation);
 
 }
 
@@ -24,10 +24,7 @@ function enqueue_child_scripts()
     wp_enqueue_script('popper');
     wp_register_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', [ 'jquery', 'popper' ], '4.4.1', true);
     wp_enqueue_script('bootstrap');
-    //for build ver
     wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.1', true);
-    //for dev ver
-    // wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/src/js/app.js', ['jquery'], '0.1', true);
     wp_enqueue_script('child-js');
 
 }
