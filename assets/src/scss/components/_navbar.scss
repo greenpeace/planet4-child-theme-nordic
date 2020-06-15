@@ -25,130 +25,147 @@ nav#header.top-navigation.navbar {
   .btn-donate {
     margin-top: 10px;
     height: 40px;
-    background: #66cc00;
-    color: #fff;
-  }
-}
-
-.top-navigation a.nav-link {
-  color: $dark-blue !important;
-
-  &:active,
-  &:focus,
-  &:hover {
-    color: $dark-green !important;
-  }
-}
-
-@media (min-width: 992px) {
-  .navbar-dropdown .nav-link:active,
-  .navbar-dropdown .nav-link:focus,
-  .navbar-dropdown .nav-link:hover {
-    color: $dark-blue !important;
-    border-bottom: 2px solid #6c0 !important;
-  }
-}
-
-button.country-dropdown-toggle,
-button.country-dropdown-toggle.open {
-  color: $dark-blue;
-  transition: 0.3s;
-
-  &:focus {
-    color: $dark-blue;
-  }
-
-  &:active,
-  &:hover {
-    color: $dark-green;
-  }
-}
-
-button.btn-navbar-toggle {
-  color: $dark-blue;
-}
-
-.navbar-search-toggle {
-  height: 1.4rem;
-  margin-top: 1.1rem;
-
-  &:active,
-  &:hover {
-    height: 1.9rem;
-    margin-top: 0.8rem;
-    transition: 0.3s;
-  }
-}
-
-.navbar-search-toggle.open {
-  transition: 0.3s;
-}
-
-.country-list {
-  background-color: #fff !important;
-
-  .country-group-letter {
-    color: $dark-green;
-  }
-
-  a:hover {
-    color: $dark-green;
-    text-decoration: none;
-  }
-}
-@media screen and (max-width: 991px) {
-  .navbar-dropdown {
-    background: $dark-white;
-
-    .nav-link {
-      &:active,
-      &:hover {
-        border: left 1px 1px solid $gp-green;
-      }
-    }
-  }
-
-  .country-dropdown-toggle,
-  .country-dropdown-toggle.open {
-    background-color: $dark-white;
-    border: none;
-    box-shadow: none;
+    background: $gp-green;
+    color: #fff !important;
 
     &:hover {
-      background: $dark-white;
-      box-shadow: 0 2px 5px rgba(0,0,0,.25);
+      margin-top: -1%;
     }
   }
+}
 
-  .nav-search-wrap {
-    background: rgba(76, 77, 79, 0.39);
-  }
-
-  .btn-navbar-toggle {
-    background: none;
-    border: none;
-    box-shadow: none;
-    color: $dark-blue!important;
+  .top-navigation a.nav-link {
+    color: $dark-blue !important;
 
     &:active,
     &:focus,
     &:hover {
       color: $dark-green !important;
-      box-shadow: 0 2px 5px rgba(0,0,0,.25);
-      background: $dark-white;
-      border: 1px solid transparent;
     }
   }
 
-  .navbar-dropdown-toggle[aria-expanded="true"] {
-    background-color: rgba(0, 0, 0, 0.3);
+  .nav-search-wrap .top-nav-search-btn {
+    color: $gp-green;
+    top: 10px;
   }
-}
+  @media (min-width: 992px) {
+    .navbar-dropdown .nav-link:active,
+    .navbar-dropdown .nav-link:focus,
+    .navbar-dropdown .nav-link:hover {
+      color: $dark-green;
+      border-bottom: 2px solid $gp-green;
+    }
 
-.country-dropdown-toggle::after {
-  background: url("https://www.greenpeace.org/finland/wp-content/themes/planet4-master-theme/images/down-arrow-green.svg") no-repeat center center !important;
-}
+    .navbar-dropdown .active .nav-link {
+      border-bottom: 2px solid $gp-green;
+    }
+  }
 
-.navbar-search-toggle {
-  background: url("../../assets/images/search.svg") center center no-repeat;
-}
+  button.country-dropdown-toggle,
+  button.country-dropdown-toggle.open {
+    color: $dark-blue;
+    transition: 0.3s;
+
+    &:focus {
+      color: $dark-blue;
+    }
+
+    &:active,
+    &:hover {
+      color: $dark-green;
+    }
+  }
+
+  button.btn-navbar-toggle {
+    color: $dark-blue;
+  }
+
+  .navbar-search-toggle {
+    height: 1.4rem;
+    margin-top: 1.1rem;
+
+    &:active,
+    &:hover {
+      height: 1.9rem;
+      margin-top: 0.8rem;
+      transition: 0.3s;
+    }
+  }
+
+  .navbar-search-toggle.open {
+    transition: 0.3s;
+  }
+
+  .country-list {
+    background-color: #fff !important;
+
+    .country-group-letter {
+      color: $dark-green;
+    }
+
+    a:hover {
+      color: $dark-green;
+      text-decoration: none;
+    }
+  }
+
+  .country-dropdown-toggle::after {
+    background: url("https://www.greenpeace.org/finland/wp-content/themes/planet4-master-theme/images/down-arrow-green.svg") no-repeat center center !important;
+  }
+
+  .navbar-search-toggle {
+    background: url("../../assets/images/search.svg") center center no-repeat;
+  }
+
+  @media screen and (max-width: 991px) {
+    .navbar-dropdown {
+      background: $dark-white;
+
+      .nav-link {
+        &:active,
+        &:hover {
+          border: left 1px 1px solid $gp-green;
+        }
+      }
+    }
+
+    .navbar-dropdown .active .nav-link::before {
+      background: $gp-green;
+    }
+
+    .country-dropdown-toggle,
+    .country-dropdown-toggle.open {
+      background-color: $dark-white;
+      border: none;
+      box-shadow: none;
+
+      &:hover {
+        background: $dark-white;
+        box-shadow: 0 2px 5px rgba(0,0,0,.25);
+      }
+    }
+
+    .nav-search-wrap {
+      background: rgba(76, 77, 79, 0.39);
+    }
+
+    .btn-navbar-toggle {
+      background: none;
+      border: none;
+      box-shadow: none;
+      color: $dark-blue!important;
+
+      &:active,
+      &:focus,
+      &:hover {
+        color: $dark-green !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,.25);
+        background: $dark-white;
+        border: 1px solid transparent;
+      }
+    }
+
+    .navbar-dropdown-toggle[aria-expanded="true"] {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
