@@ -19,6 +19,8 @@ nav#header.top-navigation.navbar {
     &:focus,
     &:hover {
       color: $dark-green;
+      transition: all 0.2s ease !important;
+      font-weight: bold;
     }
   }
 
@@ -27,6 +29,9 @@ nav#header.top-navigation.navbar {
     height: 40px;
     background: $gp-green;
     color: #fff !important;
+    &:hover {
+      font-size: 21px;
+    }
   }
 }
 
@@ -37,30 +42,29 @@ nav#header.top-navigation.navbar {
   &:focus,
   &:hover {
     color: $dark-green !important;
+    font-weight: bold;
+    transition: all 0.2s ease !important;
   }
 }
 
-.nav-search-wrap .top-nav-search-btn {
-  color: $gp-green;
-  top: 10px;
-}
+
 @media (min-width: 992px) {
   .navbar-dropdown .nav-link:active,
   .navbar-dropdown .nav-link:focus,
   .navbar-dropdown .nav-link:hover {
     color: $dark-green;
-    border-bottom: 2px solid $gp-green;
+    border-bottom: 2px solid $gp-green !important;
   }
 
   .navbar-dropdown .active .nav-link {
-    border-bottom: 2px solid $gp-green;
+    border-bottom: 2px solid $gp-green !important;
   }
 }
 
 button.country-dropdown-toggle,
 button.country-dropdown-toggle.open {
   color: $dark-blue;
-  transition: 0.3s;
+  transition: all 0.2s ease !important;
 
   &:focus {
     color: $dark-blue;
@@ -84,12 +88,12 @@ button.btn-navbar-toggle {
   &:hover {
     height: 1.9rem;
     margin-top: 0.8rem;
-    transition: 0.3s;
+    transition: all 0.2s ease !important;
   }
 }
 
 .navbar-search-toggle.open {
-  transition: 0.3s;
+  transition: all 0.2s ease !important;
 }
 
 .country-list {
