@@ -24,14 +24,12 @@ jQuery(document).ready(function() {
     if (this.checked) {
       $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("Y");
       dataLayer.push({
-        'event': 'petitionSignup',
-        'eventAction': 'optin'
+        'petitionOptin': 'optin'
       });
     } else {
       $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("");
       dataLayer.push({
-        'event': 'petitionSignup',
-        'eventAction': 'optout'
+        'petitionOptin': 'optout'
       });
     }
     // console.log($("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val());
