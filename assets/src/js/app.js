@@ -3,6 +3,12 @@
 jQuery(document).ready(function() {
   /* using jQuery, because $ upsets WordPress */
 
+  // Expose jQuery to the global object
+  window.jQuery = window.$ = jQuery;
+
+  window.dataLayer = window.dataLayer || [];
+
+
   /* empty fields hotfix */
   $("#p4en_form input[type=text], #p4en_form input[type=email]").val("");
 
@@ -17,11 +23,20 @@ jQuery(document).ready(function() {
   gdpr.change(function() {
     if (this.checked) {
       $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("Y");
+      dataLayer.push({
+        'event': 'petitionSignup',
+        'eventAction': 'optin'
+      });
     } else {
       $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("");
+      dataLayer.push({
+        'event': 'petitionSignup',
+        'eventAction': 'optout'
+      });
     }
     // console.log($("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val());
   });
+
 
 });
 
