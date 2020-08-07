@@ -82,6 +82,7 @@ window.addEventListener('load', (event) => {
         optimonkDK.type = 'text/javascript';
         optimonkDK.src = 'https://storage.googleapis.com/lib.greenpeace.se/apps/denmark.js';
         document.body.appendChild(optimonkDK);
+        break;
       case "sweden":
         text = "SE OK";
         let optimonkSE = document.createElement('script');
