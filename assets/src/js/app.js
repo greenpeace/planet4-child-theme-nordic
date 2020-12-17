@@ -1,10 +1,4 @@
-// import 'bootstrap';
-// import { optimonk } from './optimonk';
-// import { consentGA } from './consentGA';
-
-// function requireAll(r) {
-//   r.keys().forEach(r);
-// }
+import '../../../admin/js/editor.js';
 
 // Expose jQuery to the global object
 window.$ = $ || jQuery;
@@ -12,11 +6,6 @@ window.dataLayer = window.dataLayer || [];
 
 window.addEventListener('load', (event) => {
 // jQuery(document).ready(function() {
-
-  // jQuery(function($) {
-  //   optimonk($);
-  //   consentGA($);
-  // });
 
   /* empty fields hotfix */
   $("#p4en_form input[type=text], #p4en_form input[type=email]").val("");
@@ -29,7 +18,7 @@ window.addEventListener('load', (event) => {
   // console.log($("[name='supporter.NOT_TAGGED_27']").val());
 
   let gdpr = $(" [name='supporter.questions.547127'], [name='supporter.questions.547128'], [name='supporter.questions.547129'], [name='supporter.questions.547130']");
-  
+
   gdpr.change(function() {
     if (this.checked) {
       $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("Y");
@@ -40,7 +29,7 @@ window.addEventListener('load', (event) => {
     // console.log($("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val());
   });
 
-  $( "#p4en_form").submit(function(event) { 
+  $( "#p4en_form").submit(function(event) {
     function checkValue(){
       let nro_ok = document.forms["p4en_form"]["supporter.questions.212677"].value;
         if (nro_ok === "" ){
@@ -52,7 +41,7 @@ window.addEventListener('load', (event) => {
           dataLayer.push({
             'event': 'petitionSignupConsent', 'eventAction': 'optin'
           });
-        return true; 
+        return true;
         }
     }
     checkValue();
