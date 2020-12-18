@@ -3,7 +3,6 @@
 //
 // Textual form controls
 //
-
 .form-control {
   display: block;
   width: 100%;
@@ -72,7 +71,6 @@ select.form-control {
   width: 100%;
 }
 
-
 //
 // Labels
 //
@@ -101,7 +99,6 @@ select.form-control {
   line-height: $input-line-height-sm;
 }
 
-
 // Readonly controls as plain text
 //
 // Apply class to a readonly input to make it appear like regular plain
@@ -125,7 +122,6 @@ select.form-control {
     padding-left: 0;
   }
 }
-
 
 // Form control sizing
 //
@@ -180,7 +176,6 @@ textarea.form-control {
 // Form grid
 //
 // Special replacement for our grid system's `.row` for tighter form layouts.
-
 .form-row {
   display: flex;
   flex-wrap: wrap;
@@ -194,11 +189,9 @@ textarea.form-control {
   }
 }
 
-
 // Checkboxes and radios
 //
 // Indent the labels to position radios/checkboxes as hanging controls.
-
 .form-check {
   position: relative;
   display: block;
@@ -234,7 +227,6 @@ textarea.form-control {
   }
 }
 
-
 // Form validation
 //
 // Provide feedback to users when form field values are valid or invalid. Works
@@ -254,7 +246,6 @@ textarea.form-control {
 //
 // Requires wrapping inputs and labels with `.form-group` for proper display of
 // default HTML form controls and our custom form controls (e.g., input groups).
-
 .form-inline {
   display: flex;
   flex-flow: row wrap;
@@ -311,6 +302,7 @@ textarea.form-control {
       width: auto;
       padding-left: 0;
     }
+
     .form-check-input {
       position: relative;
       flex-shrink: 0;
@@ -323,6 +315,7 @@ textarea.form-control {
       align-items: center;
       justify-content: center;
     }
+
     .custom-control-label {
       margin-bottom: 0;
     }

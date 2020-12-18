@@ -104,7 +104,7 @@ window.addEventListener('load', (event) => {
         textNO;
         break;
       default:
-        let textDef = console.log("Do nothing");
+        let textDef = console.log("Default case");
         textDef;
     }
   }
