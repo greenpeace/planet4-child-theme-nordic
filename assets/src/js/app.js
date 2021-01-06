@@ -65,43 +65,44 @@ window.addEventListener('load', (event) => {
 
     switch (pathnameUrl) {
       case "denmark":
-        let textDK = console.log("DK OK");
+        // let textDK = console.log("DK OK");
         $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkDK = document.createElement('script');
         optimonkDK.id = "optimonkDK";
         optimonkDK.type = 'text/javascript';
         optimonkDK.src = 'https://storage.googleapis.com/lib.greenpeace.se/apps/denmark.js';
         document.body.appendChild(optimonkDK);
-        textDK;
+        // textDK;
         break;
       case "sweden":
-        let textSE = console.log("SE OK");
+        // let textSE = console.log("SE OK");
         $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkSE = document.createElement('script');
         optimonkSE.id = "optimonkSE";
         optimonkSE.type = 'text/javascript';
         optimonkSE.src = 'https://storage.googleapis.com/lib.greenpeace.se/apps/sweden.js';
         document.body.appendChild(optimonkSE);
-        textSE;
+        // textSE;
         break;
       case "finland":
-        let textFI = console.log("FI OK");
+        // let textFI = console.log("FI OK");
         $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkFI = document.createElement('script');
         optimonkFI.id = "optimonkFI";
         optimonkFI.type = 'text/javascript';
         optimonkFI.src = 'https://storage.googleapis.com/lib.greenpeace.se/apps/finland.js';
         document.body.appendChild(optimonkFI);
+        // textFI;
         break;
       case "norway":
-        let textNO = console.log("NO OK");
+        // let textNO = console.log("NO OK");
         $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkNO = document.createElement('script');
         optimonkNO.id = "optimonkNO";
         optimonkNO.type = 'text/javascript';
         optimonkNO.src = 'https://storage.googleapis.com/lib.greenpeace.se/apps/norway.js';
         document.body.appendChild(optimonkNO);
-        textNO;
+        // textNO;
         break;
       default:
         let textDef = console.log("Default case");
