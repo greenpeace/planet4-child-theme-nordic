@@ -1,4 +1,6 @@
-import '../../../admin/js/editor.js';
+// function requireAll(r) {
+//   r.keys().forEach(r);
+// }
 
 // Expose jQuery to the global object
 window.$ = $ || jQuery;
