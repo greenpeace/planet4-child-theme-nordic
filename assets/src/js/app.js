@@ -1,7 +1,3 @@
-// import 'bootstrap';
-// import { optimonk } from './optimonk';
-// import { consentGA } from './consentGA';
-
 // function requireAll(r) {
 //   r.keys().forEach(r);
 // }
@@ -12,11 +8,6 @@ window.dataLayer = window.dataLayer || [];
 
 window.addEventListener('load', (event) => {
 // jQuery(document).ready(function() {
-
-  // jQuery(function($) {
-  //   optimonk($);
-  //   consentGA($);
-  // });
 
   /* empty fields hotfix */
   $("#p4en_form input[type=text], #p4en_form input[type=email]").val("");
@@ -29,7 +20,7 @@ window.addEventListener('load', (event) => {
   // console.log($("[name='supporter.NOT_TAGGED_27']").val());
 
   let gdpr = $(" [name='supporter.questions.547127'], [name='supporter.questions.547128'], [name='supporter.questions.547129'], [name='supporter.questions.547130']");
-  
+
   gdpr.change(function() {
     if (this.checked) {
       $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("Y");
@@ -40,7 +31,7 @@ window.addEventListener('load', (event) => {
     // console.log($("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val());
   });
 
-  $( "#p4en_form").submit(function(event) { 
+  $( "#p4en_form").submit(function(event) {
     function checkValue(){
       let nro_ok = document.forms["p4en_form"]["supporter.questions.212677"].value;
         if (nro_ok === "" ){
@@ -52,7 +43,7 @@ window.addEventListener('load', (event) => {
           dataLayer.push({
             'event': 'petitionSignupConsent', 'eventAction': 'optin'
           });
-        return true; 
+        return true;
         }
     }
     checkValue();
@@ -76,7 +67,6 @@ window.addEventListener('load', (event) => {
 
     switch (pathnameUrl) {
       case "denmark":
-        text = "DK OK";
         $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkDK = document.createElement('script');
         optimonkDK.id = "optimonkDK";
@@ -85,7 +75,6 @@ window.addEventListener('load', (event) => {
         document.body.appendChild(optimonkDK);
         break;
       case "sweden":
-        text = "SE OK";
         $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkSE = document.createElement('script');
         optimonkSE.id = "optimonkSE";
@@ -94,7 +83,6 @@ window.addEventListener('load', (event) => {
         document.body.appendChild(optimonkSE);
         break;
       case "finland":
-        text = "FI OK";
         $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkFI = document.createElement('script');
         optimonkFI.id = "optimonkFI";
@@ -103,7 +91,6 @@ window.addEventListener('load', (event) => {
         document.body.appendChild(optimonkFI);
         break;
       case "norway":
-        text = "NO OK";
         $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkNO = document.createElement('script');
         optimonkNO.id = "optimonkNO";
@@ -112,7 +99,8 @@ window.addEventListener('load', (event) => {
         document.body.appendChild(optimonkNO);
         break;
       default:
-        text = "Do nothing";
+        let textDef = console.log("Default case");
+        textDef;
     }
   }
 
