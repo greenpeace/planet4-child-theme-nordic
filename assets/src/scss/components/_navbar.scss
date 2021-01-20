@@ -29,6 +29,7 @@ nav#header.top-navigation.navbar {
     height: 40px;
     background: $gp-green;
     color: #fff !important;
+
     &:hover {
       font-size: 21px;
     }
@@ -46,7 +47,6 @@ nav#header.top-navigation.navbar {
     transition: all 0.2s ease !important;
   }
 }
-
 
 @media (min-width: 992px) {
   .navbar-dropdown .nav-link:active,
@@ -83,6 +83,7 @@ button.btn-navbar-toggle {
 .navbar-search-toggle {
   height: 1.4rem;
   margin-top: 1.1rem;
+  background: url("../../assets/images/search.svg") center center no-repeat;
 
   &:active,
   &:hover {
@@ -113,9 +114,6 @@ button.btn-navbar-toggle {
   background: url("https://www.greenpeace.org/finland/wp-content/themes/planet4-master-theme/images/down-arrow-green.svg") no-repeat center center !important;
 }
 
-.navbar-search-toggle {
-  background: url("../../assets/images/search.svg") center center no-repeat;
-}
 @media screen and (max-width: 991px) {
   .navbar-dropdown {
     background: $dark-white;
@@ -140,7 +138,7 @@ button.btn-navbar-toggle {
 
     &:hover {
       background: $dark-white;
-      box-shadow: 0 2px 5px rgba(0,0,0,.25);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
     }
   }
 
@@ -158,7 +156,7 @@ button.btn-navbar-toggle {
     &:focus,
     &:hover {
       color: $dark-green !important;
-      box-shadow: 0 2px 5px rgba(0,0,0,.25);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
       background: $dark-white;
       border: 1px solid transparent;
     }
