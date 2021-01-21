@@ -67,7 +67,6 @@ window.addEventListener('load', (event) => {
 
     switch (pathnameUrl) {
       case "denmark":
-        $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkDK = document.createElement('script');
         optimonkDK.id = "optimonkDK";
         optimonkDK.type = 'text/javascript';
@@ -75,7 +74,6 @@ window.addEventListener('load', (event) => {
         document.body.appendChild(optimonkDK);
         break;
       case "sweden":
-        $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkSE = document.createElement('script');
         optimonkSE.id = "optimonkSE";
         optimonkSE.type = 'text/javascript';
@@ -83,7 +81,6 @@ window.addEventListener('load', (event) => {
         document.body.appendChild(optimonkSE);
         break;
       case "finland":
-        $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkFI = document.createElement('script');
         optimonkFI.id = "optimonkFI";
         optimonkFI.type = 'text/javascript';
@@ -91,7 +88,6 @@ window.addEventListener('load', (event) => {
         document.body.appendChild(optimonkFI);
         break;
       case "norway":
-        $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkNO = document.createElement('script');
         optimonkNO.id = "optimonkNO";
         optimonkNO.type = 'text/javascript';

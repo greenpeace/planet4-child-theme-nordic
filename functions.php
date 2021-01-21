@@ -20,7 +20,7 @@ function enqueue_child_scripts()  {
     wp_enqueue_script('popper');
     wp_register_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', [ 'jquery', 'popper' ], '4.4.1', true);
     wp_enqueue_script('bootstrap');
-    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.5', true);
+    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.6', true);
     wp_enqueue_script('child-js');
 
 }
