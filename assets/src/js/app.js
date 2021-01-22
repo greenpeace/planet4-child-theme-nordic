@@ -1,3 +1,5 @@
+import './admin/editor.js';
+
 // function requireAll(r) {
 //   r.keys().forEach(r);
 // }
@@ -16,7 +18,6 @@ window.addEventListener('load', (event) => {
   if (location.search) {
     $("input[name='supporter.NOT_TAGGED_27']").val(location.search);
   }
-
   // console.log($("[name='supporter.NOT_TAGGED_27']").val());
 
   let gdpr = $(" [name='supporter.questions.547127'], [name='supporter.questions.547128'], [name='supporter.questions.547129'], [name='supporter.questions.547130']");
@@ -27,7 +28,6 @@ window.addEventListener('load', (event) => {
     } else {
       $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("");
     }
-
     // console.log($("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val());
   });
 
