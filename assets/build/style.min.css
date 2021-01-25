@@ -250,7 +250,7 @@ a {
 nav#header.top-navigation.navbar {
   background: #fffffff0; }
   nav#header.top-navigation.navbar a {
-    color: #074365; }
+    color: #448107; }
     nav#header.top-navigation.navbar a:active, nav#header.top-navigation.navbar a:focus, nav#header.top-navigation.navbar a:hover {
       color: #448107;
       transition: all 0.2s ease !important;
@@ -264,7 +264,7 @@ nav#header.top-navigation.navbar {
       font-size: 21px; }
 
 .top-navigation a.nav-link {
-  color: #074365 !important; }
+  color: #448107; }
   .top-navigation a.nav-link:active, .top-navigation a.nav-link:focus, .top-navigation a.nav-link:hover {
     color: #448107 !important;
     font-weight: bold;

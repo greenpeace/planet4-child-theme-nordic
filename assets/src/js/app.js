@@ -1,4 +1,8 @@
-import '../../../admin/js/editor.js';
+import './admin/editor.js';
+
+// function requireAll(r) {
+//   r.keys().forEach(r);
+// }
 
 // Expose jQuery to the global object
 window.$ = $ || jQuery;
@@ -14,7 +18,6 @@ window.addEventListener('load', (event) => {
   if (location.search) {
     $("input[name='supporter.NOT_TAGGED_27']").val(location.search);
   }
-
   // console.log($("[name='supporter.NOT_TAGGED_27']").val());
 
   let gdpr = $(" [name='supporter.questions.547127'], [name='supporter.questions.547128'], [name='supporter.questions.547129'], [name='supporter.questions.547130']");
@@ -25,7 +28,6 @@ window.addEventListener('load', (event) => {
     } else {
       $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("");
     }
-
     // console.log($("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val());
   });
 
@@ -63,7 +65,6 @@ window.addEventListener('load', (event) => {
 
     switch (pathnameUrl) {
       case "denmark":
-        $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkDK = document.createElement('script');
         optimonkDK.id = "optimonkDK";
         optimonkDK.type = 'text/javascript';
@@ -71,7 +72,6 @@ window.addEventListener('load', (event) => {
         document.body.appendChild(optimonkDK);
         break;
       case "sweden":
-        $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkSE = document.createElement('script');
         optimonkSE.id = "optimonkSE";
         optimonkSE.type = 'text/javascript';
@@ -79,7 +79,6 @@ window.addEventListener('load', (event) => {
         document.body.appendChild(optimonkSE);
         break;
       case "finland":
-        $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkFI = document.createElement('script');
         optimonkFI.id = "optimonkFI";
         optimonkFI.type = 'text/javascript';
@@ -87,7 +86,6 @@ window.addEventListener('load', (event) => {
         document.body.appendChild(optimonkFI);
         break;
       case "norway":
-        $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         let optimonkNO = document.createElement('script');
         optimonkNO.id = "optimonkNO";
         optimonkNO.type = 'text/javascript';

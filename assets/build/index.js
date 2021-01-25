@@ -86,14 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./admin/js/editor.js":
-/*!****************************!*\
-  !*** ./admin/js/editor.js ***!
-  \****************************/
+/***/ "./assets/src/js/admin/editor.js":
+/*!***************************************!*\
+  !*** ./assets/src/js/admin/editor.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log('Testing if works?');
+console.log('Adding the admin scripts here..');
 
 /***/ }),
 
@@ -106,9 +106,12 @@ console.log('Testing if works?');
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _admin_js_editor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../admin/js/editor.js */ "./admin/js/editor.js");
-/* harmony import */ var _admin_js_editor_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_admin_js_editor_js__WEBPACK_IMPORTED_MODULE_0__);
- // Expose jQuery to the global object
+/* harmony import */ var _admin_editor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin/editor.js */ "./assets/src/js/admin/editor.js");
+/* harmony import */ var _admin_editor_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_admin_editor_js__WEBPACK_IMPORTED_MODULE_0__);
+ // function requireAll(r) {
+//   r.keys().forEach(r);
+// }
+// Expose jQuery to the global object
 
 window.$ = $ || jQuery;
 window.dataLayer = window.dataLayer || [];
@@ -166,7 +169,6 @@ window.addEventListener('load', function (event) {
 
     switch (pathnameUrl) {
       case "denmark":
-        $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         var optimonkDK = document.createElement('script');
         optimonkDK.id = "optimonkDK";
         optimonkDK.type = 'text/javascript';
@@ -175,7 +177,6 @@ window.addEventListener('load', function (event) {
         break;
 
       case "sweden":
-        $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         var optimonkSE = document.createElement('script');
         optimonkSE.id = "optimonkSE";
         optimonkSE.type = 'text/javascript';
@@ -184,7 +185,6 @@ window.addEventListener('load', function (event) {
         break;
 
       case "finland":
-        $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         var optimonkFI = document.createElement('script');
         optimonkFI.id = "optimonkFI";
         optimonkFI.type = 'text/javascript';
@@ -193,7 +193,6 @@ window.addEventListener('load', function (event) {
         break;
 
       case "norway":
-        $('head').append('<meta name="google-site-verification" content="2Y9TaMdLjhsc8VRLdYGDE4Ii7Pqcz272u7-vQmCtaXc" /> ');
         var optimonkNO = document.createElement('script');
         optimonkNO.id = "optimonkNO";
         optimonkNO.type = 'text/javascript';
