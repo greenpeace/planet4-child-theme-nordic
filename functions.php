@@ -10,12 +10,12 @@
  function p4_child_theme_gpn_gutenberg_scripts() {
 	 wp_enqueue_script(
 		 'gpn-customizations',
-		 get_stylesheet_directory_uri() . 'assets/src/js/admin/editor.js',
+		 get_stylesheet_directory_uri() . '/assets/src/js/admin/editor.js',
 		 // p4gbks_admin_script is the JS that is loaded in planet4-plugin-gutenberg-block:
 		 // https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/4ae684660c83361f6d5f9d96744362ea7422cc4f/classes/class-loader.php#L296-L302
 		 // By putting it in the dependency list, we ensure our code gets loaded later so we can overwrite some of it.
 		 array( 'wp-blocks', 'wp-dom', 'p4gbks_admin_script' ),
-		 filemtime( get_stylesheet_directory() . 'assets/src/js/admin/editor.js' ),
+		 filemtime( get_stylesheet_directory() . '/assets/src/js/admin/editor.js' ),
 		 true
 	 );
 
