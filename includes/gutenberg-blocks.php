@@ -78,7 +78,6 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 			'acf/p4-gpn-block-testimonial',
 			'acf/leads-form',
 
-
 		);
 
 		if ( $post->post_type === 'page' ) { // Block types only for pages

@@ -247,22 +247,24 @@ a {
   display: block;
   margin-top: 20px; }
 
-nav#header.top-navigation.navbar {
-  background: #fffffff0; }
-  nav#header.top-navigation.navbar a {
-    color: #448107; }
-    nav#header.top-navigation.navbar a:active, nav#header.top-navigation.navbar a:focus, nav#header.top-navigation.navbar a:hover {
-      color: #448107;
-      transition: all 0.2s ease !important;
-      font-weight: bold; }
-  nav#header.top-navigation.navbar .btn-donate {
-    margin-top: 10px;
-    height: 40px;
-    background: #66cc00;
-    color: #fff !important;
-    text-transform: uppercase; }
-    nav#header.top-navigation.navbar .btn-donate:hover {
-      font-size: 21px; }
+nav {
+  background: #fffffff0 !important; }
+
+nav#header.top-navigation.navbar a {
+  color: #448107; }
+  nav#header.top-navigation.navbar a:active, nav#header.top-navigation.navbar a:focus, nav#header.top-navigation.navbar a:hover {
+    color: #448107;
+    transition: all 0.2s ease !important;
+    font-weight: bold; }
+
+nav#header.top-navigation.navbar .btn-donate {
+  margin-top: 10px;
+  height: 40px;
+  background: #66cc00;
+  color: #fff !important;
+  text-transform: uppercase; }
+  nav#header.top-navigation.navbar .btn-donate:hover {
+    font-size: 21px; }
 
 .top-navigation a.nav-link {
   color: #448107; }

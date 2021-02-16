@@ -1,7 +1,10 @@
 <?php
 
 /**
- * Additional code for the child theme goes in here.
+ * Theme Name: Greenpeace Child Theme Nordic
+ * Description: Child theme
+ * Version: 0.0.1
+ *
  */
 
  // Filter available Gutenberg standard blocks
@@ -36,7 +39,7 @@
 function enqueue_child_styles() {
     $css_creation = filectime(get_stylesheet_directory() . '/assets/build/style.min.css');
     wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', array(), '4.4.1');
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/build/style.min.css', ['bootstrap','parent-style'], $css_creation);
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/build/style.min.css', ['bootstrap','parent-style'], $css_creation, '0.0.1');
 
 }
 

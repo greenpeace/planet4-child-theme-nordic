@@ -2,37 +2,6 @@
   "name": "planet4-child-theme-nordic",
   "description": "Planet4 Child theme for GP Nordic",
   "main": "index.js",
-  "dependencies": {
-    "bootstrap": "^4.5.0",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.15.0"
-  },
-  "devDependencies": {
-    "@wordpress/scripts": "5.0.0",
-    "autoprefixer": "^9.8.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.1.0",
-    "babel-preset-env": "^1.7.0",
-    "css-loader": "^3.5.3",
-    "mini-css-extract-plugin": "^0.8.2",
-    "node-sass": "^4.14.1",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "postcss-loader": "^3.0.0",
-    "remove-files-webpack-plugin": "^1.4.2",
-    "sass-loader": "^8.0.0",
-    "stylelint": "^13.5.0",
-    "stylelint-config-standard": "^20.0.0",
-    "svg-sprite-loader": "^4.3.0",
-    "terser-webpack-plugin": "^2.3.7",
-    "webpack": "^4.43.0",
-    "webpack-fix-style-only-entries": "^0.4.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "wp-scripts start --config webpack.config.js",
-    "build": "wp-scripts build --config webpack.config.js --mode production",
-    "lint:css": "wp-scripts lint-style"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/greenpeace/planet4-child-theme-nordic.git"
@@ -43,9 +12,39 @@
     "url": "https://github.com/greenpeace/planet4-child-theme-nordic/issues"
   },
   "homepage": "https://github.com/greenpeace/planet4-child-theme-nordic#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "wp-scripts start --config webpack.config.js",
+    "build": "wp-scripts build --config webpack.config.js --mode production",
+    "lint:css": "wp-scripts lint-style"
+  },
+  "devDependencies": {
+    "@greenpeace/dashdash": "^1.0.1",
+    "@wordpress/components": "^8.3.2",
+    "@wordpress/scripts": "3.3.0",
+    "autoprefixer": "^9.6.1",
+    "css-loader": "^3.2.0",
+    "eslint-plugin-react": "^7.20.3",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.14.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "remove-files-webpack-plugin": "^1.1.3",
+    "sass-loader": "^8.0.0",
+    "svg-sprite-loader": "^4.1.6",
+    "terser-webpack-plugin": "^2.2.1",
+    "webpack": "^4.40.2",
+    "webpack-fix-style-only-entries": "^0.4.0"
+  },
   "browserslist": [
     "last 2 version",
     "> 0.2%",
     "not dead"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "classnames": "^2.2.6",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.15.0"
+  }
 }

@@ -9,9 +9,11 @@ $navbar-default-height: 60px;
   margin-top: 20px;
 }
 
-nav#header.top-navigation.navbar {
-  background: $dark-white;
+nav {
+  background: $dark-white !important;
+}
 
+nav#header.top-navigation.navbar {
   a {
     color: $dark-green;
 
