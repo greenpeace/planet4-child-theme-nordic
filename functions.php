@@ -3,7 +3,7 @@
 /**
  * Theme Name: Greenpeace Child Theme Nordic
  * Description: Child theme
- * Version: 0.0.1
+ * Version: 0.0.2
  *
  */
 
