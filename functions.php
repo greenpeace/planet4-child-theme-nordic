@@ -1,11 +1,16 @@
 <?php
-
 /**
- * Theme Name: Greenpeace Child Theme Nordic
- * Description: Child theme
- * Version: 0.0.2
- *
- */
+* Theme Name: Greenpeace Planet 4 Child Theme Nordic
+* Theme URI: Theme URI: https://github.com/greenpeace/planet4-child-theme-nordic
+* Description: Child theme for the Planet 4 Wordpress project
+* Author: Greenpeace Nordic
+* Author URI: https://github.com/greenpeace
+* License: MIT
+* License URI: https://opensource.org/licenses/MIT
+* Tags: light, accessibility-ready
+* Text Domain: planet4-child-theme-nordic
+* Version: 0.0.2
+*/
 
  // Filter available Gutenberg standard blocks
  require_once( 'includes/gutenberg-blocks.php' );
