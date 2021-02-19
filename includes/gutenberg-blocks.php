@@ -119,7 +119,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/spreadsheet',
 				'planet4-blocks/timeline',
 				// 'acf/p4-gpn-block-testimonial',
-				// 'acf/leads-form',
+				'acf/leads-form',
 			);
 			$allowed_blocks      = array_merge( $allowed_blocks_general, $allowed_blocks_post );
 		} else if ( $post->post_type === 'campaign' ) { // block types only for campaign pages
