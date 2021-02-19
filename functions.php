@@ -12,6 +12,15 @@
 * Version: 0.0.2
 */
 
+add_action('wp_enqueue_scripts', 'enqueue_child_styles');
+function enqueue_child_styles() {
+    $css_creation = filectime(get_stylesheet_directory() . '/assets/build/style.min.css');
+    wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', array(), '4.4.1');
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/build/style.min.css', ['bootstrap','parent-style'], $css_creation, '0.0.3');
+
+}
+
+
  // Filter available Gutenberg standard blocks
  require_once( 'includes/gutenberg-blocks.php' );
 
@@ -40,16 +49,6 @@
 
  add_action( 'enqueue_block_editor_assets', 'p4_child_theme_gpn_gutenberg_scripts' );
 
-
-function enqueue_child_styles() {
-    $css_creation = filectime(get_stylesheet_directory() . '/assets/build/style.min.css');
-    wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', array(), '4.4.1');
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/build/style.min.css', ['bootstrap','parent-style'], $css_creation, '0.0.1');
-
-}
-
-add_action('wp_enqueue_scripts', 'enqueue_child_styles', 1);
-
 function enqueue_child_scripts()  {
     wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js', [], '3.5.0', true);
     wp_enqueue_script('jquery');
@@ -57,7 +56,7 @@ function enqueue_child_scripts()  {
     wp_enqueue_script('popper');
     wp_register_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', [ 'jquery', 'popper' ], '4.4.1', true);
     wp_enqueue_script('bootstrap');
-    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.8', true);
+    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.9', true);
     wp_enqueue_script('child-js');
 
 }
