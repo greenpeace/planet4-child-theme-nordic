@@ -10,7 +10,7 @@ $navbar-default-height: 60px;
 }
 
 nav#header.top-navigation.navbar {
-  background: $dark-white;
+  background: $dark-white !important;
 
   a {
     color: $dark-blue;
