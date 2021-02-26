@@ -38,7 +38,7 @@ add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
 		 // https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/4ae684660c83361f6d5f9d96744362ea7422cc4f/classes/class-loader.php#L296-L302
 		 // By putting it in the dependency list, we ensure our code gets loaded later so we can overwrite some of it.
 		 array( 'wp-blocks', 'wp-dom', 'p4gbks_admin_script' ),
-		 filemtime( get_stylesheet_directory() . '/assets/src/js/admin/editor.js', '0.0.1' ),
+		 filemtime( get_stylesheet_directory() . '/assets/src/js/admin/editor.js'),
 		 true
 	 );
 
