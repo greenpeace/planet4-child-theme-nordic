@@ -1,4 +1,4 @@
-import './admin/editor.js';
+// import './admin/editor.js';
 
 // function requireAll(r) {
 //   r.keys().forEach(r);
