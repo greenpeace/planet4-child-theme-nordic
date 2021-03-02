@@ -42,9 +42,6 @@
     "not dead"
   ],
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "classnames": "^2.2.6",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.15.0"
+    "classnames": "^2.2.6"
   }
 }
