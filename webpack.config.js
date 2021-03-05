@@ -28,7 +28,7 @@ module.exports = {
   entry: {
     index: './assets/src/js/app.js',
     style: './assets/src/scss/style.scss',
-    // bootstrap: './assets/src/scss/bootstrap-build.scss',
+    bootstrap: './assets/src/scss/bootstrap-build.scss',
   },
   output: {
     filename: '[name].js',
@@ -99,7 +99,7 @@ module.exports = {
             return [
               'style.deps.json',
               'index.asset.php',
-              // 'bootstrap.asset.php',
+              'bootstrap.asset.php',
               'style.asset.php',
             ].filter(item => {
               return new RegExp(item, 'm').test(filePath);

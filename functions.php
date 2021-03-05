@@ -9,7 +9,7 @@
 * License URI: https://opensource.org/licenses/MIT
 * Tags: light, accessibility-ready
 * Text Domain: planet4-child-theme-nordic
-* Version: 0.0.4
+* Version: 0.0.6
 */
 
  // Filter available Gutenberg standard blocks
@@ -44,7 +44,7 @@
 add_action('wp_enqueue_scripts', 'enqueue_child_styles');
 function enqueue_child_styles() {
     $css_creation = filectime(get_stylesheet_directory() . '/assets/build/style.min.css');
-    wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', array(), '4.4.1');
+    wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', array(), '5.0.0');
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/build/style.min.css', ['bootstrap','parent-style'], $css_creation);
 
 }
@@ -54,9 +54,9 @@ function enqueue_child_scripts()  {
     // wp_enqueue_script('jquery');
     // wp_register_script('popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"', [], '1.16.0', true);
     // wp_enqueue_script('popper');
-    // wp_register_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', [ 'jquery', 'popper' ], '4.4.1', true);
-    // wp_enqueue_script('bootstrap');
-    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.12', true);
+    wp_register_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js', ['bootstrap'], '5.0.0', true);
+    wp_enqueue_script('bootstrap');
+    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.13', true);
     wp_enqueue_script('child-js');
 
 }
