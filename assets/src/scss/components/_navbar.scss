@@ -16,7 +16,7 @@ nav#header.top-navigation.navbar {
     color: $dark-green;
     display: inline-block;
     text-decoration: none;
-    padding: 0;
+    // padding: 0;
 
     &:active,
     &:focus,
@@ -28,7 +28,7 @@ nav#header.top-navigation.navbar {
   }
 
   .btn-donate {
-    margin-top: 10px;
+    padding-top: 2px;
     height: 40px;
     background: $gp-green;
     color: #fff !important;
