@@ -85,3 +85,19 @@ if (! function_exists('fa_custom_setup_kit') ) {
 }
 
 fa_custom_setup_kit('https://kit.fontawesome.com/508a5d6fe1.js');
+
+function the_menu_cleanup() {
+		remove_menu_page( 'acf-field-group' ); // Custom Fields
+		remove_menu_page( 'acf-options' ); // Options
+		if (!current_user_can( 'manage_options' )) { // Hide only for non-admins
+					remove_menu_page( 'elasticpress' );
+					remove_menu_page( 'wordfence' );
+					remove_menu_page( 'users.php' );
+					remove_menu_page( 'planet4_settings_navigation' );
+					remove_menu_page( 'plugin_blocks_report' );
+					remove_menu_page( 'options-general.php' );
+					remove_menu_page( 'themes.php' );
+					remove_menu_page( 'plugins.php' );
+		}
+}
+add_action( 'admin_menu', 'the_menu_cleanup' );
