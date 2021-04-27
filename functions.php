@@ -98,6 +98,7 @@ function the_menu_cleanup() {
 		remove_menu_page( 'options-general.php' );
 		remove_menu_page( 'themes.php' );
 		remove_menu_page( 'plugins.php' );
+		remove_menu_page( 'tools.php' );
 	}
 }
 add_action( 'admin_menu', 'the_menu_cleanup' );
