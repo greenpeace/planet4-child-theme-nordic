@@ -12,53 +12,53 @@ window.addEventListener('load', (event) => {
 // jQuery(document).ready(function() {
 
   /* empty fields hotfix */
-  $("#p4en_form input[type=text], #p4en_form input[type=email]").val("");
+  // $("#p4en_form input[type=text], #p4en_form input[type=email]").val("");
 
-  /* fill in UTM hotfix */
-  if (location.search) {
-    $("input[name='supporter.NOT_TAGGED_27']").val(location.search);
-  }
+  // /* fill in UTM hotfix */
+  // if (location.search) {
+  //   $("input[name='supporter.NOT_TAGGED_27']").val(location.search);
+  // }
   // console.log($("[name='supporter.NOT_TAGGED_27']").val());
 
-  let gdpr = $(" [name='supporter.questions.547127'], [name='supporter.questions.547128'], [name='supporter.questions.547129'], [name='supporter.questions.547130']");
+  // let gdpr = $(" [name='supporter.questions.547127'], [name='supporter.questions.547128'], [name='supporter.questions.547129'], [name='supporter.questions.547130']");
 
-  gdpr.change(function() {
-    if (this.checked) {
-      $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("Y");
-    } else {
-      $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("");
-    }
-    // console.log($("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val());
-  });
+  // gdpr.change(function() {
+  //   if (this.checked) {
+  //     $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("Y");
+  //   } else {
+  //     $("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val("");
+  //   }
+  //   // console.log($("[name='supporter.questions.2738'], [name='supporter.questions.212677']").val());
+  // });
 
-  $( "#p4en_form").submit(function(event) {
-    function checkValue(){
-      let nro_ok = document.forms["p4en_form"]["supporter.questions.212677"].value;
-        if (nro_ok === "" ){
-          dataLayer.push({
-            'event': 'petitionSignupConsent', 'eventAction': 'optout'
-            });
-        return false;
-        } else {
-          dataLayer.push({
-            'event': 'petitionSignupConsent', 'eventAction': 'optin'
-          });
-        return true;
-        }
-    }
-    checkValue();
-  });
+  // $( "#p4en_form").submit(function(event) {
+  //   function checkValue(){
+  //     let nro_ok = document.forms["p4en_form"]["supporter.questions.212677"].value;
+  //       if (nro_ok === "" ){
+  //         dataLayer.push({
+  //           'event': 'petitionSignupConsent', 'eventAction': 'optout'
+  //           });
+  //       return false;
+  //       } else {
+  //         dataLayer.push({
+  //           'event': 'petitionSignupConsent', 'eventAction': 'optin'
+  //         });
+  //       return true;
+  //       }
+  //   }
+  //   checkValue();
+  // });
 
   pathnameUrl();
 
-  document.addEventListener('DOMContentLoaded', function() {
-    jQuery('.rotate-arrow').on('click', function() {
-      jQuery(this)
-        .find('[data-fa-i2svg]')
-        .toggleClass('fa-angle-down')
-        .toggleClass('fa-angle-right');
-    });
-  });
+  // document.addEventListener('DOMContentLoaded', function() {
+  //   jQuery('.rotate-arrow').on('click', function() {
+  //     jQuery(this)
+  //       .find('[data-fa-i2svg]')
+  //       .toggleClass('fa-angle-down')
+  //       .toggleClass('fa-angle-right');
+  //   });
+  // });
 
   function pathnameUrl() {
     let pathnameUrl = window.location.pathname.split('/')[1];
