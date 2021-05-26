@@ -110,3 +110,8 @@ a {
     text-decoration: underline;
   }
 }
+
+p,ul,li {
+  font-family: $lora, sans-serif;
+  font-weight: 400;
+}

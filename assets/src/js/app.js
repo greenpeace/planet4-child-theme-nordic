@@ -1,4 +1,4 @@
-// import './admin/editor.js';
+import './admin/editor.js';
 
 // function requireAll(r) {
 //   r.keys().forEach(r);
@@ -51,12 +51,16 @@ window.addEventListener('load', (event) => {
 
   pathnameUrl();
 
+
+  //Tracking set up for the social share buttons
   // document.addEventListener('DOMContentLoaded', function() {
-  //   jQuery('.rotate-arrow').on('click', function() {
-  //     jQuery(this)
-  //       .find('[data-fa-i2svg]')
-  //       .toggleClass('fa-angle-down')
-  //       .toggleClass('fa-angle-right');
+  //   jQuery('.eapps-social-share-buttons-item-facebook').on('click', function() {
+  //     dataLayer.push({
+  //       'event':'uaevent',
+  //       'eventCategory':'Social Share',
+  //       'eventAction': 'Facebook',
+  //       'eventLabel': window.location.pathname
+  //       });
   //   });
   // });
 

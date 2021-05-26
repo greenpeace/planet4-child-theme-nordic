@@ -104,7 +104,6 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/guestbook',
 				// 'acf/p4-gpn-block-testimonial',
 				'acf/leads-form',
-
 			);
 			$allowed_blocks      = array_merge( $allowed_blocks_general, $allowed_blocks_page );
 		} else if ( $post->post_type === 'post' ) { // block types only for posts
