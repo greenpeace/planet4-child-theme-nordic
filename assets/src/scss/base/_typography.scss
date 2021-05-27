@@ -102,16 +102,16 @@ h2 {
 //
 // Styleguide Style.typography.links
 a {
-  color: $blue;
+  color: $dark-green;
   text-decoration: none;
 
   &:hover {
-    color: $blue;
+    color: $dark-green;
     text-decoration: underline;
   }
 }
 
-p,ul,li {
-  font-family: $lora, sans-serif;
-  font-weight: 400;
+p,ul,li, .block-editor-writing-flow, .edit-post-visual-editor.editor-styles-wrapper {
+  font-family: $lora !important;
+  font-weight: 300;
 }

@@ -9,3 +9,22 @@ html {
 a {
   cursor: pointer;
 }
+
+// .block-editor-block-list__layout .wp-block .acf-block-component.acf-block-body .acf-block-preview .leads-form {
+//   max-width: 80vw;
+//   width: auto;
+//   margin-left: 0;
+// }
+
+//trying to fix the consent mssg for the LP
+.leads-form span.checkbox-label p {
+  line-height: 1.3;
+  font-weight: 300;
+  font-family: $lora !important;
+  font-size: .75rem!important;
+  padding-bottom: 0.2rem;
+
+  a {
+    font-weight: 500!important;
+  }
+}
