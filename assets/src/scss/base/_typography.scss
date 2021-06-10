@@ -111,7 +111,8 @@ a {
   }
 }
 
-p,ul,li, .block-editor-writing-flow, .edit-post-visual-editor.editor-styles-wrapper {
+p,ul,li, .block-editor-writing-flow p, .edit-post-visual-editor.editor-styles-wrapper p,
+.block-editor-rich-text__editable.block-editor-block-list__block.wp-block.rich-text p {
   font-family: $lora !important;
   font-weight: 300;
 }

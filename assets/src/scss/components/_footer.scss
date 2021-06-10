@@ -1,0 +1,17 @@
+.site-footer {
+  background: $gp-nor-green;
+
+  a:hover {
+    color: $banner-yellow;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .footer-social-media {
+    color: $banner-yellow;
+
+    a:hover {
+      color: $dark-white;
+    }
+  }
+}
