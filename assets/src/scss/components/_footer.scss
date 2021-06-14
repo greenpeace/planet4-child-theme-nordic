@@ -4,7 +4,6 @@
   a:hover {
     color: $banner-yellow;
     text-decoration: none;
-    font-weight: bold;
   }
 
   .footer-social-media {
@@ -13,5 +12,9 @@
     a:hover {
       color: $dark-white;
     }
+  }
+
+  .copyright-text {
+    font-size: smaller;
   }
 }
