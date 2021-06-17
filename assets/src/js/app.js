@@ -1,5 +1,5 @@
 // import './admin/editor.js';
-// import $ from 'jquery';
+import $ from 'jquery';
 
 // function requireAll(r) {
 //   r.keys().forEach(r);

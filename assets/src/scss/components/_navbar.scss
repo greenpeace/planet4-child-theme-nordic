@@ -23,6 +23,7 @@ nav#header.top-navigation.navbar {
       color: $dark-green;
       transition: all 0.2s ease !important;
       font-weight: bold;
+      box-sizing: border-box;
     }
   }
 
