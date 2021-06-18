@@ -1,5 +1,20 @@
 // Typography
-//
+
+// @font-face {
+//   font-family: "Helvetica Neue Roman";
+//   src: url("../scss/fonts/HelveticaNeueLTPro-Roman.otf") format("opentype");
+// }
+
+// @font-face {
+//   font-family: "Helvetica Neue";
+//   src: url("../scss/fonts/HelveticaNeueLTPro-Hv.otf") format("opentype");
+// }
+
+@font-face {
+  font-family: "Helvetica Neue Medium";
+  src: url("https://storage.googleapis.com/lib.greenpeace.se/apps/HelveticaNeueLTPro-Md.otf") format("opentype");
+}
+
 // Styleguide Style.typography
 html {
   text-rendering: optimizeLegibility;
@@ -38,7 +53,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $roboto;
+  font-family: $lora;
+  letter-spacing: 1px;
 }
 
 h1,
@@ -104,6 +120,7 @@ h2 {
 a {
   color: $dark-green;
   text-decoration: none;
+  font-weight: 500;
 
   &:hover {
     color: $dark-green;
@@ -111,8 +128,13 @@ a {
   }
 }
 
-p,ul,li, .block-editor-writing-flow p, .edit-post-visual-editor.editor-styles-wrapper p,
-.block-editor-rich-text__editable.block-editor-block-list__block.wp-block.rich-text p {
-  font-family: $lora !important;
+p,ul,li, .page-section-description, .block-editor-writing-flow p, .edit-post-visual-editor.editor-styles-wrapper p,
+.block-editor-rich-text__editable.block-editor-block-list__block.wp-block.rich-text p, .columns-block .column-wrap p, .article-list-item-content p {
+  font-family: $roboto;
   font-weight: 300;
+  font-size: 1.25rem;
+}
+
+.page-header-content p {
+  padding-left: 0;
 }

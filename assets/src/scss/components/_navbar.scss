@@ -13,9 +13,11 @@ nav#header.top-navigation.navbar {
   background: $dark-white;
 
   a {
+    font-family: $roboto;
     color: $dark-green;
     display: inline-block;
     text-decoration: none;
+    font-weight: 400;
     // padding: 0;
     &:active,
     &:focus,
