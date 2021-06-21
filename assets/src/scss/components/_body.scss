@@ -10,6 +10,10 @@ a {
   cursor: pointer;
 }
 
+a.external-link:after {
+  display: none;
+}
+
 .top-page-tags .tag-item {
   color: $dark-green;
 }

@@ -133,6 +133,11 @@ p,ul,li, .page-section-description, .block-editor-writing-flow p, .edit-post-vis
   font-family: $roboto;
   font-weight: 300;
   font-size: 1.25rem;
+  letter-spacing: 0.3px;
+
+  @include mobile-only {
+    font-size: 1.1rem;
+  }
 }
 
 .page-header-content p {
