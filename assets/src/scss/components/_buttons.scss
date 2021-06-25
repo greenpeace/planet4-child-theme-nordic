@@ -23,6 +23,25 @@
   }
 }
 
+a.pdf-link:hover::before {
+  background-color: $dark-white;
+}
+a.wp-block-file__button:hover {
+  background: $dark-green!important;
+}
+
+@include mobile-only {
+  .wp-block-file__button {
+    margin-top: 1rem;
+  }
+}
+
+@include small-and-up {
+  .wp-block-file__button {
+    margin-bottom: -.9rem;
+    font-size: .8rem;
+  }
+}
 // .btn,
 // .wp-block-button a,
 // .wp-block-file .wp-block-file__button {
@@ -121,11 +140,9 @@
 //     }
 //   }
 // }
-
 .btn-secondary,
 .wp-block-button.is-style-secondary a,
-[class="wp-block-button"] a,
-.wp-block-file .wp-block-file__button {
+[class="wp-block-button"] a {
   --button-secondary-- {
     background: transparentize($white, .7);
     border-color: $dark-green;
