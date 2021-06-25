@@ -7,6 +7,10 @@ $navbar-default-height: 60px;
 .page-header-content {
   display: block;
   margin-top: 20px;
+
+  & p {
+    margin-left: -10px;
+  }
 }
 
 nav#header.top-navigation.navbar {

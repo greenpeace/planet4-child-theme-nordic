@@ -3,20 +3,27 @@
   font-family: $roboto;
 
   a:hover {
-    color: $banner-yellow;
+    color: $yellow;
     text-decoration: none;
   }
 
   .footer-social-media {
-    color: $banner-yellow;
+    color: $yellow;
 
     a:hover {
       color: $dark-white;
     }
   }
 
-  .footer-links ul li {
-    font-weight: bold;
+  ul.list-unstyled.footer-links li a {
+    font-family: $roboto;
+    font-weight: 500 !important;
+  }
+
+  ul.list-unstyled.footer-links-secondary li a {
+    font-weight: 300 !important;
+    font-size: .9rem;
+    line-height: 1;
   }
 
   .copyright-text {

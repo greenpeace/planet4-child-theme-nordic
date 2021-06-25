@@ -1,18 +1,13 @@
 // Typography
 
-// @font-face {
-//   font-family: "Helvetica Neue Roman";
-//   src: url("../scss/fonts/HelveticaNeueLTPro-Roman.otf") format("opentype");
-// }
-
-// @font-face {
-//   font-family: "Helvetica Neue";
-//   src: url("../scss/fonts/HelveticaNeueLTPro-Hv.otf") format("opentype");
-// }
-
 @font-face {
   font-family: "Helvetica Neue Medium";
-  src: url("https://storage.googleapis.com/lib.greenpeace.se/apps/HelveticaNeueLTPro-Md.otf") format("opentype");
+  src: url("https://storage.googleapis.com/lib.greenpeace.se/generic/fonts/HelveticaNeuePro/HelveticaNeueLTPro-Md.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Helvetica Neue BdCd";
+  src: url("https://storage.googleapis.com/lib.greenpeace.se/generic/fonts/HelveticaNeuePro/HelveticaNeueLTPro-BdCn.woff") format("woff");
 }
 
 // Styleguide Style.typography
@@ -47,22 +42,23 @@ p {
 // <h6>The quick brown fox jumps over the lazy dog</h6>
 //
 // Styleguide Style.typography.headings
-h1,
-h2,
+// h1,
+// h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: $lora;
-  letter-spacing: 1px;
 }
 
 h1,
 h2 {
   font-weight: bold;
+  font-family: $lora;
 }
 
 h1 {
+
   font-size: $font-size-xxl;
   line-height: 1.225;
   margin-bottom: 30px;
@@ -128,12 +124,34 @@ a {
   }
 }
 
-p,ul,li, .page-section-description, .block-editor-writing-flow p, .edit-post-visual-editor.editor-styles-wrapper p,
-.block-editor-rich-text__editable.block-editor-block-list__block.wp-block.rich-text p, .columns-block .column-wrap p, .article-list-item-content p {
+div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
+  color: $gp-nor-green;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.split-two-column-item-title a:hover {
+  color: $yellow;
+}
+
+.page-section-description, div.edit-post-visual-editor.editor-styles-wrapper div.block-editor__typewriter div div.block-editor-writing-flow {
+  font-family: $roboto !important;
+  font-weight: 300;
+  font-size: 1.2rem;
+
+}
+
+p, ul, li, .columns-block .column-wrap p,
+.article-list-item-content, .accordion-block .accordion-content p.accordion-text, .btn *, .btn::after, .btn::before,
+.post-content .more-link *, .post-content .more-link::after, .post-content .more-link::before, .post-content .page-links a *,
+.post-content .page-links a::after, .post-content .page-links a::before, .wp-block-button a *, .wp-block-button a::after,
+.wp-block-button a::before, .wp-block-file .wp-block-file__button *, .wp-block-file .wp-block-file__button::after,
+.wp-block-file .wp-block-file__button::before, .wp-block-file a {
   font-family: $roboto;
   font-weight: 300;
-  font-size: 1.25rem;
-  letter-spacing: 0.3px;
+  font-size: 1.2rem;
 
   @include mobile-only {
     font-size: 1.1rem;
