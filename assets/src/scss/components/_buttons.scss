@@ -26,6 +26,7 @@
 a.pdf-link:hover::before {
   background-color: $dark-white;
 }
+
 a.wp-block-file__button:hover {
   background: $dark-green!important;
 }
@@ -42,135 +43,34 @@ a.wp-block-file__button:hover {
     font-size: .8rem;
   }
 }
-// .btn,
-// .wp-block-button a,
-// .wp-block-file .wp-block-file__button {
-//   --button-- {
-//     font-family: $roboto;
-//     text-align: center;
-//     font-weight: bold;
-//     border-radius: 4px;
-//     padding: 0 30px;
-//     transition-property: color, background-color, border-color;
-//     transition-duration: 150ms;
-//     transition-timing-function: linear;
-//   }
 
-//   *, &::before, &:after {
-//     transition-property: inherit;
-//     transition-duration: inherit;
-//     transition-timing-function: inherit;
-//   }
+.btn-secondary:not(#hidecookie),
+.wp-block-button.is-style-secondary a, .wp-block-file__button.pdf-link {
+  border-color: $dark-green;
+  color: $dark-green;
+  box-shadow: none;
 
-//   display: inline-block;
-//   position: relative;
-//   font-size: $font-size-sm;
-//   text-decoration: none;
-//   color: $white;
-//   border: 1px solid transparent;
-//   cursor: pointer;
-//   line-height: 3;
-//   appearance: none;
-
-//   &:hover,
-//   &:focus,
-//   &:active {
-//     color: $white;
-//     text-decoration: none;
-//     outline: none;
-//   }
-
-//   &:disabled,
-//   &.disabled,
-//   &[disabled] {
-//     opacity: .5;
-//     cursor: default;
-//   }
-
-//   &.has-background {
-//     border-color: transparent !important;
-//   }
-
-//   &.has-grey-80-color {
-//     color: $grey-80 !important;
-
-//     &:hover,
-//     &:focus,
-//     &:active {
-//       color: $grey-80 !important;
-//     }
-//   }
-// }
-
-// .btn-small {
-//   font-size: $font-size-xxs;
-//   line-height: 2.8;
-// }
-
-// .btn-large {
-//   font-size: $font-size-md;
-//   line-height: 3.1;
-// }
-
-// $primary-button-box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
-
-// .btn-primary,
-// .wp-block-button.is-style-cta a {
-//   --button-primary-- {
-//     background: $orange;
-//     color: $white;
-//     // Adding this here so that the variable exists, though technically not needed.
-//     // This allows for the hover variable to be previewed.
-//     border-color: transparent;
-//     box-shadow: $primary-button-box-shadow;
-
-//     &:hover,
-//     &:focus,
-//     &:active {
-//       background: $orange-hover;
-//       color: $white;
-//       border-color: $orange-hover;
-//       box-shadow: $primary-button-box-shadow;
-//     }
-
-//     &:disabled,
-//     &.disabled,
-//     &[disabled] {
-//       background: $orange;
-//     }
-//   }
-// }
-.btn-secondary,
-.wp-block-button.is-style-secondary a,
-[class="wp-block-button"] a {
-  --button-secondary-- {
-    background: transparentize($white, .7);
-    border-color: $dark-green;
+  &:visited {
     color: $dark-green;
-    box-shadow: none;
+  }
 
-    &:visited {
-      color: $dark-green;
-    }
+  &:hover,
+  &:focus {
+    background: $dark-green;
+    border-color: $dark-green;
+    color: $white;
+  }
 
-    &:hover,
-    &:focus {
-      background: $dark-green;
-      border-color: $dark-green;
-      color: $white;
-    }
+  &:active {
+    background: $gp-nor-green;
+    border-color: $gp-nor-green;
+  }
 
-    &:active {
-      background: $active-blue;
-      border-color: $active-blue;
-    }
-
-    &:disabled,
-    &.disabled,
-    &[disabled] {
-      background: $white;
-      color: $dark-green;
-    }
+  &:disabled,
+  &.disabled,
+  &[disabled] {
+    background: $white;
+    color: $dark-green;
   }
 
   white-space: nowrap;

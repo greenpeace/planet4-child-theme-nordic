@@ -34,14 +34,14 @@ nav#header.top-navigation.navbar {
   }
 
   .btn-donate {
-    padding-top: 2px;
-    height: 40px;
     background: $gp-green;
     color: #fff !important;
     text-transform: uppercase;
 
     &:hover {
-      font-size: 21px;
+      // font-size: 21px;
+      font-weight: bold;
+      background-color: $gp-primary;
     }
   }
 }
@@ -63,12 +63,17 @@ nav#header.top-navigation.navbar {
   .navbar-dropdown .nav-link:focus,
   .navbar-dropdown .nav-link:hover {
     color: $dark-green;
-    border-bottom: 2px solid $gp-green;
+    border-bottom: 2px solid $gp-green !important;
+    margin: 0;
     // line-height: normal;
   }
 
   .navbar-dropdown .active .nav-link {
     border-bottom: 2px solid $gp-green;
+  }
+
+  .nav-item.donate-nav-item .btn.btn-donate {
+    margin: .6rem 0;
   }
 }
 
@@ -78,7 +83,7 @@ button.country-dropdown-toggle.open {
   transition: all 0.2s ease;
 
   &:focus {
-    color: $dark-blue;
+    color: $dark-green;
   }
 
   &:active,
@@ -88,7 +93,7 @@ button.country-dropdown-toggle.open {
 }
 
 button.btn-navbar-toggle {
-  color: $dark-blue;
+  color: $dark-green;
 }
 
 .navbar-search-toggle {
@@ -129,11 +134,20 @@ button.btn-navbar-toggle {
   .navbar-dropdown {
     background: $dark-white;
 
-    .nav-link {
+    & .nav-item a.nav-link {
+      margin: 0;
+    }
+
+    .nav-item {
       &:active,
       &:hover {
-        border: left 1px 1px solid $gp-green;
+        // border: left 1px 1px solid $gp-green;
+        border-left: 8px solid $gp-green !important;
       }
+    }
+
+    .navbar-dropdown .btn-donate {
+      margin: 0;
     }
   }
 
@@ -161,7 +175,7 @@ button.btn-navbar-toggle {
     background: none;
     border: none;
     box-shadow: none;
-    color: $dark-blue!important;
+    color: $dark-green!important;
 
     &:active,
     &:focus,
