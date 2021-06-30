@@ -41,6 +41,11 @@
 //  add_action( 'enqueue_block_editor_assets', 'p4_child_theme_gpn_gutenberg_scripts' );
 
 
+add_action('admin_init', 'remove_acf_options_page', 99);
+function remove_acf_options_page() {
+   remove_menu_page('acf-options');
+}
+
 add_action('wp_enqueue_scripts', 'enqueue_child_styles');
 function enqueue_child_styles() {
     $css_creation = filectime(get_stylesheet_directory() . '/assets/build/style.min.css');

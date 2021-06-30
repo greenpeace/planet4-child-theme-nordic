@@ -1,20 +1,19 @@
 // Typography
 // @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
-
 // @font-face {
 //   font-family: "Helvetica Neue Medium";
 //   src: url("https://storage.googleapis.com/lib.greenpeace.se/generic/fonts/HelveticaNeuePro/HelveticaNeueLTPro-Md.otf") format("opentype");
 // }
 
-// @font-face {
-//   font-family: "Helvetica Neue BdCd";
-//   src: url("https://storage.googleapis.com/lib.greenpeace.se/generic/fonts/HelveticaNeuePro/HelveticaNeueLTPro-BdCn.woff") format("woff");
-// }
-
 @font-face {
   font-family: "Helvetica Neue";
-  src: url("https://storage.googleapis.com/lib.greenpeace.se/generic/fonts/HelveticaNeuePro/HelveticaNeueCyr-Roman.woff") format("woff");
+  src: url("https://db.onlinewebfonts.com/t/6c6db39a56fe8e8f19ba47c6a0770a18.woff") format("woff");
 }
+
+// @font-face {
+//   font-family: "Helvetica Neue";
+//   src: url("https://storage.googleapis.com/lib.greenpeace.se/generic/fonts/HelveticaNeuePro/HelveticaNeueCyr-Roman.woff") format("woff");
+// }
 
 // Styleguide Style.typography
 html {

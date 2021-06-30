@@ -139,8 +139,8 @@ button.btn-navbar-toggle {
     }
 
     .nav-item {
-      &:active,
-      &:hover {
+      &:active:not(li#country-select),
+      &:hover:not(li#country-select):not(.donate-nav-item) {
         // border: left 1px 1px solid $gp-green;
         border-left: 8px solid $gp-green !important;
       }
