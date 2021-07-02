@@ -6,14 +6,9 @@
 // }
 
 @font-face {
-  font-family: "Helvetica Neue";
-  src: url("https://db.onlinewebfonts.com/t/6c6db39a56fe8e8f19ba47c6a0770a18.woff") format("woff");
+  font-family: "Helvetica Now Display";
+  src: url("../../assets/src/scss/fonts/HelveticaNowDisplay-Regular.woff") format("woff");
 }
-
-// @font-face {
-//   font-family: "Helvetica Neue";
-//   src: url("https://storage.googleapis.com/lib.greenpeace.se/generic/fonts/HelveticaNeuePro/HelveticaNeueCyr-Roman.woff") format("woff");
-// }
 
 // Styleguide Style.typography
 html {
@@ -52,7 +47,8 @@ p {
 h3,
 h4,
 h5,
-h6 {
+h6,
+.cover-card-heading {
   font-family: $lora;
 }
 
@@ -118,7 +114,10 @@ h2 {
 // :hover     - hovered state
 //
 // Styleguide Style.typography.links
-a, a.external-link, .wp-block-file a {
+a, a.external-link:not(.split-two-column-item-link), .post-content .page-links a *,
+.post-content .more-link *, .post-content .more-link::after, .post-content .more-link::before,
+.post-content .page-links a::after, .post-content .page-links a::before, .wp-block-file a,
+.wp-block-button a *:not(strong), .wp-block-button a::after {
   color: $dark-green;
   text-decoration: none;
   font-weight: 500;
@@ -128,6 +127,35 @@ a, a.external-link, .wp-block-file a {
     color: $dark-green;
     text-decoration: underline;
   }
+
+  @include mobile-only {
+    font-size: 1.1rem;
+  }
+}
+
+// .page-section-description, div.edit-post-visual-editor.editor-styles-wrapper div.block-editor__typewriter div div.block-editor-writing-flow {
+//   font-family: $roboto !important;
+//   font-weight: 300;
+//   font-size: 1.2rem;
+
+// }
+
+p, ul, li, .page-section-description, .columns-block .column-wrap p,
+.article-list-item-content, .accordion-block .accordion-content p.accordion-text, .btn *:not(.btn-navbar-toggle), .btn::after, .btn::before,
+.wp-block-button a::before, .wp-block-file .wp-block-file__button *:not(strong), .wp-block-file .wp-block-file__button::after,
+.wp-block-file .wp-block-file__button::before {
+  font-family: $roboto;
+  font-weight: 300;
+  font-size: 1.2rem;
+
+  @include mobile-only {
+    font-size: 1.1rem;
+  }
+}
+
+.page-header-content p {
+  padding-left: 0;
+  font-weight: 400;
 }
 
 .wp-block-file a::before {
@@ -144,30 +172,4 @@ div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
 
 .split-two-column-item-title a:hover {
   color: $yellow;
-}
-
-.page-section-description, div.edit-post-visual-editor.editor-styles-wrapper div.block-editor__typewriter div div.block-editor-writing-flow {
-  font-family: $roboto !important;
-  font-weight: 300;
-  font-size: 1.2rem;
-
-}
-
-p, ul, li, .columns-block .column-wrap p,
-.article-list-item-content, .accordion-block .accordion-content p.accordion-text, .btn *:not(.btn-navbar-toggle), .btn::after, .btn::before,
-.post-content .more-link *, .post-content .more-link::after, .post-content .more-link::before, .post-content .page-links a *,
-.post-content .page-links a::after, .post-content .page-links a::before, .wp-block-button a *:not(strong), .wp-block-button a::after,
-.wp-block-button a::before, .wp-block-file .wp-block-file__button *:not(strong), .wp-block-file .wp-block-file__button::after,
-.wp-block-file .wp-block-file__button::before {
-  font-family: $roboto;
-  font-weight: 300;
-  font-size: 1.2rem;
-
-  @include mobile-only {
-    font-size: 1.1rem;
-  }
-}
-
-.page-header-content p {
-  padding-left: 0;
 }
