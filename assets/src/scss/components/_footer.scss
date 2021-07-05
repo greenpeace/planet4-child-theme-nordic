@@ -20,13 +20,13 @@
     font-weight: 500 !important;
   }
 
-  ul.list-unstyled.footer-links-secondary li a {
+  ul.list-unstyled.footer-links-secondary li a, p.copyright-text, p.copyright-text.a strong {
     font-weight: 300 !important;
     font-size: .9rem;
     line-height: 1;
   }
 
-  .copyright-text {
-    font-size: smaller;
-  }
+  // .copyright-text {
+  //   font-size: smaller;
+  // }
 }
