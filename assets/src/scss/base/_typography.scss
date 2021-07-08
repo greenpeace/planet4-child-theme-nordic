@@ -146,13 +146,11 @@ a, a.external-link:not(.split-two-column-item-link), .post-content .page-links a
 //   font-family: $roboto !important;
 //   font-weight: 300;
 //   font-size: 1.2rem;
-
 // }
-
 p, ul, li, .page-section-description, .columns-block .column-wrap p,
 .article-list-item-content, .accordion-block .accordion-content p.accordion-text, .btn *:not(.btn-navbar-toggle), .btn::after, .btn::before,
 .wp-block-button a::before, .wp-block-file .wp-block-file__button *:not(strong), .wp-block-file .wp-block-file__button::after,
-.wp-block-file .wp-block-file__button::before {
+.wp-block-file .wp-block-file__button::before, div.block-editor-block-list__layout.is-root-container {
   font-family: $roboto;
   font-weight: 300;
   font-size: 1.2rem;
