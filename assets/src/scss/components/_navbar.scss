@@ -22,41 +22,54 @@ nav#header.top-navigation.navbar {
     display: inline-block;
     text-decoration: none;
     font-weight: 400;
-    // padding: 0;
-    &:active,
-    &:focus,
+
     &:hover {
-      color: $dark-green;
-      transition: all 0.2s ease !important;
-      font-weight: bold;
-      box-sizing: border-box;
+      font-weight: 700;
     }
   }
 
   .btn-donate {
     background: $gp-green;
-    color: #fff !important;
+    color: #fff;
     text-transform: uppercase;
+    font-weight: bold;
 
-    &:hover {
-      // font-size: 21px;
+    @include mobile-and-tablet-only {
+      // ripple effect for touch screens
+      background-position: center;
+      transition: background 0.5s;
+
+      &:hover {
+        color: #fff;
+        background: $gp-primary radial-gradient(circle, transparent 1%, $gp-primary 1%) center/15000%;
+      }
+
+      &:active {
+        color: #fff;
+        background-color: $gp-green;
+        background-size: 100%;
+        transition: background 0s;
+      }
+    }
+
+    @include large-and-up {
       font-weight: bold;
-      background-color: $gp-primary;
+      background-image: -webkit-linear-gradient(30deg, $gp-primary 50%, transparent 50%);
+      background-image: linear-gradient(30deg, $gp-primary 50%, transparent 50%);
+      background-size: 500px;
+      background-repeat: no-repeat;
+      background-position: 0%;
+      -webkit-transition: background 300ms ease-in-out;
+      transition: background 300ms ease-in-out;
+
+      &:hover {
+        background-position: 100%;
+        color: #fff;
+      }
     }
   }
 }
 
-// .top-navigation a.nav-link {
-//   color: $dark-green;
-
-//   &:active,
-//   &:focus,
-//   &:hover {
-//     color: $dark-green !important;
-//     font-weight: bold;
-//     transition: all 0.2s ease !important;
-//   }
-// }
 button.country-dropdown-toggle,
 button.country-dropdown-toggle.open {
   color: $dark-blue;
@@ -103,6 +116,7 @@ button.btn-navbar-toggle {
   a:hover {
     color: $gp-nor-green;
     text-decoration: none;
+    font-weight: 500!important;
   }
 }
 
@@ -110,18 +124,36 @@ button.btn-navbar-toggle {
   background: url("https://www.greenpeace.org/finland/wp-content/themes/planet4-master-theme/images/down-arrow-green.svg") no-repeat center center !important;
 }
 
-@media (min-width: 992px) {
-  .navbar-dropdown .nav-link:active,
-  .navbar-dropdown .nav-link:focus,
-  .navbar-dropdown .nav-link:hover {
-    color: $dark-green;
-    border-bottom: 2px solid $gp-green !important;
-    margin: 0;
-    // line-height: normal;
+@include large-and-up {
+  .navbar-dropdown .active .nav-link {
+    border-bottom-color: $gp-green;
   }
 
-  .navbar-dropdown .active .nav-link {
-    border-bottom: 2px solid $gp-green;
+  nav.top-navigation.navbar ul.navbar-dropdown li:not(#country-select) a.nav-link {
+    position: relative;
+
+    &:focus,
+    &:hover {
+      border-bottom-color: transparent;
+    }
+
+    &:after {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 0%;
+      content: ".";
+      color: transparent;
+      background: $gp-green;
+      height: 4px;
+      transition: all .5s;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
   }
 
   .nav-item.donate-nav-item .btn.btn-donate {
@@ -129,7 +161,7 @@ button.btn-navbar-toggle {
   }
 }
 
-@media screen and (max-width: 991px) {
+@include mobile-and-tablet-only {
   .navbar-dropdown {
     background: $dark-white;
 
@@ -145,7 +177,9 @@ button.btn-navbar-toggle {
         //   border-left: 0 solid $gp-green;
         // }
       }
-      // &:active:not(li#country-select),
+      // &.active:hover:not(li#country-select):not(.donate-nav-item){
+      //   font-weight: 500;
+      // }
       &:hover:not(li#country-select):not(.donate-nav-item):not(.active) {
         border-left: 8px solid $gp-green;
       }
