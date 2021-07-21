@@ -1,4 +1,90 @@
-@media screen and (max-width: 991px) {
+button, .btn {
+  cursor: pointer;
+}
+
+//Donate btn
+nav#header.top-navigation.navbar .btn-donate,
+.wp-block-button.is-style-donate a.wp-block-button__link,
+.wp-block-button.is-style-donate .wp-block-button__link[role="textbox"] {
+  background: $gp-green!important;
+  color: #fff!important;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  @include mobile-and-tablet-only {
+    // ripple effect for touch screens
+    background-position: center;
+    transition: background 0.5s;
+
+    &:hover {
+      color: #fff;
+      background: $gp-primary radial-gradient(circle, transparent 1%, $gp-primary 1%) center/15000%;
+    }
+
+    &:active {
+      color: #fff;
+      background-color: $gp-green;
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  @include large-and-up {
+    font-weight: bold;
+    background-image: -webkit-linear-gradient(30deg, $gp-primary 50%, transparent 50%);
+    background-image: linear-gradient(30deg, $gp-primary 50%, transparent 50%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+
+    &:hover {
+      background-position: 100%;
+      color: #fff;
+    }
+  }
+}
+
+//CTA color buttons
+.action-button a.btn.btn-primary.btn-block,
+.btn.btn-primary.page-header-btn, .cover-card-btn, .wp-block-button.is-style-cta a.wp-block-button__link, .split-two-column-item-button {
+  font-weight: 700;
+  border: none;
+
+  @include mobile-and-tablet-only {
+    // ripple effect for touch screens
+    background-position: center;
+    transition: background 0.8s;
+
+    &:hover {
+      background: $orange radial-gradient(circle, transparent 1%, $orange 1%) center/15000%;
+      border-color: $orange;
+    }
+
+    &:active {
+      background-color: $orange-active;
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  @include large-and-up {
+    background-image: -webkit-linear-gradient(30deg, $orange 50%, transparent 50%);
+    background-image: linear-gradient(30deg, $orange 50%, transparent 50%);
+    background-size: 700px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+
+    &:hover {
+      background-position: 100%;
+    }
+  }
+}
+
+@include mobile-and-tablet-only {
   .btn-navbar-toggle {
     cursor: pointer;
     color: $gp-green;
@@ -44,26 +130,43 @@ a.wp-block-file__button:hover {
   }
 }
 
+//Secondary btns
 .btn-secondary:not(#hidecookie),
 .wp-block-button.is-style-secondary a, .wp-block-file__button.pdf-link {
   border-color: $dark-green;
   color: $dark-green;
   box-shadow: none;
 
-  &:visited {
-    color: $dark-green;
+  @include mobile-and-tablet-only {
+    // ripple effect for touch screens
+    background-position: center;
+    transition: background 0.8s;
+
+    &:hover {
+      background: $dark-green radial-gradient(circle, transparent 1%, $dark-green 1%) center/15000%;
+      border-color: $dark-green;
+    }
+
+    &:active {
+      background-color: $gp-nor-green;
+      border-color: $gp-nor-green;
+      background-size: 100%;
+      transition: background 0s;
+    }
   }
 
-  &:hover,
-  &:focus {
-    background: $dark-green;
-    border-color: $dark-green;
-    color: $white;
-  }
+  @include large-and-up {
+    background-image: -webkit-linear-gradient(30deg, $gp-nor-green 50%, transparent 50%);
+    background-image: linear-gradient(30deg, $gp-nor-green 50%, transparent 50%);
+    background-size: 700px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
 
-  &:active {
-    background: $gp-nor-green;
-    border-color: $gp-nor-green;
+    &:hover {
+      background-position: 100%;
+    }
   }
 
   &:disabled,
@@ -77,56 +180,3 @@ a.wp-block-file__button:hover {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-// // The new core buttons block wrap in "wp-block-buttons" class which apply
-// // extra css properties which break old button block UI.
-// .wp-block-buttons .wp-block-button {
-//   display: block !important;
-//   margin-left: unset;
-//   margin-right: unset;
-// }
-
-// .btn-navbar-toggle {
-//   cursor: pointer;
-//   color: $gp-green;
-//   background-color: transparent;
-//   transition: background-color color font-weight 100ms;
-//   display: inline-block;
-
-//   &:hover,
-//   &:focus,
-//   &:active {
-//     color: $white;
-//     box-shadow: none;
-//     background-color: $x-dark-blue;
-//     border: 1px solid transparent;
-//   }
-
-//   @include small-and-up {
-//     background-color: $dark-green;
-//     border-radius: 0;
-//     border: 1px solid transparent;
-//     box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
-//   }
-// }
-
-// .btn-filter-item {
-//   background-color: transparent;
-//   border-color: $dark-green;
-//   color: $dark-green;
-//   padding: 0 $n50 0 $n30;
-//   position: relative;
-//   font-weight: 400;
-
-//   &:hover,
-//   &:focus {
-//     background-color: $dark-green;
-//     border-color: $dark-green;
-//   }
-
-//   &:active {
-//     background-color: $grey-80;
-//     border-color: $grey-80;
-//   }
-
-// }

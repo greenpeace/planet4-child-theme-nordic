@@ -2,9 +2,9 @@
 @font-face {
   font-family: "Helvetica Now Display";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"),
-    url("../../assets/src/scss/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"),
-    url("../../assets/src/scss/fonts/HelveticaNowDisplay-Regular.woff") format("woff"),
-    url("../../assets/src/scss/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+    url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"),
+    url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"),
+    url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -12,9 +12,9 @@
 @font-face {
   font-family: "Helvetica Now Display";
   src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"),
-    url("../../assets/src/scss/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"),
-    url("../../assets/src/scss/fonts/HelveticaNowDisplay-Bold.woff") format("woff"),
-    url("../../assets/src/scss/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
+    url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"),
+    url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"),
+    url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }

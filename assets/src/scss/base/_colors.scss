@@ -15,14 +15,15 @@ $white: #fff;
 $dark-white: #f9f9f9;
 $dark-green: #448107;
 
-//overrides
-$dark-blue: #536d66 !important; //overrides the default blue color
-$link-color: $dark-green !important; //overrides the default blue color
-
 $gp-green: #66cc00; //old primary color
 $gp-primary: #73be1e; //new primary color
 $gp-nor-green: #005c42; //Secondary color
 // $banner-yellow: #ffd200;
+
+//overrides
+$dark-blue: $dark-green!important; //overrides the default blue color
+$link-color: $gp-primary!important; //overrides the default blue color
+$aquamarine: $gp-primary!important;
 
 // Styleguide Style.colors.grey
 $grey-80: #191919;
@@ -82,7 +83,7 @@ $blue-20: #b8e0fa;
 // $yellow-20 - #fff6cd;
 //
 // Styleguide Style.colors.yellow
-$yellow: #ffd204;
+$yellow: #ffd200;
 $yellow-80: #ffdb34;
 $yellow-60: #ffe467;
 $yellow-40: #ffed98;
@@ -120,7 +121,6 @@ $dark-blue:    #074365;
 $active-blue:  #01223d;
 $body-blue:    #afd4c7;
 $spray:        #86eee7;
-$aquamarine:   #68dfde;
 $scooter:      #25c9dc;
 $java:         #1bb6d6;
 $java-2:       #1bdfdf;
