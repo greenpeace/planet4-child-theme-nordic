@@ -4,6 +4,12 @@ $menu-height-large: 3.75rem;
 $min-height: 40px;
 $navbar-default-height: 60px;
 
+@include large-and-up {
+  .home-item {
+    display: none;
+  }
+}
+
 .page-header-content {
   display: block;
   margin-top: 20px;

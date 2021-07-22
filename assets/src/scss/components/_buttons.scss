@@ -131,8 +131,8 @@ a.wp-block-file__button:hover {
 }
 
 //Secondary btns
-.btn-secondary:not(#hidecookie),
-.wp-block-button.is-style-secondary a, .wp-block-file__button.pdf-link {
+.btn-secondary:not(#hidecookie), .btn-secondary:not(#commentform)
+.wp-block-button.is-style-secondary a {
   border-color: $dark-green;
   color: $dark-green;
   box-shadow: none;
@@ -145,6 +145,7 @@ a.wp-block-file__button:hover {
     &:hover {
       background: $dark-green radial-gradient(circle, transparent 1%, $dark-green 1%) center/15000%;
       border-color: $dark-green;
+      color: $white;
     }
 
     &:active {
@@ -166,6 +167,7 @@ a.wp-block-file__button:hover {
 
     &:hover {
       background-position: 100%;
+      color: $white;
     }
   }
 

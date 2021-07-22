@@ -12,16 +12,16 @@
   }
 }
 
-// Mobile & Tablet only (up to 768px)
-@mixin mobile-and-tablet-only {
-  @media (max-width: #{$large-width}) {
+// Tablet & Up (greater than 768px)
+@mixin medium-and-up {
+  @media (min-width: #{$medium-width}) {
     @content;
   }
 }
 
-// Tablet & Up (greater than 768px)
-@mixin medium-and-up {
-  @media (min-width: #{$medium-width}) {
+// Mobile & Tablet only (up to 991px)
+@mixin mobile-and-tablet-only {
+  @media (max-width: #{$large-width}) {
     @content;
   }
 }

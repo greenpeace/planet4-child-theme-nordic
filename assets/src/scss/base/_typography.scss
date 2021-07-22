@@ -127,13 +127,13 @@ a, a.external-link:not(.split-two-column-item-link), .post-content .page-links a
 .post-content .more-link *, .post-content .more-link::after, .post-content .more-link::before,
 .post-content .page-links a::after, .post-content .page-links a::before, .wp-block-file a,
 .wp-block-button a *:not(strong), .wp-block-button a::after {
-  color: $dark-green;
+  color: $gp-primary;
   text-decoration: none;
   font-weight: 500;
   font-family: $roboto;
 
   &:hover {
-    color: $dark-green;
+    color: $gp-primary;
     text-decoration: underline;
   }
 
