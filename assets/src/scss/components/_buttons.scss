@@ -133,9 +133,7 @@ a.wp-block-file__button:hover {
 //Secondary btns
 .btn-secondary:not(#hidecookie),
 .btn-secondary:not(#commentform),
-// .wp-block-button.is-style-secondary a
-.btn-secondary, .wp-block-button.is-style-secondary a
-{
+.btn-secondary, .wp-block-button.is-style-secondary a {
   border-color: $dark-green;
   color: $dark-green;
   box-shadow: none;

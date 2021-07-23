@@ -126,14 +126,14 @@ h2 {
 a, a.external-link:not(.split-two-column-item-link), .post-content .page-links a *,
 .post-content .more-link *, .post-content .more-link::after, .post-content .more-link::before,
 .post-content .page-links a::after, .post-content .page-links a::before, .wp-block-file a,
-.wp-block-button a *:not(strong), .wp-block-button a::after {
+.wp-block-button a *:not(strong), .wp-block-button a::after, h5.author-block-info-name a {
   color: $gp-primary;
   text-decoration: none;
   font-weight: 500;
   font-family: $roboto;
 
   &:hover {
-    color: $gp-primary;
+    color: $dark-green;
     text-decoration: underline;
   }
 
@@ -147,7 +147,7 @@ a, a.external-link:not(.split-two-column-item-link), .post-content .page-links a
 //   font-weight: 300;
 //   font-size: 1.2rem;
 // }
-p, ul, li, .page-section-description, .columns-block .column-wrap p,
+p, ul, li, .page-section-description, .columns-block .column-wrap p, span.author-info,
 .article-list-item-content, .accordion-block .accordion-content p.accordion-text, .btn *:not(.btn-navbar-toggle), .btn::after, .btn::before,
 .wp-block-button a::before, .wp-block-file .wp-block-file__button *:not(strong), .wp-block-file .wp-block-file__button::after,
 .wp-block-file .wp-block-file__button::before, div.block-editor-block-list__layout.is-root-container {
