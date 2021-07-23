@@ -139,6 +139,7 @@ a.wp-block-file__button:hover {
   border-color: $dark-green;
   color: $dark-green;
   box-shadow: none;
+  background: $white;
 
   @include mobile-and-tablet-only {
     // ripple effect for touch screens
