@@ -1,0 +1,27 @@
+//ECI widget style
+.eci-form-wrapper .proca-widget {
+  div, p, span, a, legend, span.proca-MuiButton-label {
+    font-family: $lora-child-theme!important;
+    font-size: .9rem;
+  }
+
+  label.proca-MuiFormLabel-root.proca-Proca8 span:nth-child(2),
+  label.proca-MuiFormLabel-root.proca-Proca8 span:nth-child(2) a,
+  #proca_captcha-helper-text {
+    font-size: .75rem;
+    width: 100%;
+  }
+
+  #proca_captcha-helper-text {
+    margin-left: 0;
+  }
+
+  div.proca-MuiBox-root.proca-Proca21.proca-Proca2 div:nth-child(1) {
+    padding-bottom: 15px;
+  }
+
+  div.proca-MuiGrid-root button.proca-MuiButtonBase-root {
+    padding: .5rem 0;
+  }
+}
+

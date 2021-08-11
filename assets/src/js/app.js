@@ -1,4 +1,4 @@
-// import './admin/editor.js';
+import './admin/editor.js';
 import $ from 'jquery';
 
 // function requireAll(r) {
