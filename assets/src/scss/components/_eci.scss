@@ -1,6 +1,6 @@
 //ECI widget style
 .eci-form-wrapper .proca-widget {
-  div, p, span, a, legend, span.proca-MuiButton-label {
+  div, p, span, a, legend {
     font-family: $lora-child-theme!important;
     font-size: .9rem;
   }
@@ -8,7 +8,7 @@
   label.proca-MuiFormLabel-root.proca-Proca8 span:nth-child(2),
   label.proca-MuiFormLabel-root.proca-Proca8 span:nth-child(2) a,
   #proca_captcha-helper-text {
-    font-size: .75rem;
+    font-size: .9rem;
     width: 100%;
   }
 
@@ -20,8 +20,25 @@
     padding-bottom: 15px;
   }
 
-  div.proca-MuiGrid-root button.proca-MuiButtonBase-root {
-    padding: .5rem 0;
-  }
 }
 
+h2.eci-title {
+  font-size: 2.5rem !important;
+}
+
+div.eci-more button {
+  font-weight: bold;
+
+  span.proca-MuiButton-label {
+    color: white;
+    font-weight: 500;
+    font-family: $lora-child-theme;
+    text-transform: initial;
+  }
+}
+// @include mobile-and-tablet-only {
+//   div.leads-form__grid {
+//     display: flex;
+//     flex-flow: column;
+//   }
+// }
