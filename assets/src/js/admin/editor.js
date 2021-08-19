@@ -1,25 +1,57 @@
 console.log('Adding the ECI script here..');
 
-  // Fold the form before signup
-window.addEventListener("load", function (e) {
-  let folded = jQuery('form#proca-register.proca-Proca1 main.proca-MuiContainer-root.proca-MuiContainer-maxWidthSm:nth-child(4), form#proca-register.proca-Proca1 div.proca-MuiGrid-root.proca-MuiGrid-item.proca-MuiGrid-grid-xs-12:nth-child(5),form#proca-register.proca-Proca1 div.proca-MuiGrid-root.proca-MuiGrid-item.proca-MuiGrid-grid-xs-12:nth-child(6)').hide();
-  let btnFolded = jQuery('form#proca-register.proca-Proca1 div.proca-MuiGrid-root.proca-MuiGrid-item.proca-MuiGrid-grid-xs-12:nth-child(7)').css({
-    "padding": "1.5rem 0"
-  });
-  console.log("folded");
-  //Unfold the form when clicked on fname
-  jQuery('#proca-register').on('click',  function(e) {
-    folded.fadeIn( 'slow', function() {
+// function fold() {
+//   let parent = document.getElementById("proca-register");
+//   let children = [parent.querySelectorAll(":scope > *")];
+//   let child = children.map(function(child){
+//     return child;
+//   });
+//   console.log(child);
+//       // let fold1 = document.querySelector("#proca-register > main:nth-child(4)");
+//       // const fold2 = document.querySelector("#proca-register > div:nth-child(5)");
+//       // const fold3 = document.querySelector("#proca-register > div:nth-child(6)");
+
+//       // jQuery(fold1).add(fold2).add(fold3).fadeOut();
+// }
+
+// Fold the form before signup
+  window.addEventListener('load', (event) => {
+    // let parent = document.getElementById("proca-register");
+    // let children = [parent.querySelectorAll(":scope > *")];
+    // child1 = children.map(child => child[3]);
+    // // child2 = jQuery(child1).next();
+    // // child3 = jQuery(child2).next();
+    // child2 = children.map(child => child[4]);
+    // child3 = children.map(child => child[5]);
+    // child4 = children.map(child => child[6]);
+    let child1 = jQuery('form#proca-register main:nth-child(4)');
+    let child2 = jQuery('form#proca-register div:nth-child(5)');
+    let child3 = jQuery('form#proca-register div:nth-child(6)');
+    let child4 = jQuery('form#proca-register div:nth-child(7)');
+
+    jQuery(child1).add(child2).add(child3).fadeOut( 'slow', function() {
       window.scroll({
           top: 0,
           left: 0,
           behavior: 'smooth'
       });
     });
-    console.log("unfolded");
-  }
-  );
-});
+    jQuery(child4).css({"padding": "1.5rem 0"});
+    console.log("folded");
+
+    //Unfold the form when clicked on fname
+    jQuery('#proca_firstname').on('click',  function() {
+      jQuery(child1).add(child2).add(child3).fadeIn( 'slow', function() {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+      });
+      console.log("unfolded");
+    });
+
+  });
 
 // the ECI widget
 window.addEventListener("proca", function (e) {
@@ -30,6 +62,7 @@ window.addEventListener("proca", function (e) {
 });
 
 jQuery(function() {
+
 
   // Add petition form styling to ECI form (can do this using CSS instead)
   jQuery('.eci-form-wrapper').css({
@@ -56,6 +89,8 @@ jQuery(function() {
   // Show ECI Form and Text
   jQuery('.eci-form-wrapper, .eci-text-wrapper').show();
 
+
+
   // Listen to the "ECI Completed Event"
   window.addEventListener("eci:complete", function (e) {
 
@@ -69,6 +104,10 @@ jQuery(function() {
                   left: 0,
                   behavior: 'smooth'
 
+              });
+
+              window.dataLayer.push({
+                'event': 'petitionSignup ECI'
               });
           });
     // jQuery('.leads-form__form__container, .under-85, .description').show();

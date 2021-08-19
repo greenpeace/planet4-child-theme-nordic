@@ -50,7 +50,7 @@ window.addEventListener('load', (event) => {
   //   checkValue();
   // });
 
-  pathnameUrl();
+
 
 
   //Tracking set up for the social share buttons
@@ -64,6 +64,8 @@ window.addEventListener('load', (event) => {
   //       });
   //   });
   // });
+
+  pathnameUrl();
 
   function pathnameUrl() {
     let pathnameUrl = window.location.pathname.split('/')[1];
