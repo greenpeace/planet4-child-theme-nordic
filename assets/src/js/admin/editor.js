@@ -1,27 +1,10 @@
 console.log('Adding the ECI script here..');
-
-// function fold() {
-//   let parent = document.getElementById("proca-register");
-//   let children = [parent.querySelectorAll(":scope > *")];
-//   let child = children.map(function(child){
-//     return child;
-//   });
-//   console.log(child);
-//       // let fold1 = document.querySelector("#proca-register > main:nth-child(4)");
-//       // const fold2 = document.querySelector("#proca-register > div:nth-child(5)");
-//       // const fold3 = document.querySelector("#proca-register > div:nth-child(6)");
-
-//       // jQuery(fold1).add(fold2).add(fold3).fadeOut();
-// }
-
 // Fold the form before signup
   window.addEventListener('load', (event) => {
     // let parent = document.getElementById("proca-register");
     // let children = [parent.querySelectorAll(":scope > *")];
     // child1 = children.map(child => child[3]);
-    // // child2 = jQuery(child1).next();
-    // // child3 = jQuery(child2).next();
-    // child2 = children.map(child => child[4]);
+    // child2 = jQuery(child1).next();
     // child3 = children.map(child => child[5]);
     // child4 = children.map(child => child[6]);
     let child1 = jQuery('form#proca-register main:nth-child(4)');
@@ -31,9 +14,7 @@ console.log('Adding the ECI script here..');
 
     jQuery(child1).add(child2).add(child3).fadeOut( 'slow', function() {
       window.scroll({
-          top: 0,
-          left: 0,
-          behavior: 'smooth'
+        behavior: 'smooth'
       });
     });
     jQuery(child4).css({"padding": "1.5rem 0"});
