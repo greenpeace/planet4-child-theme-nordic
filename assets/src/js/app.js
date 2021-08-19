@@ -4,10 +4,15 @@ window.$ = $ || jQuery;
 window.dataLayer = window.dataLayer || [];
 
 import './admin/editor.js';
+//adding the Optimonk scripts
+import './admin/denmark';
+import './admin/finland';
+import './admin/norway';
+import './admin/sweden';
 
-// function requireAll(r) {
-//   r.keys().forEach(r);
-// }
+function requireAll(r) {
+  r.keys().forEach(r);
+}
 
 //Adding the Optimonk scripts
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -18,19 +23,36 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     switch (pathnameUrl) {
       case "denmark":
-        jQuery('<script id="optimonkDK" type="text/javascript"> (function(e,a){ var t,r=e.getElementsByTagName("head")[0],c=e.location.protocol; t=e.createElement("script");t.type="text/javascript"; t.charset="utf-8";t.async=!0;t.defer=!0; t.src=c+"//front.optimonk.com/public/"+a+"/js/preload.js";r.appendChild(t); })(document,"118834"); </' + 'script>').appendTo(document.body);
+        let optimonkDK = document.createElement('script');
+        optimonkDK.id = "optimonkDK";
+        optimonkDK.type = 'text/javascript';
+        optimonkDK.src = './admin/denmark.js';
+        document.body.appendChild(optimonkDK);
         break;
       case "finland":
-        jQuery('<script id="optimonkFI" type="text/javascript"> (function(e,a){ var t,r=e.getElementsByTagName("head")[0],c=e.location.protocol; t=e.createElement("script");t.type="text/javascript"; t.charset="utf-8";t.async=!0;t.defer=!0; t.src=c+"//front.optimonk.com/public/"+a+"/js/preload.js";r.appendChild(t); })(document,"118832"); </' + 'script>').appendTo(document.body);
+        let optimonkFI = document.createElement('script');
+        optimonkFI.id = "optimonkFI";
+        optimonkFI.type = 'text/javascript';
+        optimonkFI.src = './admin/finland.js';
+        document.body.appendChild(optimonkFI);
         break;
       case "norway":
-        jQuery('<script id="optimonkNO" type="text/javascript"> (function(e,a){ var t,r=e.getElementsByTagName("head")[0],c=e.location.protocol; t=e.createElement("script");t.type="text/javascript"; t.charset="utf-8";t.async=!0;t.defer=!0; t.src=c+"//front.optimonk.com/public/"+a+"/js/preload.js";r.appendChild(t);})(document,"118833"); </' + 'script>').appendTo(document.body);
+        let optimonkNO = document.createElement('script');
+        optimonkNO.id = "optimonkNO";
+        optimonkNO.type = 'text/javascript';
+        optimonkNO.src = './admin/norway.js';
+        document.body.appendChild(optimonkNO);
         break;
       case "sweden":
-        jQuery('<script id="optimonkSE" type="text/javascript"> (function(e,a){ var t,r=e.getElementsByTagName("head")[0],c=e.location.protocol; t=e.createElement("script");t.type="text/javascript"; t.charset="utf-8";t.async=!0;t.defer=!0; t.src=c+"//front.optimonk.com/public/"+a+"/js/preload.js";r.appendChild(t); })(document,"112168"); </' + 'script>').appendTo(document.body);
+        let optimonkSE = document.createElement('script');
+        optimonkSE.id = "optimonkSE";
+        optimonkSE.type = 'text/javascript';
+        optimonkSE.src = './admin/sweden.js';
+        document.body.appendChild(optimonkSE);
         break;
       default:
-        jQuery('<script id="optimonkDEV" type="text/javascript"> console.log("Default case"); (function(e,a){ var t,r=e.getElementsByTagName("head")[0],c=e.location.protocol; t=e.createElement("script");t.type="text/javascript"; t.charset="utf-8";t.async=!0;t.defer=!0; t.src=c+"//front.optimonk.com/public/"+a+"/js/preload.js";r.appendChild(t); })(document,"101975");</' + 'script>').appendTo(document.body);
+        let textDef = console.log("Default case");
+        textDef;
     }
   }
 });
