@@ -3,8 +3,8 @@ import $ from 'jquery';
 window.$ = $ || jQuery;
 window.dataLayer = window.dataLayer || [];
 
-// import './admin/editor.js';
-//adding the Optimonk scripts
+//adding the ECI script
+import './admin/editor.js';
 
 // function requireAll(r) {
 //   r.keys().forEach(r);
