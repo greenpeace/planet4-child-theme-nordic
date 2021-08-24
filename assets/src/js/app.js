@@ -3,7 +3,7 @@ import $ from 'jquery';
 window.$ = $ || jQuery;
 window.dataLayer = window.dataLayer || [];
 
-import './admin/editor.js';
+// import './admin/editor.js';
 //adding the Optimonk scripts
 
 // function requireAll(r) {
