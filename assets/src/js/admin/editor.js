@@ -24,9 +24,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         jQuery('.leads-form__form__container').hide();
 
         // Hide your normal petition text (can do this using CSS instead)
-        // jQuery('.under-85, .description').hide();
-        //removed this one bc of the heading class being dynamic
-
         jQuery('.leads-form__content h2').hide();
         jQuery('.leads-form__content .description').hide();
 
@@ -77,12 +74,8 @@ window.addEventListener('proca', (event) => {
       console.log("unfolded");
     });
   });
-
   jQuery(child4).css({"padding": "1.5rem 0"});
-
 });
-
-
 
 // Listen to the "ECI Completed Event"
 window.addEventListener("eci:complete", function (e) {
@@ -101,7 +94,6 @@ window.addEventListener("eci:complete", function (e) {
     });
   });
 });
-
 
 // the ECI counter widget
 window.addEventListener("proca", function (e) {
