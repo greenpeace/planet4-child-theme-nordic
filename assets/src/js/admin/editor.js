@@ -1,6 +1,8 @@
 console.log('Adding the ECI script here..');
 window.addEventListener('DOMContentLoaded', (event) => {
   let eciForm = document.getElementById('proca');
+  let eciText = jQuery('.eci-description p');
+  let eciList = jQuery('.eci-description p ul li');
 
   if(eciForm){
     eciForm = true;
@@ -19,6 +21,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
           "padding": "1.5rem",
           "padding-bottom": "2rem"
         });
+
+        jQuery(eciText).add(eciList).css({
+          "font-family": "Roboto",
+          "font-weight": "600",
+          "font-size": "1rem"
+       });
 
         // Hide your normal petition form (can do this using CSS instead)
         jQuery('.leads-form__form__container').hide();
