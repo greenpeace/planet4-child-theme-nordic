@@ -111,6 +111,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				// Blocks from planet4-plugin-gutenberg-blocks
 				// @see: https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/master/planet4-gutenberg-blocks.php
 				'planet4-blocks/accordion',
+				'planet4-blocks/articles',
 				'planet4-blocks/counter',
 				'planet4-blocks/gallery',
 				'planet4-blocks/guestbook',
