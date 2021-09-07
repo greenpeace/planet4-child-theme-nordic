@@ -43,6 +43,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         // Show ECI Form and Text
         jQuery('.eci-form-wrapper, .eci-text-wrapper').show();
+        jQuery(proca.set('layout', 'variant','filled'));
 
       });
       break;
