@@ -1,4 +1,4 @@
-console.log('Adding the ECI script here..');
+// console.log('Adding the ECI script here..');
 window.addEventListener('DOMContentLoaded', (event) => {
   let eciForm = document.getElementById('proca');
   let eciText = jQuery('.eci-description p');
@@ -6,15 +6,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   if(eciForm){
     eciForm = true;
-    console.log('ECI LOADED..');
+    // console.log('ECI LOADED..');
   }else{
     eciForm = false;
-    console.log('NO ECI..');
+    // console.log('NO ECI..');
   }
 
   switch(eciForm){
     case true:
-      console.log('ECI SWITCH TRUE..');
+      console.log('eci');
       jQuery(function() {
         // Add petition form styling to ECI form (can do this using CSS instead)
         jQuery('.eci-form-wrapper').css({
@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       });
       break;
     case false:
-      console.log('ECI SWITCH FALSE..');
+      console.log('no eci');
       jQuery('.leads-form__form__container, .leads-form__content h2, .leads-form__content .description').show();
       break;
     default:
@@ -89,7 +89,8 @@ window.addEventListener('proca', (event) => {
 // Listen to the "ECI Completed Event"
 window.addEventListener("eci:complete", function (e) {
   window.dataLayer.push({
-    'event': 'petitionSignup ECI'
+    'event': 'eciSignup',
+    'funnel': 'eci-funnel'
   });
 
   jQuery('.eci-form-wrapper, .eci-text-wrapper').hide();
