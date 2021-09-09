@@ -6,6 +6,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   if(eciForm){
     eciForm = true;
+    window.dataLayer.push({
+      'funnel': 'eci-funnel'
+    });
     // console.log('ECI LOADED..');
   }else{
     eciForm = false;
@@ -59,7 +62,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 window.addEventListener('proca', (event) => {
-   //fold b4 signup
+  //fold b4 signup
   let child1 = jQuery('form#proca-register :nth-child(4)');
   let child2 = jQuery('form#proca-register :nth-child(5)');
   let child3 = jQuery('form#proca-register :nth-child(6)');
@@ -89,8 +92,7 @@ window.addEventListener('proca', (event) => {
 // Listen to the "ECI Completed Event"
 window.addEventListener("eci:complete", function (e) {
   window.dataLayer.push({
-    'event': 'eciSignup',
-    'funnel': 'eci-funnel'
+    'event': 'eciSignup'
   });
 
   jQuery('.eci-form-wrapper, .eci-text-wrapper').hide();

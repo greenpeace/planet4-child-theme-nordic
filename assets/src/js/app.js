@@ -3,12 +3,21 @@ import $ from 'jquery';
 window.$ = $ || jQuery;
 window.dataLayer = window.dataLayer || [];
 
+//tracking the sub-menu links clicks
+window.addEventListener('DOMContentLoaded', (event) => {
+  jQuery('.submenu-link').on('click', function(e) {
+    let submenuLinkHref = jQuery(this).attr('href');
+    // console.log(href);
+    window.dataLayer.push({
+      'link': submenuLinkHref,
+      'event': 'menuClick'
+    });
+  });
+});
+
+
 //adding the ECI script
 import './admin/editor.js';
-
-// function requireAll(r) {
-//   r.keys().forEach(r);
-// }
 
 //Adding the Optimonk scripts
 window.addEventListener('DOMContentLoaded', (event) => {
