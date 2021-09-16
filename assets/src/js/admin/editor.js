@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
           "font-family": "Roboto",
           "font-weight": "600",
           "font-size": "1rem"
-       });
+        });
 
         // Hide your normal petition form (can do this using CSS instead)
         jQuery('.leads-form__form__container').hide();
@@ -45,9 +45,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
         jQuery('.leads-form__content').prepend(jQuery('.eci-text-wrapper'));
 
         // Show ECI Form and Text
-        jQuery('.eci-form-wrapper, .eci-text-wrapper').show();
+        jQuery('.eci-form-wrapper, .eci-text-wrapper').show("fast", function() {
+          window.scroll({
+              behavior: 'smooth'
+          });
+        });
         jQuery(proca.set('layout', 'variant','filled'));
-
       });
       break;
     case false:
@@ -68,22 +71,22 @@ window.addEventListener('proca', (event) => {
   let child3 = jQuery('form#proca-register :nth-child(6)');
   let child4 = jQuery('form#proca-register :nth-child(7)');
 
-  jQuery(child1).add(child2).add(child3).hide( 'slow', function() {
-    window.scroll({
-      behavior: 'smooth'
-    });
-    console.log("folded");
-  });
+  // jQuery(child1).add(child2).add(child3).hide( 'slow', function() {
+  //   window.scroll({
+  //     behavior: 'smooth'
+  //   });
+  //   console.log("folded");
+  // });
 
   //Unfold the form when clicked on fname
   jQuery('#proca_firstname').on('click',  function() {
-    jQuery(child1).add(child2).add(child3).fadeIn( 'slow', function() {
+    jQuery(child1).add(child2).add(child3).show( 700, function() {
       window.scroll({
           top: 0,
           left: 0,
           behavior: 'smooth'
       });
-      console.log("unfolded");
+      // console.log("unfolded");
     });
   });
   jQuery(child4).css({"padding": "1.5rem 0"});

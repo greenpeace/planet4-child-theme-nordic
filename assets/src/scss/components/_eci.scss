@@ -1,5 +1,11 @@
 //ECI widget style
 .eci-form-wrapper .proca-widget {
+  form#proca-register :nth-child(4),
+  form#proca-register :nth-child(5),
+  form#proca-register :nth-child(6) {
+    display: none;
+  }
+
   div, p, span, a, legend {
     font-family: $lora-child-theme!important;
     font-size: .9rem;
@@ -44,3 +50,52 @@ div.eci-more button {
 //     flex-flow: column;
 //   }
 // }
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+  -moz-animation-name: fadeInUp;
+}
+
+.a-delay {
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
