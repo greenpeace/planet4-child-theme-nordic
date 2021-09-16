@@ -50,7 +50,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
               behavior: 'smooth'
           });
         });
-        jQuery(proca.set('layout', 'variant','filled'));
+        // jQuery(proca.set('layout', 'variant','filled'));
       });
       break;
     case false:
@@ -71,12 +71,8 @@ window.addEventListener('proca', (event) => {
   let child3 = jQuery('form#proca-register :nth-child(6)');
   let child4 = jQuery('form#proca-register :nth-child(7)');
 
-  // jQuery(child1).add(child2).add(child3).hide( 'slow', function() {
-  //   window.scroll({
-  //     behavior: 'smooth'
-  //   });
-  //   console.log("folded");
-  // });
+  //that works fine but loads a bit clumsy
+  jQuery(child1).add(child2).add(child3).hide();
 
   //Unfold the form when clicked on fname
   jQuery('#proca_firstname').on('click',  function() {
