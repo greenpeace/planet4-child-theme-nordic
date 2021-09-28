@@ -1,5 +1,6 @@
 // console.log('Adding the ECI script here..');
 window.addEventListener('DOMContentLoaded', (event) => {
+  let formBlock = document.querySelector(".leads-form__grid");
   let eciForm = document.getElementById('proca');
   let eciText = jQuery('.eci-description p');
   let eciList = jQuery('.eci-description p ul li');
@@ -9,6 +10,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
     window.dataLayer.push({
       'funnel': 'eci-funnel'
     });
+    jQuery(formBlock).css({
+      "display": "none",
+      "animation": "fade-in 1s"
+    });
+    function delayForm(){
+      jQuery(formBlock).css({
+        "display": "grid"
+      });
+    }
+    setTimeout(delayForm, 500);
     // console.log('ECI LOADED..');
   }else{
     eciForm = false;
@@ -72,7 +83,10 @@ window.addEventListener('proca', (event) => {
   let child4 = jQuery('form#proca-register :nth-child(7)');
 
   //that works fine but loads a bit clumsy
-  jQuery(child1).add(child2).add(child3).hide();
+  // jQuery(child1).add(child2).add(child3).hide();
+  jQuery(child1).add(child2).add(child3).css({
+    "display": "none"
+  });
 
   //Unfold the form when clicked on fname
   jQuery('#proca_firstname').on('click',  function() {
