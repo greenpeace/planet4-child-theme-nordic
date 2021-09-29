@@ -12,14 +12,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
     jQuery(formBlock).css({
       "display": "none",
-      "animation": "fade-in 1s"
+      "animation": "fadeIn linear 2s",
     });
     function delayForm(){
       jQuery(formBlock).css({
         "display": "grid"
       });
     }
-    setTimeout(delayForm, 500);
+    setTimeout(delayForm, 600);
     // console.log('ECI LOADED..');
   }else{
     eciForm = false;
@@ -30,7 +30,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     case true:
       console.log('eci');
       jQuery(function() {
-        // Add petition form styling to ECI form (can do this using CSS instead)
         jQuery('.eci-form-wrapper').css({
           "padding": "1.5rem",
           "padding-bottom": "2rem"
@@ -82,11 +81,29 @@ window.addEventListener('proca', (event) => {
   let child3 = jQuery('form#proca-register :nth-child(6)');
   let child4 = jQuery('form#proca-register :nth-child(7)');
 
-  //that works fine but loads a bit clumsy
-  // jQuery(child1).add(child2).add(child3).hide();
-  jQuery(child1).add(child2).add(child3).css({
-    "display": "none"
-  });
+  //check if IE or Edge browser
+  let browser = (function (agent) {
+    switch (true) {
+        case agent.indexOf("edge") > -1: return "edge";
+        case agent.indexOf("edg/") > -1: return "chromium based edge"; // Match also / to avoid matching for the older Edge
+        case agent.indexOf("trident") > -1: return "ie";
+        default: return "other";
+    }
+  })(window.navigator.userAgent.toLowerCase());
+  // console.log(browser);
+
+  //don't hide elements in Edge and IE
+  if(browser === "other"){
+    jQuery(child1).add(child2).add(child3).css({
+      "display": "none"
+    });
+    console.log(browser);
+  } else {
+    jQuery(child1).add(child2).add(child3).css({
+      "display": "block"
+    });
+    console.log(browser);
+  }
 
   //Unfold the form when clicked on fname
   jQuery('#proca_firstname').on('click',  function() {

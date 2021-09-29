@@ -61,7 +61,7 @@ function enqueue_child_scripts()  {
     // wp_enqueue_script('popper');
     // wp_register_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js', ['bootstrap'], '5.0.0', true);
     // wp_enqueue_script('bootstrap');
-    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.17', true);
+    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.18', true);
     wp_enqueue_script('child-js');
 
 }

@@ -1,39 +1,20 @@
 //ECI widget style
-@-webkit-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@-moz-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+@-moz-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .eci-form-wrapper .proca-widget {
-  // When CSS rule is here - CAPTCHA not working
-  // form#proca-register :nth-child(4),
-  // form#proca-register :nth-child(5),
-  // form#proca-register :nth-child(6) {
-  //   display: none;
-  // }
-
   div, p, span, a, legend {
     font-family: $lora-child-theme!important;
     font-size: .9rem;
