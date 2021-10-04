@@ -55,11 +55,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         jQuery('.leads-form__content').prepend(jQuery('.eci-text-wrapper'));
 
         // Show ECI Form and Text
-        jQuery('.eci-form-wrapper, .eci-text-wrapper').show("fast", function() {
-          window.scroll({
-              behavior: 'smooth'
-          });
-        });
+        jQuery('.eci-form-wrapper, .eci-text-wrapper').show("fast");
         // jQuery(proca.set('layout', 'variant','filled'));
       });
       break;
@@ -74,51 +70,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }
 });
 
-window.addEventListener('proca', (event) => {
-  //fold b4 signup
-  let child1 = jQuery('form#proca-register :nth-child(4)');
-  let child2 = jQuery('form#proca-register :nth-child(5)');
-  let child3 = jQuery('form#proca-register :nth-child(6)');
-  let child4 = jQuery('form#proca-register :nth-child(7)');
-
-  //check if IE or Edge browser
-  let browser = (function (agent) {
-    switch (true) {
-        case agent.indexOf("edge") > -1: return "edge";
-        case agent.indexOf("edg/") > -1: return "chromium based edge"; // Match also / to avoid matching for the older Edge
-        case agent.indexOf("trident") > -1: return "ie";
-        default: return "other";
-    }
-  })(window.navigator.userAgent.toLowerCase());
-  // console.log(browser);
-
-  //don't hide elements in Edge and IE
-  if(browser === "other"){
-    jQuery(child1).add(child2).add(child3).css({
-      "display": "none"
-    });
-    console.log(browser);
-  } else {
-    jQuery(child1).add(child2).add(child3).css({
-      "display": "block"
-    });
-    console.log(browser);
-  }
-
-  //Unfold the form when clicked on fname
-  jQuery('#proca_firstname').on('click',  function() {
-    jQuery(child1).add(child2).add(child3).show( 700, function() {
-      window.scroll({
-          top: 0,
-          left: 0,
-          behavior: 'smooth'
-      });
-      // console.log("unfolded");
-    });
-  });
-  jQuery(child4).css({"padding": "1.5rem 0"});
-});
-
 // Listen to the "ECI Completed Event"
 window.addEventListener("eci:complete", function (e) {
   window.dataLayer.push({
@@ -128,13 +79,7 @@ window.addEventListener("eci:complete", function (e) {
   jQuery('.eci-form-wrapper, .eci-text-wrapper').hide();
 
   // Show your normal petition form & text
-  jQuery('.leads-form__form__container, .leads-form__content h2, .leads-form__content .description').fadeIn(1400, function() {
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
-  });
+  jQuery('.leads-form__form__container, .leads-form__content h2, .leads-form__content .description').fadeIn(1400);
 });
 
 // the ECI counter widget
@@ -144,4 +89,3 @@ window.addEventListener("proca", function (e) {
 		counter.innerText = e.detail.value;
 	}
 });
-
