@@ -2,6 +2,20 @@
   background: $gp-nor-green;
   font-family: $roboto;
 
+  .footer-menu {
+    margin-bottom: 0;
+  }
+  .copyright {
+    background: $gp-nor-green;
+    font-family: $roboto;
+
+    & span p {
+      font-size: .75rem;
+      line-height: 1.4;
+      width: auto;
+    }
+  }
+
   a:hover {
     color: $yellow;
     text-decoration: none;
@@ -13,21 +27,26 @@
     a:hover {
       color: $dark-white;
     }
+
+    .icon {
+      width: 34px;
+      height: 34px;
+    }
   }
 
   ul.list-unstyled.footer-links li a {
     font-family: $roboto;
-    font-weight: 500 !important;
+    font-weight: 500;
   }
 
   ul.list-unstyled.footer-links-secondary li a, p.copyright-text {
-    font-weight: 300 !important;
-    font-size: .9rem !important;
+    font-weight: 300;
+    font-size: .9rem;
     line-height: 1;
   }
 
   p.copyright-text a strong {
-    font-size: .9rem !important;
-    font-weight: 500 !important;
+    font-size: .9rem;
+    font-weight: 500;
   }
 }
