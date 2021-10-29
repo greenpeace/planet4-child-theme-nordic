@@ -150,7 +150,7 @@ a, a.external-link:not(.split-two-column-item-link), .post-content .page-links a
 p, ul, li, .page-section-description, .columns-block .column-wrap p, span.author-info,
 .article-list-item-content, .accordion-block .accordion-content p.accordion-text, .btn *:not(.btn-navbar-toggle), .btn::after, .btn::before,
 .wp-block-button a::before, .wp-block-file .wp-block-file__button *:not(strong), .wp-block-file .wp-block-file__button::after,
-.wp-block-file .wp-block-file__button::before, div.block-editor-block-list__layout.is-root-container, p.search-result-item-content {
+.wp-block-file .wp-block-file__button::before, div.block-editor-block-list__layout.is-root-container, p.search-result-item-content, #gdpr-comments-compliance {
   font-family: $roboto;
   font-weight: 300;
   font-size: 1.2rem;
@@ -170,8 +170,9 @@ p, ul, li, .page-section-description, .columns-block .column-wrap p, span.author
   background-color: $dark-green;
 }
 
+p.logged-in-as a,
 div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
-  color: $gp-nor-green;
+  color: $gp-nor-green!important;
 
   &:hover {
     text-decoration: underline;
@@ -181,3 +182,13 @@ div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
 .split-two-column-item-title a:hover {
   color: $yellow;
 }
+
+.split-two-column-item-tag, .split-two-column-item-link {
+  color: $yellow !important;
+}
+
+.content-covers-block .content-covers-block-wrap .content-covers-block-info h5>a {
+  color: $dark-green !important;
+  font-family: $helvetica !important;
+}
+

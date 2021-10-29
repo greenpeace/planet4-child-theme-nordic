@@ -52,20 +52,33 @@ button.country-dropdown-toggle.open {
 }
 
 .navbar-search-toggle {
-  height: 1.4rem;
+  -webkit-mask-size: 20px;
+  -moz-mask-size: 20px;
+  mask-size: 20px;
+  height: 20px;
   margin-top: 1.1rem;
   background: url("../../assets/images/search.svg") center center no-repeat;
+  mask-image: inherit;
+  -webkit-mask-image: inherit;
 
   &:active,
   &:hover {
-    height: 1.9rem;
-    margin-top: 0.8rem;
+    -webkit-mask-size: 25px;
+    -moz-mask-size: 25px;
+    mask-size: 25px;
+    height: 25px;
+    margin-top: 0.9rem;
     transition: all 0.2s ease !important;
   }
 }
 
+.navbar-dropdown .close-navbar-dropdown,
 .navbar-search-toggle.open {
   transition: all 0.2s ease !important;
+  background-color: $dark-green;
+  -webkit-mask-size: 16px;
+  -moz-mask-size: 16px;
+  mask-size: 16px;
 }
 
 .country-list {
@@ -168,6 +181,7 @@ button.country-dropdown-toggle.open {
     box-shadow: none;
     color: $dark-green!important;
     -webkit-transition: background-color 300ms ease-in-out;
+    -moz-transition: background-color 300ms ease-in-out;
     transition: background-color 300ms ease-in-out;
 
     &:active,

@@ -79,8 +79,8 @@ window.addEventListener("eci:complete", function (e) {
   jQuery('.eci-form-wrapper, .eci-text-wrapper').hide();
 
   // Show your normal petition form & text
-  jQuery('.leads-form__form__container, .leads-form__content h2, .leads-form__content .description').fadeIn(1400, function(){
-    document.getElementById("leads-form").scrollIntoView(700);
+  jQuery('.leads-form__form__container, .leads-form__content h2, .leads-form__content .description').fadeIn(700, function(){
+    //document.getElementById("leads-form").scrollIntoView(700);
   });
 });
 
