@@ -127,7 +127,7 @@ a, a.external-link:not(.split-two-column-item-link), .post-content .page-links a
 .post-content .more-link *, .post-content .more-link::after, .post-content .more-link::before,
 .post-content .page-links a::after, .post-content .page-links a::before, .wp-block-file a,
 .wp-block-button a *:not(strong), .wp-block-button a::after, h5.author-block-info-name a {
-  color: $gp-primary;
+  color: $dark-green;
   text-decoration: none;
   font-weight: 500;
   font-family: $roboto;
@@ -159,6 +159,12 @@ p, ul, li, .page-section-description, .columns-block .column-wrap p, span.author
   @include mobile-only {
     font-size: 1.1rem;
   }
+}
+
+.columns-block p,
+// li:not(.footer-menu ul.list-unstyled li), li:not(.footer-social-media ul.list-unstyled li),
+p.article-list-item-content, article.post-details p, p.accordion-text, p.search-result-item-content {
+  color: $grey-70;
 }
 
 .page-header-content p {

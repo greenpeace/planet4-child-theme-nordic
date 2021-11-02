@@ -21,7 +21,7 @@
     text-decoration: none;
   }
 
-  .footer-social-media {
+  .footer-social-media li {
     color: $yellow;
 
     a:hover {
@@ -48,5 +48,11 @@
   p.copyright-text a strong {
     font-size: .9rem;
     font-weight: 500;
+  }
+
+  @include mobile-and-tablet-only {
+    div.copyright span a strong {
+      font-size: .9rem;
+    }
   }
 }
