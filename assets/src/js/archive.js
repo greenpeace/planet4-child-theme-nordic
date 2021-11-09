@@ -50,3 +50,9 @@
   //       });
   //   });
   // });
+
+//select the last child in the class footer-menu > list-unslyled > li:last-child > a
+// const lastChild = document.querySelector('.footer-menu > .list-unstyled').lastElementChild;
+//append a ne new child after the last child with a class inkg that contains a link to the innsamlingskontrollen and image of the logo
+// lastChild.insertAdjacentHTML('afterend',  '<li class="inkg"><a href="https://www.innsamlingskontrollen.no/organisasjoner/foreningen-greenpeace-norden/" target="_blank"><img src="https://storage.googleapis.com/lib.greenpeace.se/apps/Insamlingskontrollen.svg" alt="Innsamlingskontrollen Foreningen Greenpeace Norden"></a></li>');
+

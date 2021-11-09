@@ -9,7 +9,8 @@
     background: $gp-nor-green;
     font-family: $roboto;
 
-    & span p {
+    & span p,
+    & span strong {
       font-size: .75rem;
       line-height: 1.4;
       width: auto;
@@ -55,4 +56,14 @@
       font-size: .9rem;
     }
   }
+
+  // .inkg {
+  //   background-image: url("../../../../../../wp-content/themes/planet4-child-theme-nordic/assets/images/inkg.svg");
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  //   background-position: inherit;
+  //   line-height: 4rem;
+  //   z-index: 2;
+  //   color: $gp-nor-green;
+  // }
 }
