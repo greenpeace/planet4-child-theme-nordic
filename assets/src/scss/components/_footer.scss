@@ -9,9 +9,11 @@
     background: $gp-nor-green;
     font-family: $roboto;
 
-    & a,
-    & span p,
-    & span strong {
+    &a,
+    &a strong,
+    &span p,
+    &span strong,
+    &span strong a {
       font-size: .75rem;
       line-height: 1.4;
       width: auto;
@@ -42,21 +44,16 @@
   }
 
   ul.list-unstyled.footer-links-secondary li a, p.copyright-text {
-    font-weight: 300;
+    font-weight: 400;
     font-size: .9rem;
     line-height: 1;
   }
 
-  p.copyright-text a strong {
-    font-size: .9rem;
-    font-weight: 500;
-  }
-
-  @include mobile-and-tablet-only {
-    div.copyright span a strong {
-      font-size: .9rem;
-    }
-  }
+  // @include mobile-and-tablet-only {
+  //   div.copyright span a strong {
+  //     font-size: .75rem;
+  //   }
+  // }
 
   // .inkg {
   //   background-image: url("../../../../../../wp-content/themes/planet4-child-theme-nordic/assets/images/inkg.svg");

@@ -53,18 +53,20 @@ p {
 // Styleguide Style.typography.headings
 // h1,
 // h2,
-h3,
+// h3,
 h4,
 h5,
 h6,
-.cover-card-heading {
-  font-family: $lora;
+.cover-card-excerpt {
+  font-family: $lora!important;
 }
 
 h1,
-h2 {
+h2,
+h3,
+.cover-card-heading {
   // font-weight: bold;
-  font-family: $helvetica;
+  font-family: $helvetica!important;
 }
 
 h1 {
@@ -152,8 +154,8 @@ p, ul, li, .page-section-description, .columns-block .column-wrap p, span.author
 .wp-block-button a::before, .wp-block-file .wp-block-file__button *:not(strong), .wp-block-file .wp-block-file__button::after,
 .wp-block-file .wp-block-file__button::before, div.block-editor-block-list__layout.is-root-container, p.search-result-item-content, #gdpr-comments-compliance {
   font-family: $roboto;
-  font-weight: 300;
-  font-size: 1.2rem;
+  font-weight: 400;
+  font-size: 1.06rem;
   line-height: inherit;
 
   @include mobile-only {
