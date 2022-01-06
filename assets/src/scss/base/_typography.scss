@@ -19,41 +19,14 @@
   font-style: normal;
 }
 
-// Styleguide Style.typography
-html {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-// Paragraphs
-//
-// All plain text elements use Lora font.
-//
-// Markup:
-// <p>The quick brown fox jumps over the lazy dog</p>
-//
-// Styleguide Style.typography.paragraphs
-p {
-  hyphens: none;
-}
-
 // Headings
-//
-// Heading elements `<h1> <h6>`. All headings use Roboto font.
-//
-// Markup:
-// <h1>The quick brown fox jumps over the lazy dog</h1>
-// <h2>The quick brown fox jumps over the lazy dog</h2>
-// <h3>The quick brown fox jumps over the lazy dog</h3>
-// <h4>The quick brown fox jumps over the lazy dog</h4>
-// <h5>The quick brown fox jumps over the lazy dog</h5>
-// <h6>The quick brown fox jumps over the lazy dog</h6>
-//
-// Styleguide Style.typography.headings
-// h1,
-// h2,
-// h3,
+h1,
+h2,
+h3,
+.cover-card-heading {
+  font-family: $helvetica!important;
+}
+
 h4,
 h5,
 h6,
@@ -61,19 +34,11 @@ h6,
   font-family: $lora!important;
 }
 
-h1,
-h2,
-h3,
-.cover-card-heading {
-  // font-weight: bold;
-  font-family: $helvetica!important;
-}
-
 h1 {
-
-  font-size: $font-size-xxl;
-  line-height: 1.225;
-  margin-bottom: 30px;
+  //overide the default font-size for h1 on mobile
+  @include mobile-and-tablet-only {
+    font-size: $font-size-xxl;
+  }
 
   @include large-and-up {
     font-size: $font-size-xxxl;
@@ -84,23 +49,23 @@ h1 {
   }
 }
 
-h2 {
-  font-size: $font-size-xl;
-  line-height: 1.38;
-  margin-bottom: 5px;
+// h2 {
+//   font-size: $font-size-xl;
+//   line-height: 1.38;
+//   margin-bottom: 5px;
 
-  @include medium-and-up {
-    font-size: $font-size-xxl;
-  }
+//   @include medium-and-up {
+//     font-size: $font-size-xxl;
+//   }
 
-  @include x-large-and-up {
-    margin-bottom: 24px;
-  }
-}
+//   @include x-large-and-up {
+//     margin-bottom: 24px;
+//   }
+// }
 
-.white-text {
-  color: $white;
-}
+// .white-text {
+//   color: $white;
+// }
 
 .screen-reader-text {
   border: 0;
