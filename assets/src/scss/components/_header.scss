@@ -1,0 +1,6 @@
+@include mobile-only {
+	.page-header-title {
+    overflow-wrap: break-word;
+    hyphens: auto;
+	}
+}
