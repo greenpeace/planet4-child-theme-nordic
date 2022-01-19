@@ -40,6 +40,13 @@ a.external-link:after {
   width: inherit;
 }
 
-.author-block-info {
-  background-color: #a3a5a726;
+//Author info in posts
+.author-block-info div[itemprop="description"] {
+  font-family: $lora !important;
+
+  span.show-more,
+  span.show-less {
+    font-family: $lora;
+    color: $dark-green;
+  }
 }
