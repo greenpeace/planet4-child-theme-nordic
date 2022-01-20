@@ -1,6 +1,6 @@
 <?php
 /**
-* Theme Name: Greenpeace Planet 4 Child Theme Nordic
+* Theme Name: Greenpeace Planet4 Child Theme Nordic
 * Theme URI: Theme URI: https://github.com/greenpeace/planet4-child-theme-nordic
 * Description: Child theme for the Planet 4 Wordpress project
 * Author: Greenpeace Nordic
@@ -14,7 +14,6 @@
 
  // Filter available Gutenberg standard blocks
  require_once( 'includes/gutenberg-blocks.php' );
-//  include_once( 'includes/externalCounter.php' );
 
 add_action('admin_init', 'remove_acf_options_page', 99);
 function remove_acf_options_page() {
@@ -41,6 +40,40 @@ function enqueue_child_scripts()  {
     wp_enqueue_script('child-js');
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
+
+//get the published pages with external counter tempate integration
+function get_all_template_pages() {
+	$args = array(
+		'post_type' => 'page',
+		'post_status' => 'publish',
+		'meta_key' => '_wp_page_template',
+		'meta_value' => 'page-external-counter.php',
+		'posts_per_page' => -1
+	);
+	$query = new WP_Query($args);
+	$templatePages = $query->posts;
+	return $templatePages;
+}
+//always exclude the template pages from the listed search results
+function exclude_template_pages($query) {
+	if ($query->is_search) {
+		$templatePages = get_all_template_pages();
+		$templatePageIds = array();
+		foreach ($templatePages as $templatePage) {
+			$templatePageIds[] = $templatePage->ID;
+		}
+		$query->set('post__not_in', $templatePageIds);
+	}
+}
+add_action('pre_get_posts', 'exclude_template_pages');
+
+
+
+
+
+
+
+
 
 
 //  function p4_child_theme_gpn_gutenberg_scripts() {
