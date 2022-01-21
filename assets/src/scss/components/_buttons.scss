@@ -29,26 +29,29 @@ nav#header.top-navigation.navbar ul.navbar-dropdown li.donate-nav-item a.btn-don
     }
   }
 
-  @include large-and-up {
-    font-weight: bold;
-    background-image: -webkit-linear-gradient(30deg, $gp-primary 50%, transparent 50%);
-    background-image: linear-gradient(30deg, $gp-primary 50%, transparent 50%);
-    background-size: 500px;
-    background-repeat: no-repeat;
-    background-position: 0%;
-    -webkit-transition: background 300ms ease-in-out;
-    transition: background 300ms ease-in-out;
+  // @include large-and-up {
+  //   font-weight: bold;
+  //   background-image: -webkit-linear-gradient(30deg, $gp-primary 50%, transparent 50%);
+  //   background-image: linear-gradient(30deg, $gp-primary 50%, transparent 50%);
+  //   background-size: 500px;
+  //   background-repeat: no-repeat;
+  //   background-position: 0%;
+  //   -webkit-transition: background 300ms ease-in-out;
+  //   transition: background 300ms ease-in-out;
 
-    &:hover {
-      background-position: 100%;
-      color: #fff;
-    }
-  }
+  //   &:hover {
+  //     background-position: 100%;
+  //     color: #fff;
+  //   }
+  // }
 }
 
 //CTA color buttons
-div.carousel-caption div.action-button a.btn.btn-primary.btn-block,
-.btn.btn-primary.page-header-btn, .cover-card-btn, .wp-block-button.is-style-cta a.wp-block-button__link, .split-two-column-item-button {
+//select all buttons with attribute data-ga-action="Call to Action"
+
+.btn-primary[data-ga-action="Call to Action"] {
+// div.carousel-caption div.action-button a.btn.btn-primary.btn-block,
+// .btn.btn-primary.page-header-btn, .cover-card-btn, .wp-block-button.is-style-cta a.wp-block-button__link, .split-two-column-item-button {
   font-weight: 700;
   border: none;
 
@@ -84,30 +87,30 @@ div.carousel-caption div.action-button a.btn.btn-primary.btn-block,
   }
 }
 
-@include mobile-and-tablet-only {
-  .btn-navbar-toggle {
-    cursor: pointer;
-    color: $gp-green;
-    background-color: transparent;
-    transition: background-color color font-weight 100ms;
-    display: inline-block;
+// @include mobile-and-tablet-only {
+//   .btn-navbar-toggle {
+//     cursor: pointer;
+//     color: $gp-green;
+//     background-color: transparent;
+//     transition: background-color color font-weight 100ms;
+//     display: inline-block;
 
-    &:active,
-    &:focus,
-    &:hover {
-      color: $dark-green;
-      box-shadow: none;
-      background-color: #00000080;
-      border: 1px solid transparent;
-    }
-    @include small-and-up {
-      background-color: $dark-white;
-      border-radius: 0;
-      border: 1px solid transparent;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
-    }
-  }
-}
+//     &:active,
+//     &:focus,
+//     &:hover {
+//       color: $dark-green;
+//       box-shadow: none;
+//       background-color: #00000080;
+//       border: 1px solid transparent;
+//     }
+//     @include small-and-up {
+//       background-color: $dark-white;
+//       border-radius: 0;
+//       border: 1px solid transparent;
+//       box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+//     }
+//   }
+// }
 
 a.pdf-link:hover::before {
   background-color: $dark-white;

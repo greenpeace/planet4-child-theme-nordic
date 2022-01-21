@@ -1,8 +1,8 @@
 // Styleguide Layout.navbar
-$menu-height-small: 3.375rem;
-$menu-height-large: 3.75rem;
-$min-height: 40px;
-$navbar-default-height: 60px;
+// $menu-height-small: 3.375rem;
+// $menu-height-large: 3.75rem;
+// $min-height: 40px;
+// $navbar-default-height: 60px;
 
 @include large-and-up {
   .home-item {
@@ -10,198 +10,193 @@ $navbar-default-height: 60px;
   }
 }
 
-.page-header-content {
-  display: block;
-  margin-top: 20px;
-
-  & p {
-    margin-left: 0;
-  }
-}
-
-nav#header.top-navigation.navbar {
-  background: $dark-white!important;
-
-  a {
-    font-family: $roboto;
-    color: $dark-green;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 400;
-
-    &:hover {
-      font-weight: 700;
-    }
-  }
-
-}
-
-button.country-dropdown-toggle,
-button.country-dropdown-toggle.open {
-  color: $dark-blue;
-  transition: all 0.2s ease;
-
-  &:focus {
-    color: $dark-green;
-  }
-
-  &:active,
-  &:hover {
-    color: $dark-green;
-  }
-}
-
-.navbar-search-toggle {
-  -webkit-mask-size: 20px;
-  -moz-mask-size: 20px;
-  mask-size: 20px;
-  height: 20px;
-  margin-top: 1.1rem;
-  background: url("../../assets/images/search.svg") center center no-repeat;
-  mask-image: inherit !important;
-  -webkit-mask-image: inherit !important;
-
-  &:active,
-  &:hover {
-    -webkit-mask-size: 25px;
-    -moz-mask-size: 25px;
-    mask-size: 25px;
-    height: 25px;
-    margin-top: 0.9rem;
-    transition: all 0.2s ease !important;
-  }
-}
-
-.navbar-dropdown .close-navbar-dropdown,
-.navbar-search-toggle.open {
-  transition: all 0.2s ease !important;
-  background-color: $dark-green;
-  -webkit-mask-size: 16px;
-  -moz-mask-size: 16px;
-  mask-size: 16px;
-}
-
-.country-list {
-  background-color: #fff !important;
-
-  .country-group-letter {
-    color: $gp-nor-green;
-  }
-
-  a:hover {
-    color: $gp-nor-green;
-    text-decoration: none;
-    font-weight: 500!important;
-  }
-}
-
-.country-dropdown-toggle::after {
-  background: url("https://www.greenpeace.org/finland/wp-content/themes/planet4-master-theme/images/down-arrow-green.svg") no-repeat center center !important;
-}
-
-@include large-and-up {
-  .navbar-dropdown .active .nav-link {
-    border-bottom-color: $gp-green;
-  }
-
-  nav.top-navigation.navbar ul.navbar-dropdown li:not(#country-select) a.nav-link {
-    position: relative;
-
-    &:focus,
-    &:hover {
-      border-bottom-color: transparent;
-    }
-
-    &:after {
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      width: 0%;
-      content: ".";
-      color: transparent;
-      background: $gp-green;
-      height: 4px;
-      transition: all .5s;
-    }
-
-    &:hover:after {
-      width: 100%;
-    }
-  }
-
-  .nav-item.donate-nav-item .btn.btn-donate {
-    margin: .6rem 0;
-  }
-}
-
 @include mobile-and-tablet-only {
-  .navbar-dropdown {
-    background: $dark-white!important;
-
-    & .nav-item a.nav-link {
-      margin: 0;
-    }
-
-    .nav-item {
-      &.active .nav-link::before {
-        background: $gp-green;
-      }
-
-      &:hover:not(li#country-select):not(.donate-nav-item):not(.active) {
-        border-left: 8px solid $gp-green;
-      }
-    }
-
-      &.btn-donate {
-        margin: 0;
-      }
-
+  a.nav-link {
+    font-family: $helvetica;
+    font-weight: 600;
+    font-size: 4vw;
   }
 
-  .country-dropdown-toggle,
-  .country-dropdown-toggle.open {
-    background-color: $dark-white!important;
-    border: none;
-    box-shadow: none;
-
-    &:hover {
-      background: $dark-white!important;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
-    }
+  .top-navigation .btn-donate {
+    height: 9vw;
+    line-height: 8vw;
+    font-size: 4vw;
+    border-radius: 1.6vw;
   }
 
-  .navbar-search-toggle, .navbar-search-toggle.open {
-    background-color: inherit;
-	  margin-top: 1.1rem !important;
-		mask-image: inherit !important;
-    -webkit-mask-image: inherit !important;
-  }
+}
+// nav#header.top-navigation.navbar {
+//   background: $dark-white!important;
+
+//   a {
+//     font-family: $roboto;
+//     color: $dark-green;
+//     display: inline-block;
+//     text-decoration: none;
+//     font-weight: 400;
+
+//     &:hover {
+//       font-weight: 700;
+//     }
+//   }
+
+// }
+
+// button.country-dropdown-toggle,
+// button.country-dropdown-toggle.open {
+//   color: $dark-blue;
+//   transition: all 0.2s ease;
+
+//   &:focus {
+//     color: $dark-green;
+//   }
+
+//   &:active,
+//   &:hover {
+//     color: $dark-green;
+//   }
+// }
+
+// .navbar-search-toggle {
+//   -webkit-mask-size: 20px;
+//   -moz-mask-size: 20px;
+//   mask-size: 20px;
+//   height: 20px;
+//   margin-top: 1.1rem;
+//   background: url("../../assets/images/search.svg") center center no-repeat;
+//   mask-image: inherit !important;
+//   -webkit-mask-image: inherit !important;
+
+//   &:active,
+//   &:hover {
+//     -webkit-mask-size: 25px;
+//     -moz-mask-size: 25px;
+//     mask-size: 25px;
+//     height: 25px;
+//     margin-top: 0.9rem;
+//     transition: all 0.2s ease !important;
+//   }
+// }
+
+// .navbar-dropdown .close-navbar-dropdown,
+// .navbar-search-toggle.open {
+//   transition: all 0.2s ease !important;
+//   background-color: $dark-green;
+//   -webkit-mask-size: 16px;
+//   -moz-mask-size: 16px;
+//   mask-size: 16px;
+// }
+
+// .country-list {
+//   background-color: #fff !important;
+
+//   .country-group-letter {
+//     color: $gp-nor-green;
+//   }
+
+//   a:hover {
+//     color: $gp-nor-green;
+//     text-decoration: none;
+//     font-weight: 500!important;
+//   }
+// }
+
+// .country-dropdown-toggle::after {
+//   background: url("https://www.greenpeace.org/finland/wp-content/themes/planet4-master-theme/images/down-arrow-green.svg") no-repeat center center !important;
+// }
+
+// @include large-and-up {
+//   .navbar-dropdown .active .nav-link {
+//     border-bottom-color: $gp-green;
+//   }
+
+//   nav.top-navigation.navbar ul.navbar-dropdown li:not(#country-select) a.nav-link {
+//     position: relative;
+
+//     &:focus,
+//     &:hover {
+//       border-bottom-color: transparent;
+//     }
+
+//     &:after {
+//       position: absolute;
+//       bottom: -1px;
+//       left: 0;
+//       right: 0;
+//       margin: auto;
+//       width: 0%;
+//       content: ".";
+//       color: transparent;
+//       background: $gp-green;
+//       height: 4px;
+//       transition: all .5s;
+//     }
+
+//     &:hover:after {
+//       width: 100%;
+//     }
+//   }
+
+  // .nav-item.donate-nav-item .btn.btn-donate {
+  //   margin: .6rem 0;
+  // }
+// }
+
+// @include mobile-and-tablet-only {
+  // .navbar-dropdown {
+  //   background: $dark-white!important;
+
+  //   & .nav-item a.nav-link {
+  //     margin: 0;
+  //   }
+
+  //   .nav-item {
+  //     &.active .nav-link::before {
+  //       background: $gp-green;
+  //     }
+
+  //     &:hover:not(li#country-select):not(.donate-nav-item):not(.active) {
+  //       border-left: 8px solid $gp-green;
+  //     }
+  //   }
+
+  //     &.btn-donate {
+  //       margin: 0;
+  //     }
+
+  // }
+
+  // .navbar-search-toggle, .navbar-search-toggle.open {
+  //   background-color: inherit;
+	//   margin-top: 1.1rem !important;
+	// 	mask-image: inherit !important;
+  //   -webkit-mask-image: inherit !important;
+  // }
   // .nav-search-wrap {
   //   background: rgba(76, 77, 79, 0.39)!important;
   // }
 
-  button.btn-navbar-toggle {
-    background: none;
-    border: none;
-    box-shadow: none;
-    color: $dark-green!important;
-    -webkit-transition: background-color 300ms ease-in-out;
-    -moz-transition: background-color 300ms ease-in-out;
-    transition: background-color 300ms ease-in-out;
+  // button.btn-navbar-toggle {
+  //   background: none;
+  //   border: none;
+  //   box-shadow: none;
+  //   color: $dark-green!important;
+  //   -webkit-transition: background-color 300ms ease-in-out;
+  //   -moz-transition: background-color 300ms ease-in-out;
+  //   transition: background-color 300ms ease-in-out;
 
-    &:active,
-    &:focus,
-    &:hover {
-      color: $dark-green !important;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
-      background: $dark-white!important;
-      border: 1px solid transparent;
-    }
-  }
+  //   &:active,
+  //   &:focus,
+  //   &:hover {
+  //     color: $dark-green !important;
+  //     box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+  //     background: $dark-white!important;
+  //     border: 1px solid transparent;
+  //   }
+  // }
 
-  .navbar-dropdown-toggle[aria-expanded="true"] {
-    background-color: rgba(0, 0, 0, 0.5) !important;
-  }
-}
+  // .navbar-dropdown-toggle[aria-expanded="true"] {
+  //   background-color: rgba(0, 0, 0, 0.5) !important;
+  // }
+// }
+// }

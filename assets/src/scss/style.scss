@@ -22,9 +22,12 @@ Text Domain: planet4-child-theme-nordic
 @import "base/_typography";
 
 // Components
+@import "components/_articles";
 @import "components/_body";
 @import "components/_buttons";
+@import "components/_comments";
 @import "components/_eci";
 @import "components/_footer";
 @import "components/_header";
+@import "components/_leads-plugin";
 @import "components/_navbar";

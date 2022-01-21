@@ -24,14 +24,14 @@ h1,
 h2,
 h3,
 .cover-card-heading {
-  font-family: $helvetica!important;
+  font-family: $helvetica;
 }
 
 h4,
 h5,
 h6,
 .cover-card-excerpt {
-  font-family: $lora!important;
+  font-family: $lora;
 }
 
 h1 {
@@ -162,6 +162,6 @@ div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
 
 .content-covers-block .content-covers-block-wrap .content-covers-block-info h5>a {
   color: $dark-green !important;
-  font-family: $helvetica !important;
+  font-family: $helvetica;
 }
 

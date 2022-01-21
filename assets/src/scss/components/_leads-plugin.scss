@@ -1,0 +1,14 @@
+//fixes the consent mssg for the LP
+.leads-form span.checkbox-label p {
+  line-height: 1.3;
+  font-weight: 300;
+  font-family: $lora;
+  font-size: .75rem!important;
+  padding-bottom: 0.2rem;
+
+  a {
+    font-weight: 500!important;
+    font-size: .75rem!important;
+  }
+}
+

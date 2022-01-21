@@ -1,17 +1,13 @@
 html {
   scroll-behavior: smooth;
-  transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
   -moz-transition-duration: 0.4s;
   -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
 
 a {
   cursor: pointer;
-}
-
-.page-header-background {
-  opacity: 75%;
 }
 
 a.external-link:after {
@@ -20,33 +16,4 @@ a.external-link:after {
 
 .top-page-tags .tag-item {
   color: $dark-green !important;
-}
-
-//fixes the consent mssg for the LP
-.leads-form span.checkbox-label p {
-  line-height: 1.3;
-  font-weight: 300;
-  font-family: $lora !important;
-  font-size: .75rem!important;
-  padding-bottom: 0.2rem;
-
-  a {
-    font-weight: 500!important;
-    font-size: .75rem!important;
-  }
-}
-
-.article-list-item-content {
-  width: inherit;
-}
-
-//Author info in posts
-.author-block-info div[itemprop="description"] {
-  font-family: $lora !important;
-
-  span.show-more,
-  span.show-less {
-    font-family: $lora;
-    color: $dark-green;
-  }
 }

@@ -1,6 +1,12 @@
 @include mobile-only {
 	.page-header-title {
     overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
     hyphens: auto;
 	}
+}
+
+.page-header-background {
+  opacity: 75%;
 }

@@ -1,0 +1,14 @@
+//Author info in posts
+.author-block-info div[itemprop="description"] {
+  font-family: $lora;
+
+  span.show-more,
+  span.show-less {
+    font-family: $lora;
+    color: $dark-green;
+  }
+}
+
+button.author-block-info::after {
+  background-color: $dark-green;
+}

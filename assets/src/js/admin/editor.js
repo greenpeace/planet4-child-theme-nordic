@@ -60,11 +60,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
       });
       break;
     case false:
-      console.log('no eci');
+      //console.log('no eci');
       jQuery('.leads-form__form__container, .leads-form__content h2, .leads-form__content .description').show();
       break;
     default:
-    console.log('DEFAULT SWITCH CASE..');
+    //console.log('DEFAULT SWITCH CASE..');
       // Show your normal petition form & text
       jQuery('.leads-form__form__container, .leads-form__content h2, .leads-form__content .description').show();
   }
