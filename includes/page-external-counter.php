@@ -4,7 +4,11 @@ Template Name: External Counter Integration (GPN)
 */
 
 // Example:
-// externalCounter.php?var=unique_count&url=https://global-petition-counter-v2.appspot.com/counter/protect-oceans-2019
+// page-external-counter.php?var=unique_count&url=https://global-petition-counter-v2.appspot.com/counter/protect-oceans-2019
+
+//update the current page template meta to not show in the page list in the search results
+$page_id = get_the_ID();
+update_post_meta( $page_id, 'p4_do_not_index', true );
 
 //get the params
 $externalKey = $_GET['var'];
@@ -17,6 +21,7 @@ $rewriteKey = $externalKey;
 $rewriteValue = $externalData[$rewriteKey];
 //Create array with the the new value and output as JSON
 $output = [ 'counter' => $rewriteValue ];
+
 function outputJSON($output) {
 	header( 'Content-type: application/json; charset=utf-8; Cache-Control: no-cache, must-revalidate');
 	header( 'Content-Description: External API Endpoint Formatting' );

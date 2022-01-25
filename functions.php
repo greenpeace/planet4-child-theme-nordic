@@ -41,40 +41,20 @@ function enqueue_child_scripts()  {
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
 
-//get the published pages with external counter tempate integration
+//hide from page search rsults the published pages with external counter tempate integration
 function get_all_template_pages() {
 	$args = array(
 		'post_type' => 'page',
 		'post_status' => 'publish',
 		'meta_key' => '_wp_page_template',
-		'meta_value' => 'page-external-counter.php',
-		'posts_per_page' => -1
+		'meta_value' => '/includes/page-external-counter.php',
+		'posts_per_page' => -1,
+		'publicly_queryable' => false
 	);
 	$query = new WP_Query($args);
 	$templatePages = $query->posts;
 	return $templatePages;
 }
-//always exclude the template pages from the listed search results
-function exclude_template_pages($query) {
-	if ($query->is_search) {
-		$templatePages = get_all_template_pages();
-		$templatePageIds = array();
-		foreach ($templatePages as $templatePage) {
-			$templatePageIds[] = $templatePage->ID;
-		}
-		$query->set('post__not_in', $templatePageIds);
-	}
-}
-add_action('pre_get_posts', 'exclude_template_pages');
-
-
-
-
-
-
-
-
-
 
 //  function p4_child_theme_gpn_gutenberg_scripts() {
 // 	 wp_enqueue_script(
@@ -100,9 +80,6 @@ add_action('pre_get_posts', 'exclude_template_pages');
 //  }
 
 //  add_action( 'enqueue_block_editor_assets', 'p4_child_theme_gpn_gutenberg_scripts' );
-
-
-
 
 /**
  * Font Awesome Kit Setup
