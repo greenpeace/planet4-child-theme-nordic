@@ -1,3 +1,13 @@
 .article-list-item-content {
   width: inherit;
 }
+
+@include mobile-only {
+  h1.page-header-title {
+    font-size: 9vw;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
+}

@@ -19,6 +19,13 @@
   }
 }
 
+// Tablet only (576px to 768px)
+@mixin tablet-only {
+  @media (min-width: #{$medium-width}) and (max-width: #{$large-width}) {
+    @content;
+  }
+}
+
 // Mobile & Tablet only (up to 991px)
 @mixin mobile-and-tablet-only {
   @media (max-width: #{$large-width}) {

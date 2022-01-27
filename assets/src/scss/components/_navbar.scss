@@ -10,22 +10,37 @@
   }
 }
 
-@include mobile-and-tablet-only {
+// @include mobile-only {
   a.nav-link {
     font-family: $helvetica;
     font-weight: 600;
-    font-size: 4vw;
+
+    @include mobile-only {
+      font-size: 3.5vw;
+    }
+
+    @include tablet-only {
+      font-size: 2vw;
+    }
+
   }
 
   .top-navigation .btn-donate {
-    height: 9vw;
-    line-height: 8vw;
-    font-size: 4vw;
-    border-radius: 1.6vw;
+
+    @include mobile-only {
+      height: 8vw;
+      line-height: 7vw;
+      font-size: 3.5vw;
+    }
+
+    @include tablet-only {
+      height: 4vw;
+      line-height: 3.5vw;
+      font-size: 2vw;
+    }
   }
 
-}
-// nav#header.top-navigation.navbar {
+  // nav#header.top-navigation.navbar {
 //   background: $dark-white!important;
 
 //   a {

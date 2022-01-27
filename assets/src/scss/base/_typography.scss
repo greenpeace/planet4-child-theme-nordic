@@ -1,8 +1,9 @@
+@import "../base/colors";
+@import "../base/variables";
+
 // Typography
-@font-face {
-  font-family: "Roboto";
-  src: url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
-}
+//import font roboto from google fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
 @font-face {
   font-family: "Helvetica Now Display";
@@ -38,7 +39,7 @@ h4,
 h5,
 h6,
 .cover-card-excerpt {
-  font-family: $lora;
+  font-family: $roboto;
 }
 
 h1 {
@@ -55,24 +56,6 @@ h1 {
     font-size: $font-size-xxxxl;
   }
 }
-
-// h2 {
-//   font-size: $font-size-xl;
-//   line-height: 1.38;
-//   margin-bottom: 5px;
-
-//   @include medium-and-up {
-//     font-size: $font-size-xxl;
-//   }
-
-//   @include x-large-and-up {
-//     margin-bottom: 24px;
-//   }
-// }
-
-// .white-text {
-//   color: $white;
-// }
 
 .screen-reader-text {
   border: 0;
@@ -97,35 +80,66 @@ h1 {
 // :hover     - hovered state
 //
 // Styleguide Style.typography.links
-a, a.external-link:not(.split-two-column-item-link), .post-content .page-links a *,
-.post-content .more-link *, .post-content .more-link::after, .post-content .more-link::before,
-.post-content .page-links a::after, .post-content .page-links a::before, .wp-block-file a,
-.wp-block-button a *:not(strong), .wp-block-button a::after, h5.author-block-info-name a {
+// a:not(.nav-link, .split-two-column-item-link){
+//   color: var(--link--color, #{$dark-green});
+//   text-decoration: none;
+//   transition: all .3s ease;
+//   &:hover {
+//     text-decoration: var(--nav-link--hover--text-decoration, underline)!important;
+//     text-underline-position: var(--nav-link--hover--text-underline-position, auto)!important;
+//     color: $grey-70;
+
+//   }
+// }
+
+.author-block-info-name a[itemprop="name"],
+a.comment-reply-link,
+a.standalone-link, a.standalone-link:after,
+a.standalone-link.external-link,
+a.external-link:not(.split-two-column-item-link)
+// .post-content .page-links a *,
+// .post-content .more-link *, .post-content .more-link::after,
+// .post-content .more-link::before,
+// .post-content .page-links a::after,
+// .post-content .page-links a::before,
+// .wp-block-file a,
+// .wp-block-button a *:not(strong), .wp-block-button a::after,
+// h5.author-block-info-name a
+{
   color: $dark-green;
-  text-decoration: none;
-  font-weight: 500;
+  // text-decoration: none;
+  font-weight: inherit;
   font-family: $roboto;
-
-  &:hover {
-    color: $dark-green;
-    text-decoration: underline;
-  }
-
+  font-size: inherit;
   @include mobile-only {
     font-size: 1.1rem;
   }
+
+  &:hover {
+    // text-decoration: var(--nav-link--hover--text-decoration, underline)!important;
+    // text-underline-position: var(--nav-link--hover--text-underline-position, auto)!important;
+    color: $grey-70;
+    text-decoration: underline solid $gp-green 3px;
+  }
+
 }
+
 
 // .page-section-description, div.edit-post-visual-editor.editor-styles-wrapper div.block-editor__typewriter div div.block-editor-writing-flow {
 //   font-family: $roboto !important;
 //   font-weight: 300;
 //   font-size: 1.2rem;
 // }
-p, ul, li, .page-section-description, .columns-block .column-wrap p, span.author-info,
-.article-list-item-content, .accordion-block .accordion-content p.accordion-text, .btn *:not(.btn-navbar-toggle), .btn::after, .btn::before,
-.wp-block-button a::before, .wp-block-file .wp-block-file__button *:not(strong), .wp-block-file .wp-block-file__button::after,
-.wp-block-file .wp-block-file__button::before, div.block-editor-block-list__layout.is-root-container, p.search-result-item-content, #gdpr-comments-compliance {
-  font-family: $roboto;
+p, ul, li, .page-section-description,
+.columns-block .column-wrap p,
+span.author-info,
+.article-list-item-content,
+.accordion-block .accordion-content p.accordion-text,
+.wp-block-file .wp-block-file__button::before,
+div.block-editor-block-list__layout.is-root-container,
+p.search-result-item-content, #gdpr-comments-compliance,
+.error404 .speech-bubble, .error404 .page-header .container .row  {
+  font-family: $roboto!important;
   font-weight: 400;
   font-size: 1.06rem;
   line-height: inherit;
@@ -152,7 +166,7 @@ p.article-list-item-content, article.post-details p, p.accordion-text, p.search-
 
 p.logged-in-as a,
 div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
-  color: $gp-nor-green!important;
+  color: $dark-green;
 
   &:hover {
     text-decoration: underline;

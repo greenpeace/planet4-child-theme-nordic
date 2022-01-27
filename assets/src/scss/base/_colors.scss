@@ -13,7 +13,8 @@ $white: #fff;
 
 //child theme specific
 $dark-white: #f9f9f9;
-$dark-green: #448107;
+// $dark-green: #448107;
+$dark-green: #3c7800; //AA color
 
 $gp-green: #66cc00; //old primary color
 $gp-primary: #73be1e; //new primary color
@@ -23,7 +24,7 @@ $gp-nor-green-links: #0b851e; //AA compliance color
 
 //overrides
 $dark-blue: $dark-green!important; //overrides the default blue color
-$link-color: $gp-primary!important; //overrides the default blue color
+$link-color: $dark-green; //overrides the default blue color
 $aquamarine: $gp-primary!important;
 
 // Styleguide Style.colors.grey

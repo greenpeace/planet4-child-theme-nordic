@@ -1,6 +1,6 @@
 .site-footer {
   background: $gp-nor-green;
-  font-family: $roboto;
+  font-family: $helvetica;
 
   .countries-list {
     //footer fix bakground
@@ -12,7 +12,7 @@
   }
   .copyright {
     background: $gp-nor-green;
-    font-family: $roboto;
+    font-family: $helvetica;
 
     &a,
     &a strong,
@@ -44,7 +44,7 @@
   }
 
   ul.list-unstyled.footer-links li a {
-    font-family: $roboto;
+    font-family: $helvetica;
     font-weight: 500;
   }
 

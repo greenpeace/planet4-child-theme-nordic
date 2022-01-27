@@ -1,10 +1,11 @@
+@import "../base/colors";
 // Fonts
 $roboto:   "Roboto", sans-serif;
 // changed the font from here to make sure it will assigned where it need to
 // $lora:     "Open Sans", sans-serif;
-$helvetica: "Helvetica Now Display Bold", "Helvetica Now Display", "Helvetica", "Arial", sans-serif!important;
+$helvetica: "Helvetica Now Display", "Helvetica", "Arial", sans-serif!important;
+$helvetica-bold: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif!important;
 $lora: "Helvetica Now Display Regular", "Helvetica Now Display", "Helvetica", "Arial", sans-serif !important;
-// $lora-child-theme: "Helvetica Now Display Regular", "Helvetica Now Display", "Helvetica", "Arial", sans-serif;
 
 // Media queries
 $extra-small-width:       320px;
@@ -13,6 +14,19 @@ $medium-width:            768px;
 $large-width:             992px;
 $extra-large-width:       1200px;
 $extra-extra-large-width: 1600px;
+
+:root {
+  --top-navigation--background: #{$white};
+  --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --top-navigation--color: #{$black};
+  --top-navigation--separation: 1px solid #d8d8d8;
+  --top-navigation--search-toggle--background: #{$grey-10};
+  --top-navigation--input--placeholder--color: #{$grey-40};
+  --link--color: #{$dark-green};
+  --nav-link--hover--color: #{$black};
+  --nav-link--hover--text-decoration: underline 3px #{$gp-green};
+  --nav-link--hover--text-underline-position: under;
+}
 
 // Units:
 // $au: auto;

@@ -1,33 +1,42 @@
-button, .btn {
+button,
+button[type="submit"],
+.btn,
+.btn-primary[data-ga-action="Call to Action"],
+.btn-secondary,
+.wp-block-button__link,
+a[data-ga-action="Donate"],
+.post-content .more-link, .post-content .page-links a,
+.wp-block-button a, .wp-block-file .wp-block-file__button{
   cursor: pointer;
+  font-family: $helvetica-bold;
 }
 
 //Donate btn
-nav#header.top-navigation.navbar ul.navbar-dropdown li.donate-nav-item a.btn-donate,
-.wp-block-button.is-style-donate a.wp-block-button__link,
-.wp-block-button.is-style-donate .wp-block-button__link[role="textbox"] {
-  background: $gp-green;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: bold;
+// nav#header.top-navigation.navbar ul.navbar-dropdown li.donate-nav-item a.btn-donate,
+// .wp-block-button.is-style-donate a.wp-block-button__link,
+// .wp-block-button.is-style-donate .wp-block-button__link[role="textbox"] {
+//   background: $gp-green;
+//   color: #fff;
+//   text-transform: uppercase;
+//   font-weight: bold;
 
-  @include mobile-and-tablet-only {
-    // ripple effect for touch screens
-    background-position: center;
-    transition: background 0.5s;
+//   @include mobile-and-tablet-only {
+//     // ripple effect for touch screens
+//     background-position: center;
+//     transition: background 0.5s;
 
-    &:hover {
-      color: #fff;
-      background: $gp-primary radial-gradient(circle, transparent 1%, $gp-primary 1%) center/15000%;
-    }
+//     &:hover {
+//       color: #fff;
+//       background: $gp-primary radial-gradient(circle, transparent 1%, $gp-primary 1%) center/15000%;
+//     }
 
-    &:active {
-      color: #fff;
-      background-color: $gp-green;
-      background-size: 100%;
-      transition: background 0s;
-    }
-  }
+//     &:active {
+//       color: #fff;
+//       background-color: $gp-green;
+//       background-size: 100%;
+//       transition: background 0s;
+//     }
+//   }
 
   // @include large-and-up {
   //   font-weight: bold;
@@ -44,15 +53,14 @@ nav#header.top-navigation.navbar ul.navbar-dropdown li.donate-nav-item a.btn-don
   //     color: #fff;
   //   }
   // }
-}
+// }
 
 //CTA color buttons
-//select all buttons with attribute data-ga-action="Call to Action"
-
-.btn-primary[data-ga-action="Call to Action"] {
-// div.carousel-caption div.action-button a.btn.btn-primary.btn-block,
-// .btn.btn-primary.page-header-btn, .cover-card-btn, .wp-block-button.is-style-cta a.wp-block-button__link, .split-two-column-item-button {
-  font-weight: 700;
+button[type="submit"]:not(.nav-search-btn),
+.btn.btn-primary[data-ga-action="Call to Action"],
+.btn.btn-donate[data-ga-action="Donate"],
+.btn.btn-primary#hidecookie {
+  font-weight: bold;
   border: none;
 
   @include mobile-and-tablet-only {
@@ -86,31 +94,6 @@ nav#header.top-navigation.navbar ul.navbar-dropdown li.donate-nav-item a.btn-don
     }
   }
 }
-
-// @include mobile-and-tablet-only {
-//   .btn-navbar-toggle {
-//     cursor: pointer;
-//     color: $gp-green;
-//     background-color: transparent;
-//     transition: background-color color font-weight 100ms;
-//     display: inline-block;
-
-//     &:active,
-//     &:focus,
-//     &:hover {
-//       color: $dark-green;
-//       box-shadow: none;
-//       background-color: #00000080;
-//       border: 1px solid transparent;
-//     }
-//     @include small-and-up {
-//       background-color: $dark-white;
-//       border-radius: 0;
-//       border: 1px solid transparent;
-//       box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
-//     }
-//   }
-// }
 
 a.pdf-link:hover::before {
   background-color: $dark-white;

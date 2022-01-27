@@ -1,14 +1,39 @@
 //Author info in posts
+.author-block, .comments-block .form-section .comment-respond{
+  background: rgba( 236, 236, 236, 0.25 );
+  box-shadow: 0 1px 3px 0 rgba( 31, 38, 135, 0.18 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  -ms-backdrop-filter: blur( 4px );
+  border-radius: 6px;
+}
+
 .author-block-info div[itemprop="description"] {
-  font-family: $lora;
+  font-family: $helvetica;
+  color: initial;
 
   span.show-more,
   span.show-less {
-    font-family: $lora;
+    font-family: $roboto;
     color: $dark-green;
   }
 }
-
-button.author-block-info::after {
-  background-color: $dark-green;
+button.author-block-description-button {
+  background-color: inherit;
 }
+
+button.author-block-description-button:after {
+   background-image: url("../../assets/images/chevron.svg")!important;
+   background-size: contain;
+   background-repeat: no-repeat;
+   width: 10px;
+   height: 10px;
+   transform: rotate(90deg);
+}
+
+.author-block-description-button[aria-expanded=true]:after {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  vertical-align: initial;
+}
+
