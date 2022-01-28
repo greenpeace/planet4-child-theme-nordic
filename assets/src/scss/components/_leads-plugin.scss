@@ -1,3 +1,10 @@
+//fix for the form description text
+.leads-form__form__container .acf-label {
+  font-family: $helvetica;
+  margin-bottom: 0.75rem;
+}
+
+
 //fixes the consent mssg for the LP
 .leads-form span.checkbox-label p {
   line-height: 1.3;
