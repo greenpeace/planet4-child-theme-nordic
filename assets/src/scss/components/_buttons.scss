@@ -155,17 +155,17 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 
   // Disabled for now bc of a dark blue variable from the master theme that I can't fully override (for now)
   @include large-and-up {
-    background-image: -webkit-linear-gradient(30deg, $white 50%, transparent 50%)!important;
-    background-image: linear-gradient(30deg, $white 50%, transparent 50%)!important;
-    background-size: 700px;
-    background-repeat: no-repeat;
-    background-position: 0%;
-    -webkit-transition: background 500ms ease-in-out;
-    transition: background 500ms ease-in-out;
+    // background-image: -webkit-linear-gradient(30deg, $white 50%, transparent 50%)!important;
+    // background-image: linear-gradient(30deg, $white 50%, transparent 50%)!important;
+    // background-size: 700px;
+    // background-repeat: no-repeat;
+    // background-position: 0%;
+    // -webkit-transition: background 500ms ease-in-out;
+    // transition: background 500ms ease-in-out;
 
     &:hover {
-      background: $dark-green!important;
-      background-position: 100%!important;
+      background: $dark-green;
+      // background-position: 100%!important;
       border-color: $dark-green;
       color: $white;
     }
