@@ -60,7 +60,7 @@ a[data-ga-action="Donate"],
 // }
 
 //CTA color buttons
-button[type="submit"]:not(.nav-search-btn),
+button[type="submit"]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"],
 .btn.btn-donate[data-ga-action="Donate"],
 .btn.btn-primary#hidecookie {

@@ -5,11 +5,16 @@
   .countries-list {
     //footer fix bakground
     background: #076c50;
+
+    a[data-ga-category="Country Selector"]:hover{
+      color: $yellow!important;
+    }
   }
 
   .footer-menu {
     margin-bottom: 0;
   }
+
   .copyright {
     background: $gp-nor-green;
     font-family: $helvetica;
@@ -19,14 +24,19 @@
     &span p,
     &span strong,
     &span strong a {
+      color: $white;
       font-size: .75rem;
       line-height: 1.4;
       width: auto;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
   a:hover {
-    color: $yellow;
+    color: $yellow!important;
     text-decoration: none;
   }
 
@@ -45,11 +55,11 @@
 
   ul.list-unstyled.footer-links li a {
     font-family: $helvetica;
-    font-weight: 500;
+    font-weight: inherit;
   }
 
   ul.list-unstyled.footer-links-secondary li a, p.copyright-text {
-    font-weight: 400;
+    font-weight: inherit;
     font-size: .75rem;
     line-height: 1;
   }
