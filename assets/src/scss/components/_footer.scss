@@ -19,24 +19,24 @@
     background: $gp-nor-green;
     font-family: $helvetica;
 
-    &a,
-    &a strong,
-    &span p,
-    &span strong,
-    &span strong a {
+    a,
+    a strong,
+    span p,
+    span strong,
+    span strong a {
       color: $white;
       font-size: .75rem;
       line-height: 1.4;
       width: auto;
+    }
 
-      &:hover {
-        text-decoration: underline;
-      }
+    a:hover {
+      text-decoration: underline;
     }
   }
 
-  a:hover {
-    color: $yellow!important;
+  a:hover:not(.footer-social-media li a, .copyright a:hover){
+    color: $yellow;
     text-decoration: none;
   }
 
