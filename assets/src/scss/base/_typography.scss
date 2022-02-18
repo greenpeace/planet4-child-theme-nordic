@@ -93,7 +93,7 @@ h1 {
 // }
 
 //select only the a tags that don't have any class names
-a:not([class]):not(.article-list-item-author>a, a[data-ga-action="Title"], a[data-ga-action="Category Title"], a[data-ga-category="Footer Navigation"], .copyright>.container>span[role="text"]>a,),
+a:not([class]):not(.article-list-item-author>a, a[data-ga-action="Title"], a[data-ga-action="Category Title"], a[data-ga-category="Footer Navigation"], .copyright>.container>span[role="text"]>a),
 .author-block-info-name a[itemprop="name"],
 a.comment-reply-link,
 a.standalone-link, a.standalone-link:after,

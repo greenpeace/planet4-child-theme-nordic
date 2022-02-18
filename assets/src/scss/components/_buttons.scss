@@ -127,8 +127,7 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 //Secondary btns
 .btn-secondary:not(#hidecookie),
 .btn-secondary:not(#commentform),
-.btn-secondary, .wp-block-button.is-style-secondary a,
-.wp-block-file .wp-block-file__button {
+.btn-secondary, .wp-block-button.is-style-secondary a {
   border-color: $dark-green;
   color: $dark-green;
   box-shadow: none;
@@ -188,4 +187,27 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+
+a.wp-block-file__button.pdf-link {
+  color: $dark-green!important;
+  -webkit-text-decoration-color: $dark-green;
+  -moz-text-decoration-color: $dark-green;
+  text-decoration-color: $dark-green;
+  border-color: $dark-green;
+  box-shadow: none;
+  background: $white;
+  border-radius: 4px;
+
+  &:hover,
+  &:active {
+    background: $dark-green;
+    border-color: $dark-green;
+    color: $white!important;
+  }
+}
+
+.wp-block-file__button.pdf-link::after {
+  display: none;
 }
