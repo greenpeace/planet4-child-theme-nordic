@@ -118,6 +118,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/social-media',
 				// 'planet4-blocks/social-media-cards',
 				'planet4-blocks/spreadsheet',
+				// 'planet4-blocks/submenu',
 				'planet4-blocks/take-action-boxout',
 				'planet4-blocks/timeline',
 				// 'acf/p4-gpn-block-testimonial',

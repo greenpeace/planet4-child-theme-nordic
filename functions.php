@@ -1,34 +1,37 @@
 <?php
 /**
-* Theme Name: Greenpeace Planet4 Child Theme Nordic
-* Theme URI: Theme URI: https://github.com/greenpeace/planet4-child-theme-nordic
-* Description: Child theme for the Planet 4 Wordpress project
-* Author: Greenpeace Nordic
-* Author URI: https://github.com/greenpeace
-* License: MIT
-* License URI: https://opensource.org/licenses/MIT
-* Tags: light, accessibility-ready
-* Text Domain: planet4-child-theme-nordic
-* Version: 0.0.7
-*/
+ * Theme Name: Greenpeace Planet4 Child Theme Nordic
+ * Theme URI: Theme URI: https://github.com/greenpeace/planet4-child-theme-nordic
+ * Description: Child theme for the Planet 4 Wordpress project
+ * Author: Greenpeace Nordic
+ * Author URI: https://github.com/greenpeace
+ * License: MIT
+ * License URI: https://opensource.org/licenses/MIT
+ * Tags: light, accessibility-ready
+ * Text Domain: planet4-child-theme-nordic
+ * Version: 0.0.7
+ */
 
  // Filter available Gutenberg standard blocks
- require_once( 'includes/gutenberg-blocks.php' );
+ require_once 'includes/gutenberg-blocks.php';
 
 add_action('admin_init', 'remove_acf_options_page', 99);
-function remove_acf_options_page() {
-   remove_menu_page('acf-options');
+function remove_acf_options_page()
+{
+    remove_menu_page('acf-options');
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_child_styles');
-function enqueue_child_styles() {
+function enqueue_child_styles()
+{
     $css_creation = filectime(get_stylesheet_directory() . '/assets/build/style.min.css');
     // wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', array(), '5.0.0');
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/build/style.min.css', ['parent-style'], $css_creation);
 }
 
-function enqueue_child_scripts()  {
-	wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), '3.6.0', true);
+function enqueue_child_scripts()
+{
+    wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), '3.6.0', true);
     wp_enqueue_script('jquery');
     // wp_register_script('jquery', get_stylesheet_directory_uri() . '/node_modules/jquery', ['jquery'], '3.5.1', true);
     // wp_enqueue_script('jquery');
@@ -42,41 +45,42 @@ function enqueue_child_scripts()  {
 add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
 
 //hide from page search rsults the published pages with external counter tempate integration
-function get_all_template_pages() {
-	$args = array(
-		'post_type' => 'page',
-		'post_status' => 'publish',
-		'meta_key' => '_wp_page_template',
-		'meta_value' => '/includes/page-external-counter.php',
-		'posts_per_page' => -1,
-		'publicly_queryable' => false
-	);
-	$query = new WP_Query($args);
-	$templatePages = $query->posts;
-	return $templatePages;
+function get_all_template_pages()
+{
+    $args = array(
+    'post_type' => 'page',
+    'post_status' => 'publish',
+    'meta_key' => '_wp_page_template',
+    'meta_value' => '/includes/page-external-counter.php',
+    'posts_per_page' => -1,
+    'publicly_queryable' => false
+    );
+    $query = new WP_Query($args);
+    $templatePages = $query->posts;
+    return $templatePages;
 }
 
 //  function p4_child_theme_gpn_gutenberg_scripts() {
-// 	 wp_enqueue_script(
-// 		 'gpn-customizations',
-// 		 get_stylesheet_directory_uri() . '/assets/src/js/admin/editor.js',
-// 		//  p4gbks_admin_script is the JS that is loaded in planet4-plugin-gutenberg-block:
-// 		//  https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/4ae684660c83361f6d5f9d96744362ea7422cc4f/classes/class-loader.php#L296-L302
-// 		//  By putting it in the dependency list, we ensure our code gets loaded later so we can overwrite some of it.
-// 		 array( 'wp-blocks', 'wp-dom', 'p4gbks_admin_script' ),
-// 		 filemtime( get_stylesheet_directory() . '/assets/src/js/admin/editor.js'),
-// 		 true
-// 	 );
+//      wp_enqueue_script(
+//          'gpn-customizations',
+//          get_stylesheet_directory_uri() . '/assets/src/js/admin/editor.js',
+//         //  p4gbks_admin_script is the JS that is loaded in planet4-plugin-gutenberg-block:
+//         //  https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/4ae684660c83361f6d5f9d96744362ea7422cc4f/classes/class-loader.php#L296-L302
+//         //  By putting it in the dependency list, we ensure our code gets loaded later so we can overwrite some of it.
+//          array( 'wp-blocks', 'wp-dom', 'p4gbks_admin_script' ),
+//          filemtime( get_stylesheet_directory() . '/assets/src/js/admin/editor.js'),
+//          true
+//      );
 
-// 	//  $user  = wp_get_current_user();
-// 	//  $roles = ( array ) $user->roles;
+//     //  $user  = wp_get_current_user();
+//     //  $roles = ( array ) $user->roles;
 
-// 	//  $script_params = array(
-// 	// 	 'roles'     => $roles,
-// 	// 	 'post_type' => get_post_type(),
-// 	//  );
+//     //  $script_params = array(
+//     //      'roles'     => $roles,
+//     //      'post_type' => get_post_type(),
+//     //  );
 
-// 	//  wp_localize_script( 'gpn-customizations', 'gpnUserData', $script_params );
+//     //  wp_localize_script( 'gpn-customizations', 'gpnUserData', $script_params );
 //  }
 
 //  add_action( 'enqueue_block_editor_assets', 'p4_child_theme_gpn_gutenberg_scripts' );
