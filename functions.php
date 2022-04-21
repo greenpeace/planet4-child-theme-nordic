@@ -15,7 +15,7 @@
  // Filter available Gutenberg standard blocks
  require_once 'includes/gutenberg-blocks.php';
 
-add_action('admin_init', 'remove_acf_options_page', 99);
+add_action('admin_menu', 'remove_acf_options_page', 99);
 function remove_acf_options_page()
 {
     remove_menu_page('acf-options');
