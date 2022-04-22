@@ -13,6 +13,20 @@ update_post_meta( $page_id, 'p4_do_not_index', true );
 //get the params
 $externalKey = $_GET['var'];
 $externalURL = $_GET['url'];
+
+//if url is empty, return the permalink of the current page with the external key
+if ( empty( $externalURL ) ) {
+	$externalURL = get_permalink();
+	$externalKey = 'value';
+	//add a sample counter to the url so it doesn't return an error
+	$externalURL = 'https://api.countapi.xyz/get/greenpeace.rocks/visits';
+}
+//returns the value of the url
+else
+{
+	$externalURL = $externalURL;
+}
+
 //stringify the JSON
 $externalJSON = file_get_contents($externalURL);
 $externalData = json_decode($externalJSON, true);
