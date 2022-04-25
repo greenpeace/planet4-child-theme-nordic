@@ -15,16 +15,17 @@ $externalKey = $_GET['var'];
 $externalURL = $_GET['url'];
 
 //if url is empty, return the permalink of the current page with the external key
-if ( empty( $externalURL ) ) {
-	$externalURL = get_permalink();
-	$externalKey = 'value';
-	//add a sample counter to the url so it doesn't return an error
-	$externalURL = 'https://api.countapi.xyz/get/greenpeace.rocks/visits';
+if ( !empty( $externalURL ) ) {
+	$externalKey = $_GET['var'];
+	$externalURL = $_GET['url'];
 }
 //returns the value of the url
 else
 {
-	$externalURL = $externalURL;
+	// $externalURL = get_permalink();
+	$externalKey = 'value';
+	//add a sample counter to the url so it doesn't return an error
+	$externalURL = 'https://api.countapi.xyz/get/greenpeace.rocks/visits';
 }
 
 //stringify the JSON
@@ -32,7 +33,7 @@ $externalJSON = file_get_contents($externalURL);
 $externalData = json_decode($externalJSON, true);
 //rewrite the key
 $rewriteKey = $externalKey;
-$rewriteValue = $externalData[$rewriteKey];
+$rewriteValue = isset($externalData[$rewriteKey]) ? $externalData[$rewriteKey] : 0;
 //Create array with the the new value and output as JSON
 $output = [ 'counter' => $rewriteValue ];
 
@@ -47,4 +48,3 @@ function outputJSON($output) {
 outputJSON($output);
 
 ?>
-
