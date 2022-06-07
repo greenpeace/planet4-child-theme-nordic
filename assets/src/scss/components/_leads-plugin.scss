@@ -4,6 +4,10 @@
   margin-bottom: 0.75rem;
 }
 
+//fix for the li element in form description text
+.leads-form__form__container ul li {
+  font-size: inherit;
+}
 
 //fixes the consent mssg for the LP
 .leads-form span.checkbox-label p {
@@ -19,3 +23,7 @@
   }
 }
 
+div.leads-form__form__container small p a {
+  font-weight: 500!important;
+  font-size: .75rem!important;
+}
