@@ -71,7 +71,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 		if ( $post->post_type === 'page' ) { // Block types only for pages
 			$allowed_blocks_page = array(
 				// Blocks from planet4-plugin-gutenberg-blocks
-				// @see: https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/master/planet4-gutenberg-blocks.php
+				// @see: https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/ia/pattern-report/planet4-gutenberg-blocks.php
 				'planet4-blocks/accordion',
 				'planet4-blocks/articles',
 				'planet4-blocks/carousel-header',
@@ -98,7 +98,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 		} else if ( $post->post_type === 'post' ) { // block types only for posts
 			$allowed_blocks_post = array(
 				// Blocks from planet4-plugin-gutenberg-blocks
-				// @see: https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/master/planet4-gutenberg-blocks.php
+				// @see: https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/ia/pattern-report/planet4-gutenberg-blocks.php
 				'planet4-blocks/accordion',
 				'planet4-blocks/articles',
 				'planet4-blocks/counter',
@@ -118,7 +118,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 		} else if ( $post->post_type === 'campaign' ) { // block types only for campaign pages
 			$allowed_blocks_post = array(
 				// Blocks from planet4-plugin-gutenberg-blocks
-				// @see: https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/master/planet4-gutenberg-blocks.php
+				// @see: https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/ia/pattern-report/planet4-gutenberg-blocks.php
 				// We allow all blocks in these as this content is sometimes imported from other Planet4 sites
 				'planet4-blocks/accordion',
 				'planet4-blocks/articles',
@@ -139,13 +139,14 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				// 'leadin/hubspot-form-block',
 				'acf/leads-form',
 				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
-
 			);
+			$allowed_blocks      = array_merge( $allowed_blocks_general, $allowed_blocks_campaign );
+
 		} else if ( $post->post_type === 'action' ) { // block types only for action type pages
 			// Blocks from planet4-plugin-gutenberg-blocks
 			// @see: https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/master/planet4-gutenberg-blocks.php
 			// We allow all blocks in these as this content is sometimes imported from other Planet4 sites
-			$allowed_blocks_post = array(
+			$allowed_blocks_action = array(
 				'planet4-blocks/accordion',
 				'planet4-blocks/articles',
 				'planet4-blocks/carousel-header',
@@ -167,6 +168,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 				'planet4-blocks/sub-pages',
 			);
+			$allowed_blocks      = array_merge( $allowed_blocks_general, $allowed_blocks_action );
 
 		}
 
