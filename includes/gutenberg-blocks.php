@@ -27,6 +27,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 			'core/list',
 			'core/media-text',
 			'core/paragraph',
+			'core/pullquote',
 			'core/quote',
 			'core/separator',
 			'core/spacer',
@@ -88,7 +89,6 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/spreadsheet',
 				'planet4-blocks/submenu',
 				'planet4-blocks/timeline',
-				// 'planet4-blocks/enform',
 				'planet4-blocks/guestbook',
 				// 'acf/p4-gpn-block-testimonial',
 				'acf/leads-form',
@@ -134,13 +134,11 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/spreadsheet',
 				'planet4-blocks/sub-pages',
 				'planet4-blocks/timeline',
-				// 'planet4-blocks/enform',
 				'planet4-blocks/guestbook',
-				// 'leadin/hubspot-form-block',
 				'acf/leads-form',
 				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
-			$allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_campaign );
+			// $allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_campaign );
 
 		} else if ( $post->post_type === 'action' ) { // block types only for action type pages
 			// Blocks from planet4-plugin-gutenberg-blocks
@@ -162,13 +160,11 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/spreadsheet',
 				'planet4-blocks/submenu',
 				'planet4-blocks/timeline',
-				// 'planet4-blocks/enform',
 				'planet4-blocks/guestbook',
-				// 'leadin/hubspot-form-block',
 				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 				'planet4-blocks/sub-pages',
 			);
-			$allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_action );
+			// $allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_action );
 
 		}
 
