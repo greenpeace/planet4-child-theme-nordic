@@ -14,23 +14,24 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 	function p4_child_theme_gpn_whitelist_blocks( $allowed_blocks, $post ) {
 		$allowed_blocks_general = array(
 			'core/block',
-			'core/paragraph',
+			'core/button',
+			'core/buttons', // TODO: Styling.
+			'core/columns',
+			'core/file',
+			'core/group',
+			'core/html',
 			'core/heading',
 			'core/image',
 			// 'core/gallery', // functionality replaced by P4 galleries.
-			'core/list',
-			'core/quote', // TODO: Styling or removal.
+			'core/quote',
+			'core/query-pagination', // TODO: Styling or removal.
 			// 'core/audio', // removed, not needed.
 			// 'core/cover', // removed, not needed.
-			'core/file',
 			// 'core/video', // TODO: Decision. Ideally only allow embedded video.
 			// 'core/preformatted', // removed, not needed.
 			// 'core/code', // functionality not needed and not styled.
-			'core/html',
-			'core/table', // TODO: Styling.
 			// 'core/pullquote', // removed, normal quote element is available.
 			// 'core/verse', // removed, not needed, not styled.
-			'core/buttons', // TODO: Styling.
 			'core/media-text', // the new media block.
 			// 'core/more', // removed, not needed.
 			// 'core/nextpage', // removed, not needed.
@@ -41,7 +42,10 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 			// 'core/categories', // removed, not needed.
 			// 'core/latest-comments', // removed, not needed.
 			// 'core/latest-posts', // removed, functionality replaced by P4 article list.
-			'core/group',
+			'core/paragraph',
+			'core/table', // TODO: Styling.
+
+
 			'core/embed',
 			'core-embed/twitter',
 			'core-embed/youtube',
@@ -56,7 +60,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 			// 'core-embed/cloudup', // removed, not needed.
 			// 'core-embed/collegehumor', // removed, not needed.
 			'core-embed/dailymotion',
-			'core-embed/funnyordie',
+			// 'core-embed/funnyordie',
 			// 'core-embed/hulu', // removed, not needed.
 			'core-embed/imgur',
 			'core-embed/issuu',
