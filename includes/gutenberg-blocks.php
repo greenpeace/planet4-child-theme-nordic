@@ -94,7 +94,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'acf/leads-form',
 				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
-			$allowed_blocks      = array_merge( $allowed_blocks_general, $allowed_blocks_page );
+			$allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_page );
 		} else if ( $post->post_type === 'post' ) { // block types only for posts
 			$allowed_blocks_post = array(
 				// Blocks from planet4-plugin-gutenberg-blocks
@@ -114,7 +114,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				// 'acf/leads-form',
 				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
-			$allowed_blocks      = array_merge( $allowed_blocks_general, $allowed_blocks_post );
+			$allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_post );
 		} else if ( $post->post_type === 'campaign' ) { // block types only for campaign pages
 			$allowed_blocks_post = array(
 				// Blocks from planet4-plugin-gutenberg-blocks
@@ -140,7 +140,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'acf/leads-form',
 				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
-			$allowed_blocks      = array_merge( $allowed_blocks_general, $allowed_blocks_campaign );
+			$allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_campaign );
 
 		} else if ( $post->post_type === 'action' ) { // block types only for action type pages
 			// Blocks from planet4-plugin-gutenberg-blocks
@@ -168,7 +168,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 				'planet4-blocks/sub-pages',
 			);
-			$allowed_blocks      = array_merge( $allowed_blocks_general, $allowed_blocks_action );
+			$allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_action );
 
 		}
 
