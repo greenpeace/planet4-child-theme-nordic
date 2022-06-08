@@ -31,7 +31,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 			// 'core/pullquote', // removed, normal quote element is available.
 			// 'core/verse', // removed, not needed, not styled.
 			'core/buttons', // TODO: Styling.
-			// 'core/media-text' // removed, not needed.
+			'core/media-text', // the new media block.
 			// 'core/more', // removed, not needed.
 			// 'core/nextpage', // removed, not needed.
 			'core/separator', // TODO: Styling.
@@ -77,7 +77,6 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 			'core-embed/videopress',
 			// 'core-embed/wordpress-tv', // removed, not needed.
 			// 'acf/p4-gpn-block-testimonial',
-			// 'acf/leads-form',
 		);
 
 		if ( $post->post_type === 'page' ) { // Block types only for pages
