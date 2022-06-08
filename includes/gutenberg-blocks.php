@@ -16,6 +16,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 			'core/block',
 			'core/button',
 			'core/buttons', // TODO: Styling.
+			'core/column',
 			'core/columns',
 			'core/file',
 			'core/group',
@@ -35,14 +36,16 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 			'core/media-text', // the new media block.
 			// 'core/more', // removed, not needed.
 			// 'core/nextpage', // removed, not needed.
-			'core/separator', // TODO: Styling.
-			'core/spacer',
-			'core/shortcode',
+
 			// 'core/archives', // removed, not needed.
 			// 'core/categories', // removed, not needed.
 			// 'core/latest-comments', // removed, not needed.
 			// 'core/latest-posts', // removed, functionality replaced by P4 article list.
 			'core/paragraph',
+			'core/pattern',
+			'core/separator', // TODO: Styling.
+			'core/spacer',
+			'core/shortcode',
 			'core/table', // TODO: Styling.
 
 
