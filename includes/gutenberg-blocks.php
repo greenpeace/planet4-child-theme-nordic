@@ -15,41 +15,23 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 		$allowed_blocks_general = array(
 			'core/block',
 			'core/button',
-			'core/buttons', // TODO: Styling.
+			'core/buttons',
 			'core/column',
 			'core/columns',
+			'core/embed',
 			'core/file',
 			'core/group',
-			'core/html',
 			'core/heading',
+			'core/html',
 			'core/image',
-			// 'core/gallery', // functionality replaced by P4 galleries.
-			'core/quote',
-			'core/query-pagination', // TODO: Styling or removal.
-			// 'core/audio', // removed, not needed.
-			// 'core/cover', // removed, not needed.
-			// 'core/video', // TODO: Decision. Ideally only allow embedded video.
-			// 'core/preformatted', // removed, not needed.
-			// 'core/code', // functionality not needed and not styled.
-			// 'core/pullquote', // removed, normal quote element is available.
-			// 'core/verse', // removed, not needed, not styled.
-			'core/media-text', // the new media block.
-			// 'core/more', // removed, not needed.
-			// 'core/nextpage', // removed, not needed.
-
-			// 'core/archives', // removed, not needed.
-			// 'core/categories', // removed, not needed.
-			// 'core/latest-comments', // removed, not needed.
-			// 'core/latest-posts', // removed, functionality replaced by P4 article list.
+			'core/list',
+			'core/media-text',
 			'core/paragraph',
-			'core/pattern',
-			'core/separator', // TODO: Styling.
+			'core/quote',
+			'core/separator',
 			'core/spacer',
 			'core/shortcode',
-			'core/table', // TODO: Styling.
-
-
-			'core/embed',
+			'core/table',
 			'core-embed/twitter',
 			'core-embed/youtube',
 			'core-embed/facebook',
@@ -80,7 +62,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 			// 'core-embed/smugmug', // removed, not needed.
 			'core-embed/speaker',
 			'core-embed/ted',
-			// 'core-embed/tumblr', // removed, not needed.
+			'core-embed/tumblr',
 			'core-embed/videopress',
 			// 'core-embed/wordpress-tv', // removed, not needed.
 			// 'acf/p4-gpn-block-testimonial',
@@ -110,6 +92,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/guestbook',
 				// 'acf/p4-gpn-block-testimonial',
 				'acf/leads-form',
+				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
 			$allowed_blocks      = array_merge( $allowed_blocks_general, $allowed_blocks_page );
 		} else if ( $post->post_type === 'post' ) { // block types only for posts
@@ -129,6 +112,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/timeline',
 				// 'acf/p4-gpn-block-testimonial',
 				// 'acf/leads-form',
+				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
 			$allowed_blocks      = array_merge( $allowed_blocks_general, $allowed_blocks_post );
 		} else if ( $post->post_type === 'campaign' ) { // block types only for campaign pages
@@ -144,17 +128,46 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/counter',
 				'planet4-blocks/covers',
 				'planet4-blocks/gallery',
-				'planet4-blocks/guestbook',
 				'planet4-blocks/happypoint',
 				'planet4-blocks/media-video',
 				'planet4-blocks/social-media',
-				// 'planet4-blocks/social-media-cards',
 				'planet4-blocks/spreadsheet',
 				'planet4-blocks/sub-pages',
 				'planet4-blocks/timeline',
 				// 'planet4-blocks/enform',
+				'planet4-blocks/guestbook',
+				// 'leadin/hubspot-form-block',
 				'acf/leads-form',
+				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
+
 			);
+		} else if ( $post->post_type === 'action' ) { // block types only for action type pages
+			// Blocks from planet4-plugin-gutenberg-blocks
+			// @see: https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/master/planet4-gutenberg-blocks.php
+			// We allow all blocks in these as this content is sometimes imported from other Planet4 sites
+			$allowed_blocks_post = array(
+				'planet4-blocks/accordion',
+				'planet4-blocks/articles',
+				'planet4-blocks/carousel-header',
+				'planet4-blocks/columns',
+				'planet4-blocks/cookies',
+				'planet4-blocks/counter',
+				'planet4-blocks/covers',
+				'planet4-blocks/gallery',
+				'planet4-blocks/happypoint',
+				'planet4-blocks/media-video',
+				'planet4-blocks/social-media',
+				'planet4-blocks/split-two-columns',
+				'planet4-blocks/spreadsheet',
+				'planet4-blocks/submenu',
+				'planet4-blocks/timeline',
+				// 'planet4-blocks/enform',
+				'planet4-blocks/guestbook',
+				// 'leadin/hubspot-form-block',
+				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
+				'planet4-blocks/sub-pages',
+			);
+
 		}
 
 		return $allowed_blocks;
