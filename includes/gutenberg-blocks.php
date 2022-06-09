@@ -111,7 +111,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/take-action-boxout',
 				'planet4-blocks/timeline',
 				// 'acf/p4-gpn-block-testimonial',
-				// 'acf/leads-form',
+				// 'acf/leads-form', //TODO: fix issues on posts
 				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
 			$allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_post );
