@@ -6,6 +6,8 @@ window.dataLayer = window.dataLayer || [];
 
 //adding other scripts
 import './admin/editor.js';
+import './admin/nosearch.js';
 import './admin/optimonk.js';
+import './admin/templates.js';
 import './admin/tracking.js';
 

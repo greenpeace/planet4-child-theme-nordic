@@ -1,6 +1,12 @@
 <?php
 /*
 Template Name: External Counter Integration (GPN)
+*
+* @package WordPress
+* @subpackage Planet4 GP Nordic Child Theme
+* @since Planet4 GP Nordic Child Theme 0.7
+*Template Post Type: post, page
+*
 */
 
 // Example:

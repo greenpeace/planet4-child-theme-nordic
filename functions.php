@@ -9,11 +9,14 @@
  * License URI: https://opensource.org/licenses/MIT
  * Tags: light, accessibility-ready
  * Text Domain: planet4-child-theme-nordic
- * Version: 0.0.8
+ * Version: 0.0.9
  */
 
  // Filter available Gutenberg standard blocks
  require_once 'includes/gutenberg-blocks.php';
+//  require_once 'template-parts/page-external-counter.php';
+//  require_once 'includes/page-hide-from-search.php';
+// include 'includes/page-hide-from-search.php';
 
 add_action('admin_menu', 'remove_acf_options_page', 99);
 function remove_acf_options_page()
@@ -45,20 +48,82 @@ function enqueue_child_scripts()
 add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
 
 //hide from page search rsults the published pages with external counter tempate integration
-function get_all_template_pages()
+function get_all_counter_template_pages()
 {
     $args = array(
     'post_type' => 'page',
     'post_status' => 'publish',
     'meta_key' => '_wp_page_template',
-    'meta_value' => '/includes/page-external-counter.php',
+    'meta_value' => 'includes/page-external-counter.php',
     'posts_per_page' => -1,
     'publicly_queryable' => false
     );
     $query = new WP_Query($args);
-    $templatePages = $query->posts;
-    return $templatePages;
+    $counterTemplatePages = $query->posts;
+    return $counterTemplatePages;
 }
+
+function get_all_hidden_template_pages()
+{
+    $args = array(
+    'post_type' => 'page',
+    'post_status' => 'publish',
+    'meta_key' => '_wp_page_template',
+    'meta_value' => 'page-templates/page-hide-from-search.php',
+    'posts_per_page' => -1,
+    'publicly_queryable' => false
+    );
+    $query = new WP_Query($args);
+    $hiddenTemplatePages = $query->posts;
+    return $hiddenTemplatePages;
+}
+
+add_action('wp_head', 'get_all_hidden_template_pages');
+
+	//update the current page template meta to not show in the page list in the search results
+	// update_post_meta(get_the_ID(), '_wp_page_template', 'page-hide-from-search.php');
+
+	// //echo meta tag robots noindex,nofollow for the hidden pages
+	// add_action('wp_head', function(){
+	// 	get_post_meta(get_the_ID(), '_wp_page_template', 'page-hide-from-search.php');
+	// 	$hiddenPages = get_all_hidden_template_pages();
+	// 	foreach ($hiddenPages as $hiddenPage) {
+	// 		echo '<meta name="robots" content="noindex,nofollow" />';
+	// 	}
+	// });
+
+//if a page is published and not using the external counter template, or the page-hide-from-search template, show the page in the search results
+
+
+// function show_page_from_search_results()
+// {
+// 	$counterTemplatePages = get_all_counter_template_pages();
+// 	$hiddenTemplatePages = get_all_hidden_template_pages();
+// 	//get the id of the post page that is currently being viewed
+// 	$currentPageId = get_the_ID();
+// 	// $currentPage = get_queried_object();
+// 	// $currentPageId = $currentPage->ID;
+// 	$currentPageTemplate = get_post_meta($currentPageId, '_wp_page_template', true);
+
+// 	//if page is published and not using the external counter template, or the page-hide-from-search template, show the page in the search results
+// 	if ($currentPage->post_status == 'publish' && !in_array($currentPageId, $counterTemplatePages) && !in_array($currentPageId, $hiddenTemplatePages)) {
+// 		echo '<meta name="robots" content="index,follow">';
+// 		// add_post_meta( $currentPageId, 'p4_do_not_index', false );
+// 		// wp_update_post($currentPage);
+// 		} else {
+// 		// $currentPage->post_status = 'private, draft';
+// 		echo '<meta name="robots" content="noindex,nofollow">';
+// 		// update_post_meta( $currentPageId, 'p4_do_not_index', true );
+
+// 		// wp_update_post($currentPage);
+
+// 	}
+// }
+// add_action('wp_head', 'show_page_from_search_results');
+
+
+
+
 
 //  function p4_child_theme_gpn_gutenberg_scripts() {
 //      wp_enqueue_script(
