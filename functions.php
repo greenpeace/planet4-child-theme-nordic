@@ -63,6 +63,8 @@ function get_all_counter_template_pages()
     return $counterTemplatePages;
 }
 
+add_action('wp_head', 'get_all_hidden_template_pages');
+
 function get_all_hidden_template_pages()
 {
     $args = array(
@@ -72,50 +74,31 @@ function get_all_hidden_template_pages()
     'meta_value' => 'page-templates/page-hide-from-search.php',
     'posts_per_page' => -1,
     'publicly_queryable' => false
-    );
+	);
     $query = new WP_Query($args);
     $hiddenTemplatePages = $query->posts;
     return $hiddenTemplatePages;
 }
 
-add_action('wp_head', 'get_all_hidden_template_pages');
-
-	//update the current page template meta to not show in the page list in the search results
-	// update_post_meta(get_the_ID(), '_wp_page_template', 'page-hide-from-search.php');
-
-	// //echo meta tag robots noindex,nofollow for the hidden pages
-	// add_action('wp_head', function(){
-	// 	get_post_meta(get_the_ID(), '_wp_page_template', 'page-hide-from-search.php');
-	// 	$hiddenPages = get_all_hidden_template_pages();
-	// 	foreach ($hiddenPages as $hiddenPage) {
-	// 		echo '<meta name="robots" content="noindex,nofollow" />';
-	// 	}
-	// });
-
-//if a page is published and not using the external counter template, or the page-hide-from-search template, show the page in the search results
-
-
+// if a page is published and not using the external counter template, or the page-hide-from-search template, show the page in the search results
 // function show_page_from_search_results()
 // {
 // 	$counterTemplatePages = get_all_counter_template_pages();
 // 	$hiddenTemplatePages = get_all_hidden_template_pages();
 // 	//get the id of the post page that is currently being viewed
 // 	$currentPageId = get_the_ID();
-// 	// $currentPage = get_queried_object();
-// 	// $currentPageId = $currentPage->ID;
+// 	$currentPage = get_queried_object();
+// 	$currentPageId = $currentPage->ID;
 // 	$currentPageTemplate = get_post_meta($currentPageId, '_wp_page_template', true);
 
 // 	//if page is published and not using the external counter template, or the page-hide-from-search template, show the page in the search results
 // 	if ($currentPage->post_status == 'publish' && !in_array($currentPageId, $counterTemplatePages) && !in_array($currentPageId, $hiddenTemplatePages)) {
-// 		echo '<meta name="robots" content="index,follow">';
-// 		// add_post_meta( $currentPageId, 'p4_do_not_index', false );
-// 		// wp_update_post($currentPage);
+// 		update_post_meta( $currentPageId, 'p4_do_not_index', false );
+// 		wp_update_post($currentPage);
 // 		} else {
-// 		// $currentPage->post_status = 'private, draft';
-// 		echo '<meta name="robots" content="noindex,nofollow">';
-// 		// update_post_meta( $currentPageId, 'p4_do_not_index', true );
-
-// 		// wp_update_post($currentPage);
+// 		$currentPage->post_status = 'private, draft, inherit, auto-draft, future, pending, revision, trash';
+// 		update_post_meta( $currentPageId, 'p4_do_not_index', true );
+// 		wp_update_post($currentPage);
 
 // 	}
 // }

@@ -1,3 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
-//check if
+//check when the page has removed the  class is turned off from a page
+
+
+
 });
