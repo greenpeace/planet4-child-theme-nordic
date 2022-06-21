@@ -9,7 +9,7 @@
  * License URI: https://opensource.org/licenses/MIT
  * Tags: light, accessibility-ready
  * Text Domain: planet4-child-theme-nordic
- * Version: 0.0.8
+ * Version: 0.0.9
  */
 
  // Filter available Gutenberg standard blocks
