@@ -110,9 +110,11 @@ function show_page_in_search_results($query)
 		foreach ($searchResults as $searchResult) {
 			//if the page is in the published array and is not in the hidden template array or the counter template array then show it in the search results
 			if (in_array($searchResult, $publishedPages) && !in_array($searchResult, $hiddenTemplatePages) || !in_array($searchResult, $counterTemplatePages)) {
-				update_post_meta($searchResult, 'p4_do_not_index', false);
+				delete_post_meta($searchResult, 'p4_do_not_index', true);
+				add_post_meta($searchResult, 'p4_do_not_index', false);
 			} else {
-				update_post_meta($searchResult, 'p4_do_not_index', true);
+				delete_post_meta($searchResult, 'p4_do_not_index', false);
+				add_post_meta($searchResult, 'p4_do_not_index', true);
 			}
 		}
 	}
