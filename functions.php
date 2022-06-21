@@ -44,6 +44,7 @@ function enqueue_child_scripts()
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
 
+add_action('wp_head', 'get_all_template_pages');
 //hide from page search rsults the published pages with external counter tempate integration
 function get_all_template_pages()
 {
