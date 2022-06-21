@@ -48,6 +48,7 @@ function enqueue_child_scripts()
 add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
 
 //hide from page search rsults the published pages with external counter tempate integration
+add_action('wp_head', 'get_all_counter_template_pages');
 function get_all_counter_template_pages()
 {
     $args = array(
@@ -64,7 +65,6 @@ function get_all_counter_template_pages()
 }
 
 add_action('wp_head', 'get_all_hidden_template_pages');
-
 function get_all_hidden_template_pages()
 {
     $args = array(
@@ -80,33 +80,43 @@ function get_all_hidden_template_pages()
     return $hiddenTemplatePages;
 }
 
-// if a page is published and not using the external counter template, or the page-hide-from-search template, show the page in the search results
-// function show_page_from_search_results()
-// {
-// 	$counterTemplatePages = get_all_counter_template_pages();
-// 	$hiddenTemplatePages = get_all_hidden_template_pages();
-// 	//get the id of the post page that is currently being viewed
-// 	$currentPageId = get_the_ID();
-// 	$currentPage = get_queried_object();
-// 	$currentPageId = $currentPage->ID;
-// 	$currentPageTemplate = get_post_meta($currentPageId, '_wp_page_template', true);
+//get all paes with status publish
+add_action('wp_head', 'get_all_published_pages');
+function get_all_published_pages()
+{
+	$args = array(
+	'post_type' => 'page',
+	'post_status' => 'publish',
+	'posts_per_page' => -1,
+	'publicly_queryable' => true
+	);
+	$query = new WP_Query($args);
+	$publishedPages = $query->posts;
+	return $publishedPages;
+}
 
-// 	//if page is published and not using the external counter template, or the page-hide-from-search template, show the page in the search results
-// 	if ($currentPage->post_status == 'publish' && !in_array($currentPageId, $counterTemplatePages) && !in_array($currentPageId, $hiddenTemplatePages)) {
-// 		update_post_meta( $currentPageId, 'p4_do_not_index', false );
-// 		wp_update_post($currentPage);
-// 		} else {
-// 		$currentPage->post_status = 'private, draft, inherit, auto-draft, future, pending, revision, trash';
-// 		update_post_meta( $currentPageId, 'p4_do_not_index', true );
-// 		wp_update_post($currentPage);
+add_action('pre_get_posts', 'show_page_in_search_results');
+//if a page is $publishedPages and is not in $hiddenTemplatePages, or $counterTemplatePages then show it in the search results
+function show_page_in_search_results($query)
+{
+	if ($query->is_search) {
+		$publishedPages = get_all_published_pages();
+		$hiddenTemplatePages = get_all_hidden_template_pages();
+		$counterTemplatePages = get_all_counter_template_pages();
+		$searchResults = array_merge($publishedPages, $counterTemplatePages);
+		$searchResults = array_merge($searchResults, $hiddenTemplatePages);
 
-// 	}
-// }
-// add_action('wp_head', 'show_page_from_search_results');
-
-
-
-
+		//update the post meta value of the page to show it in the search results
+		foreach ($searchResults as $searchResult) {
+			//if the page is in the published array and is not in the hidden template array or the counter template array then show it in the search results
+			if (in_array($searchResult, $publishedPages) && !in_array($searchResult, $hiddenTemplatePages) || !in_array($searchResult, $counterTemplatePages)) {
+				update_post_meta($searchResult, 'p4_do_not_index', false);
+			} else {
+				update_post_meta($searchResult, 'p4_do_not_index', true);
+			}
+		}
+	}
+}
 
 //  function p4_child_theme_gpn_gutenberg_scripts() {
 //      wp_enqueue_script(

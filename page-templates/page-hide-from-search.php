@@ -5,7 +5,7 @@ Template Name: Hide page from search results (GPN)
 * @package WordPress
 * @subpackage Planet4 GP Nordic Child Theme
 * @since Planet4 GP Nordic Child Theme 0.9
-*Template Post Type: post, page
+* Template Post Type: post, page
 *
 */
 
