@@ -95,7 +95,7 @@ function get_all_published_pages()
 	return $publishedPages;
 }
 
-add_action('pre_get_posts', 'show_page_in_search_results');
+add_action('save_post', 'show_page_in_search_results');
 //if a page is $publishedPages and is not in $hiddenTemplatePages, or $counterTemplatePages then show it in the search results
 function show_page_in_search_results($query)
 {
