@@ -81,21 +81,6 @@ function get_all_hidden_template_pages()
     return $hiddenTemplatePages;
 }
 
-//get all paes with status publish
-// add_action('wp_head', 'get_all_published_pages');
-// function get_all_published_pages()
-// {
-// 	$args = array(
-// 	'post_type' => 'page',
-// 	'post_status' => 'publish',
-// 	'posts_per_page' => -1,
-// 	'publicly_queryable' => true
-// 	);
-// 	$query = new WP_Query($args);
-// 	$publishedPages = $query->posts;
-// 	return $publishedPages;
-// }
-
 //Simplified fix to include posts back to internal search results by @lithrel
 add_action( 'save_post', function ( $post_id, $post, $update ) {
 	$template = get_post_meta( $post_id, '_wp_page_template', true );
@@ -107,31 +92,6 @@ add_action( 'save_post', function ( $post_id, $post, $update ) {
 		delete_post_meta( $post_id, 'p4_do_not_index' );
 	}
 }, 99, 3 );
-
-// add_action('pre_get_posts', 'show_page_in_search_results');
-// //if a page is $publishedPages and is not in $hiddenTemplatePages, or $counterTemplatePages then show it in the search results
-// function show_page_in_search_results($query)
-// {
-// 	if ($query->is_search) {
-// 		$publishedPages = get_all_published_pages();
-// 		$hiddenTemplatePages = get_all_hidden_template_pages();
-// 		$counterTemplatePages = get_all_counter_template_pages();
-// 		$searchResults = array_merge($publishedPages, $counterTemplatePages);
-// 		$searchResults = array_merge($searchResults, $hiddenTemplatePages);
-
-// 		//update the post meta value of the page to show it in the search results
-// 		foreach ($searchResults as $searchResult) {
-// 			//if the page is in the published array and is not in the hidden template array or the counter template array then show it in the search results
-// 			if (in_array($searchResult, $publishedPages) && !in_array($searchResult, $hiddenTemplatePages) || !in_array($searchResult, $counterTemplatePages)) {
-// 				delete_post_meta($searchResult, 'p4_do_not_index');
-// 				//add_post_meta($searchResult, 'p4_do_not_index', false);
-// 			} else {
-// 				//delete_post_meta($searchResult, 'p4_do_not_index', false);
-// 				add_post_meta($searchResult, 'p4_do_not_index', true);
-// 			}
-// 		}
-// 	}
-// }
 
 //  function p4_child_theme_gpn_gutenberg_scripts() {
 //      wp_enqueue_script(
