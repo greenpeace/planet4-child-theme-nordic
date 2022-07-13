@@ -13,6 +13,7 @@ window.addEventListener('DOMContentLoaded', function() {
     console.log('Page is hidden from search results');
     console.log(robots);
   } else {
+    robots.setAttribute("content", "max-snippet:-1, max-image-preview:large, max-video-preview:-1");
     console.log('Page is not hidden from search results');
     console.log(robots);
   }
