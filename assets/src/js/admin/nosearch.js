@@ -10,11 +10,11 @@ window.addEventListener('DOMContentLoaded', function() {
     robotsContent.removeAttribute("content");
     //add a new content value for the meta tag robots
     robots.setAttribute("content", "noindex, noarchive, nositelinkssearchbox, noimageindex, nofollow, nosnippet");
-    console.log('Page is hidden from search results');
-    console.log(robots);
+    //console.log('Page is hidden from search results');
+    //console.log(robots);
   } else {
     robots.setAttribute("content", "max-snippet:-1, max-image-preview:large, max-video-preview:-1");
-    console.log('Page is not hidden from search results');
-    console.log(robots);
+    //console.log('Page is not hidden from search results');
+    //console.log(robots);
   }
 });
