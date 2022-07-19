@@ -23,12 +23,11 @@ $page_meta_data = get_post_meta( $post->ID );
 //get the content of the current page
 $context['post'] = $post;
 // $context['page_category']       = 'Hidden Page';
-
 //update the current page template meta to not show in the page list in the search results
 $page_meta_data = add_post_meta( $post->ID, 'p4_do_not_index', true );
 
 Context::set_header( $context, $page_meta_data, $post->title );
-	Timber::render( 'page.twig', $context );
+Timber::render( 'page.twig', $context );
 
 ?>
 
