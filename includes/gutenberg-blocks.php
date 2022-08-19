@@ -83,7 +83,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				// 'acf/p4-gpn-block-testimonial',
 				'acf/leads-form',
 				'planet4-blocks/share-buttons', //beta block included
-				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
+				'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
 			$allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_page );
 		} else if ( $post->post_type === 'post' ) { // block types only for posts
@@ -100,7 +100,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/timeline',
 				// 'acf/p4-gpn-block-testimonial',
 				// 'acf/leads-form', //TODO: fix issues on posts
-				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
+				'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
 			$allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_post );
 		} else if ( $post->post_type === 'campaign' ) { // block types only for campaign pages
@@ -126,7 +126,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/social-media-cards', //beta block included
 				'planet4-blocks/share-buttons', //beta block included
 				'acf/leads-form',
-				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
+				'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
 			// $allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_campaign );
 
@@ -154,7 +154,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/sub-pages',
 				'planet4-blocks/action-page-dummy',
 				'acf/leads-form',
-				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
+				'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
 			// $allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_action );
 
