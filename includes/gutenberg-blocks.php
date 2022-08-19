@@ -33,6 +33,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 			'core/column',
 			'core/embed',
 			'core/media-text',
+			'core/post-content',
 			'core-embed/twitter',
 			'core-embed/youtube',
 			'core-embed/facebook',
@@ -78,7 +79,6 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/spreadsheet',
 				'planet4-blocks/submenu',
 				'planet4-blocks/timeline',
-				'planet4-blocks/enform',
 				'planet4-blocks/guestbook',
 				// 'acf/p4-gpn-block-testimonial',
 				'acf/leads-form',
@@ -122,7 +122,6 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/spreadsheet',
 				'planet4-blocks/sub-pages',
 				'planet4-blocks/timeline',
-				'planet4-blocks/enform',
 				'planet4-blocks/guestbook',
 				'planet4-blocks/social-media-cards', //beta block included
 				'planet4-blocks/share-buttons', //beta block included
@@ -151,12 +150,10 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/spreadsheet',
 				'planet4-blocks/submenu',
 				'planet4-blocks/timeline',
-				'planet4-blocks/enform',
 				'planet4-blocks/guestbook',
-				'leadin/hubspot-form-block',
-				'gravityforms/form',
 				'planet4-blocks/sub-pages',
 				'planet4-blocks/action-page-dummy',
+				'acf/leads-form',
 				//'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
 			// $allowed_blocks = array_merge( $allowed_blocks_general, $allowed_blocks_action );
@@ -170,12 +167,37 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 if ( ! function_exists( 'p4_child_theme_gpn_whitelist_block_patterns' ) ) {
 	add_filter( 'register_block_pattern_category', 'p4_child_theme_gpn_whitelist_block_patterns', 10, 2 );
 
-	function p4_child_theme_gpn_whitelist_block_patterns( $register_block_pattern_category ) {
+	function p4_child_theme_gpn_whitelist_block_patterns( $register_block_pattern_category, $post ) {
 		$register_block_pattern_category = array(
 			'planet4-blocks-backend/planet4',
 			'planet4-blocks-backend/planet4-headers',
 			'planet4-blocks-backend/layouts',
 		);
+
+		if ( $post->post_type === 'page' ) { // Block patterns only for pages
+			$register_block_pattern_category_page = array(
+				'p4/high-level-topic-pattern-layout',
+				'p4/deep-dive-topic-pattern-layout',
+				'p4/homepage-pattern-layout',
+				'p4/get-informed-pattern-layout',
+
+			);
+
+			$register_block_pattern_category = array_merge( $register_block_pattern_category, $register_block_pattern_category_page );
+		} else if ( $post->post_type === 'campaign' ) { // block patterns only for campaign pages
+			$register_block_pattern_category = array(
+				'p4/campaign-pattern-layout',
+			);
+
+
+		} else if ( $post->post_type === 'action' ) { // block patterns only for action type pages
+			$register_block_pattern_category = array(
+				'p4/action-pattern-layout',
+			);
+
+
+		}
+
 
 		return $register_block_pattern_category;
 
