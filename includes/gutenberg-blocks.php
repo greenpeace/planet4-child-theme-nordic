@@ -168,7 +168,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_block_patterns' ) ) {
 	add_filter( 'register_block_pattern_category', 'p4_child_theme_gpn_whitelist_block_patterns', 10, 2 );
 
 	function p4_child_theme_gpn_whitelist_block_patterns( $register_block_pattern_category, $post ) {
-		$register_block_pattern_category = array(
+		$register_block_pattern_category_general = array(
 			'planet4-blocks-backend/planet4',
 			'planet4-blocks-backend/planet4-headers',
 			'planet4-blocks-backend/layouts',
@@ -183,7 +183,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_block_patterns' ) ) {
 
 			);
 
-			$register_block_pattern_category = array_merge( $register_block_pattern_category, $register_block_pattern_category_page );
+			$register_block_pattern_category = array_merge( $register_block_pattern_category_general, $register_block_pattern_category_page );
 		} else if ( $post->post_type === 'campaign' ) { // block patterns only for campaign pages
 			$register_block_pattern_category = array(
 				'p4/campaign-pattern-layout',
