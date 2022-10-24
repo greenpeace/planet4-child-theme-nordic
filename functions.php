@@ -12,11 +12,8 @@
  * Version: 0.0.9
  */
 
- // Filter available Gutenberg standard blocks
- require_once 'includes/gutenberg-blocks.php';
-//  require_once 'template-parts/page-external-counter.php';
-//  require_once 'includes/page-hide-from-search.php';
-// include 'includes/page-hide-from-search.php';
+// Filter available Gutenberg standard blocks
+require_once 'includes/gutenberg-blocks.php';
 
 add_action('admin_menu', 'remove_acf_options_page', 99);
 function remove_acf_options_page()
@@ -74,35 +71,37 @@ function get_all_hidden_template_pages()
     'meta_value' => 'page-templates/page-hide-from-search.php',
     'posts_per_page' => -1,
     'publicly_queryable' => false
-	);
+    );
     $query = new WP_Query($args);
     $hiddenTemplatePages = $query->posts;
     return $hiddenTemplatePages;
 }
 
 //Simplified fix to include posts back to internal search results by @lithrel
-add_action( 'save_post', function ( $post_id, $post, $update ) {
-	$template = get_post_meta( $post_id, '_wp_page_template', true );
-	if ( 'page-templates/page-hide-from-search.php' === $template ) {
-		update_post_meta( $post_id, 'p4_do_not_index', true );
-	} elseif ( 'includes/page-external-counter.php' === $template ) {
-		update_post_meta( $post_id, 'p4_do_not_index', true );
-	} else {
-		delete_post_meta( $post_id, 'p4_do_not_index' );
-	}
-}, 99, 3 );
+add_action(
+    'save_post', function ( $post_id, $post, $update ) {
+        $template = get_post_meta($post_id, '_wp_page_template', true);
+        if ('page-templates/page-hide-from-search.php' === $template ) {
+            update_post_meta($post_id, 'p4_do_not_index', true);
+        } elseif ('includes/page-external-counter.php' === $template ) {
+            update_post_meta($post_id, 'p4_do_not_index', true);
+        } else {
+            delete_post_meta($post_id, 'p4_do_not_index');
+        }
+    }, 99, 3
+);
 
 // add_action( 'save_post', function ( $post_title, $post_id, $post, $update ) {
 
-// 	$post_title = get_post_meta( $post_id, 'p4_title', true );
-// 	$custom_title = get_post_meta( $post_id, 'p4_post_title', true );
+//     $post_title = get_post_meta( $post_id, 'p4_title', true );
+//     $custom_title = get_post_meta( $post_id, 'p4_post_title', true );
 
 
-// 	if ( ! empty( $custom_title ) ) {
-// 		$post_title = $custom_title;
-// 	}
+//     if ( ! empty( $custom_title ) ) {
+//         $post_title = $custom_title;
+//     }
 
-// 	return $post_title;
+//     return $post_title;
 // }, 99, 3 );
 
 //draft post metatitle override
