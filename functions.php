@@ -31,8 +31,8 @@ function enqueue_child_styles()
 // load the child theme scripts
 function enqueue_child_scripts()
 {
-    wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), '3.6.0', true);
-    wp_enqueue_script('jquery');
+    // wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), '3.6.0', true);
+    // wp_enqueue_script('jquery');
     // wp_register_script('jquery', get_stylesheet_directory_uri() . '/node_modules/jquery', ['jquery'], '3.5.1', true);
     // wp_enqueue_script('jquery');
     // wp_register_script('popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"', [], '1.16.0', true);
