@@ -43,6 +43,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 			'core/group',
 			'core/columns',
 			'core/column',
+			'core/cover',
 			'core/embed',
 			'core/media-text',
 			'core/post-content',
