@@ -97,7 +97,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				// 'acf/p4-gpn-block-testimonial',
 				'acf/leads-form',
 				// 'planet4-blocks/share-buttons', //beta block included
-				// 'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
+				'gravityforms/form', // TODO: Leads gen connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
 			return array_merge( $allowed_blocks_general, $allowed_blocks_page );
 		}
@@ -117,7 +117,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				'planet4-blocks/timeline',
 				// 'acf/p4-gpn-block-testimonial',
 				// 'acf/leads-form', //TODO: fix issues on posts
-				// 'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
+				'gravityforms/form', // TODO: Leads gen connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
 			return array_merge( $allowed_blocks_general, $allowed_blocks_post );
 		}
@@ -146,7 +146,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				// 'acf/p4-gpn-block-testimonial',
 				'acf/leads-form',
 				// 'planet4-blocks/share-buttons', //beta block included
-				// 'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
+				'gravityforms/form', // TODO: Leads gen connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
 			return array_merge( $allowed_blocks_general, $allowed_blocks_campaign );
 		}
@@ -175,7 +175,7 @@ if ( ! function_exists( 'p4_child_theme_gpn_whitelist_blocks' ) ) {
 				// 'acf/p4-gpn-block-testimonial',
 				'acf/leads-form',
 				// 'planet4-blocks/share-buttons', //beta block included
-				// 'gravityforms/form', // TODO: connect to our DB; Gravity Forms block quiz, Email to target, etc.
+				'gravityforms/form', // TODO: Leads gen connect to our DB; Gravity Forms block quiz, Email to target, etc.
 			);
 			return array_merge( $allowed_blocks_general, $allowed_blocks_action );
 		}
