@@ -40,7 +40,41 @@
     }
   }
 
-  // nav#header.top-navigation.navbar {
+  .secondary-menu {
+    margin:0;
+  }
+
+  //secondary nav reusable block HL& DD topics
+  @media screen and (min-width: 740px ) and (max-width: 781px) {
+    .secondary-menu {
+      margin-top: -2.5rem;
+    }
+  }
+
+  .brdr-bottom {
+    border-bottom: #dddada 1px solid; padding-bottom: 0.5rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    .secondary-menu {
+      margin-top: -2rem;
+      white-space: nowrap;
+      margin-bottom: 0;
+    }
+
+    .secondary-menu .wp-container-4 {
+      line-height: 25px;
+    }
+
+    .secondary-menu p {
+      display: inline-block;
+    }
+
+    .secondary-menu p:last-child {
+      padding-bottom: .7rem;
+    }
+  }
+// nav#header.top-navigation.navbar {
 //   background: $dark-white!important;
 
 //   a {
