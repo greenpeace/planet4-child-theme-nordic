@@ -9,8 +9,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 
+
+
   //custom tracking for P4 new IA&NAV
   //page types
+  let getInformed = document.querySelectorAll('.is-pattern-p4-get-informed-pattern-layout');
   let highLevel = document.querySelectorAll('.is-pattern-p4-high-level-topic-pattern-layout');
   let deepDive = document.querySelectorAll('.is-pattern-p4-deep-dive-topic-pattern-layout');
   if (highLevel) {
@@ -19,6 +22,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
   } else if (deepDive) {
     window.dataLayer.push({'pageType': 'Deep-dive Topic'});
     //console.log(dataLayer);
+  } else if (getInformed) {
+    window.dataLayer.push({'pageType': 'Explore'});
   } else {
     //console.log(dataLayer);
   }
