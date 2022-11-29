@@ -1,3 +1,10 @@
+// Mobile-only (up to 375px)
+@mixin small-mobile-only {
+  @media (max-width: #{$extra-small-width}) {
+    @content;
+  }
+}
+
 // Mobile-only (up to 576px)
 @mixin mobile-only {
   @media (max-width: #{$small-width}) {

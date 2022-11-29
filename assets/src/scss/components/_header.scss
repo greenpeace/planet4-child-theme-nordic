@@ -1,3 +1,9 @@
+@include small-mobile-only {
+  .is-pattern-p4-page-header .wp-block-media-text__content, .is-pattern-p4-page-header .wp-block-group:first-child {
+    margin: -1rem 2.3rem 0 .5rem!important;
+  }
+}
+
 
 @include mobile-only {
 	.page-header-title {
@@ -6,5 +12,16 @@
     -ms-hyphens: auto;
     hyphens: auto;
 	}
+
+  .is-pattern-p4-page-header .wp-block-media-text__content, .is-pattern-p4-page-header .wp-block-group:first-child {
+    font-size: 2.2rem !important;
+    margin: 0 1.2rem 0 .5rem;
+  }
 }
 
+@media screen and (max-width:767px) {
+  .page-header-content {
+    display: block!important;
+    margin-top: 0;
+  }
+}
