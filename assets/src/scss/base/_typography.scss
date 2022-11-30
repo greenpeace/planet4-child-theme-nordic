@@ -31,7 +31,7 @@
 h1,
 h2,
 h3,
-.cover-card-heading, :not(.is-pattern-p4-page-header .wp-block-media-text__content h1) {
+.cover-card-heading, :not(.is-pattern-p4-page-header .wp-block-media-text__content h1), :not(.cookies-text) {
   font-family: $helvetica;
   font-weight: 700;
 }

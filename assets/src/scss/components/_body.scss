@@ -11,13 +11,13 @@ body {
   font-family: $roboto;
 }
 
-a, a:where(:not(.wp-element-button)) {
+a {
   cursor: pointer;
-  text-decoration: none!important;
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline!important;
+  text-decoration: underline;
 }
 
 a.external-link:after {
