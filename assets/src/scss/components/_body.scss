@@ -11,7 +11,7 @@ body {
   font-family: $roboto;
 }
 
-a {
+a, a:where(:not(.wp-element-button)) {
   cursor: pointer;
   text-decoration: none!important;
 }
