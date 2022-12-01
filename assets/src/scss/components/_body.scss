@@ -11,12 +11,13 @@ body {
   font-family: $roboto;
 }
 
-a {
+
+a:where(:not(.wp-element-button)) {
   cursor: pointer;
   text-decoration: none;
 }
 
-a:not(.wp-element-button) {
+a:where(:not(.wp-element-button)):hover {
   text-decoration: underline;
 }
 
