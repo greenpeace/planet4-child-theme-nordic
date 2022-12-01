@@ -11,19 +11,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   //custom tracking for P4 new IA&NAV
   //page types
-  // if (document.querySelectorAll(".page-content.container .is-pattern-p4-deep-dive-topic-pattern-layout").length > 0) {
-  //   window.dataLayer.push({
-  //     'pageType': 'Deep-dive Topic'
-  //   });
-  //   // console.log(dataLayer);
-  // } else if (document.querySelectorAll(".page-content.container .is-pattern-p4-high-level-topic-pattern-layout").length > 0) {
-  //   window.dataLayer.push({
-  //     'pageType': 'High-level Topic'
-  //   });
-  //   // console.log(dataLayer);
-  // } else {
-  //   // console.log("Default page");
-  // }
+  if (document.querySelectorAll(".page-content.container .is-pattern-p4-deep-dive-topic-pattern-layout").length > 0) {
+    window.dataLayer.push({
+      'pageType': 'Deep-dive Topic'
+    });
+    // console.log(dataLayer);
+  } else if (document.querySelectorAll(".page-content.container .is-pattern-p4-high-level-topic-pattern-layout").length > 0) {
+    window.dataLayer.push({
+      'pageType': 'High-level Topic'
+    });
+    // console.log(dataLayer);
+  } else {
+    console.log("Default page");
+  }
 
   //page header clicks
   const cta = document.querySelectorAll(".is-pattern-p4-page-header");
