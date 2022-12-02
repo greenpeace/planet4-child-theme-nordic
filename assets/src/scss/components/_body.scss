@@ -11,10 +11,10 @@ body {
   font-family: $roboto;
 }
 
-
-a:where(:not(.wp-element-button)) {
+a:where(:not(.wp-element-button)), a:not(.btn) {
   cursor: pointer;
   text-decoration: none;
+  font-weight: 600;
 }
 
 a:where(:not(.wp-element-button)):hover {

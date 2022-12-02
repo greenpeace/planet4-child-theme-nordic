@@ -31,17 +31,16 @@
 h1,
 h2,
 h3,
-.cover-card-heading, :not(.is-pattern-p4-page-header .wp-block-media-text__content h1), :not(.cookies-text) {
+.cover-card-heading, :not(.is-pattern-p4-page-header .wp-block-media-text__content h1), :not(div.cookies-intro div.cookies-text), :not(.article-list-item-headline a) {
   font-family: $helvetica;
-  font-weight: 700;
 }
 
 h4,
 h5,
 h6,
-.cover-card-excerpt {
-  font-family: $roboto;
-  font-weight: 500;
+.cover-card-excerpt, .article-list-item-headline a {
+  font-family: $roboto!important;
+  font-weight: 700;
 }
 
 h1 {
@@ -159,6 +158,10 @@ p.search-result-item-content, #gdpr-comments-compliance,
   font-size: inherit;
   line-height: inherit!important;
 
+}
+
+.nav-links {
+  font-family: $helvetica!important;
 }
 
 
