@@ -1,45 +1,22 @@
 @import "../base/colors";
 @import "../base/variables";
+@import "../base/fonts";
 
 // Typography
-//import font roboto from google fonts
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
-
-@font-face {
-  font-family: "Helvetica Now Display";
-  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"),
-    url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"),
-    url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"),
-    url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Now Display";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"),
-    url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"),
-    url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"),
-    url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 // Headings
 h1,
 h2,
 h3,
-.cover-card-heading, :not(.is-pattern-p4-page-header .wp-block-media-text__content h1), :not(div.cookies-intro div.cookies-text), :not(.article-list-item-headline a) {
-  font-family: $helvetica;
+.cover-card-heading, :not(.is-pattern-p4-page-header .wp-block-media-text__content h1), :not(div.cookies-intro>div.cookies-text), :not(.article-list-item-headline a) {
+  font-family: $roboto;
+  font-weight: bolder;
 }
 
 h4,
 h5,
 h6,
 .cover-card-excerpt, .article-list-item-headline a {
-  font-family: $roboto!important;
+  font-family: $roboto;
   font-weight: 700;
 }
 
@@ -56,6 +33,14 @@ h1 {
   @include x-large-and-up {
     font-size: $font-size-xxxxl;
   }
+}
+
+div.cookies-intro>div.cookies-text {
+  font-weight: 500!important;
+}
+
+div.carousel-captions-wrapper h2 {
+  font-family: $helvetica-extbold!important;
 }
 
 .screen-reader-text {
@@ -153,8 +138,8 @@ p.search-result-item-content, #gdpr-comments-compliance,
 }
 
 .is-pattern-p4-page-header .wp-block-media-text__content h1 {
-  font-family: $roboto!important;
-  font-weight: 900!important;
+  font-family: $helvetica-extblk!important;
+  //font-weight: 900!important;
   font-size: inherit;
   line-height: inherit!important;
 
@@ -199,7 +184,8 @@ div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
 
 .content-covers-block .content-covers-block-wrap .content-covers-block-info h5>a {
   color: $dark-green !important;
-  font-family: $helvetica;
+  font-family: $roboto;
+  font-size: larger;
 }
 
 //on listing pages
@@ -217,4 +203,10 @@ h4.query-list-item-headline.wp-block-post-title a {
 div.wrapper-post-tag ::before,
 .query-list-item-body:has(.taxonomy-p4-page-type):has(.taxonomy-post_tag) .wrapper-post-tag:before {
   color: $dark-green;
+}
+
+//post info preview
+div.article-list-item-tags.top-page-tags>a.tag-item.tag-item--main.page-type,
+div.tag-wrap.tags>a.tag-item.tag, .single-post-time, a.comment-link, a.comment-link>span.quiantity, a.comment-link>span.display-text {
+  font-weight: 400!important;
 }

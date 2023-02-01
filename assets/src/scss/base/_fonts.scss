@@ -10,3 +10,46 @@ $font-size-xl: 1.75rem;
 $font-size-xxl: 2.5rem;
 $font-size-xxxl: 3rem;
 $font-size-xxxxl: 4rem;
+
+//import font roboto from google fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+@font-face {
+  font-family: "Helvetica Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"),
+    url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"),
+    url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"),
+    url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"),
+    url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"),
+    url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"),
+    url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
+  // font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Display Extra Bold";
+  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"),
+    url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  // font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Display Extra Black";
+  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"),
+    url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
+  // font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
