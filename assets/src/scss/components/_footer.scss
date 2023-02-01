@@ -7,7 +7,7 @@
     background: #076c50;
 
     a[data-ga-category="Country Selector"]:hover{
-      color: $yellow!important;
+      color: #6ddb00;
     }
   }
 
@@ -36,15 +36,15 @@
   }
 
   a:hover:not(.footer-social-media li a, .copyright a:hover){
-    color: $yellow;
+    color: #6ddb00;
     text-decoration: none;
   }
 
   .footer-social-media li {
-    color: $yellow;
+    color: inherit;
 
-    a:hover {
-      color: $dark-white;
+    a svg :hover {
+      color: #6ddb00;
     }
 
     .icon {
