@@ -164,7 +164,6 @@ p.search-result-item-content, #gdpr-comments-compliance,
   font-family: $helvetica!important;
 }
 
-
 .columns-block p,
 // li:not(.footer-menu ul.list-unstyled li), li:not(.footer-social-media ul.list-unstyled li),
 p.article-list-item-content, article.post-details p, p.accordion-text, p.search-result-item-content {
@@ -203,3 +202,19 @@ div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
   font-family: $helvetica;
 }
 
+//on listing pages
+div.query-list-item-post-terms div.taxonomy-p4-page-type a[rel="tag"],
+div.wrapper-post-tag div.taxonomy-post_tag.wp-block-post-terms  a[rel="tag"],
+div.query-list-item-body div.query-list-item-post-terms div.wrapper-post-term div.taxonomy-p4-page-type.wp-block-post-terms a
+{
+  font-weight: 400;
+}
+
+h4.query-list-item-headline.wp-block-post-title a {
+  color: $black!important;
+}
+
+div.wrapper-post-tag ::before,
+.query-list-item-body:has(.taxonomy-p4-page-type):has(.taxonomy-post_tag) .wrapper-post-tag:before {
+  color: $dark-green;
+}
