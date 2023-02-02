@@ -1,9 +1,14 @@
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/colors";
+@import "../base/fonts";
+
 .main-tag-chevron {
   vertical-align: middle;
   max-height: 10px;
   background-image: url("../../assets/images/chevron.svg")!important;
 }
 
-.top-page-tags .category-separator, .top-page-tags .tag-wrap-bullet {
-  color: $dark-green;
+.top-page-tags .category-separator, .top-page-tags .tag-wrap-bullet, .main-tag-chevron {
+  color: $gp-primary;
 }

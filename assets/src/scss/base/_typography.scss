@@ -4,23 +4,18 @@
 
 // Typography
 // Headings
-h1,
 h2,
 h3,
-.cover-card-heading, :not(.is-pattern-p4-page-header .wp-block-media-text__content h1), :not(div.cookies-intro>div.cookies-text), :not(.article-list-item-headline a) {
-  font-family: $roboto;
-  font-weight: bolder;
-}
-
 h4,
 h5,
 h6,
-.cover-card-excerpt, .article-list-item-headline a {
+.cover-card-heading, .cover-card-excerpt, .article-list-item-headline a {
   font-family: $roboto;
   font-weight: 700;
 }
 
 h1 {
+  font-family: $helvetica-extblk;
   //overide the default font-size for h1 on mobile
   @include mobile-and-tablet-only {
     font-size: $font-size-xxl;
@@ -30,6 +25,7 @@ h1 {
     font-size: $font-size-xxxl;
     margin-bottom: 48px;
   }
+
   @include x-large-and-up {
     font-size: $font-size-xxxxl;
   }
@@ -127,8 +123,8 @@ span.author-info,
 div.block-editor-block-list__layout.is-root-container,
 p.search-result-item-content, #gdpr-comments-compliance,
 .error404 .speech-bubble, .error404 .page-header .container .row  {
-  font-family: $roboto!important;
-  font-weight: 400!important;
+  font-family: $roboto;
+  font-weight: 400;
   font-size: 1.06rem;
   line-height: inherit;
 
@@ -137,12 +133,8 @@ p.search-result-item-content, #gdpr-comments-compliance,
   }
 }
 
-.is-pattern-p4-page-header .wp-block-media-text__content h1 {
-  font-family: $helvetica-extblk!important;
-  //font-weight: 900!important;
-  font-size: inherit;
-  line-height: inherit!important;
-
+.is-pattern-p4-page-header .wp-block-media-text__content h1, h1.page-header-title {
+  font-family: $helvetica-bold!important;
 }
 
 .nav-links {

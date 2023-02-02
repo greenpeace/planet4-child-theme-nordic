@@ -1,3 +1,8 @@
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/colors";
+@import "../base/fonts";
+
 //Author info in posts
 .author-block, .comments-block .form-section .comment-respond{
   background: rgba( 236, 236, 236, 0.25 );
