@@ -132,7 +132,7 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 //Secondary btns
 .btn-secondary:not(#hidecookie),
 .btn-secondary:not(#commentform),
-.btn-secondary, .wp-block-button.is-style-secondary a, a.wp-block-button__link {
+.btn-secondary, .wp-block-button.is-style-secondary a, a.wp-block-button__link, .wp-block-button.is-style-secondary a:visited {
   border-color: $dark-green;
   color: $dark-green;
   box-shadow: none;
