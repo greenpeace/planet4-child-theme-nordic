@@ -12,7 +12,6 @@ h6, .h6,
 .cover-card-heading, .cover-card-excerpt, .article-list-item-headline a {
   font-family: $roboto;
   font-weight: 700;
-  color: $black;
   margin-top:0;
   margin-bottom:.5rem;
   line-height:1.25;
@@ -222,6 +221,10 @@ div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
   color: $yellow !important;
 }
 
+.take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
+  font-family: $roboto!important;
+  font-weight: 400;
+}
 .content-covers-block .content-covers-block-wrap .content-covers-block-info h5>a {
   color: $dark-green !important;
   font-family: $roboto;
