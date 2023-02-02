@@ -31,7 +31,7 @@ h1, .h1 {
   }
 }
 
-h2, .h2 {
+.h2, h2:not(.leads-form__content>h2) {
   font-size:calc(1.35rem + .9vw)!important;
 
   @include large-and-up {
