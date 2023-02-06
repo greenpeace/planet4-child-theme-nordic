@@ -44,3 +44,12 @@ html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
   width:100%;
  }
 }
+
+//content wrapper to facilitate longer headlines
+.carousel-captions-wrapper {
+
+  @media (min-widt: 993px) and (max-width:1199) {
+    width: 560px!important;
+  }
+
+}
