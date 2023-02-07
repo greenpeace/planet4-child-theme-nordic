@@ -3,29 +3,35 @@
 @import "../base/colors";
 @import "../base/fonts";
 
+$text-slide-offset: 50px;
+
 .carousel-header .carousel-caption .main-header h2 {
  width:100%;
  color:#020202;
  transition:unset;
  transform:translateX(50px);
- font-size:calc(1.475rem + 1.5vw)!important;
+ font-size:calc(1.475rem + 1.5vw);
  margin-bottom:18px;
  line-height:1.2;
 }
+
 html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
  text-align:right
 }
+
 @media (min-width:576px) {
  .carousel-header .carousel-caption .main-header h2 {
   font-size:$font-size-lg;
  }
 }
+
 @media (min-width:768px) {
  .carousel-header .carousel-caption .main-header h2 {
   font-size:$font-size-xl;
   margin-bottom:.5rem;
  }
 }
+
 @media (min-width:992px) {
  .carousel-header .carousel-caption .main-header h2 {
   max-width:100%;
@@ -35,7 +41,14 @@ html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
   line-height:1.2;
   font-size:$font-size-xxl;
  }
+
+  //content wrapper to facilitate longer headlines
+  .container.main-header > .carousel-captions-wrapper {
+    width: #{460 + ($text-slide-offset * 2)}!important;
+  }
+
 }
+
 @media (min-width:1200px) {
  .carousel-header .carousel-caption .main-header h2 {
   font-size:$font-size-xxxl;
@@ -45,11 +58,9 @@ html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
  }
 }
 
-//content wrapper to facilitate longer headlines
-.carousel-captions-wrapper {
+// .carousel-captions-wrapper {
 
-  @media (min-widt: 993px) and (max-width:1199) {
-    width: 560px!important;
-  }
+//   @media (min-widt: 993px) and (max-width:1199) {
+//   }
 
-}
+// }

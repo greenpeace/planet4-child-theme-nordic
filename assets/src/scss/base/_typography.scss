@@ -19,11 +19,11 @@ h6, .h6,
 
 h1, .h1 {
   font-family: $helvetica-extblk;
-  font-size:calc(1.475rem + 1.5vw)!important;
+  font-size:calc(1.475rem + 1.5vw);
+  margin-bottom: .7rem;
 
   @include large-and-up {
     font-size: $font-size-xxl;
-    margin-bottom: 48px;
   }
 
   @include x-large-and-up {
@@ -36,17 +36,15 @@ h1, .h1 {
 
   @include large-and-up {
     font-size: $font-size-xl;
-    margin-bottom: 48px;
   }
 
   @include x-large-and-up {
     font-size: $font-size-xxl;
-    margin-bottom: 24px;
   }
 }
 
 h3, .h3 {
-  font-size:calc(1.3rem + .6vw)!important;
+  font-size:calc(1.3rem + .6vw);
 
   @include large-and-up {
     font-size: $font-size-lg;
@@ -58,7 +56,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size:calc(1.275rem + .3vw)!important;
+  font-size:calc(1.275rem + .3vw);
 
   @include large-and-up {
     font-size: $font-size-md;
@@ -70,7 +68,7 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  font-size: 1.25rem!important;
+  font-size: 1.25rem;
 }
 
 h6, .h6 {
