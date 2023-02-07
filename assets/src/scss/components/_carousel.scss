@@ -44,7 +44,7 @@ html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
 
   //content wrapper to facilitate longer headlines
   .container.main-header > .carousel-captions-wrapper {
-    width: #{460 + ($text-slide-offset * 2)}!important;
+    width: #{500 + ($text-slide-offset * 2)}!important;
   }
 
 }
@@ -58,9 +58,3 @@ html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
  }
 }
 
-// .carousel-captions-wrapper {
-
-//   @media (min-widt: 993px) and (max-width:1199) {
-//   }
-
-// }

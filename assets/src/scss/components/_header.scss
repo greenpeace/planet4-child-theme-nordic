@@ -32,7 +32,16 @@
   }
 }
 
-h2.page-section-header {
-  font-size:calc(1.35rem + .9vw)!important;
+@include mobile-and-tablet-only {
+  h2.page-section-header {
+    font-size:calc(1.35rem + .9vw)!important;
+  }
+
+}
+
+@include large-and-up {
+  h2.page-section-header {
+    font-size:calc(1.35rem + 1vw)!important;
+  }
 
 }

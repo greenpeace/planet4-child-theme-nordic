@@ -26,7 +26,7 @@ h1, .h1 {
     font-size: $font-size-xxl;
   }
 
-  @include x-large-and-up {
+  @include xx-large-and-up {
     font-size: $font-size-xxxl;
   }
 }
@@ -38,7 +38,7 @@ h1, .h1 {
     font-size: $font-size-xl;
   }
 
-  @include x-large-and-up {
+  @include xx-large-and-up {
     font-size: $font-size-xxl;
   }
 }
@@ -50,25 +50,25 @@ h3, .h3 {
     font-size: $font-size-lg;
   }
 
-  @include x-large-and-up {
+  @include xx-large-and-up {
     font-size: $font-size-xl;
   }
 }
 
 h4, .h4 {
-  font-size:calc(1.275rem + .3vw);
+  font-size:calc(1.25rem + .3vw);
 
   @include large-and-up {
     font-size: $font-size-md;
   }
 
-  @include x-large-and-up {
+  @include xx-large-and-up {
     font-size: $font-size-lg;
   }
 }
 
 h5, .h5 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 h6, .h6 {
