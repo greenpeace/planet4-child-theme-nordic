@@ -179,7 +179,10 @@ p.search-result-item-content, #gdpr-comments-compliance,
 }
 
 .is-pattern-p4-page-header .wp-block-media-text__content h1, h1.page-header-title {
-  font-family: $helvetica-bold!important;
+  -webkit-box-shadow: 2px 4px 0px 4px rgba(245, 247, 248, 1);
+  -moz-box-shadow: 2px 4px 0px 4px rgba(245, 247, 248, 1);
+  box-shadow: 2px 4px 0px 4px rgba(245, 247, 248, 1);
+  border: 3px solid #f5f7f8;
 }
 
 .nav-links {
