@@ -9,7 +9,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6,
-.cover-card-heading, .cover-card-excerpt, .article-list-item-headline a {
+.cover-card-heading, .cover-card-excerpt, .articles-block h2, .article-list-item-headline a {
   font-family: $roboto;
   font-weight: 700;
   margin-top:0;
@@ -176,13 +176,6 @@ p.search-result-item-content, #gdpr-comments-compliance,
   @include mobile-only {
     font-size: 1.1rem;
   }
-}
-
-.is-pattern-p4-page-header .wp-block-media-text__content h1, h1.page-header-title {
-  -webkit-box-shadow: 2px 4px 0px 4px rgba(245, 247, 248, 1);
-  -moz-box-shadow: 2px 4px 0px 4px rgba(245, 247, 248, 1);
-  box-shadow: 2px 4px 0px 4px rgba(245, 247, 248, 1);
-  border: 3px solid #f5f7f8;
 }
 
 .nav-links {
