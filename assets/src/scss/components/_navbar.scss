@@ -9,11 +9,12 @@
 // $min-height: 40px;
 // $navbar-default-height: 60px;
 
-@include large-and-up {
-  .home-item {
-    display: none;
-  }
-}
+//not needed any more after GPI's update
+// @include large-and-up {
+//   .home-item {
+//     display: none;
+//   }
+// }
 
 // @include mobile-only {
   a.nav-link {
