@@ -45,7 +45,7 @@
   "dependencies": {
     "bootstrap": "^5.2.3",
     "classnames": "^2.3.2",
-    "jquery": "^3.6.4",
+    "jquery": "^3.7.0",
     "lite-youtube-embed": "^0.2.0",
     "popper.js": "^1.15.0"
   },
