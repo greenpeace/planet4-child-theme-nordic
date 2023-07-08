@@ -21,7 +21,7 @@
   "devDependencies": {
     "@greenpeace/dashdash": "^1.1.3",
     "@wordpress/components": "^8.3.2",
-    "@wordpress/scripts": "3.3.0",
+    "@wordpress/scripts": "26.8.0",
     "@wordpress/eslint-plugin": "^14.4.0",
     "autoprefixer": "^9.6.1",
     "css-loader": "^3.6.0",
