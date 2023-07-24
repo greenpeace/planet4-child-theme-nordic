@@ -162,7 +162,7 @@
 
 // @include large-and-up {
 //   .navbar-dropdown .active .nav-link {
-//     border-bottom-color: $gp-green;
+//     border-bottom-color: $gp-green-50;
 //   }
 
 //   nav.top-navigation.navbar ul.navbar-dropdown li:not(#country-select) a.nav-link {
@@ -182,7 +182,7 @@
 //       width: 0%;
 //       content: ".";
 //       color: transparent;
-//       background: $gp-green;
+//       background: $gp-green-50-50;
 //       height: 4px;
 //       transition: all .5s;
 //     }
@@ -207,11 +207,11 @@
 
   //   .nav-item {
   //     &.active .nav-link::before {
-  //       background: $gp-green;
+  //       background: $gp-green-50-50;
   //     }
 
   //     &:hover:not(li#country-select):not(.donate-nav-item):not(.active) {
-  //       border-left: 8px solid $gp-green;
+  //       border-left: 8px solid $gp-green-50;
   //     }
   //   }
 
