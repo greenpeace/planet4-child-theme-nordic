@@ -2599,9 +2599,45 @@ a[data-ga-action=Donate],
   font-family: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif;
 }
 
+nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate],
+div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate] {
+  background: #80D643;
+}
+@media (max-width: 992px) {
+  nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate],
+  div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate] {
+    background-position: center;
+    transition: background 0.5s;
+  }
+  nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate]:hover,
+  div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate]:hover {
+    background: #66CC00 radial-gradient(circle, transparent 1%, #66CC00 1%) center/15000%;
+  }
+  nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate]:active,
+  div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate]:active {
+    background-color: #80D643;
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
+@media (min-width: 992px) {
+  nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate],
+  div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate] {
+    font-weight: bold;
+    background-image: linear-gradient(30deg, #66CC00 50%, transparent 50%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    transition: background 300ms ease-in-out;
+  }
+  nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate]:hover,
+  div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate]:hover {
+    background-position: 100%;
+  }
+}
+
 button[type=submit]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"],
-.btn.btn-donate[data-ga-action=Donate],
 .btn.btn-primary#hidecookie {
   font-weight: bold;
   border: none;
@@ -2609,21 +2645,18 @@ button[type=submit]:not(.nav-search-btn, .search-form-btn),
 @media (max-width: 992px) {
   button[type=submit]:not(.nav-search-btn, .search-form-btn),
   .btn.btn-primary[data-ga-action="Call to Action"],
-  .btn.btn-donate[data-ga-action=Donate],
   .btn.btn-primary#hidecookie {
     background-position: center;
     transition: background 0.8s;
   }
   button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
   .btn.btn-primary[data-ga-action="Call to Action"]:hover,
-  .btn.btn-donate[data-ga-action=Donate]:hover,
   .btn.btn-primary#hidecookie:hover {
     background: #f36d3a radial-gradient(circle, transparent 1%, #f36d3a 1%) center/15000%;
     border-color: #f36d3a;
   }
   button[type=submit]:not(.nav-search-btn, .search-form-btn):active,
   .btn.btn-primary[data-ga-action="Call to Action"]:active,
-  .btn.btn-donate[data-ga-action=Donate]:active,
   .btn.btn-primary#hidecookie:active {
     background-color: #cd4525;
     background-size: 100%;
@@ -2633,9 +2666,8 @@ button[type=submit]:not(.nav-search-btn, .search-form-btn),
 @media (min-width: 992px) {
   button[type=submit]:not(.nav-search-btn, .search-form-btn),
   .btn.btn-primary[data-ga-action="Call to Action"],
-  .btn.btn-donate[data-ga-action=Donate],
   .btn.btn-primary#hidecookie {
-    background-image: linear-gradient(30deg, #f36d3a 50%, transparent 50%) !important;
+    background-image: linear-gradient(30deg, #f36d3a 50%, transparent 50%);
     background-size: 700px;
     background-repeat: no-repeat;
     background-position: 0%;
@@ -2643,7 +2675,6 @@ button[type=submit]:not(.nav-search-btn, .search-form-btn),
   }
   button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
   .btn.btn-primary[data-ga-action="Call to Action"]:hover,
-  .btn.btn-donate[data-ga-action=Donate]:hover,
   .btn.btn-primary#hidecookie:hover {
     background-position: 100% !important;
   }

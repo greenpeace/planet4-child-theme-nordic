@@ -21,53 +21,47 @@ a[data-ga-action="Donate"],
 }
 
 //Donate btn
-// nav#header.top-navigation.navbar ul.navbar-dropdown li.donate-nav-item a.btn-donate,
-// .wp-block-button.is-style-donate a.wp-block-button__link,
-// .wp-block-button.is-style-donate .wp-block-button__link[role="textbox"] {
-//   background: $gp-green;
-//   color: #fff;
-//   text-transform: uppercase;
-//   font-weight: bold;
+nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action="Donate"],
+div.burger-menu-footer a.btn.btn-donate[data-ga-action="Donate"]
+{
+  background: $gp-green-40;
 
-//   @include mobile-and-tablet-only {
-//     // ripple effect for touch screens
-//     background-position: center;
-//     transition: background 0.5s;
+  @include mobile-and-tablet-only {
+    // ripple effect for touch screens
+    background-position: center;
+    transition: background 0.5s;
 
-//     &:hover {
-//       color: #fff;
-//       background: $gp-primary radial-gradient(circle, transparent 1%, $gp-primary 1%) center/15000%;
-//     }
+    &:hover {
+      background: $gp-green-50 radial-gradient(circle, transparent 1%, $gp-green-50 1%) center/15000%;
+    }
 
-//     &:active {
-//       color: #fff;
-//       background-color: $gp-green;
-//       background-size: 100%;
-//       transition: background 0s;
-//     }
-//   }
+    &:active {
+      background-color: $gp-green-40;
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
 
-  // @include large-and-up {
-  //   font-weight: bold;
-  //   background-image: -webkit-linear-gradient(30deg, $gp-primary 50%, transparent 50%);
-  //   background-image: linear-gradient(30deg, $gp-primary 50%, transparent 50%);
-  //   background-size: 500px;
-  //   background-repeat: no-repeat;
-  //   background-position: 0%;
-  //   -webkit-transition: background 300ms ease-in-out;
-  //   transition: background 300ms ease-in-out;
+  @include large-and-up {
+    font-weight: bold;
+    background-image: -webkit-linear-gradient(30deg, $gp-green-50 50%, transparent 50%);
+    background-image: linear-gradient(30deg, $gp-green-50 50%, transparent 50%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
 
-  //   &:hover {
-  //     background-position: 100%;
-  //     color: #fff;
-  //   }
-  // }
-// }
+    &:hover {
+      background-position: 100%;
+    }
+  }
+  
+}
 
 //CTA color buttons
 button[type="submit"]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"],
-.btn.btn-donate[data-ga-action="Donate"],
 .btn.btn-primary#hidecookie {
   font-weight: bold;
   border: none;
@@ -90,8 +84,8 @@ button[type="submit"]:not(.nav-search-btn, .search-form-btn),
   }
 
   @include large-and-up {
-    background-image: -webkit-linear-gradient(30deg, $orange 50%, transparent 50%)!important;
-    background-image: linear-gradient(30deg, $orange 50%, transparent 50%)!important;
+    background-image: -webkit-linear-gradient(30deg, $orange 50%, transparent 50%);
+    background-image: linear-gradient(30deg, $orange 50%, transparent 50%);
     background-size: 700px;
     background-repeat: no-repeat;
     background-position: 0%;
