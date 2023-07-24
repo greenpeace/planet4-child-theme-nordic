@@ -2638,6 +2638,7 @@ div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate] {
 
 button[type=submit]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"],
+.btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
 .btn.btn-primary#hidecookie {
   font-weight: bold;
   border: none;
@@ -2645,20 +2646,23 @@ button[type=submit]:not(.nav-search-btn, .search-form-btn),
 @media (max-width: 992px) {
   button[type=submit]:not(.nav-search-btn, .search-form-btn),
   .btn.btn-primary[data-ga-action="Call to Action"],
+  .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
   .btn.btn-primary#hidecookie {
     background-position: center;
     transition: background 0.8s;
   }
   button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
   .btn.btn-primary[data-ga-action="Call to Action"]:hover,
+  .btn-primary:hover, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:hover,
   .btn.btn-primary#hidecookie:hover {
-    background: #f36d3a radial-gradient(circle, transparent 1%, #f36d3a 1%) center/15000%;
-    border-color: #f36d3a;
+    background: #FFD200 radial-gradient(circle, transparent 1%, #FFD200 1%) center/15000%;
+    border-color: #FFD200;
   }
   button[type=submit]:not(.nav-search-btn, .search-form-btn):active,
   .btn.btn-primary[data-ga-action="Call to Action"]:active,
+  .btn-primary:active, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:active,
   .btn.btn-primary#hidecookie:active {
-    background-color: #cd4525;
+    background-color: #FFE100;
     background-size: 100%;
     transition: background 0s;
   }
@@ -2666,17 +2670,20 @@ button[type=submit]:not(.nav-search-btn, .search-form-btn),
 @media (min-width: 992px) {
   button[type=submit]:not(.nav-search-btn, .search-form-btn),
   .btn.btn-primary[data-ga-action="Call to Action"],
+  .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
   .btn.btn-primary#hidecookie {
-    background-image: linear-gradient(30deg, #f36d3a 50%, transparent 50%);
-    background-size: 700px;
+    font-weight: bold;
+    background-image: linear-gradient(30deg, #FFE100 50%, transparent 50%);
+    background-size: 1000px;
     background-repeat: no-repeat;
     background-position: 0%;
     transition: background 300ms ease-in-out;
   }
   button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
   .btn.btn-primary[data-ga-action="Call to Action"]:hover,
+  .btn-primary:hover, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:hover,
   .btn.btn-primary#hidecookie:hover {
-    background-position: 100% !important;
+    background-position: 100%;
   }
 }
 
