@@ -697,38 +697,6 @@ div.carousel-captions-wrapper h2 {
   word-wrap: normal !important;
 }
 
-a:not([class]):not(.article-list-item-author > a, a[data-ga-action=Title], a[data-ga-action="Category Title"], a[data-ga-category="Footer Navigation"], .copyright > .container > span[role=text] > a),
-.author-block-info-name a[itemprop=name],
-a.comment-reply-link,
-a.standalone-link, a.standalone-link:after,
-a.standalone-link.external-link,
-a.external-link:not(.split-two-column-item-link) {
-  color: #3c7800;
-  font-weight: 700;
-  font-family: "Roboto", sans-serif;
-  font-size: inherit;
-}
-@media (max-width: 576px) {
-  a:not([class]):not(.article-list-item-author > a, a[data-ga-action=Title], a[data-ga-action="Category Title"], a[data-ga-category="Footer Navigation"], .copyright > .container > span[role=text] > a),
-  .author-block-info-name a[itemprop=name],
-  a.comment-reply-link,
-  a.standalone-link, a.standalone-link:after,
-  a.standalone-link.external-link,
-  a.external-link:not(.split-two-column-item-link) {
-    font-size: 1.1rem;
-  }
-}
-a:not([class]):not(.article-list-item-author > a, a[data-ga-action=Title], a[data-ga-action="Category Title"], a[data-ga-category="Footer Navigation"], .copyright > .container > span[role=text] > a):hover,
-.author-block-info-name a[itemprop=name]:hover,
-a.comment-reply-link:hover,
-a.standalone-link:hover, a.standalone-link:after:hover,
-a.standalone-link.external-link:hover,
-a.external-link:not(.split-two-column-item-link):hover {
-  color: #4d4d4d;
-  -webkit-text-decoration: underline solid #66cc00 3px;
-          text-decoration: underline solid #66cc00 3px;
-}
-
 p, ul, li, .page-section-description,
 .columns-block .column-wrap p,
 span.author-info,
@@ -782,15 +750,7 @@ div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
 }
 p.logged-in-as a:hover,
 div.top-page-tags div.tag-wrap.issues a.tag-item.tag:hover {
-  text-decoration: underline;
-}
-
-.split-two-column-item-title a:hover {
-  color: #FFD200;
-}
-
-.split-two-column-item-tag, .split-two-column-item-link {
-  color: #FFD200 !important;
+  font-weight: 800;
 }
 
 .take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
@@ -798,10 +758,107 @@ div.top-page-tags div.tag-wrap.issues a.tag-item.tag:hover {
   font-weight: 400;
 }
 
-.content-covers-block .content-covers-block-wrap .content-covers-block-info h5 > a {
+a {
+  box-shadow: none !important;
+}
+
+.page-content li > a, .page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong, .leads-form__form__container > a, .leads-form__form__container > a.external-link, .leads-form__form__container > p > span > a), .post-content li > a, .post-content p > a,
+.page-content li > strong > a, .page-content p > strong > a, .post-content li > strong > a, .post-content p > strong > a,
+.covers-block > .page-section-description > a {
+  text-decoration: none;
+  --transition--duration: 0.1s;
+  border-bottom: 1.5px solid var(--gp-green-500);
+  font-weight: inherit;
+  color: inherit;
+}
+.page-content li > a:hover, .page-content li > a:visited, .page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong, .leads-form__form__container > a, .leads-form__form__container > a.external-link, .leads-form__form__container > p > span > a):hover, .page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong, .leads-form__form__container > a, .leads-form__form__container > a.external-link, .leads-form__form__container > p > span > a):visited, .post-content li > a:hover, .post-content li > a:visited, .post-content p > a:hover, .post-content p > a:visited,
+.page-content li > strong > a:hover,
+.page-content li > strong > a:visited, .page-content p > strong > a:hover, .page-content p > strong > a:visited, .post-content li > strong > a:hover, .post-content li > strong > a:visited, .post-content p > strong > a:hover, .post-content p > strong > a:visited,
+.covers-block > .page-section-description > a:hover,
+.covers-block > .page-section-description > a:visited {
+  --transition--duration: 0.1s;
+  border-bottom: 3px solid var(--gp-green-500);
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.bbn a, .secondary-menu .nav-link a {
+  border-bottom: none !important;
+}
+.bbn a:hover, .secondary-menu .nav-link a:hover {
+  border-bottom: none !important;
+}
+
+.tdn {
+  text-decoration: none !important;
+}
+
+a.external-link:after {
+  display: none;
+}
+
+.submenu-block .submenu-menu a {
+  border-bottom: none;
+  text-decoration: none;
+}
+.submenu-block .submenu-menu a:hover {
+  --transition--duration: 0.3s;
+  border-bottom: 2px solid var(--gp-green-500);
+  text-decoration: none;
+}
+
+.columns-block.block-style-icons .column-wrap a {
+  border-bottom: none;
+  text-decoration: none;
+}
+.columns-block.block-style-icons .column-wrap a:hover:not(.attachment-container, h3) {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #66CC00; /* Safari */
+  text-decoration-color: #66CC00;
+}
+
+a.tag-item.tag,
+.single-post-time, a.comment-link, a.comment-link > span.quiantity, a.comment-link > span.display-text {
+  font-weight: 400;
+}
+a.tag-item.tag:hover,
+.single-post-time:hover, a.comment-link:hover, a.comment-link > span.quiantity:hover, a.comment-link > span.display-text:hover {
+  color: #000;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #66CC00; /* Safari */
+  text-decoration-color: #66CC00;
+}
+
+a.tag-item.tag-item--main.page-type {
+  font-weight: bold;
+}
+a.tag-item.tag-item--main.page-type:hover {
+  color: #000;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #66CC00; /* Safari */
+  text-decoration-color: #66CC00;
+}
+
+.top-page-tags .tag-item {
+  margin-right: 0.3rem;
+}
+
+.article-list-item-author > a:hover {
+  --transition--duration: 0.3s;
+  border-bottom: 2px solid var(--gp-green-500);
+  text-decoration: none;
+}
+
+.content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a {
   color: #3c7800 !important;
   font-family: "Roboto", sans-serif;
   font-size: larger;
+}
+
+.wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > a:hover {
+  --transition--duration: 0.3s;
+  border-bottom: 2px solid var(--gp-green-500);
+  text-decoration: none;
 }
 
 div.query-list-item-post-terms div.taxonomy-p4-page-type a[rel=tag],
@@ -810,18 +867,20 @@ div.query-list-item-body div.query-list-item-post-terms div.wrapper-post-term di
   font-weight: 400;
 }
 
-h4.query-list-item-headline.wp-block-post-title a {
-  color: #000 !important;
+.article-list-item-headline a,
+.query-list-item-headline.wp-block-post-title {
+  color: #000;
+}
+.article-list-item-headline a:hover,
+.query-list-item-headline.wp-block-post-title:hover {
+  --transition--duration: 0.3s;
+  border-bottom: 2px solid var(--gp-green-500);
+  text-decoration: none;
 }
 
 div.wrapper-post-tag ::before,
 .query-list-item-body:has(.taxonomy-p4-page-type):has(.taxonomy-post_tag) .wrapper-post-tag:before {
   color: #3c7800;
-}
-
-div.article-list-item-tags.top-page-tags > a.tag-item.tag-item--main.page-type,
-div.tag-wrap.tags > a.tag-item.tag, .single-post-time, a.comment-link, a.comment-link > span.quiantity, a.comment-link > span.display-text {
-  font-weight: 400 !important;
 }
 
 .has-dark-shade-black-color {
@@ -1783,25 +1842,6 @@ html {
 body {
   color: #4d4d4d;
   font-family: "Roboto", sans-serif;
-}
-
-a:where(:not(.wp-element-button)), a:not(.btn) {
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-a:where(:not(.wp-element-button)):hover {
-  text-decoration: underline;
-}
-
-a.external-link:after {
-  display: none;
-}
-
-.top-page-tags .tag-item, .tag-wrap-bullet {
-  color: #3c7800 !important;
-  margin-right: 0.3rem;
 }
 
 .error404 .speech-bubble {
@@ -4011,7 +4051,9 @@ and so on...
   background: #076c50;
 }
 .site-footer .countries-list a[data-ga-category="Country Selector"]:hover {
-  color: #6ddb00;
+  --transition--duration: 0.3s;
+  border-bottom: 2px solid var(--gp-green-500);
+  text-decoration: none;
 }
 .site-footer .footer-menu {
   margin-bottom: 0;
@@ -4030,22 +4072,38 @@ and so on...
   line-height: 1.4;
   width: auto;
 }
-.site-footer .copyright a:hover {
-  text-decoration: underline;
+.site-footer .copyright a:hover,
+.site-footer .copyright a strong:hover,
+.site-footer .copyright span p:hover,
+.site-footer .copyright span strong:hover,
+.site-footer .copyright span strong a:hover {
+  --transition--duration: 0.3s;
+  border-bottom: 2px solid var(--gp-green-500);
+  text-decoration: none;
 }
-.site-footer a:hover:not(.footer-social-media li a, .copyright a:hover) {
-  color: #6ddb00;
+.site-footer a:hover:not(.footer-social-media a.footer-social-media li a, .copyright a:hover) {
   text-decoration: none;
 }
 .site-footer .footer-social-media li {
   color: inherit;
 }
-.site-footer .footer-social-media li a svg :hover {
-  color: #6ddb00;
+.site-footer .footer-social-media li a svg:hover {
+  color: #66CC00;
+  text-decoration: none;
+  border-bottom: none;
 }
 .site-footer .footer-social-media li .icon {
   width: 34px;
   height: 34px;
+}
+.site-footer a[data-ga-action="Footer Links"] {
+  font-weight: 500;
+  text-decoration: none;
+}
+.site-footer a[data-ga-action="Footer Links"]:hover {
+  --transition--duration: 0.3s;
+  border-bottom: 3px solid var(--gp-green-500);
+  text-decoration: none;
 }
 .site-footer ul.list-unstyled.footer-links li a {
   font-family: "Helvetica Now Display Regular", "Helvetica", "Arial", sans-serif;

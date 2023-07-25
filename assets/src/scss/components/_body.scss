@@ -16,25 +16,6 @@ body {
   font-family: $roboto;
 }
 
-a:where(:not(.wp-element-button)), a:not(.btn) {
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-a:where(:not(.wp-element-button)):hover {
-  text-decoration: underline;
-}
-
-a.external-link:after {
-  display: none;
-}
-
-.top-page-tags .tag-item, .tag-wrap-bullet {
-  color: $dark-green !important;
-  margin-right: 0.3rem;
-}
-
 .error404 .speech-bubble {
   padding-left: 0;
 }

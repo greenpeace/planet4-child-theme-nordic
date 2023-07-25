@@ -79,6 +79,7 @@ div.cookies-intro>div.cookies-text {
   font-weight: 500!important;
 }
 
+//Text
 div.carousel-captions-wrapper h2 {
   font-family: $helvetica-extbold!important;
   font-size: $font-size-xl;
@@ -97,68 +98,6 @@ div.carousel-captions-wrapper h2 {
   word-wrap: normal !important;
 }
 
-// Links
-//
-// Link elements `<a>`.
-//
-// Markup:
-// <a href="#">The quick brown fox jumps over the lazy dog</a>
-//
-// :hover     - hovered state
-//
-// Styleguide Style.typography.links
-// a:not(.nav-link, .split-two-column-item-link){
-//   color: var(--link--color, #{$dark-green});
-//   text-decoration: none;
-//   transition: all .3s ease;
-//   &:hover {
-//     text-decoration: var(--nav-link--hover--text-decoration, underline)!important;
-//     text-underline-position: var(--nav-link--hover--text-underline-position, auto)!important;
-//     color: $grey-70;
-
-//   }
-// }
-
-//select only the a tags that don't have any class names
-a:not([class]):not(.article-list-item-author>a, a[data-ga-action="Title"], a[data-ga-action="Category Title"], a[data-ga-category="Footer Navigation"], .copyright>.container>span[role="text"]>a),
-.author-block-info-name a[itemprop="name"],
-a.comment-reply-link,
-a.standalone-link, a.standalone-link:after,
-a.standalone-link.external-link,
-a.external-link:not(.split-two-column-item-link)
-// .post-content .page-links a *,
-// .post-content .more-link *, .post-content .more-link::after,
-// .post-content .more-link::before,
-// .post-content .page-links a::after,
-// .post-content .page-links a::before,
-// .wp-block-file a,
-// .wp-block-button a *:not(strong), .wp-block-button a::after,
-// h5.author-block-info-name a
-{
-  color: $dark-green;
-  // text-decoration: none;
-  font-weight: 700;
-  font-family: $roboto;
-  font-size: inherit;
-  @include mobile-only {
-    font-size: 1.1rem;
-  }
-
-  &:hover {
-    // text-decoration: var(--nav-link--hover--text-decoration, underline)!important;
-    // text-underline-position: var(--nav-link--hover--text-underline-position, auto)!important;
-    color: $grey-70;
-    text-decoration: underline solid $gp-green 3px;
-  }
-
-}
-
-
-// .page-section-description, div.edit-post-visual-editor.editor-styles-wrapper div.block-editor__typewriter div div.block-editor-writing-flow {
-//   font-family: $roboto !important;
-//   font-weight: 300;
-//   font-size: 1.2rem;
-// }
 p, ul, li, .page-section-description,
 .columns-block .column-wrap p,
 span.author-info,
@@ -203,26 +142,118 @@ div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
   color: $dark-green;
 
   &:hover {
-    text-decoration: underline;
+    font-weight: 800;  
   }
-}
-
-.split-two-column-item-title a:hover {
-  color: $yellow;
-}
-
-.split-two-column-item-tag, .split-two-column-item-link {
-  color: $yellow !important;
 }
 
 .take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
   font-family: $roboto!important;
   font-weight: 400;
 }
-.content-covers-block .content-covers-block-wrap .content-covers-block-info h5>a {
+
+//Links
+a {
+  box-shadow: none!important;
+}
+
+.page-content li>a, .page-content p>a:not(.secondary-menu > .nav-link >a, .secondary-menu > .nav-link >a >strong, .leads-form__form__container>a, .leads-form__form__container>a.external-link, .leads-form__form__container>p>span>a), .post-content li>a, .post-content p>a,
+.page-content li>strong>a, .page-content p>strong>a, .post-content li>strong>a, .post-content p>strong>a,
+.covers-block > .page-section-description > a {
+  text-decoration: none;
+  --transition--duration: 0.1s;
+  border-bottom: 1.5px solid var(--gp-green-500);
+  font-weight: inherit;
+  color: inherit;
+&:hover, &:visited {
+    --transition--duration: 0.1s;
+    border-bottom: 3px solid var(--gp-green-500);
+    text-decoration: none;  
+    box-shadow: none;
+  }
+}
+
+//secondary nav fix
+.bbn a, .secondary-menu .nav-link a {
+  border-bottom: none!important;
+  &:hover {
+    border-bottom: none!important;
+  }
+}
+
+.tdn {
+  text-decoration: none!important;
+}
+
+a.external-link {
+  &:after {
+    display: none;
+  }
+}
+
+.submenu-block .submenu-menu a {
+  border-bottom: none;
+  text-decoration: none;
+  &:hover {
+    --transition--duration: 0.3s;
+    border-bottom: 2px solid var(--gp-green-500);
+    text-decoration: none;  
+  }
+}
+
+//columns links 
+.columns-block.block-style-icons .column-wrap a {
+  border-bottom: none;
+  text-decoration: none;
+  &:hover:not(.attachment-container, h3) {
+    text-decoration: underline;
+    -webkit-text-decoration-color: $gp-green-50; /* Safari */  
+    text-decoration-color: $gp-green-50;
+  }
+}
+
+//post info preview
+a.tag-item.tag,
+.single-post-time, a.comment-link, a.comment-link>span.quiantity, a.comment-link>span.display-text {
+  font-weight: 400;
+  &:hover {
+    color: $black;
+    text-decoration: underline;
+    -webkit-text-decoration-color: $gp-green-50; /* Safari */  
+    text-decoration-color: $gp-green-50;
+    }
+}
+
+a.tag-item.tag-item--main.page-type {
+  font-weight: bold;
+  &:hover {
+    color: $black;
+    text-decoration: underline;
+    -webkit-text-decoration-color: $gp-green-50; /* Safari */  
+    text-decoration-color: $gp-green-50;
+  }
+}
+
+.top-page-tags .tag-item {
+  margin-right: 0.3rem;
+}
+
+.article-list-item-author>a:hover {
+  --transition--duration: 0.3s;
+  border-bottom: 2px solid var(--gp-green-500);
+  text-decoration: none;
+}
+
+.content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a {
   color: $dark-green !important;
   font-family: $roboto;
   font-size: larger;
+}
+
+//deep-dive pattern
+.wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > a:hover {
+  --transition--duration: 0.3s;
+  border-bottom: 2px solid var(--gp-green-500);
+  text-decoration: none;
 }
 
 //on listing pages
@@ -233,8 +264,16 @@ div.query-list-item-body div.query-list-item-post-terms div.wrapper-post-term di
   font-weight: 400;
 }
 
-h4.query-list-item-headline.wp-block-post-title a {
-  color: $black!important;
+.article-list-item-headline a,
+.query-list-item-headline.wp-block-post-title {
+  color: $black;
+
+  &:hover {
+    --transition--duration: 0.3s;
+    border-bottom: 2px solid var(--gp-green-500);
+    text-decoration: none;
+  }
+  
 }
 
 div.wrapper-post-tag ::before,
@@ -242,8 +281,3 @@ div.wrapper-post-tag ::before,
   color: $dark-green;
 }
 
-//post info preview
-div.article-list-item-tags.top-page-tags>a.tag-item.tag-item--main.page-type,
-div.tag-wrap.tags>a.tag-item.tag, .single-post-time, a.comment-link, a.comment-link>span.quiantity, a.comment-link>span.display-text {
-  font-weight: 400!important;
-}

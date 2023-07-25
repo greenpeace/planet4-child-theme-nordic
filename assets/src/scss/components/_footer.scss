@@ -9,10 +9,12 @@
 
   .countries-list {
     //footer fix bakground
-    background: #076c50;
+    background: $gp-nor-green-3;
 
     a[data-ga-category="Country Selector"]:hover{
-      color: #6ddb00;
+      --transition--duration: 0.3s;
+      border-bottom: 2px solid var(--gp-green-500);
+      text-decoration: none;  
     }
   }
 
@@ -33,28 +35,42 @@
       font-size: .75rem;
       line-height: 1.4;
       width: auto;
+
+      &:hover {
+        --transition--duration: 0.3s;
+        border-bottom: 2px solid var(--gp-green-500);
+        text-decoration: none;  
+      }
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
   }
 
-  a:hover:not(.footer-social-media li a, .copyright a:hover){
-    color: #6ddb00;
+  a:hover:not(.footer-social-media a.footer-social-media li a, .copyright a:hover){
     text-decoration: none;
   }
 
   .footer-social-media li {
     color: inherit;
 
-    a svg :hover {
-      color: #6ddb00;
+    a svg:hover {
+      color: $gp-green-50;
+      text-decoration: none;
+      border-bottom: none;
     }
 
     .icon {
       width: 34px;
       height: 34px;
+    }
+  }
+
+  a[data-ga-action="Footer Links"]{
+    font-weight: 500;
+    text-decoration: none;
+    &:hover {
+      --transition--duration: 0.3s;
+      border-bottom: 3px solid var(--gp-green-500);
+      text-decoration: none;  
     }
   }
 
