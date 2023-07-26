@@ -32,35 +32,35 @@ Text Domain: planet4-child-theme-nordic
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -197,6 +197,10 @@ level-2 is the first level comment with a margin of 100px
 and so on...
 */
 @font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -230,35 +234,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -398,35 +402,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -562,14 +566,18 @@ and so on...
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #000;
   --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #e5e5e5;
-  --top-navigation--input--placeholder--color: #999;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
   --link--color: #3c7800;
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
 @font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
@@ -595,6 +603,7 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
+h1, .h1,
 h2, .h2,
 h3, .h3,
 h4, .h4,
@@ -602,14 +611,13 @@ h5, .h5,
 h6, .h6,
 .cover-card-heading, .cover-card-excerpt, .articles-block h2, .article-list-item-headline a {
   font-family: "Roboto", sans-serif;
-  font-weight: 700;
+  font-weight: 900;
   margin-top: 0;
   margin-bottom: 0.5rem;
   line-height: 1.25;
 }
 
 h1, .h1 {
-  font-family: "Helvetica Display Extra Black", "Helvetica", "Arial", sans-serif;
   font-size: calc(1.475rem + 1.5vw);
   margin-bottom: 0.7rem;
 }
@@ -892,35 +900,35 @@ div.wrapper-post-tag ::before,
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -1056,8 +1064,8 @@ div.wrapper-post-tag ::before,
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #000;
   --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #e5e5e5;
-  --top-navigation--input--placeholder--color: #999;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
   --link--color: #3c7800;
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
@@ -1078,35 +1086,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -1242,8 +1250,8 @@ and so on...
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #000;
   --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #e5e5e5;
-  --top-navigation--input--placeholder--color: #999;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
   --link--color: #3c7800;
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
@@ -1259,35 +1267,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -1418,6 +1426,10 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
 @font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
@@ -1469,35 +1481,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -1633,8 +1645,8 @@ and so on...
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #000;
   --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #e5e5e5;
-  --top-navigation--input--placeholder--color: #999;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
   --link--color: #3c7800;
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
@@ -1650,35 +1662,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -1809,6 +1821,10 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
 @font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
@@ -1868,35 +1884,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -2032,8 +2048,8 @@ and so on...
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #000;
   --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #e5e5e5;
-  --top-navigation--input--placeholder--color: #999;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
   --link--color: #3c7800;
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
@@ -2049,35 +2065,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -2208,6 +2224,10 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
 @font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
@@ -2257,35 +2277,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -2421,8 +2441,8 @@ and so on...
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #000;
   --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #e5e5e5;
-  --top-navigation--input--placeholder--color: #999;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
   --link--color: #3c7800;
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
@@ -2438,35 +2458,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -2597,6 +2617,10 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
 @font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
@@ -2834,35 +2858,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -2998,8 +3022,8 @@ and so on...
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #000;
   --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #e5e5e5;
-  --top-navigation--input--placeholder--color: #999;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
   --link--color: #3c7800;
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
@@ -3015,35 +3039,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -3174,6 +3198,10 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
 @font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
@@ -3260,35 +3288,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -3424,8 +3452,8 @@ and so on...
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #000;
   --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #e5e5e5;
-  --top-navigation--input--placeholder--color: #999;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
   --link--color: #3c7800;
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
@@ -3441,35 +3469,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -3600,6 +3628,10 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
 @font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
@@ -3678,35 +3710,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -3842,8 +3874,8 @@ and so on...
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #000;
   --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #e5e5e5;
-  --top-navigation--input--placeholder--color: #999;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
   --link--color: #3c7800;
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
@@ -3859,35 +3891,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -4018,6 +4050,10 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
 @font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
@@ -4134,35 +4170,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -4298,8 +4334,8 @@ and so on...
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #000;
   --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #e5e5e5;
-  --top-navigation--input--placeholder--color: #999;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
   --link--color: #3c7800;
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
@@ -4315,35 +4351,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -4475,6 +4511,10 @@ and so on...
 }
 
 @font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -4499,15 +4539,6 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-.is-layout-flow.is-pattern-p4-campaign-pattern-layout .is-pattern-p4-page-header h1,
-.is-layout-flow.is-pattern-p4-take-action-pattern-layout .is-pattern-p4-page-header h1,
-.is-layout-flow.is-pattern-p4-high-level-topic-pattern-layout .is-pattern-p4-page-header h1,
-.is-layout-flow.is-pattern-p4-deep-dive-topic-pattern-layout .is-pattern-p4-page-header h1,
-.is-layout-flow .is-pattern-p4-page-header h1 {
-  box-shadow: 2px 4px 0px 4px rgb(245, 247, 248);
-  border: 3px solid #f5f7f8;
-}
-
 @media (max-width: 375px) {
   .is-pattern-p4-page-header .wp-block-media-text__content, .is-pattern-p4-page-header .wp-block-group:first-child {
     margin: -1rem 2.3rem 0 0.5rem !important;
@@ -4555,35 +4586,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -4719,8 +4750,8 @@ and so on...
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #000;
   --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #e5e5e5;
-  --top-navigation--input--placeholder--color: #999;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
   --link--color: #3c7800;
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
@@ -4736,35 +4767,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -4895,6 +4926,10 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
 @font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
@@ -4960,35 +4995,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -5124,8 +5159,8 @@ and so on...
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #000;
   --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #e5e5e5;
-  --top-navigation--input--placeholder--color: #999;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
   --link--color: #3c7800;
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
@@ -5141,35 +5176,35 @@ and so on...
 }
 
 .has-grey-60-color {
-  color: #666;
+  color: #6F7376;
 }
 
 .has-grey-60-background-color {
-  background-color: #666;
+  background-color: #6F7376;
 }
 
 .has-grey-40-color {
-  color: #999;
+  color: #bebfc2;
 }
 
 .has-grey-40-background-color {
-  background-color: #999;
+  background-color: #bebfc2;
 }
 
 .has-grey-20-color {
-  color: #ccc;
+  color: #ECECEC;
 }
 
 .has-grey-20-background-color {
-  background-color: #ccc;
+  background-color: #ECECEC;
 }
 
 .has-grey-10-color {
-  color: #e5e5e5;
+  color: #F5F7F8;
 }
 
 .has-grey-10-background-color {
-  background-color: #e5e5e5;
+  background-color: #F5F7F8;
 }
 
 .has-grey-color {
@@ -5300,6 +5335,10 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
 @font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
