@@ -4,6 +4,7 @@
 
 // Typography
 // Headings
+h1, .h1,
 h2, .h2,
 h3, .h3,
 h4, .h4,
@@ -11,14 +12,14 @@ h5, .h5,
 h6, .h6,
 .cover-card-heading, .cover-card-excerpt, .articles-block h2, .article-list-item-headline a {
   font-family: $roboto;
-  font-weight: 700;
+  // font-family: $helvetica-extbold!important;
+  font-weight: 900;
   margin-top:0;
   margin-bottom:.5rem;
   line-height:1.25;
 }
 
 h1, .h1 {
-  font-family: $helvetica-extblk;
   font-size:calc(1.475rem + 1.5vw);
   margin-bottom: .7rem;
 

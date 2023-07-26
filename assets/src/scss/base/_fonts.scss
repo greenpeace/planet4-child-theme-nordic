@@ -14,6 +14,12 @@ $font-size-xxxxl: 4rem;
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
 @font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"),
+    url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+
+@font-face {
   font-family: "Helvetica Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"),
     url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"),
