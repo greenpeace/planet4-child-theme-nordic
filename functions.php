@@ -10,7 +10,37 @@
  * Tags: light, accessibility-ready
  * Text Domain: planet4-child-theme-nordic
  * Version: 0.0.10
- */
+*/
+
+use Timber\Timber;
+
+// Enable Timber template cache unless this is a debug environment.
+if (defined('WP_DEBUG') && is_bool(WP_DEBUG)) {
+    Timber::$cache = ! WP_DEBUG;
+} else {
+    Timber::$cache = true;
+}
+
+// Define the function to override sub-navigation template
+function override_sub_navigation_template($template_paths) {
+    // Add the custom sub-navigation template path to the array
+    $template_paths[] = get_stylesheet_directory() . '/partial_templates/navigation-submenu.twig';
+    return $template_paths;
+}
+
+// Attach the function to the timber/loader/twig/filters hook
+add_filter('timber/loader/twig/filters', 'override_sub_navigation_template');
+
+// Define the custom navigation menu function
+function gpn_custom_navigation_menu() {
+    $context = Timber::context();
+    $menu_id = 9;
+
+    // Fetch the menu by ID
+    $context['menu'] = new Timber\Menu($menu_id);
+
+    Timber::render('partial_templates/navigation-submenu.twig', $context);
+}
 
 // Filter available Gutenberg standard blocks
 require_once 'includes/gutenberg-blocks.php';
