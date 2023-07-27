@@ -13,7 +13,7 @@ h6, .h6,
 .cover-card-heading, .cover-card-excerpt, .articles-block h2, .article-list-item-headline a {
   font-family: $roboto!important;
   // font-family: $helvetica-extbold!important;
-  font-weight: 900;
+  font-weight: 900!important;
   margin-top:0;
   margin-bottom:.5rem;
   line-height:1.25;
@@ -81,7 +81,7 @@ div.cookies-intro>div.cookies-text {
 }
 
 p, a, ul, li, span, strong {
-  font-family: $roboto;
+  font-family: $roboto!important;
 }
 //Text
 div.carousel-captions-wrapper h2 {
