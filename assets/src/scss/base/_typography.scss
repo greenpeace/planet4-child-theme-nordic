@@ -138,15 +138,6 @@ p.article-list-item-content, article.post-details p, p.accordion-text, p.search-
   background-color: $dark-green;
 }
 
-p.logged-in-as a,
-div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
-  color: $dark-green;
-
-  &:hover {
-    font-weight: 800;  
-  }
-}
-
 .take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
   font-family: $roboto!important;
   font-weight: 400;

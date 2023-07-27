@@ -752,15 +752,6 @@ p.article-list-item-content, article.post-details p, p.accordion-text, p.search-
   background-color: #3c7800;
 }
 
-p.logged-in-as a,
-div.top-page-tags div.tag-wrap.issues a.tag-item.tag {
-  color: #3c7800;
-}
-p.logged-in-as a:hover,
-div.top-page-tags div.tag-wrap.issues a.tag-item.tag:hover {
-  font-weight: 800;
-}
-
 .take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
   font-family: "Roboto", sans-serif !important;
   font-weight: 400;
