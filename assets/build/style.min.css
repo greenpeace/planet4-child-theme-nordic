@@ -610,7 +610,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6,
 .cover-card-heading, .cover-card-excerpt, .articles-block h2, .article-list-item-headline a {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   font-weight: 700 !important;
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -687,7 +687,7 @@ div.cookies-intro > div.cookies-text {
 }
 
 p, a, ul, li, span, strong {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
 }
 
 div.carousel-captions-wrapper h2 {
@@ -718,7 +718,7 @@ span.author-info,
 div.block-editor-block-list__layout.is-root-container,
 p.search-result-item-content, #gdpr-comments-compliance,
 .error404 .speech-bubble, .error404 .page-header .container .row {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   font-weight: 400;
   font-size: 1.06rem;
   line-height: inherit;
@@ -757,7 +757,7 @@ p.article-list-item-content, article.post-details p, p.accordion-text, p.search-
 }
 
 .take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   font-weight: 400;
 }
 
@@ -854,7 +854,7 @@ a.tag-item.tag-item--main.page-type:hover, .top-page-tags a.tag-item[data-ga-act
 
 .content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a {
   color: #3c7800 !important;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   font-size: larger;
 }
 
@@ -3231,6 +3231,10 @@ and so on...
   font-size: calc(1.475rem + 1.5vw);
   margin-bottom: 18px;
   line-height: 1.2;
+}
+
+.carousel-header .carousel-caption .main-header p {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
 }
 
 html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {

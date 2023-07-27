@@ -15,6 +15,10 @@ $text-slide-offset: 50px;
  line-height:1.2;
 }
 
+.carousel-header .carousel-caption .main-header p {
+  font-family: $roboto;
+}
+
 html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
  text-align:right
 }

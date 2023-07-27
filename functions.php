@@ -12,6 +12,20 @@
  * Version: 0.0.10
  */
 
+
+function add_custom_css() {
+    // Add your custom CSS code here
+    $custom_css = "    
+        h1, h2, h3, h4, h5, h6, p, a, ul, li, span, strong, small {
+            font-family:  "Roboto","Helvetica","Arial", sans-serif!important;
+        }
+    ";
+
+    wp_add_inline_style('parent-style', $custom_css);
+}
+add_action('wp_enqueue_scripts', 'add_custom_css');
+
+
 // Filter available Gutenberg standard blocks
 require_once 'includes/gutenberg-blocks.php';
 
