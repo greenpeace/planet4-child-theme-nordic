@@ -13,19 +13,6 @@
  */
 
 
-function add_custom_css() {
-    // Add your custom CSS code here
-    $custom_css = "    
-        h1, h2, h3, h4, h5, h6, p, a, ul, li, span, strong, small {
-            font-family:  "Roboto","Helvetica","Arial", sans-serif!important;
-        }
-    ";
-
-    wp_add_inline_style('parent-style', $custom_css);
-}
-add_action('wp_enqueue_scripts', 'add_custom_css');
-
-
 // Filter available Gutenberg standard blocks
 require_once 'includes/gutenberg-blocks.php';
 
@@ -98,6 +85,28 @@ add_action(
     }, 99, 3
 );
 
+
+//overrive master theme
+function add_custom_css() {
+    // Add your custom CSS code here
+    $custom_css = "    
+        h1, h2, h3, h4, h5, h6, p, a, ul, li, span, strong, small {
+            font-family: Roboto, Helvetica, Arial, sans-serif !important;
+        }
+    ";
+
+    wp_add_inline_style('parent-style', $custom_css);
+}
+add_action('wp_enqueue_scripts', 'add_custom_css');
+
+
+//add back the Custom CSS option
+function enable_additional_css_customizer( $wp_customize ) {
+    $wp_customize->get_section( 'custom_css' )->panel = 'options';
+}
+add_action( 'customize_register', 'enable_additional_css_customizer' );
+
+
 //  function p4_child_theme_gpn_gutenberg_scripts() {
 //      wp_enqueue_script(
 //          'gpn-customizations',
@@ -145,3 +154,5 @@ add_action(
 // }
 
 // fa_custom_setup_kit('https://kit.fontawesome.com/508a5d6fe1.js');
+
+
