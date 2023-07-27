@@ -5,6 +5,7 @@
 
 .btn {
   border-radius: 4px;
+  font-weight: 700!important;
 }
 
 button,
@@ -17,7 +18,7 @@ a[data-ga-action="Donate"],
 .post-content .more-link, .post-content .page-links a,
 .wp-block-button a.wp-block-button__link, .wp-block-file .wp-block-file__button{
   cursor: pointer;
-  font-family: $helvetica-bold;
+  font-family: $helvetica-bold!important;
 }
 
 //Donate btn

@@ -13,6 +13,11 @@ $text-slide-offset: 50px;
  font-size:calc(1.475rem + 1.5vw);
  margin-bottom:18px;
  line-height:1.2;
+ font-family: $roboto !important;
+}
+
+.carousel-header .carousel-caption .main-header p {
+  font-family: $roboto;
 }
 
 html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {

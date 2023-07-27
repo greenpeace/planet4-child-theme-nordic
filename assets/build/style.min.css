@@ -610,8 +610,8 @@ h4, .h4,
 h5, .h5,
 h6, .h6,
 .cover-card-heading, .cover-card-excerpt, .articles-block h2, .article-list-item-headline a {
-  font-family: "Roboto", sans-serif !important;
-  font-weight: 900 !important;
+  font-family: "Roboto", sans-serif !important !important;
+  font-weight: 700 !important;
   margin-top: 0;
   margin-bottom: 0.5rem;
   line-height: 1.25;
@@ -687,11 +687,11 @@ div.cookies-intro > div.cookies-text {
 }
 
 p, a, ul, li, span, strong {
-  font-family: "Roboto", sans-serif !important;
+  font-family: "Roboto", sans-serif !important !important;
 }
 
 div.carousel-captions-wrapper h2 {
-  font-family: "Helvetica Display Extra Bold", "Helvetica", "Arial", sans-serif !important;
+  font-family: "Roboto", sans-serif !important !important;
   font-size: 2rem;
 }
 
@@ -718,7 +718,7 @@ span.author-info,
 div.block-editor-block-list__layout.is-root-container,
 p.search-result-item-content, #gdpr-comments-compliance,
 .error404 .speech-bubble, .error404 .page-header .container .row {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif !important;
   font-weight: 400;
   font-size: 1.06rem;
   line-height: inherit;
@@ -757,7 +757,7 @@ p.article-list-item-content, article.post-details p, p.accordion-text, p.search-
 }
 
 .take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
-  font-family: "Roboto", sans-serif !important;
+  font-family: "Roboto", sans-serif !important !important;
   font-weight: 400;
 }
 
@@ -854,7 +854,7 @@ a.tag-item.tag-item--main.page-type:hover, .top-page-tags a.tag-item[data-ga-act
 
 .content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a {
   color: #3c7800 !important;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif !important;
   font-size: larger;
 }
 
@@ -1852,7 +1852,7 @@ html {
 
 body {
   color: #4d4d4d;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif !important;
 }
 
 .error404 .speech-bubble {
@@ -2643,6 +2643,7 @@ and so on...
 }
 .btn {
   border-radius: 4px;
+  font-weight: 700 !important;
 }
 
 button,
@@ -2655,7 +2656,7 @@ a[data-ga-action=Donate],
 .post-content .more-link, .post-content .page-links a,
 .wp-block-button a.wp-block-button__link, .wp-block-file .wp-block-file__button {
   cursor: pointer;
-  font-family: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif;
+  font-family: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif !important;
 }
 
 nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate],
@@ -3231,6 +3232,11 @@ and so on...
   font-size: calc(1.475rem + 1.5vw);
   margin-bottom: 18px;
   line-height: 1.2;
+  font-family: "Roboto", sans-serif !important !important;
+}
+
+.carousel-header .carousel-caption .main-header p {
+  font-family: "Roboto", sans-serif !important;
 }
 
 html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
@@ -3667,7 +3673,7 @@ and so on...
 }
 .author-block-info div[itemprop=description] span.show-more,
 .author-block-info div[itemprop=description] span.show-less {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif !important;
   color: #3c7800;
 }
 
@@ -4962,7 +4968,7 @@ and so on...
 .leads-form span.checkbox-label p {
   line-height: 1.3;
   font-weight: 300;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif !important;
   font-size: 0.75rem !important;
   padding-bottom: 0.2rem;
 }
