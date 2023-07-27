@@ -5379,6 +5379,10 @@ a.nav-link {
   }
 }
 
+.nav-submenu .nav-item a.nav-link:hover {
+  background: #D9F1C5;
+}
+
 @media (max-width: 576px) {
   .top-navigation .btn-donate {
     height: 8vw;

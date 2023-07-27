@@ -24,6 +24,10 @@
 
   }
 
+  .nav-submenu .nav-item a.nav-link:hover {
+    background: $gp-green-10;
+  }
+
   .top-navigation .btn-donate {
 
     @include mobile-only {
