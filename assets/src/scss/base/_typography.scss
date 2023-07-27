@@ -224,7 +224,7 @@ a.tag-item.tag,
     }
 }
 
-a.tag-item.tag-item--main.page-type {
+a.tag-item.tag-item--main.page-type, .top-page-tags a.tag-item[data-ga-action="Category Tag"] {
   font-weight: bold;
   &:hover {
     color: $black;

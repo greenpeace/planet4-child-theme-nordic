@@ -837,10 +837,10 @@ a.tag-item.tag:hover,
   text-decoration-color: #66CC00;
 }
 
-a.tag-item.tag-item--main.page-type {
+a.tag-item.tag-item--main.page-type, .top-page-tags a.tag-item[data-ga-action="Category Tag"] {
   font-weight: bold;
 }
-a.tag-item.tag-item--main.page-type:hover {
+a.tag-item.tag-item--main.page-type:hover, .top-page-tags a.tag-item[data-ga-action="Category Tag"]:hover {
   color: #000;
   text-decoration: underline;
   -webkit-text-decoration-color: #66CC00; /* Safari */
