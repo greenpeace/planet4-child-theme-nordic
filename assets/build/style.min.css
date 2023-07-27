@@ -610,7 +610,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6,
 .cover-card-heading, .cover-card-excerpt, .articles-block h2, .article-list-item-headline a {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif !important;
   font-weight: 900;
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -684,6 +684,10 @@ h6, .h6 {
 
 div.cookies-intro > div.cookies-text {
   font-weight: 500 !important;
+}
+
+p, a, ul, li, span, strong {
+  font-family: "Roboto", sans-serif;
 }
 
 div.carousel-captions-wrapper h2 {
