@@ -1,0 +1,25 @@
+@import "../base/colors";
+@import "../base/variables";
+@import "../base/fonts";
+
+//TA cover card
+.take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
+    font-family:$roboto;
+    font-weight: 400!important;
+  }
+  
+  span.cover-card-tag {
+    font-family: $gp-sans;
+  }
+  
+  a.cover-card-heading:hover {
+    -webkit-text-decoration-color: $gp-green-50; /* Safari */  
+    text-decoration-color: $gp-green-50;
+  }
+  
+  .content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a {
+    color: $dark-green !important;
+    font-family:$roboto;
+    font-size: larger;
+  }
+  

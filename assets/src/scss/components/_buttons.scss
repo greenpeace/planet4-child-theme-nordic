@@ -3,13 +3,9 @@
 @import "../base/colors";
 @import "../base/fonts";
 
-.btn {
-  border-radius: 4px;
-}
-
 button,
 button[type="submit"],
-.btn,
+.btn, .btn span,
 .btn-primary[data-ga-action="Call to Action"],
 .btn-secondary,
 .wp-block-button__link,
@@ -18,6 +14,9 @@ a[data-ga-action="Donate"],
 .wp-block-button a.wp-block-button__link, .wp-block-file .wp-block-file__button{
   cursor: pointer;
   font-family: $helvetica-bold;
+  border-radius: 4px;
+  color: $black;
+  font-weight: 900;
 }
 
 //Donate btn
@@ -25,6 +24,7 @@ nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action="Donate"],
 div.burger-menu-footer a.btn.btn-donate[data-ga-action="Donate"]
 {
   background: $gp-green-40;
+  color: $black;
 
   @include mobile-and-tablet-only {
     // ripple effect for touch screens
@@ -61,11 +61,13 @@ div.burger-menu-footer a.btn.btn-donate[data-ga-action="Donate"]
 
 //CTA color buttons
 button[type="submit"]:not(.nav-search-btn, .search-form-btn),
-.btn.btn-primary[data-ga-action="Call to Action"],
+.btn.btn-primary[data-ga-action="Call to Action"], .cover-card.cover .btn.cover-card-btn.btn-primary,
 .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
-.btn.btn-primary#hidecookie {
+.btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
   font-weight: bold;
   border: none;
+  background: $yellow;
+  color: $black;
 
   @include mobile-and-tablet-only {
     // ripple effect for touch screens
@@ -75,6 +77,7 @@ button[type="submit"]:not(.nav-search-btn, .search-form-btn),
     &:hover {
       background: $yellow radial-gradient(circle, transparent 1%, $yellow 1%) center/15000%;
       border-color: $yellow;
+      color: $black;
     }
 
     &:active {
@@ -82,6 +85,7 @@ button[type="submit"]:not(.nav-search-btn, .search-form-btn),
       background-size: 100%;
       transition: background 0s;
     }
+    color:$black;
   }
 
   @include large-and-up {
@@ -94,7 +98,8 @@ button[type="submit"]:not(.nav-search-btn, .search-form-btn),
     -webkit-transition: background 300ms ease-in-out;
     transition: background 300ms ease-in-out;
 
-    &:hover {
+    &:hover, &:active {
+      color: $black;
       background-position: 100%;
     }
   }
@@ -105,10 +110,10 @@ a.pdf-link:hover::before {
 }
 
 a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
-  color:$dark-green;
-  -webkit-text-decoration-color: $dark-green;
-  -moz-text-decoration-color: $dark-green;
-  text-decoration-color: $dark-green;
+  color:$gp-green-80;
+  -webkit-text-decoration-color: $gp-green-80;
+  -moz-text-decoration-color: $gp-green-80;
+  text-decoration-color: $gp-green-80;
 
 }
 
@@ -129,11 +134,15 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 .btn-secondary:not(#hidecookie),
 .btn-secondary:not(#commentform),
 .btn-secondary, .wp-block-button.is-style-secondary a, a.wp-block-button__link, .wp-block-button.is-style-secondary a:visited {
-  border-color: $dark-green;
-  color: $dark-green;
+  border-color: $gp-green-80;
+  color: $gp-green-80;
   box-shadow: none;
   background: $white;
   border-radius: 4px;
+
+  &:hover, &:active {
+    color: $white;
+  }
 
   @include mobile-and-tablet-only {
     // ripple effect for touch screens
@@ -141,14 +150,16 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
     transition: background 0.8s;
 
     &:hover {
-      background: $dark-green radial-gradient(circle, transparent 1%, $dark-green 1%) center/15000%;
-      border-color: $dark-green;
+      background: $gp-green-80 radial-gradient(circle, transparent 1%, $gp-green-80 1%) center/15000%;
+      border-color: $gp-green-80;
+      color: $white;
     }
 
     &:active {
       background-color: $gp-nor-green;
       background-size: 100%;
       transition: background 0s;
+      color: $white;
     }
 
   }
@@ -164,17 +175,17 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
     // transition: background 500ms ease-in-out;
 
     &:hover {
-      background: $dark-green;
+      background: $gp-green-80;
       // background-position: 100%!important;
-      border-color: $dark-green;
+      border-color: $gp-green-80;
       color: $white;
     }
   }
 
   // &:hover,
   // &:active {
-  //   border-color: $dark-green;
-  //   background: $dark-green;
+  //   border-color: $gp-green-80;
+  //   background: $gp-green-80;
   //   color: $white;
   // }
 
@@ -192,19 +203,19 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 
 
 a.wp-block-file__button.pdf-link {
-  color: $dark-green!important;
-  -webkit-text-decoration-color: $dark-green;
-  -moz-text-decoration-color: $dark-green;
-  text-decoration-color: $dark-green;
-  border-color: $dark-green;
+  color: $gp-green-80!important;
+  -webkit-text-decoration-color: $gp-green-80;
+  -moz-text-decoration-color: $gp-green-80;
+  text-decoration-color: $gp-green-80;
+  border-color: $gp-green-80;
   box-shadow: none;
   background: $white;
   border-radius: 4px;
 
   &:hover,
   &:active {
-    background: $dark-green;
-    border-color: $dark-green;
+    background: $gp-green-80;
+    border-color: $gp-green-80;
     color: $white!important;
   }
 }

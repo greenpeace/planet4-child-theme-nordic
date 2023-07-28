@@ -3,7 +3,7 @@
 $roboto:   "Roboto","Helvetica", "Arial", sans-serif!important;
 // changed the font from here to make sure it will assigned where it need to
 // $lora:     "Open Sans", sans-serif;
-$gp-sans: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
+$gp-sans: "Greenpeace Sans", "Helvetica", "Arial", sans-serif!important;
 $helvetica: "Helvetica Now Display Regular", "Helvetica", "Arial", sans-serif!important;
 $helvetica-bold: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif!important;
 $lora: "Helvetica Now Display Regular", "Helvetica Now Display", "Helvetica", "Arial", sans-serif!important;
@@ -26,7 +26,7 @@ $extra-extra-large-width: 1600px;
   --top-navigation--separation: 1px solid #d8d8d8;
   --top-navigation--search-toggle--background: #{$grey-10};
   --top-navigation--input--placeholder--color: #{$grey-40};
-  --link--color: #{$dark-green};
+  --link--color: #{$gp-green-80};
   --nav-link--hover--color: #{$black};
   --nav-link--hover--text-decoration: underline 3px #{$gp-green};
   --nav-link--hover--text-underline-position: under;

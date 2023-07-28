@@ -10,7 +10,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6,
-.cover-card-heading, .cover-card-excerpt, .articles-block h2, .article-list-item-headline a {
+.cover-card-heading, .cover-card-excerpt, .articles-block h2, .article-list-item-headline a, .query-list-item-headline.wp-block-post-title a {
   font-family:$roboto;
   // font-family: $helvetica-extbold!important;
   font-weight: 700!important;
@@ -141,11 +141,6 @@ p.article-list-item-content, article.post-details p, p.accordion-text, p.search-
   background-color: $dark-green;
 }
 
-.take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
-  font-family:$roboto;
-  font-weight: 400;
-}
-
 //Links
 a {
   box-shadow: none!important;
@@ -155,13 +150,15 @@ a {
 .page-content li>strong>a, .page-content p>strong>a, .post-content li>strong>a, .post-content p>strong>a,
 .covers-block > .page-section-description > a {
   text-decoration: none;
-  --transition--duration: 0.1s;
-  border-bottom: 1.5px solid var(--gp-green-500);
+  border-bottom: 1.5px solid $gp-green-50;
   font-weight: inherit;
   color: inherit;
 &:hover, &:visited {
-    --transition--duration: 0.1s;
-    border-bottom: 3px solid var(--gp-green-500);
+    -webkit-transition: height 0.2s cubic-bezier(.5,0,0,1);
+    -o-transition: height 0.2s cubic-bezier(.5,0,0,1);
+    -moz-transition: height 0.2s cubic-bezier(.5,0,0,1);
+    transition: height 0.2s cubic-bezier(.5,0,0,1);
+    border-bottom: 3px solid $gp-green-50;
     text-decoration: none;  
     box-shadow: none;
   }
@@ -189,9 +186,13 @@ a.external-link {
   border-bottom: none;
   text-decoration: none;
   &:hover {
-    --transition--duration: 0.3s;
-    border-bottom: 2px solid var(--gp-green-500);
+    -webkit-transition: height 0.2s cubic-bezier(.5,0,0,1);
+    -o-transition: height 0.2s cubic-bezier(.5,0,0,1);
+    -moz-transition: height 0.2s cubic-bezier(.5,0,0,1);
+    transition: height 0.2s cubic-bezier(.5,0,0,1);
+    border-bottom: 3px solid $gp-green-50;
     text-decoration: none;  
+    box-shadow: none;
   }
 }
 
@@ -206,25 +207,18 @@ a.external-link {
   }
 }
 
-//post info preview
-a.tag-item.tag,
-.single-post-time, a.comment-link, a.comment-link>span.quiantity, a.comment-link>span.display-text {
-  font-weight: 400;
-  &:hover {
-    color: $black;
-    text-decoration: underline;
-    -webkit-text-decoration-color: $gp-green-50; /* Safari */  
-    text-decoration-color: $gp-green-50;
-    }
-}
 
 a.tag-item.tag-item--main.page-type, .top-page-tags a.tag-item[data-ga-action="Category Tag"] {
-  font-weight: bold;
+  font-family: $gp-sans;
+  color: $gp-green-80;
   &:hover {
     color: $black;
     text-decoration: underline;
     -webkit-text-decoration-color: $gp-green-50; /* Safari */  
     text-decoration-color: $gp-green-50;
+  }
+  &:visited {
+    color: $black;
   }
 }
 
@@ -232,47 +226,18 @@ a.tag-item.tag-item--main.page-type, .top-page-tags a.tag-item[data-ga-action="C
   margin-right: 0.3rem;
 }
 
-.article-list-item-author>a:hover {
-  --transition--duration: 0.3s;
-  border-bottom: 2px solid var(--gp-green-500);
-  text-decoration: none;
-}
-
-.content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a {
-  color: $dark-green !important;
-  font-family:$roboto;
-  font-size: larger;
-}
-
 //deep-dive pattern
 .wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > a:hover {
-  --transition--duration: 0.3s;
-  border-bottom: 2px solid var(--gp-green-500);
-  text-decoration: none;
+  -webkit-transition: height 0.2s cubic-bezier(.5,0,0,1);
+  -o-transition: height 0.2s cubic-bezier(.5,0,0,1);
+  -moz-transition: height 0.2s cubic-bezier(.5,0,0,1);
+  transition: height 0.2s cubic-bezier(.5,0,0,1);
+  border-bottom: 3px solid $gp-green-50;
+  text-decoration: none;  
+  box-shadow: none;
 }
 
-//on listing pages
-div.query-list-item-post-terms div.taxonomy-p4-page-type a[rel="tag"],
-div.wrapper-post-tag div.taxonomy-post_tag.wp-block-post-terms  a[rel="tag"],
-div.query-list-item-body div.query-list-item-post-terms div.wrapper-post-term div.taxonomy-p4-page-type.wp-block-post-terms a
-{
-  font-weight: 400;
-}
-
-.article-list-item-headline a,
-.query-list-item-headline.wp-block-post-title {
+//headings on dynamic blocks
+h2.page-section-header {
   color: $black;
-
-  &:hover {
-    --transition--duration: 0.3s;
-    border-bottom: 2px solid var(--gp-green-500);
-    text-decoration: none;
-  }
-  
 }
-
-div.wrapper-post-tag ::before,
-.query-list-item-body:has(.taxonomy-p4-page-type):has(.taxonomy-post_tag) .wrapper-post-tag:before {
-  color: $dark-green;
-}
-

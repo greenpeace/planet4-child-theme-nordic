@@ -87,24 +87,17 @@ add_action(
 
 
 //overrive master theme
-function add_custom_css() {
-    // Add your custom CSS code here
-    $custom_css = "    
-        h1, h2, h3, h4, h5, h6, p, a, ul, li, span, strong, small {
-            font-family: Roboto, Helvetica, Arial, sans-serif !important;
-        }
-    ";
+// function add_custom_css() {
+//     // Add your custom CSS code here
+//     $custom_css = "    
+//         h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a, p, p a, a, ul, ul a, li, li a, span, strong, strong a, small, small a {
+//             font-family: Roboto, Helvetica, Arial, sans-serif !important;
+//         }
+//     ";
 
-    wp_add_inline_style('parent-style', $custom_css);
-}
-add_action('wp_enqueue_scripts', 'add_custom_css');
-
-
-//add back the Custom CSS option
-function enable_additional_css_customizer( $wp_customize ) {
-    $wp_customize->get_section( 'custom_css' )->panel = 'options';
-}
-add_action( 'customize_register', 'enable_additional_css_customizer' );
+//     wp_add_inline_style('parent-style', $custom_css);
+// }
+// add_action('wp_enqueue_scripts', 'add_custom_css');
 
 
 //  function p4_child_theme_gpn_gutenberg_scripts() {

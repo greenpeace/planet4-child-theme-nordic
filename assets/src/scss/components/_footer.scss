@@ -12,9 +12,14 @@
     background: $gp-nor-green-3;
 
     a[data-ga-category="Country Selector"]:hover{
-      --transition--duration: 0.3s;
-      border-bottom: 2px solid var(--gp-green-500);
+      -webkit-transition: height 0.2s cubic-bezier(.5,0,0,1);
+      -o-transition: height 0.2s cubic-bezier(.5,0,0,1);
+      -moz-transition: height 0.2s cubic-bezier(.5,0,0,1);
+      transition: height 0.2s cubic-bezier(.5,0,0,1);
+      border-bottom: 2px solid $gp-green-50;
       text-decoration: none;  
+      box-shadow: none;
+      text-decoration: none;
     }
   }
 
@@ -37,9 +42,14 @@
       width: auto;
 
       &:hover {
-        --transition--duration: 0.3s;
-        border-bottom: 2px solid var(--gp-green-500);
+        -webkit-transition: height 0.2s cubic-bezier(.5,0,0,1);
+        -o-transition: height 0.2s cubic-bezier(.5,0,0,1);
+        -moz-transition: height 0.2s cubic-bezier(.5,0,0,1);
+        transition: height 0.2s cubic-bezier(.5,0,0,1);
+        border-bottom: 2px solid $gp-green-50;
         text-decoration: none;  
+        box-shadow: none;
+        text-decoration: none;
       }
     }
 
@@ -68,9 +78,14 @@
     font-weight: 500;
     text-decoration: none;
     &:hover {
-      --transition--duration: 0.3s;
-      border-bottom: 3px solid var(--gp-green-500);
+      -webkit-transition: height 0.2s cubic-bezier(.5,0,0,1);
+      -o-transition: height 0.2s cubic-bezier(.5,0,0,1);
+      -moz-transition: height 0.2s cubic-bezier(.5,0,0,1);
+      transition: height 0.2s cubic-bezier(.5,0,0,1);
+      border-bottom: 2px solid $gp-green-50;
       text-decoration: none;  
+      box-shadow: none;
+      text-decoration: none;
     }
   }
 
