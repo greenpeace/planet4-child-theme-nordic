@@ -12,8 +12,7 @@ h5, .h5,
 h6, .h6,
 .cover-card-heading, .cover-card-excerpt, .articles-block h2, .article-list-item-headline a, .query-list-item-headline.wp-block-post-title a {
   font-family:$roboto;
-  // font-family: $helvetica-extbold!important;
-  font-weight: 700!important;
+  font-weight: 700;
   margin-top:0;
   margin-bottom:.5rem;
   line-height:1.25;

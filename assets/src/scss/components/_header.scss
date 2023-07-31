@@ -36,12 +36,31 @@
     font-size:calc(1.35rem + .9vw)!important;
   }
 
+  .wp-block-media-text.is-pattern-p4-page-header {
+    margin-top: -3rem;
+  }
+
+  .is-pattern-p4-page-header.has-media-on-the-right p,  .is-pattern-p4-page-header.has-media-on-the-right .wp-block-buttons {
+    padding-left: .5rem;
+  }
+
+}
+
+@include medium-and-up {
+  .wp-block-media-text.alignfull.is-pattern-p4-page-header .wp-block-group:first-child {
+    width: 700px;
+  }
 }
 
 @include large-and-up {
-
   h2.page-section-header {
     font-size:calc(1.35rem + 1vw)!important;
   }
 
+}
+
+//page header pattern
+.wp-block-media-text.alignfull.is-pattern-p4-page-header h1.has-background {
+  box-shadow:  8px 0 0 rgba(255, 255, 255, 0), -8px 0 0;
+  padding: .2rem .5rem;
 }
