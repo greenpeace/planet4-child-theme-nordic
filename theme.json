@@ -30,6 +30,11 @@
       "duotone": null,
       "palette": [
         {
+          "name": "Black",
+          "slug": "black",
+          "color": "#000"
+        },
+        {
           "name": "Grey 80%",
           "slug": "grey-80",
           "color": "#45494C"
@@ -80,14 +85,9 @@
           "color": "#F6F4EF"
         },
         {
-          "name": "Blue green",
-          "slug": "blue-green",
-          "color": "#167F82"
-        },
-        {
-          "name": "GP NOR Green 3",
-          "slug": "gp-nor-green-3",
-          "color": "#076c50"
+          "name": "White",
+          "slug": "white",
+          "color": "#ffffff"
         },
         {
           "name": "GP NOR Green 2",
@@ -95,14 +95,14 @@
           "color": "#1F4912"
         },
         {
+          "name": "GP NOR Green 3",
+          "slug": "gp-nor-green-3",
+          "color": "#076c50"
+        },
+        {
           "name": "GP NOR Green 1",
           "slug": "gp-nor-green-1",
           "color": "#0b851e"
-        },
-        {
-          "name": "GP NOR Green",
-          "slug": "gp-nor-green",
-          "color": "#005c42"
         },
         {
           "name": "GP Green",
@@ -113,6 +113,16 @@
           "name": "GP Green new primary",
           "slug": "gp-new-green",
           "color": "#73be1e"
+        },
+        {
+          "name": "GP Green 10",
+          "slug": "gp-green-10",
+          "color": "#D9F1C5"
+        },
+        {
+          "name": "Blue green",
+          "slug": "blue-green",
+          "color": "#167F82"
         },
         {
           "name": "X Dark Blue",
@@ -130,6 +140,21 @@
           "color": "#2077bf"
         },
         {
+          "name": "Twitter Blue",
+          "slug": "twitter-blue",
+          "color": "#55acee"
+        },
+        {
+          "name": "Java Blue",
+          "slug": "java-blue",
+          "color": "#1bb6d6"
+        },
+        {
+          "name": "Light Blue",
+          "slug": "blue-20",
+          "color": "#b8e0fa"
+        },
+        {
           "name": "Orange",
           "slug": "orange-hover",
           "color": "#ee562d"
@@ -137,12 +162,12 @@
         {
           "name": "Yellow",
           "slug": "yellow",
-          "color": "#ffd204"
+          "color": "#FFE100"
         },
         {
-          "name": "White",
-          "slug": "white",
-          "color": "#ffffff"
+          "name": "Yellow light",
+          "slug": "yellow-10",
+          "color": "#FFF6BD"
         }
       ]
     },
