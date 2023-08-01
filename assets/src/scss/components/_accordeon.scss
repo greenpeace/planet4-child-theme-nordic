@@ -1,0 +1,23 @@
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/colors";
+@import "../base/fonts";
+
+.block.accordion-block.wp-block-planet4-blocks-accordion.is-style-dark {
+    .accordion-headline {
+        background: var(--accordion-block-dark-style--background);
+        &:hover {
+            background: var(--accordion-block-dark-style--hover--background);
+        }
+    }
+}
+
+.block.accordion-block.wp-block-planet4-blocks-accordion.is-style-light {
+    .accordion-headline {
+        background: var(--accordion-block-light-style--background);
+        border-color: var(--accordion-block-light-style--border-color);
+        &:hover {
+            background: var(--accordion-block-light-style--hover--background);
+        }
+    }
+}
