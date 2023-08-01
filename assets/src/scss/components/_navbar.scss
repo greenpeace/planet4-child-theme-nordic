@@ -45,6 +45,10 @@
 
   .secondary-menu {
     margin:0;
+
+    p:hover {
+      color: $gp-green-80;
+    }
   }
 
   //secondary nav reusable block HL& DD topics
