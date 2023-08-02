@@ -5060,9 +5060,13 @@ and so on...
     -webkit-hyphens: auto;
     hyphens: auto;
   }
-  .is-pattern-p4-page-header .wp-block-media-text__content, .is-pattern-p4-page-header .wp-block-group:first-child {
+  .is-pattern-p4-page-header .wp-block-media-text__content .wp-block-group:first-child {
     font-size: 2.2rem !important;
     margin: 0 1.2rem 0 0.5rem;
+    word-break: keep-all;
+  }
+  .is-pattern-p4-page-header .wp-block-media-text__content p {
+    font-size: 1rem !important;
   }
 }
 @media screen and (max-width: 767px) {
