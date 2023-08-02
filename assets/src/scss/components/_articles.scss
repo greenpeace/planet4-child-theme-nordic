@@ -11,7 +11,7 @@
 a[data-ga-action="Navigation Tag"], .wrapper-post-term a, .wrapper-post-tag a, a[data-ga-action="Post Type Tag"], a[data-ga-action="Post Type Tag"] span {
   font-family: $gp-sans;
   color: $gp-green-80;
-  &:hover:not(a[data-ga-action="Navigation Tag"] span), &:visited {
+  &:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), &:visited {
     color: $black;
     text-decoration: underline;
     -moz-text-decoration-color: $gp-green-50;
@@ -24,6 +24,7 @@ a.btn.post-tag-button, a.btn.post-tag-button span:nth-child(2){
   color: $black;
   background: $gp-green-10;
   border: none;
+  font-family: $gp-sans;
   &:hover, &:visited {
     color: $gp-green-80;
   }

@@ -1823,7 +1823,7 @@ a[data-ga-action="Navigation Tag"], .wrapper-post-term a, .wrapper-post-tag a, a
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
   color: #198700;
 }
-a[data-ga-action="Navigation Tag"]:hover:not(a[data-ga-action="Navigation Tag"] span), a[data-ga-action="Navigation Tag"]:visited, .wrapper-post-term a:hover:not(a[data-ga-action="Navigation Tag"] span), .wrapper-post-term a:visited, .wrapper-post-tag a:hover:not(a[data-ga-action="Navigation Tag"] span), .wrapper-post-tag a:visited, a[data-ga-action="Post Type Tag"]:hover:not(a[data-ga-action="Navigation Tag"] span), a[data-ga-action="Post Type Tag"]:visited, a[data-ga-action="Post Type Tag"] span:hover:not(a[data-ga-action="Navigation Tag"] span), a[data-ga-action="Post Type Tag"] span:visited {
+a[data-ga-action="Navigation Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), a[data-ga-action="Navigation Tag"]:visited, .wrapper-post-term a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), .wrapper-post-term a:visited, .wrapper-post-tag a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), .wrapper-post-tag a:visited, a[data-ga-action="Post Type Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), a[data-ga-action="Post Type Tag"]:visited, a[data-ga-action="Post Type Tag"] span:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), a[data-ga-action="Post Type Tag"] span:visited {
   color: #000;
   text-decoration: underline;
   -webkit-text-decoration-color: #66CC00;
@@ -1834,6 +1834,7 @@ a.btn.post-tag-button, a.btn.post-tag-button span:nth-child(2) {
   color: #000;
   background: #D9F1C5;
   border: none;
+  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
 }
 a.btn.post-tag-button:hover, a.btn.post-tag-button:visited, a.btn.post-tag-button span:nth-child(2):hover, a.btn.post-tag-button span:nth-child(2):visited {
   color: #198700;
