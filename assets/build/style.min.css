@@ -221,12 +221,6 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
 .has-dark-shade-black-color {
   color: #1a1a1a;
 }
@@ -601,12 +595,6 @@ and so on...
 @font-face {
   font-family: "Helvetica Display Extra Bold";
   src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -1420,12 +1408,6 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
 .block.accordion-block.wp-block-planet4-blocks-accordion.is-style-dark .accordion-headline {
   background: var(--accordion-block-dark-style--background);
 }
@@ -1820,12 +1802,6 @@ and so on...
 @font-face {
   font-family: "Helvetica Display Extra Bold";
   src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -2298,12 +2274,6 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
 html {
   scroll-behavior: smooth;
   transition-duration: 0.4s;
@@ -2706,12 +2676,6 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
 .main-tag-chevron {
   vertical-align: middle;
   max-height: 10px;
@@ -3104,12 +3068,6 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
 button,
 button[type=submit],
 .btn, .btn span,
@@ -3150,7 +3108,6 @@ div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate] {
 @media (min-width: 992px) {
   nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate],
   div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate] {
-    font-weight: bold;
     background-image: linear-gradient(30deg, #66CC00 50%, transparent 50%);
     background-size: 500px;
     background-repeat: no-repeat;
@@ -3203,7 +3160,6 @@ button[type=submit]:not(.nav-search-btn, .search-form-btn),
   .btn.btn-primary[data-ga-action="Call to Action"], .cover-card.cover .btn.cover-card-btn.btn-primary,
   .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
   .btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
-    font-weight: bold;
     background-image: linear-gradient(30deg, #FFE100 50%, transparent 50%);
     background-size: 1000px;
     background-repeat: no-repeat;
@@ -3706,12 +3662,6 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
 .carousel-header .carousel-caption .main-header h2 {
   width: 100%;
   color: #020202;
@@ -4145,12 +4095,6 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
 .author-block, .comments-block .form-section .comment-respond {
   background: rgba(236, 236, 236, 0.25);
   box-shadow: 0 1px 3px 0 rgba(31, 38, 135, 0.18);
@@ -4569,12 +4513,6 @@ and so on...
 @font-face {
   font-family: "Helvetica Display Extra Bold";
   src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -5043,12 +4981,6 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
 @media (max-width: 375px) {
   .is-pattern-p4-page-header .wp-block-media-text__content, .is-pattern-p4-page-header .wp-block-group:first-child {
     margin: -1rem 2.3rem 0 0.5rem !important;
@@ -5485,12 +5417,6 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
 .leads-form__form__container .acf-label {
   font-family: "Helvetica Now Display Regular", "Helvetica", "Arial", sans-serif !important;
   margin-bottom: 0.75rem;
@@ -5896,12 +5822,6 @@ and so on...
 @font-face {
   font-family: "Helvetica Display Extra Bold";
   src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -6346,12 +6266,6 @@ a.nav-link {
 @font-face {
   font-family: "Helvetica Display Extra Bold";
   src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Black";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtBlk"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtBlk.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
