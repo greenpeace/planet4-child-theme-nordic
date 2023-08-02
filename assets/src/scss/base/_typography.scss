@@ -145,7 +145,8 @@ a {
   box-shadow: none!important;
 }
 
-.page-content li>a, .page-content p>a:not(.secondary-menu > .nav-link >a, .secondary-menu > .nav-link >a >strong, .leads-form__form__container>a, .leads-form__form__container>a.external-link, .leads-form__form__container>p>span>a), .post-content li>a, .post-content p>a,
+.page-content li>a, .page-content p>a:not(.secondary-menu > .nav-link >a, .secondary-menu > .nav-link >a >strong, 
+.leads-form__form__container>a, .leads-form__form__container>a.external-link, .leads-form__form__container>p>span>a, .is-pattern-p4-quick-links>a, .is-pattern-p4-quick-links strong a), .post-content li>a, .post-content p>a,
 .page-content li>strong>a, .page-content p>strong>a, .post-content li>strong>a, .post-content p>strong>a,
 .covers-block > .page-section-description > a, strong > a {
   text-decoration: none;
@@ -237,4 +238,9 @@ a.tag-item.tag-item--main.page-type, .top-page-tags a.tag-item[data-ga-action="C
 //headings on dynamic blocks
 h2.page-section-header {
   color: $black;
+}
+
+//reality check block
+.is-pattern-p4-high-level-topic-pattern-layout .is-pattern-p4-reality-check h2.wp-block-heading {
+  font-family: $gp-sans;
 }
