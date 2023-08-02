@@ -147,7 +147,7 @@ a {
 
 .page-content li>a, .page-content p>a:not(.secondary-menu > .nav-link >a, .secondary-menu > .nav-link >a >strong, .leads-form__form__container>a, .leads-form__form__container>a.external-link, .leads-form__form__container>p>span>a), .post-content li>a, .post-content p>a,
 .page-content li>strong>a, .page-content p>strong>a, .post-content li>strong>a, .post-content p>strong>a,
-.covers-block > .page-section-description > a {
+.covers-block > .page-section-description > a, strong > a {
   text-decoration: none;
   border-bottom: 1.5px solid $gp-green-50;
   font-weight: inherit;
@@ -226,14 +226,12 @@ a.tag-item.tag-item--main.page-type, .top-page-tags a.tag-item[data-ga-action="C
 }
 
 //deep-dive pattern
-.wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > a:hover {
-  -webkit-transition: height 0.2s cubic-bezier(.5,0,0,1);
-  -o-transition: height 0.2s cubic-bezier(.5,0,0,1);
-  -moz-transition: height 0.2s cubic-bezier(.5,0,0,1);
-  transition: height 0.2s cubic-bezier(.5,0,0,1);
-  border-bottom: 3px solid $gp-green-50;
+.wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > a:hover,
+.wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > strong > a:hover {
+
   text-decoration: none;  
   box-shadow: none;
+  color: $gp-green-80;
 }
 
 //headings on dynamic blocks

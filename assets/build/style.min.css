@@ -769,7 +769,7 @@ a {
 
 .page-content li > a, .page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong, .leads-form__form__container > a, .leads-form__form__container > a.external-link, .leads-form__form__container > p > span > a), .post-content li > a, .post-content p > a,
 .page-content li > strong > a, .page-content p > strong > a, .post-content li > strong > a, .post-content p > strong > a,
-.covers-block > .page-section-description > a {
+.covers-block > .page-section-description > a, strong > a {
   text-decoration: none;
   border-bottom: 1.5px solid #66CC00;
   font-weight: inherit;
@@ -779,7 +779,7 @@ a {
 .page-content li > strong > a:hover,
 .page-content li > strong > a:visited, .page-content p > strong > a:hover, .page-content p > strong > a:visited, .post-content li > strong > a:hover, .post-content li > strong > a:visited, .post-content p > strong > a:hover, .post-content p > strong > a:visited,
 .covers-block > .page-section-description > a:hover,
-.covers-block > .page-section-description > a:visited {
+.covers-block > .page-section-description > a:visited, strong > a:hover, strong > a:visited {
   transition: height 0.2s cubic-bezier(0.5, 0, 0, 1);
   border-bottom: 3px solid #66CC00;
   text-decoration: none;
@@ -840,11 +840,11 @@ a.tag-item.tag-item--main.page-type:visited, .top-page-tags a.tag-item[data-ga-a
   margin-right: 0.3rem;
 }
 
-.wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > a:hover {
-  transition: height 0.2s cubic-bezier(0.5, 0, 0, 1);
-  border-bottom: 3px solid #66CC00;
+.wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > a:hover,
+.wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > strong > a:hover {
   text-decoration: none;
   box-shadow: none;
+  color: #198700;
 }
 
 h2.page-section-header {
