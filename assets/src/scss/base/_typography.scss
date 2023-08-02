@@ -225,10 +225,10 @@ a.tag-item.tag-item--main.page-type, .top-page-tags a.tag-item[data-ga-action="C
   margin-right: 0.3rem;
 }
 
-//deep-dive pattern
+//deep-dive, issues pattern
+.is-pattern-p4-issues .wp-block-group.container.is-layout-flow h5.wp-block-heading a:hover, 
 .wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > a:hover,
 .wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > strong > a:hover {
-
   text-decoration: none;  
   box-shadow: none;
   color: $gp-green-80;

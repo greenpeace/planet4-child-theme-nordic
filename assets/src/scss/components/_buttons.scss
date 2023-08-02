@@ -15,7 +15,7 @@ a[data-ga-action="Donate"],
   cursor: pointer;
   font-family: $helvetica-bold;
   border-radius: 4px;
-  color: $black;
+  // color: $black;
   font-weight: 900;
 }
 
@@ -139,6 +139,9 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
   box-shadow: none;
   background: $white;
   border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &:hover, &:active {
     color: $white;
@@ -196,9 +199,6 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
     color: $gp-nor-green;
   }
 
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 

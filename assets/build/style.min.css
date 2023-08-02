@@ -840,6 +840,7 @@ a.tag-item.tag-item--main.page-type:visited, .top-page-tags a.tag-item[data-ga-a
   margin-right: 0.3rem;
 }
 
+.is-pattern-p4-issues .wp-block-group.container.is-layout-flow h5.wp-block-heading a:hover,
 .wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > a:hover,
 .wp-block-group.group-stretched-link.is-layout-flow > h5.wp-block-heading > strong > a:hover {
   text-decoration: none;
@@ -3121,7 +3122,6 @@ a[data-ga-action=Donate],
   cursor: pointer;
   font-family: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif !important;
   border-radius: 4px;
-  color: #000;
   font-weight: 900;
 }
 
