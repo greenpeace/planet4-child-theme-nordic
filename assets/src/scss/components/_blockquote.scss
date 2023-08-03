@@ -1,0 +1,215 @@
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/colors";
+@import "../base/fonts";
+
+@mixin blockquote {
+    font-size: inherit;
+    line-height: 1.4;
+    font-style: normal;
+
+    @include medium-and-up {
+        font-size: $font-size-sm;
+    }
+
+    @include large-and-up {
+        max-width: 100%;
+    }
+
+    @include x-large-and-up {
+        font-size: $font-size-nm;
+    }
+}
+
+blockquote,
+blockquote>p {
+    @include blockquote;
+    color: $black;
+
+}
+
+blockquote>h5 {
+    @include blockquote;
+    font-family: var(--body--font-family);
+}
+
+blockquote>cite {
+    font-family: $gp-sans;
+    // color: inherit;
+    font-size: $font-size-xxs;
+    font-style: normal;
+
+    &::before {
+        content: " - ";
+        /* Add the quote symbol */
+        font-size: inherit;
+    }
+
+    @include medium-and-up {
+        font-size: $font-size-xs;
+    }
+
+}
+
+.wp-block-quote,
+.is-style-default {
+    overflow-wrap: break-word;
+    position: relative;
+
+    &.has-text-align-left {
+        padding: .5rem 0 .5rem 1rem;
+        border-left: 4px solid $gp-green-50;
+    }
+
+    &.has-text-align-center {
+        padding: 2rem;
+        border-top: 4px solid $gp-green-50;
+        border-bottom: 4px solid $gp-green-50;
+    }
+
+    &.has-text-align-right {
+        padding: .5rem 1rem;
+        border-right: 4px solid $gp-green-50;
+    }
+
+    cite {
+        color: var(--link--color);
+    }
+}
+
+.wp-block-quote.is-style-plain {
+    &.has-text-align-left {
+        padding: .5rem 0 .5rem 2.3rem;
+        border: none;
+
+        p::before {
+            content: "“";
+            font-size: 8rem;
+            margin: -3rem 0 0 -3.3rem;
+            position: absolute;
+            opacity: 0.5;
+            color: $gp-green-50;
+
+            @include mobile-only {
+                margin: -3rem 0 0 -3.1rem;
+            }
+
+        }
+
+        cite::after {
+            content: "”";
+            margin: -2.3rem 0rem 0 0;
+            font-size: 8rem;
+            position: absolute;
+            opacity: 0.5;
+            color: $gp-green-50;
+            font-family: $roboto;
+            padding-left: .5rem;
+
+            @include mobile-only {
+                padding-left: .5rem;
+            }
+
+            @include x-large-and-up {
+                margin: -2rem 0rem 0 0;
+            }
+        }
+    }
+
+    &.has-text-align-center {
+        padding: .5rem 0 .5rem 2.3rem;
+        border: none;
+
+        @include mobile-only {
+            padding: 0.9rem;
+
+            cite {
+                margin-right: 0;
+            }
+        }
+
+        p::before,
+        cite::after {
+            font-size: 7rem;
+            position: absolute;
+            opacity: 0.5;
+            color: $gp-green-50;
+        }
+
+        p::before {
+            content: "“";
+            margin: -3rem 0 0 -3.3rem;
+
+            @include mobile-only {
+                margin: -3rem 0 0 -2.5rem;
+            }
+        }
+
+        cite::after {
+            content: "”";
+            margin: -2.3rem 0rem 0 0;
+            font-family: $roboto;
+            padding-left: .5rem;
+
+            @include mobile-only {
+                padding-left: .5rem;
+            }
+
+            @include x-large-and-up {
+                margin: -2rem 0rem 0 0;
+            }
+        }
+    }
+
+    &.has-text-align-right {
+        padding: .5rem 0 .5rem 2.3rem;
+        border: none;
+
+        @include mobile-only {
+            padding-left: .7rem;
+
+            cite {
+                margin-right: 3rem;
+            }
+
+        }
+
+        cite {
+            @include medium-and-up {
+                margin-right: 3rem;
+            }
+        }
+
+        p::before,
+        cite::after {
+            font-size: 7rem;
+            position: absolute;
+            opacity: 0.5;
+            color: $gp-green-50;
+        }
+
+        p::before {
+            content: "“";
+            margin: -3rem 0 0 -3.3rem;
+
+            @include mobile-only {
+                margin: -3rem 0 0 -2.5rem;
+            }
+        }
+
+        cite::after {
+            content: "”";
+            margin: -2.3rem 0rem 0 0;
+            font-family: $roboto;
+            padding-left: .5rem;
+
+            @include mobile-only {
+                padding-left: .5rem;
+            }
+
+            @include x-large-and-up {
+                margin: -2rem 0rem 0 0;
+            }
+        }
+    }
+}
