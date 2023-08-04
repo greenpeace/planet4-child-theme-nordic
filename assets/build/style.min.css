@@ -6351,6 +6351,53 @@ blockquote > cite::before {
   }
 }
 
+.wp-block-quote.is-style-custom {
+  font-size: inherit;
+  line-height: 1.4;
+  font-style: normal;
+  border-left: 4px solid #66CC00;
+  color: inherit;
+}
+@media (min-width: 768px) {
+  .wp-block-quote.is-style-custom {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .wp-block-quote.is-style-custom {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .wp-block-quote.is-style-custom {
+    font-size: 1.25rem;
+  }
+}
+.wp-block-quote.is-style-custom.has-text-align-left {
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-left: 4px solid inherit;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+}
+.wp-block-quote.is-style-custom.has-text-align-center {
+  padding: 2rem;
+  border-top: 4px solid inherit;
+  border-bottom: 4px solid inherit;
+  border-right: none;
+  border-left: none;
+}
+.wp-block-quote.is-style-custom.has-text-align-right {
+  padding: 0.5rem 1rem;
+  border-right: 4px solid inherit;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+.wp-block-quote.is-style-custom cite {
+  color: inherit;
+}
+
 .wp-block-quote,
 .is-style-default {
   overflow-wrap: break-word;

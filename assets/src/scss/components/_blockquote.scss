@@ -51,6 +51,41 @@ blockquote>cite {
 
 }
 
+.wp-block-quote.is-style-custom {
+    @include blockquote;
+    border-left: 4px solid $gp-green-50;
+    color:inherit;
+ 
+    &.has-text-align-left {
+        padding: .5rem 0 .5rem 1rem;
+        border-left: 4px solid inherit;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
+    }
+
+    &.has-text-align-center {
+        padding: 2rem;
+        border-top: 4px solid inherit;
+        border-bottom: 4px solid inherit;
+        border-right: none;
+        border-left: none;
+    }
+
+    &.has-text-align-right {
+        padding: .5rem 1rem;
+        border-right: 4px solid inherit;
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+    }
+
+    cite {
+        color: inherit;
+    }
+
+}
+
 .wp-block-quote,
 .is-style-default {
     overflow-wrap: break-word;

@@ -86,6 +86,33 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./assets/src/js/admin/blockquote.js":
+/*!*******************************************!*\
+  !*** ./assets/src/js/admin/blockquote.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* Addinng custom style to the core/quote block */
+var withColors = wp.blockEditor.withColors;
+var createHigherOrderComponent = wp.compose.createHigherOrderComponent;
+wp.domReady(function () {
+  wp.blocks.registerBlockStyle('core/quote', [{
+    name: 'custom',
+    label: 'Custom',
+    isDefault: false,
+    inlineStyle: {
+      color: 'inherit',
+      'font-size': 'inherit',
+      'border-left': '4px solid inherit',
+      padding: '0.2rem 0 0.2rem 1rem',
+      position: 'relative'
+    }
+  }]);
+});
+
+/***/ }),
+
 /***/ "./assets/src/js/admin/nosearch.js":
 /*!*****************************************!*\
   !*** ./assets/src/js/admin/nosearch.js ***!
@@ -254,12 +281,14 @@ window.addEventListener('DOMContentLoaded', function (event) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _admin_nosearch_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/nosearch.js */ "./assets/src/js/admin/nosearch.js");
-/* harmony import */ var _admin_nosearch_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_admin_nosearch_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _admin_optimonk_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin/optimonk.js */ "./assets/src/js/admin/optimonk.js");
-/* harmony import */ var _admin_optimonk_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_admin_optimonk_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _admin_tracking_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./admin/tracking.js */ "./assets/src/js/admin/tracking.js");
-/* harmony import */ var _admin_tracking_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_admin_tracking_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _admin_blockquote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/blockquote */ "./assets/src/js/admin/blockquote.js");
+/* harmony import */ var _admin_blockquote__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_admin_blockquote__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _admin_nosearch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin/nosearch */ "./assets/src/js/admin/nosearch.js");
+/* harmony import */ var _admin_nosearch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_admin_nosearch__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _admin_optimonk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./admin/optimonk */ "./assets/src/js/admin/optimonk.js");
+/* harmony import */ var _admin_optimonk__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_admin_optimonk__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _admin_tracking__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./admin/tracking */ "./assets/src/js/admin/tracking.js");
+/* harmony import */ var _admin_tracking__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_admin_tracking__WEBPACK_IMPORTED_MODULE_4__);
 //import $ from the global scope
 
 // Expose jQuery to the global object
@@ -267,6 +296,7 @@ window.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a || jQuery;
 window.dataLayer = window.dataLayer || [];
 
 //adding other scripts
+
 
 
 // import './admin/templates.js';

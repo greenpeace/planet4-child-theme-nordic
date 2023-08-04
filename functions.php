@@ -85,6 +85,21 @@ add_action(
     }, 99, 3
 );
 
+/**
+ * Gutenberg scripts and styles
+ * @link https://www.billerickson.net/block-styles-in-gutenberg/
+ */
+function gpn_gutenberg_scripts_blockquote() {
+
+	wp_enqueue_script(
+		'blockquote', 
+		get_stylesheet_directory_uri() . '/assets/src/js/admin/blockquote.js', 
+		array( 'wp-blocks', 'wp-dom' ), 
+		filemtime( get_stylesheet_directory() . '/assets/src/js/admin/blockquote.js' ),
+		true
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'gpn_gutenberg_scripts_blockquote' );
 
 //overrive master theme
 // function add_custom_css() {
