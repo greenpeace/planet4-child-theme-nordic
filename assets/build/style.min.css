@@ -575,6 +575,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 @font-face {
@@ -1036,6 +1037,7 @@ h2.page-section-header {
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 /* Generates mutilevel nested comments
@@ -1227,6 +1229,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 .has-dark-shade-black-color {
@@ -1624,6 +1627,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 .has-dark-shade-black-color {
@@ -2094,6 +2098,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 .has-dark-shade-black-color {
@@ -2496,6 +2501,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 .has-dark-shade-black-color {
@@ -2888,6 +2894,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 .has-dark-shade-black-color {
@@ -3482,6 +3489,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 .has-dark-shade-black-color {
@@ -3915,6 +3923,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 .has-dark-shade-black-color {
@@ -4336,6 +4345,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 .has-dark-shade-black-color {
@@ -4801,6 +4811,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 .has-dark-shade-black-color {
@@ -5237,6 +5248,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 .has-dark-shade-black-color {
@@ -5645,6 +5657,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 .has-dark-shade-black-color {
@@ -6094,6 +6107,7 @@ and so on...
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 .has-dark-shade-black-color {
@@ -6292,7 +6306,10 @@ blockquote > p {
   font-size: inherit;
   line-height: 1.4;
   font-style: normal;
+  width: 100%;
   color: #000;
+  width: 90%;
+  margin: auto;
 }
 @media (min-width: 768px) {
   blockquote,
@@ -6303,7 +6320,7 @@ blockquote > p {
 @media (min-width: 992px) {
   blockquote,
   blockquote > p {
-    max-width: 100%;
+    max-width: 80%;
   }
 }
 @media (min-width: 1200px) {
@@ -6317,6 +6334,7 @@ blockquote > h5 {
   font-size: inherit;
   line-height: 1.4;
   font-style: normal;
+  width: 100%;
   font-family: var(--body--font-family);
 }
 @media (min-width: 768px) {
@@ -6326,7 +6344,7 @@ blockquote > h5 {
 }
 @media (min-width: 992px) {
   blockquote > h5 {
-    max-width: 100%;
+    max-width: 80%;
   }
 }
 @media (min-width: 1200px) {
@@ -6342,7 +6360,7 @@ blockquote > cite {
 }
 blockquote > cite::before {
   content: " - ";
-  /* Add the quote symbol */
+  /* Add the dash symbol */
   font-size: inherit;
 }
 @media (min-width: 768px) {
@@ -6351,81 +6369,64 @@ blockquote > cite::before {
   }
 }
 
-.wp-block-quote.is-style-custom {
+blockquote.wp-block-quote {
+  border-left: 4px solid #66CC00;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-top: none;
+  border-bottom: none;
+  border-bottom: none;
+}
+
+blockquote.wp-block-quote, .wp-block-quote.is-style-default {
   font-size: inherit;
   line-height: 1.4;
   font-style: normal;
-  border-left: 4px solid #66CC00;
-  color: inherit;
+  width: 100%;
+  overflow-wrap: break-word;
+  position: relative;
 }
 @media (min-width: 768px) {
-  .wp-block-quote.is-style-custom {
+  blockquote.wp-block-quote, .wp-block-quote.is-style-default {
     font-size: 1rem;
   }
 }
 @media (min-width: 992px) {
-  .wp-block-quote.is-style-custom {
-    max-width: 100%;
+  blockquote.wp-block-quote, .wp-block-quote.is-style-default {
+    max-width: 80%;
   }
 }
 @media (min-width: 1200px) {
-  .wp-block-quote.is-style-custom {
+  blockquote.wp-block-quote, .wp-block-quote.is-style-default {
     font-size: 1.25rem;
   }
 }
-.wp-block-quote.is-style-custom.has-text-align-left {
-  padding: 0.5rem 0 0.5rem 1rem;
-  border-left: 4px solid inherit;
-  border-top: none;
-  border-bottom: none;
-  border-right: none;
-}
-.wp-block-quote.is-style-custom.has-text-align-center {
-  padding: 2rem;
-  border-top: 4px solid inherit;
-  border-bottom: 4px solid inherit;
-  border-right: none;
-  border-left: none;
-}
-.wp-block-quote.is-style-custom.has-text-align-right {
-  padding: 0.5rem 1rem;
-  border-right: 4px solid inherit;
-  border-top: none;
-  border-bottom: none;
-  border-left: none;
-}
-.wp-block-quote.is-style-custom cite {
-  color: inherit;
-}
-
-.wp-block-quote,
-.is-style-default {
-  overflow-wrap: break-word;
-  position: relative;
-}
-.wp-block-quote.has-text-align-left,
-.is-style-default.has-text-align-left {
-  padding: 0.5rem 0 0.5rem 1rem;
+blockquote.wp-block-quote.has-text-align-left, .wp-block-quote.is-style-default.has-text-align-left {
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
   border-left: 4px solid #66CC00;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
 }
-.wp-block-quote.has-text-align-center,
-.is-style-default.has-text-align-center {
+blockquote.wp-block-quote.has-text-align-center, .wp-block-quote.is-style-default.has-text-align-center {
   padding: 2rem;
   border-top: 4px solid #66CC00;
   border-bottom: 4px solid #66CC00;
+  border-left: none;
+  border-right: none;
 }
-.wp-block-quote.has-text-align-right,
-.is-style-default.has-text-align-right {
+blockquote.wp-block-quote.has-text-align-right, .wp-block-quote.is-style-default.has-text-align-right {
   padding: 0.5rem 1rem;
   border-right: 4px solid #66CC00;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
 }
-.wp-block-quote cite,
-.is-style-default cite {
+blockquote.wp-block-quote cite, .wp-block-quote.is-style-default cite {
   color: var(--link--color);
 }
 
 .wp-block-quote.is-style-plain.has-text-align-left {
-  padding: 0.5rem 0 0.5rem 2.3rem;
+  padding: 0.5rem 0.5rem 0.5rem 2.3rem;
   border: none;
 }
 .wp-block-quote.is-style-plain.has-text-align-left p::before {
@@ -6462,7 +6463,7 @@ blockquote > cite::before {
   }
 }
 .wp-block-quote.is-style-plain.has-text-align-center {
-  padding: 0.5rem 0 0.5rem 2.3rem;
+  padding: 0.5rem 1.5rem 0.5rem 2.3rem;
   border: none;
 }
 @media (max-width: 576px) {
@@ -6491,7 +6492,7 @@ blockquote > cite::before {
 }
 .wp-block-quote.is-style-plain.has-text-align-center cite::after {
   content: "”";
-  margin: -2.3rem 0rem 0 0;
+  margin: -1.3rem 0rem 0 0;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   padding-left: 0.5rem;
 }
@@ -6502,11 +6503,11 @@ blockquote > cite::before {
 }
 @media (min-width: 1200px) {
   .wp-block-quote.is-style-plain.has-text-align-center cite::after {
-    margin: -2rem 0rem 0 0;
+    margin: -1rem 0rem 0 0;
   }
 }
 .wp-block-quote.is-style-plain.has-text-align-right {
-  padding: 0.5rem 0 0.5rem 2.3rem;
+  padding: 0.5rem 0.5rem 0.5rem 2.3rem;
   border: none;
 }
 @media (max-width: 576px) {
@@ -6553,6 +6554,57 @@ blockquote > cite::before {
   .wp-block-quote.is-style-plain.has-text-align-right cite::after {
     margin: -2rem 0rem 0 0;
   }
+}
+
+.wp-block-quote.is-style-custom {
+  font-size: inherit;
+  line-height: 1.4;
+  font-style: normal;
+  width: 100%;
+  border-left: 4px solid var(--blockquote-border-color);
+  color: inherit;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+}
+@media (min-width: 768px) {
+  .wp-block-quote.is-style-custom {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .wp-block-quote.is-style-custom {
+    max-width: 80%;
+  }
+}
+@media (min-width: 1200px) {
+  .wp-block-quote.is-style-custom {
+    font-size: 1.25rem;
+  }
+}
+.wp-block-quote.is-style-custom.has-text-align-left {
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-left: 4px solid var(--blockquote-border-color);
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+}
+.wp-block-quote.is-style-custom.has-text-align-center {
+  padding: 2rem;
+  border-top: 4px solid var(--blockquote-border-color);
+  border-bottom: 4px solid var(--blockquote-border-color);
+  border-right: none;
+  border-left: none;
+}
+.wp-block-quote.is-style-custom.has-text-align-right {
+  padding: 0.5rem 1rem;
+  border-right: 4px solid var(--blockquote-border-color);
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+.wp-block-quote.is-style-custom cite {
+  color: inherit;
 }
 
 .has-dark-shade-black-color {
@@ -6907,6 +6959,7 @@ blockquote > cite::before {
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
 }
 
 @font-face {

@@ -90,26 +90,93 @@
 /*!*******************************************!*\
   !*** ./assets/src/js/admin/blockquote.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* Addinng custom style to the core/quote block */
-var withColors = wp.blockEditor.withColors;
-var createHigherOrderComponent = wp.compose.createHigherOrderComponent;
-wp.domReady(function () {
-  wp.blocks.registerBlockStyle('core/quote', [{
-    name: 'custom',
-    label: 'Custom',
-    isDefault: false,
-    inlineStyle: {
-      color: 'inherit',
-      'font-size': 'inherit',
-      'border-left': '4px solid inherit',
-      padding: '0.2rem 0 0.2rem 1rem',
-      position: 'relative'
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+
+function getComputedStyleProperty(element, property) {
+  return window.getComputedStyle(element).getPropertyValue(property);
+}
+function rgbToHex(rgbString) {
+  var _rgbString$substring$ = rgbString.substring(rgbString.indexOf('(') + 1, rgbString.lastIndexOf(')')).split(',').map(function (color) {
+      return parseInt(color.trim(), 10);
+    }),
+    _rgbString$substring$2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_rgbString$substring$, 3),
+    r = _rgbString$substring$2[0],
+    g = _rgbString$substring$2[1],
+    b = _rgbString$substring$2[2];
+  return "#".concat(r.toString(16).padStart(2, '0')).concat(g.toString(16).padStart(2, '0')).concat(b.toString(16).padStart(2, '0'));
+}
+function getBorderLeftColor(blockquoteElement) {
+  return getComputedStyleProperty(blockquoteElement, 'border-left-color');
+}
+function getBorderRightColor(blockquoteElement) {
+  return getComputedStyleProperty(blockquoteElement, 'border-right-color');
+}
+function getBorderTopColor(blockquoteElement) {
+  return getComputedStyleProperty(blockquoteElement, 'border-top-color');
+}
+function getBorderBottomColor(blockquoteElement) {
+  return getComputedStyleProperty(blockquoteElement, 'border-bottom-color');
+}
+function listCiteElements() {
+  var citeElements = document.querySelectorAll('.wp-block-quote.is-style-custom > cite');
+  citeElements.forEach(function (citeElement, index) {
+    var citeColor = rgbToHex(getComputedStyleProperty(citeElement, 'color'));
+    var blockquoteElement = citeElement.closest('.wp-block-quote');
+    var borderciteColor;
+    switch (true) {
+      case blockquoteElement.classList.contains('has-text-align-right'):
+        borderciteColor = getBorderRightColor(blockquoteElement);
+        blockquoteElement.style.borderRightColor = citeColor;
+        break;
+      case blockquoteElement.classList.contains('has-text-align-center'):
+        borderciteColor = getBorderTopColor(blockquoteElement);
+        blockquoteElement.style.borderTopColor = citeColor;
+        borderciteColor = getBorderBottomColor(blockquoteElement);
+        blockquoteElement.style.borderBottomColor = citeColor;
+        break;
+      case blockquoteElement.classList.contains('has-text-align-left'):
+        borderciteColor = getBorderLeftColor(blockquoteElement);
+        blockquoteElement.style.borderLeftColor = citeColor;
+        break;
+      default:
+        // For wp-block-quote.is-style-custom and has-text-align-left
+        borderciteColor = getBorderLeftColor(blockquoteElement);
+        blockquoteElement.style.borderLeftColor = citeColor;
+        break;
     }
-  }]);
+    console.log("Cite Element ".concat(index + 1, ": Content: ").concat(citeElement.textContent, ", Color: ").concat(citeColor, ", Border Color: ").concat(borderciteColor));
+  });
+}
+
+// Function to register the custom block style
+document.addEventListener('DOMContentLoaded', function () {
+  listCiteElements();
+
+  // Listen for block selection changes and update the CSS variable
+  wp.data.subscribe(function () {
+    listCiteElements();
+  });
 });
+
+// Block Style Registration
+wp.blocks.registerBlockStyle('core/quote', [{
+  name: 'custom',
+  label: 'Custom',
+  isDefault: false,
+  inlineStyle: {
+    color: 'inherit',
+    'font-size': 'inherit',
+    'border-left': '4px solid inherit',
+    padding: '0.2rem 0 0.2rem 1rem',
+    position: 'relative'
+  }
+}]);
 
 /***/ }),
 
@@ -282,7 +349,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _admin_blockquote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/blockquote */ "./assets/src/js/admin/blockquote.js");
-/* harmony import */ var _admin_blockquote__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_admin_blockquote__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _admin_nosearch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin/nosearch */ "./assets/src/js/admin/nosearch.js");
 /* harmony import */ var _admin_nosearch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_admin_nosearch__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _admin_optimonk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./admin/optimonk */ "./assets/src/js/admin/optimonk.js");
@@ -301,6 +367,126 @@ window.dataLayer = window.dataLayer || [];
 
 // import './admin/templates.js';
 
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayLikeToArray.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  return arr2;
+}
+module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithHoles.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArrayLimit(arr, i) {
+  var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
+  if (null != _i) {
+    var _s,
+      _e,
+      _x,
+      _r,
+      _arr = [],
+      _n = !0,
+      _d = !1;
+    try {
+      if (_x = (_i = _i.call(arr)).next, 0 === i) {
+        if (Object(_i) !== _i) return;
+        _n = !1;
+      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0);
+    } catch (err) {
+      _d = !0, _e = err;
+    } finally {
+      try {
+        if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return;
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+    return _arr;
+  }
+}
+module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableRest.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableRest.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/slicedToArray.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/slicedToArray.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithHoles = __webpack_require__(/*! ./arrayWithHoles.js */ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js");
+var iterableToArrayLimit = __webpack_require__(/*! ./iterableToArrayLimit.js */ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js");
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+var nonIterableRest = __webpack_require__(/*! ./nonIterableRest.js */ "./node_modules/@babel/runtime/helpers/nonIterableRest.js");
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+}
+module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 

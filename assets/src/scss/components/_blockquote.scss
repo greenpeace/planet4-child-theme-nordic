@@ -7,13 +7,14 @@
     font-size: inherit;
     line-height: 1.4;
     font-style: normal;
+    width: 100%;
 
     @include medium-and-up {
         font-size: $font-size-sm;
     }
 
     @include large-and-up {
-        max-width: 100%;
+        max-width: 80%;
     }
 
     @include x-large-and-up {
@@ -25,6 +26,8 @@ blockquote,
 blockquote>p {
     @include blockquote;
     color: $black;
+    width: 90%;
+    margin:auto;
 
 }
 
@@ -41,7 +44,7 @@ blockquote>cite {
 
     &::before {
         content: " - ";
-        /* Add the quote symbol */
+        /* Add the dash symbol */
         font-size: inherit;
     }
 
@@ -51,60 +54,43 @@ blockquote>cite {
 
 }
 
-.wp-block-quote.is-style-custom {
-    @include blockquote;
+blockquote.wp-block-quote {
     border-left: 4px solid $gp-green-50;
-    color:inherit;
- 
-    &.has-text-align-left {
-        padding: .5rem 0 .5rem 1rem;
-        border-left: 4px solid inherit;
-        border-top: none;
-        border-bottom: none;
-        border-right: none;
-    }
-
-    &.has-text-align-center {
-        padding: 2rem;
-        border-top: 4px solid inherit;
-        border-bottom: 4px solid inherit;
-        border-right: none;
-        border-left: none;
-    }
-
-    &.has-text-align-right {
-        padding: .5rem 1rem;
-        border-right: 4px solid inherit;
-        border-top: none;
-        border-bottom: none;
-        border-left: none;
-    }
-
-    cite {
-        color: inherit;
-    }
-
+    padding: .5rem .5rem .5rem 1rem;
+    border-top: none;
+    border-bottom: none;
+    border-bottom: none;
 }
 
-.wp-block-quote,
-.is-style-default {
+blockquote.wp-block-quote, .wp-block-quote.is-style-default {
+    @include blockquote;
+
     overflow-wrap: break-word;
     position: relative;
 
     &.has-text-align-left {
-        padding: .5rem 0 .5rem 1rem;
+        padding: .5rem .5rem .5rem 1rem;
         border-left: 4px solid $gp-green-50;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;    
     }
 
     &.has-text-align-center {
         padding: 2rem;
         border-top: 4px solid $gp-green-50;
         border-bottom: 4px solid $gp-green-50;
+        border-left: none;
+        border-right: none;
     }
 
     &.has-text-align-right {
         padding: .5rem 1rem;
         border-right: 4px solid $gp-green-50;
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+    
     }
 
     cite {
@@ -114,7 +100,7 @@ blockquote>cite {
 
 .wp-block-quote.is-style-plain {
     &.has-text-align-left {
-        padding: .5rem 0 .5rem 2.3rem;
+        padding: .5rem .5rem .5rem 2.3rem;
         border: none;
 
         p::before {
@@ -152,7 +138,7 @@ blockquote>cite {
     }
 
     &.has-text-align-center {
-        padding: .5rem 0 .5rem 2.3rem;
+        padding: .5rem 1.5rem .5rem 2.3rem;
         border: none;
 
         @include mobile-only {
@@ -182,7 +168,7 @@ blockquote>cite {
 
         cite::after {
             content: "”";
-            margin: -2.3rem 0rem 0 0;
+            margin: -1.3rem 0rem 0 0;
             font-family: $roboto;
             padding-left: .5rem;
 
@@ -191,13 +177,13 @@ blockquote>cite {
             }
 
             @include x-large-and-up {
-                margin: -2rem 0rem 0 0;
+                margin: -1rem 0rem 0 0;
             }
         }
     }
 
     &.has-text-align-right {
-        padding: .5rem 0 .5rem 2.3rem;
+        padding: .5rem .5rem .5rem 2.3rem;
         border: none;
 
         @include mobile-only {
@@ -247,4 +233,42 @@ blockquote>cite {
             }
         }
     }
+}
+
+.wp-block-quote.is-style-custom {
+    @include blockquote;
+    border-left: 4px solid var(--blockquote-border-color);
+    color:inherit;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+ 
+    &.has-text-align-left {
+        padding: .5rem .5rem .5rem 1rem;
+        border-left: 4px solid var(--blockquote-border-color);
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
+    }
+
+    &.has-text-align-center {
+        padding: 2rem;
+        border-top: 4px solid var(--blockquote-border-color);
+        border-bottom: 4px solid var(--blockquote-border-color);
+        border-right: none;
+        border-left: none;
+    }
+
+    &.has-text-align-right {
+        padding: .5rem 1rem;
+        border-right: 4px solid var(--blockquote-border-color);
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+    }
+
+    cite {
+        color: inherit;
+    }
+
 }
