@@ -33,7 +33,7 @@ function enqueue_child_scripts()
 {
     // wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.1.min.js', array(), '3.6.1', true);
     // wp_enqueue_script('jquery');
-    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.24', true);
+    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.25', true);
     wp_enqueue_script('child-js');
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
@@ -87,14 +87,15 @@ add_action(
 
 //custom quote styles
 function gpn_gutenberg_scripts_blockquote() {
-
-	wp_enqueue_script(
-		'blockquote', 
-		get_stylesheet_directory_uri() . '/assets/src/js/admin/blockquote.js',
-        array( 'wp-blocks', 'wp-dom-ready', 'wp-data' ), // Dependencies: wp-blocks and wp-edit-post
-        filemtime( get_stylesheet_directory() . '/assets/src/js/admin/blockquote.js' ),
-        true
-	);
+    if(has_block('quote')){
+        wp_enqueue_script(
+            'blockquote', 
+            get_stylesheet_directory_uri() . '/assets/src/js/admin/blockquote.js',
+            array( 'wp-blocks', 'wp-data', 'wp-dom-ready',  ), // Dependencies: wp-blocks and wp-edit-post
+            filemtime( get_stylesheet_directory() . '/assets/src/js/admin/blockquote.js' ),
+            true
+        );
+    }
 }
 add_action( 'enqueue_block_editor_assets', 'gpn_gutenberg_scripts_blockquote' );
 
