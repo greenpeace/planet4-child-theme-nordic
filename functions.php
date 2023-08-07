@@ -86,18 +86,16 @@ add_action(
 );
 
 //custom quote styles
-function gpn_gutenberg_scripts_blockquote() {
-    if(has_block('quote')){
-        wp_enqueue_script(
-            'blockquote', 
-            get_stylesheet_directory_uri() . '/assets/src/js/admin/blockquote.js',
-            array( 'wp-blocks', 'wp-data', 'wp-dom-ready',  ), // Dependencies: wp-blocks and wp-edit-post
-            filemtime( get_stylesheet_directory() . '/assets/src/js/admin/blockquote.js' ),
-            true
-        );
-    }
+function gpn_gutenberg_scripts_blocks() {
+    wp_enqueue_script(
+        'gpn_gutenberg_scripts_blocks', 
+        get_stylesheet_directory_uri() . '/assets/build/index.js',
+        array( 'wp-blocks', 'wp-data', 'wp-dom-ready', 'wp-edit-post' ), // Dependencies: wp-blocks and wp-edit-post
+        filemtime( get_stylesheet_directory() . '/assets/build/index.js' ),
+        true
+    );
 }
-add_action( 'enqueue_block_editor_assets', 'gpn_gutenberg_scripts_blockquote' );
+add_action( 'enqueue_block_editor_assets', 'gpn_gutenberg_scripts_blocks' );
 
 //overrive master theme
 // function add_custom_css() {

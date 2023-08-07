@@ -90,6 +90,27 @@ blockquote.wp-block-quote, .wp-block-quote.is-style-default {
         border-top: none;
         border-bottom: none;
         border-left: none;
+
+        cite {
+            color: var(--link--color);
+    
+            @include mobile-only {
+                margin-right: 1rem;
+            }
+    
+            @include medium-and-up {
+                margin-right: 2rem;
+            }
+
+            @include large-and-up {
+                margin-right: 5.5rem;
+            }
+    
+            @include xx-large-and-up {
+                margin-right: 6.2rem;
+            }
+    
+        }    
     
     }
 
@@ -99,6 +120,42 @@ blockquote.wp-block-quote, .wp-block-quote.is-style-default {
 }
 
 .wp-block-quote.is-style-plain {
+    padding: .5rem .5rem .5rem 2.3rem;
+    border: none;
+
+    p::before {
+        content: "“";
+        font-size: 8rem;
+        margin: -3rem 0 0 -3.3rem;
+        position: absolute;
+        opacity: 0.5;
+        color: $gp-green-50;
+
+        @include mobile-only {
+            margin: -3rem 0 0 -3.1rem;
+        }
+
+    }
+
+    cite::after {
+        content: "”";
+        margin: -2.3rem 0rem 0 0;
+        font-size: 8rem;
+        position: absolute;
+        opacity: 0.5;
+        color: $gp-green-50;
+        font-family: $roboto;
+        padding-left: .5rem;
+
+        @include mobile-only {
+            padding-left: .5rem;
+        }
+
+        @include x-large-and-up {
+            margin: -2rem 0rem 0 0;
+        }
+    }
+
     &.has-text-align-left {
         padding: .5rem .5rem .5rem 2.3rem;
         border: none;
@@ -138,14 +195,19 @@ blockquote.wp-block-quote, .wp-block-quote.is-style-default {
     }
 
     &.has-text-align-center {
-        padding: .5rem 1.5rem .5rem 2.3rem;
+        padding: .5rem 1.5rem .5rem 4.5rem;
         border: none;
+
+        cite {
+            margin-left: -1rem;
+        }
 
         @include mobile-only {
             padding: 0.9rem;
+            margin-left: 1rem;
 
             cite {
-                margin-right: 0;
+                margin-left: -2rem;
             }
         }
 
@@ -197,7 +259,7 @@ blockquote.wp-block-quote, .wp-block-quote.is-style-default {
 
         cite {
             @include medium-and-up {
-                margin-right: 3rem;
+                margin-right: 4.5rem;
             }
         }
 
@@ -271,4 +333,11 @@ blockquote.wp-block-quote, .wp-block-quote.is-style-default {
         color: inherit;
     }
 
+}
+
+.post-content article blockquote.wp-block-quote {
+    max-width: 100%;
+    p, cite {
+        max-width: 100%!important;
+    }
 }

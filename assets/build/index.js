@@ -97,10 +97,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
 
-
+// import { registerBlockStyle } from '@wordpress/blocks';
 // import { registerBlockStyle, subscribe } from '@wordpress/data';
 
 function getComputedStyleProperty(element, property) {
@@ -492,17 +490,6 @@ function _unsupportedIterableToArray(o, minLen) {
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
 }
 module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
-/***/ "@wordpress/blocks":
-/*!*****************************************!*\
-  !*** external {"this":["wp","blocks"]} ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["blocks"]; }());
 
 /***/ }),
 
