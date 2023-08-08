@@ -3,6 +3,12 @@
 @import "../base/colors";
 @import "../base/fonts";
 
+.accordion-content.accordion-headline {
+    line-height: initial;
+    margin-bottom: 0.5rem;
+    font-family: $gp-sans;
+}
+
 .block.accordion-block.wp-block-planet4-blocks-accordion.is-style-dark {
     .accordion-headline {
         background: var(--accordion-block-dark-style--background);

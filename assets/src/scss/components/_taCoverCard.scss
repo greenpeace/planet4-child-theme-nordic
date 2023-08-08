@@ -3,6 +3,16 @@
 @import "../base/fonts";
 
 //TA cover card
+.cover-card.cover {
+  border-radius: 1rem;
+}
+
+.cover-card-content {
+  background: $white;
+    z-index: 100;
+    position: sticky;
+}
+
 .take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
     font-family:$roboto;
     font-weight: 400!important;

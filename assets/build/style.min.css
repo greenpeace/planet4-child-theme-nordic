@@ -570,7 +570,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -1099,7 +1099,7 @@ h2.page-section-header {
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -1291,7 +1291,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -1490,6 +1490,12 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
+.accordion-content.accordion-headline {
+  line-height: initial;
+  margin-bottom: 0.5rem;
+  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+}
+
 .block.accordion-block.wp-block-planet4-blocks-accordion.is-style-dark .accordion-headline {
   background: var(--accordion-block-dark-style--background);
 }
@@ -1689,7 +1695,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -2167,7 +2173,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -2570,7 +2576,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -2963,7 +2969,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -3558,7 +3564,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -3992,7 +3998,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -4414,7 +4420,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -4880,7 +4886,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -5317,7 +5323,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -5726,7 +5732,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -5941,7 +5947,8 @@ a.nav-link {
 }
 
 .nav-submenu .nav-item a.nav-link:hover {
-  background: #D9F1C5;
+  background: rgba(217, 241, 197, 0.5019607843);
+  font-weight: bolder;
 }
 
 @media (max-width: 576px) {
@@ -6176,7 +6183,7 @@ and so on...
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -7139,7 +7146,7 @@ blockquote.wp-block-quote cite,
   --nav-link--hover--color: #000;
   --nav-link--hover--text-decoration: underline 3px #66cc00;
   --nav-link--hover--text-underline-position: under;
-  --accordion-block-light-style--background: #D9F1C5;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #B9E696;
   --accordion-block-dark-style--background: #076c50;
@@ -7170,6 +7177,17 @@ blockquote.wp-block-quote cite,
   font-style: normal;
   font-display: swap;
 }
+.cover-card.cover {
+  border-radius: 1rem;
+}
+
+.cover-card-content {
+  background: #fff;
+  z-index: 100;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   font-weight: 400 !important;
