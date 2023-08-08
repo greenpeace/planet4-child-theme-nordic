@@ -20,6 +20,13 @@ a[data-ga-action="Navigation Tag"], .wrapper-post-term a, .wrapper-post-tag a, a
   }
 }
 
+a[data-ga-action="Navigation Tag"] {
+  border-radius: 2rem;
+  span[aria-label="hashtag"] {
+    color: $gp-green-80;
+  }
+}
+
 a.btn.post-tag-button, a.btn.post-tag-button span:nth-child(2){
   color: $black;
   background: $gp-green-10;
