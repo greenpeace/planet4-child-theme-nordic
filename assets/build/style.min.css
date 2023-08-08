@@ -6527,7 +6527,7 @@ blockquote.wp-block-quote cite, .wp-block-quote.is-style-default cite {
   border: none;
 }
 .wp-block-quote.is-style-plain.has-text-align-center cite {
-  margin-left: -1rem;
+  margin-left: -2rem;
 }
 @media (max-width: 576px) {
   .wp-block-quote.is-style-plain.has-text-align-center {

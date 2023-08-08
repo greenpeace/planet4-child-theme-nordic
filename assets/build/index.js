@@ -129,80 +129,75 @@ function getBorderTopColor(blockquoteElement) {
 function getBorderBottomColor(blockquoteElement) {
   return getComputedStyleProperty(blockquoteElement, 'border-bottom-color');
 }
-function listCiteElements() {
-  var citeElements = document.querySelectorAll('.wp-block-quote.is-style-custom > cite');
-  citeElements.forEach(function (citeElement, index) {
-    var citeColor = rgbToHex(getComputedStyleProperty(citeElement, 'color'));
-    var blockquoteElement = citeElement.closest('.wp-block-quote');
-    var borderciteColor;
-    switch (true) {
-      case blockquoteElement.classList.contains('has-text-align-right'):
-        borderciteColor = getBorderRightColor(blockquoteElement);
-        blockquoteElement.style.borderRightColor = citeColor;
-        break;
-      case blockquoteElement.classList.contains('has-text-align-center'):
-        borderciteColor = getBorderTopColor(blockquoteElement);
-        blockquoteElement.style.borderTopColor = citeColor;
-        borderciteColor = getBorderBottomColor(blockquoteElement);
-        blockquoteElement.style.borderBottomColor = citeColor;
-        break;
-      case blockquoteElement.classList.contains('has-text-align-left'):
-        borderciteColor = getBorderLeftColor(blockquoteElement);
-        blockquoteElement.style.borderLeftColor = citeColor;
-        break;
-      default:
-        // For wp-block-quote.is-style-custom and has-text-align-left
-        borderciteColor = getBorderLeftColor(blockquoteElement);
-        blockquoteElement.style.borderLeftColor = citeColor;
-        break;
-    }
-    // console.log(`Cite Element ${index + 1}: Content: ${citeElement.textContent}, Color: ${citeColor}, Border Color: ${borderciteColor}`);
-  });
-}
-
 document.addEventListener('DOMContentLoaded', function () {
   var customBlockQuotes = document.querySelectorAll('.wp-block-quote.is-style-custom');
   if (customBlockQuotes.length > 0) {
-    listCiteElements();
-    // Listen for block selection changes and update the CSS variable
-    try {
-      wp.data.subscribe(function () {
-        listCiteElements();
-      });
-    } catch (error) {
-      console.error('Failed to subscribe to data changes:', error);
-    }
+    customBlockQuotes.forEach(function (customBlockQuote, index) {
+      // Execute your logic for each element
+      listCiteElements(customBlockQuote);
+      if (typeof wp !== 'undefined' && typeof wp.data !== 'undefined' && typeof wp.blocks !== 'undefined') {
+        // Listen for block selection changes and update the CSS variable
+        try {
+          wp.data.subscribe(function () {
+            listCiteElements(customBlockQuote);
+            console.log("Successfully listened to quote ".concat(index + 1));
+          });
+        } catch (error) {
+          console.error("Failed to subscribe to data changes for quote ".concat(index + 1, ":"), error);
+        }
+      }
+    });
+  }
+  function listCiteElements(customBlockQuote) {
+    var citeElements = document.querySelectorAll('.wp-block-quote.is-style-custom > cite');
+    citeElements.forEach(function (citeElement, index) {
+      var citeColor = rgbToHex(getComputedStyleProperty(citeElement, 'color'));
+      var blockquoteElement = citeElement.closest('.wp-block-quote');
+      var borderciteColor;
+      switch (true) {
+        case blockquoteElement.classList.contains('has-text-align-right'):
+          borderciteColor = getBorderRightColor(blockquoteElement);
+          blockquoteElement.style.borderRightColor = citeColor;
+          break;
+        case blockquoteElement.classList.contains('has-text-align-center'):
+          borderciteColor = getBorderTopColor(blockquoteElement);
+          blockquoteElement.style.borderTopColor = citeColor;
+          borderciteColor = getBorderBottomColor(blockquoteElement);
+          blockquoteElement.style.borderBottomColor = citeColor;
+          break;
+        case blockquoteElement.classList.contains('has-text-align-left'):
+          borderciteColor = getBorderLeftColor(blockquoteElement);
+          blockquoteElement.style.borderLeftColor = citeColor;
+          break;
+        default:
+          // For wp-block-quote.is-style-custom and has-text-align-left
+          borderciteColor = getBorderLeftColor(blockquoteElement);
+          blockquoteElement.style.borderLeftColor = citeColor;
+          break;
+      }
+      // console.log(`Cite Element ${index + 1}: Content: ${citeElement.textContent}, Color: ${citeColor}, Border Color: ${borderciteColor}`);
+    });
   }
 });
 
-// Check if we are in the WordPress admin
-if (typeof wp !== 'undefined' && wp.blocks) {
-  // Block Style Registration
-  wp.blocks.registerBlockStyle('core/quote', [{
-    name: 'custom',
-    label: 'Custom',
-    isDefault: false,
-    inlineStyle: {
-      color: 'inherit',
-      'font-size': 'inherit',
-      'border-left': '4px solid inherit',
-      padding: '0.2rem 0 0.2rem 1rem',
-      position: 'relative'
-    }
-  }]);
-
-  // Only execute the rest of the code in the editor
-  if (document.querySelector('.wp-block-quote.is-style-custom')) {
-    listCiteElements();
-    // Listen for block selection changes and update the CSS variable
-    try {
-      wp.data.subscribe(function () {
-        listCiteElements();
-      });
-    } catch (error) {
-      console.error('Failed to subscribe to data changes:', error);
-    }
+try {
+  if (typeof wp !== 'undefined' && wp.blocks) {
+    // Block Style Registration
+    wp.blocks.registerBlockStyle('core/quote', [{
+      name: 'custom',
+      label: 'Custom',
+      isDefault: false,
+      inlineStyle: {
+        color: 'inherit',
+        'font-size': 'inherit',
+        'border-left': '4px solid inherit',
+        padding: '0.2rem 0 0.2rem 1rem',
+        position: 'relative'
+      }
+    }]);
   }
+} catch (error) {
+  console.error('Failed to register block style', error);
 }
 
 /***/ }),
