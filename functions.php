@@ -22,6 +22,7 @@ function remove_acf_options_page()
     remove_menu_page('acf-options');
 }
 
+//load the child theme styles
 add_action('wp_enqueue_scripts', 'enqueue_child_styles');
 function enqueue_child_styles()
 {
@@ -29,12 +30,25 @@ function enqueue_child_styles()
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/build/style.min.css', ['parent-style'], $css_creation);
 }
 // load the child theme scripts
+// Enqueue scripts for frontend and block editor
 function enqueue_child_scripts()
 {
-    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.26', true);
-    wp_enqueue_script('child-js');
+    // Load scripts for frontend
+    wp_enqueue_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.26', true);
+
+    // Enqueue scripts for block editor
+    wp_enqueue_script(
+        'gpn_gutenberg_scripts_blocks', 
+        get_stylesheet_directory_uri() . '/assets/build/index.js',
+        array( 'wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'p4gbks_admin_script' ), // Dependencies: wp-blocks and wp-edit-post
+        filemtime( get_stylesheet_directory() . '/assets/build/index.js' ),
+        true
+    );
+
+    // Note: You may need to make sure 'p4gbks_admin_script' is a valid dependency for block editor
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
+add_action('enqueue_block_editor_assets', 'enqueue_child_scripts'); // Enqueue for block editor too
 
 //hide from page search rsults the published pages with external counter tempate integration
 add_action('wp_head', 'get_all_counter_template_pages');
@@ -82,18 +96,6 @@ add_action(
         }
     }, 99, 3
 );
-
-//custom quote styles
-function gpn_gutenberg_scripts_blocks() {
-    wp_enqueue_script(
-        'gpn_gutenberg_scripts_blocks', 
-        get_stylesheet_directory_uri() . '/assets/build/index.js',
-        array( 'wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'p4gbks_admin_script' ), // Dependencies: wp-blocks and wp-edit-post
-        filemtime( get_stylesheet_directory() . '/assets/build/index.js' ),
-        true
-    );
-}
-add_action( 'enqueue_block_editor_assets', 'gpn_gutenberg_scripts_blocks' );
 
 //overrive master theme
 // function add_custom_css() {
