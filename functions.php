@@ -97,20 +97,6 @@ add_action(
     }, 99, 3
 );
 
-//overrive master theme
-// function add_custom_css() {
-//     // Add your custom CSS code here
-//     $custom_css = "    
-//         h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a, p, p a, a, ul, ul a, li, li a, span, strong, strong a, small, small a {
-//             font-family: Roboto, Helvetica, Arial, sans-serif !important;
-//         }
-//     ";
-
-//     wp_add_inline_style('parent-style', $custom_css);
-// }
-// add_action('wp_enqueue_scripts', 'add_custom_css');
-
-
 //  function p4_child_theme_gpn_gutenberg_scripts() {
 //      wp_enqueue_script(
 //          'gpn-customizations',
