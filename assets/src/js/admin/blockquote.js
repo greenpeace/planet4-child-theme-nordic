@@ -1,5 +1,5 @@
-// import { registerBlockStyle } from '@wordpress/blocks';
-// import { registerBlockStyle, subscribe } from '@wordpress/data';
+import { registerBlockStyle } from '@wordpress/blocks';
+import { subscribe } from '@wordpress/data';
 
 function getComputedStyleProperty(element, property) {
     return window.getComputedStyle(element).getPropertyValue(property);
@@ -41,7 +41,6 @@ function listCiteElements() {
                 borderciteColor = getBorderRightColor(blockquoteElement);
                 blockquoteElement.style.borderRightColor = citeColor;
                 break;
-
             case blockquoteElement.classList.contains('has-text-align-center'):
                 borderciteColor = getBorderTopColor(blockquoteElement);
                 blockquoteElement.style.borderTopColor = citeColor;
@@ -58,34 +57,53 @@ function listCiteElements() {
                 blockquoteElement.style.borderLeftColor = citeColor;
                 break;
         }
-
-        console.log(`Cite Element ${index + 1}: Content: ${citeElement.textContent}, Color: ${citeColor}, Border Color: ${borderciteColor}`);
+        // console.log(`Cite Element ${index + 1}: Content: ${citeElement.textContent}, Color: ${citeColor}, Border Color: ${borderciteColor}`);
     });
 }
 
-
-// Function to register the custom block style
 document.addEventListener('DOMContentLoaded', () => {
-    listCiteElements();
-
-    // Listen for block selection changes and update the CSS variable
-    wp.data.subscribe(() => {
+    const customBlockQuotes = document.querySelectorAll('.wp-block-quote.is-style-custom');
+    if (customBlockQuotes.length > 0) {
         listCiteElements();
-    });
+        // Listen for block selection changes and update the CSS variable
+        try {
+            wp.data.subscribe(() => {
+                listCiteElements();
+            });
+        } catch (error) {
+            console.error('Failed to subscribe to data changes:', error);
+        }
+    }
 });
 
-// Block Style Registration
-wp.blocks.registerBlockStyle('core/quote', [
-    {
-        name: 'custom',
-        label: 'Custom',
-        isDefault: false,
-        inlineStyle: {
-            color: 'inherit',
-            'font-size': 'inherit',
-            'border-left': '4px solid inherit',
-            padding: '0.2rem 0 0.2rem 1rem',
-            position: 'relative',
+// Check if we are in the WordPress admin
+if (typeof wp !== 'undefined' && wp.blocks) {
+    // Block Style Registration
+    wp.blocks.registerBlockStyle('core/quote', [
+        {
+            name: 'custom',
+            label: 'Custom',
+            isDefault: false,
+            inlineStyle: {
+                color: 'inherit',
+                'font-size': 'inherit',
+                'border-left': '4px solid inherit',
+                padding: '0.2rem 0 0.2rem 1rem',
+                position: 'relative',
+            },
         },
-    },
-]);
+    ]);
+
+    // Only execute the rest of the code in the editor
+    if (document.querySelector('.wp-block-quote.is-style-custom')) {
+        listCiteElements();
+        // Listen for block selection changes and update the CSS variable
+        try {
+            wp.data.subscribe(() => {
+                listCiteElements();
+            });
+        } catch (error) {
+            console.error('Failed to subscribe to data changes:', error);
+        }
+    }
+}

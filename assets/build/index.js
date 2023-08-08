@@ -97,9 +97,12 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
 
-// import { registerBlockStyle } from '@wordpress/blocks';
-// import { registerBlockStyle, subscribe } from '@wordpress/data';
+
 
 function getComputedStyleProperty(element, property) {
   return window.getComputedStyle(element).getPropertyValue(property);
@@ -153,33 +156,54 @@ function listCiteElements() {
         blockquoteElement.style.borderLeftColor = citeColor;
         break;
     }
-    console.log("Cite Element ".concat(index + 1, ": Content: ").concat(citeElement.textContent, ", Color: ").concat(citeColor, ", Border Color: ").concat(borderciteColor));
+    // console.log(`Cite Element ${index + 1}: Content: ${citeElement.textContent}, Color: ${citeColor}, Border Color: ${borderciteColor}`);
   });
 }
 
-// Function to register the custom block style
 document.addEventListener('DOMContentLoaded', function () {
-  listCiteElements();
-
-  // Listen for block selection changes and update the CSS variable
-  wp.data.subscribe(function () {
+  var customBlockQuotes = document.querySelectorAll('.wp-block-quote.is-style-custom');
+  if (customBlockQuotes.length > 0) {
     listCiteElements();
-  });
+    // Listen for block selection changes and update the CSS variable
+    try {
+      wp.data.subscribe(function () {
+        listCiteElements();
+      });
+    } catch (error) {
+      console.error('Failed to subscribe to data changes:', error);
+    }
+  }
 });
 
-// Block Style Registration
-wp.blocks.registerBlockStyle('core/quote', [{
-  name: 'custom',
-  label: 'Custom',
-  isDefault: false,
-  inlineStyle: {
-    color: 'inherit',
-    'font-size': 'inherit',
-    'border-left': '4px solid inherit',
-    padding: '0.2rem 0 0.2rem 1rem',
-    position: 'relative'
+// Check if we are in the WordPress admin
+if (typeof wp !== 'undefined' && wp.blocks) {
+  // Block Style Registration
+  wp.blocks.registerBlockStyle('core/quote', [{
+    name: 'custom',
+    label: 'Custom',
+    isDefault: false,
+    inlineStyle: {
+      color: 'inherit',
+      'font-size': 'inherit',
+      'border-left': '4px solid inherit',
+      padding: '0.2rem 0 0.2rem 1rem',
+      position: 'relative'
+    }
+  }]);
+
+  // Only execute the rest of the code in the editor
+  if (document.querySelector('.wp-block-quote.is-style-custom')) {
+    listCiteElements();
+    // Listen for block selection changes and update the CSS variable
+    try {
+      wp.data.subscribe(function () {
+        listCiteElements();
+      });
+    } catch (error) {
+      console.error('Failed to subscribe to data changes:', error);
+    }
   }
-}]);
+}
 
 /***/ }),
 
@@ -490,6 +514,28 @@ function _unsupportedIterableToArray(o, minLen) {
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
 }
 module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!*****************************************!*\
+  !*** external {"this":["wp","blocks"]} ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["blocks"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/data":
+/*!***************************************!*\
+  !*** external {"this":["wp","data"]} ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["data"]; }());
 
 /***/ }),
 

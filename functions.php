@@ -31,9 +31,7 @@ function enqueue_child_styles()
 // load the child theme scripts
 function enqueue_child_scripts()
 {
-    // wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.1.min.js', array(), '3.6.1', true);
-    // wp_enqueue_script('jquery');
-    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.25', true);
+    wp_register_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.26', true);
     wp_enqueue_script('child-js');
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
@@ -90,7 +88,7 @@ function gpn_gutenberg_scripts_blocks() {
     wp_enqueue_script(
         'gpn_gutenberg_scripts_blocks', 
         get_stylesheet_directory_uri() . '/assets/build/index.js',
-        array( 'wp-blocks', 'wp-data', 'wp-dom-ready', 'wp-edit-post' ), // Dependencies: wp-blocks and wp-edit-post
+        array( 'wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'p4gbks_admin_script' ), // Dependencies: wp-blocks and wp-edit-post
         filemtime( get_stylesheet_directory() . '/assets/build/index.js' ),
         true
     );
