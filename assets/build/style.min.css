@@ -572,7 +572,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -1101,7 +1101,7 @@ h2.page-section-header {
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -1293,7 +1293,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -1490,10 +1490,15 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-.accordion-content.accordion-headline {
+.accordion-block .accordion-content {
+  margin-bottom: -1rem;
+}
+.accordion-block .accordion-content .accordion-headline {
   line-height: initial;
-  margin-bottom: 0.5rem;
-  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+  font-weight: 600;
+}
+.accordion-block .accordion-content .accordion-headline:hover {
+  font-weight: 700;
 }
 
 .block.accordion-block.wp-block-planet4-blocks-accordion.is-style-dark .accordion-headline {
@@ -1697,7 +1702,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -2175,7 +2180,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -2578,7 +2583,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -2971,7 +2976,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -3566,7 +3571,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -4000,7 +4005,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -4422,7 +4427,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -4888,7 +4893,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -5325,7 +5330,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -5734,7 +5739,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -6185,7 +6190,7 @@ and so on...
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
@@ -7148,7 +7153,7 @@ blockquote.wp-block-quote cite,
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #B9E696;
+  --accordion-block-light-style--hover--background: #D9F1C5;
   --accordion-block-dark-style--background: #076c50;
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;

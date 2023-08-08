@@ -3,15 +3,22 @@
 @import "../base/colors";
 @import "../base/fonts";
 
-.accordion-content.accordion-headline {
-    line-height: initial;
-    margin-bottom: 0.5rem;
-    font-family: $gp-sans;
+.accordion-block .accordion-content {
+    margin-bottom: -1rem;
+
+    .accordion-headline {
+        line-height: initial;
+        font-weight: 600;
+        &:hover {
+            font-weight: 700;
+        }
+    }
 }
 
 .block.accordion-block.wp-block-planet4-blocks-accordion.is-style-dark {
     .accordion-headline {
         background: var(--accordion-block-dark-style--background);
+
         &:hover {
             background: var(--accordion-block-dark-style--hover--background);
         }
@@ -22,6 +29,7 @@
     .accordion-headline {
         background: var(--accordion-block-light-style--background);
         border-color: var(--accordion-block-light-style--border-color);
+
         &:hover {
             background: var(--accordion-block-light-style--hover--background);
         }
