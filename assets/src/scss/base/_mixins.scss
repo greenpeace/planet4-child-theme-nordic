@@ -28,7 +28,7 @@
 
 // Tablet only (576px to 768px)
 @mixin tablet-only {
-  @media (min-width: #{$medium-width}) and (max-width: #{$large-width}) {
+  @media (min-width: #{$small-width}) and (max-width: #{$large-width}) {
     @content;
   }
 }
