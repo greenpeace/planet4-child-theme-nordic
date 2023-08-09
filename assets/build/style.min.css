@@ -1903,11 +1903,23 @@ and so on...
   width: inherit;
 }
 
-a[data-ga-action="Navigation Tag"], .wrapper-post-term a, .wrapper-post-tag a, a[data-ga-action="Post Type Tag"], a[data-ga-action="Post Type Tag"] span {
+a[data-ga-action="Navigation Tag"],
+.wrapper-post-term a,
+.wrapper-post-tag a,
+a[data-ga-action="Post Type Tag"],
+a[data-ga-action="Post Type Tag"] span {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
   color: #198700;
 }
-a[data-ga-action="Navigation Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), a[data-ga-action="Navigation Tag"]:visited, .wrapper-post-term a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), .wrapper-post-term a:visited, .wrapper-post-tag a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), .wrapper-post-tag a:visited, a[data-ga-action="Post Type Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), a[data-ga-action="Post Type Tag"]:visited, a[data-ga-action="Post Type Tag"] span:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), a[data-ga-action="Post Type Tag"] span:visited {
+a[data-ga-action="Navigation Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), a[data-ga-action="Navigation Tag"]:visited,
+.wrapper-post-term a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
+.wrapper-post-term a:visited,
+.wrapper-post-tag a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
+.wrapper-post-tag a:visited,
+a[data-ga-action="Post Type Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
+a[data-ga-action="Post Type Tag"]:visited,
+a[data-ga-action="Post Type Tag"] span:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
+a[data-ga-action="Post Type Tag"] span:visited {
   color: #000;
   text-decoration: underline;
   -webkit-text-decoration-color: #66CC00;
@@ -1921,29 +1933,42 @@ a[data-ga-action="Navigation Tag"] span[aria-label=hashtag] {
   color: #198700;
 }
 
-a.btn.post-tag-button, a.btn.post-tag-button span:nth-child(2) {
+a.btn.post-tag-button,
+a.btn.post-tag-button span:nth-child(2) {
   color: #000;
-  background: #D9F1C5;
+  background: rgba(217, 241, 197, 0.5019607843);
   border: none;
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
 }
-a.btn.post-tag-button:hover, a.btn.post-tag-button:visited, a.btn.post-tag-button span:nth-child(2):hover, a.btn.post-tag-button span:nth-child(2):visited {
+a.btn.post-tag-button:hover, a.btn.post-tag-button:visited,
+a.btn.post-tag-button span:nth-child(2):hover,
+a.btn.post-tag-button span:nth-child(2):visited {
   color: #198700;
 }
 
 a.tag-item.tag,
-.single-post-time, a.comment-link, a.comment-link > span.quiantity, a.comment-link > span.display-text {
+.single-post-time,
+a.comment-link,
+a.comment-link > span.quiantity,
+a.comment-link > span.display-text {
   font-weight: 400;
 }
 a.tag-item.tag:hover,
-.single-post-time:hover, a.comment-link:hover, a.comment-link > span.quiantity:hover, a.comment-link > span.display-text:hover {
+.single-post-time:hover,
+a.comment-link:hover,
+a.comment-link > span.quiantity:hover,
+a.comment-link > span.display-text:hover {
   color: #000;
   text-decoration: underline;
-  -webkit-text-decoration-color: #66CC00; /* Safari */
+  -webkit-text-decoration-color: #66CC00;
+  /* Safari */
   text-decoration-color: #66CC00;
 }
 a.tag-item.tag:visited,
-.single-post-time:visited, a.comment-link:visited, a.comment-link > span.quiantity:visited, a.comment-link > span.display-text:visited {
+.single-post-time:visited,
+a.comment-link:visited,
+a.comment-link > span.quiantity:visited,
+a.comment-link > span.display-text:visited {
   color: #000;
 }
 
@@ -3186,6 +3211,7 @@ a[data-ga-action=Donate],
   font-family: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif !important;
   border-radius: 4px;
   font-weight: 900;
+  font-size: 1rem;
 }
 
 nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate],
