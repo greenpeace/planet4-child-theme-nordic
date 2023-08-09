@@ -270,6 +270,42 @@ window.addEventListener('DOMContentLoaded', function (event) {
 
 /***/ }),
 
+/***/ "./assets/src/js/admin/templates.js":
+/*!******************************************!*\
+  !*** ./assets/src/js/admin/templates.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+document.addEventListener("DOMContentLoaded", function () {
+  //fix the missing H1 if the page carouselHeadingH1 is hodden and carousel is the first block
+  var carouselHeader = document.querySelector('div.page-content.container.no-page-title > div.wp-block-planet4-blocks-carousel-header > div[data-hydrate="planet4-blocks/carousel-header"]');
+  if (carouselHeader) {
+    var captionWrapper = carouselHeader.querySelector('div.carousel-captions-wrapper');
+    var heading = captionWrapper.querySelector('h2');
+    if (heading) {
+      heading.outerHTML = '<h1>' + heading.innerHTML + '</h1>';
+    }
+  }
+
+  //fix for no page header on petition pages
+  var container = document.querySelector('div.page-content.container.no-page-title');
+  var firstChild = container ? container.firstElementChild : null;
+  var secondChild = firstChild ? firstChild.nextElementSibling : null;
+  function outputStrippedTitle() {
+    var pageTitle = document.querySelector('title').textContent;
+    var strippedTitle = pageTitle.split(' - ')[0];
+    console.log('Stripped Page Title:', strippedTitle);
+  }
+  if (firstChild && firstChild.classList.contains('leads-form')) {
+    outputStrippedTitle();
+  } else if (secondChild && secondChild.classList.contains('leads-form')) {
+    outputStrippedTitle();
+  }
+});
+
+/***/ }),
+
 /***/ "./assets/src/js/admin/tracking.js":
 /*!*****************************************!*\
   !*** ./assets/src/js/admin/tracking.js ***!
@@ -375,8 +411,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _admin_nosearch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_admin_nosearch__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _admin_optimonk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./admin/optimonk */ "./assets/src/js/admin/optimonk.js");
 /* harmony import */ var _admin_optimonk__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_admin_optimonk__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _admin_tracking__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./admin/tracking */ "./assets/src/js/admin/tracking.js");
-/* harmony import */ var _admin_tracking__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_admin_tracking__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _admin_templates_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./admin/templates.js */ "./assets/src/js/admin/templates.js");
+/* harmony import */ var _admin_templates_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_admin_templates_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _admin_tracking__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./admin/tracking */ "./assets/src/js/admin/tracking.js");
+/* harmony import */ var _admin_tracking__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_admin_tracking__WEBPACK_IMPORTED_MODULE_5__);
 //import $ from the global scope
 
 // Expose jQuery to the global object
@@ -387,7 +425,7 @@ window.dataLayer = window.dataLayer || [];
 
 
 
-// import './admin/templates.js';
+
 
 
 /***/ }),

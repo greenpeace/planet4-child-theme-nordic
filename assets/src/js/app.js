@@ -8,6 +8,6 @@ window.dataLayer = window.dataLayer || [];
 import './admin/blockquote';
 import './admin/nosearch';
 import './admin/optimonk';
-// import './admin/templates.js';
+import './admin/templates.js';
 import './admin/tracking';
 
