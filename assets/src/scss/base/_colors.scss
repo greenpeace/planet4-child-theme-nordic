@@ -17,7 +17,7 @@ $dark-white: #f9f9f9;
 $dark-green: #3c7800; //AA color
 
 $gp-green: #66cc00; //old primary color
-$gp-primary: #73be1e; //new primary color
+// $gp-primary: #68BD12; //new primary color
 $gp-nor-green: #005c42;
 $gp-nor-green-2: #1F4912;
 $gp-nor-green-3: #076c50; //Country selector color
@@ -27,7 +27,6 @@ $gp-nor-green-links: #0b851e; //AA compliance color
 //overrides
 $dark-blue: $dark-green!important; //overrides the default blue color
 $link-color: $dark-green; //overrides the default blue color
-$aquamarine: $gp-primary!important;
 
 // Styleguide Style.colors.grey
 $grey-80: #45494C;
@@ -44,6 +43,8 @@ $grey: #333;
 // Green
 // Styleguide Style.colors.grey
 $gp-green-80: #198700;
+$gp-green-70: #339E00;
+$gp-green-60: #4CB500;
 $gp-green-50: #66CC00;
 $gp-green-40: #80D643;
 $gp-green-20: #B9E696;
@@ -71,13 +72,6 @@ $blue-40: #86cafb;
 $blue-20: #b8e0fa;
 
 // Yellow
-//
-// $yellow - #ffd204;
-// $yellow-80 - #ffdb34;
-// $yellow-60 - #ffe467;
-// $yellow-40 - #ffed98;
-// $yellow-20 - #fff6cd;
-//
 // Styleguide Style.colors.yellow
 $yellow: #FFD200;
 $yellow-70: #FCB600;
@@ -86,11 +80,6 @@ $yellow-50: #FFE100;
 $yellow-10: #FFF6BD;
 
 // Orange
-//
-// $orange - #f36d3a;
-// $orange-hover - #ee562d;
-// $orange-active - #cd4525;
-//
 // Styleguide Style.colors.orange
 $orange: #f36d3a;
 $orange-hover: #ee562d;

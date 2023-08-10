@@ -206,21 +206,15 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -584,21 +578,15 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -719,7 +707,7 @@ strong {
 }
 
 div.carousel-captions-wrapper h2 {
-  font-family: "Helvetica Display Extra Bold", "Helvetica", "Arial", sans-serif !important !important;
+  font-family: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif !important !important;
   font-size: 2rem;
 }
 
@@ -776,7 +764,7 @@ p.search-result-item-content,
 }
 
 .nav-links {
-  font-family: "Helvetica Now Display Regular", "Helvetica", "Arial", sans-serif !important !important;
+  font-family: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important !important;
 }
 
 .columns-block p,
@@ -1473,21 +1461,15 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -1882,21 +1864,15 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -2385,21 +2361,15 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -2408,7 +2378,7 @@ html {
   transition-duration: 0.4s;
 }
 
-body {
+body:not(.wp-block-button, a.wp-block-button__link) {
   color: #4d4d4d;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
 }
@@ -2788,21 +2758,15 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -2813,7 +2777,7 @@ and so on...
 }
 
 .top-page-tags .category-separator, .top-page-tags .tag-wrap-bullet, .main-tag-chevron {
-  color: #73be1e !important;
+  color: #66CC00 !important;
 }
 
 /* Generates mutilevel nested comments
@@ -3181,21 +3145,15 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -3211,43 +3169,39 @@ a[data-ga-action=Donate],
   cursor: pointer;
   font-family: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif !important;
   border-radius: 4px;
-  font-weight: 900;
+  font-weight: inherit;
   font-size: 1rem;
 }
 
-nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate],
-div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate] {
-  background: #80D643;
-  color: #000;
+a.btn.btn-donate[data-ga-action=Donate] {
+  background: #339E00;
+  color: #fff;
 }
 @media (max-width: 992px) {
-  nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate],
-  div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate] {
+  a.btn.btn-donate[data-ga-action=Donate] {
     background-position: center;
     transition: background 0.5s;
+    font-size: larger;
   }
-  nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate]:hover,
-  div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate]:hover {
-    background: #66CC00 radial-gradient(circle, transparent 1%, #66CC00 1%) center/15000%;
+  a.btn.btn-donate[data-ga-action=Donate]:hover {
+    background: #4CB500 radial-gradient(circle, transparent 1%, #4CB500 1%) center/15000%;
   }
-  nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate]:active,
-  div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate]:active {
-    background-color: #80D643;
+  a.btn.btn-donate[data-ga-action=Donate]:active {
+    background-color: #4CB500;
+    color: #000;
     background-size: 100%;
     transition: background 0s;
   }
 }
 @media (min-width: 992px) {
-  nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate],
-  div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate] {
-    background-image: linear-gradient(30deg, #66CC00 50%, transparent 50%);
+  a.btn.btn-donate[data-ga-action=Donate] {
+    background-image: linear-gradient(30deg, #4CB500 50%, transparent 50%);
     background-size: 500px;
     background-repeat: no-repeat;
     background-position: 0%;
     transition: background 300ms ease-in-out;
   }
-  nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action=Donate]:hover,
-  div.burger-menu-footer a.btn.btn-donate[data-ga-action=Donate]:hover {
+  a.btn.btn-donate[data-ga-action=Donate]:hover {
     background-position: 100%;
   }
 }
@@ -3258,7 +3212,7 @@ button[type=submit]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
   font-weight: bold;
   border: none;
-  background: #FFD200;
+  background: #66CC00;
   color: #000;
 }
 @media (max-width: 992px) {
@@ -3269,22 +3223,24 @@ button[type=submit]:not(.nav-search-btn, .search-form-btn),
     background-position: center;
     transition: background 0.8s;
     color: #000;
+    background: #80D643;
   }
   button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
   .btn.btn-primary[data-ga-action="Call to Action"]:hover, .cover-card.cover .btn.cover-card-btn.btn-primary:hover,
   .btn-primary:hover, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:hover,
   .btn.btn-primary#hidecookie:hover, .btn-primary[data-ga-action="Accept all cookies"]:hover {
-    background: #FFD200 radial-gradient(circle, transparent 1%, #FFD200 1%) center/15000%;
-    border-color: #FFD200;
+    background: #66CC00 radial-gradient(circle, transparent 1%, #66CC00 1%) center/15000%;
+    border-color: #66CC00;
     color: #000;
   }
   button[type=submit]:not(.nav-search-btn, .search-form-btn):active,
   .btn.btn-primary[data-ga-action="Call to Action"]:active, .cover-card.cover .btn.cover-card-btn.btn-primary:active,
   .btn-primary:active, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:active,
   .btn.btn-primary#hidecookie:active, .btn-primary[data-ga-action="Accept all cookies"]:active {
-    background-color: #FFE100;
+    background-color: #66CC00;
     background-size: 100%;
     transition: background 0s;
+    color: #000;
   }
 }
 @media (min-width: 992px) {
@@ -3292,7 +3248,7 @@ button[type=submit]:not(.nav-search-btn, .search-form-btn),
   .btn.btn-primary[data-ga-action="Call to Action"], .cover-card.cover .btn.cover-card-btn.btn-primary,
   .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
   .btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
-    background-image: linear-gradient(30deg, #FFE100 50%, transparent 50%);
+    background-image: linear-gradient(30deg, #80D643 50%, transparent 50%);
     background-size: 1000px;
     background-repeat: no-repeat;
     background-position: 0%;
@@ -3777,21 +3733,15 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -4211,21 +4161,15 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -4617,21 +4561,15 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -4645,7 +4583,7 @@ and so on...
 }
 
 .author-block-info div[itemprop=description] {
-  font-family: "Helvetica Now Display Regular", "Helvetica", "Arial", sans-serif !important;
+  font-family: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
   color: initial;
 }
 .author-block-info div[itemprop=description] span.show-more,
@@ -5039,27 +4977,21 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 .site-footer {
   background: #005c42;
-  font-family: "Helvetica Now Display Regular", "Helvetica", "Arial", sans-serif !important;
+  font-family: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
 }
 .site-footer .countries-list {
   background: #076c50;
@@ -5076,7 +5008,7 @@ and so on...
 }
 .site-footer .copyright {
   background: #005c42;
-  font-family: "Helvetica Now Display Regular", "Helvetica", "Arial", sans-serif !important;
+  font-family: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
 }
 .site-footer .copyright a,
 .site-footer .copyright a strong,
@@ -5126,7 +5058,7 @@ and so on...
   text-decoration: none;
 }
 .site-footer ul.list-unstyled.footer-links li a {
-  font-family: "Helvetica Now Display Regular", "Helvetica", "Arial", sans-serif !important;
+  font-family: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
   font-weight: inherit;
 }
 .site-footer ul.list-unstyled.footer-links-secondary li a, .site-footer p.copyright-text {
@@ -5505,21 +5437,15 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -5587,6 +5513,7 @@ and so on...
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  color: white;
 }
 
 /* Generates mutilevel nested comments
@@ -5954,26 +5881,20 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 .leads-form__form__container .acf-label {
-  font-family: "Helvetica Now Display Regular", "Helvetica", "Arial", sans-serif !important;
+  font-family: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
   margin-bottom: 0.75rem;
 }
 
@@ -6363,26 +6284,20 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 a.nav-link {
-  font-family: "Helvetica Now Display Regular", "Helvetica", "Arial", sans-serif !important;
+  font-family: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
   font-weight: 600;
 }
 @media (max-width: 576px) {
@@ -6814,21 +6729,15 @@ and so on...
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -7609,26 +7518,20 @@ blockquote.wp-block-quote cite,
   src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Helvetica Display Regular";
+  font-family: "Helvetica Now Display Regular";
   src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Helvetica Display Bold";
-  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Helvetica Display Extra Bold";
-  src: local("Helvetica Display ExBold"), local("Helvetica-Now-Display-ExtraBold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
-.cover-card.cover {
-  border-radius: 1rem;
+.take-action-covers-block .cover-card.cover {
+  border-radius: 1rem !important;
 }
 
 .cover-card-content {
@@ -7681,12 +7584,13 @@ span.cover-card-tag {
 }
 .take-action-covers-block .cover:hover a.cover-card-heading {
   text-decoration: none;
+  font-weight: 700;
 }
 .take-action-covers-block .cover:hover a.btn.cover-card-btn.btn-primary {
-  background: #FFD200;
+  background: #80D643;
 }
 .take-action-covers-block .cover:hover a.btn.cover-card-btn.btn-primary:hover {
-  background-image: linear-gradient(30deg, #FFE100 50%, transparent 50%);
+  background-image: linear-gradient(30deg, #66CC00 50%, transparent 50%);
   background-size: 1000px;
 }
 

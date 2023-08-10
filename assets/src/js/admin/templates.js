@@ -1,8 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const homePageHeaderContainer = document.querySelector('div.page-content.container.no-page-title');
     const pageHeaderContainer = document.querySelector('div.page-header.page-header-hidden > div.container');
     const pageTitle = document.querySelector('title').textContent;
     const strippedTitle = outputStrippedTitle(); // Get the stripped title
 
+    //fix for the Nordix Home pages only
+    if (homePageHeaderContainer) {
+       insertTitle(strippedTitle);
+    }
 
     function outputStrippedTitle() {
         return pageTitle.split(' - ')[0].trim(); // Return the stripped title

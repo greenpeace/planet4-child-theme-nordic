@@ -100,19 +100,34 @@
           "color": "#076c50"
         },
         {
-          "name": "GP NOR Green 1",
-          "slug": "gp-nor-green-1",
-          "color": "#0b851e"
+          "name": "GP Green 80",
+          "slug": "gp-green-80",
+          "color": "#198700"
         },
         {
-          "name": "GP Green",
-          "slug": "gp-green",
-          "color": "#66cc00"
+          "name": "GP Green 70",
+          "slug": "gp-green-70",
+          "color": "#339E00"
         },
         {
-          "name": "GP Green new primary",
-          "slug": "gp-new-green",
-          "color": "#73be1e"
+          "name": "GP Green 60",
+          "slug": "gp-green-60",
+          "color": "#4CB500"
+        },
+        {
+          "name": "GP Green 50",
+          "slug": "gp-green-50",
+          "color": "#66CC00"
+        },
+        {
+          "name": "GP Green 40",
+          "slug": "gp-green-40",
+          "color": "#80D643"
+        },
+        {
+          "name": "GP Green 20",
+          "slug": "gp-green-20",
+          "color": "#B9E696"
         },
         {
           "name": "GP Green 10",
@@ -120,34 +135,29 @@
           "color": "#D9F1C5"
         },
         {
+          "name": "X Dark Blue",
+          "slug": "x-dark-blue",
+          "color": "#163DB3"
+        },
+        {
+          "name": "Dark Blue",
+          "slug": "dark-blue",
+          "color": "#2B62C7"
+        },
+        {
+          "name": "Blue",
+          "slug": "blue",
+          "color": "#4087DA"
+        },
+        {
           "name": "Blue green",
           "slug": "blue-green",
           "color": "#167F82"
         },
         {
-          "name": "X Dark Blue",
-          "slug": "x-dark-blue",
-          "color": "#042233"
-        },
-        {
-          "name": "Dark Blue",
-          "slug": "dark-blue",
-          "color": "#074365"
-        },
-        {
-          "name": "Blue",
-          "slug": "blue",
-          "color": "#2077bf"
-        },
-        {
-          "name": "Twitter Blue",
-          "slug": "twitter-blue",
-          "color": "#55acee"
-        },
-        {
-          "name": "Java Blue",
-          "slug": "java-blue",
-          "color": "#1bb6d6"
+          "name": "Lighter Blue",
+          "slug": "ligther-blue",
+          "color": "#55ACEE"
         },
         {
           "name": "Light Blue",
@@ -155,17 +165,37 @@
           "color": "#b8e0fa"
         },
         {
-          "name": "Orange",
-          "slug": "orange-hover",
-          "color": "#ee562d"
+          "name": "Crimson",
+          "slug": "crimson",
+          "color": "#e51538"
         },
         {
-          "name": "Yellow",
-          "slug": "yellow",
+          "name": "Orange 2",
+          "slug": "orange-2",
+          "color": "#f36d3a"
+        },
+        {
+          "name": "Orange 1",
+          "slug": "orange-1",
+          "color": "#fd7e14"
+        },
+        {
+          "name": "Yellow 70",
+          "slug": "yellow-70",
+          "color": "#FCB600"
+        },
+        {
+          "name": "Yellow 60",
+          "slug": "yellow-60",
+          "color": "#ffd200"
+        },
+        {
+          "name": "Yellow 50",
+          "slug": "yellow-50",
           "color": "#FFE100"
         },
         {
-          "name": "Yellow light",
+          "name": "Yellow 10",
           "slug": "yellow-10",
           "color": "#FFF6BD"
         }

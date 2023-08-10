@@ -278,10 +278,15 @@ window.addEventListener('DOMContentLoaded', function (event) {
 /***/ (function(module, exports) {
 
 document.addEventListener("DOMContentLoaded", function () {
+  var homePageHeaderContainer = document.querySelector('div.page-content.container.no-page-title');
   var pageHeaderContainer = document.querySelector('div.page-header.page-header-hidden > div.container');
   var pageTitle = document.querySelector('title').textContent;
   var strippedTitle = outputStrippedTitle(); // Get the stripped title
 
+  //fix for the Nordix Home pages only
+  if (homePageHeaderContainer) {
+    insertTitle(strippedTitle);
+  }
   function outputStrippedTitle() {
     return pageTitle.split(' - ')[0].trim(); // Return the stripped title
   }

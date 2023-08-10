@@ -11,7 +11,7 @@ html {
   transition-duration: 0.4s;
 }
 
-body {
+body:not(.wp-block-button, a.wp-block-button__link) {
   color: $grey-70;
   font-family: $roboto;
 }

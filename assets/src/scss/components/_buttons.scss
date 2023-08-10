@@ -15,36 +15,37 @@ a[data-ga-action="Donate"],
   cursor: pointer;
   font-family: $helvetica-bold;
   border-radius: 4px;
-  font-weight: 900;
+  font-weight: inherit;
   font-size: 1rem;
 }
 
 //Donate btn
-nav#nav-menu li.nav-donate a.btn.btn-donate[data-ga-action="Donate"],
-div.burger-menu-footer a.btn.btn-donate[data-ga-action="Donate"]
+a.btn.btn-donate[data-ga-action="Donate"]
 {
-  background: $gp-green-40;
-  color: $black;
+  background: $gp-green-70;
+  color: $white;
 
   @include mobile-and-tablet-only {
-    // ripple effect for touch screens
+    //ripple effect for touch screens
     background-position: center;
     transition: background 0.5s;
+    font-size: larger;
 
     &:hover {
-      background: $gp-green-50 radial-gradient(circle, transparent 1%, $gp-green-50 1%) center/15000%;
+      background: $gp-green-60 radial-gradient(circle, transparent 1%, $gp-green-60 1%) center/15000%;
     }
 
     &:active {
-      background-color: $gp-green-40;
+      background-color: $gp-green-60;
+      color: $black;
       background-size: 100%;
       transition: background 0s;
     }
   }
 
   @include large-and-up {
-    background-image: -webkit-linear-gradient(30deg, $gp-green-50 50%, transparent 50%);
-    background-image: linear-gradient(30deg, $gp-green-50 50%, transparent 50%);
+    background-image: -webkit-linear-gradient(30deg, $gp-green-60 50%, transparent 50%);
+    background-image: linear-gradient(30deg, $gp-green-60 50%, transparent 50%);
     background-size: 500px;
     background-repeat: no-repeat;
     background-position: 0%;
@@ -53,6 +54,7 @@ div.burger-menu-footer a.btn.btn-donate[data-ga-action="Donate"]
 
     &:hover {
       background-position: 100%;
+
     }
   }
   
@@ -65,31 +67,36 @@ button[type="submit"]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
   font-weight: bold;
   border: none;
-  background: $yellow;
-  color: $black;
+  background: $gp-green-50;
+  color:$black;
 
   @include mobile-and-tablet-only {
     // ripple effect for touch screens
     background-position: center;
     transition: background 0.8s;
+    color:$black;
+    background: $gp-green-40;
+
 
     &:hover {
-      background: $yellow radial-gradient(circle, transparent 1%, $yellow 1%) center/15000%;
-      border-color: $yellow;
-      color: $black;
+      background: $gp-green-50 radial-gradient(circle, transparent 1%, $gp-green-50 1%) center/15000%;
+      border-color: $gp-green-50;
+      color:$black;
+
     }
 
     &:active {
-      background-color: $yellow-50;
+      background-color: $gp-green-50;
       background-size: 100%;
       transition: background 0s;
+      color:$black;
+
     }
-    color:$black;
   }
 
   @include large-and-up {
-    background-image: -webkit-linear-gradient(30deg, $yellow-50 50%, transparent 50%);
-    background-image: linear-gradient(30deg, $yellow-50 50%, transparent 50%);
+    background-image: -webkit-linear-gradient(30deg, $gp-green-40 50%, transparent 50%);
+    background-image: linear-gradient(30deg, $gp-green-40 50%, transparent 50%);
     background-size: 1000px;
     background-repeat: no-repeat;
     background-position: 0%;
