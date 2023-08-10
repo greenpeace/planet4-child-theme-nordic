@@ -278,30 +278,40 @@ window.addEventListener('DOMContentLoaded', function (event) {
 /***/ (function(module, exports) {
 
 document.addEventListener("DOMContentLoaded", function () {
-  //fix the missing H1 if the page carouselHeadingH1 is hodden and carousel is the first block
-  var carouselHeader = document.querySelector('div.page-content.container.no-page-title > div.wp-block-planet4-blocks-carousel-header > div[data-hydrate="planet4-blocks/carousel-header"]');
-  if (carouselHeader) {
-    var captionWrapper = carouselHeader.querySelector('div.carousel-captions-wrapper');
-    var heading = captionWrapper.querySelector('h2');
-    if (heading) {
-      heading.outerHTML = '<h1>' + heading.innerHTML + '</h1>';
-    }
+  var pageHeaderContainer = document.querySelector('div.page-header.page-header-hidden > div.container');
+  var pageTitle = document.querySelector('title').textContent;
+  var strippedTitle = outputStrippedTitle(); // Get the stripped title
+
+  function outputStrippedTitle() {
+    return pageTitle.split(' - ')[0].trim(); // Return the stripped title
   }
 
-  //fix for no page header on petition pages
-  var container = document.querySelector('div.page-content.container.no-page-title');
-  var firstChild = container ? container.firstElementChild : null;
-  var secondChild = firstChild ? firstChild.nextElementSibling : null;
-  function outputStrippedTitle() {
-    var pageTitle = document.querySelector('title').textContent;
-    var strippedTitle = pageTitle.split(' - ')[0];
-    console.log('Stripped Page Title:', strippedTitle);
+  // Check if the page header container is present and empty
+  if (pageHeaderContainer && pageHeaderContainer.innerHTML.trim() === '') {
+    insertTitle(strippedTitle); // Insert the title
   }
-  if (firstChild && firstChild.classList.contains('leads-form')) {
-    outputStrippedTitle();
-  } else if (secondChild && secondChild.classList.contains('leads-form')) {
-    outputStrippedTitle();
+
+  // Function to insert the stripped title into the specified element
+  function insertTitle(title) {
+    var titleElement = document.createElement('h1');
+    titleElement.textContent = title;
+    titleElement.classList.add('hidden-title');
+    pageHeaderContainer.appendChild(titleElement);
   }
+
+  //Function to update the hidden title
+  function upddateHiddenTitle() {
+    var hiddenTitleElement = pageHeaderContainer.querySelector('.hidden-title');
+    if (hiddenTitleElement) {
+      hiddenTitleElement.textContent = strippedTitle;
+    }
+  }
+  var titleObserver = new MutationObserver(upddateHiddenTitle);
+  var titleElemnt = document.querySelector('title');
+  titleObserver.observe(titleElemnt, {
+    childList: true,
+    subtree: true
+  });
 });
 
 /***/ }),

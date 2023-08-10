@@ -5170,6 +5170,16 @@ and so on...
   padding: 0.2rem 0.5rem;
 }
 
+.hidden-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 /* Generates mutilevel nested comments
 level-1 is the first level comment with a margin of 50px
 level-2 is the first level comment with a margin of 100px

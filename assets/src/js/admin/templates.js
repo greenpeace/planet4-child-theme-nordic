@@ -1,29 +1,35 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-    //fix the missing H1 if the page carouselHeadingH1 is hodden and carousel is the first block
-    const carouselHeader = document.querySelector('div.page-content.container.no-page-title > div.wp-block-planet4-blocks-carousel-header > div[data-hydrate="planet4-blocks/carousel-header"]');
-    if (carouselHeader) {
-        const captionWrapper = carouselHeader.querySelector('div.carousel-captions-wrapper');
-        const heading = captionWrapper.querySelector('h2');
-        if (heading) {
-            heading.outerHTML = '<h1>' + heading.innerHTML + '</h1>';
+    const pageHeaderContainer = document.querySelector('div.page-header.page-header-hidden > div.container');
+    const pageTitle = document.querySelector('title').textContent;
+    const strippedTitle = outputStrippedTitle(); // Get the stripped title
+
+
+    function outputStrippedTitle() {
+        return pageTitle.split(' - ')[0].trim(); // Return the stripped title
+    }
+
+    // Check if the page header container is present and empty
+    if (pageHeaderContainer && pageHeaderContainer.innerHTML.trim() === '') {
+        insertTitle(strippedTitle); // Insert the title
+    }
+
+    // Function to insert the stripped title into the specified element
+    function insertTitle(title) {
+        const titleElement = document.createElement('h1');
+        titleElement.textContent = title;
+        titleElement.classList.add('hidden-title');
+        pageHeaderContainer.appendChild(titleElement);
+    }
+
+    //Function to update the hidden title
+    function upddateHiddenTitle() {
+        const hiddenTitleElement = pageHeaderContainer.querySelector('.hidden-title');
+        if (hiddenTitleElement) {
+            hiddenTitleElement.textContent = strippedTitle;
         }
     }
 
-    //fix for no page header on petition pages
-    const container = document.querySelector('div.page-content.container.no-page-title');
-    const firstChild = container ? container.firstElementChild : null;
-    const secondChild = firstChild ? firstChild.nextElementSibling : null;
-    
-    function outputStrippedTitle() {
-      const pageTitle = document.querySelector('title').textContent;
-      const strippedTitle = pageTitle.split(' - ')[0];
-      console.log('Stripped Page Title:', strippedTitle);
-    }
-    
-    if (firstChild && firstChild.classList.contains('leads-form')) {
-      outputStrippedTitle();
-    } else if (secondChild && secondChild.classList.contains('leads-form')) {
-      outputStrippedTitle();
-    }
+    const titleObserver = new MutationObserver(upddateHiddenTitle);
+    const titleElemnt = document.querySelector('title');
+    titleObserver.observe(titleElemnt, {childList: true, subtree: true});
 });
