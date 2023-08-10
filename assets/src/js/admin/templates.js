@@ -30,6 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const titleObserver = new MutationObserver(upddateHiddenTitle);
-    const titleElemnt = document.querySelector('title');
-    titleObserver.observe(titleElemnt, {childList: true, subtree: true});
+    const titleElement = document.querySelector('title');
+    titleObserver.observe(titleElement, {childList: true, subtree: true});
 });
