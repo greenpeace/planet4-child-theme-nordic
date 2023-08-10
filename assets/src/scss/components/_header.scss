@@ -4,38 +4,38 @@
 @import "../base/fonts";
 
 @include small-mobile-only {
-  .is-pattern-p4-page-header .wp-block-media-text__content, .is-pattern-p4-page-header .wp-block-group:first-child {
-    margin: -1rem 2.3rem 0 .5rem!important;
+
+  .is-pattern-p4-page-header .wp-block-media-text__content,
+  .is-pattern-p4-page-header .wp-block-group:first-child {
+    margin: -1rem 2.3rem 0 .5rem !important;
   }
 }
 
 @include mobile-only {
-	.page-header-title {
+  .page-header-title {
     overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-	}
+  }
 
-  .is-pattern-p4-page-header .wp-block-media-text__content { 
-      .wp-block-group:first-child {
-        font-size: 2.2rem !important;
-        margin: 0 1.2rem 0 .5rem;
-        word-break: keep-all;
-      }
+  .is-pattern-p4-page-header .wp-block-media-text__content {
+    .wp-block-group:first-child {
+      font-size: 2.2rem !important;
+      margin: 0 1.2rem 0 .5rem;
+      word-break: keep-all;
+    }
 
-      p {
-        font-size: 1rem!important;
-      }
-
-
+    p {
+      font-size: 1rem !important;
+    }
   }
 
 }
 
 @media screen and (max-width:767px) {
   .page-header-content {
-    display: block!important;
+    display: block !important;
     margin-top: 0;
     max-width: 97%;
   }
@@ -43,14 +43,15 @@
 
 @include mobile-and-tablet-only {
   h2.page-section-header {
-    font-size:calc(1.35rem + .9vw)!important;
+    font-size: calc(1.35rem + .9vw) !important;
   }
 
   .wp-block-media-text.is-pattern-p4-page-header {
     margin-top: -3rem;
   }
 
-  .is-pattern-p4-page-header.has-media-on-the-right p,  .is-pattern-p4-page-header.has-media-on-the-right .wp-block-buttons {
+  .is-pattern-p4-page-header.has-media-on-the-right p,
+  .is-pattern-p4-page-header.has-media-on-the-right .wp-block-buttons {
     padding-left: .5rem;
   }
 
@@ -64,7 +65,7 @@
 
 @include large-and-up {
   h2.page-section-header {
-    font-size:calc(1.35rem + 1vw)!important;
+    font-size: calc(1.35rem + 1vw) !important;
   }
 
 }
@@ -72,7 +73,7 @@
 //page header pattern
 .wp-block-media-text.alignfull.is-pattern-p4-page-header h1.has-background {
   line-height: 1.25;
-  box-shadow:  8px 0 0 rgba(255, 255, 255, 0), -8px 0 0;
+  box-shadow: 8px 0 0 rgba(255, 255, 255, 0), -8px 0 0;
   padding: .2rem .5rem;
 }
 
