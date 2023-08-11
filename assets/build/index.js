@@ -283,9 +283,15 @@ document.addEventListener("DOMContentLoaded", function () {
   var pageTitle = document.querySelector('title').textContent;
   var strippedTitle = outputStrippedTitle(); // Get the stripped title
 
-  //fix for the Nordix Home pages only
-  if (homePageHeaderContainer) {
-    insertTitle(strippedTitle);
+  // Check if there is no <h1> element on the page and if it's a home page
+  var h1Elements = document.querySelectorAll('h1');
+  var isHomePage = homePageHeaderContainer !== null;
+  var noH1OnPage = h1Elements.length === 0;
+  if (isHomePage && noH1OnPage) {
+    var newElement = document.createElement('h1');
+    newElement.classList.add('hidden-title');
+    newElement.textContent = strippedTitle;
+    homePageHeaderContainer.prepend(newElement);
   }
   function outputStrippedTitle() {
     return pageTitle.split(' - ')[0].trim(); // Return the stripped title
