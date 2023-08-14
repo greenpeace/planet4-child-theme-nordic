@@ -3696,6 +3696,9 @@ html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
     line-height: 1.2;
     font-size: 2.5rem;
   }
+  .carousel-header .carousel-caption .main-header p {
+    font-weight: 600;
+  }
   .container.main-header > .carousel-captions-wrapper {
     width: 600px !important;
   }
