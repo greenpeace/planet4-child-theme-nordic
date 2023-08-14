@@ -6274,6 +6274,7 @@ a.nav-link {
 
 .nav-submenu .nav-item a.nav-link:hover {
   background: rgba(217, 241, 197, 0.5019607843);
+  color: #198700;
   font-weight: bolder;
 }
 
