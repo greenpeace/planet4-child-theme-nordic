@@ -19,45 +19,6 @@ a[data-ga-action="Donate"],
   font-size: 1rem;
 }
 
-//Donate btn
-// a.btn.btn-donate[data-ga-action="Donate"]
-// {
-//   background: $orange-hover;
-//   color: $white;
-
-//   @include mobile-and-tablet-only {
-//     //ripple effect for touch screens
-//     background-position: center;
-//     transition: background 0.5s;
-//     font-size: larger;
-
-//     &:hover {
-//       background: $orange radial-gradient(circle, transparent 1%, $orange 1%) center/15000%;
-//     }
-
-//     &:active {
-//       background-color: $orange;
-//       background-size: 100%;
-//       transition: background 0s;
-//     }
-//   }
-
-//   @include large-and-up {
-//     background-image: -webkit-linear-gradient(30deg, $orange 50%, transparent 50%);
-//     background-image: linear-gradient(30deg, $orange 50%, transparent 50%);
-//     background-size: 500px;
-//     background-repeat: no-repeat;
-//     background-position: 0%;
-//     -webkit-transition: background 300ms ease-in-out;
-//     transition: background 300ms ease-in-out;
-
-//     &:hover {
-//       background-position: 100%;
-//     }
-//   }
-  
-// }
-
 //CTA color buttons
 button[type="submit"]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"], a.btn.btn-donate[data-ga-action="Donate"], .cover-card.cover .btn.cover-card-btn.btn-primary,
@@ -67,39 +28,19 @@ button[type="submit"]:not(.nav-search-btn, .search-form-btn),
   color: $white;
   border: none;
   text-transform: uppercase;
+  background-position: center;
+  transition: background 0.8s;
 
-  @include mobile-and-tablet-only {
-    // ripple effect for touch screens
-    background-position: center;
-    transition: background 0.5s;
-    font-size: larger;
-
-    &:hover {
-      background: $gp-green-60 radial-gradient(circle, transparent 1%, $gp-green-60 1%) center/15000%;
-      color: $white;
-    }
-
-    &:active {
-      background-color: $gp-green-60;
-      background-size: 100%;
-      transition: background 0s;
-      color: $white;
-    }
+  &:hover {
+    background: $gp-green-80 radial-gradient(circle, transparent 1%, $gp-green-80 1%) center/15000%;
   }
 
-  @include large-and-up {
-    background-image: -webkit-linear-gradient(30deg, $gp-green-60 50%, transparent 50%);
-    background-image: linear-gradient(30deg, $gp-green-60 50%, transparent 50%);
-    background-size: 1000px;
-    background-repeat: no-repeat;
-    background-position: 0%;
-    -webkit-transition: background 300ms ease-in-out;
-    transition: background 300ms ease-in-out;
-
-    &:hover {
-      background-position: 100%;
-    }
+  &:active {
+    background-color: $gp-green-60;
+    background-size: 100%;
+    transition: background 0s;
   }
+
 }
 
 a.pdf-link:hover::before {
@@ -139,55 +80,22 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  background-position: center;
+  transition: background 0.8s;
 
-  &:hover, &:active {
+  &:hover {
+    background: $gp-green-80 radial-gradient(circle, transparent 1%, $gp-green-80 1%) center/15000%;
+    border-color: $gp-green-80;
+    color:$white
+  }
+
+  &:active {
+    background-color: $gp-green-60;
+    border-color: $gp-green-80;
+    background-size: 100%;
+    transition: background 0s;
     color: $white;
   }
-
-  @include mobile-and-tablet-only {
-    // ripple effect for touch screens
-    background-position: center;
-    transition: background 0.8s;
-
-    &:hover {
-      background: $gp-green-80 radial-gradient(circle, transparent 1%, $gp-green-80 1%) center/15000%;
-      border-color: $gp-green-80;
-      color: $white;
-    }
-
-    &:active {
-      background-color: $gp-nor-green;
-      background-size: 100%;
-      transition: background 0s;
-      color: $white;
-    }
-
-  }
-
-  // Disabled for now bc of a dark blue variable from the master theme that I can't fully override (for now)
-  @include large-and-up {
-    // background-image: -webkit-linear-gradient(30deg, $white 50%, transparent 50%)!important;
-    // background-image: linear-gradient(30deg, $white 50%, transparent 50%)!important;
-    // background-size: 700px;
-    // background-repeat: no-repeat;
-    // background-position: 0%;
-    // -webkit-transition: background 500ms ease-in-out;
-    // transition: background 500ms ease-in-out;
-
-    &:hover {
-      background: $gp-green-80;
-      // background-position: 100%!important;
-      border-color: $gp-green-80;
-      color: $white;
-    }
-  }
-
-  // &:hover,
-  // &:active {
-  //   border-color: $gp-green-80;
-  //   background: $gp-green-80;
-  //   color: $white;
-  // }
 
   &:disabled,
   &.disabled,

@@ -3181,50 +3181,22 @@ button[type=submit]:not(.nav-search-btn, .search-form-btn),
   color: #fff;
   border: none;
   text-transform: uppercase;
+  background-position: center;
+  transition: background 0.8s;
 }
-@media (max-width: 992px) {
-  button[type=submit]:not(.nav-search-btn, .search-form-btn),
-  .btn.btn-primary[data-ga-action="Call to Action"], a.btn.btn-donate[data-ga-action=Donate], .cover-card.cover .btn.cover-card-btn.btn-primary,
-  .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
-  .btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
-    background-position: center;
-    transition: background 0.5s;
-    font-size: larger;
-  }
-  button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
-  .btn.btn-primary[data-ga-action="Call to Action"]:hover, a.btn.btn-donate[data-ga-action=Donate]:hover, .cover-card.cover .btn.cover-card-btn.btn-primary:hover,
-  .btn-primary:hover, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:hover,
-  .btn.btn-primary#hidecookie:hover, .btn-primary[data-ga-action="Accept all cookies"]:hover {
-    background: #4CB500 radial-gradient(circle, transparent 1%, #4CB500 1%) center/15000%;
-    color: #fff;
-  }
-  button[type=submit]:not(.nav-search-btn, .search-form-btn):active,
-  .btn.btn-primary[data-ga-action="Call to Action"]:active, a.btn.btn-donate[data-ga-action=Donate]:active, .cover-card.cover .btn.cover-card-btn.btn-primary:active,
-  .btn-primary:active, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:active,
-  .btn.btn-primary#hidecookie:active, .btn-primary[data-ga-action="Accept all cookies"]:active {
-    background-color: #4CB500;
-    background-size: 100%;
-    transition: background 0s;
-    color: #fff;
-  }
+button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
+.btn.btn-primary[data-ga-action="Call to Action"]:hover, a.btn.btn-donate[data-ga-action=Donate]:hover, .cover-card.cover .btn.cover-card-btn.btn-primary:hover,
+.btn-primary:hover, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:hover,
+.btn.btn-primary#hidecookie:hover, .btn-primary[data-ga-action="Accept all cookies"]:hover {
+  background: #198700 radial-gradient(circle, transparent 1%, #198700 1%) center/15000%;
 }
-@media (min-width: 992px) {
-  button[type=submit]:not(.nav-search-btn, .search-form-btn),
-  .btn.btn-primary[data-ga-action="Call to Action"], a.btn.btn-donate[data-ga-action=Donate], .cover-card.cover .btn.cover-card-btn.btn-primary,
-  .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
-  .btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
-    background-image: linear-gradient(30deg, #4CB500 50%, transparent 50%);
-    background-size: 1000px;
-    background-repeat: no-repeat;
-    background-position: 0%;
-    transition: background 300ms ease-in-out;
-  }
-  button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
-  .btn.btn-primary[data-ga-action="Call to Action"]:hover, a.btn.btn-donate[data-ga-action=Donate]:hover, .cover-card.cover .btn.cover-card-btn.btn-primary:hover,
-  .btn-primary:hover, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:hover,
-  .btn.btn-primary#hidecookie:hover, .btn-primary[data-ga-action="Accept all cookies"]:hover {
-    background-position: 100%;
-  }
+button[type=submit]:not(.nav-search-btn, .search-form-btn):active,
+.btn.btn-primary[data-ga-action="Call to Action"]:active, a.btn.btn-donate[data-ga-action=Donate]:active, .cover-card.cover .btn.cover-card-btn.btn-primary:active,
+.btn-primary:active, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:active,
+.btn.btn-primary#hidecookie:active, .btn-primary[data-ga-action="Accept all cookies"]:active {
+  background-color: #4CB500;
+  background-size: 100%;
+  transition: background 0s;
 }
 
 a.pdf-link:hover::before {
@@ -3259,45 +3231,24 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  background-position: center;
+  transition: background 0.8s;
 }
-.btn-secondary:not(#hidecookie):hover, .btn-secondary:not(#hidecookie):active,
+.btn-secondary:not(#hidecookie):hover,
 .btn-secondary:not(#commentform):hover,
-.btn-secondary:not(#commentform):active,
-.btn-secondary:hover,
-.btn-secondary:active, .wp-block-button.is-style-secondary a:hover, .wp-block-button.is-style-secondary a:active, a.wp-block-button__link:hover, a.wp-block-button__link:active, .wp-block-button.is-style-secondary a:visited:hover, .wp-block-button.is-style-secondary a:visited:active {
+.btn-secondary:hover, .wp-block-button.is-style-secondary a:hover, a.wp-block-button__link:hover, .wp-block-button.is-style-secondary a:visited:hover {
+  background: #198700 radial-gradient(circle, transparent 1%, #198700 1%) center/15000%;
+  border-color: #198700;
   color: #fff;
 }
-@media (max-width: 992px) {
-  .btn-secondary:not(#hidecookie),
-  .btn-secondary:not(#commentform),
-  .btn-secondary, .wp-block-button.is-style-secondary a, a.wp-block-button__link, .wp-block-button.is-style-secondary a:visited {
-    background-position: center;
-    transition: background 0.8s;
-  }
-  .btn-secondary:not(#hidecookie):hover,
-  .btn-secondary:not(#commentform):hover,
-  .btn-secondary:hover, .wp-block-button.is-style-secondary a:hover, a.wp-block-button__link:hover, .wp-block-button.is-style-secondary a:visited:hover {
-    background: #198700 radial-gradient(circle, transparent 1%, #198700 1%) center/15000%;
-    border-color: #198700;
-    color: #fff;
-  }
-  .btn-secondary:not(#hidecookie):active,
-  .btn-secondary:not(#commentform):active,
-  .btn-secondary:active, .wp-block-button.is-style-secondary a:active, a.wp-block-button__link:active, .wp-block-button.is-style-secondary a:visited:active {
-    background-color: #005c42;
-    background-size: 100%;
-    transition: background 0s;
-    color: #fff;
-  }
-}
-@media (min-width: 992px) {
-  .btn-secondary:not(#hidecookie):hover,
-  .btn-secondary:not(#commentform):hover,
-  .btn-secondary:hover, .wp-block-button.is-style-secondary a:hover, a.wp-block-button__link:hover, .wp-block-button.is-style-secondary a:visited:hover {
-    background: #198700;
-    border-color: #198700;
-    color: #fff;
-  }
+.btn-secondary:not(#hidecookie):active,
+.btn-secondary:not(#commentform):active,
+.btn-secondary:active, .wp-block-button.is-style-secondary a:active, a.wp-block-button__link:active, .wp-block-button.is-style-secondary a:visited:active {
+  background-color: #4CB500;
+  border-color: #198700;
+  background-size: 100%;
+  transition: background 0s;
+  color: #fff;
 }
 .btn-secondary:not(#hidecookie):disabled, .btn-secondary:not(#hidecookie).disabled, .btn-secondary:not(#hidecookie)[disabled],
 .btn-secondary:not(#commentform):disabled,
