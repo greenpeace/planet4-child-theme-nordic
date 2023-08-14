@@ -20,91 +20,83 @@ a[data-ga-action="Donate"],
 }
 
 //Donate btn
-a.btn.btn-donate[data-ga-action="Donate"]
-{
+// a.btn.btn-donate[data-ga-action="Donate"]
+// {
+//   background: $orange-hover;
+//   color: $white;
+
+//   @include mobile-and-tablet-only {
+//     //ripple effect for touch screens
+//     background-position: center;
+//     transition: background 0.5s;
+//     font-size: larger;
+
+//     &:hover {
+//       background: $orange radial-gradient(circle, transparent 1%, $orange 1%) center/15000%;
+//     }
+
+//     &:active {
+//       background-color: $orange;
+//       background-size: 100%;
+//       transition: background 0s;
+//     }
+//   }
+
+//   @include large-and-up {
+//     background-image: -webkit-linear-gradient(30deg, $orange 50%, transparent 50%);
+//     background-image: linear-gradient(30deg, $orange 50%, transparent 50%);
+//     background-size: 500px;
+//     background-repeat: no-repeat;
+//     background-position: 0%;
+//     -webkit-transition: background 300ms ease-in-out;
+//     transition: background 300ms ease-in-out;
+
+//     &:hover {
+//       background-position: 100%;
+//     }
+//   }
+  
+// }
+
+//CTA color buttons
+button[type="submit"]:not(.nav-search-btn, .search-form-btn),
+.btn.btn-primary[data-ga-action="Call to Action"], a.btn.btn-donate[data-ga-action="Donate"], .cover-card.cover .btn.cover-card-btn.btn-primary,
+.btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
+.btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
   background: $gp-green-70;
   color: $white;
+  border: none;
+  text-transform: uppercase;
 
   @include mobile-and-tablet-only {
-    //ripple effect for touch screens
+    // ripple effect for touch screens
     background-position: center;
     transition: background 0.5s;
     font-size: larger;
 
     &:hover {
       background: $gp-green-60 radial-gradient(circle, transparent 1%, $gp-green-60 1%) center/15000%;
+      color: $white;
     }
 
     &:active {
       background-color: $gp-green-60;
-      color: $black;
       background-size: 100%;
       transition: background 0s;
+      color: $white;
     }
   }
 
   @include large-and-up {
     background-image: -webkit-linear-gradient(30deg, $gp-green-60 50%, transparent 50%);
     background-image: linear-gradient(30deg, $gp-green-60 50%, transparent 50%);
-    background-size: 500px;
-    background-repeat: no-repeat;
-    background-position: 0%;
-    -webkit-transition: background 300ms ease-in-out;
-    transition: background 300ms ease-in-out;
-
-    &:hover {
-      background-position: 100%;
-
-    }
-  }
-  
-}
-
-//CTA color buttons
-button[type="submit"]:not(.nav-search-btn, .search-form-btn),
-.btn.btn-primary[data-ga-action="Call to Action"], .cover-card.cover .btn.cover-card-btn.btn-primary,
-.btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
-.btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
-  font-weight: bold;
-  border: none;
-  background: $gp-green-50;
-  color:$black;
-
-  @include mobile-and-tablet-only {
-    // ripple effect for touch screens
-    background-position: center;
-    transition: background 0.8s;
-    color:$black;
-    background: $gp-green-40;
-
-
-    &:hover {
-      background: $gp-green-50 radial-gradient(circle, transparent 1%, $gp-green-50 1%) center/15000%;
-      border-color: $gp-green-50;
-      color:$black;
-
-    }
-
-    &:active {
-      background-color: $gp-green-50;
-      background-size: 100%;
-      transition: background 0s;
-      color:$black;
-
-    }
-  }
-
-  @include large-and-up {
-    background-image: -webkit-linear-gradient(30deg, $gp-green-40 50%, transparent 50%);
-    background-image: linear-gradient(30deg, $gp-green-40 50%, transparent 50%);
     background-size: 1000px;
     background-repeat: no-repeat;
     background-position: 0%;
     -webkit-transition: background 300ms ease-in-out;
     transition: background 300ms ease-in-out;
 
-    &:hover, &:active {
-      color: $black;
+    &:hover {
       background-position: 100%;
     }
   }
