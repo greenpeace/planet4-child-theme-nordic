@@ -11,6 +11,7 @@
 
     @include medium-and-up {
         font-size: $font-size-sm;
+        padding-left: 0;
     }
 
     @include large-and-up {
@@ -27,7 +28,7 @@ blockquote>p {
     @include blockquote;
     color: $black;
     width: 90%;
-    margin: auto;
+    margin: 1rem 0;
     padding-bottom: inherit;
 
 }
@@ -39,7 +40,6 @@ blockquote>h5 {
 
 blockquote>cite {
     font-family: $gp-sans;
-    // color: inherit;
     font-size: $font-size-xxs;
     font-style: normal;
 
@@ -57,7 +57,7 @@ blockquote>cite {
 
 blockquote.wp-block-quote {
     border-left: 4px solid $gp-green-50;
-    padding: .5rem .5rem .5rem 1rem;
+    padding: .5rem;
     border-top: none;
     border-bottom: none;
     border-bottom: none;
@@ -71,7 +71,7 @@ blockquote.wp-block-quote,
     position: relative;
 
     &.has-text-align-left {
-        padding: .5rem .5rem .5rem 1rem;
+        padding: .5rem 1rem;
         border-left: 4px solid $gp-green-50;
         border-top: none;
         border-bottom: none;
@@ -84,6 +84,40 @@ blockquote.wp-block-quote,
         border-bottom: 4px solid $gp-green-50;
         border-left: none;
         border-right: none;
+
+        @include mobile-only {
+            p {
+                margin-left: 3vw
+            }
+
+            cite {
+                margin-left: -9vw;
+            }
+        }
+
+        @include tablet-only {
+            padding-left: 8vw;
+            width: 95%;
+
+            cite {
+                margin-left: -10vw;
+            }
+        }
+
+        @include large-and-up {
+            margin-left: 5vw;
+
+            p {
+                margin-left: 5vw;
+            }
+
+            cite {
+                margin-left: 0vw;
+                position: relative;
+                padding: inherit;
+            }
+        }
+
     }
 
     &.has-text-align-right {
@@ -93,23 +127,61 @@ blockquote.wp-block-quote,
         border-bottom: none;
         border-left: none;
 
+        @include large-and-up {
+            padding-right: 1vw;
+        }
+
+        @include xx-large-and-up {
+            padding-right: 2vw;
+        }
+
+
+        p {
+            @include mobile-only {
+                margin-left: 2rem;
+            }
+
+            @include tablet-only {
+                margin-left: 2.8rem;
+            }
+
+            @include large-and-up {
+                margin-left: 11vw;
+            }
+
+            @include xx-large-and-up {
+                margin-right: 0;
+                padding-right: inherit;
+                position: inherit;
+            }
+
+            @media screen and (min-width: 2560px) {
+                margin-right: 0;
+                padding-right: 5vw;
+                position: inherit;
+            }
+
+        }
+
         cite {
             color: var(--link--color);
 
             @include mobile-only {
-                margin-right: 1rem;
+                margin-right: inherit;
             }
 
-            @include medium-and-up {
-                margin-right: 2rem;
+            @include tablet-only {
+                padding: inherit;
+                margin-right: .5rem;
             }
 
             @include large-and-up {
-                margin-right: 5.5rem;
+                margin-right: 3vw;
             }
 
             @include xx-large-and-up {
-                margin-right: 6.2rem;
+                margin-right: 1vw;
+                padding: inherit;
             }
 
         }
@@ -206,15 +278,23 @@ blockquote.wp-block-quote,
 
         @include mobile-only {
             padding: 0 1.5rem 0 0;
-            margin-left: 1rem;
+            margin-left: 2rem;
 
             cite {
-                margin-left: -0.5rem;
+                margin-left: -14vw;
             }
         }
 
         @include tablet-only {
-            padding-left: 1.5rem;
+            padding-left: 10vw;
+
+            cite {
+                margin-left: -14vw;
+            }
+        }
+
+        @include large-and-up {
+            margin-left: 3vw;
         }
 
         p::before,
@@ -268,12 +348,17 @@ blockquote.wp-block-quote,
                 margin-right: 4.5rem;
             }
 
+            @include tablet-only {
+                margin-right: 5vw;
+                position: relative;
+            }
+
             @include x-large-and-up {
-                margin-right: 5rem;
+                margin-right: 3vw;
             }
 
             @include xx-large-and-up {
-                margin-right: 6.5rem;
+                margin-right: 2vw;
             }
 
 
@@ -335,6 +420,15 @@ blockquote.wp-block-quote,
         border-bottom: 4px solid var(--blockquote-border-color);
         border-right: none;
         border-left: none;
+
+        @include tablet-only {
+            padding-left: 8vw;
+
+            cite {
+                margin-left: -10vw;
+            }
+        }
+
     }
 
     &.has-text-align-right {

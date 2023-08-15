@@ -178,8 +178,25 @@ document.addEventListener('DOMContentLoaded', function () {
       // console.log(`Cite Element ${index + 1}: Content: ${citeElement.textContent}, Color: ${citeColor}, Border Color: ${borderciteColor}`);
     });
   }
-});
 
+  //align blockquote content to center 
+  var blockquoteCenter = document.querySelectorAll('.wp-block-quote.has-text-align-center');
+  for (var i = 0; i < blockquoteCenter.length; i++) {
+    var blockquoteCenterP = blockquoteCenter[i].querySelector('p');
+    var blockquoteCenterCite = blockquoteCenter[i].querySelector('cite');
+    blockquoteCenterP.setAttribute("class", "has-text-align-center");
+    blockquoteCenterCite.setAttribute("class", "has-text-align-center");
+  }
+
+  //align blockquote content to right 
+  var blockquoteRight = document.querySelectorAll('.wp-block-quote.has-text-align-right');
+  for (var _i = 0; _i < blockquoteRight.length; _i++) {
+    var blockquoteRightP = blockquoteRight[_i].querySelector('p');
+    var blockquoteRightCite = blockquoteRight[_i].querySelector('cite');
+    blockquoteRightP.setAttribute("class", "has-text-align-right");
+    blockquoteRightCite.setAttribute("class", "has-text-align-right");
+  }
+});
 try {
   if (typeof wp !== 'undefined' && wp.blocks) {
     // Block Style Registration

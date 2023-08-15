@@ -82,6 +82,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    //align blockquote content to center 
+    const blockquoteCenter = document.querySelectorAll('.wp-block-quote.has-text-align-center');
+
+    for (let i = 0; i < blockquoteCenter.length; i++) {
+        const blockquoteCenterP = blockquoteCenter[i].querySelector('p');
+        const blockquoteCenterCite = blockquoteCenter[i].querySelector('cite');
+
+        blockquoteCenterP.setAttribute("class", "has-text-align-center");
+        blockquoteCenterCite.setAttribute("class", "has-text-align-center");
+    }
+
+    //align blockquote content to right 
+    const blockquoteRight = document.querySelectorAll('.wp-block-quote.has-text-align-right');
+
+    for (let i = 0; i < blockquoteRight.length; i++) {
+        const blockquoteRightP = blockquoteRight[i].querySelector('p');
+        const blockquoteRightCite = blockquoteRight[i].querySelector('cite');
+
+        blockquoteRightP.setAttribute("class", "has-text-align-right");
+        blockquoteRightCite.setAttribute("class", "has-text-align-right");
+    }
+
 });
 
 try {
@@ -105,3 +128,4 @@ try {
 } catch (error) {
     console.error('Failed to register block style', error);
 }
+
