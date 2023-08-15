@@ -288,6 +288,14 @@ h2.page-section-header {
 }
 
 //reality check block
-.is-pattern-p4-high-level-topic-pattern-layout .is-pattern-p4-reality-check h2.wp-block-heading {
-  font-family: $gp-sans;
+.is-pattern-p4-reality-check {
+  figure.wp-block-image+h2 {
+    font-family: $gp-sans;
+  }
+
+  figure.wp-block-image~h2:nth-of-type(2) {
+    font-family: $roboto;
+    font-weight: 500;
+    font-size: medium;
+  }
 }

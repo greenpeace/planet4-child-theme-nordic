@@ -905,8 +905,13 @@ h2.page-section-header {
   color: #000;
 }
 
-.is-pattern-p4-high-level-topic-pattern-layout .is-pattern-p4-reality-check h2.wp-block-heading {
+.is-pattern-p4-reality-check figure.wp-block-image + h2 {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+}
+.is-pattern-p4-reality-check figure.wp-block-image ~ h2:nth-of-type(2) {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+  font-weight: 500;
+  font-size: medium;
 }
 
 .has-dark-shade-black-color {
@@ -6232,6 +6237,10 @@ a.nav-link {
   font-weight: bolder;
 }
 
+.nav-subitems .nav-item.active a.nav-link {
+  color: #198700 !important;
+}
+
 @media (max-width: 576px) {
   .top-navigation .btn-donate {
     height: 8vw;
@@ -7613,18 +7622,24 @@ span.cover-card-tag {
   text-decoration: none;
   font-weight: 700;
 }
-.take-action-covers-block .cover:hover a.btn.cover-card-btn.btn-primary {
+.take-action-covers-block .cover .content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a {
+  color: #3c7800 !important;
+}
+.take-action-covers-block a.btn.cover-card-btn.btn-primary {
   background: #80D643;
 }
-.take-action-covers-block .cover:hover a.btn.cover-card-btn.btn-primary:hover {
+.take-action-covers-block a.btn.cover-card-btn.btn-primary:hover {
   background-image: linear-gradient(30deg, #66CC00 50%, transparent 50%);
   background-size: 1000px;
 }
 
 .content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a {
-  color: #3c7800 !important;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   font-size: larger;
+}
+.content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a:hover {
+  -webkit-text-decoration-color: #66CC00;
+  text-decoration-color: #66CC00;
 }
 
 /*# sourceMappingURL=style.min.css.map*/

@@ -9,77 +9,81 @@
 // $min-height: 40px;
 // $navbar-default-height: 60px;
 
-// @include mobile-only {
-  a.nav-link {
-    font-family: $helvetica;
-    font-weight: 600;
+a.nav-link {
+  font-family: $helvetica;
+  font-weight: 600;
 
-    @include mobile-only {
-      font-size: 3.5vw;
-    }
-
-    @include tablet-only {
-      font-size: 2vw;
-    }
-
+  @include mobile-only {
+    font-size: 3.5vw;
   }
 
-  .nav-submenu .nav-item a.nav-link:hover {
-    background: $gp-green-5;
+  @include tablet-only {
+    font-size: 2vw;
+  }
+
+}
+
+.nav-submenu .nav-item a.nav-link:hover {
+  background: $gp-green-5;
+  color: $gp-green-80;
+  font-weight: bolder;
+}
+
+.nav-subitems .nav-item.active a.nav-link {
+  color: $gp-green-80!important;
+}
+
+.top-navigation .btn-donate {
+
+  @include mobile-only {
+    height: 8vw;
+    line-height: 7vw;
+    font-size: 3.5vw;
+  }
+
+  @include tablet-only {
+    height: 4vw;
+    line-height: 3.5vw;
+    font-size: 2vw;
+  }
+}
+
+.secondary-menu {
+  margin: 0;
+
+  p:hover {
     color: $gp-green-80;
-    font-weight: bolder;
   }
+}
 
-  .top-navigation .btn-donate {
-
-    @include mobile-only {
-      height: 8vw;
-      line-height: 7vw;
-      font-size: 3.5vw;
-    }
-
-    @include tablet-only {
-      height: 4vw;
-      line-height: 3.5vw;
-      font-size: 2vw;
-    }
-  }
-
+//secondary nav reusable block HL& DD topics
+@media screen and (min-width: 740px) and (max-width: 781px) {
   .secondary-menu {
-    margin:0;
+    margin-top: -2.5rem;
+  }
+}
 
-    p:hover {
-      color: $gp-green-80;
-    }
+.brdr-bottom {
+  border-bottom: #dddada 1px solid;
+  padding-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .secondary-menu {
+    margin-top: -2rem;
+    white-space: nowrap;
+    margin-bottom: 0;
   }
 
-  //secondary nav reusable block HL& DD topics
-  @media screen and (min-width: 740px ) and (max-width: 781px) {
-    .secondary-menu {
-      margin-top: -2.5rem;
-    }
+  .secondary-menu .wp-container-4 {
+    line-height: 25px;
   }
 
-  .brdr-bottom {
-    border-bottom: #dddada 1px solid; padding-bottom: 0.5rem;
+  .secondary-menu p {
+    display: inline-block;
   }
 
-  @media screen and (max-width: 600px) {
-    .secondary-menu {
-      margin-top: -2rem;
-      white-space: nowrap;
-      margin-bottom: 0;
-    }
-
-    .secondary-menu .wp-container-4 {
-      line-height: 25px;
-    }
-
-    .secondary-menu p {
-      display: inline-block;
-    }
-
-    .secondary-menu p:last-child {
-      padding-bottom: .7rem;
-    }
+  .secondary-menu p:last-child {
+    padding-bottom: .7rem;
   }
+}

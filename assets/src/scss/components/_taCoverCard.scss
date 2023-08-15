@@ -4,98 +4,104 @@
 
 //TA cover card
 .take-action-covers-block .cover-card.cover {
-  border-radius: 1rem!important;
+  border-radius: 1rem !important;
 }
 
 .cover-card-content {
   background: $white;
-    z-index: 100;
-    position: sticky;
+  z-index: 100;
+  position: sticky;
 }
 
 .take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
-    font-family:$roboto;
-    font-weight: 400!important;
+  font-family: $roboto;
+  font-weight: 400 !important;
 }
-  
+
 span.cover-card-tag {
-    font-family: $gp-sans;
+  font-family: $gp-sans;
 }
 
 // Define your $gp-green-50 variable with the appropriate color value
 // For example: $gp-green-50: #00ff00;
 
 .take-action-covers-block {
-    .cover {
-      position: relative;
+  .cover {
+    position: relative;
+    overflow: hidden;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    a[data-ga-action="Image"] {
       overflow: hidden;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-  
-      a[data-ga-action="Image"] {
-        overflow: hidden;
-        width: 220px;
-        height: 220px;
-        display: contents;
-      }
-  
-      // Smooth transition for the image when not hovered
+      width: 220px;
+      height: 220px;
+      display: contents;
+    }
+
+    // Smooth transition for the image when not hovered
+    a[data-ga-action="Image"] img {
+      max-width: 100%;
+      max-height: 220px;
+      display: block; // Make the image a block-level element to fill its container
+      position: relative; // Reset the positioning to allow smooth scaling
+      transform: scale(1);
+      transform-origin: center;
+      transition: 0.5s all ease-in-out;
+    }
+
+    &:hover {
       a[data-ga-action="Image"] img {
         max-width: 100%;
         max-height: 220px;
         display: block; // Make the image a block-level element to fill its container
         position: relative; // Reset the positioning to allow smooth scaling
-        transform: scale(1);
+        transform: scale(1.1);
         transform-origin: center;
-        transition: 0.5s all ease-in-out;
       }
-  
-      &:hover {
-        a[data-ga-action="Image"] img {
-            max-width: 100%;
-            max-height: 220px;
-            display: block; // Make the image a block-level element to fill its container
-            position: relative; // Reset the positioning to allow smooth scaling
-            transform: scale(1.1);
-            transform-origin: center; 
-        }
 
-        // span.cover-card-tag {
-        //     color: $gp-green-80;
+      // span.cover-card-tag {
+      //     color: $gp-green-80;
+      // }
+
+      a.cover-card-heading {
+        text-decoration: none;
+        font-weight: 700;
+
+        // &:hover {
+        //   text-decoration: underline;
+        //   -webkit-text-decoration-color: $gp-green-50;
+        //   /* Safari */
+        //   -moz-text-decoration-color: $gp-green-50;
+        //   text-decoration-color: $gp-green-50;
         // }
-
-        a.cover-card-heading {
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        a.btn.cover-card-btn.btn-primary{
-            background: $gp-green-40;
-            &:hover {
-                background-image: linear-gradient(30deg, $gp-green-50 50%, transparent 50%);
-                background-size: 1000px;
-            }
-        }
       }
     }
+
+    .content-covers-block .content-covers-block-wrap .content-covers-block-info>h5>a {
+      color: $dark-green !important;
+
+    }
   }
-  
-  
-// .cover-card.cover:hover, a.cover-card-overlay:hover {
-//     .cover-card-content a.cover-card-heading {
-//         &:hover {
-//             text-decoration: underline;
-//             -webkit-text-decoration-color: $gp-green-50; /* Safari */  
-//             -moz-text-decoration-color: $gp-green-50; /* Safari */  
-//             text-decoration-color: $gp-green-50;
-//         }
-//     }
-// }
-  
-.content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a {
-    color: $dark-green !important;
-    font-family:$roboto;
-    font-size: larger;
+
+  a.btn.cover-card-btn.btn-primary {
+    background: $gp-green-40;
+
+    &:hover {
+      background-image: linear-gradient(30deg, $gp-green-50 50%, transparent 50%);
+      background-size: 1000px;
+    }
+  }
 }
-  
+
+.content-covers-block .content-covers-block-wrap .content-covers-block-info>h5>a {
+  font-family: $roboto;
+  font-size: larger;
+
+  &:hover {
+    -webkit-text-decoration-color: $gp-green-50;
+    -moz-text-decoration-color: $gp-green-50;
+    text-decoration-color: $gp-green-50;
+  }
+}
