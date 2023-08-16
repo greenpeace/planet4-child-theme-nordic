@@ -24,7 +24,7 @@ button[type="submit"]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"], a.btn.btn-donate[data-ga-action="Donate"], .cover-card.cover .btn.cover-card-btn.btn-primary,
 .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
 .btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
-  background: $gp-green-70;
+  background: $gp-green-60;
   color: $white;
   border: none;
   text-transform: uppercase;
@@ -32,11 +32,11 @@ button[type="submit"]:not(.nav-search-btn, .search-form-btn),
   transition: background 0.8s;
 
   &:hover {
-    background: $gp-green-80 radial-gradient(circle, transparent 1%, $gp-green-80 1%) center/15000%;
+    background: $gp-green-70 radial-gradient(circle, transparent 1%, $gp-green-70 1%) center/15000%;
   }
 
   &:active {
-    background-color: $gp-green-60;
+    background-color: $gp-green-50;
     background-size: 100%;
     transition: background 0s;
   }
@@ -48,10 +48,10 @@ a.pdf-link:hover::before {
 }
 
 a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
-  color:$gp-green-80;
-  -webkit-text-decoration-color: $gp-green-80;
-  -moz-text-decoration-color: $gp-green-80;
-  text-decoration-color: $gp-green-80;
+  color:$gp-green-70;
+  -webkit-text-decoration-color: $gp-green-70;
+  -moz-text-decoration-color: $gp-green-70;
+  text-decoration-color: $gp-green-70;
 
 }
 

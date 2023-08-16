@@ -3182,7 +3182,7 @@ button[type=submit]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"], a.btn.btn-donate[data-ga-action=Donate], .cover-card.cover .btn.cover-card-btn.btn-primary,
 .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
 .btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
-  background: #339E00;
+  background: #4CB500;
   color: #fff;
   border: none;
   text-transform: uppercase;
@@ -3193,13 +3193,13 @@ button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
 .btn.btn-primary[data-ga-action="Call to Action"]:hover, a.btn.btn-donate[data-ga-action=Donate]:hover, .cover-card.cover .btn.cover-card-btn.btn-primary:hover,
 .btn-primary:hover, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:hover,
 .btn.btn-primary#hidecookie:hover, .btn-primary[data-ga-action="Accept all cookies"]:hover {
-  background: #198700 radial-gradient(circle, transparent 1%, #198700 1%) center/15000%;
+  background: #339E00 radial-gradient(circle, transparent 1%, #339E00 1%) center/15000%;
 }
 button[type=submit]:not(.nav-search-btn, .search-form-btn):active,
 .btn.btn-primary[data-ga-action="Call to Action"]:active, a.btn.btn-donate[data-ga-action=Donate]:active, .cover-card.cover .btn.cover-card-btn.btn-primary:active,
 .btn-primary:active, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:active,
 .btn.btn-primary#hidecookie:active, .btn-primary[data-ga-action="Accept all cookies"]:active {
-  background-color: #4CB500;
+  background-color: #66CC00;
   background-size: 100%;
   transition: background 0s;
 }
@@ -3209,9 +3209,9 @@ a.pdf-link:hover::before {
 }
 
 a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
-  color: #198700;
-  -webkit-text-decoration-color: #198700;
-  text-decoration-color: #198700;
+  color: #339E00;
+  -webkit-text-decoration-color: #339E00;
+  text-decoration-color: #339E00;
 }
 
 @media (max-width: 576px) {
