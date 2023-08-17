@@ -5,7 +5,7 @@
 
 button,
 button[type="submit"],
-.btn, .btn span,
+.btn, .btn span, .boxout .btn,
 .btn-primary[data-ga-action="Call to Action"],
 .btn-secondary,
 .wp-block-button__link,
@@ -20,14 +20,13 @@ a[data-ga-action="Donate"],
 }
 
 //CTA color buttons
-button[type="submit"]:not(.nav-search-btn, .search-form-btn),
+.boxout .btn, button[type="submit"]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"], a.btn.btn-donate[data-ga-action="Donate"], .cover-card.cover .btn.cover-card-btn.btn-primary,
 .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
 .btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
   background: $gp-green-60;
   color: $white;
   border: none;
-  text-transform: uppercase;
   background-position: center;
   transition: background 0.8s;
 
@@ -42,6 +41,23 @@ button[type="submit"]:not(.nav-search-btn, .search-form-btn),
   }
 
 }
+
+//TA boxout button 
+.boxout:hover .btn {
+  background: $gp-green-60;
+  color: $white;
+  border: none;
+  background-position: center;
+  transition: background 0.8s;
+  background: $gp-green-70 radial-gradient(circle, transparent 1%, $gp-green-70 1%) center/15000%;
+}
+
+.boxout:active .btn {
+  background-color: $gp-green-50;
+  background-size: 100%;
+  transition: background 0s;
+}
+
 
 a.pdf-link:hover::before {
   background-color: $dark-white;
@@ -127,4 +143,9 @@ a.wp-block-file__button.pdf-link {
 
 .wp-block-file__button.pdf-link::after {
   display: none;
+}
+
+//transparent buttons
+.wp-block-button.is-style-transparent a:active, .wp-block-button.is-style-transparent a:hover {
+  border-color: $white;
 }

@@ -871,24 +871,6 @@ a.external-link:after {
   text-decoration-color: #66CC00;
 }
 
-a.tag-item.tag-item--main.page-type,
-.top-page-tags a.tag-item[data-ga-action="Category Tag"] {
-  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
-  color: #198700;
-}
-a.tag-item.tag-item--main.page-type:hover,
-.top-page-tags a.tag-item[data-ga-action="Category Tag"]:hover {
-  color: #000;
-  text-decoration: underline;
-  -webkit-text-decoration-color: #66CC00;
-  /* Safari */
-  text-decoration-color: #66CC00;
-}
-a.tag-item.tag-item--main.page-type:visited,
-.top-page-tags a.tag-item[data-ga-action="Category Tag"]:visited {
-  color: #000;
-}
-
 .top-page-tags .tag-item {
   margin-right: 0.3rem;
 }
@@ -1889,23 +1871,30 @@ a[data-ga-action="Navigation Tag"],
 .wrapper-post-term a,
 .wrapper-post-tag a,
 a[data-ga-action="Post Type Tag"],
-a[data-ga-action="Post Type Tag"] span {
+a[data-ga-action="Post Type Tag"] span,
+a.tag-item.tag-item--main {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
   color: #198700;
+  font-weight: 500;
 }
-a[data-ga-action="Navigation Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span), a[data-ga-action="Navigation Tag"]:visited,
+a[data-ga-action="Navigation Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
 .wrapper-post-term a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
-.wrapper-post-term a:visited,
 .wrapper-post-tag a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
-.wrapper-post-tag a:visited,
 a[data-ga-action="Post Type Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
-a[data-ga-action="Post Type Tag"]:visited,
 a[data-ga-action="Post Type Tag"] span:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
-a[data-ga-action="Post Type Tag"] span:visited {
+a.tag-item.tag-item--main:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span) {
   color: #000;
   text-decoration: underline;
   -webkit-text-decoration-color: #66CC00;
   text-decoration-color: #66CC00;
+}
+a[data-ga-action="Navigation Tag"]:visited,
+.wrapper-post-term a:visited,
+.wrapper-post-tag a:visited,
+a[data-ga-action="Post Type Tag"]:visited,
+a[data-ga-action="Post Type Tag"] span:visited,
+a.tag-item.tag-item--main:visited {
+  color: #198700;
 }
 
 a[data-ga-action="Navigation Tag"] {
@@ -1917,15 +1906,27 @@ a[data-ga-action="Navigation Tag"] span[aria-label=hashtag] {
 
 a.btn.post-tag-button,
 a.btn.post-tag-button span:nth-child(2) {
-  color: #000;
+  color: #198700;
   background: rgba(217, 241, 197, 0.5019607843);
   border: none;
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
 }
-a.btn.post-tag-button:hover, a.btn.post-tag-button:visited,
-a.btn.post-tag-button span:nth-child(2):hover,
+a.btn.post-tag-button:hover,
+a.btn.post-tag-button span:nth-child(2):hover {
+  color: #000;
+}
+a.btn.post-tag-button:visited,
 a.btn.post-tag-button span:nth-child(2):visited {
   color: #198700;
+}
+
+.query-list-item-meta span.article-list-item-author a, .query-list-item-meta span.article-list-item-author a, .article-list-item-meta span.article-list-item-author a, .article-list-item-meta span.article-list-item-author a {
+  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+  color: #A3A5A7;
+}
+
+.single-post-author a {
+  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
 }
 
 a.tag-item.tag,
@@ -1940,7 +1941,7 @@ a.tag-item.tag:hover,
 a.comment-link:hover,
 a.comment-link > span.quiantity:hover,
 a.comment-link > span.display-text:hover {
-  color: #000;
+  color: #000 !important;
   text-decoration: underline;
   -webkit-text-decoration-color: #66CC00;
   /* Safari */
@@ -1951,7 +1952,7 @@ a.tag-item.tag:visited,
 a.comment-link:visited,
 a.comment-link > span.quiantity:visited,
 a.comment-link > span.display-text:visited {
-  color: #000;
+  color: #198700;
 }
 
 .article-list-item-author > a:hover {
@@ -3164,7 +3165,7 @@ and so on...
 }
 button,
 button[type=submit],
-.btn, .btn span,
+.btn, .btn span, .boxout .btn,
 .btn-primary[data-ga-action="Call to Action"],
 .btn-secondary,
 .wp-block-button__link,
@@ -3178,27 +3179,41 @@ a[data-ga-action=Donate],
   font-size: 1rem;
 }
 
-button[type=submit]:not(.nav-search-btn, .search-form-btn),
+.boxout .btn, button[type=submit]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"], a.btn.btn-donate[data-ga-action=Donate], .cover-card.cover .btn.cover-card-btn.btn-primary,
 .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
 .btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
   background: #4CB500;
   color: #fff;
   border: none;
-  text-transform: uppercase;
   background-position: center;
   transition: background 0.8s;
 }
-button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
+.boxout .btn:hover, button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
 .btn.btn-primary[data-ga-action="Call to Action"]:hover, a.btn.btn-donate[data-ga-action=Donate]:hover, .cover-card.cover .btn.cover-card-btn.btn-primary:hover,
 .btn-primary:hover, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:hover,
 .btn.btn-primary#hidecookie:hover, .btn-primary[data-ga-action="Accept all cookies"]:hover {
   background: #339E00 radial-gradient(circle, transparent 1%, #339E00 1%) center/15000%;
 }
-button[type=submit]:not(.nav-search-btn, .search-form-btn):active,
+.boxout .btn:active, button[type=submit]:not(.nav-search-btn, .search-form-btn):active,
 .btn.btn-primary[data-ga-action="Call to Action"]:active, a.btn.btn-donate[data-ga-action=Donate]:active, .cover-card.cover .btn.cover-card-btn.btn-primary:active,
 .btn-primary:active, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:active,
 .btn.btn-primary#hidecookie:active, .btn-primary[data-ga-action="Accept all cookies"]:active {
+  background-color: #66CC00;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.boxout:hover .btn {
+  background: #4CB500;
+  color: #fff;
+  border: none;
+  background-position: center;
+  transition: background 0.8s;
+  background: #339E00 radial-gradient(circle, transparent 1%, #339E00 1%) center/15000%;
+}
+
+.boxout:active .btn {
   background-color: #66CC00;
   background-size: 100%;
   transition: background 0s;
@@ -3283,6 +3298,10 @@ a.wp-block-file__button.pdf-link:hover, a.wp-block-file__button.pdf-link:active 
 
 .wp-block-file__button.pdf-link::after {
   display: none;
+}
+
+.wp-block-button.is-style-transparent a:active, .wp-block-button.is-style-transparent a:hover {
+  border-color: #fff;
 }
 
 /* Generates mutilevel nested comments
@@ -4106,7 +4125,7 @@ and so on...
           text-decoration-color: #66CC00;
 }
 .columns-block .column-wrap a:not(h3 > a) {
-  font-weight: 700;
+  font-weight: 500;
   color: #198700;
 }
 .columns-block .column-wrap a:not(h3 > a):hover:not(a.btn.btn-secondary) {
@@ -6675,7 +6694,7 @@ blockquote > p {
   color: #000;
   width: 90%;
   margin: 1rem 0;
-  padding-bottom: inherit;
+  padding-bottom: 0;
 }
 @media (min-width: 768px) {
   blockquote,
@@ -6694,6 +6713,12 @@ blockquote > p {
   blockquote,
   blockquote > p {
     font-size: 1.25rem;
+  }
+}
+@media (min-width: 768px) {
+  blockquote p,
+  blockquote > p p {
+    padding-left: 2vw;
   }
 }
 
@@ -6734,6 +6759,7 @@ blockquote > cite::before {
 @media (min-width: 768px) {
   blockquote > cite {
     font-size: 0.9375rem;
+    padding-left: 2vw;
   }
 }
 
@@ -6789,35 +6815,21 @@ blockquote.wp-block-quote.has-text-align-center,
   border-left: none;
   border-right: none;
 }
-@media (max-width: 576px) {
-  blockquote.wp-block-quote.has-text-align-center p,
-  .wp-block-quote.is-style-default.has-text-align-center p {
-    margin-left: 3vw;
-  }
-  blockquote.wp-block-quote.has-text-align-center cite,
-  .wp-block-quote.is-style-default.has-text-align-center cite {
-    margin-left: -9vw;
-  }
-}
 @media (min-width: 576px) and (max-width: 992px) {
   blockquote.wp-block-quote.has-text-align-center,
   .wp-block-quote.is-style-default.has-text-align-center {
     padding-left: 8vw;
     width: 95%;
   }
-  blockquote.wp-block-quote.has-text-align-center cite,
-  .wp-block-quote.is-style-default.has-text-align-center cite {
-    margin-left: -10vw;
-  }
 }
 @media (min-width: 992px) {
   blockquote.wp-block-quote.has-text-align-center,
   .wp-block-quote.is-style-default.has-text-align-center {
-    margin-left: 5vw;
+    margin-left: 0;
   }
   blockquote.wp-block-quote.has-text-align-center p,
   .wp-block-quote.is-style-default.has-text-align-center p {
-    margin-left: 5vw;
+    margin-left: 0;
   }
   blockquote.wp-block-quote.has-text-align-center cite,
   .wp-block-quote.is-style-default.has-text-align-center cite {
@@ -6843,7 +6855,7 @@ blockquote.wp-block-quote.has-text-align-right,
 @media (min-width: 1600px) {
   blockquote.wp-block-quote.has-text-align-right,
   .wp-block-quote.is-style-default.has-text-align-right {
-    padding-right: 2vw;
+    padding-right: 2vw !important;
   }
 }
 @media (max-width: 576px) {
@@ -6861,7 +6873,7 @@ blockquote.wp-block-quote.has-text-align-right,
 @media (min-width: 992px) {
   blockquote.wp-block-quote.has-text-align-right p,
   .wp-block-quote.is-style-default.has-text-align-right p {
-    margin-left: 11vw;
+    margin-left: 4vw;
   }
 }
 @media (min-width: 1600px) {
@@ -6876,7 +6888,7 @@ blockquote.wp-block-quote.has-text-align-right,
   blockquote.wp-block-quote.has-text-align-right p,
   .wp-block-quote.is-style-default.has-text-align-right p {
     margin-right: 0;
-    padding-right: 5vw;
+    padding-right: 1vw;
     position: inherit;
   }
 }
@@ -6900,7 +6912,7 @@ blockquote.wp-block-quote.has-text-align-right cite,
 @media (min-width: 992px) {
   blockquote.wp-block-quote.has-text-align-right cite,
   .wp-block-quote.is-style-default.has-text-align-right cite {
-    margin-right: 3vw;
+    margin-left: 4vw;
   }
 }
 @media (min-width: 1600px) {
@@ -6908,6 +6920,14 @@ blockquote.wp-block-quote.has-text-align-right cite,
   .wp-block-quote.is-style-default.has-text-align-right cite {
     margin-right: 1vw;
     padding: inherit;
+  }
+}
+@media screen and (min-width: 2560px) {
+  blockquote.wp-block-quote.has-text-align-right cite,
+  .wp-block-quote.is-style-default.has-text-align-right cite {
+    margin-right: 0;
+    padding-right: 1vw;
+    position: inherit;
   }
 }
 blockquote.wp-block-quote cite,
@@ -7161,9 +7181,6 @@ blockquote.wp-block-quote cite,
   .wp-block-quote.is-style-custom.has-text-align-center {
     padding-left: 8vw;
   }
-  .wp-block-quote.is-style-custom.has-text-align-center cite {
-    margin-left: -10vw;
-  }
 }
 .wp-block-quote.is-style-custom.has-text-align-right {
   padding: 0.5rem 1rem;
@@ -7183,7 +7200,13 @@ blockquote.wp-block-quote cite,
 .post-content article blockquote.wp-block-quote p,
 .post-content article blockquote.wp-block-quote cite {
   max-width: 100%;
-  width: 100%;
+  width: 90%;
+}
+@media (max-width: 576px) {
+  .post-content article blockquote.wp-block-quote p,
+  .post-content article blockquote.wp-block-quote cite {
+    width: 100%;
+  }
 }
 @media (min-width: 992px) {
   .post-content article blockquote.wp-block-quote.has-text-align-center.is-style-plain {
@@ -7584,6 +7607,7 @@ blockquote.wp-block-quote cite,
 
 span.cover-card-tag {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+  font-weight: 500 !important;
 }
 
 .take-action-covers-block .cover {

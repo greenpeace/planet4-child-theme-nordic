@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
     // console.log(dataLayer);
   } else {
-    console.log("Default page");
+    //console.log("Default page");
   }
 
   //page header clicks

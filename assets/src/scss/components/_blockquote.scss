@@ -29,7 +29,14 @@ blockquote>p {
     color: $black;
     width: 90%;
     margin: 1rem 0;
-    padding-bottom: inherit;
+    padding-bottom: 0;
+
+    @include medium-and-up {
+        p {
+            padding-left: 2vw;
+        }
+    }
+
 
 }
 
@@ -51,6 +58,7 @@ blockquote>cite {
 
     @include medium-and-up {
         font-size: $font-size-xs;
+        padding-left: 2vw;
     }
 
 }
@@ -85,30 +93,16 @@ blockquote.wp-block-quote,
         border-left: none;
         border-right: none;
 
-        @include mobile-only {
-            p {
-                margin-left: 3vw
-            }
-
-            cite {
-                margin-left: -9vw;
-            }
-        }
-
         @include tablet-only {
             padding-left: 8vw;
             width: 95%;
-
-            cite {
-                margin-left: -10vw;
-            }
         }
 
         @include large-and-up {
-            margin-left: 5vw;
+            margin-left: 0;
 
             p {
-                margin-left: 5vw;
+                margin-left: 0;
             }
 
             cite {
@@ -132,7 +126,7 @@ blockquote.wp-block-quote,
         }
 
         @include xx-large-and-up {
-            padding-right: 2vw;
+            padding-right: 2vw!important;
         }
 
 
@@ -146,7 +140,7 @@ blockquote.wp-block-quote,
             }
 
             @include large-and-up {
-                margin-left: 11vw;
+                margin-left: 4vw;
             }
 
             @include xx-large-and-up {
@@ -157,7 +151,7 @@ blockquote.wp-block-quote,
 
             @media screen and (min-width: 2560px) {
                 margin-right: 0;
-                padding-right: 5vw;
+                padding-right: 1vw;
                 position: inherit;
             }
 
@@ -176,12 +170,18 @@ blockquote.wp-block-quote,
             }
 
             @include large-and-up {
-                margin-right: 3vw;
+                margin-left: 4vw;
             }
 
             @include xx-large-and-up {
                 margin-right: 1vw;
                 padding: inherit;
+            }
+
+            @media screen and (min-width: 2560px) {
+                margin-right: 0;
+                padding-right: 1vw;
+                position: inherit;
             }
 
         }
@@ -424,9 +424,6 @@ blockquote.wp-block-quote,
         @include tablet-only {
             padding-left: 8vw;
 
-            cite {
-                margin-left: -10vw;
-            }
         }
 
     }
@@ -452,8 +449,14 @@ blockquote.wp-block-quote,
     p,
     cite {
         max-width: 100%;
-        width: 100%;
+        width: 90%;
+
+        @include mobile-only {
+            width: 100%;
+        }
+    
     }
+
 
     &.has-text-align-center.is-style-plain {
         @include large-and-up {

@@ -12,17 +12,22 @@ a[data-ga-action="Navigation Tag"],
 .wrapper-post-term a,
 .wrapper-post-tag a,
 a[data-ga-action="Post Type Tag"],
-a[data-ga-action="Post Type Tag"] span {
+a[data-ga-action="Post Type Tag"] span,
+a.tag-item.tag-item--main {
   font-family: $gp-sans;
   color: $gp-green-80;
+  font-weight: 500;
 
-  &:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
-  &:visited {
+  &:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span) {
     color: $black;
     text-decoration: underline;
     -moz-text-decoration-color: $gp-green-50;
     -webkit-text-decoration-color: $gp-green-50;
     text-decoration-color: $gp-green-50;
+  }
+
+  &:visited {
+    color: $gp-green-80;
   }
 }
 
@@ -36,16 +41,31 @@ a[data-ga-action="Navigation Tag"] {
 
 a.btn.post-tag-button,
 a.btn.post-tag-button span:nth-child(2) {
-  color: $black;
+  color: $gp-green-80;
   background: $gp-green-5;
   border: none;
   font-family: $gp-sans;
 
-  &:hover,
+  &:hover {
+    color: $black;
+  }
+
   &:visited {
     color: $gp-green-80;
   }
 
+}
+
+//article meta
+.query-list-item-meta, .article-list-item-meta {
+  span.article-list-item-author a, span.article-list-item-author a {
+    font-family: $gp-sans;
+    color: $grey-50;
+  }
+}
+
+.single-post-author a {
+  font-family: $gp-sans;
 }
 
 //post info preview
@@ -57,7 +77,7 @@ a.comment-link>span.display-text {
   font-weight: 400;
 
   &:hover {
-    color: $black;
+    color: $black!important;
     text-decoration: underline;
     -webkit-text-decoration-color: $gp-green-50;
     /* Safari */
@@ -65,7 +85,7 @@ a.comment-link>span.display-text {
   }
 
   &:visited {
-    color: $black;
+    color: $gp-green-80;
   }
 }
 

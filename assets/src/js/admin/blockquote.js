@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 try {
                     wp.data.subscribe(() => {
                         listCiteElements(customBlockQuote);
-                        console.log(`Successfully listened to quote ${index + 1}`);
+                        //console.log(`Successfully listened to quote ${index + 1}`);
                     });
                 } catch (error) {
-                    console.error(`Failed to subscribe to data changes for quote ${index + 1}:`, error);
+                    //console.error(`Failed to subscribe to data changes for quote ${index + 1}:`, error);
                 }
             }
         });
@@ -126,6 +126,6 @@ try {
         ]);
     }
 } catch (error) {
-    console.error('Failed to register block style', error);
+   // console.error('Failed to register block style', error);
 }
 
