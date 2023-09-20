@@ -4115,10 +4115,11 @@ and so on...
 .columns-block h3 {
   font-weight: 700;
 }
-.columns-block h3 a {
+.columns-block h3 a[data-ga-action=Title] {
   color: #000;
+  font-weight: 700;
 }
-.columns-block h3 a:hover {
+.columns-block h3 a[data-ga-action=Title]:hover {
   color: #000;
   text-decoration: underline;
   -webkit-text-decoration-color: #66CC00;
