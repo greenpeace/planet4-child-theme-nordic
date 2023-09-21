@@ -14,6 +14,22 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
 @charset "UTF-8";
 /*
 Theme Name: Greenpeace Planet 4 Child Theme for GP Nordic
@@ -554,6 +570,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -572,6 +605,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 @font-face {
@@ -1065,6 +1099,23 @@ h2.page-section-header {
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -1083,6 +1134,7 @@ h2.page-section-header {
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 /* Generates mutilevel nested comments
@@ -1258,6 +1310,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -1276,6 +1345,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -1469,6 +1539,7 @@ and so on...
 .accordion-block .accordion-content .accordion-headline {
   line-height: initial;
   font-weight: 600;
+  font-family: var(--headings--font-family);
 }
 .accordion-block .accordion-content .accordion-headline:hover {
   font-weight: 700;
@@ -1662,6 +1733,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -1680,6 +1768,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -2179,6 +2268,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -2197,6 +2303,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -2577,6 +2684,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -2595,6 +2719,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -2965,6 +3090,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -2983,6 +3125,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -3484,6 +3627,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -3502,6 +3662,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -3916,6 +4077,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -3934,6 +4112,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -4318,6 +4497,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -4336,6 +4532,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -4735,6 +4932,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -4753,6 +4967,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -5196,6 +5411,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -5214,6 +5446,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -5641,6 +5874,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -5659,6 +5909,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -6045,6 +6296,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -6063,6 +6331,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -6496,6 +6765,23 @@ and so on...
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -6514,6 +6800,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 .has-dark-shade-black-color {
@@ -7569,6 +7856,23 @@ blockquote.wp-block-quote cite,
   background-color: #FFD200;
 }
 
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --top-navigation--background: #fff;
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -7587,6 +7891,7 @@ blockquote.wp-block-quote cite,
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 @font-face {

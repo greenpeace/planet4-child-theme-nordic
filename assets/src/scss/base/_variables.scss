@@ -1,4 +1,5 @@
 @import "../base/colors";
+@import "../base/fonts";
 // Fonts
 $roboto:   "Roboto", "Helvetica", "Arial", sans-serif!important;
 // changed the font from here to make sure it will assigned where it need to
@@ -6,7 +7,7 @@ $roboto:   "Roboto", "Helvetica", "Arial", sans-serif!important;
 $gp-sans: "Greenpeace Sans", "Helvetica", "Arial", sans-serif!important;
 $helvetica: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif!important;
 $helvetica-bold: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif!important;
-$lora: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif!important;
+$lora: "Roboto", "Arial", sans-serif!important;
 
 
 // Media queries
@@ -50,6 +51,7 @@ $font-size-xxxxl: 4rem;
   --accordion-block-dark-style--hover--background: #{$gp-nor-green};
   --blockquote-border-color: #{$gp-green-50};
   --cover-card-btn--font-size: $font-size-sm;
+  --headings--font-family: $roboto;
 }
 
 // Units:

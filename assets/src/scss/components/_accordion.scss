@@ -9,6 +9,7 @@
     .accordion-headline {
         line-height: initial;
         font-weight: 600;
+        font-family: var(--headings--font-family);
         &:hover {
             font-weight: 700;
         }
