@@ -295,28 +295,31 @@ window.addEventListener('DOMContentLoaded', function (event) {
 /***/ (function(module, exports) {
 
 document.addEventListener("DOMContentLoaded", function () {
-  var homePageHeaderContainer = document.querySelector('div.page-content.container.no-page-title');
-  var pageHeaderContainer = document.querySelector('div.page-header.page-header-hidden > div.container');
+  var noPageTitleContainer = document.querySelector('div.page-content.container.no-page-title');
+  var isHomeNoPageTitleContainer = document.querySelector('.home > div.page-content.container.no-page-title');
+  var pageHeaderContainer = document.querySelector('.page-template-default.page > div.page-header.page-header-hidden > div.container');
   var pageTitle = document.querySelector('title').textContent;
   var strippedTitle = outputStrippedTitle(); // Get the stripped title
 
-  // Check if there is no <h1> element on the page and if it's a home page
+  // Check if there is no <h1> element on the page
   var h1Elements = document.querySelectorAll('h1');
-  var isHomePage = homePageHeaderContainer !== null;
+  var isNoPageTitle = noPageTitleContainer !== null;
   var noH1OnPage = h1Elements.length === 0;
-  if (isHomePage && noH1OnPage) {
+  if (isNoPageTitle && noH1OnPage && pageHeaderContainer) {
+    // Check if the page header container is present and empty
+    if (pageHeaderContainer && pageHeaderContainer.innerHTML.trim() === '') {
+      insertTitle(strippedTitle); // Insert the title
+    }
+  }
+
+  if (isNoPageTitle && noH1OnPage && isHomeNoPageTitleContainer) {
     var newElement = document.createElement('h1');
     newElement.classList.add('hidden-title');
     newElement.textContent = strippedTitle;
-    homePageHeaderContainer.prepend(newElement);
+    isHomeNoPageTitleContainer.prepend(newElement);
   }
   function outputStrippedTitle() {
     return pageTitle.split(' - ')[0].trim(); // Return the stripped title
-  }
-
-  // Check if the page header container is present and empty
-  if (pageHeaderContainer && pageHeaderContainer.innerHTML.trim() === '') {
-    insertTitle(strippedTitle); // Insert the title
   }
 
   // Function to insert the stripped title into the specified element
@@ -328,13 +331,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //Function to update the hidden title
-  function upddateHiddenTitle() {
+  function updateHiddenTitle() {
     var hiddenTitleElement = pageHeaderContainer.querySelector('.hidden-title');
     if (hiddenTitleElement) {
       hiddenTitleElement.textContent = strippedTitle;
     }
   }
-  var titleObserver = new MutationObserver(upddateHiddenTitle);
+  var titleObserver = new MutationObserver(updateHiddenTitle);
   var titleElement = document.querySelector('title');
   titleObserver.observe(titleElement, {
     childList: true,
