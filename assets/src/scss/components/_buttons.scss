@@ -10,12 +10,13 @@ button[type="submit"],
 .btn-secondary,
 .wp-block-button__link,
 a[data-ga-action="Donate"],
+.btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"],
 .post-content .more-link, .post-content .page-links a,
 .wp-block-button a.wp-block-button__link, .wp-block-file .wp-block-file__button{
   cursor: pointer;
-  font-family: $helvetica-bold;
+  font-family: $roboto;
+  font-weight: var(--btn-body-font-weight);
   border-radius: 4px;
-  font-weight: inherit;
   font-size: 1rem;
 }
 
@@ -23,7 +24,7 @@ a[data-ga-action="Donate"],
 .boxout .btn, button[type="submit"]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"], a.btn.btn-donate[data-ga-action="Donate"], .cover-card.cover .btn.cover-card-btn.btn-primary,
 .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
-.btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
+.btn.btn-primary#hidecookie, .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"] {
   background: $gp-green-60;
   color: $white;
   border: none;
@@ -98,6 +99,7 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
   text-overflow: ellipsis;
   background-position: center;
   transition: background 0.8s;
+  font-weight: var(--btn-body-font-weight);
 
   &:hover {
     background: $gp-green-80 radial-gradient(circle, transparent 1%, $gp-green-80 1%) center/15000%;

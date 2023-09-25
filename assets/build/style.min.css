@@ -606,6 +606,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 @font-face {
@@ -1135,6 +1136,7 @@ h2.page-section-header {
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 /* Generates mutilevel nested comments
@@ -1346,6 +1348,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -1769,6 +1772,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -2304,6 +2308,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -2720,6 +2725,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -3126,6 +3132,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -3320,19 +3327,20 @@ button[type=submit],
 .btn-secondary,
 .wp-block-button__link,
 a[data-ga-action=Donate],
+.btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"],
 .post-content .more-link, .post-content .page-links a,
 .wp-block-button a.wp-block-button__link, .wp-block-file .wp-block-file__button {
   cursor: pointer;
-  font-family: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+  font-weight: var(--btn-body-font-weight);
   border-radius: 4px;
-  font-weight: inherit;
   font-size: 1rem;
 }
 
 .boxout .btn, button[type=submit]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"], a.btn.btn-donate[data-ga-action=Donate], .cover-card.cover .btn.cover-card-btn.btn-primary,
 .btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
-.btn.btn-primary#hidecookie, .btn-primary[data-ga-action="Accept all cookies"] {
+.btn.btn-primary#hidecookie, .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"] {
   background: #4CB500;
   color: #fff;
   border: none;
@@ -3342,13 +3350,13 @@ a[data-ga-action=Donate],
 .boxout .btn:hover, button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
 .btn.btn-primary[data-ga-action="Call to Action"]:hover, a.btn.btn-donate[data-ga-action=Donate]:hover, .cover-card.cover .btn.cover-card-btn.btn-primary:hover,
 .btn-primary:hover, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:hover,
-.btn.btn-primary#hidecookie:hover, .btn-primary[data-ga-action="Accept all cookies"]:hover {
+.btn.btn-primary#hidecookie:hover, .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"]:hover {
   background: #339E00 radial-gradient(circle, transparent 1%, #339E00 1%) center/15000%;
 }
 .boxout .btn:active, button[type=submit]:not(.nav-search-btn, .search-form-btn):active,
 .btn.btn-primary[data-ga-action="Call to Action"]:active, a.btn.btn-donate[data-ga-action=Donate]:active, .cover-card.cover .btn.cover-card-btn.btn-primary:active,
 .btn-primary:active, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:active,
-.btn.btn-primary#hidecookie:active, .btn-primary[data-ga-action="Accept all cookies"]:active {
+.btn.btn-primary#hidecookie:active, .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"]:active {
   background-color: #66CC00;
   background-size: 100%;
   transition: background 0s;
@@ -3403,6 +3411,7 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
   text-overflow: ellipsis;
   background-position: center;
   transition: background 0.8s;
+  font-weight: var(--btn-body-font-weight);
 }
 .btn-secondary:not(#hidecookie):hover,
 .btn-secondary:not(#commentform):hover,
@@ -3663,6 +3672,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -4113,6 +4123,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -4533,6 +4544,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -4968,6 +4980,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -5447,6 +5460,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -5910,6 +5924,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -6332,6 +6347,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -6801,6 +6817,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 .has-dark-shade-black-color {
@@ -7892,6 +7909,7 @@ blockquote.wp-block-quote cite,
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
 }
 
 @font-face {
