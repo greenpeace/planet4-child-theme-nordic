@@ -57,8 +57,11 @@ a.btn.post-tag-button span:nth-child(2) {
 }
 
 //article meta
-.query-list-item-meta, .article-list-item-meta {
-  span.article-list-item-author a, span.article-list-item-author a {
+.query-list-item-meta,
+.article-list-item-meta {
+
+  span.article-list-item-author a,
+  span.article-list-item-author a {
     font-family: $gp-sans;
     color: $grey-50;
   }
@@ -77,7 +80,7 @@ a.comment-link>span.display-text {
   font-weight: 400;
 
   &:hover {
-    color: $black!important;
+    color: $black !important;
     text-decoration: underline;
     -webkit-text-decoration-color: $gp-green-50;
     /* Safari */
@@ -89,15 +92,19 @@ a.comment-link>span.display-text {
   }
 }
 
-.article-list-item-author>a:hover {
-  -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-  -o-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-  -moz-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-  transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-  border-bottom: 2px solid $gp-green-50;
-  text-decoration: none;
-  box-shadow: none;
-  text-decoration: none;
+.article-list-item-author {
+  font-family: $gp-sans;
+
+  a:hover {
+    -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+    -o-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+    -moz-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+    transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+    border-bottom: 2px solid $gp-green-50;
+    text-decoration: none;
+    box-shadow: none;
+    text-decoration: none;
+  }
 }
 
 //on listing pages

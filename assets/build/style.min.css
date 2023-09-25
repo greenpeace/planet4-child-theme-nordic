@@ -2017,7 +2017,10 @@ a.btn.post-tag-button span:nth-child(2):visited {
   color: #198700;
 }
 
-.query-list-item-meta span.article-list-item-author a, .query-list-item-meta span.article-list-item-author a, .article-list-item-meta span.article-list-item-author a, .article-list-item-meta span.article-list-item-author a {
+.query-list-item-meta span.article-list-item-author a,
+.query-list-item-meta span.article-list-item-author a,
+.article-list-item-meta span.article-list-item-author a,
+.article-list-item-meta span.article-list-item-author a {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
   color: #A3A5A7;
 }
@@ -2052,7 +2055,10 @@ a.comment-link > span.display-text:visited {
   color: #198700;
 }
 
-.article-list-item-author > a:hover {
+.article-list-item-author {
+  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+}
+.article-list-item-author a:hover {
   transition: height 0.2s cubic-bezier(0.5, 0, 0, 1);
   border-bottom: 2px solid #66CC00;
   text-decoration: none;
