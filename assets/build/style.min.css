@@ -4311,6 +4311,12 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
+.columns-block.block-style-tasks .can-do-steps-mobile .card .card-header {
+  background: var(--accordion-block-dark-style--background);
+}
+.columns-block.block-style-tasks .can-do-steps-mobile .card .card-header.hover {
+  background: var(--accordion-block-dark-style--hover--background);
+}
 .columns-block h3 {
   font-weight: 700;
 }

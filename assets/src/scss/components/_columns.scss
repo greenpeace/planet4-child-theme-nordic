@@ -4,6 +4,13 @@
 @import "../base/fonts";
 
 .columns-block {
+    &.block-style-tasks .can-do-steps-mobile .card .card-header {
+        background: var(--accordion-block-dark-style--background);
+        &.hover {
+            background: var(--accordion-block-dark-style--hover--background);
+        }
+    }
+
     h3 {
         font-weight: 700;
 
