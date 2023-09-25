@@ -22,7 +22,7 @@ h6,
 .article-list-item-headline a,
 .query-list-item-headline.wp-block-post-title a {
   font-family: $roboto;
-  font-weight: 700;
+  font-weight: var(--heading--font-weight);
   margin-top: 0;
   margin-bottom: .5rem;
   line-height: 1.25;

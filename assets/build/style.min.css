@@ -605,6 +605,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -644,7 +645,7 @@ h6,
 .article-list-item-headline a,
 .query-list-item-headline.wp-block-post-title a {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
-  font-weight: 700;
+  font-weight: var(--heading--font-weight);
   margin-top: 0;
   margin-bottom: 0.5rem;
   line-height: 1.25;
@@ -1135,6 +1136,7 @@ h2.page-section-header {
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -1347,6 +1349,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -1771,6 +1774,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -2313,6 +2317,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -2730,6 +2735,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -3137,6 +3143,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -3677,6 +3684,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -4128,6 +4136,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -4328,7 +4337,7 @@ and so on...
 }
 .columns-block h3 a[data-ga-action=Title] {
   color: #000;
-  font-weight: 700;
+  font-weight: var(--heading--font-weight);
 }
 .columns-block h3 a[data-ga-action=Title]:hover {
   color: #000;
@@ -4555,6 +4564,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -4991,6 +5001,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -5471,6 +5482,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -5935,6 +5947,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -6358,6 +6371,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -6828,6 +6842,7 @@ and so on...
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -7920,6 +7935,7 @@ blockquote.wp-block-quote cite,
   --accordion-block-dark-style--hover--background: #005c42;
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
+  --heading--font-weight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -7996,7 +8012,7 @@ span.cover-card-tag {
 }
 .take-action-covers-block .cover:hover a.cover-card-heading[data-ga-action=Title] {
   text-decoration: none;
-  font-weight: 700;
+  font-weight: var(--heading--font-weight);
 }
 .take-action-covers-block .cover .content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a {
   color: #3c7800 !important;

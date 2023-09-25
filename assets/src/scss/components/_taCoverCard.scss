@@ -10,6 +10,7 @@
 .cover-card-content {
   background: $white;
   z-index: 100;
+  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -68,7 +69,7 @@ span.cover-card-tag {
 
       a.cover-card-heading[data-ga-action="Title"] {
         text-decoration: none;
-        font-weight: 700;
+        font-weight: var(--heading--font-weight);
 
         // &:hover {
         //   text-decoration: underline;

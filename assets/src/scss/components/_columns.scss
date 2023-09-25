@@ -16,7 +16,7 @@
 
         a[data-ga-action="Title"] {
             color: $black;
-            font-weight: 700;
+            font-weight: var(--heading--font-weight);
             &:hover {
                 color: $black;
                 text-decoration: underline;
