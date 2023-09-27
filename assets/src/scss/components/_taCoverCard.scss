@@ -12,6 +12,10 @@
   z-index: 100;
   position: -webkit-sticky;
   position: sticky;
+
+  .cover-card-heading {
+    font-weight: var(--cover-card-heading--font-weight);
+  }
 }
 
 .take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
@@ -69,7 +73,7 @@ span.cover-card-tag {
 
       a.cover-card-heading[data-ga-action="Title"] {
         text-decoration: none;
-        font-weight: var(--heading--font-weight);
+        font-weight: var(--cover-card-heading--font-weight);
 
         // &:hover {
         //   text-decoration: underline;
