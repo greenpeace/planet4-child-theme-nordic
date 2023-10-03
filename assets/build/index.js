@@ -86,10 +86,45 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/src/js/admin/blockquote.js":
-/*!*******************************************!*\
-  !*** ./assets/src/js/admin/blockquote.js ***!
-  \*******************************************/
+/***/ "./assets/src/js/app.js":
+/*!******************************!*\
+  !*** ./assets/src/js/app.js ***!
+  \******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _frontend_blockquote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./frontend/blockquote */ "./assets/src/js/frontend/blockquote.js");
+/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./frontend/nosearch */ "./assets/src/js/frontend/nosearch.js");
+/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_frontend_nosearch__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _frontend_optimonk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./frontend/optimonk */ "./assets/src/js/frontend/optimonk.js");
+/* harmony import */ var _frontend_optimonk__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_frontend_optimonk__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./frontend/templates.js */ "./assets/src/js/frontend/templates.js");
+/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend/tracking */ "./assets/src/js/frontend/tracking.js");
+/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_frontend_tracking__WEBPACK_IMPORTED_MODULE_5__);
+//import $ from the global scope
+
+// Expose jQuery to the global object
+window.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a || jQuery;
+window.dataLayer = window.dataLayer || [];
+
+//adding other scripts
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./assets/src/js/frontend/blockquote.js":
+/*!**********************************************!*\
+  !*** ./assets/src/js/frontend/blockquote.js ***!
+  \**********************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -219,10 +254,10 @@ try {
 
 /***/ }),
 
-/***/ "./assets/src/js/admin/nosearch.js":
-/*!*****************************************!*\
-  !*** ./assets/src/js/admin/nosearch.js ***!
-  \*****************************************/
+/***/ "./assets/src/js/frontend/nosearch.js":
+/*!********************************************!*\
+  !*** ./assets/src/js/frontend/nosearch.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -249,10 +284,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
-/***/ "./assets/src/js/admin/optimonk.js":
-/*!*****************************************!*\
-  !*** ./assets/src/js/admin/optimonk.js ***!
-  \*****************************************/
+/***/ "./assets/src/js/frontend/optimonk.js":
+/*!********************************************!*\
+  !*** ./assets/src/js/frontend/optimonk.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -287,10 +322,10 @@ window.addEventListener('DOMContentLoaded', function (event) {
 
 /***/ }),
 
-/***/ "./assets/src/js/admin/templates.js":
-/*!******************************************!*\
-  !*** ./assets/src/js/admin/templates.js ***!
-  \******************************************/
+/***/ "./assets/src/js/frontend/templates.js":
+/*!*********************************************!*\
+  !*** ./assets/src/js/frontend/templates.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -347,10 +382,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
-/***/ "./assets/src/js/admin/tracking.js":
-/*!*****************************************!*\
-  !*** ./assets/src/js/admin/tracking.js ***!
-  \*****************************************/
+/***/ "./assets/src/js/frontend/tracking.js":
+/*!********************************************!*\
+  !*** ./assets/src/js/frontend/tracking.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -433,41 +468,6 @@ window.addEventListener('DOMContentLoaded', function (event) {
     }, true);
   }
 });
-
-/***/ }),
-
-/***/ "./assets/src/js/app.js":
-/*!******************************!*\
-  !*** ./assets/src/js/app.js ***!
-  \******************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _admin_blockquote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/blockquote */ "./assets/src/js/admin/blockquote.js");
-/* harmony import */ var _admin_nosearch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin/nosearch */ "./assets/src/js/admin/nosearch.js");
-/* harmony import */ var _admin_nosearch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_admin_nosearch__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _admin_optimonk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./admin/optimonk */ "./assets/src/js/admin/optimonk.js");
-/* harmony import */ var _admin_optimonk__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_admin_optimonk__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _admin_templates_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./admin/templates.js */ "./assets/src/js/admin/templates.js");
-/* harmony import */ var _admin_templates_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_admin_templates_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _admin_tracking__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./admin/tracking */ "./assets/src/js/admin/tracking.js");
-/* harmony import */ var _admin_tracking__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_admin_tracking__WEBPACK_IMPORTED_MODULE_5__);
-//import $ from the global scope
-
-// Expose jQuery to the global object
-window.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a || jQuery;
-window.dataLayer = window.dataLayer || [];
-
-//adding other scripts
-
-
-
-
-
 
 /***/ }),
 
