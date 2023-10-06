@@ -827,7 +827,7 @@ a {
   box-shadow: none !important;
 }
 
-.page-content li > a,
+.page-content li > a:not(.button--ghost),
 .page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong,
 .leads-form__form__container > a, .leads-form__form__container > a.external-link, .leads-form__form__container > p > span > a, .is-pattern-p4-quick-links > a, .is-pattern-p4-quick-links strong a),
 .post-content li > a,
@@ -843,7 +843,7 @@ strong > a {
   font-weight: inherit;
   color: inherit;
 }
-.page-content li > a:hover, .page-content li > a:visited,
+.page-content li > a:not(.button--ghost):hover, .page-content li > a:not(.button--ghost):visited,
 .page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong,
 .leads-form__form__container > a, .leads-form__form__container > a.external-link, .leads-form__form__container > p > span > a, .is-pattern-p4-quick-links > a, .is-pattern-p4-quick-links strong a):hover,
 .page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong,
@@ -896,17 +896,6 @@ a.external-link:after {
   border-bottom: 3px solid #66CC00;
   text-decoration: none;
   box-shadow: none;
-}
-
-.columns-block.block-style-icons .column-wrap a {
-  border-bottom: none;
-  text-decoration: none;
-}
-.columns-block.block-style-icons .column-wrap a:hover:not(.attachment-container, h3) {
-  text-decoration: underline;
-  -webkit-text-decoration-color: #66CC00;
-  /* Safari */
-  text-decoration-color: #66CC00;
 }
 
 .top-page-tags .tag-item {
@@ -4335,34 +4324,37 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
+@media (max-width: 992px) {
+  .columns-block.block-style-image .column-wrap h3, .columns-block.block-style-tasks .column-wrap h3, .columns-block.block-style-icons .column-wrap h3 {
+    text-align: left;
+  }
+}
+.columns-block.block-style-icons .column-wrap a, .columns-block.block-style-image .column-wrap a {
+  border-bottom: none;
+  text-decoration: none;
+}
 .columns-block.block-style-tasks .can-do-steps-mobile .card .card-header {
   background: var(--accordion-block-dark-style--background);
 }
 .columns-block.block-style-tasks .can-do-steps-mobile .card .card-header.hover {
   background: var(--accordion-block-dark-style--hover--background);
 }
-.columns-block h3 {
+.columns-block h3, .columns-block h5 {
   font-weight: 700;
 }
-.columns-block h3 a[data-ga-action=Title] {
+.columns-block h3 a[data-ga-action=Title], .columns-block h5 a[data-ga-action=Title] {
   color: #000;
   font-weight: var(--headings-font-weight);
 }
-.columns-block h3 a[data-ga-action=Title]:hover {
-  color: #000;
-  text-decoration: underline;
-  -webkit-text-decoration-color: #66CC00;
-          text-decoration-color: #66CC00;
+.columns-block h3 a[data-ga-action=Title]:hover, .columns-block h5 a[data-ga-action=Title]:hover {
+  color: #198700;
+  text-decoration: none;
 }
-.columns-block .column-wrap a:not(a[data-ga-action=Title]) {
-  font-weight: 500;
+.columns-block .column-wrap a[data-ga-action="Call to Action"]:not(a[data-ga-action=Title]) {
   color: #198700;
 }
-.columns-block .column-wrap a:not(a[data-ga-action=Title]):hover:not(a.btn.btn-secondary) {
+.columns-block .column-wrap a[data-ga-action="Call to Action"]:not(a[data-ga-action=Title]):hover:not(a.btn.btn-secondary) {
   color: #000;
-  text-decoration: underline;
-  -webkit-text-decoration-color: #66CC00;
-          text-decoration-color: #66CC00;
 }
 
 /* Generates mutilevel nested comments

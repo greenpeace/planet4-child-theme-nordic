@@ -175,9 +175,9 @@ a {
   box-shadow: none !important;
 }
 
-.page-content li>a,
+.page-content li>a:not(.button--ghost),
 .page-content p>a:not(.secondary-menu > .nav-link >a, .secondary-menu > .nav-link >a >strong,
-  .leads-form__form__container>a, .leads-form__form__container>a.external-link, .leads-form__form__container>p>span>a, .is-pattern-p4-quick-links>a, .is-pattern-p4-quick-links strong a),
+.leads-form__form__container>a, .leads-form__form__container>a.external-link, .leads-form__form__container>p>span>a, .is-pattern-p4-quick-links>a, .is-pattern-p4-quick-links strong a),
 .post-content li>a,
 .post-content p>a,
 .page-content li>strong>a,
@@ -237,20 +237,6 @@ a.external-link {
     box-shadow: none;
   }
 }
-
-//columns links 
-.columns-block.block-style-icons .column-wrap a {
-  border-bottom: none;
-  text-decoration: none;
-
-  &:hover:not(.attachment-container, h3) {
-    text-decoration: underline;
-    -webkit-text-decoration-color: $gp-green-50;
-    /* Safari */
-    text-decoration-color: $gp-green-50;
-  }
-}
-
 
 .top-page-tags .tag-item {
   margin-right: 0.3rem;

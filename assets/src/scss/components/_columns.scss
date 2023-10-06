@@ -4,35 +4,54 @@
 @import "../base/fonts";
 
 .columns-block {
-    &.block-style-tasks .can-do-steps-mobile .card .card-header {
-        background: var(--accordion-block-dark-style--background);
-        &.hover {
-            background: var(--accordion-block-dark-style--hover--background);
+
+    @include mobile-and-tablet-only {
+        &.block-style-image, &.block-style-tasks, &.block-style-icons {
+            .column-wrap h3 {
+                text-align: left;
+            }
         }
     }
 
-    h3 {
+
+    //columns links 
+    &.block-style-icons, &.block-style-image {
+        .column-wrap a {
+            border-bottom: none;
+            text-decoration: none;
+        }
+    }
+
+    &.block-style-tasks {
+        .can-do-steps-mobile .card .card-header {
+            background: var(--accordion-block-dark-style--background);
+
+            &.hover {
+                background: var(--accordion-block-dark-style--hover--background);
+            }
+        }
+    }
+
+
+    h3, h5 {
         font-weight: 700;
 
         a[data-ga-action="Title"] {
             color: $black;
             font-weight: var(--headings-font-weight);
+
             &:hover {
-                color: $black;
-                text-decoration: underline;
-                text-decoration-color: $gp-green-50;    
+                color: $gp-green-80;
+                text-decoration: none;
             }
         }
     }
 
-    .column-wrap a:not(a[data-ga-action="Title"]) {
-        font-weight: 500;
+    .column-wrap a[data-ga-action="Call to Action"]:not(a[data-ga-action="Title"]) {
         color: $gp-green-80;
 
         &:hover:not(a.btn.btn-secondary) {
             color: $black;
-            text-decoration: underline;
-            text-decoration-color: $gp-green-50;
         }
     }
 }
