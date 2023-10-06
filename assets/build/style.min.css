@@ -828,8 +828,8 @@ a {
 }
 
 .page-content li > a:not(.button--ghost),
-.page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong,
-.leads-form__form__container > a, .leads-form__form__container > a.external-link, .leads-form__form__container > p > span > a, .is-pattern-p4-quick-links > a, .is-pattern-p4-quick-links strong a),
+.page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong, .acf-label > p > a, small > p > a,
+.is-pattern-p4-quick-links > a, .is-pattern-p4-quick-links strong a),
 .post-content li > a,
 .post-content p > a,
 .page-content li > strong > a,
@@ -844,10 +844,10 @@ strong > a {
   color: inherit;
 }
 .page-content li > a:not(.button--ghost):hover, .page-content li > a:not(.button--ghost):visited,
-.page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong,
-.leads-form__form__container > a, .leads-form__form__container > a.external-link, .leads-form__form__container > p > span > a, .is-pattern-p4-quick-links > a, .is-pattern-p4-quick-links strong a):hover,
-.page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong,
-.leads-form__form__container > a, .leads-form__form__container > a.external-link, .leads-form__form__container > p > span > a, .is-pattern-p4-quick-links > a, .is-pattern-p4-quick-links strong a):visited,
+.page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong, .acf-label > p > a, small > p > a,
+.is-pattern-p4-quick-links > a, .is-pattern-p4-quick-links strong a):hover,
+.page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong, .acf-label > p > a, small > p > a,
+.is-pattern-p4-quick-links > a, .is-pattern-p4-quick-links strong a):visited,
 .post-content li > a:hover,
 .post-content li > a:visited,
 .post-content p > a:hover,
@@ -6143,29 +6143,33 @@ and so on...
   font-display: swap;
 }
 .leads-form__form__container .acf-label {
-  font-family: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   margin-bottom: 0.75rem;
 }
-
+.leads-form__form__container .acf-label a,
+.leads-form__form__container .acf-label small > p > a {
+  border-bottom: none !important;
+  font-weight: bold;
+}
 .leads-form__form__container ul li {
   font-size: inherit;
 }
-
-.leads-form span.checkbox-label p {
+.leads-form__form__container span.checkbox-label p {
   line-height: 1.3;
   font-weight: 300;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   font-size: 0.75rem !important;
   padding-bottom: 0.2rem;
 }
-.leads-form span.checkbox-label p a {
+.leads-form__form__container span.checkbox-label p a {
   font-weight: 500 !important;
   font-size: 0.75rem !important;
+  border-bottom: none;
 }
-
-div.leads-form__form__container small p a {
+.leads-form__form__container small p a {
   font-weight: 500 !important;
   font-size: 0.75rem !important;
+  border-bottom: none;
 }
 
 /* Generates mutilevel nested comments

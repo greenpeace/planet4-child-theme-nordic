@@ -3,35 +3,43 @@
 @import "../base/colors";
 @import "../base/fonts";
 
-//fix for the form description text
-.leads-form__form__container .acf-label {
-  font-family: $helvetica;
-  margin-bottom: 0.75rem;
-}
+.leads-form__form__container {
+  & .acf-label {
+    font-family: $roboto;
+    margin-bottom: 0.75rem;
 
-//fix for the li element in form description text
-.leads-form__form__container ul li {
-  font-size: inherit;
-}
+    a,
+    small>p>a {
+      border-bottom: none !important;
+      font-weight: bold;
+    }
+  }
 
-//fixes the consent mssg for the LP
-.leads-form span.checkbox-label p {
-  line-height: 1.3;
-  font-weight: 300;
-  font-family: $roboto;
-  font-size: .75rem!important;
-  padding-bottom: 0.2rem;
+  & ul li {
+    font-size: inherit;
+  }
 
-  a {
-    font-weight: 500!important;
-    font-size: .75rem!important;
+  & span.checkbox-label p {
+    line-height: 1.3;
+    font-weight: 300;
+    font-family: $roboto;
+    font-size: 0.75rem !important;
+    padding-bottom: 0.2rem;
+
+    a {
+      font-weight: 500 !important;
+      font-size: 0.75rem !important;
+      border-bottom: none;
+    }
+  }
+
+  & small p a {
+    font-weight: 500 !important;
+    font-size: 0.75rem !important;
+    border-bottom: none;
   }
 }
 
-div.leads-form__form__container small p a {
-  font-weight: 500!important;
-  font-size: .75rem!important;
-}
 
 // .leads-form #donate-button {
 //   font-size: 1.5rem;
