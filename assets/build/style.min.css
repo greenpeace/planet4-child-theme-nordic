@@ -6164,7 +6164,7 @@ and so on...
 .leads-form__form__container span.checkbox-label p a {
   font-weight: 500 !important;
   font-size: 0.75rem !important;
-  border-bottom: none;
+  border-bottom: none !important;
 }
 .leads-form__form__container small p a {
   font-weight: 500 !important;
