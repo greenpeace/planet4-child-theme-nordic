@@ -3924,6 +3924,10 @@ html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
     max-width: 100%;
     width: 100%;
   }
+  .carousel-header .carousel-caption .main-header p {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
 }
 /* Generates mutilevel nested comments
 level-1 is the first level comment with a margin of 50px

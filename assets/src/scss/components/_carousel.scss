@@ -6,13 +6,13 @@
 $text-slide-offset: 50px;
 
 .carousel-header .carousel-caption .main-header h2 {
- width:100%;
- color:#020202;
- transition:unset;
- transform:translateX(50px);
- font-size:calc(1.475rem + 1.5vw);
- margin-bottom:18px;
- line-height:1.2;
+  width: 100%;
+  color: #020202;
+  transition: unset;
+  transform: translateX(50px);
+  font-size: calc(1.475rem + 1.5vw);
+  margin-bottom: 18px;
+  line-height: 1.2;
 }
 
 .carousel-header .carousel-caption .main-header p {
@@ -20,49 +20,55 @@ $text-slide-offset: 50px;
 }
 
 html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
- text-align:right
+  text-align: right
 }
 
 @media (min-width:576px) {
- .carousel-header .carousel-caption .main-header h2 {
-  font-size:$font-size-lg;
- }
+  .carousel-header .carousel-caption .main-header h2 {
+    font-size: $font-size-lg;
+  }
 }
 
 @media (min-width:768px) {
- .carousel-header .carousel-caption .main-header h2 {
-  font-size:$font-size-xl;
-  margin-bottom:.5rem;
- }
+  .carousel-header .carousel-caption .main-header h2 {
+    font-size: $font-size-xl;
+    margin-bottom: .5rem;
+  }
 }
 
 @media (min-width:992px) {
- .carousel-header .carousel-caption .main-header h2 {
-  max-width:100%;
-  width:100%;
-  color:#fff;
-  margin-bottom:.6rem;
-  line-height:1.2;
-  font-size:$font-size-xxl;
- }
+  .carousel-header .carousel-caption .main-header h2 {
+    max-width: 100%;
+    width: 100%;
+    color: #fff;
+    margin-bottom: .6rem;
+    line-height: 1.2;
+    font-size: $font-size-xxl;
+  }
 
- .carousel-header .carousel-caption .main-header p {
-  font-weight: 600;
- }
+  .carousel-header .carousel-caption .main-header p {
+    font-weight: 600;
+  }
 
   //content wrapper to facilitate longer headlines
-  .container.main-header > .carousel-captions-wrapper {
-    width: #{500 + ($text-slide-offset * 2)}!important;
+  .container.main-header>.carousel-captions-wrapper {
+    width: #{500 + ($text-slide-offset * 2)} !important;
   }
 
 }
 
 @media (min-width:1200px) {
- .carousel-header .carousel-caption .main-header h2 {
-  font-size:$font-size-xxxl;
-  line-height:1.1;
-  max-width:100%;
-  width:100%;
- }
-}
+  .carousel-header .carousel-caption .main-header {
+    h2 {
+      font-size: $font-size-xxxl;
+      line-height: 1.1;
+      max-width: 100%;
+      width: 100%;
+    }
 
+    p {
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+  }
+}
