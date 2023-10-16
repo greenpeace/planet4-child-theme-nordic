@@ -20,7 +20,8 @@ h6,
 .cover-card-excerpt,
 .articles-block h2,
 .article-list-item-headline a,
-.query-list-item-headline.wp-block-post-title a {
+.query-list-item-headline.wp-block-post-title a,
+a.search-result-item-headline {
   font-family: $roboto;
   font-weight: var(--headings-font-wight);
   margin-top: 0;

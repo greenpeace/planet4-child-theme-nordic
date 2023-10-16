@@ -25,3 +25,10 @@ body:not(.wp-block-button, a.wp-block-button__link) {
     padding-inline-start: 0;
   }
 }
+
+//Search page results
+li.search-result-list-item:hover {
+  a.search-result-item-headline {
+    text-decoration-color: $gp-green-50;
+  }
+}

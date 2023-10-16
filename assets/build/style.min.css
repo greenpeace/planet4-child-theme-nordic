@@ -644,7 +644,8 @@ h6,
 .cover-card-excerpt,
 .articles-block h2,
 .article-list-item-headline a,
-.query-list-item-headline.wp-block-post-title a {
+.query-list-item-headline.wp-block-post-title a,
+a.search-result-item-headline {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   font-weight: var(--headings-font-wight);
   margin-top: 0;
@@ -2521,6 +2522,11 @@ body:not(.wp-block-button, a.wp-block-button__link) {
             padding-inline-start: 0;
   }
 }
+li.search-result-list-item:hover a.search-result-item-headline {
+  -webkit-text-decoration-color: #66CC00;
+          text-decoration-color: #66CC00;
+}
+
 /* Generates mutilevel nested comments
 level-1 is the first level comment with a margin of 50px
 level-2 is the first level comment with a margin of 100px
