@@ -30,6 +30,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
 @charset "UTF-8";
 /*
 Theme Name: Greenpeace Planet 4 Child Theme for GP Nordic
@@ -5285,6 +5286,219 @@ and so on...
   .site-footer .copyright a, .site-footer .copyright p a {
     font-size: 0.75rem;
   }
+}
+
+.has-dark-shade-black-color {
+  color: #1a1a1a;
+}
+
+.has-dark-shade-black-background-color {
+  background-color: #1a1a1a;
+}
+
+.has-grey-60-color {
+  color: #6F7376;
+}
+
+.has-grey-60-background-color {
+  background-color: #6F7376;
+}
+
+.has-grey-40-color {
+  color: #bebfc2;
+}
+
+.has-grey-40-background-color {
+  background-color: #bebfc2;
+}
+
+.has-grey-20-color {
+  color: #ECECEC;
+}
+
+.has-grey-20-background-color {
+  background-color: #ECECEC;
+}
+
+.has-grey-10-color {
+  color: #F5F7F8;
+}
+
+.has-grey-10-background-color {
+  background-color: #F5F7F8;
+}
+
+.has-grey-color {
+  color: #333;
+}
+
+.has-grey-background-color {
+  background-color: #333;
+}
+
+.has-green-color {
+  color: #003300;
+}
+
+.has-green-background-color {
+  background-color: #003300;
+}
+
+.has-green-80-color {
+  color: #1b4a1b;
+}
+
+.has-green-80-background-color {
+  background-color: #1b4a1b;
+}
+
+.has-gp-green-color {
+  color: #66cc00;
+}
+
+.has-gp-green-background-color {
+  background-color: #66cc00;
+}
+
+.has-dark-tiber-color {
+  color: #052a30;
+}
+
+.has-dark-tiber-background-color {
+  background-color: #052a30;
+}
+
+.has-genoa-color {
+  color: #186a70;
+}
+
+.has-genoa-background-color {
+  background-color: #186a70;
+}
+
+.has-inch-worm-color {
+  color: #a7e021;
+}
+
+.has-inch-worm-background-color {
+  background-color: #a7e021;
+}
+
+.has-x-dark-blue-color {
+  color: #042233;
+}
+
+.has-x-dark-blue-background-color {
+  background-color: #042233;
+}
+
+.has-allports-color {
+  color: #007799;
+}
+
+.has-allports-background-color {
+  background-color: #007799;
+}
+
+.has-spray-color {
+  color: spray;
+}
+
+.has-spray-background-color {
+  background-color: spray;
+}
+
+.has-dark-blue-color {
+  color: #074365;
+}
+
+.has-dark-blue-background-color {
+  background-color: #074365;
+}
+
+.has-blue-color {
+  color: #2980b9;
+}
+
+.has-blue-background-color {
+  background-color: #2980b9;
+}
+
+.has-blue-60-color {
+  color: #63bbfd;
+}
+
+.has-blue-60-background-color {
+  background-color: #63bbfd;
+}
+
+.has-crimson-color {
+  color: #e51538;
+}
+
+.has-crimson-background-color {
+  background-color: #e51538;
+}
+
+.has-orange-hover-color {
+  color: #ee562d;
+}
+
+.has-orange-hover-background-color {
+  background-color: #ee562d;
+}
+
+.has-yellow-color {
+  color: #FFD200;
+}
+
+.has-yellow-background-color {
+  background-color: #FFD200;
+}
+
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --top-navigation--background: #fff;
+  --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --top-navigation--color: #000;
+  --top-navigation--separation: 1px solid #d8d8d8;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
+  --link--color: #198700;
+  --nav-link--hover--color: #000;
+  --nav-link--hover--text-decoration: underline 3px #66cc00;
+  --nav-link--hover--text-underline-position: under;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
+  --accordion-block-light-style--border-color: transparent;
+  --accordion-block-light-style--hover--background: #D9F1C5;
+  --accordion-block-dark-style--background: #076c50;
+  --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
+  --cover-card-btn--font-size: $font-size-sm;
+  --cover-card-heading--font-weight: 700;
+  --headings-font-wight: bold;
+  --headings--font-family: $roboto;
+  --btn-body-font-weight: 600;
+}
+
+.carousel-wrap .page-section-header {
+  font-weight: var(--headings-font-wight);
 }
 
 /* Generates mutilevel nested comments
