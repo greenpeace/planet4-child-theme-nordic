@@ -6,16 +6,19 @@
 .columns-block {
 
     @include mobile-and-tablet-only {
-        &.block-style-image, &.block-style-tasks, &.block-style-icons {
+
+        &.block-style-image,
+        &.block-style-tasks,
+        &.block-style-icons {
             .column-wrap h3 {
                 text-align: left;
             }
         }
     }
 
-
     //columns links 
-    &.block-style-icons, &.block-style-image {
+    &.block-style-icons,
+    &.block-style-image {
         .column-wrap a {
             border-bottom: none;
             text-decoration: none;
@@ -33,8 +36,10 @@
     }
 
 
-    h3, h5 {
-        font-weight: 700;
+    h2,
+    h3,
+    h5 {
+        font-weight: var(--headings-font-wight);
 
         a[data-ga-action="Title"] {
             color: $black;

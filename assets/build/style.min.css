@@ -607,7 +607,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -1130,7 +1130,7 @@ h2.page-section-header {
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -1344,7 +1344,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -1770,7 +1770,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -2314,7 +2314,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -2738,7 +2738,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -3147,7 +3147,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -3689,7 +3689,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -4146,7 +4146,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -4351,14 +4351,20 @@ and so on...
 .columns-block.block-style-tasks .can-do-steps-mobile .card .card-header.hover {
   background: var(--accordion-block-dark-style--hover--background);
 }
-.columns-block h3, .columns-block h5 {
-  font-weight: 700;
+.columns-block h2,
+.columns-block h3,
+.columns-block h5 {
+  font-weight: var(--headings-font-wight);
 }
-.columns-block h3 a[data-ga-action=Title], .columns-block h5 a[data-ga-action=Title] {
+.columns-block h2 a[data-ga-action=Title],
+.columns-block h3 a[data-ga-action=Title],
+.columns-block h5 a[data-ga-action=Title] {
   color: #000;
   font-weight: var(--headings-font-weight);
 }
-.columns-block h3 a[data-ga-action=Title]:hover, .columns-block h5 a[data-ga-action=Title]:hover {
+.columns-block h2 a[data-ga-action=Title]:hover,
+.columns-block h3 a[data-ga-action=Title]:hover,
+.columns-block h5 a[data-ga-action=Title]:hover {
   color: #198700;
   text-decoration: none;
 }
@@ -4578,7 +4584,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -5016,7 +5022,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -5493,7 +5499,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -5711,7 +5717,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -6177,7 +6183,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -6606,7 +6612,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -7078,7 +7084,7 @@ and so on...
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
@@ -8172,7 +8178,7 @@ blockquote.wp-block-quote cite,
   --blockquote-border-color: #66CC00;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
-  --headings-font-wight: bold;
+  --headings-font-wight: 700;
   --headings--font-family: $roboto;
   --btn-body-font-weight: 600;
 }
