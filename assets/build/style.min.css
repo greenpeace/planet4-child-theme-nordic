@@ -2529,6 +2529,10 @@ li.search-result-list-item:hover a.search-result-item-headline {
           text-decoration-color: #66CC00;
 }
 
+.single-post-time:hover {
+  text-decoration: none;
+}
+
 /* Generates mutilevel nested comments
 level-1 is the first level comment with a margin of 50px
 level-2 is the first level comment with a margin of 100px
