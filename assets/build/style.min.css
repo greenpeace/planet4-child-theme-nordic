@@ -652,6 +652,7 @@ a.search-result-item-headline {
   margin-top: 0;
   margin-bottom: 0.5rem;
   line-height: 1.25;
+  color: inherit;
 }
 
 h1,
