@@ -74,6 +74,7 @@ span.cover-card-tag {
       a.cover-card-heading[data-ga-action="Title"] {
         text-decoration: none;
         font-weight: var(--cover-card-heading--font-weight);
+        color: $black!important;
 
         // &:hover {
         //   text-decoration: underline;

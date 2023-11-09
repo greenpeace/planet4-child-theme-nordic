@@ -34,12 +34,14 @@ li.search-result-list-item:hover {
 }
 
 //single post 
-.single-post-author {
+.single-post-author,
+.single-post-author a {
   font-family: $gp-sans;
   font-weight: var(--font-weight-regular);
 
-  a:hover {
-    text-decoration-color: $gp-green-50!important;
+  a:hover,
+  &:hover {
+    text-decoration-color: $gp-green-50 !important;
   }
 }
 

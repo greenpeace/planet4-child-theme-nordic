@@ -92,7 +92,7 @@ a.comment-link>span.display-text {
 
 .article-list-item-author {
   font-family: $gp-sans;
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-regular)!important;
 
   a:hover {
     -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);

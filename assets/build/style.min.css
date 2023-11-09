@@ -2056,7 +2056,7 @@ a.comment-link > span.display-text:visited {
 
 .article-list-item-author {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-regular) !important;
 }
 .article-list-item-author a:hover {
   transition: height 0.2s cubic-bezier(0.5, 0, 0, 1);
@@ -2529,10 +2529,13 @@ li.search-result-list-item:hover a.search-result-item-headline {
           text-decoration-color: #66CC00;
 }
 
-.single-post-author {
+.single-post-author,
+.single-post-author a {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
   font-weight: var(--font-weight-regular);
 }
+.single-post-author a:hover, .single-post-author:hover,
+.single-post-author a a:hover,
 .single-post-author a:hover {
   -webkit-text-decoration-color: #66CC00 !important;
           text-decoration-color: #66CC00 !important;
@@ -8272,6 +8275,7 @@ span.cover-card-tag {
 .take-action-covers-block .cover:hover a.cover-card-heading[data-ga-action=Title] {
   text-decoration: none;
   font-weight: var(--cover-card-heading--font-weight);
+  color: #000 !important;
 }
 .take-action-covers-block .cover .content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a {
   color: #3c7800 !important;
