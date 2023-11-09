@@ -8300,4 +8300,17 @@ span.cover-card-tag {
   text-decoration-color: #66CC00;
 }
 
+.boxout {
+  border-radius: 1rem;
+}
+.boxout a.boxout-heading[data-ga-category="Take Action Boxout"] {
+  font-weight: var(--cover-card-heading--font-weight);
+}
+.boxout a.boxout-heading[data-ga-category="Take Action Boxout"]:hover {
+  text-decoration: none;
+}
+.boxout a.btn-action.cover-card-btn[data-ga-category="Take Action Boxout"] {
+  padding: 1rem;
+}
+
 /*# sourceMappingURL=style.min.css.map*/

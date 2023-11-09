@@ -25,7 +25,7 @@
 
 span.cover-card-tag {
   font-family: $gp-sans;
-  font-weight: 500!important;
+  font-weight: 500 !important;
 }
 
 // Define your $gp-green-50 variable with the appropriate color value
@@ -74,7 +74,7 @@ span.cover-card-tag {
       a.cover-card-heading[data-ga-action="Title"] {
         text-decoration: none;
         font-weight: var(--cover-card-heading--font-weight);
-        color: $black!important;
+        color: $black !important;
 
         // &:hover {
         //   text-decoration: underline;
@@ -113,5 +113,22 @@ span.cover-card-tag {
     -webkit-text-decoration-color: $gp-green-50;
     -moz-text-decoration-color: $gp-green-50;
     text-decoration-color: $gp-green-50;
+  }
+}
+
+//TA Boxout
+.boxout {
+  border-radius: 1rem;
+
+  a.boxout-heading[data-ga-category="Take Action Boxout"] {
+    font-weight: var(--cover-card-heading--font-weight);
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  a.btn-action.cover-card-btn[data-ga-category="Take Action Boxout"] {
+    padding: 1rem;
   }
 }
