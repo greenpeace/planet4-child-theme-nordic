@@ -21,7 +21,8 @@ h6,
 .articles-block h2,
 .article-list-item-headline a,
 .query-list-item-headline.wp-block-post-title a,
-a.search-result-item-headline {
+a.search-result-item-headline,
+.page-section-header {
   font-family: $roboto;
   font-weight: var(--headings-font-wight);
   margin-top: 0;

@@ -45,6 +45,7 @@ a.btn.post-tag-button span:nth-child(2) {
   background: $gp-green-5;
   border: none;
   font-family: $gp-sans;
+  font-weight: var(--font-weight-regular);
 
   &:hover {
     color: $black;
@@ -66,11 +67,6 @@ a.btn.post-tag-button span:nth-child(2) {
     color: $grey-80;
     font-weight: var(--font-weight-regular);
   }
-}
-
-.single-post-author a {
-  font-family: $gp-sans;
-  font-weight: var(--font-weight-regular);
 }
 
 //post info preview

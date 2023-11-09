@@ -646,7 +646,8 @@ h6,
 .articles-block h2,
 .article-list-item-headline a,
 .query-list-item-headline.wp-block-post-title a,
-a.search-result-item-headline {
+a.search-result-item-headline,
+.page-section-header {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   font-weight: var(--headings-font-wight);
   margin-top: 0;
@@ -2007,6 +2008,7 @@ a.btn.post-tag-button span:nth-child(2) {
   background: rgba(217, 241, 197, 0.5019607843);
   border: none;
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+  font-weight: var(--font-weight-regular);
 }
 a.btn.post-tag-button:hover,
 a.btn.post-tag-button span:nth-child(2):hover {
@@ -2023,11 +2025,6 @@ a.btn.post-tag-button span:nth-child(2):visited {
 .article-list-item-meta span.article-list-item-author a {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
   color: #45494C;
-  font-weight: var(--font-weight-regular);
-}
-
-.single-post-author a {
-  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
   font-weight: var(--font-weight-regular);
 }
 
