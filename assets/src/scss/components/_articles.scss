@@ -63,12 +63,14 @@ a.btn.post-tag-button span:nth-child(2) {
   span.article-list-item-author a,
   span.article-list-item-author a {
     font-family: $gp-sans;
-    color: $grey-50;
+    color: $grey-80;
+    font-weight: var(--font-weight-regular);
   }
 }
 
 .single-post-author a {
   font-family: $gp-sans;
+  font-weight: var(--font-weight-regular);
 }
 
 //post info preview
@@ -94,6 +96,7 @@ a.comment-link>span.display-text {
 
 .article-list-item-author {
   font-family: $gp-sans;
+  font-weight: var(--font-weight-regular);
 
   a:hover {
     -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);

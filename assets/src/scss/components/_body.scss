@@ -34,6 +34,16 @@ li.search-result-list-item:hover {
 }
 
 //single post 
+
+.single-post-author {
+  font-family: $gp-sans;
+  font-weight: var(--font-weight-regular);
+
+  a:hover {
+    text-decoration-color: $gp-green-50!important;
+  }
+}
+
 .single-post-time:hover {
   text-decoration: none;
 }

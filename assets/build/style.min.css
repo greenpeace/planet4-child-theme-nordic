@@ -2022,11 +2022,13 @@ a.btn.post-tag-button span:nth-child(2):visited {
 .article-list-item-meta span.article-list-item-author a,
 .article-list-item-meta span.article-list-item-author a {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
-  color: #A3A5A7;
+  color: #45494C;
+  font-weight: var(--font-weight-regular);
 }
 
 .single-post-author a {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+  font-weight: var(--font-weight-regular);
 }
 
 a.tag-item.tag,
@@ -2057,6 +2059,7 @@ a.comment-link > span.display-text:visited {
 
 .article-list-item-author {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+  font-weight: var(--font-weight-regular);
 }
 .article-list-item-author a:hover {
   transition: height 0.2s cubic-bezier(0.5, 0, 0, 1);
@@ -2527,6 +2530,15 @@ body:not(.wp-block-button, a.wp-block-button__link) {
 li.search-result-list-item:hover a.search-result-item-headline {
   -webkit-text-decoration-color: #66CC00;
           text-decoration-color: #66CC00;
+}
+
+.single-post-author {
+  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+  font-weight: var(--font-weight-regular);
+}
+.single-post-author a:hover {
+  -webkit-text-decoration-color: #66CC00 !important;
+          text-decoration-color: #66CC00 !important;
 }
 
 .single-post-time:hover {
