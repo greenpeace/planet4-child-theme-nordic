@@ -10,7 +10,7 @@
 // $navbar-default-height: 60px;
 
 a.nav-link {
-  font-family: $helvetica;
+  //font-family: $helvetica;
   font-weight: 600;
 
   @include mobile-only {
@@ -51,6 +51,10 @@ a.nav-link {
 .secondary-menu {
   margin: 0;
 
+  p.nav-link a,
+  p.nav-link a strong {
+    font-weight: 700!important;
+  }
   p:hover {
     color: $gp-green-80;
   }
