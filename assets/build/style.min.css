@@ -1535,20 +1535,26 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
+.accordion-block {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+}
+
 .accordion-block .accordion-content {
   margin-bottom: -1rem;
+  font-family: var(--headings--font-family);
 }
 .accordion-block .accordion-content .accordion-headline {
   line-height: initial;
   font-weight: 600;
-  font-family: var(--headings--font-family);
+  font-weight: var(--font-weight-regular);
 }
 .accordion-block .accordion-content .accordion-headline:hover {
-  font-weight: 700;
+  font-weight: var(--headings-font-wight);
 }
 
 .block.accordion-block.wp-block-planet4-blocks-accordion.is-style-dark .accordion-headline {
   background: var(--accordion-block-dark-style--background);
+  font-family: var(--headings--font-family);
 }
 .block.accordion-block.wp-block-planet4-blocks-accordion.is-style-dark .accordion-headline:hover {
   background: var(--accordion-block-dark-style--hover--background);
@@ -1557,6 +1563,7 @@ and so on...
 .block.accordion-block.wp-block-planet4-blocks-accordion.is-style-light .accordion-headline {
   background: var(--accordion-block-light-style--background);
   border-color: var(--accordion-block-light-style--border-color);
+  font-family: var(--headings--font-family);
 }
 .block.accordion-block.wp-block-planet4-blocks-accordion.is-style-light .accordion-headline:hover {
   background: var(--accordion-block-light-style--hover--background);
@@ -2509,7 +2516,7 @@ html {
   transition-duration: 0.4s;
 }
 
-body:not(.wp-block-button, a.wp-block-button__link) {
+body {
   color: #4d4d4d;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
 }

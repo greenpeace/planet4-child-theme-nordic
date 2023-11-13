@@ -3,15 +3,20 @@
 @import "../base/colors";
 @import "../base/fonts";
 
+.accordion-block {
+    font-family: $roboto;
+}
+
 .accordion-block .accordion-content {
     margin-bottom: -1rem;
-
+    font-family: var(--headings--font-family);
     .accordion-headline {
         line-height: initial;
         font-weight: 600;
-        font-family: var(--headings--font-family);
+        font-weight: var(--font-weight-regular);
+        
         &:hover {
-            font-weight: 700;
+            font-weight: var(--headings-font-wight);
         }
     }
 }
@@ -19,6 +24,7 @@
 .block.accordion-block.wp-block-planet4-blocks-accordion.is-style-dark {
     .accordion-headline {
         background: var(--accordion-block-dark-style--background);
+        font-family: var(--headings--font-family);
 
         &:hover {
             background: var(--accordion-block-dark-style--hover--background);
@@ -30,6 +36,7 @@
     .accordion-headline {
         background: var(--accordion-block-light-style--background);
         border-color: var(--accordion-block-light-style--border-color);
+        font-family: var(--headings--font-family);
 
         &:hover {
             background: var(--accordion-block-light-style--hover--background);
