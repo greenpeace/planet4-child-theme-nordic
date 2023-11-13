@@ -831,7 +831,7 @@ a {
   box-shadow: none !important;
 }
 
-.page-content li > a:not(.button--ghost),
+.page-content li > a:not(.button--ghost, .submenu-link),
 .page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong, .acf-label > p > a, small > p > a,
 .is-pattern-p4-quick-links > a, .is-pattern-p4-quick-links strong a),
 .post-content li > a,
@@ -847,7 +847,7 @@ strong > a {
   font-weight: inherit;
   color: inherit;
 }
-.page-content li > a:not(.button--ghost):hover, .page-content li > a:not(.button--ghost):visited,
+.page-content li > a:not(.button--ghost, .submenu-link):hover, .page-content li > a:not(.button--ghost, .submenu-link):visited,
 .page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong, .acf-label > p > a, small > p > a,
 .is-pattern-p4-quick-links > a, .is-pattern-p4-quick-links strong a):hover,
 .page-content p > a:not(.secondary-menu > .nav-link > a, .secondary-menu > .nav-link > a > strong, .acf-label > p > a, small > p > a,
