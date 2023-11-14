@@ -2112,6 +2112,38 @@ div.wrapper-post-tag ::before,
     hyphens: auto;
   }
 }
+.author-block {
+  background: rgba(217, 241, 197, 0.5019607843) !important;
+}
+.author-block h2.author-block-info-title {
+  font-weight: 500;
+  color: #6F7376;
+  font-size: 0.85rem;
+}
+.author-block h5.author-block-info-name {
+  margin-bottom: 0;
+}
+.author-block h5.author-block-info-name a {
+  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+  color: #198700;
+}
+.author-block h5.author-block-info-name a:hover {
+  transition: height 0.2s cubic-bezier(0.5, 0, 0, 1);
+  border-bottom: 3px solid #66CC00;
+  text-decoration: none;
+  box-shadow: none;
+}
+.author-block div[itemprop=description] {
+  padding: 1rem 0;
+}
+.author-block div[itemprop=description] .author-block-description-button span.show-more,
+.author-block div[itemprop=description] .author-block-description-button span.show-less {
+  font-size: smaller;
+  text-align: right;
+  color: #198700;
+  padding-top: 0.5rem;
+}
+
 /* Generates mutilevel nested comments
 level-1 is the first level comment with a margin of 50px
 level-2 is the first level comment with a margin of 100px
@@ -4799,7 +4831,7 @@ and so on...
 }
 .author-block, .comments-block .form-section .comment-respond {
   background: rgba(236, 236, 236, 0.25);
-  box-shadow: 0 1px 3px 0 rgba(31, 38, 135, 0.18);
+  box-shadow: 0 1px 3px 0 rgba(31, 38, 135, 0.1803921569);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   -ms-backdrop-filter: blur(4px);
@@ -4807,7 +4839,7 @@ and so on...
 }
 
 .author-block-info div[itemprop=description] {
-  font-family: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   color: initial;
 }
 .author-block-info div[itemprop=description] span.show-more,

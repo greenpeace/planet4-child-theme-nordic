@@ -6,7 +6,7 @@
 //Author info in posts
 .author-block, .comments-block .form-section .comment-respond{
   background: rgba( 236, 236, 236, 0.25 );
-  box-shadow: 0 1px 3px 0 rgba( 31, 38, 135, 0.18 );
+  box-shadow: 0 1px 3px 0 #1f26872e;
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
   -ms-backdrop-filter: blur( 4px );
@@ -14,7 +14,7 @@
 }
 
 .author-block-info div[itemprop="description"] {
-  font-family: $helvetica;
+  font-family: $roboto;
   color: initial;
 
   span.show-more,

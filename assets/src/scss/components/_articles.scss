@@ -92,7 +92,7 @@ a.comment-link>span.display-text {
 
 .article-list-item-author {
   font-family: $gp-sans;
-  font-weight: var(--font-weight-regular)!important;
+  font-weight: var(--font-weight-regular) !important;
 
   a:hover {
     -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
@@ -153,4 +153,53 @@ div.wrapper-post-tag ::before,
     -ms-hyphens: auto;
     hyphens: auto;
   }
+}
+
+//author profile
+.author-block {
+  background: $gp-green-5 !important;
+
+  h2.author-block-info-title {
+    font-weight: 500;
+    color: $grey-60;
+    font-size: .85rem;
+  }
+
+  h5.author-block-info-name {
+    margin-bottom: 0;
+
+    a {
+      font-family: $gp-sans;
+      color: $gp-green-80;
+
+      &:hover {
+        -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+        -o-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+        -moz-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+        transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+        border-bottom: 3px solid $gp-green-50;
+        text-decoration: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  div[itemprop="description"] {
+    padding: 1rem 0;
+
+    .author-block-description-button {
+
+      span.show-more,
+      span.show-less {
+        font-size: smaller;
+        text-align: right;
+        color: $gp-green-80;
+        padding-top: .5rem;
+
+      }
+
+    }
+
+  }
+
 }
