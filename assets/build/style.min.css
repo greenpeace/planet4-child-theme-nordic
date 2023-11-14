@@ -2026,12 +2026,12 @@ a.btn.post-tag-button span:nth-child(2):visited {
   color: #198700;
 }
 
+.query-list-item-meta span.article-list-item-author,
 .query-list-item-meta span.article-list-item-author a,
-.query-list-item-meta span.article-list-item-author a,
-.article-list-item-meta span.article-list-item-author a,
+.article-list-item-meta span.article-list-item-author,
 .article-list-item-meta span.article-list-item-author a {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
-  color: #45494C;
+  color: #4d4d4d;
   font-weight: var(--font-weight-regular);
 }
 

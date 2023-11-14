@@ -61,10 +61,10 @@ a.btn.post-tag-button span:nth-child(2) {
 .query-list-item-meta,
 .article-list-item-meta {
 
-  span.article-list-item-author a,
+  span.article-list-item-author,
   span.article-list-item-author a {
     font-family: $gp-sans;
-    color: $grey-80;
+    color: $grey-70;
     font-weight: var(--font-weight-regular);
   }
 }
