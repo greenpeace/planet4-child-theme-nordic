@@ -124,11 +124,20 @@ span.cover-card-tag {
     font-weight: var(--cover-card-heading--font-weight);
 
     &:hover {
-      text-decoration: none;
+      text-decoration: none !important;
     }
   }
 
   a.btn-action.cover-card-btn[data-ga-category="Take Action Boxout"] {
     padding: 1rem;
+  }
+
+  @include large-and-up {
+    height: 15rem;
+
+    img {
+      border-bottom-left-radius: 1rem;
+      border-top-left-radius: 1rem;
+    }
   }
 }

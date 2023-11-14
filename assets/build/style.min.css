@@ -8336,10 +8336,19 @@ span.cover-card-tag {
   font-weight: var(--cover-card-heading--font-weight);
 }
 .boxout a.boxout-heading[data-ga-category="Take Action Boxout"]:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .boxout a.btn-action.cover-card-btn[data-ga-category="Take Action Boxout"] {
   padding: 1rem;
+}
+@media (min-width: 992px) {
+  .boxout {
+    height: 15rem;
+  }
+  .boxout img {
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+  }
 }
 
 /*# sourceMappingURL=style.min.css.map*/
