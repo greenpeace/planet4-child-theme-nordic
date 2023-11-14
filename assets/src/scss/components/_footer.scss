@@ -11,13 +11,13 @@
     //footer fix bakground
     background: $gp-nor-green-3;
 
-    a[data-ga-category="Country Selector"]:hover{
-      -webkit-transition: height 0.2s cubic-bezier(.5,0,0,1);
-      -o-transition: height 0.2s cubic-bezier(.5,0,0,1);
-      -moz-transition: height 0.2s cubic-bezier(.5,0,0,1);
-      transition: height 0.2s cubic-bezier(.5,0,0,1);
+    a[data-ga-category="Country Selector"]:hover {
+      -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+      -o-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+      -moz-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+      transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
       border-bottom: 2px solid $gp-green-50;
-      text-decoration: none;  
+      text-decoration: none;
       box-shadow: none;
       text-decoration: none;
     }
@@ -42,12 +42,12 @@
       width: auto;
 
       &:hover {
-        -webkit-transition: height 0.2s cubic-bezier(.5,0,0,1);
-        -o-transition: height 0.2s cubic-bezier(.5,0,0,1);
-        -moz-transition: height 0.2s cubic-bezier(.5,0,0,1);
-        transition: height 0.2s cubic-bezier(.5,0,0,1);
+        -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+        -o-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+        -moz-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+        transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
         border-bottom: 2px solid $gp-green-50;
-        text-decoration: none;  
+        text-decoration: none;
         box-shadow: none;
         text-decoration: none;
       }
@@ -55,35 +55,42 @@
 
   }
 
-  a:hover:not(.footer-social-media a.footer-social-media li a, .copyright a:hover){
+  a:hover:not(.footer-social-media a.footer-social-media li a, .copyright a:hover) {
     text-decoration: none;
   }
 
-  .footer-social-media li {
-    color: inherit;
-
-    a svg:hover {
-      color: $gp-green-50;
-      text-decoration: none;
-      border-bottom: none;
+  .footer-social-media {
+    span {
+      font-weight: 600;
     }
 
-    .icon {
-      width: 34px;
-      height: 34px;
+    li {
+      color: inherit;
+
+      a svg:hover {
+        color: $gp-green-50;
+        text-decoration: none;
+        border-bottom: none;
+      }
+
+      .icon {
+        width: 34px;
+        height: 34px;
+      }
     }
   }
 
-  a[data-ga-action="Footer Links"]{
+  a[data-ga-action="Footer Links"] {
     font-weight: 500;
     text-decoration: none;
+
     &:hover {
-      -webkit-transition: height 0.2s cubic-bezier(.5,0,0,1);
-      -o-transition: height 0.2s cubic-bezier(.5,0,0,1);
-      -moz-transition: height 0.2s cubic-bezier(.5,0,0,1);
-      transition: height 0.2s cubic-bezier(.5,0,0,1);
+      -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+      -o-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+      -moz-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+      transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
       border-bottom: 2px solid $gp-green-50;
-      text-decoration: none;  
+      text-decoration: none;
       box-shadow: none;
       text-decoration: none;
     }
@@ -94,14 +101,17 @@
     font-weight: inherit;
   }
 
-  ul.list-unstyled.footer-links-secondary li a, p.copyright-text {
+  ul.list-unstyled.footer-links-secondary li a,
+  p.copyright-text {
     font-weight: inherit;
     font-size: .75rem;
     line-height: 1;
   }
 
   @include mobile-and-tablet-only {
-    .copyright a, .copyright p a {
+
+    .copyright a,
+    .copyright p a {
       font-size: .75rem;
     }
   }

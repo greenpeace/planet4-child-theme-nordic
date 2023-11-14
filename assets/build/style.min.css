@@ -5280,6 +5280,9 @@ and so on...
 .site-footer a:hover:not(.footer-social-media a.footer-social-media li a, .copyright a:hover) {
   text-decoration: none;
 }
+.site-footer .footer-social-media span {
+  font-weight: 600;
+}
 .site-footer .footer-social-media li {
   color: inherit;
 }
@@ -5307,13 +5310,15 @@ and so on...
   font-family: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
   font-weight: inherit;
 }
-.site-footer ul.list-unstyled.footer-links-secondary li a, .site-footer p.copyright-text {
+.site-footer ul.list-unstyled.footer-links-secondary li a,
+.site-footer p.copyright-text {
   font-weight: inherit;
   font-size: 0.75rem;
   line-height: 1;
 }
 @media (max-width: 992px) {
-  .site-footer .copyright a, .site-footer .copyright p a {
+  .site-footer .copyright a,
+  .site-footer .copyright p a {
     font-size: 0.75rem;
   }
 }
