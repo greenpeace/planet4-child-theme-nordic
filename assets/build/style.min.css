@@ -6420,13 +6420,10 @@ and so on...
   font-size: 0.75rem !important;
   border-bottom: none !important;
 }
-.leads-form__form__container small p a {
+
+.leads-form__main-container small p a.consent {
   font-weight: 500 !important;
   font-size: 0.75rem !important;
-  border-bottom: none;
-}
-
-a.consent.external-link {
   border-bottom: none !important;
 }
 

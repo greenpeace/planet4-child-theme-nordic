@@ -29,19 +29,18 @@
     a {
       font-weight: 500 !important;
       font-size: 0.75rem !important;
-      border-bottom: none!important;
+      border-bottom: none !important;
     }
   }
 
-  & small p a {
-    font-weight: 500 !important;
-    font-size: 0.75rem !important;
-    border-bottom: none;
-  }
 }
 
-a.consent.external-link {
-  border-bottom: none!important;
+.leads-form__main-container {
+  & small p a.consent {
+    font-weight: 500 !important;
+    font-size: 0.75rem !important;
+    border-bottom: none !important;
+  }
 }
 
 // .leads-form #donate-button {
