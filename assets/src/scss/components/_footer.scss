@@ -5,11 +5,12 @@
 
 .site-footer {
   background: $gp-nor-green;
-  font-family: $helvetica;
+  font-family: var(--headings--font-family);
 
   .countries-list {
-    //footer fix bakground
-    background: $gp-nor-green-3;
+    background: $gp-nor-green;
+    font-family: var(--headings--font-family);
+    font-weight: 600;
 
     a[data-ga-category="Country Selector"]:hover {
       -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);

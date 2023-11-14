@@ -5237,10 +5237,12 @@ and so on...
 }
 .site-footer {
   background: #005c42;
-  font-family: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
+  font-family: var(--headings--font-family);
 }
 .site-footer .countries-list {
-  background: #076c50;
+  background: #005c42;
+  font-family: var(--headings--font-family);
+  font-weight: 600;
 }
 .site-footer .countries-list a[data-ga-category="Country Selector"]:hover {
   transition: height 0.2s cubic-bezier(0.5, 0, 0, 1);
