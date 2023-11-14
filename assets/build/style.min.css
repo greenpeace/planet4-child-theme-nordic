@@ -5239,6 +5239,13 @@ and so on...
   background: #005c42;
   font-family: var(--headings--font-family);
 }
+.site-footer .country-selector-toggle:hover, .site-footer .country-selector-toggle:active {
+  text-decoration: none !important;
+  color: #66CC00;
+}
+.site-footer .country-selector-toggle:hover::before, .site-footer .country-selector-toggle:active::before {
+  background-color: #66CC00;
+}
 .site-footer .countries-list {
   background: #005c42;
   font-family: var(--headings--font-family);

@@ -7,6 +7,19 @@
   background: $gp-nor-green;
   font-family: var(--headings--font-family);
 
+  .country-selector-toggle {
+
+    &:hover,
+    &:active {
+      text-decoration: none !important;
+      color: $gp-green-50;
+
+      &::before {
+        background-color: $gp-green-50;
+      }
+    }
+  }
+
   .countries-list {
     background: $gp-nor-green;
     font-family: var(--headings--font-family);
