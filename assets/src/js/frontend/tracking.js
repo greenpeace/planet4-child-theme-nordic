@@ -2,7 +2,6 @@
 window.addEventListener('DOMContentLoaded', (event) => {
   jQuery('.submenu-link').on('click', function(e) {
     let submenuLinkHref = jQuery(this).attr('href');
-    // console.log(href);
     window.dataLayer.push({
       'link': submenuLinkHref,
       'event': 'menuClick'
@@ -15,12 +14,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     window.dataLayer.push({
       'pageType': 'Deep-dive Topic'
     });
-    // console.log(dataLayer);
   } else if (document.querySelectorAll(".page-content.container .is-pattern-p4-high-level-topic-pattern-layout").length > 0) {
     window.dataLayer.push({
       'pageType': 'High-level Topic'
     });
-    // console.log(dataLayer);
   } else {
     //console.log("Default page");
   }

@@ -403,7 +403,6 @@ document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener('DOMContentLoaded', function (event) {
   jQuery('.submenu-link').on('click', function (e) {
     var submenuLinkHref = jQuery(this).attr('href');
-    // console.log(href);
     window.dataLayer.push({
       'link': submenuLinkHref,
       'event': 'menuClick'
@@ -416,12 +415,10 @@ window.addEventListener('DOMContentLoaded', function (event) {
     window.dataLayer.push({
       'pageType': 'Deep-dive Topic'
     });
-    // console.log(dataLayer);
   } else if (document.querySelectorAll(".page-content.container .is-pattern-p4-high-level-topic-pattern-layout").length > 0) {
     window.dataLayer.push({
       'pageType': 'High-level Topic'
     });
-    // console.log(dataLayer);
   } else {
     //console.log("Default page");
   }
