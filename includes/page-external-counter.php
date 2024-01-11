@@ -18,39 +18,43 @@ update_post_meta( $page_id, 'p4_do_not_index', true );
 
 //get the params
 $externalKey = $_GET['var'];
-$externalURL = $_GET['url'];
+// Validate and sanitize the URL
+$externalURL = isset($_GET['url']) ? $_GET['url'] : '';
+$externalURL = filter_var($externalURL, FILTER_SANITIZE_URL);
 
-//if url is empty, return the permalink of the current page with the external key
-if ( !empty( $externalURL ) ) {
-	$externalKey = $_GET['var'];
-	$externalURL = $_GET['url'];
-}
-//returns the value of the url
-else
-{
-	// $externalURL = get_permalink();
-	$externalKey = 'value';
-	//add a sample counter to the url so it doesn't return an error
-	$externalURL = 'https://api.countapi.xyz/get/greenpeace.rocks/visits';
-}
+// Check if the URL is valid
+if (filter_var($externalURL, FILTER_VALIDATE_URL)) {
+    // Fetch external JSON content
+    $externalJSON = file_get_contents($externalURL);
 
-//stringify the JSON
-$externalJSON = file_get_contents($externalURL);
-$externalData = json_decode($externalJSON, true);
-//rewrite the key
-$rewriteKey = $externalKey;
-$rewriteValue = isset($externalData[$rewriteKey]) ? $externalData[$rewriteKey] : 0;
-//Create array with the the new value and output as JSON
-$output = [ 'counter' => $rewriteValue ];
+    // Validate that $externalJSON contains valid JSON before decoding
+    if ($externalJSON !== false) {
+        // Decode JSON
+        $externalData = json_decode($externalJSON, true);
 
-function outputJSON($output) {
-	header( 'Content-type: application/json; charset=utf-8; Cache-Control: no-cache, must-revalidate');
-	header( 'Content-Description: External API Endpoint Formatting' );
-	header( 'X-Robots-Tag: noindex, nofollow, noarchive', true );
-	http_response_code(200);
-	echo json_encode($output);
-	exit();
+        //rewrite the key
+		$rewriteKey = $externalKey;
+		$rewriteValue = isset($externalData[$rewriteKey]) ? $externalData[$rewriteKey] : 0;
+		//Create array with the the new value and output as JSON
+		$output = [ 'counter' => $rewriteValue ];
+
+		function outputJSON($output) {
+			header( 'Content-type: application/json; charset=utf-8; Cache-Control: no-cache, must-revalidate');
+			header( 'Content-Description: External API Endpoint Formatting' );
+			header( 'X-Robots-Tag: noindex, nofollow, noarchive', true );
+			http_response_code(200);
+			echo json_encode($output);
+			exit();
+		}
+		outputJSON($output);
+
+    } else {
+        // Handle error loading external JSON
+        echo json_encode(['error' => 'Unable to fetch external JSON']);
+    }
+} else {
+    // Handle invalid URL
+    echo json_encode(['error' => 'Invalid URL']);
 }
-outputJSON($output);
 
 ?>
