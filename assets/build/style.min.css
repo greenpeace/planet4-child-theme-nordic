@@ -2070,7 +2070,6 @@ a.comment-link > span.display-text:visited {
   border-bottom: 2px solid #66CC00;
   text-decoration: none;
   box-shadow: none;
-  text-decoration: none;
 }
 
 div.query-list-item-post-terms div.taxonomy-p4-page-type a[rel=tag],
@@ -3435,7 +3434,6 @@ a[data-ga-action=Donate],
 }
 
 .boxout:hover .btn {
-  background: #4CB500;
   color: #fff;
   border: none;
   background-position: center;
@@ -5288,7 +5286,6 @@ and so on...
   border-bottom: 2px solid #66CC00;
   text-decoration: none;
   box-shadow: none;
-  text-decoration: none;
 }
 .site-footer .footer-menu {
   margin-bottom: 0;
@@ -5316,7 +5313,6 @@ and so on...
   border-bottom: 2px solid #66CC00;
   text-decoration: none;
   box-shadow: none;
-  text-decoration: none;
 }
 .site-footer a:hover:not(.footer-social-media a.footer-social-media li a, .copyright a:hover) {
   text-decoration: none;
@@ -5345,7 +5341,6 @@ and so on...
   border-bottom: 2px solid #66CC00;
   text-decoration: none;
   box-shadow: none;
-  text-decoration: none;
 }
 .site-footer ul.list-unstyled.footer-links li a {
   font-family: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
@@ -7433,7 +7428,6 @@ blockquote.wp-block-quote {
   border-left: 4px solid #66CC00;
   padding: 0.5rem;
   border-top: none;
-  border-bottom: none;
   border-bottom: none;
 }
 
