@@ -48,3 +48,8 @@ li.search-result-list-item:hover {
 .single-post-time:hover {
   text-decoration: none;
 }
+
+//editor page layouts
+.block-editor-block-patterns-list__item[role="option"]{
+  height: auto!important;
+}
