@@ -6,6 +6,7 @@ window.dataLayer = window.dataLayer || [];
 
 //adding other scripts
 import './frontend/blockquote';
+import './frontend/leadsplugin.js';
 import './frontend/nosearch';
 import './frontend/optimonk';
 import './frontend/templates.js';

@@ -98,14 +98,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _frontend_blockquote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./frontend/blockquote */ "./assets/src/js/frontend/blockquote.js");
-/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./frontend/nosearch */ "./assets/src/js/frontend/nosearch.js");
-/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_frontend_nosearch__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _frontend_optimonk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./frontend/optimonk */ "./assets/src/js/frontend/optimonk.js");
-/* harmony import */ var _frontend_optimonk__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_frontend_optimonk__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./frontend/templates.js */ "./assets/src/js/frontend/templates.js");
-/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend/tracking */ "./assets/src/js/frontend/tracking.js");
-/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_frontend_tracking__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./frontend/leadsplugin.js */ "./assets/src/js/frontend/leadsplugin.js");
+/* harmony import */ var _frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./frontend/nosearch */ "./assets/src/js/frontend/nosearch.js");
+/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_frontend_nosearch__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _frontend_optimonk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./frontend/optimonk */ "./assets/src/js/frontend/optimonk.js");
+/* harmony import */ var _frontend_optimonk__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_frontend_optimonk__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend/templates.js */ "./assets/src/js/frontend/templates.js");
+/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./frontend/tracking */ "./assets/src/js/frontend/tracking.js");
+/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_frontend_tracking__WEBPACK_IMPORTED_MODULE_6__);
 //import $ from the global scope
 
 // Expose jQuery to the global object
@@ -113,6 +115,7 @@ window.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a || jQuery;
 window.dataLayer = window.dataLayer || [];
 
 //adding other scripts
+
 
 
 
@@ -254,6 +257,81 @@ try {
 
 /***/ }),
 
+/***/ "./assets/src/js/frontend/leadsplugin.js":
+/*!***********************************************!*\
+  !*** ./assets/src/js/frontend/leadsplugin.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//temporary tweak for the finnish campaign 
+document.addEventListener('DOMContentLoaded', function () {
+  // Check if the specific page element exists
+  var leadsForm = document.querySelector('div.leads-form.postcode-modifier');
+  if (leadsForm) {
+    console.log('Leads form found:', leadsForm);
+
+    // Find the container within the leadsForm
+    var leadsFormContainer = leadsForm.querySelector('.leads-form__form__container');
+    if (leadsFormContainer) {
+      console.log('Leads form container found:', leadsFormContainer);
+
+      // Create the inner HTML code
+      var innerHTMLCode = "\n          <div>\n            <div class=\"input-container\">\n              <input type=\"tel\" name=\"postcode\" placeholder=\"Postinumero*\" class=\"input--icon\"> \n              <svg width=\"16\" height=\"14\" viewBox=\"0 0 16 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                <path d=\"M2.66732 1.66669H13.334C14.0673 1.66669 14.6673 2.26669 14.6673 3.00002V11C14.6673 11.7334 14.0673 12.3334 13.334 12.3334H2.66732C1.93398 12.3334 1.33398 11.7334 1.33398 11V3.00002C1.33398 2.26669 1.93398 1.66669 2.66732 1.66669Z\" stroke=\"#212121\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n                <path d=\"M14.6673 3L8.00065 7.66667L1.33398 3\" stroke=\"#212121\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n              </svg>\n            </div>\n          </div>";
+
+      // Get existing UTM values
+      var currentUTM = new URLSearchParams(window.location.search);
+      console.log(currentUTM);
+
+      // Add event listener to postcodeInput for validation
+      var postcodeInput = document.querySelector('input[type="tel"][name="postcode"]');
+      if (postcodeInput) {
+        postcodeInput.addEventListener('input', function () {
+          // Finnish postal code regex pattern (five digits)
+          var postcodeRegex = /^\d{5}$/;
+
+          // Your postcode validation logic here
+          var enteredPostcode = postcodeInput.value;
+          if (postcodeRegex.test(enteredPostcode)) {
+            // Valid postcode
+
+            // Check if utm_postcode already exists in the URL
+            var utmPostcodeParam = currentUTM.get('utm_postcode');
+            if (utmPostcodeParam) {
+              // If utm_postcode already exists, replace its value
+              currentUTM.set('utm_postcode', enteredPostcode);
+            } else {
+              // If there are existing UTM parameters, add utm_postcode with "&" separator
+              if (currentUTM.toString() !== '') {
+                currentUTM.append('utm_postcode', enteredPostcode);
+              } else {
+                // If there are no existing UTM parameters, add utm_postcode with "?"
+                currentUTM.set('utm_postcode', enteredPostcode);
+              }
+            }
+
+            // Update the URL without reloading the page
+            var newURL = "".concat(window.location.origin).concat(window.location.pathname).concat(currentUTM.toString() === '' ? '&' : '?').concat(currentUTM.toString());
+            window.history.replaceState({}, document.title, newURL);
+            console.log('Postcode updated:', enteredPostcode);
+          } else {
+            // Invalid postcode
+            console.log('Invalid postcode. Please enter a valid Finnish postcode.');
+          }
+        });
+      } else {
+        console.log('Postcode input field not found in the added structure.');
+      }
+    } else {
+      console.log('Leads form container not found on this page.');
+    }
+  } else {
+    console.log('This leads form is not found on this page.');
+  }
+});
+
+/***/ }),
+
 /***/ "./assets/src/js/frontend/nosearch.js":
 /*!********************************************!*\
   !*** ./assets/src/js/frontend/nosearch.js ***!
@@ -339,6 +417,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+//add missing H1 title when the page header is hidden
 document.addEventListener("DOMContentLoaded", function () {
   var noPageTitleContainer = document.querySelector('div.page-content.container.no-page-title');
   var isHomeNoPageTitleContainer = document.querySelector('.home > div.page-content.container.no-page-title');

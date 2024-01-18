@@ -1,3 +1,4 @@
+//add missing H1 title when the page header is hidden
 document.addEventListener("DOMContentLoaded", function () {
     const noPageTitleContainer = document.querySelector('div.page-content.container.no-page-title');
     const isHomeNoPageTitleContainer = document.querySelector('.home > div.page-content.container.no-page-title');
