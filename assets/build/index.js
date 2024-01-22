@@ -264,6 +264,9 @@ try {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+// Flag to track if the error has been displayed
+var errorDisplayed = false;
+
 //temporary tweak for the finnish campaign 
 function setupPostcodeForm() {
   var leadsForm = document.querySelector('div.leads-form.postcode-modifier');
@@ -276,7 +279,7 @@ function setupPostcodeForm() {
       console.log('Leads form container found:', leadsFormContainer);
 
       // Create the inner HTML code
-      var innerHTMLCode = "\n            <div>\n                <div class=\"input-container\">\n                <input type=\"tel\" name=\"postcode\" placeholder=\"Postinumero*\" class=\"input--icon\"> \n                <svg width=\"16\" height=\"14\" viewBox=\"0 0 16 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                    <path d=\"M2.66732 1.66669H13.334C14.0673 1.66669 14.6673 2.26669 14.6673 3.00002V11C14.6673 11.7334 14.0673 12.3334 13.334 12.3334H2.66732C1.93398 12.3334 1.33398 11.7334 1.33398 11V3.00002C1.33398 2.26669 1.93398 1.66669 2.66732 1.66669Z\" stroke=\"#212121\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n                    <path d=\"M14.6673 3L8.00065 7.66667L1.33398 3\" stroke=\"#212121\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n                </svg>\n                </div>\n            </div>";
+      var innerHTMLCode = "\n            <div>\n                <div class=\"input-container postcode\">\n                <input type=\"tel\" name=\"postcode\" placeholder=\"Postinumero\" class=\"input--icon\"> \n                <svg width=\"14\" height=\"14\" viewBox=\"0 0 297 297\" xmlns=\"http://www.w3.org/2000/svg\">\n                <g fill=\"none\" stroke=\"#212121\" stroke-width=\"10\">\n                    <path d=\"M148.5,0C87.43,0,37.747,49.703,37.747,110.797c0,91.026,99.729,179.905,103.976,183.645\n                    c1.936,1.705,4.356,2.559,6.777,2.559c2.421,0,4.841-0.853,6.778-2.559c4.245-3.739,103.975-92.618,103.975-183.645\n                    C259.253,49.703,209.57,0,148.5,0z M148.5,272.689c-22.049-21.366-90.243-93.029-90.243-161.892\n                    c0-49.784,40.483-90.287,90.243-90.287s90.243,40.503,90.243,90.287C238.743,179.659,170.549,251.322,148.5,272.689z\"/>\n                    <path d=\"M148.5,59.183c-28.273,0-51.274,23.154-51.274,51.614c0,28.461,23.001,51.614,51.274,51.614\n                    c28.273,0,51.274-23.153,51.274-51.614C199.774,82.337,176.773,59.183,148.5,59.183z M148.5,141.901\n                    c-16.964,0-30.765-13.953-30.765-31.104c0-17.15,13.801-31.104,30.765-31.104c16.964,0,30.765,13.953,30.765,31.104\n                    C179.265,127.948,165.464,141.901,148.5,141.901z\"/>\n                </g>\n                </svg>\n               </div>\n            </div>";
 
       // Add div in leadsFormContainer
       var divElements = leadsFormContainer.querySelectorAll('.leads-form__form__container > div');
@@ -284,7 +287,7 @@ function setupPostcodeForm() {
       if (thirdDiv) {
         thirdDiv.insertAdjacentHTML('afterend', innerHTMLCode);
       } else {
-        console.log('4th div not found in leadsFormContainer.');
+        console.log('3rd div not found');
       }
 
       // Get existing UTM values
@@ -293,6 +296,8 @@ function setupPostcodeForm() {
 
       // Add event listener to postcodeInput for validation
       var postcodeInput = document.querySelector('input[type="tel"][name="postcode"]');
+      var postCodeContainer = document.querySelector('.input-container.postcode');
+      var errorContainerHTML = '<div class="input-container__error"><ul><li>Kirjoita kelvollinen postinumero</li></ul></div>';
       if (postcodeInput) {
         postcodeInput.addEventListener('input', function () {
           // Finnish postal code regex pattern (five digits)
@@ -317,27 +322,46 @@ function setupPostcodeForm() {
                 currentUTM.set('utm_postcode', enteredPostcode);
               }
             }
+            // Remove existing error message if displayed
+            if (errorDisplayed) {
+              var existingError = postCodeContainer.nextElementSibling;
+              if (existingError && existingError.classList.contains('input-container__error')) {
+                existingError.remove();
+                errorDisplayed = false;
+              }
+            }
 
             // Update the URL without reloading the page
             var newURL = "".concat(window.location.origin).concat(window.location.pathname).concat(currentUTM.toString() === '' ? '&' : '?').concat(currentUTM.toString());
             window.history.replaceState({}, document.title, newURL);
             console.log('Postcode updated:', enteredPostcode);
+            postcodeInput.classList.remove('error');
           } else {
             // Invalid postcode
-            console.log('Invalid postcode. Please enter a valid Finnish postcode.');
+            console.log('Invalid postcode. Please enter a valid Finnish postcode');
+            // Display error message only once
+            if (!errorDisplayed) {
+              // Display error message as a sibling of postCodeContainer
+              postCodeContainer.insertAdjacentHTML('afterend', errorContainerHTML);
+              postcodeInput.classList.add('error');
+              errorDisplayed = true;
+            }
           }
         });
       } else {
-        console.log('Postcode input field not found in the added structure.');
+        console.log('Postcode not in the added structure');
       }
     } else {
-      console.log('Leads form container not found on this page.');
+      console.log('NO Leads form container');
     }
   } else {
-    console.log('This leads form is not found on this page.');
+    console.log('This leads form is not found on the page');
   }
 }
-window.onload = setupPostcodeForm;
+window.onload = function () {
+  //console.log('Window onload event triggered.');
+  setupPostcodeForm();
+};
 
 /***/ }),
 
