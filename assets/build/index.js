@@ -285,7 +285,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
       case "finland":
         {
           jQuery('<script id="optimonkFI" type="text/javascript"> (function(e,a){ var t,r=e.getElementsByTagName("head")[0],c=e.location.protocol; t=e.createElement("script");t.type="text/javascript"; t.charset="utf-8";t.async=!0;t.defer=!0; t.src=c+"//front.optimonk.com/public/"+a+"/js/preload.js";r.appendChild(t); })(document,"118832"); </' + 'script>').appendTo(document.body);
-          // new A/B testing tool    
+          // new A/B testing tool
           var _vwoCode = '<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />';
           _vwoCode += '<script type=\'text/javascript\' id=\'vwoCode\'>';
           _vwoCode += 'window._vwo_code || (function() { var account_id=835229, version=2.0, settings_tolerance=2000, hide_element=\'body\', hide_element_style = \'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important\', /* DO NOT EDIT BELOW THIS LINE */ f=false,w=window,d=document,v=d.querySelector(\'#vwoCode\'),cK=\'_vwo_\'+account_id+\'_settings\',cc={}; try{var c=JSON.parse(localStorage.getItem(\'_vwo_\'+account_id+\'_config\'));cc=c&&typeof c===\'object\'?c:{}}catch(e){} var stT=cc.stT===\'session\'?w.sessionStorage:w.localStorage; code={use_existing_jquery:function(){return typeof use_existing_jquery!==\'undefined\'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!==\'undefined\'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return\'{\'+(cc.hES||hide_element_style)+\'}\'},hide_element:function(){return typeof cc.hE===\'string\'?cc.hE:hide_element},getVersion:function(){return version},finish:function(){if(!f){f=true;var e=d.getElementById(\'_vis_opt_path_hides\');if(e)e.parentNode.removeChild(e)}},finished:function(){return f},load:function(e){var t=this.getSettings(),n=d.createElement(\'script\'),i=this;if(t){n.textContent=t;d.getElementsByTagName(\'head\')[0].appendChild(n);if(!w.VWO||VWO.caE){stT.removeItem(cK);i.load(e)}}else{n.fetchPriority=\'high\';n.src=e;n.type=\'text/javascript\';n.onerror=function(){_vwo_code.finish()};d.getElementsByTagName(\'head\')[0].appendChild(n)}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf(\'__vwo_disable__\')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t=d.currentScript,n=d.createElement(\'style\'),i=this.hide_element(),r=t&&!t.async&&i?i+this.hide_element_style():\'\',c=d.getElementsByTagName(\'head\')[0];n.setAttribute(\'id\',\'_vis_opt_path_hides\');v&&n.setAttribute(\'nonce\',v.nonce);n.setAttribute(\'type\',\'text/css\');if(n.styleSheet)n.styleSheet.cssText=r;else n.appendChild(d.createTextNode(r));c.appendChild(n);this.load(\'https://dev.visualwebsiteoptimizer.com/j.php?a=\'+account_id+\'&u=\'+encodeURIComponent(d.URL)+\'&vn=\'+version)}};w._vwo_code=code;code.init();})();';
@@ -344,16 +344,39 @@ window.addEventListener('DOMContentLoaded', function (event) {
 // Flag to track if the error has been displayed
 var errorDisplayed = false;
 
+// Function to update UTM parameters on form submission
+function updateUTMonSubmit(postcode) {
+  // Get existing UTM values
+  var currentUTM = new URLSearchParams(window.location.search);
+
+  // Add or update utm_postcode based on the current value in the postcodeInput
+  var utmPostcodeParam = currentUTM.get('utm_postcode');
+  if (utmPostcodeParam) {
+    currentUTM.set('utm_postcode', postcode);
+  } else {
+    if (currentUTM.toString() !== '') {
+      currentUTM.append('utm_postcode', postcode);
+    } else {
+      currentUTM.set('utm_postcode', postcode);
+    }
+  }
+
+  // Update the URL without reloading the page
+  var newURL = "".concat(window.location.origin).concat(window.location.pathname).concat(currentUTM.toString() === '' ? '&' : '?').concat(currentUTM.toString());
+  window.history.replaceState({}, document.title, newURL);
+  console.log('UTM params updated on form submission:', currentUTM.toString());
+}
+
 //temporary tweak for the finnish campaign 
 function setupPostcodeForm() {
   var leadsForm = document.querySelector('div.leads-form.postcode-modifier');
   if (leadsForm) {
-    console.log('Leads form found:', leadsForm);
+    // console.log('Leads form found:', leadsForm);
 
     // Find the container within the leadsForm
     var leadsFormContainer = leadsForm.querySelector('.leads-form__form__container');
     if (leadsFormContainer) {
-      console.log('Leads form container found:', leadsFormContainer);
+      // console.log('Leads form container found:', leadsFormContainer);
 
       // Create the inner HTML code
       var innerHTMLCode = "\n            <div>\n                <div class=\"input-container postcode\">\n                <input type=\"tel\" name=\"postcode\" placeholder=\"Postinumero\" class=\"input--icon\"> \n                <svg width=\"14\" height=\"14\" viewBox=\"0 0 297 297\" xmlns=\"http://www.w3.org/2000/svg\">\n                <g fill=\"none\" stroke=\"#212121\" stroke-width=\"10\">\n                    <path d=\"M148.5,0C87.43,0,37.747,49.703,37.747,110.797c0,91.026,99.729,179.905,103.976,183.645\n                    c1.936,1.705,4.356,2.559,6.777,2.559c2.421,0,4.841-0.853,6.778-2.559c4.245-3.739,103.975-92.618,103.975-183.645\n                    C259.253,49.703,209.57,0,148.5,0z M148.5,272.689c-22.049-21.366-90.243-93.029-90.243-161.892\n                    c0-49.784,40.483-90.287,90.243-90.287s90.243,40.503,90.243,90.287C238.743,179.659,170.549,251.322,148.5,272.689z\"/>\n                    <path d=\"M148.5,59.183c-28.273,0-51.274,23.154-51.274,51.614c0,28.461,23.001,51.614,51.274,51.614\n                    c28.273,0,51.274-23.153,51.274-51.614C199.774,82.337,176.773,59.183,148.5,59.183z M148.5,141.901\n                    c-16.964,0-30.765-13.953-30.765-31.104c0-17.15,13.801-31.104,30.765-31.104c16.964,0,30.765,13.953,30.765,31.104\n                    C179.265,127.948,165.464,141.901,148.5,141.901z\"/>\n                </g>\n                </svg>\n               </div>\n            </div>";
@@ -413,6 +436,7 @@ function setupPostcodeForm() {
             window.history.replaceState({}, document.title, newURL);
             console.log('Postcode updated:', enteredPostcode);
             postcodeInput.classList.remove('error');
+            updateUTMonSubmit(enteredPostcode);
           } else {
             // Invalid postcode
             console.log('Invalid postcode. Please enter a valid Finnish postcode');

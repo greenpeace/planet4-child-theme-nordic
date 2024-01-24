@@ -1,18 +1,42 @@
 // Flag to track if the error has been displayed
 let errorDisplayed = false;
 
+// Function to update UTM parameters on form submission
+function updateUTMonSubmit(postcode) {
+    // Get existing UTM values
+    const currentUTM = new URLSearchParams(window.location.search);
+
+    // Add or update utm_postcode based on the current value in the postcodeInput
+    const utmPostcodeParam = currentUTM.get('utm_postcode');
+    if (utmPostcodeParam) {
+        currentUTM.set('utm_postcode', postcode);
+    } else {
+        if (currentUTM.toString() !== '') {
+            currentUTM.append('utm_postcode', postcode);
+        } else {
+            currentUTM.set('utm_postcode', postcode);
+        }
+    }
+
+    // Update the URL without reloading the page
+    const newURL = `${window.location.origin}${window.location.pathname}${currentUTM.toString() === '' ? '&' : '?'}${currentUTM.toString()}`;
+    window.history.replaceState({}, document.title, newURL);
+
+    console.log('UTM params updated on form submission:', currentUTM.toString());
+}
+
 //temporary tweak for the finnish campaign 
 function setupPostcodeForm() {
     const leadsForm = document.querySelector('div.leads-form.postcode-modifier');
 
     if (leadsForm) {
-        console.log('Leads form found:', leadsForm);
+        // console.log('Leads form found:', leadsForm);
 
         // Find the container within the leadsForm
         const leadsFormContainer = leadsForm.querySelector('.leads-form__form__container');
 
         if (leadsFormContainer) {
-            console.log('Leads form container found:', leadsFormContainer);
+           // console.log('Leads form container found:', leadsFormContainer);
 
             // Create the inner HTML code
             const innerHTMLCode = `
@@ -95,6 +119,8 @@ function setupPostcodeForm() {
                         window.history.replaceState({}, document.title, newURL);
                         console.log('Postcode updated:', enteredPostcode);
                         postcodeInput.classList.remove('error');
+
+                        updateUTMonSubmit(enteredPostcode);
 
                     } else {
                         // Invalid postcode
