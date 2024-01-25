@@ -22,7 +22,7 @@ function updateUTMonSubmit(postcode) {
     const newURL = `${window.location.origin}${window.location.pathname}${currentUTM.toString() === '' ? '&' : '?'}${currentUTM.toString()}`;
     window.history.replaceState({}, document.title, newURL);
 
-    console.log('UTM params updated on form submission:', currentUTM.toString());
+    // console.log('UTM params updated on form submission:', currentUTM.toString());
 }
 
 //temporary tweak for the finnish campaign 
@@ -36,7 +36,7 @@ function setupPostcodeForm() {
         const leadsFormContainer = leadsForm.querySelector('.leads-form__form__container');
 
         if (leadsFormContainer) {
-           // console.log('Leads form container found:', leadsFormContainer);
+            // console.log('Leads form container found:', leadsFormContainer);
 
             // Create the inner HTML code
             const innerHTMLCode = `
@@ -65,12 +65,12 @@ function setupPostcodeForm() {
             if (thirdDiv) {
                 thirdDiv.insertAdjacentHTML('afterend', innerHTMLCode);
             } else {
-                console.log('3rd div not found');
+                // console.log('3rd div not found');
             }
 
             // Get existing UTM values
             const currentUTM = new URLSearchParams(window.location.search);
-            console.log(currentUTM);
+            // console.log(currentUTM);
 
             // Add event listener to postcodeInput for validation
             const postcodeInput = document.querySelector('input[type="tel"][name="postcode"]');
@@ -106,25 +106,25 @@ function setupPostcodeForm() {
                         // Remove existing error message if displayed
                         if (errorDisplayed) {
                             const existingError = postCodeContainer.nextElementSibling;
-                            
+
                             if (existingError && existingError.classList.contains('input-container__error')) {
                                 existingError.remove();
                                 errorDisplayed = false;
-                                
+
                             }
                         }
-                        
+
                         // Update the URL without reloading the page
                         const newURL = `${window.location.origin}${window.location.pathname}${currentUTM.toString() === '' ? '&' : '?'}${currentUTM.toString()}`;
                         window.history.replaceState({}, document.title, newURL);
-                        console.log('Postcode updated:', enteredPostcode);
+                        // console.log('Postcode updated:', enteredPostcode);
                         postcodeInput.classList.remove('error');
 
                         updateUTMonSubmit(enteredPostcode);
 
                     } else {
                         // Invalid postcode
-                        console.log('Invalid postcode. Please enter a valid Finnish postcode');
+                        // console.log('Invalid postcode. Please enter a valid Finnish postcode');
                         // Display error message only once
                         if (!errorDisplayed) {
                             // Display error message as a sibling of postCodeContainer
@@ -136,13 +136,13 @@ function setupPostcodeForm() {
                     }
                 });
             } else {
-                console.log('Postcode not in the added structure');
+                // console.log('Postcode not in the added structure');
             }
         } else {
-            console.log('NO Leads form container');
+            // console.log('NO Leads form container');
         }
     } else {
-        console.log('This leads form is not found on the page');
+        // console.log('This leads form is not found on the page');
     }
 }
 

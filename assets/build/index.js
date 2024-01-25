@@ -364,7 +364,8 @@ function updateUTMonSubmit(postcode) {
   // Update the URL without reloading the page
   var newURL = "".concat(window.location.origin).concat(window.location.pathname).concat(currentUTM.toString() === '' ? '&' : '?').concat(currentUTM.toString());
   window.history.replaceState({}, document.title, newURL);
-  console.log('UTM params updated on form submission:', currentUTM.toString());
+
+  // console.log('UTM params updated on form submission:', currentUTM.toString());
 }
 
 //temporary tweak for the finnish campaign 
@@ -387,12 +388,12 @@ function setupPostcodeForm() {
       if (thirdDiv) {
         thirdDiv.insertAdjacentHTML('afterend', innerHTMLCode);
       } else {
-        console.log('3rd div not found');
+        // console.log('3rd div not found');
       }
 
       // Get existing UTM values
       var currentUTM = new URLSearchParams(window.location.search);
-      console.log(currentUTM);
+      // console.log(currentUTM);
 
       // Add event listener to postcodeInput for validation
       var postcodeInput = document.querySelector('input[type="tel"][name="postcode"]');
@@ -434,12 +435,12 @@ function setupPostcodeForm() {
             // Update the URL without reloading the page
             var newURL = "".concat(window.location.origin).concat(window.location.pathname).concat(currentUTM.toString() === '' ? '&' : '?').concat(currentUTM.toString());
             window.history.replaceState({}, document.title, newURL);
-            console.log('Postcode updated:', enteredPostcode);
+            // console.log('Postcode updated:', enteredPostcode);
             postcodeInput.classList.remove('error');
             updateUTMonSubmit(enteredPostcode);
           } else {
             // Invalid postcode
-            console.log('Invalid postcode. Please enter a valid Finnish postcode');
+            // console.log('Invalid postcode. Please enter a valid Finnish postcode');
             // Display error message only once
             if (!errorDisplayed) {
               // Display error message as a sibling of postCodeContainer
@@ -450,13 +451,13 @@ function setupPostcodeForm() {
           }
         });
       } else {
-        console.log('Postcode not in the added structure');
+        // console.log('Postcode not in the added structure');
       }
     } else {
-      console.log('NO Leads form container');
+      // console.log('NO Leads form container');
     }
   } else {
-    console.log('This leads form is not found on the page');
+    // console.log('This leads form is not found on the page');
   }
 }
 window.onload = function () {
