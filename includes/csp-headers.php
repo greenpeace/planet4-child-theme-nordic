@@ -8,6 +8,6 @@ add_action('wp_headers', function ($headers): array {
     if (empty($headers['Content-Security-Policy'])) {
         return $headers;
     }
-    $headers['Content-Security-Policy'] .= "; default-src 'self' blob: * data: *;";
+    $headers['Content-Security-Policy'] .= "; worker-src 'self' blob: * data: *;";
     return $headers;
 }, 11, 1);
