@@ -82,27 +82,27 @@ function setupPostcodeForm() {
                     // Finnish postal code regex pattern (five digits)
                     const postcodeRegex = /^\d{5}$/;
 
-                    // Your postcode validation logic here
+                    // Postcode validation logic here
                     const enteredPostcode = postcodeInput.value;
 
                     if (postcodeRegex.test(enteredPostcode)) {
                         // Valid postcode
 
-                        // Check if utm_postcode already exists in the URL
-                        const utmPostcodeParam = currentUTM.get('utm_postcode');
+                        // // Check if utm_postcode already exists in the URL
+                        // const utmPostcodeParam = currentUTM.get('utm_postcode');
 
-                        if (utmPostcodeParam) {
-                            // If utm_postcode already exists, replace its value
-                            currentUTM.set('utm_postcode', enteredPostcode);
-                        } else {
-                            // If there are existing UTM parameters, add utm_postcode with "&" separator
-                            if (currentUTM.toString() !== '') {
-                                currentUTM.append('utm_postcode', enteredPostcode);
-                            } else {
-                                // If there are no existing UTM parameters, add utm_postcode with "?"
-                                currentUTM.set('utm_postcode', enteredPostcode);
-                            }
-                        }
+                        // if (utmPostcodeParam) {
+                        //     // If utm_postcode already exists, replace its value
+                        //     currentUTM.set('utm_postcode', enteredPostcode);
+                        // } else {
+                        //     // If there are existing UTM parameters, add utm_postcode with "&" separator
+                        //     if (currentUTM.toString() !== '') {
+                        //         currentUTM.append('utm_postcode', enteredPostcode);
+                        //     } else {
+                        //         // If there are no existing UTM parameters, add utm_postcode with "?"
+                        //         currentUTM.set('utm_postcode', enteredPostcode);
+                        //     }
+                        // }
                         // Remove existing error message if displayed
                         if (errorDisplayed) {
                             const existingError = postCodeContainer.nextElementSibling;
@@ -114,9 +114,9 @@ function setupPostcodeForm() {
                             }
                         }
 
-                        // Update the URL without reloading the page
-                        const newURL = `${window.location.origin}${window.location.pathname}${currentUTM.toString() === '' ? '&' : '?'}${currentUTM.toString()}`;
-                        window.history.replaceState({}, document.title, newURL);
+                        // // Update the URL without reloading the page
+                        // const newURL = `${window.location.origin}${window.location.pathname}${currentUTM.toString() === '' ? '&' : '?'}${currentUTM.toString()}`;
+                        // window.history.replaceState({}, document.title, newURL);
                         // console.log('Postcode updated:', enteredPostcode);
                         postcodeInput.classList.remove('error');
 
