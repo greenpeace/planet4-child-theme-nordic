@@ -36,52 +36,52 @@
         },
         {
           "name": "Grey 80%",
-          "slug": "grey-80",
+          "slug": "grey-800",
           "color": "#45494C"
         },
         {
           "name": "Grey 60%",
-          "slug": "grey-60",
+          "slug": "grey-600",
           "color": "#6F7376"
         },
         {
           "name": "Grey 50%",
-          "slug": "grey-50",
+          "slug": "grey-500",
           "color": "#A3A5A7"
         },
         {
           "name": "Grey 30%",
-          "slug": "grey-30",
+          "slug": "grey-300",
           "color": "#D1D2D3"
         },       
         {
           "name": "Grey 20%",
-          "slug": "grey-20",
+          "slug": "grey-200",
           "color": "#ECECEC"
         },
         {
           "name": "Grey 10%",
-          "slug": "grey-10",
+          "slug": "grey-100",
           "color": "#F5F7F8"
         },
         {
           "name": "Grey 5%",
-          "slug": "grey-05",
+          "slug": "grey-050",
           "color": "#f9f9f9"
         },
         {
           "name": "Beige 30%",
-          "slug": "beige-30",
+          "slug": "beige-300",
           "color": "#DAD8D1"
         },
         {
           "name": "Beige 20%",
-          "slug": "beige-20",
+          "slug": "beige-200",
           "color": "#ECEAE4"
         },
         {
           "name": "Beige 10%",
-          "slug": "beige-10",
+          "slug": "beige-100",
           "color": "#F6F4EF"
         },
         {
