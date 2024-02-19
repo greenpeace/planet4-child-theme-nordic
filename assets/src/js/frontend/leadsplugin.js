@@ -1,28 +1,46 @@
 // Flag to track if the error has been displayed
 let errorDisplayed = false;
 
+// Function to check if a string has 5 digits at the end
+function hasFiveDigits(str) {
+    return /\d{5}$/.test(str);
+}
+
 // Function to update UTM parameters on form submission
-function updateUTMonSubmit(postcode) {
+function updateUTMonSubmit(enteredPostcode) {
     // Get existing UTM values
     const currentUTM = new URLSearchParams(window.location.search);
 
-    // Add or update utm_postcode based on the current value in the postcodeInput
-    const utmPostcodeParam = currentUTM.get('utm_postcode');
+    // Add or update utm_campaign based on the current value in the postcodeInput
+    let utmPostcodeParam = currentUTM.get('utm_campaign');
+
+    //utm_campaign exists
     if (utmPostcodeParam) {
-        currentUTM.set('utm_postcode', postcode);
-    } else {
-        if (currentUTM.toString() !== '') {
-            currentUTM.append('utm_postcode', postcode);
+        if (hasFiveDigits(utmPostcodeParam)) {
+            //& has 5 digits at the end
+            utmPostcodeParam = utmPostcodeParam.slice(0, -5) + enteredPostcode.slice(-5);
         } else {
-            currentUTM.set('utm_postcode', postcode);
+            //Doesn't have 5 digits at the end
+            utmPostcodeParam += `${enteredPostcode.slice(-5)}`;
+        }
+    } else {
+        //utm_campaign doesn't exists
+        if (currentUTM.toString() !== '') {
+            //There are other utms
+            utmPostcodeParam = `${enteredPostcode.slice(-5)}`;
+        } else {
+            //There are no other utms
+            utmPostcodeParam = `${enteredPostcode.slice(-5)}`;
         }
     }
+
+    // Update or set utm_campaign parameter
+    currentUTM.set('utm_campaign', utmPostcodeParam);
 
     // Update the URL without reloading the page
     const newURL = `${window.location.origin}${window.location.pathname}${currentUTM.toString() === '' ? '&' : '?'}${currentUTM.toString()}`;
     window.history.replaceState({}, document.title, newURL);
 
-    // console.log('UTM params updated on form submission:', currentUTM.toString());
 }
 
 //temporary tweak for the finnish campaign 
@@ -68,10 +86,6 @@ function setupPostcodeForm() {
                 // console.log('3rd div not found');
             }
 
-            // Get existing UTM values
-            const currentUTM = new URLSearchParams(window.location.search);
-            // console.log(currentUTM);
-
             // Add event listener to postcodeInput for validation
             const postcodeInput = document.querySelector('input[type="tel"][name="postcode"]');
             const postCodeContainer = document.querySelector('.input-container.postcode');
@@ -81,43 +95,21 @@ function setupPostcodeForm() {
                 postcodeInput.addEventListener('input', () => {
                     // Finnish postal code regex pattern (five digits)
                     const postcodeRegex = /^\d{5}$/;
-
-                    // Postcode validation logic here
                     const enteredPostcode = postcodeInput.value;
 
+                    // Postcode validation 
                     if (postcodeRegex.test(enteredPostcode)) {
                         // Valid postcode
-
-                        // // Check if utm_postcode already exists in the URL
-                        // const utmPostcodeParam = currentUTM.get('utm_postcode');
-
-                        // if (utmPostcodeParam) {
-                        //     // If utm_postcode already exists, replace its value
-                        //     currentUTM.set('utm_postcode', enteredPostcode);
-                        // } else {
-                        //     // If there are existing UTM parameters, add utm_postcode with "&" separator
-                        //     if (currentUTM.toString() !== '') {
-                        //         currentUTM.append('utm_postcode', enteredPostcode);
-                        //     } else {
-                        //         // If there are no existing UTM parameters, add utm_postcode with "?"
-                        //         currentUTM.set('utm_postcode', enteredPostcode);
-                        //     }
-                        // }
-                        // Remove existing error message if displayed
                         if (errorDisplayed) {
+                            // Remove existing error message if displayed
                             const existingError = postCodeContainer.nextElementSibling;
 
                             if (existingError && existingError.classList.contains('input-container__error')) {
                                 existingError.remove();
                                 errorDisplayed = false;
-
                             }
                         }
 
-                        // // Update the URL without reloading the page
-                        // const newURL = `${window.location.origin}${window.location.pathname}${currentUTM.toString() === '' ? '&' : '?'}${currentUTM.toString()}`;
-                        // window.history.replaceState({}, document.title, newURL);
-                        // console.log('Postcode updated:', enteredPostcode);
                         postcodeInput.classList.remove('error');
 
                         updateUTMonSubmit(enteredPostcode);
