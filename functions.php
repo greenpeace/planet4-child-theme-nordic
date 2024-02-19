@@ -9,7 +9,7 @@
  * License URI: https://opensource.org/licenses/MIT
  * Tags: light, accessibility-ready
  * Text Domain: planet4-child-theme-nordic
- * Version: 0.0.10
+ * Version: 1.47
  */
 
 
