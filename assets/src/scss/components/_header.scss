@@ -73,8 +73,11 @@
 //page header pattern
 .wp-block-media-text.alignfull.is-pattern-p4-page-header h1.has-background {
   line-height: 1.25;
-  box-shadow: 8px 0 0 rgba(255, 255, 255, 0), -8px 0 0;
-  padding: .2rem .5rem;
+  box-shadow: none!important;
+  padding-top: .2rem;
+  padding-bottom: .2rem;
+  padding-inline-start: 8px;
+  padding-inline-end: 8px!important;
 }
 
 //hidden page title in the heade - H1 fix
