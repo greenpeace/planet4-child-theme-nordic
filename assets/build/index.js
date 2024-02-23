@@ -86,6 +86,702 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFieldResetButton.js":
+/*!*************************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFieldResetButton.js ***!
+  \*************************************************************************************************************************************************************/
+/*! exports provided: CookiesFieldResetButton */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CookiesFieldResetButton", function() { return CookiesFieldResetButton; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+var __ = wp.i18n.__;
+
+var COOKIES_DEFAULT_COPY = window.p4bk_vars.cookies_default_copy || {};
+var CookiesFieldResetButton = function CookiesFieldResetButton(_ref) {
+  var fieldName = _ref.fieldName,
+    toAttribute = _ref.toAttribute,
+    currentValue = _ref.currentValue;
+  var defaultValue = COOKIES_DEFAULT_COPY[fieldName] || '';
+  if (!currentValue || !defaultValue || currentValue === defaultValue) {
+    return null;
+  }
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "field-reset-button"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["Tooltip"], {
+    text: __('This value is defined in the settings, in Planet 4 > Cookies', 'planet4-blocks-backend')
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+    className: "info"
+  }, "i")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+    className: "cta",
+    onClick: function onClick() {
+      return toAttribute(fieldName)(undefined);
+    },
+    role: "presentation"
+  }, __('Use default value', 'planet4-blocks-backend')));
+};
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFrontend.js":
+/*!*****************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFrontend.js ***!
+  \*****************************************************************************************************************************************************/
+/*! exports provided: CookiesFrontend */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CookiesFrontend", function() { return CookiesFrontend; });
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_FrontendRichText_FrontendRichText__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/FrontendRichText/FrontendRichText */ "../../plugins/planet4-plugin-gutenberg-blocks/assets/src/components/FrontendRichText/FrontendRichText.js");
+/* harmony import */ var _useCookie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./useCookie */ "../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/useCookie.js");
+/* harmony import */ var _CookiesFieldResetButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CookiesFieldResetButton */ "../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFieldResetButton.js");
+
+
+
+
+
+
+
+var __ = wp.i18n.__;
+var dataLayer = window.dataLayer || [];
+var COOKIES_DEFAULT_COPY = window.p4bk_vars.cookies_default_copy || {};
+function gtag() {
+  dataLayer.push(arguments);
+}
+
+// Planet4 settings(Planet 4 > Cookies > Enable Analytical Cookies).
+var ENABLE_ANALYTICAL_COOKIES = window.p4bk_vars.enable_analytical_cookies;
+
+// Planet4 settings (Planet 4 > Analytics > Enable Google Consent Mode).
+var ENABLE_GOOGLE_CONSENT_MODE = window.p4bk_vars.enable_google_consent_mode;
+var CONSENT_COOKIE = 'greenpeace';
+var NO_TRACK_COOKIE = 'no_track';
+var ACTIVE_CONSENT_COOKIE = 'active_consent_choice';
+var ONLY_NECESSARY = '1';
+var NECESSARY_MARKETING = '2';
+var NECESSARY_ANALYTICAL = '3';
+var NECESSARY_ANALYTICAL_MARKETING = '4';
+var hideCookiesBox = function hideCookiesBox() {
+  // the .cookie-notice element belongs to the P4 Master Theme
+  var cookiesBox = document.querySelector('#set-cookie');
+  if (cookiesBox) {
+    cookiesBox.classList.remove('shown');
+  }
+};
+var CookiesFrontend = function CookiesFrontend(props) {
+  var isSelected = props.isSelected,
+    title = props.title,
+    description = props.description,
+    necessary_cookies_name = props.necessary_cookies_name,
+    necessary_cookies_description = props.necessary_cookies_description,
+    analytical_cookies_name = props.analytical_cookies_name,
+    analytical_cookies_description = props.analytical_cookies_description,
+    all_cookies_name = props.all_cookies_name,
+    all_cookies_description = props.all_cookies_description,
+    isEditing = props.isEditing,
+    className = props.className,
+    _props$toAttribute = props.toAttribute,
+    toAttribute = _props$toAttribute === void 0 ? function () {} : _props$toAttribute;
+
+  // Whether consent was revoked by the user since current page load.
+  var _useState = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
+    _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_useState, 2),
+    userRevokedMarketingCookies = _useState2[0],
+    setUserRevokedMarketingCookies = _useState2[1];
+  var _useState3 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
+    _useState4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_useState3, 2),
+    userRevokedAnalyticalCookies = _useState4[0],
+    setUserRevokedAnalyticalCookies = _useState4[1];
+  var _useCookie = Object(_useCookie__WEBPACK_IMPORTED_MODULE_4__["useCookie"])(CONSENT_COOKIE),
+    _useCookie2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_useCookie, 2),
+    consentCookie = _useCookie2[0],
+    setConsentCookie = _useCookie2[1];
+  var analyticalCookiesChecked = [NECESSARY_ANALYTICAL, NECESSARY_ANALYTICAL_MARKETING].includes(consentCookie);
+  var marketingCookiesChecked = [NECESSARY_MARKETING, NECESSARY_ANALYTICAL_MARKETING].includes(consentCookie);
+  var hasConsent = marketingCookiesChecked || analyticalCookiesChecked;
+  var updateNoTrackCookie = function updateNoTrackCookie() {
+    if (hasConsent) {
+      Object(_useCookie__WEBPACK_IMPORTED_MODULE_4__["removeCookie"])(NO_TRACK_COOKIE);
+    } else {
+      Object(_useCookie__WEBPACK_IMPORTED_MODULE_4__["writeCookie"])(NO_TRACK_COOKIE, '1');
+    }
+  };
+  Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(updateNoTrackCookie, [userRevokedAnalyticalCookies, userRevokedMarketingCookies]);
+  var updateConsent = function updateConsent(key, granted) {
+    dataLayer.push({
+      event: 'updateConsent'
+    });
+    if (!ENABLE_GOOGLE_CONSENT_MODE) {
+      return;
+    }
+    gtag('consent', 'update', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, key, granted ? 'granted' : 'denied'));
+    dataLayer.push(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
+      event: 'updateConsent'
+    }, key, granted ? 'granted' : 'denied'));
+  };
+  var toggleHubSpotConsent = function toggleHubSpotConsent() {
+    if (!marketingCookiesChecked && userRevokedMarketingCookies) {
+      var _hsp = window._hsp = window._hsp || [];
+      _hsp.push(['revokeCookieConsent']);
+    }
+  };
+  Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(toggleHubSpotConsent, [marketingCookiesChecked, userRevokedMarketingCookies]);
+  var updateActiveConsentChoice = function updateActiveConsentChoice() {
+    if (hasConsent) {
+      Object(_useCookie__WEBPACK_IMPORTED_MODULE_4__["writeCookie"])(ACTIVE_CONSENT_COOKIE, '1');
+      hideCookiesBox();
+    }
+  };
+  Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(updateActiveConsentChoice, [marketingCookiesChecked, analyticalCookiesChecked]);
+  var getFieldValue = function getFieldValue(fieldName) {
+    if (props[fieldName] === undefined) {
+      return COOKIES_DEFAULT_COPY[fieldName] || '';
+    }
+    return props[fieldName] || '';
+  };
+  var isFieldValid = function isFieldValid(fieldName) {
+    return getFieldValue(fieldName).trim().length > 0;
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("section", {
+    className: "block cookies-block ".concat(className !== null && className !== void 0 ? className : '')
+  }, (isEditing || title) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("header", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_components_FrontendRichText_FrontendRichText__WEBPACK_IMPORTED_MODULE_3__["FrontendRichText"], {
+    tagName: "h2",
+    className: "page-section-header cookies-title",
+    placeholder: __('Enter title', 'planet4-blocks-backend'),
+    value: title,
+    onChange: toAttribute('title'),
+    withoutInteractiveFormatting: true,
+    editable: isEditing,
+    allowedFormats: []
+  })), (isEditing || description) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_components_FrontendRichText_FrontendRichText__WEBPACK_IMPORTED_MODULE_3__["FrontendRichText"], {
+    tagName: "p",
+    className: "page-section-description cookies-description",
+    placeholder: __('Enter description', 'planet4-blocks-backend'),
+    value: description,
+    onChange: toAttribute('description'),
+    withoutInteractiveFormatting: true,
+    editable: isEditing,
+    allowedFormats: ['core/bold', 'core/italic']
+  }), (isEditing || isFieldValid('necessary_cookies_name') && isFieldValid('necessary_cookies_description')) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "d-flex align-items-center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_components_FrontendRichText_FrontendRichText__WEBPACK_IMPORTED_MODULE_3__["FrontendRichText"], {
+    tagName: "span",
+    className: "custom-control-description cookies-header-text",
+    placeholder: __('Enter necessary cookies name', 'planet4-blocks-backend'),
+    value: getFieldValue('necessary_cookies_name'),
+    onChange: toAttribute('necessary_cookies_name'),
+    withoutInteractiveFormatting: true,
+    editable: isEditing,
+    allowedFormats: []
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
+    className: "always-enabled"
+  }, __('Always enabled', 'planet4-blocks')), isEditing && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_CookiesFieldResetButton__WEBPACK_IMPORTED_MODULE_5__["CookiesFieldResetButton"], {
+    fieldName: "necessary_cookies_name",
+    currentValue: necessary_cookies_name,
+    toAttribute: toAttribute
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "d-flex align-items-center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_components_FrontendRichText_FrontendRichText__WEBPACK_IMPORTED_MODULE_3__["FrontendRichText"], {
+    tagName: "p",
+    className: "cookies-checkbox-description",
+    placeholder: __('Enter necessary cookies description', 'planet4-blocks-backend'),
+    value: getFieldValue('necessary_cookies_description'),
+    onChange: toAttribute('necessary_cookies_description'),
+    withoutInteractiveFormatting: true,
+    editable: isEditing,
+    allowedFormats: ['core/bold', 'core/italic']
+  }), isEditing && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_CookiesFieldResetButton__WEBPACK_IMPORTED_MODULE_5__["CookiesFieldResetButton"], {
+    fieldName: "necessary_cookies_description",
+    currentValue: necessary_cookies_description,
+    toAttribute: toAttribute
+  }))), ENABLE_ANALYTICAL_COOKIES && (isEditing || isFieldValid('analytical_cookies_name') && isFieldValid('analytical_cookies_description')) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "d-flex align-items-center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("label", {
+    className: "custom-control",
+    style: isSelected ? {
+      pointerEvents: 'none'
+    } : null,
+    htmlFor: "analytical-cookies__control"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("input", {
+    id: "analytical-cookies__control",
+    type: "checkbox",
+    tabIndex: isSelected ? '-1' : null,
+    name: "analytical_cookies",
+    onChange: function onChange() {
+      updateConsent('analytics_storage', !analyticalCookiesChecked);
+      if (analyticalCookiesChecked) {
+        setUserRevokedAnalyticalCookies(true);
+        if (marketingCookiesChecked) {
+          setConsentCookie(NECESSARY_MARKETING);
+        } else {
+          setConsentCookie(ONLY_NECESSARY);
+        }
+      } else if (marketingCookiesChecked) {
+        setConsentCookie(NECESSARY_ANALYTICAL_MARKETING);
+      } else {
+        setConsentCookie(NECESSARY_ANALYTICAL);
+      }
+    },
+    checked: analyticalCookiesChecked,
+    className: "p4-custom-control-input"
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_components_FrontendRichText_FrontendRichText__WEBPACK_IMPORTED_MODULE_3__["FrontendRichText"], {
+    tagName: "span",
+    className: "custom-control-description cookies-header-text",
+    placeholder: __('Enter analytical cookies name', 'planet4-blocks-backend'),
+    value: getFieldValue('analytical_cookies_name'),
+    onChange: toAttribute('analytical_cookies_name'),
+    withoutInteractiveFormatting: true,
+    editable: isEditing,
+    allowedFormats: []
+  })), isEditing && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_CookiesFieldResetButton__WEBPACK_IMPORTED_MODULE_5__["CookiesFieldResetButton"], {
+    fieldName: "analytical_cookies_name",
+    currentValue: analytical_cookies_name,
+    toAttribute: toAttribute
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "d-flex align-items-center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_components_FrontendRichText_FrontendRichText__WEBPACK_IMPORTED_MODULE_3__["FrontendRichText"], {
+    tagName: "p",
+    className: "cookies-checkbox-description",
+    placeholder: __('Enter analytical cookies description', 'planet4-blocks-backend'),
+    value: getFieldValue('analytical_cookies_description'),
+    onChange: toAttribute('analytical_cookies_description'),
+    withoutInteractiveFormatting: true,
+    editable: isEditing,
+    allowedFormats: ['core/bold', 'core/italic']
+  }), isEditing && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_CookiesFieldResetButton__WEBPACK_IMPORTED_MODULE_5__["CookiesFieldResetButton"], {
+    fieldName: "analytical_cookies_description",
+    currentValue: analytical_cookies_description,
+    toAttribute: toAttribute
+  }))), (isEditing || isFieldValid('all_cookies_name') && isFieldValid('all_cookies_description')) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "d-flex align-items-center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("label", {
+    className: "custom-control",
+    style: isSelected ? {
+      pointerEvents: 'none'
+    } : null,
+    htmlFor: "all-cookies__control"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("input", {
+    id: "all-cookies__control",
+    type: "checkbox",
+    tabIndex: isSelected ? '-1' : null,
+    onChange: function onChange() {
+      updateConsent('ad_storage', !marketingCookiesChecked);
+      if (marketingCookiesChecked) {
+        setUserRevokedMarketingCookies(true);
+        if (ENABLE_ANALYTICAL_COOKIES && analyticalCookiesChecked) {
+          setConsentCookie(NECESSARY_ANALYTICAL);
+        } else {
+          setConsentCookie(ONLY_NECESSARY);
+        }
+      } else if (ENABLE_ANALYTICAL_COOKIES && analyticalCookiesChecked) {
+        setConsentCookie(NECESSARY_ANALYTICAL_MARKETING);
+      } else {
+        setConsentCookie(NECESSARY_MARKETING);
+      }
+    },
+    name: "all_cookies",
+    checked: marketingCookiesChecked,
+    className: "p4-custom-control-input"
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_components_FrontendRichText_FrontendRichText__WEBPACK_IMPORTED_MODULE_3__["FrontendRichText"], {
+    tagName: "span",
+    className: "custom-control-description cookies-header-text",
+    placeholder: __('Enter all cookies name', 'planet4-blocks-backend'),
+    value: getFieldValue('all_cookies_name'),
+    onChange: toAttribute('all_cookies_name'),
+    withoutInteractiveFormatting: true,
+    editable: isEditing,
+    allowedFormats: []
+  })), isEditing && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_CookiesFieldResetButton__WEBPACK_IMPORTED_MODULE_5__["CookiesFieldResetButton"], {
+    fieldName: "all_cookies_name",
+    currentValue: all_cookies_name,
+    toAttribute: toAttribute
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "d-flex align-items-center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_components_FrontendRichText_FrontendRichText__WEBPACK_IMPORTED_MODULE_3__["FrontendRichText"], {
+    tagName: "p",
+    className: "cookies-checkbox-description",
+    placeholder: __('Enter all cookies description', 'planet4-blocks-backend'),
+    value: getFieldValue('all_cookies_description'),
+    onChange: toAttribute('all_cookies_description'),
+    withoutInteractiveFormatting: true,
+    editable: isEditing,
+    allowedFormats: ['core/bold', 'core/italic']
+  }), isEditing && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_CookiesFieldResetButton__WEBPACK_IMPORTED_MODULE_5__["CookiesFieldResetButton"], {
+    fieldName: "all_cookies_description",
+    currentValue: all_cookies_description,
+    toAttribute: toAttribute
+  })))));
+};
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/useCookie.js":
+/*!***********************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/useCookie.js ***!
+  \***********************************************************************************************************************************************/
+/*! exports provided: readCookie, writeCookie, removeCookie, useCookie */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "readCookie", function() { return readCookie; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "writeCookie", function() { return writeCookie; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeCookie", function() { return removeCookie; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useCookie", function() { return useCookie; });
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var readCookie = function readCookie(name) {
+  var declarations = document.cookie.split(';');
+  var match = null;
+  declarations.forEach(function (part) {
+    var _part$split = part.split('='),
+      _part$split2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_part$split, 2),
+      key = _part$split2[0],
+      value = _part$split2[1];
+    if (key.trim() === name) {
+      match = value;
+    }
+  });
+  return match;
+};
+var writeCookie = function writeCookie(name, value) {
+  var days = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 365;
+  var date = new Date();
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+  var secureMode = document.location.protocol === 'http:' ? ';SameSite=Lax' : ';SameSite=None;Secure';
+  document.cookie = encodeURI(name) + '=' + encodeURI(value) + ';domain=.' + document.domain + ';path=/;' + '; expires=' + date.toGMTString() + secureMode;
+};
+
+// Value should not matter as cookie is expired.
+var removeCookie = function removeCookie(name) {
+  return writeCookie(name, '0', -1);
+};
+var useCookie = function useCookie(name) {
+  var _useState = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])(function () {
+      return readCookie(name);
+    }),
+    _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
+    value = _useState2[0],
+    setValue = _useState2[1];
+  var saveCookie = function saveCookie() {
+    if (value === null) {
+      removeCookie(name);
+      return;
+    }
+    writeCookie(name, value);
+  };
+  Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(saveCookie, [value]);
+  return [value, setValue];
+};
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/assets/src/components/FrontendRichText/FrontendRichText.js":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/components/FrontendRichText/FrontendRichText.js ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: FrontendRichText */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FrontendRichText", function() { return FrontendRichText; });
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+
+var _excluded = ["editable"];
+
+
+var RichText = wp.blockEditor ? wp.blockEditor.RichText : null;
+var FrontendRichText = function FrontendRichText(_ref) {
+  var editable = _ref.editable,
+    richTextProps = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0___default()(_ref, _excluded);
+  var renderAsRichText = RichText && editable;
+  var TagName = richTextProps.tagName;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, renderAsRichText ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RichText, richTextProps) : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TagName, {
+    className: richTextProps.className,
+    dangerouslySetInnerHTML: {
+      __html: richTextProps.value
+    }
+  }));
+};
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/arrayLikeToArray.js":
+/*!****************************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/arrayLikeToArray.js ***!
+  \****************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  return arr2;
+}
+module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/arrayWithHoles.js":
+/*!**************************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/arrayWithHoles.js ***!
+  \**************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/defineProperty.js":
+/*!**************************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/defineProperty.js ***!
+  \**************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var toPropertyKey = __webpack_require__(/*! ./toPropertyKey.js */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/toPropertyKey.js");
+function _defineProperty(obj, key, value) {
+  key = toPropertyKey(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":
+/*!********************************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/iterableToArrayLimit.js ***!
+  \********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArrayLimit(arr, i) {
+  var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
+  if (null != _i) {
+    var _s,
+      _e,
+      _x,
+      _r,
+      _arr = [],
+      _n = !0,
+      _d = !1;
+    try {
+      if (_x = (_i = _i.call(arr)).next, 0 === i) {
+        if (Object(_i) !== _i) return;
+        _n = !1;
+      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0);
+    } catch (err) {
+      _d = !0, _e = err;
+    } finally {
+      try {
+        if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return;
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+    return _arr;
+  }
+}
+module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/nonIterableRest.js":
+/*!***************************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/nonIterableRest.js ***!
+  \***************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/objectWithoutProperties.js":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/objectWithoutProperties.js ***!
+  \***********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var objectWithoutPropertiesLoose = __webpack_require__(/*! ./objectWithoutPropertiesLoose.js */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js");
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+module.exports = _objectWithoutProperties, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js ***!
+  \****************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+  return target;
+}
+module.exports = _objectWithoutPropertiesLoose, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/slicedToArray.js":
+/*!*************************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/slicedToArray.js ***!
+  \*************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithHoles = __webpack_require__(/*! ./arrayWithHoles.js */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/arrayWithHoles.js");
+var iterableToArrayLimit = __webpack_require__(/*! ./iterableToArrayLimit.js */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/iterableToArrayLimit.js");
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+var nonIterableRest = __webpack_require__(/*! ./nonIterableRest.js */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/nonIterableRest.js");
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+}
+module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/toPrimitive.js":
+/*!***********************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/toPrimitive.js ***!
+  \***********************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__(/*! ./typeof.js */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/typeof.js")["default"];
+function _toPrimitive(input, hint) {
+  if (_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+module.exports = _toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/toPropertyKey.js":
+/*!*************************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/toPropertyKey.js ***!
+  \*************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__(/*! ./typeof.js */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/typeof.js")["default"];
+var toPrimitive = __webpack_require__(/*! ./toPrimitive.js */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/toPrimitive.js");
+function _toPropertyKey(arg) {
+  var key = toPrimitive(arg, "string");
+  return _typeof(key) === "symbol" ? key : String(key);
+}
+module.exports = _toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/typeof.js":
+/*!******************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/typeof.js ***!
+  \******************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
+}
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** /Users/skoleva/Documents/Planet4/planet4-develop/planet4/plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js ***!
+  \**************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "../../plugins/planet4-plugin-gutenberg-blocks/node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
 /***/ "./assets/src/js/app.js":
 /*!******************************!*\
   !*** ./assets/src/js/app.js ***!
@@ -107,7 +803,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend/templates.js */ "./assets/src/js/frontend/templates.js");
 /* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates_js__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./frontend/tracking */ "./assets/src/js/frontend/tracking.js");
-/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_frontend_tracking__WEBPACK_IMPORTED_MODULE_6__);
 //import $ from the global scope
 
 // Expose jQuery to the global object
@@ -555,11 +1250,34 @@ document.addEventListener("DOMContentLoaded", function () {
 /*!********************************************!*\
   !*** ./assets/src/js/frontend/tracking.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _plugins_planet4_plugin_gutenberg_blocks_assets_src_blocks_Cookies_CookiesFrontend_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFrontend.js */ "../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFrontend.js");
+
 
 //tracking the sub-menu block link clicks
 window.addEventListener('DOMContentLoaded', function (event) {
+  // Update consent state function
+  var updateConsent = function updateConsent() {
+    var data = {
+      ad_storage: data.ad_storage,
+      analytics_storage: data.analytics_storage,
+      ad_user_data: data.ad_user_data,
+      ad_personalization: data.ad_personalization,
+      functionality_storage: 'granted',
+      personalization_storage: data.personalization_storage,
+      security_storage: 'granted'
+    };
+
+    // Call the updateConsentState function
+    Object(_plugins_planet4_plugin_gutenberg_blocks_assets_src_blocks_Cookies_CookiesFrontend_js__WEBPACK_IMPORTED_MODULE_0__["updateConsentState"])(data);
+  };
+
+  // Call the updateConsent function as needed
+  updateConsent();
   jQuery('.submenu-link').on('click', function (e) {
     var submenuLinkHref = jQuery(this).attr('href');
     window.dataLayer.push({
@@ -768,6 +1486,17 @@ module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, 
 
 /***/ }),
 
+/***/ "@wordpress/components":
+/*!*********************************************!*\
+  !*** external {"this":["wp","components"]} ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["components"]; }());
+
+/***/ }),
+
 /***/ "@wordpress/data":
 /*!***************************************!*\
   !*** external {"this":["wp","data"]} ***!
@@ -776,6 +1505,17 @@ module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, 
 /***/ (function(module, exports) {
 
 (function() { module.exports = this["wp"]["data"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!******************************************!*\
+  !*** external {"this":["wp","element"]} ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["element"]; }());
 
 /***/ }),
 

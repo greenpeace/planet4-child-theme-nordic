@@ -1,6 +1,28 @@
+import { updateConsentState } from '../../../../../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFrontend.js';
+
+
 //tracking the sub-menu block link clicks
 window.addEventListener('DOMContentLoaded', (event) => {
-  jQuery('.submenu-link').on('click', function(e) {
+  // Update consent state function
+  const updateConsent = () => {
+    const data = {
+      ad_storage: data.ad_storage,
+      analytics_storage: data.analytics_storage,
+      ad_user_data: data.ad_user_data,
+      ad_personalization: data.ad_personalization,
+      functionality_storage: 'granted',
+      personalization_storage: data.personalization_storage,
+      security_storage: 'granted'
+    };
+
+    // Call the updateConsentState function
+    updateConsentState(data);
+  };
+
+  // Call the updateConsent function as needed
+  updateConsent();
+
+  jQuery('.submenu-link').on('click', function (e) {
     let submenuLinkHref = jQuery(this).attr('href');
     window.dataLayer.push({
       'link': submenuLinkHref,
@@ -24,52 +46,52 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   //page header clicks
   const cta = document.querySelectorAll(".is-pattern-p4-page-header");
-  for (let  li = 0 ; li < cta.length; li++) {
-      cta[li].addEventListener('click' , function(e){
+  for (let li = 0; li < cta.length; li++) {
+    cta[li].addEventListener('click', function (e) {
       window.dataLayer.push({
         'eventCategory': 'Header',
         'eventAction': 'Call to Action',
         'event': 'navClick'
       });
-      }, true );
+    }, true);
   }
 
   //secondary nav clicks
   const links = document.querySelectorAll(".nav-link");
-  for (let  li = 0 ; li < links.length; li++) {
-      links[li].addEventListener('click' , function(e){
+  for (let li = 0; li < links.length; li++) {
+    links[li].addEventListener('click', function (e) {
 
       let shorthdl = links[li].textContent;
       window.dataLayer.push({
-          'eventCategory': 'Sub Menu',
-          'eventAction': shorthdl,
-          'event': 'navClick'
+        'eventCategory': 'Sub Menu',
+        'eventAction': shorthdl,
+        'event': 'navClick'
       });
-      }, true );
+    }, true);
   }
 
   //other deep-dive topics clicks
   const ddlinks = document.querySelectorAll(".is-pattern-p4-deep-dive");
-  for (let  li = 0 ; li < ddlinks.length; li++) {
-      ddlinks[li].addEventListener('click' , function(e){
-       window.dataLayer.push({
+  for (let li = 0; li < ddlinks.length; li++) {
+    ddlinks[li].addEventListener('click', function (e) {
+      window.dataLayer.push({
         'eventCategory': 'Read More Topics',
         'eventAction': 'Deep-Dive Topics',
         'event': 'navClick'
       });
-      }, true );
+    }, true);
   }
 
   //other high-level topics clicks
   const hllinks = document.querySelectorAll(".is-pattern-p4-quick-links");
-  for (let  li = 0 ; li < hllinks.length; li++) {
-      hllinks[li].addEventListener('click' , function(e){
-        window.dataLayer.push({
+  for (let li = 0; li < hllinks.length; li++) {
+    hllinks[li].addEventListener('click', function (e) {
+      window.dataLayer.push({
         'eventCategory': 'Read More Topics',
         'eventAction': 'High Level Topics',
         'event': 'navClick'
       });
-      }, true );
+    }, true);
   }
 
 });
