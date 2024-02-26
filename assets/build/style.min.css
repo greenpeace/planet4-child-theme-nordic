@@ -5576,6 +5576,14 @@ and so on...
   font-weight: var(--headings-font-wight);
 }
 
+.gfield--type-quiz[data-field-class=gquiz-field] {
+  display: none !important;
+}
+
+.gfield--type-quiz[data-field-class=gquiz-field].active {
+  display: block !important;
+}
+
 /* Generates mutilevel nested comments
 level-1 is the first level comment with a margin of 50px
 level-2 is the first level comment with a margin of 100px

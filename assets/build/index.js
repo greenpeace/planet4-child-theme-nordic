@@ -797,14 +797,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _frontend_externaltools_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./frontend/externaltools.js */ "./assets/src/js/frontend/externaltools.js");
 /* harmony import */ var _frontend_externaltools_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_frontend_externaltools_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _frontend_gconsent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./frontend/gconsent.js */ "./assets/src/js/frontend/gconsent.js");
-/* harmony import */ var _frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./frontend/leadsplugin.js */ "./assets/src/js/frontend/leadsplugin.js");
-/* harmony import */ var _frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend/nosearch */ "./assets/src/js/frontend/nosearch.js");
-/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_frontend_nosearch__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./frontend/templates.js */ "./assets/src/js/frontend/templates.js");
-/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./frontend/tracking */ "./assets/src/js/frontend/tracking.js");
-/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_frontend_tracking__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _frontend_gfquiz_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./frontend/gfquiz.js */ "./assets/src/js/frontend/gfquiz.js");
+/* harmony import */ var _frontend_gfquiz_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_frontend_gfquiz_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend/leadsplugin.js */ "./assets/src/js/frontend/leadsplugin.js");
+/* harmony import */ var _frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./frontend/nosearch */ "./assets/src/js/frontend/nosearch.js");
+/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_frontend_nosearch__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./frontend/templates.js */ "./assets/src/js/frontend/templates.js");
+/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./frontend/tracking */ "./assets/src/js/frontend/tracking.js");
+/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_frontend_tracking__WEBPACK_IMPORTED_MODULE_8__);
 //import $ from the global scope
 
 // Expose jQuery to the global object
@@ -815,7 +817,7 @@ window.dataLayer = window.dataLayer || [];
 
 
 
-// import './frontend/gfquiz.js';
+
 
 
 
@@ -1078,6 +1080,77 @@ _plugins_planet4_plugin_gutenberg_blocks_assets_src_blocks_Cookies_CookiesFronte
   // Update consent for the provided key
   gtag('consent', 'update', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, key, granted ? 'granted' : 'denied'));
 };
+
+/***/ }),
+
+/***/ "./assets/src/js/frontend/gfquiz.js":
+/*!******************************************!*\
+  !*** ./assets/src/js/frontend/gfquiz.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+document.addEventListener('DOMContentLoaded', function () {
+  var questions = document.querySelectorAll('.gfield--type-quiz[data-field-class="gquiz-field"]');
+  var submitButton = document.getElementById('gform_submit_button_1');
+
+  // Show only the first question
+  questions[0].classList.add('active');
+  updateButtonStates();
+
+  // Loop through questions to append buttons
+  questions.forEach(function (question, index) {
+    var btnPrev = document.createElement('a');
+    btnPrev.classList.add('btn-prev', 'pr-3', 'mr-3');
+    btnPrev.innerHTML = '<i class="fas fa-arrow-left"></i>';
+    btnPrev.addEventListener('click', function () {
+      console.log('Previous button clicked');
+      navigateQuestions(index - 1);
+    });
+    question.appendChild(btnPrev);
+    var btnNext = document.createElement('a');
+    btnNext.classList.add('btn-next', 'px-4', 'mr-3');
+    btnNext.innerHTML = '<i class="fas fa-arrow-right"></i>';
+    btnNext.addEventListener('click', function () {
+      console.log('Next button clicked');
+      navigateQuestions(index + 1);
+    });
+    question.appendChild(btnNext);
+  });
+
+  // Hide submit button initially
+  submitButton.style.display = 'none';
+  function updateButtonStates() {
+    var currentIndex = getCurrentIndex(questions, 'active');
+    questions.forEach(function (question, index) {
+      var btnPrev = question.querySelector('.btn-prev');
+      var btnNext = question.querySelector('.btn-next');
+      if (btnPrev && btnNext) {
+        btnPrev.style.display = index === 0 ? 'none' : 'block';
+        btnNext.style.display = index === questions.length - 1 ? 'none' : 'block';
+      }
+    });
+    submitButton.style.display = currentIndex === questions.length - 1 ? 'block' : 'none';
+  }
+  function navigateQuestions(index) {
+    var currentIndex = getCurrentIndex(questions, 'active');
+    if (index >= 0 && index < questions.length) {
+      questions[currentIndex].classList.remove('active');
+      questions[index].classList.add('active');
+      updateButtonStates();
+    } else {
+      console.error('Cannot navigate to question index:', index);
+    }
+  }
+  function getCurrentIndex(elements, className) {
+    for (var i = 0; i < elements.length; i++) {
+      if (elements[i].classList.contains(className)) {
+        return i;
+      }
+    }
+    return -1;
+  }
+});
 
 /***/ }),
 
