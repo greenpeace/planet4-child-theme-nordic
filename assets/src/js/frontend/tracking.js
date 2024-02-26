@@ -1,26 +1,5 @@
-import { updateConsentState } from '../../../../../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFrontend.js';
-
-
 //tracking the sub-menu block link clicks
 window.addEventListener('DOMContentLoaded', (event) => {
-  // Update consent state function
-  const updateConsent = () => {
-    const data = {
-      ad_storage: data.ad_storage,
-      analytics_storage: data.analytics_storage,
-      ad_user_data: data.ad_user_data,
-      ad_personalization: data.ad_personalization,
-      functionality_storage: 'granted',
-      personalization_storage: data.personalization_storage,
-      security_storage: 'granted'
-    };
-
-    // Call the updateConsentState function
-    updateConsentState(data);
-  };
-
-  // Call the updateConsent function as needed
-  updateConsent();
 
   jQuery('.submenu-link').on('click', function (e) {
     let submenuLinkHref = jQuery(this).attr('href');

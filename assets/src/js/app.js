@@ -7,6 +7,8 @@ window.dataLayer = window.dataLayer || [];
 //adding other scripts
 import './frontend/blockquote';
 import './frontend/externaltools.js';
+import './frontend/gconsent.js';
+// import './frontend/gfquiz.js';
 import './frontend/leadsplugin.js';
 import './frontend/nosearch';
 import './frontend/templates.js';

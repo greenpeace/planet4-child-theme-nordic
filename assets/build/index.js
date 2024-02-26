@@ -796,13 +796,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _frontend_blockquote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./frontend/blockquote */ "./assets/src/js/frontend/blockquote.js");
 /* harmony import */ var _frontend_externaltools_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./frontend/externaltools.js */ "./assets/src/js/frontend/externaltools.js");
 /* harmony import */ var _frontend_externaltools_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_frontend_externaltools_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./frontend/leadsplugin.js */ "./assets/src/js/frontend/leadsplugin.js");
-/* harmony import */ var _frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./frontend/nosearch */ "./assets/src/js/frontend/nosearch.js");
-/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_frontend_nosearch__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend/templates.js */ "./assets/src/js/frontend/templates.js");
-/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./frontend/tracking */ "./assets/src/js/frontend/tracking.js");
+/* harmony import */ var _frontend_gconsent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./frontend/gconsent.js */ "./assets/src/js/frontend/gconsent.js");
+/* harmony import */ var _frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./frontend/leadsplugin.js */ "./assets/src/js/frontend/leadsplugin.js");
+/* harmony import */ var _frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend/nosearch */ "./assets/src/js/frontend/nosearch.js");
+/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_frontend_nosearch__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./frontend/templates.js */ "./assets/src/js/frontend/templates.js");
+/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./frontend/tracking */ "./assets/src/js/frontend/tracking.js");
+/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_frontend_tracking__WEBPACK_IMPORTED_MODULE_7__);
 //import $ from the global scope
 
 // Expose jQuery to the global object
@@ -812,6 +814,8 @@ window.dataLayer = window.dataLayer || [];
 //adding other scripts
 
 
+
+// import './frontend/gfquiz.js';
 
 
 
@@ -1026,6 +1030,54 @@ window.addEventListener('DOMContentLoaded', function (event) {
     }
   }
 });
+
+/***/ }),
+
+/***/ "./assets/src/js/frontend/gconsent.js":
+/*!********************************************!*\
+  !*** ./assets/src/js/frontend/gconsent.js ***!
+  \********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _plugins_planet4_plugin_gutenberg_blocks_assets_src_blocks_Cookies_CookiesFrontend__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFrontend */ "../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFrontend.js");
+
+// Import the original CookiesFrontend component
+
+
+// Override the updateConsent function from the plugin
+var originalUpdateConsent = _plugins_planet4_plugin_gutenberg_blocks_assets_src_blocks_Cookies_CookiesFrontend__WEBPACK_IMPORTED_MODULE_1__["CookiesFrontend"].prototype.updateConsent;
+
+// Extend the original updateConsent function
+_plugins_planet4_plugin_gutenberg_blocks_assets_src_blocks_Cookies_CookiesFrontend__WEBPACK_IMPORTED_MODULE_1__["CookiesFrontend"].prototype.updateConsent = function (key, granted) {
+  // Call the original updateConsent function from the plugin
+  originalUpdateConsent.call(this, key, granted);
+
+  // Update additional consent keys and values
+  if (key === 'ad_personalization' || key === 'ad_user_data') {
+    if (granted) {
+      console.log("".concat(key, " consent granted."));
+      dataLayer.push(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
+        event: 'updateConsent'
+      }, key, 'granted'));
+    } else {
+      console.log("".concat(key, " consent denied."));
+      dataLayer.push(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
+        event: 'updateConsent'
+      }, key, 'denied'));
+    }
+  }
+  if (!ENABLE_GOOGLE_CONSENT_MODE) {
+    return;
+  }
+
+  // Update consent for the provided key
+  gtag('consent', 'update', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, key, granted ? 'granted' : 'denied'));
+};
 
 /***/ }),
 
@@ -1250,34 +1302,11 @@ document.addEventListener("DOMContentLoaded", function () {
 /*!********************************************!*\
   !*** ./assets/src/js/frontend/tracking.js ***!
   \********************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _plugins_planet4_plugin_gutenberg_blocks_assets_src_blocks_Cookies_CookiesFrontend_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFrontend.js */ "../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFrontend.js");
-
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 //tracking the sub-menu block link clicks
 window.addEventListener('DOMContentLoaded', function (event) {
-  // Update consent state function
-  var updateConsent = function updateConsent() {
-    var data = {
-      ad_storage: data.ad_storage,
-      analytics_storage: data.analytics_storage,
-      ad_user_data: data.ad_user_data,
-      ad_personalization: data.ad_personalization,
-      functionality_storage: 'granted',
-      personalization_storage: data.personalization_storage,
-      security_storage: 'granted'
-    };
-
-    // Call the updateConsentState function
-    Object(_plugins_planet4_plugin_gutenberg_blocks_assets_src_blocks_Cookies_CookiesFrontend_js__WEBPACK_IMPORTED_MODULE_0__["updateConsentState"])(data);
-  };
-
-  // Call the updateConsent function as needed
-  updateConsent();
   jQuery('.submenu-link').on('click', function (e) {
     var submenuLinkHref = jQuery(this).attr('href');
     window.dataLayer.push({
@@ -1385,6 +1414,32 @@ module.exports = _arrayWithHoles, module.exports.__esModule = true, module.expor
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var toPropertyKey = __webpack_require__(/*! ./toPropertyKey.js */ "./node_modules/@babel/runtime/helpers/toPropertyKey.js");
+function _defineProperty(obj, key, value) {
+  key = toPropertyKey(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js ***!
@@ -1452,6 +1507,65 @@ function _slicedToArray(arr, i) {
   return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
 }
 module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/toPrimitive.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toPrimitive.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/typeof.js")["default"];
+function _toPrimitive(input, hint) {
+  if (_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+module.exports = _toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/toPropertyKey.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toPropertyKey.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/typeof.js")["default"];
+var toPrimitive = __webpack_require__(/*! ./toPrimitive.js */ "./node_modules/@babel/runtime/helpers/toPrimitive.js");
+function _toPropertyKey(arg) {
+  var key = toPrimitive(arg, "string");
+  return _typeof(key) === "symbol" ? key : String(key);
+}
+module.exports = _toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/typeof.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
+}
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
