@@ -9,6 +9,14 @@ CookiesFrontend.prototype.updateConsent = function(key, granted) {
     // Call the original updateConsent function from the plugin
     originalUpdateConsent.call(this, key, granted);
 
+    // Add ad_personalization and ad_user_data to the consent keys
+    if (!this.consentKeys.includes('ad_personalization')) {
+        this.consentKeys.push('ad_personalization');
+    }
+    if (!this.consentKeys.includes('ad_user_data')) {
+        this.consentKeys.push('ad_user_data');
+    }
+
     // Update additional consent keys and values
     if (key === 'ad_personalization' || key === 'ad_user_data') {
         if (granted) {

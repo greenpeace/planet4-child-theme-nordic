@@ -6,11 +6,11 @@ window.dataLayer = window.dataLayer || [];
 
 //adding other scripts
 import './frontend/blockquote';
-import './frontend/externaltools.js';
-import './frontend/gconsent.js';
+import './frontend/externaltools';
+import './frontend/gconsent';
 import './frontend/gfquiz.js';
-import './frontend/leadsplugin.js';
+import './frontend/leadsplugin';
 import './frontend/nosearch';
-import './frontend/templates.js';
+import './frontend/templates';
 import './frontend/tracking';
 

@@ -794,17 +794,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _frontend_blockquote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./frontend/blockquote */ "./assets/src/js/frontend/blockquote.js");
-/* harmony import */ var _frontend_externaltools_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./frontend/externaltools.js */ "./assets/src/js/frontend/externaltools.js");
-/* harmony import */ var _frontend_externaltools_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_frontend_externaltools_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _frontend_gconsent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./frontend/gconsent.js */ "./assets/src/js/frontend/gconsent.js");
+/* harmony import */ var _frontend_externaltools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./frontend/externaltools */ "./assets/src/js/frontend/externaltools.js");
+/* harmony import */ var _frontend_externaltools__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_frontend_externaltools__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _frontend_gconsent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./frontend/gconsent */ "./assets/src/js/frontend/gconsent.js");
 /* harmony import */ var _frontend_gfquiz_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./frontend/gfquiz.js */ "./assets/src/js/frontend/gfquiz.js");
 /* harmony import */ var _frontend_gfquiz_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_frontend_gfquiz_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend/leadsplugin.js */ "./assets/src/js/frontend/leadsplugin.js");
-/* harmony import */ var _frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_frontend_leadsplugin_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _frontend_leadsplugin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend/leadsplugin */ "./assets/src/js/frontend/leadsplugin.js");
+/* harmony import */ var _frontend_leadsplugin__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_frontend_leadsplugin__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./frontend/nosearch */ "./assets/src/js/frontend/nosearch.js");
 /* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_frontend_nosearch__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./frontend/templates.js */ "./assets/src/js/frontend/templates.js");
-/* harmony import */ var _frontend_templates_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _frontend_templates__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./frontend/templates */ "./assets/src/js/frontend/templates.js");
+/* harmony import */ var _frontend_templates__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./frontend/tracking */ "./assets/src/js/frontend/tracking.js");
 /* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_frontend_tracking__WEBPACK_IMPORTED_MODULE_8__);
 //import $ from the global scope
@@ -1058,6 +1058,14 @@ var originalUpdateConsent = _plugins_planet4_plugin_gutenberg_blocks_assets_src_
 _plugins_planet4_plugin_gutenberg_blocks_assets_src_blocks_Cookies_CookiesFrontend__WEBPACK_IMPORTED_MODULE_1__["CookiesFrontend"].prototype.updateConsent = function (key, granted) {
   // Call the original updateConsent function from the plugin
   originalUpdateConsent.call(this, key, granted);
+
+  // Add ad_personalization and ad_user_data to the consent keys
+  if (!this.consentKeys.includes('ad_personalization')) {
+    this.consentKeys.push('ad_personalization');
+  }
+  if (!this.consentKeys.includes('ad_user_data')) {
+    this.consentKeys.push('ad_user_data');
+  }
 
   // Update additional consent keys and values
   if (key === 'ad_personalization' || key === 'ad_user_data') {
