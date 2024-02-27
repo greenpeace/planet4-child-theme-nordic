@@ -12,5 +12,4 @@ import './frontend/gfquiz.js';
 import './frontend/leadsplugin';
 import './frontend/nosearch';
 import './frontend/templates';
-// import './frontend/tracking';
-
+import './frontend/tracking';

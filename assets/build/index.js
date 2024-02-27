@@ -805,6 +805,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_frontend_nosearch__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _frontend_templates__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./frontend/templates */ "./assets/src/js/frontend/templates.js");
 /* harmony import */ var _frontend_templates__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./frontend/tracking */ "./assets/src/js/frontend/tracking.js");
+/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_frontend_tracking__WEBPACK_IMPORTED_MODULE_8__);
 //import $ from the global scope
 
 // Expose jQuery to the global object
@@ -819,7 +821,7 @@ window.dataLayer = window.dataLayer || [];
 
 
 
-// import './frontend/tracking';
+
 
 /***/ }),
 
@@ -1373,6 +1375,92 @@ document.addEventListener("DOMContentLoaded", function () {
     childList: true,
     subtree: true
   });
+});
+
+/***/ }),
+
+/***/ "./assets/src/js/frontend/tracking.js":
+/*!********************************************!*\
+  !*** ./assets/src/js/frontend/tracking.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//tracking the sub-menu block link clicks
+window.addEventListener('DOMContentLoaded', function (event) {
+  jQuery('.submenu-link').on('click', function (e) {
+    var submenuLinkHref = jQuery(this).attr('href');
+    window.dataLayer.push({
+      'link': submenuLinkHref,
+      'event': 'menuClick'
+    });
+  });
+
+  //custom tracking for P4 new IA&NAV
+  //page types
+  if (document.querySelectorAll(".page-content.container .is-pattern-p4-deep-dive-topic-pattern-layout").length > 0) {
+    window.dataLayer.push({
+      'pageType': 'Deep-dive Topic'
+    });
+  } else if (document.querySelectorAll(".page-content.container .is-pattern-p4-high-level-topic-pattern-layout").length > 0) {
+    window.dataLayer.push({
+      'pageType': 'High-level Topic'
+    });
+  } else {
+    //console.log("Default page");
+  }
+
+  //page header clicks
+  var cta = document.querySelectorAll(".is-pattern-p4-page-header");
+  for (var li = 0; li < cta.length; li++) {
+    cta[li].addEventListener('click', function (e) {
+      window.dataLayer.push({
+        'eventCategory': 'Header',
+        'eventAction': 'Call to Action',
+        'event': 'navClick'
+      });
+    }, true);
+  }
+
+  //secondary nav clicks
+  var links = document.querySelectorAll(".nav-link");
+  var _loop = function _loop(_li) {
+    links[_li].addEventListener('click', function (e) {
+      var shorthdl = links[_li].textContent;
+      window.dataLayer.push({
+        'eventCategory': 'Sub Menu',
+        'eventAction': shorthdl,
+        'event': 'navClick'
+      });
+    }, true);
+  };
+  for (var _li = 0; _li < links.length; _li++) {
+    _loop(_li);
+  }
+
+  //other deep-dive topics clicks
+  var ddlinks = document.querySelectorAll(".is-pattern-p4-deep-dive");
+  for (var _li2 = 0; _li2 < ddlinks.length; _li2++) {
+    ddlinks[_li2].addEventListener('click', function (e) {
+      window.dataLayer.push({
+        'eventCategory': 'Read More Topics',
+        'eventAction': 'Deep-Dive Topics',
+        'event': 'navClick'
+      });
+    }, true);
+  }
+
+  //other high-level topics clicks
+  var hllinks = document.querySelectorAll(".is-pattern-p4-quick-links");
+  for (var _li3 = 0; _li3 < hllinks.length; _li3++) {
+    hllinks[_li3].addEventListener('click', function (e) {
+      window.dataLayer.push({
+        'eventCategory': 'Read More Topics',
+        'eventAction': 'High Level Topics',
+        'event': 'navClick'
+      });
+    }, true);
+  }
 });
 
 /***/ }),
