@@ -1,15 +1,15 @@
 // Import the original CookiesFrontend component
 import { CookiesFrontend } from '../../../../../../plugins/planet4-plugin-gutenberg-blocks/assets/src/blocks/Cookies/CookiesFrontend';
 
-// Override the updateConsent function from the plugin
+// Override the updateConsent function
 const originalUpdateConsent = CookiesFrontend.prototype.updateConsent;
 
 // Extend the original updateConsent function
 CookiesFrontend.prototype.updateConsent = function(key, granted) {
-    // Call the original updateConsent function from the plugin
+    // Call the original updateConsent function
     originalUpdateConsent.call(this, key, granted);
 
-    // Add ad_personalization and ad_user_data to the consent keys
+    // Add the 2 new consent keys if they don't exist
     if (!this.consentKeys.includes('ad_personalization')) {
         this.consentKeys.push('ad_personalization');
     }
@@ -17,25 +17,27 @@ CookiesFrontend.prototype.updateConsent = function(key, granted) {
         this.consentKeys.push('ad_user_data');
     }
 
-    // Update consent for ad_personalization and ad_user_data based on ad_storage
-    if (key === 'ad_storage') {
-        const state = granted ? 'granted' : 'denied';
-        this.updateConsent('ad_personalization', state);
-        this.updateConsent('ad_user_data', state);
-    }
-
-    // Push consent update event to dataLayer
-    dataLayer.push({
-        event: 'updateConsent',
-        [key]: granted ? 'granted' : 'denied',
-    });
-
-    if (!ENABLE_GOOGLE_CONSENT_MODE) {
-        return;
+    // Log and push consent status for the 2 new keys
+    if (granted) {
+        console.log('Consent granted.');
+        dataLayer.push({
+            event: 'updateConsent',
+            ad_personalization: 'granted',
+            ad_user_data: 'granted'
+        });
+    } else {
+        console.log('Consent denied.');
+        dataLayer.push({
+            event: 'updateConsent',
+            ad_personalization: 'denied',
+            ad_user_data: 'denied'
+        });
     }
 
     // Update consent for the provided key
-    gtag('consent', 'update', {
-        [key]: granted ? 'granted' : 'denied',
-    });
+    if (ENABLE_GOOGLE_CONSENT_MODE) {
+        gtag('consent', 'update', {
+            [key]: granted ? 'granted' : 'denied',
+        });
+    }
 };
