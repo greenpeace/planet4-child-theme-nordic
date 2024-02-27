@@ -17,22 +17,18 @@ CookiesFrontend.prototype.updateConsent = function(key, granted) {
         this.consentKeys.push('ad_user_data');
     }
 
-    // Update additional consent keys and values
-    if (key === 'ad_personalization' || key === 'ad_user_data') {
-        if (granted) {
-            console.log(`${key} consent granted.`);
-            dataLayer.push({
-                event: 'updateConsent',
-                [key]: 'granted',
-            });
-        } else {
-            console.log(`${key} consent denied.`);
-            dataLayer.push({
-                event: 'updateConsent',
-                [key]: 'denied',
-            });
-        }
+    // Update consent for ad_personalization and ad_user_data based on ad_storage
+    if (key === 'ad_storage') {
+        const state = granted ? 'granted' : 'denied';
+        this.updateConsent('ad_personalization', state);
+        this.updateConsent('ad_user_data', state);
     }
+
+    // Push consent update event to dataLayer
+    dataLayer.push({
+        event: 'updateConsent',
+        [key]: granted ? 'granted' : 'denied',
+    });
 
     if (!ENABLE_GOOGLE_CONSENT_MODE) {
         return;

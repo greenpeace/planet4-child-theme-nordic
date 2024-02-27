@@ -1067,20 +1067,17 @@ _plugins_planet4_plugin_gutenberg_blocks_assets_src_blocks_Cookies_CookiesFronte
     this.consentKeys.push('ad_user_data');
   }
 
-  // Update additional consent keys and values
-  if (key === 'ad_personalization' || key === 'ad_user_data') {
-    if (granted) {
-      console.log("".concat(key, " consent granted."));
-      dataLayer.push(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
-        event: 'updateConsent'
-      }, key, 'granted'));
-    } else {
-      console.log("".concat(key, " consent denied."));
-      dataLayer.push(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
-        event: 'updateConsent'
-      }, key, 'denied'));
-    }
+  // Update consent for ad_personalization and ad_user_data based on ad_storage
+  if (key === 'ad_storage') {
+    var state = granted ? 'granted' : 'denied';
+    this.updateConsent('ad_personalization', state);
+    this.updateConsent('ad_user_data', state);
   }
+
+  // Push consent update event to dataLayer
+  dataLayer.push(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
+    event: 'updateConsent'
+  }, key, granted ? 'granted' : 'denied'));
   if (!ENABLE_GOOGLE_CONSENT_MODE) {
     return;
   }
