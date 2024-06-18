@@ -7,7 +7,7 @@ window.dataLayer = window.dataLayer || [];
 //adding other scripts
 import './frontend/blockquote';
 import './frontend/externaltools';
-import './frontend/gconsent';
+// import './frontend/gconsent';
 import './frontend/gfquiz.js';
 import './frontend/leadsplugin';
 import './frontend/nosearch';
