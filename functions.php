@@ -9,7 +9,7 @@
  * License URI: https://opensource.org/licenses/MIT
  * Tags: light, accessibility-ready
  * Text Domain: planet4-child-theme-nordic
- * Version: 1.48.0
+ * Version: 1.48.1
  */
 
 
@@ -37,7 +37,7 @@ function enqueue_child_styles()
 function enqueue_child_scripts()
 {
     // Load scripts for frontend
-    wp_enqueue_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.27.2', true);
+    wp_enqueue_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.27.3', true);
 
     // Enqueue scripts for block editor
     wp_enqueue_script(

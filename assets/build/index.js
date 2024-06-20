@@ -119,7 +119,6 @@ window.dataLayer = window.dataLayer || [];
 //adding other scripts
 
 
-// import './frontend/gconsent';
 
 
 
