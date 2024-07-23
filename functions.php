@@ -18,12 +18,6 @@ require_once 'includes/gutenberg-blocks.php';
 // Modify the CSP page header
 require_once 'includes/csp-headers.php';
 
-add_action('admin_menu', 'remove_acf_options_page', 99);
-function remove_acf_options_page()
-{
-    remove_menu_page('acf-options');
-}
-
 //load the child theme styles
 add_action('wp_enqueue_scripts', 'enqueue_child_styles');
 function enqueue_child_styles()
@@ -93,7 +87,7 @@ function enqueue_custom_scripts() {
 }
 add_action('admin_enqueue_scripts', 'enqueue_custom_scripts'); // Hook into admin_enqueue_scripts
 
-//hide from page search rsults the published pages with external counter tempate integration
+//hide from page search results the published pages with external counter tempate integration
 add_action('wp_head', 'get_all_counter_template_pages');
 function get_all_counter_template_pages()
 {
@@ -140,6 +134,31 @@ add_action(
     }, 99, 3
 );
 
+/**
+ * Theme settings modificatons
+ */
+
+//remove the acf menu item as it is not used
+add_action('admin_menu', 'remove_acf_options_page', 99);
+function remove_acf_options_page()
+{
+    remove_menu_page('acf-options');
+}
+
+//remove the acf custom fields menu item as it is not used
+add_action( 'admin_init', function () {
+    remove_menu_page( 'edit.php?post_type=acf-field-group' );
+    remove_menu_page( 'Custom Fields' );
+});
+
+
+//remove the campaign menu item as it is not used
+add_action( 'admin_init', function () {
+    remove_menu_page( 'edit.php?post_type=campaign' );
+    remove_menu_page( 'Campaigns' );
+});
+
+
 
 /**
  * Font Awesome Kit Setup
@@ -162,5 +181,3 @@ if (! function_exists('fa_custom_setup_kit') ) {
 }
 
 fa_custom_setup_kit('https://kit.fontawesome.com/508a5d6fe1.js');
-
-
