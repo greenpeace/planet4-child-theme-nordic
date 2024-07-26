@@ -24,6 +24,10 @@ const icons_config = {
 };
 
 module.exports = {
+  node: {
+    Buffer: false,
+    process: false,
+  },
   ...defaultConfig,
   entry: {
     index: './assets/src/js/app.js',
