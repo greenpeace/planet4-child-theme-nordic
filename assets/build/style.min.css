@@ -756,8 +756,7 @@ div.carousel-captions-wrapper h2 {
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -2558,8 +2557,7 @@ body {
 
 @media (min-width: 768px) {
   div.wp-block-media-text.has-media-on-the-right div.wp-block-media-text__content {
-    -webkit-padding-start: 0;
-            padding-inline-start: 0;
+    padding-inline-start: 0;
   }
 }
 li.search-result-list-item:hover a.search-result-item-headline {
@@ -3940,8 +3938,7 @@ and so on...
   width: 100%;
   color: #020202;
   transition: unset;
-  -webkit-transform: translateX(50px);
-          transform: translateX(50px);
+  transform: translateX(50px);
   font-size: calc(1.475rem + 1.5vw);
   margin-bottom: 18px;
   line-height: 1.2;
@@ -4860,12 +4857,10 @@ button.author-block-description-button:after {
   background-repeat: no-repeat;
   width: 10px;
   height: 10px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .author-block-description-button[aria-expanded=true]:after {
-  -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
   vertical-align: initial;
 }
@@ -6038,10 +6033,8 @@ and so on...
   box-shadow: none !important;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
-  -webkit-padding-start: 8px;
-          padding-inline-start: 8px;
-  -webkit-padding-end: 8px !important;
-          padding-inline-end: 8px !important;
+  padding-inline-start: 8px;
+  padding-inline-end: 8px !important;
 }
 
 .hidden-title {
@@ -7369,10 +7362,6 @@ blockquote > p {
   line-height: 1.4;
   font-style: normal;
   width: 100%;
-  color: #000;
-  width: 90%;
-  margin: 1rem 0;
-  padding-bottom: 0;
 }
 @media (min-width: 768px) {
   blockquote,
@@ -7399,29 +7388,11 @@ blockquote > p {
     padding-left: 2vw;
   }
 }
-
-blockquote > h5 {
-  font-size: inherit;
-  line-height: 1.4;
-  font-style: normal;
-  width: 100%;
-  font-family: var(--body--font-family);
-}
-@media (min-width: 768px) {
-  blockquote > h5 {
-    font-size: 1rem;
-    padding-left: 0;
-  }
-}
-@media (min-width: 992px) {
-  blockquote > h5 {
-    max-width: 80%;
-  }
-}
-@media (min-width: 1200px) {
-  blockquote > h5 {
-    font-size: 1.25rem;
-  }
+blockquote,
+blockquote > p {
+  color: #000;
+  margin: 1rem 0;
+  padding-bottom: 0;
 }
 
 blockquote > cite {
@@ -7454,8 +7425,6 @@ blockquote.wp-block-quote,
   line-height: 1.4;
   font-style: normal;
   width: 100%;
-  overflow-wrap: break-word;
-  position: relative;
 }
 @media (min-width: 768px) {
   blockquote.wp-block-quote,
@@ -7476,6 +7445,11 @@ blockquote.wp-block-quote,
     font-size: 1.25rem;
   }
 }
+blockquote.wp-block-quote,
+.wp-block-quote.is-style-default {
+  overflow-wrap: break-word;
+  position: relative;
+}
 blockquote.wp-block-quote.has-text-align-left,
 .wp-block-quote.is-style-default.has-text-align-left {
   padding: 0.5rem 1rem;
@@ -7493,10 +7467,10 @@ blockquote.wp-block-quote.has-text-align-center,
   border-right: none;
 }
 @media (min-width: 576px) and (max-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-center,
-  .wp-block-quote.is-style-default.has-text-align-center {
-    padding-left: 8vw;
-    width: 95%;
+  blockquote.wp-block-quote.has-text-align-center cite,
+  .wp-block-quote.is-style-default.has-text-align-center cite {
+    padding-left: 0;
+    margin-left: 3vw;
   }
 }
 @media (min-width: 992px) {
@@ -7506,13 +7480,19 @@ blockquote.wp-block-quote.has-text-align-center,
   }
   blockquote.wp-block-quote.has-text-align-center p,
   .wp-block-quote.is-style-default.has-text-align-center p {
-    margin-left: 0;
+    margin-left: 5vw;
   }
   blockquote.wp-block-quote.has-text-align-center cite,
   .wp-block-quote.is-style-default.has-text-align-center cite {
     margin-left: 0vw;
     position: relative;
     padding: inherit;
+  }
+}
+@media (min-width: 1200px) {
+  blockquote.wp-block-quote.has-text-align-center p,
+  .wp-block-quote.is-style-default.has-text-align-center p {
+    margin-left: 5vw;
   }
 }
 blockquote.wp-block-quote.has-text-align-right,
@@ -7538,13 +7518,13 @@ blockquote.wp-block-quote.has-text-align-right,
 @media (max-width: 576px) {
   blockquote.wp-block-quote.has-text-align-right p,
   .wp-block-quote.is-style-default.has-text-align-right p {
-    margin-left: 2rem;
+    margin-left: 0;
   }
 }
 @media (min-width: 576px) and (max-width: 992px) {
   blockquote.wp-block-quote.has-text-align-right p,
   .wp-block-quote.is-style-default.has-text-align-right p {
-    margin-left: 2.8rem;
+    margin-left: 0;
   }
 }
 @media (min-width: 992px) {
@@ -7695,24 +7675,37 @@ blockquote.wp-block-quote cite,
 }
 @media (max-width: 576px) {
   .wp-block-quote.is-style-plain.has-text-align-center {
-    padding: 0 1.5rem 0 0;
+    padding: 0 3rem 0 0;
     margin-left: 2rem;
   }
   .wp-block-quote.is-style-plain.has-text-align-center cite {
-    margin-left: -14vw;
+    margin-left: -4vw;
   }
 }
 @media (min-width: 576px) and (max-width: 992px) {
   .wp-block-quote.is-style-plain.has-text-align-center {
-    padding-left: 10vw;
+    padding-left: 4vw;
   }
   .wp-block-quote.is-style-plain.has-text-align-center cite {
-    margin-left: -14vw;
+    margin-left: 0;
   }
 }
 @media (min-width: 992px) {
   .wp-block-quote.is-style-plain.has-text-align-center {
-    margin-left: 3vw;
+    margin-left: 1vw;
+  }
+  .wp-block-quote.is-style-plain.has-text-align-center cite {
+    margin-left: -10vw;
+  }
+}
+@media (min-width: 1200px) {
+  .wp-block-quote.is-style-plain.has-text-align-center cite {
+    margin-left: -5vw;
+  }
+}
+@media (min-width: 1600px) {
+  .wp-block-quote.is-style-plain.has-text-align-center {
+    margin-left: -1vw;
   }
 }
 .wp-block-quote.is-style-plain.has-text-align-center p::before,
@@ -7818,11 +7811,6 @@ blockquote.wp-block-quote cite,
   line-height: 1.4;
   font-style: normal;
   width: 100%;
-  border-left: 4px solid var(--blockquote-border-color);
-  color: inherit;
-  border-right: none;
-  border-top: none;
-  border-bottom: none;
 }
 @media (min-width: 768px) {
   .wp-block-quote.is-style-custom {
@@ -7840,6 +7828,13 @@ blockquote.wp-block-quote cite,
     font-size: 1.25rem;
   }
 }
+.wp-block-quote.is-style-custom {
+  border-left: 4px solid var(--blockquote-border-color);
+  color: inherit;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+}
 .wp-block-quote.is-style-custom.has-text-align-left {
   padding: 0.5rem 0.5rem 0.5rem 1rem;
   border-left: 4px solid var(--blockquote-border-color);
@@ -7856,7 +7851,12 @@ blockquote.wp-block-quote cite,
 }
 @media (min-width: 576px) and (max-width: 992px) {
   .wp-block-quote.is-style-custom.has-text-align-center {
-    padding-left: 8vw;
+    padding-left: 3vw;
+  }
+}
+@media (min-width: 1600px) {
+  .wp-block-quote.is-style-custom.has-text-align-center p {
+    margin-left: 3vw;
   }
 }
 .wp-block-quote.is-style-custom.has-text-align-right {
@@ -8295,7 +8295,6 @@ blockquote.wp-block-quote cite,
 .cover-card-content {
   background: #fff;
   z-index: 100;
-  position: -webkit-sticky;
   position: sticky;
 }
 .cover-card-content .cover-card-heading {
@@ -8328,10 +8327,8 @@ span.cover-card-tag {
   max-height: 220px;
   display: block;
   position: relative;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transform-origin: center;
-          transform-origin: center;
+  transform: scale(1);
+  transform-origin: center;
   transition: 0.5s all ease-in-out;
 }
 .take-action-covers-block .cover:hover a[data-ga-action=Image] img {
@@ -8339,10 +8336,8 @@ span.cover-card-tag {
   max-height: 220px;
   display: block;
   position: relative;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transform-origin: center;
-          transform-origin: center;
+  transform: scale(1.1);
+  transform-origin: center;
 }
 .take-action-covers-block .cover:hover a.cover-card-heading[data-ga-action=Title] {
   text-decoration: none;

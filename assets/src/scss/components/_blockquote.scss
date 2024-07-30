@@ -26,10 +26,6 @@
 blockquote,
 blockquote>p {
     @include blockquote;
-    color: $black;
-    width: 90%;
-    margin: 1rem 0;
-    padding-bottom: 0;
 
     @include medium-and-up {
         p {
@@ -37,12 +33,12 @@ blockquote>p {
         }
     }
 
+    & {
+        color: $black;
+        margin: 1rem 0;
+        padding-bottom: 0;
+    }
 
-}
-
-blockquote>h5 {
-    @include blockquote;
-    font-family: var(--body--font-family);
 }
 
 blockquote>cite {
@@ -74,8 +70,10 @@ blockquote.wp-block-quote,
 .wp-block-quote.is-style-default {
     @include blockquote;
 
-    overflow-wrap: break-word;
-    position: relative;
+    & {
+        overflow-wrap: break-word;
+        position: relative;
+    }
 
     &.has-text-align-left {
         padding: .5rem 1rem;
@@ -93,21 +91,30 @@ blockquote.wp-block-quote,
         border-right: none;
 
         @include tablet-only {
-            padding-left: 8vw;
-            width: 95%;
+
+            cite {
+                padding-left: 0;
+                margin-left: 3vw;
+            }
         }
 
         @include large-and-up {
             margin-left: 0;
 
             p {
-                margin-left: 0;
+                margin-left: 5vw;
             }
 
             cite {
                 margin-left: 0vw;
                 position: relative;
                 padding: inherit;
+            }
+        }
+
+        @include x-large-and-up {
+            p {
+                margin-left: 5vw;
             }
         }
 
@@ -125,17 +132,17 @@ blockquote.wp-block-quote,
         }
 
         @include xx-large-and-up {
-            padding-right: 2vw!important;
+            padding-right: 2vw !important;
         }
 
 
         p {
             @include mobile-only {
-                margin-left: 2rem;
+                margin-left: 0;
             }
 
             @include tablet-only {
-                margin-left: 2.8rem;
+                margin-left: 0;
             }
 
             @include large-and-up {
@@ -276,25 +283,41 @@ blockquote.wp-block-quote,
         }
 
         @include mobile-only {
-            padding: 0 1.5rem 0 0;
+            padding: 0 3rem 0 0;
             margin-left: 2rem;
 
             cite {
-                margin-left: -14vw;
+                margin-left: -4vw;
             }
         }
 
         @include tablet-only {
-            padding-left: 10vw;
+            padding-left: 4vw;
 
             cite {
-                margin-left: -14vw;
+                margin-left: 0;
             }
         }
 
         @include large-and-up {
-            margin-left: 3vw;
+            margin-left: 1vw;
+
+            cite {
+                margin-left: -10vw;
+            }
         }
+
+        @include x-large-and-up {
+            cite {
+                margin-left: -5vw;
+            }
+        }
+
+        @include xx-large-and-up {
+            margin-left: -1vw;
+
+        }
+
 
         p::before,
         cite::after {
@@ -399,11 +422,14 @@ blockquote.wp-block-quote,
 
 .wp-block-quote.is-style-custom {
     @include blockquote;
-    border-left: 4px solid var(--blockquote-border-color);
-    color: inherit;
-    border-right: none;
-    border-top: none;
-    border-bottom: none;
+
+    & {
+        border-left: 4px solid var(--blockquote-border-color);
+        color: inherit;
+        border-right: none;
+        border-top: none;
+        border-bottom: none;
+    }
 
     &.has-text-align-left {
         padding: .5rem .5rem .5rem 1rem;
@@ -421,8 +447,13 @@ blockquote.wp-block-quote,
         border-left: none;
 
         @include tablet-only {
-            padding-left: 8vw;
+            padding-left: 3vw;
+        }
 
+        @include xx-large-and-up {
+            p {
+                margin-left: 3vw;
+            }
         }
 
     }
@@ -453,7 +484,7 @@ blockquote.wp-block-quote,
         @include mobile-only {
             width: 100%;
         }
-    
+
     }
 
 
