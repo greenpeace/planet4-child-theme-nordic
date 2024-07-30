@@ -128,4 +128,3 @@ try {
 } catch (error) {
    // console.error('Failed to register block style', error);
 }
-

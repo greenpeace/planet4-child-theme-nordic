@@ -6,9 +6,11 @@
 .main-tag-chevron {
   vertical-align: middle;
   max-height: 10px;
-  background-image: url("../../assets/images/chevron.svg")!important;
+  background-image: url("../../assets/images/chevron.svg") !important;
 }
 
-.top-page-tags .category-separator, .top-page-tags .tag-wrap-bullet, .main-tag-chevron {
-  color: $gp-green-50!important;
+.top-page-tags .category-separator,
+.top-page-tags .tag-wrap-bullet,
+.main-tag-chevron {
+  color: $gp-green-50 !important;
 }

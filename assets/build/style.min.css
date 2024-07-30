@@ -39,7 +39,7 @@ Description: Child theme for the Planet 4 Wordpress project
 Author: Greenpeace Nordic
 Author URI: https://github.com/greenpeace
 Template: planet4-master-theme
-Version: 0.0.12
+Version: 0.0.13
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: light, accessibility-ready
@@ -2990,7 +2990,9 @@ and so on...
   background-image: url("../../assets/images/chevron.svg") !important;
 }
 
-.top-page-tags .category-separator, .top-page-tags .tag-wrap-bullet, .main-tag-chevron {
+.top-page-tags .category-separator,
+.top-page-tags .tag-wrap-bullet,
+.main-tag-chevron {
   color: #66CC00 !important;
 }
 
@@ -3395,14 +3397,18 @@ and so on...
 }
 button,
 button[type=submit],
-.btn, .btn span, .boxout .btn,
+.btn,
+.btn span,
+.boxout .btn,
 .btn-primary[data-ga-action="Call to Action"],
 .btn-secondary,
 .wp-block-button__link,
 a[data-ga-action=Donate],
 .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"],
-.post-content .more-link, .post-content .page-links a,
-.wp-block-button a.wp-block-button__link, .wp-block-file .wp-block-file__button {
+.post-content .more-link,
+.post-content .page-links a,
+.wp-block-button a.wp-block-button__link,
+.wp-block-file .wp-block-file__button {
   cursor: pointer;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   font-weight: var(--btn-body-font-weight);
@@ -3410,26 +3416,41 @@ a[data-ga-action=Donate],
   font-size: 1rem;
 }
 
-.boxout .btn, button[type=submit]:not(.nav-search-btn, .search-form-btn),
-.btn.btn-primary[data-ga-action="Call to Action"], a.btn.btn-donate[data-ga-action=Donate], .cover-card.cover .btn.cover-card-btn.btn-primary,
-.btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
-.btn.btn-primary#hidecookie, .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"] {
+.boxout .btn,
+button[type=submit]:not(.nav-search-btn, .search-form-btn),
+.btn.btn-primary[data-ga-action="Call to Action"],
+a.btn.btn-donate[data-ga-action=Donate],
+.cover-card.cover .btn.cover-card-btn.btn-primary,
+.btn-primary,
+.wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
+.btn.btn-primary#hidecookie,
+.btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"] {
   background: #4CB500;
   color: #fff;
   border: none;
   background-position: center;
   transition: background 0.8s;
 }
-.boxout .btn:hover, button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
-.btn.btn-primary[data-ga-action="Call to Action"]:hover, a.btn.btn-donate[data-ga-action=Donate]:hover, .cover-card.cover .btn.cover-card-btn.btn-primary:hover,
-.btn-primary:hover, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:hover,
-.btn.btn-primary#hidecookie:hover, .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"]:hover {
+.boxout .btn:hover,
+button[type=submit]:not(.nav-search-btn, .search-form-btn):hover,
+.btn.btn-primary[data-ga-action="Call to Action"]:hover,
+a.btn.btn-donate[data-ga-action=Donate]:hover,
+.cover-card.cover .btn.cover-card-btn.btn-primary:hover,
+.btn-primary:hover,
+.wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:hover,
+.btn.btn-primary#hidecookie:hover,
+.btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"]:hover {
   background: #339E00 radial-gradient(circle, transparent 1%, #339E00 1%) center/15000%;
 }
-.boxout .btn:active, button[type=submit]:not(.nav-search-btn, .search-form-btn):active,
-.btn.btn-primary[data-ga-action="Call to Action"]:active, a.btn.btn-donate[data-ga-action=Donate]:active, .cover-card.cover .btn.cover-card-btn.btn-primary:active,
-.btn-primary:active, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:active,
-.btn.btn-primary#hidecookie:active, .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"]:active {
+.boxout .btn:active,
+button[type=submit]:not(.nav-search-btn, .search-form-btn):active,
+.btn.btn-primary[data-ga-action="Call to Action"]:active,
+a.btn.btn-donate[data-ga-action=Donate]:active,
+.cover-card.cover .btn.cover-card-btn.btn-primary:active,
+.btn-primary:active,
+.wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button:active,
+.btn.btn-primary#hidecookie:active,
+.btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"]:active {
   background-color: #66CC00;
   background-size: 100%;
   transition: background 0s;
@@ -3472,7 +3493,10 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 }
 .btn-secondary:not(#hidecookie),
 .btn-secondary:not(#commentform),
-.btn-secondary, .wp-block-button.is-style-secondary a, a.wp-block-button__link, .wp-block-button.is-style-secondary a:visited {
+.btn-secondary,
+.wp-block-button.is-style-secondary a,
+a.wp-block-button__link,
+.wp-block-button.is-style-secondary a:visited {
   border-color: #198700;
   color: #198700;
   box-shadow: none;
@@ -3487,14 +3511,20 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 }
 .btn-secondary:not(#hidecookie):hover,
 .btn-secondary:not(#commentform):hover,
-.btn-secondary:hover, .wp-block-button.is-style-secondary a:hover, a.wp-block-button__link:hover, .wp-block-button.is-style-secondary a:visited:hover {
+.btn-secondary:hover,
+.wp-block-button.is-style-secondary a:hover,
+a.wp-block-button__link:hover,
+.wp-block-button.is-style-secondary a:visited:hover {
   background: #198700 radial-gradient(circle, transparent 1%, #198700 1%) center/15000%;
   border-color: #198700;
   color: #fff;
 }
 .btn-secondary:not(#hidecookie):active,
 .btn-secondary:not(#commentform):active,
-.btn-secondary:active, .wp-block-button.is-style-secondary a:active, a.wp-block-button__link:active, .wp-block-button.is-style-secondary a:visited:active {
+.btn-secondary:active,
+.wp-block-button.is-style-secondary a:active,
+a.wp-block-button__link:active,
+.wp-block-button.is-style-secondary a:visited:active {
   background-color: #4CB500;
   border-color: #198700;
   background-size: 100%;
@@ -3507,7 +3537,16 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 .btn-secondary:not(#commentform)[disabled],
 .btn-secondary:disabled,
 .btn-secondary.disabled,
-.btn-secondary[disabled], .wp-block-button.is-style-secondary a:disabled, .wp-block-button.is-style-secondary a.disabled, .wp-block-button.is-style-secondary a[disabled], a.wp-block-button__link:disabled, a.wp-block-button__link.disabled, a.wp-block-button__link[disabled], .wp-block-button.is-style-secondary a:visited:disabled, .wp-block-button.is-style-secondary a:visited.disabled, .wp-block-button.is-style-secondary a:visited[disabled] {
+.btn-secondary[disabled],
+.wp-block-button.is-style-secondary a:disabled,
+.wp-block-button.is-style-secondary a.disabled,
+.wp-block-button.is-style-secondary a[disabled],
+a.wp-block-button__link:disabled,
+a.wp-block-button__link.disabled,
+a.wp-block-button__link[disabled],
+.wp-block-button.is-style-secondary a:visited:disabled,
+.wp-block-button.is-style-secondary a:visited.disabled,
+.wp-block-button.is-style-secondary a:visited[disabled] {
   background: #fff;
   color: #005c42;
 }
@@ -3531,7 +3570,8 @@ a.wp-block-file__button.pdf-link:hover, a.wp-block-file__button.pdf-link:active 
   display: none;
 }
 
-.wp-block-button.is-style-transparent a:active, .wp-block-button.is-style-transparent a:hover {
+.wp-block-button.is-style-transparent a:active,
+.wp-block-button.is-style-transparent a:hover {
   border-color: #fff;
 }
 
@@ -4828,7 +4868,8 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-.author-block, .comments-block .form-section .comment-respond {
+.author-block,
+.comments-block .form-section .comment-respond {
   background: rgba(236, 236, 236, 0.25);
   box-shadow: 0 1px 3px 0 rgba(31, 38, 135, 0.1803921569);
   backdrop-filter: blur(4px);

@@ -5,14 +5,18 @@
 
 button,
 button[type="submit"],
-.btn, .btn span, .boxout .btn,
+.btn,
+.btn span,
+.boxout .btn,
 .btn-primary[data-ga-action="Call to Action"],
 .btn-secondary,
 .wp-block-button__link,
 a[data-ga-action="Donate"],
 .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"],
-.post-content .more-link, .post-content .page-links a,
-.wp-block-button a.wp-block-button__link, .wp-block-file .wp-block-file__button{
+.post-content .more-link,
+.post-content .page-links a,
+.wp-block-button a.wp-block-button__link,
+.wp-block-file .wp-block-file__button {
   cursor: pointer;
   font-family: $roboto;
   font-weight: var(--btn-body-font-weight);
@@ -21,10 +25,15 @@ a[data-ga-action="Donate"],
 }
 
 //CTA color buttons
-.boxout .btn, button[type="submit"]:not(.nav-search-btn, .search-form-btn),
-.btn.btn-primary[data-ga-action="Call to Action"], a.btn.btn-donate[data-ga-action="Donate"], .cover-card.cover .btn.cover-card-btn.btn-primary,
-.btn-primary, .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
-.btn.btn-primary#hidecookie, .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"] {
+.boxout .btn,
+button[type="submit"]:not(.nav-search-btn, .search-form-btn),
+.btn.btn-primary[data-ga-action="Call to Action"],
+a.btn.btn-donate[data-ga-action="Donate"],
+.cover-card.cover .btn.cover-card-btn.btn-primary,
+.btn-primary,
+.wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
+.btn.btn-primary#hidecookie,
+.btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"] {
   background: $gp-green-60;
   color: $white;
   border: none;
@@ -64,7 +73,7 @@ a.pdf-link:hover::before {
 }
 
 a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
-  color:$gp-green-70;
+  color: $gp-green-70;
   -webkit-text-decoration-color: $gp-green-70;
   -moz-text-decoration-color: $gp-green-70;
   text-decoration-color: $gp-green-70;
@@ -87,7 +96,10 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 //Secondary btns
 .btn-secondary:not(#hidecookie),
 .btn-secondary:not(#commentform),
-.btn-secondary, .wp-block-button.is-style-secondary a, a.wp-block-button__link, .wp-block-button.is-style-secondary a:visited {
+.btn-secondary,
+.wp-block-button.is-style-secondary a,
+a.wp-block-button__link,
+.wp-block-button.is-style-secondary a:visited {
   border-color: $gp-green-80;
   color: $gp-green-80;
   box-shadow: none;
@@ -103,7 +115,7 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
   &:hover {
     background: $gp-green-80 radial-gradient(circle, transparent 1%, $gp-green-80 1%) center/15000%;
     border-color: $gp-green-80;
-    color:$white
+    color: $white
   }
 
   &:active {
@@ -125,7 +137,7 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 
 
 a.wp-block-file__button.pdf-link {
-  color: $gp-green-80!important;
+  color: $gp-green-80 !important;
   -webkit-text-decoration-color: $gp-green-80;
   -moz-text-decoration-color: $gp-green-80;
   text-decoration-color: $gp-green-80;
@@ -138,7 +150,7 @@ a.wp-block-file__button.pdf-link {
   &:active {
     background: $gp-green-80;
     border-color: $gp-green-80;
-    color: $white!important;
+    color: $white !important;
   }
 }
 
@@ -147,6 +159,7 @@ a.wp-block-file__button.pdf-link {
 }
 
 //transparent buttons
-.wp-block-button.is-style-transparent a:active, .wp-block-button.is-style-transparent a:hover {
+.wp-block-button.is-style-transparent a:active,
+.wp-block-button.is-style-transparent a:hover {
   border-color: $white;
 }

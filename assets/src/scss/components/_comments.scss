@@ -4,12 +4,13 @@
 @import "../base/fonts";
 
 //Author info in posts
-.author-block, .comments-block .form-section .comment-respond{
-  background: rgba( 236, 236, 236, 0.25 );
+.author-block,
+.comments-block .form-section .comment-respond {
+  background: rgba(236, 236, 236, 0.25);
   box-shadow: 0 1px 3px 0 #1f26872e;
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
-  -ms-backdrop-filter: blur( 4px );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  -ms-backdrop-filter: blur(4px);
   border-radius: 6px;
 }
 
@@ -23,17 +24,18 @@
     color: $dark-green;
   }
 }
+
 button.author-block-description-button {
   background-color: inherit;
 }
 
 button.author-block-description-button:after {
-   background-image: url("../../assets/images/chevron.svg")!important;
-   background-size: contain;
-   background-repeat: no-repeat;
-   width: 10px;
-   height: 10px;
-   transform: rotate(90deg);
+  background-image: url("../../assets/images/chevron.svg") !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  transform: rotate(90deg);
 }
 
 .author-block-description-button[aria-expanded=true]:after {
@@ -41,4 +43,3 @@ button.author-block-description-button:after {
   transform: rotate(270deg);
   vertical-align: initial;
 }
-

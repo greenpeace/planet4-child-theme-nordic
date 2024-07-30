@@ -1,21 +1,21 @@
 @import "../base/colors";
 @import "../base/fonts";
 // Fonts
-$roboto:   "Roboto", "Helvetica", "Arial", sans-serif!important;
+$roboto: "Roboto", "Helvetica", "Arial", sans-serif !important;
 // changed the font from here to make sure it will assigned where it need to
 // $lora:     "Open Sans", sans-serif;
-$gp-sans: "Greenpeace Sans", "Helvetica", "Arial", sans-serif!important;
-$helvetica: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif!important;
-$helvetica-bold: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif!important;
-$lora: "Roboto", "Arial", sans-serif!important;
+$gp-sans: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+$helvetica: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
+$helvetica-bold: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif !important;
+$lora: "Roboto", "Arial", sans-serif !important;
 
 
 // Media queries
-$extra-small-width:       375px;
-$small-width:             576px;
-$medium-width:            768px;
-$large-width:             992px;
-$extra-large-width:       1200px;
+$extra-small-width: 375px;
+$small-width: 576px;
+$medium-width: 768px;
+$large-width: 992px;
+$extra-large-width: 1200px;
 $extra-extra-large-width: 1600px;
 
 //font-sizes
@@ -46,7 +46,7 @@ $font-size-xxxxl: 4rem;
   --nav-link--hover--text-underline-position: under;
   --accordion-block-light-style--background: #{$gp-green-5};
   --accordion-block-light-style--border-color: transparent;
-  --accordion-block-light-style--hover--background: #{$gp-green-10}; 
+  --accordion-block-light-style--hover--background: #{$gp-green-10};
   --accordion-block-dark-style--background: #{$gp-nor-green-3};
   --accordion-block-dark-style--hover--background: #{$gp-nor-green};
   --blockquote-border-color: #{$gp-green-50};
@@ -73,4 +73,3 @@ $font-size-xxxxl: 4rem;
 // $n80: 80px;
 // $n90: 90px;
 // $n100: 100px;
-

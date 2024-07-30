@@ -1,5 +1,5 @@
 //add a script to the page to hide the page from google search results
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function () {
   let body = document.querySelector('body');
   let bodyClass = body.getAttribute('class');
   let robots = document.querySelector('meta[name="robots"]');

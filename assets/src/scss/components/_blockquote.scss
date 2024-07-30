@@ -135,7 +135,6 @@ blockquote.wp-block-quote,
             padding-right: 2vw !important;
         }
 
-
         p {
             @include mobile-only {
                 margin-left: 0;
@@ -318,7 +317,6 @@ blockquote.wp-block-quote,
 
         }
 
-
         p::before,
         cite::after {
             font-size: 7rem;
@@ -486,7 +484,6 @@ blockquote.wp-block-quote,
         }
 
     }
-
 
     &.has-text-align-center.is-style-plain {
         @include large-and-up {

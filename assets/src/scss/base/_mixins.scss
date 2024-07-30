@@ -98,10 +98,14 @@
 // Usage: @include transition(all 0.2s ease-in-out);
 @mixin transition($transition...) {
   // defining prefixes so we can use them in mixins below
-  $prefixes: ("-webkit-", "" );
-  @each $prefix in $prefixes {
-    #{$prefix}transition: $transition;
-  }
+  $prefixes: (
+    "-webkit-",
+    ""
+  );
+
+@each $prefix in $prefixes {
+  #{$prefix}transition: $transition;
+}
 }
 
 // Cause an element to match the size of its stacking context parent.
@@ -115,16 +119,19 @@
 
 // Build a linear gradient with a direction and any number of color stops.
 @mixin linear-gradient($direction, $color-stops...) {
-  background: nth(nth($color-stops, 1), 1); /* Old browsers */
-  background: -moz-linear-gradient(legacy-direction($direction), $color-stops); /* FF3.6-15 */
-  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient($direction, $color-stops); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: nth(nth($color-stops, 1), 1);
+  /* Old browsers */
+  background: -moz-linear-gradient(legacy-direction($direction), $color-stops);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient($direction, $color-stops);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 // Create a gradient with hard stops that lines up. Colors layout from top-right to bottom-left.
 @mixin skewed-gradient($color1, $color2, $color3, $color4, $color5, $angle: 245deg) {
-  @include linear-gradient(
-    $angle,
+  @include linear-gradient($angle,
     #{$color1} 6%,
     #{$color2} 6%,
     #{$color2} 35%,
@@ -132,12 +139,10 @@
     #{$color3} 80%,
     #{$color4} 80%,
     #{$color4} 95%,
-    #{$color5} 95%
-  );
+    #{$color5} 95%);
 
   @include large-and-up {
-    @include linear-gradient(
-      $angle,
+    @include linear-gradient($angle,
       #{$color1} 15%,
       #{$color2} 15%,
       #{$color2} 45%,
@@ -145,14 +150,12 @@
       #{$color3} 80%,
       #{$color4} 80%,
       #{$color4} 90%,
-      #{$color5} 90%
-    );
+      #{$color5} 90%);
   }
 }
 
 @mixin detailed-skewed-gradient($color1, $color2, $color3, $color4, $color5, $color6, $color7, $color8, $angle: 245deg) {
-  @include linear-gradient(
-    $angle,
+  @include linear-gradient($angle,
     #{$color1} 6%,
     #{$color2} 6%,
     #{$color3} 35%,
@@ -160,12 +163,10 @@
     #{$color5} 80%,
     #{$color6} 80%,
     #{$color7} 95%,
-    #{$color8} 95%
-  );
+    #{$color8} 95%);
 
   @include large-and-up {
-    @include linear-gradient(
-      $angle,
+    @include linear-gradient($angle,
       #{$color1} 15%,
       #{$color2} 15%,
       #{$color3} 45%,
@@ -173,8 +174,7 @@
       #{$color5} 80%,
       #{$color6} 80%,
       #{$color7} 90%,
-      #{$color8} 90%
-    );
+      #{$color8} 90%);
   }
 }
 
@@ -219,10 +219,11 @@
     top: 0;
     bottom: 0;
 
-    @if $side == right {
+    @if $side ==right {
       right: $right;
     }
-    @else if $side == left {
+
+    @else if $side ==left {
       left: $left;
     }
 
@@ -240,6 +241,7 @@ and so on...
 */
 $comment-nest-level: 6;
 $nested-comment-left-margin: 50px;
+
 @mixin comment-level {
   @for $i from 1 through $comment-nest-level {
     .comment-level-#{$i} {

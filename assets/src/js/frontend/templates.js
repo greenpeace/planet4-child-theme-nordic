@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (pageHeaderContainer && pageHeaderContainer.innerHTML.trim() === '') {
             insertTitle(strippedTitle); // Insert the title
         }
-    } 
+    }
 
     if (isNoPageTitle && noH1OnPage && isHomeNoPageTitleContainer) {
         const newElement = document.createElement('h1');
