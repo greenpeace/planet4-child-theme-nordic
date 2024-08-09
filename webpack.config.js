@@ -131,5 +131,13 @@ module.exports = {
         }
       })
     ]
-  }
+  },
+  stats: { //print detailed output for debugging
+    all: true,
+    chunkModules: true,
+    errorDetails: true,
+    assets: true,
+    modules: true,
+    loggingDebug: ["sass-loader"],
+  },
 };
