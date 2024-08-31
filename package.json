@@ -45,7 +45,7 @@
     "bootstrap": "^5.3.3",
     "classnames": "^2.5.1",
     "jquery": "^3.7.1",
-    "lite-youtube-embed": "^0.3.2",
+    "lite-youtube-embed": "^0.3.3",
     "popper.js": "^1.16.1"
   },
   "engines": {
