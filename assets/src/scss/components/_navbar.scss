@@ -96,3 +96,9 @@ a.nav-link {
     padding-bottom: .7rem;
   }
 }
+
+@include large-and-up {
+  .hide-item {
+    display: none;
+  }
+}
