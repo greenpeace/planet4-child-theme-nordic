@@ -1,5 +1,9 @@
+import '../scss/style.scss';
+
 //import $ from the global scope
 import $ from 'jquery';
+// import 'core-js/stable'; // for polyfills
+
 // Expose jQuery to the global object
 window.$ = $ || jQuery;
 window.dataLayer = window.dataLayer || [];
