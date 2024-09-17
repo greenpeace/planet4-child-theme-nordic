@@ -9,19 +9,18 @@ const webpack = require('webpack');
 const ProvidePlugin = require('buffer');
 
 module.exports = {
-    // ...defaultConfig,
+    ...defaultConfig,
     entry: {
         index: './assets/src/js/app.js',
-        // style: './assets/src/scss/style.scss',
     },
     output: {
         filename: '[name].js',
         path: __dirname + '/assets/build'
     },
     module: {
-        // ...defaultConfig.module,
+        ...defaultConfig.module,
         rules: [
-            // ...defaultConfig.module.rules,
+            ...defaultConfig.module.rules,
             {
                 test: /\.(sass|scss)$/,
                 use: [
@@ -109,12 +108,6 @@ module.exports = {
                     reuseExistingChunk: true,
                     enforce: true,
                 },
-                // vendor: {
-                //     test: /[\\/]node_modules[\\/]/,
-                //     name: 'vendors',
-                //     chunks: 'all',
-                //     enforce: true,
-                // },
             },
         },
         minimizer: [
@@ -144,9 +137,5 @@ module.exports = {
     devtool: 'source-map',
     stats: {
         all: true,
-        chunkModules: true,
-        errorDetails: true,
-        modules: true,
-        loggingDebug: ["sass-loader"],
     },
 };
