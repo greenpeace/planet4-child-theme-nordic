@@ -9,7 +9,7 @@ const webpack = require('webpack');
 const ProvidePlugin = require('buffer');
 
 module.exports = {
-    ...defaultConfig,
+    // ...defaultConfig,
     entry: {
         index: './assets/src/js/app.js',
     },
@@ -18,7 +18,7 @@ module.exports = {
         path: __dirname + '/assets/build'
     },
     module: {
-        ...defaultConfig.module,
+        // ...defaultConfig.module,
         rules: [
             {
                 test: /\.(sass|scss)$/,
