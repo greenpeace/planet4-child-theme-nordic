@@ -19,11 +19,14 @@ require_once 'includes/gutenberg-blocks.php';
 require_once 'includes/csp-headers.php';
 
 //load the child theme styles
-add_action('wp_enqueue_scripts', 'enqueue_child_styles');
+add_action('wp_enqueue_scripts', 'enqueue_child_styles', 100);
 function enqueue_child_styles()
 {
+    // Enqueue the parent theme's style.css
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+
     $css_creation = filectime(get_stylesheet_directory() . '/assets/build/style.min.css');
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/build/style.min.css', ['parent-style'], $css_creation);
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/build/style.min.css', ['parent-style'], $css_creation, 'all', true);
 }
 
 // Load the child theme frontend scripts
