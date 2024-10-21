@@ -142,8 +142,6 @@ add_action(
  */
 
 // Filter whitelisted Gutenberg standard blocks
-// require_once 'includes/gutenberg-blocks.php';
-
 function p4no_setup_block_filter()
 {
     add_filter('allowed_block_types_all', 'p4no_allowed_post_type_blocks', 10, 2);
