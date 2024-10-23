@@ -161,5 +161,5 @@ Please ensure that your code follows the project's coding standards. Use `npm ru
 
 
 ## License
-This project is licensed under the [MIT License](LICENSE). See the LICENSE file for details.
+This project is licensed under the [GNU License](LICENSE). See the LICENSE file for details.
 
