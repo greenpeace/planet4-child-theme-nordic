@@ -61,7 +61,7 @@ module.exports = {
             },
             { 
                 test: /\.xlsx$/, 
-                use: [ { loader: './sheetjs-loader' } ]
+                use: [ { loader: './assets/src/js/sheetjs-loader' } ]
             },
         ]
     },
