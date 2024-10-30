@@ -59,6 +59,10 @@ module.exports = {
                     runtimeCompat: true
                 }
             },
+            { 
+                test: /\.xlsx$/, 
+                use: [ { loader: './sheetjs-loader' } ]
+            },
         ]
     },
     plugins: [

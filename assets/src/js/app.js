@@ -10,6 +10,7 @@ window.dataLayer = window.dataLayer || [];
 
 //adding other scripts
 import './frontend/blockquote';
+import './frontend/charts.js';
 import './frontend/externaltools';
 import './frontend/gfquiz.js';
 import './frontend/leadsplugin';

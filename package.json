@@ -45,10 +45,12 @@
   ],
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.5",
     "classnames": "^2.5.1",
     "jquery": "^3.7.1",
     "lite-youtube-embed": "^0.3.2",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   },
   "engines": {
     "npm": "<10.0.0",
