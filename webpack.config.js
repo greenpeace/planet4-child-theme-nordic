@@ -85,6 +85,7 @@ module.exports = {
                             'style.deps.json',
                             'index.asset.php',
                             'style.asset.php',
+                            'index.js.LICENSE.txt'
                         ].some(item => new RegExp(item, 'm').test(filePath));
                     }
                 }]
