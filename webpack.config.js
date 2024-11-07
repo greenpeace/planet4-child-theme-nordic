@@ -12,6 +12,10 @@ module.exports = {
     // ...defaultConfig,
     entry: {
         index: './assets/src/js/app.js',
+        /*ChartScript: './assets/src/blocks/Chart/ChartScript.js',
+        ChartEditorScript: './assets/src/blocks/Chart/ChartEditorScript.js',
+        ChartStyle: './assets/src/scss/blocks/Chart/ChartStyle.scss',
+        ChartEditorStyle: './assets/src/scss/blocks/Chart/ChartEditorStyle.scss',*/
     },
     output: {
         filename: '[name].js',
