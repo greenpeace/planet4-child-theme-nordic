@@ -20,11 +20,15 @@
     "lint:css": "npx wp-scripts lint-style"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
     "@greenpeace/dashdash": "^1.2.1",
     "@wordpress/components": "^8.5.0",
     "@wordpress/eslint-plugin": "^14.12.0",
     "@wordpress/scripts": "^18.0.0",
     "autoprefixer": "^9.8.8",
+    "babel-loader": "^9.2.1",
     "css-loader": "^3.6.0",
     "css-minimizer-webpack-plugin": "^7.0.0",
     "eslint-plugin-react": "^7.35.0",

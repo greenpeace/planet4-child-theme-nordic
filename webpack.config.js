@@ -51,7 +51,7 @@ module.exports = {
                         options: {
                             sourceMap: true,
                         }
-                    }
+                    },
                 ]
             },
             {
@@ -63,10 +63,24 @@ module.exports = {
                     runtimeCompat: true
                 }
             },
-            { 
-                test: /\.xlsx$/, 
-                use: [ { loader: './assets/src/js/sheetjs-loader' } ]
+            {
+                test: /\.xlsx$/,
+                use: [{ loader: './assets/src/js/sheetjs-loader' }]
             },
+            {
+                test: /\.(js|jsx)$/,  
+                exclude: /node_modules/,  
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env',  
+                            '@babel/preset-react' 
+                        ]
+                    }
+                }
+            },
+
         ]
     },
     plugins: [
@@ -137,7 +151,7 @@ module.exports = {
         fallback: {
             buffer: require.resolve('buffer/'),
         },
-        extensions: ['.js', '.scss'],
+        extensions: ['.js', '.jsx', '.scss'],
         alias: {
             jquery: 'jquery/src/jquery'
         },
