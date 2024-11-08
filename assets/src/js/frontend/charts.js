@@ -13,11 +13,16 @@ for (let i = 1; i <= 10; i++) {
   data[i] = localSpreadsheet[i][3];
 }*/
 
-/*
 const colorPalette = [
-  
+  '#66CC00',
+  '#1F4912',
+  '#80D643',
+  '#198700',
+  '#B9E696',
+  '#1C1C1C'
 ];
-*/
+
+let chart = new Chart(null, null);
 
 //render bar chart
 const div = document.getElementById('playgroundDiv');
@@ -28,39 +33,63 @@ div.appendChild(canvas);
 const inputForm = document.createElement("form");
 const inputFormLabel = document.createElement("label");
 const inputFormText = document.createElement("input");
+const chartTypeLabel = document.createElement("label");
+const chartTypeSelect = document.createElement("select");
 const inputFormButton = document.createElement("input");
-inputForm.setAttribute("method", "post");
+//inputForm.setAttribute("method", "post");
 //inputForm.setAttribute("action", renderSheet(inputFormText.value));
-inputFormLabel.innerHTML = "Google sheets URL:";
+inputFormLabel.innerHTML = "Google sheets URL: &ensp;";
 inputFormText.setAttribute("type", "text");
 inputFormText.setAttribute("value", "https://docs.google.com/spreadsheets/d/e/2PACX-1vSh7InRrF4GyH0uGbAYLct1XpDSPLMaDwLh-T1gSLHzBApLr0-7nxeKWfSV-t8u9JvZT7fA-_UidmiY/pubhtml");
+chartTypeLabel.innerHTML = "Chart type: &ensp;";
+const chartTypeBar = document.createElement("option");
+chartTypeBar.innerHTML = "Bar";
+chartTypeBar.setAttribute("value", 'bar');
+chartTypeSelect.appendChild(chartTypeBar);
+const chartTypeLine = document.createElement("option");
+chartTypeLine.innerHTML = "Line";
+chartTypeLine.setAttribute("value", 'line');
+chartTypeSelect.appendChild(chartTypeLine);
+const chartTypePie = document.createElement("option");
+chartTypePie.innerHTML = "Doughnut";
+chartTypePie.setAttribute("value", 'doughnut');
+chartTypeSelect.appendChild(chartTypePie);
 inputFormButton.setAttribute("type", "button");
 inputFormButton.setAttribute("value", "Generate Graph");
 inputFormButton.onclick = () => renderSheet(inputFormText.value);
-inputForm.label = "Google sheets URL:";
+//inputForm.label = "Google sheets URL:";
 inputForm.input = "text";
 div.appendChild(inputForm);
 inputForm.appendChild(inputFormLabel);
 inputForm.appendChild(inputFormText);
+inputForm.appendChild(chartTypeLabel);
+inputForm.appendChild(chartTypeSelect);
 inputForm.appendChild(inputFormButton);
+
+/*
+const json = JSON.parse('./../../../../theme.json');
+console.log(json);
+ */
 
 async function renderSheet(sheetURL) {
   let id = extractSheetID(sheetURL);
   if (id) {
+    chart.destroy();
     const delimeter = ",";
     const dataStringArray = await fetchCSV(id);
     const headers = dataStringArray[0].split(delimeter);
     const dataStringNumbers = dataStringArray.slice(1,dataStringArray.length);
     const labels = dataStringNumbers.map((row) => row.split(delimeter)[0]);
     //const data = extractColumn(dataStringNumbers, delimeter, 3);
-    const type = 'line';
-    new Chart(canvas, {
+    const type = chartTypeSelect.value;
+    const subtype = null;
+    chart = new Chart(canvas, {
       type: type,
       data: {
         labels: labels,
-        datasets: formatDatasets(extractColumns(dataStringNumbers, delimeter), headers),
+        datasets: formatDatasets(extractColumns(dataStringNumbers, delimeter), headers, type),
       },
-      options: chartOptions(type, 'horizontal'),
+      options: chartOptions(type, subtype),
     });
     return id;
   }
@@ -157,11 +186,20 @@ function extractColumns(dataString, delimeter) {
   return dataArray;
 }
 
-function formatDatasets(dataArray, headers) {
+function formatDatasets(dataArray, headers, chartType) {
   let datasets = new Array(dataArray.length);
-  for (let i = 0; i < dataArray.length; i++) datasets[i] = {
-    label: headers[i + 1],
-    data: dataArray[i]
+  for (let i = 0; i < dataArray.length; i++) if (colorPalette.length > i && chartType != 'doughnut') {
+    datasets[i] = {
+      label: headers[i + 1],
+      data: dataArray[i],
+      backgroundColor: colorPalette[i],
+      borderColor: colorPalette[i]
+    }
+  } else {
+    datasets[i] = {
+      label: headers[i + 1],
+      data: dataArray[i],
+    }
   };
   return datasets;
 }
