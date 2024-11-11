@@ -37,4 +37,9 @@ Text Domain: planet4-child-theme-nordic
 @import "components/_leadsPlugin";
 @import "components/_navbar";
 @import "components/_blockquote";
-@import "components/_taCoverCard"
+@import "components/_taCoverCard";
+
+// P4 Blocks
+@import "blocks/Chart/ChartStyle.scss";
+@import "blocks/Chart/ChartEditorStyle.scss";
+

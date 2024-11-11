@@ -5,17 +5,14 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const RemovePlugin = require('remove-files-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
-const webpack = require('webpack');
 const ProvidePlugin = require('buffer');
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
     // ...defaultConfig,
     entry: {
         index: './assets/src/js/app.js',
-        /*ChartScript: './assets/src/blocks/Chart/ChartScript.js',
-        ChartEditorScript: './assets/src/blocks/Chart/ChartEditorScript.js',
-        ChartStyle: './assets/src/scss/blocks/Chart/ChartStyle.scss',
-        ChartEditorStyle: './assets/src/scss/blocks/Chart/ChartEditorStyle.scss',*/
     },
     output: {
         filename: '[name].js',
@@ -151,9 +148,9 @@ module.exports = {
         fallback: {
             buffer: require.resolve('buffer/'),
         },
-        extensions: ['.js', '.jsx', '.scss'],
+        extensions: ['.js', '.jsx', '.json', '.scss'],
         alias: {
-            jquery: 'jquery/src/jquery'
+            jquery: 'jquery/src/jquery',
         },
     },
     devtool: 'source-map',

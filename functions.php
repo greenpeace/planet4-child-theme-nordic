@@ -15,6 +15,23 @@
 
 // Modify the CSP page header
 require_once 'includes/csp-headers.php';
+//register the custom chart block
+require_once get_stylesheet_directory() . '/includes/Blocks/Chart.php';
+
+// add_action('init', function() {
+//     // Register the block directly to eliminate potential issues with the Chart class
+//     register_block_type('planet4-blocks/chart', [
+//         'editor_script' => 'planet4-chart-editor', // This should match the handle for the editor script
+//         'attributes' => [
+//             'title' => ['type' => 'string', 'default' => ''],
+//             'description' => ['type' => 'string', 'default' => ''],
+//             'url' => ['type' => 'string', 'default' => ''],
+//         ],
+//     ]);
+
+//     error_log('Chart block registered');
+// });
+
 
 //load the child theme styles
 add_action('wp_enqueue_scripts', 'enqueue_child_styles', 100);
@@ -38,7 +55,7 @@ function enqueue_child_scripts()
     wp_enqueue_script(
         'gpn_gutenberg_scripts_blocks',
         get_stylesheet_directory_uri() . '/assets/build/index.js',
-        array('wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'p4gbks_admin_script'), // Dependencies: wp-blocks and wp-edit-post
+        array('wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'react', 'react-dom', 'p4gbks_admin_script'), // Dependencies: wp-blocks and wp-edit-post
         filemtime(get_stylesheet_directory() . '/assets/build/index.js'),
         true
     );
@@ -187,6 +204,7 @@ function p4no_allowed_post_type_blocks($allowed_block_types, $editor_context)
         'planet4-blocks/accordion', //mt
         'planet4-blocks/articles',
         'planet4-blocks/carousel-header', //mt
+        'planet4-blocks/chart', //custom P4 Nordic block
         'planet4-blocks/columns', //mt
         // 'planet4-blocks/cookies', // disabled as not used
         'planet4-blocks/counter', //mt
