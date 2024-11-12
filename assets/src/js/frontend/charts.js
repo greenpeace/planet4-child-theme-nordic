@@ -22,6 +22,13 @@ const colorPalette = [
   '#1C1C1C'
 ];
 
+const chartTypes = {
+  'bar': ['vertical', 'horizontal'],
+  'line': [],
+  'scatter': [],
+  'circle': ['doughnut', 'pie']
+}
+
 let chart = new Chart(null, null);
 
 //render bar chart
@@ -33,27 +40,39 @@ div.appendChild(canvas);
 const inputForm = document.createElement("form");
 const inputFormLabel = document.createElement("label");
 const inputFormText = document.createElement("input");
+const inputFormFile = document.createElement("input");
 const chartTypeLabel = document.createElement("label");
 const chartTypeSelect = document.createElement("select");
+const chartSubTypeSelect = document.createElement("select");
 const inputFormButton = document.createElement("input");
 //inputForm.setAttribute("method", "post");
 //inputForm.setAttribute("action", renderSheet(inputFormText.value));
 inputFormLabel.innerHTML = "Google sheets URL: &ensp;";
 inputFormText.setAttribute("type", "text");
 inputFormText.setAttribute("value", "https://docs.google.com/spreadsheets/d/e/2PACX-1vSh7InRrF4GyH0uGbAYLct1XpDSPLMaDwLh-T1gSLHzBApLr0-7nxeKWfSV-t8u9JvZT7fA-_UidmiY/pubhtml");
+inputFormFile.setAttribute("type", "file");
 chartTypeLabel.innerHTML = "Chart type: &ensp;";
-const chartTypeBar = document.createElement("option");
-chartTypeBar.innerHTML = "Bar";
-chartTypeBar.setAttribute("value", 'bar');
-chartTypeSelect.appendChild(chartTypeBar);
-const chartTypeLine = document.createElement("option");
-chartTypeLine.innerHTML = "Line";
-chartTypeLine.setAttribute("value", 'line');
-chartTypeSelect.appendChild(chartTypeLine);
-const chartTypePie = document.createElement("option");
-chartTypePie.innerHTML = "Doughnut";
-chartTypePie.setAttribute("value", 'doughnut');
-chartTypeSelect.appendChild(chartTypePie);
+/*
+const chartTypeOption = document.createElement("option");
+const chartSubTypeOption = document.createElement("option");
+//chartTypeOption.setAttribute("value", 'type');
+//chartSubTypeOption.setAttribute("value", 'subtype');
+//console.log(chartTypeSelect.options);
+chartTypeSelect.appendChild(chartTypeOption);
+chartTypeSelect.appendChild(chartSubTypeOption);
+chartTypeOption.innerHTML = "Type";
+chartSubTypeOption.innerHTML = "Subtype";
+*/
+for (const type in chartTypes) {
+  chartTypeSelect.options[chartTypeSelect.options.length] = new Option(type, type);
+}
+
+updateSubTypes();
+
+chartTypeSelect.onchange = () => {
+  updateSubTypes();
+}
+
 inputFormButton.setAttribute("type", "button");
 inputFormButton.setAttribute("value", "Generate Graph");
 inputFormButton.onclick = () => renderSheet(inputFormText.value);
@@ -62,8 +81,10 @@ inputForm.input = "text";
 div.appendChild(inputForm);
 inputForm.appendChild(inputFormLabel);
 inputForm.appendChild(inputFormText);
+inputForm.appendChild(inputFormFile);
 inputForm.appendChild(chartTypeLabel);
 inputForm.appendChild(chartTypeSelect);
+inputForm.appendChild(chartSubTypeSelect);
 inputForm.appendChild(inputFormButton);
 
 /*
@@ -72,8 +93,11 @@ console.log(json);
  */
 
 async function renderSheet(sheetURL) {
+  console.log(inputFormFile.files);
   let id = extractSheetID(sheetURL);
-  if (id) {
+  if (inputFormFile.files.length != 0) {
+    //parse .xlsx file
+  } else if (id) {
     chart.destroy();
     const delimeter = ",";
     const dataStringArray = await fetchCSV(id);
@@ -82,19 +106,19 @@ async function renderSheet(sheetURL) {
     const labels = dataStringNumbers.map((row) => row.split(delimeter)[0]);
     //const data = extractColumn(dataStringNumbers, delimeter, 3);
     const type = chartTypeSelect.value;
-    const subtype = null;
+    const subtype = chartSubTypeSelect.value;;
+    let typeOptions = chartOptions(type, subtype);
     chart = new Chart(canvas, {
-      type: type,
+      type: typeOptions[0],
       data: {
         labels: labels,
         datasets: formatDatasets(extractColumns(dataStringNumbers, delimeter), headers, type),
       },
-      options: chartOptions(type, subtype),
+      options: typeOptions[1],
     });
-    return id;
+  } else {
+    //error
   }
-  console.log("nada");
-  return null;
 }
 
 const extractSheetID = urlParam => {
@@ -111,7 +135,7 @@ function chartOptions(type, subtype) {
     case 'bar':
       switch (subtype) {
         case 'horizontal':
-          return {
+          return ['bar', {
             indexAxis: 'y',
             responsive: true,
             plugins: {
@@ -119,9 +143,9 @@ function chartOptions(type, subtype) {
                 position: 'right',
               }
             }
-          }
-        case 'stacked':
-          return {
+          }]
+          case 'stacked':
+          return ['bar', {
             responsive: true,
             scales: {
               x: {
@@ -131,27 +155,27 @@ function chartOptions(type, subtype) {
                 stacked: true
               }
             }
-          }
+          }]
         default /* vertical */: 
-          return {
+          return ['bar', {
             scales: {
               y: {
                 beginAtZero: true
               }
             }
-          };
+          }];
       }
     case 'line':
       switch (subtype) {
         default:
-          return {
+          return ['bar', {
             responsive: true,
             plugins: {
               legend: {
                 position: 'top',
               }
             }
-          }
+          }]
       }
     default: 
       return null;
@@ -163,15 +187,15 @@ async function fetchCSV(id) {
     const url = "https://docs.google.com/spreadsheets/d/e/" + id + "/pub?output=csv";
     const dataStringArray = await fetch(url).then((csv) => csv.text()).then((csvString) => csvString.split("\r\n"));
     return dataStringArray;
-}
-
+  }
+  
 /*
 function extractColumn(dataStringNumbers, delimeter, column) {
     return dataStringNumbers.map((row) => row.split(delimeter)[column]);
-}
- */
+    }
+    */
 
-function extractColumns(dataString, delimeter) {
+   function extractColumns(dataString, delimeter) {
   let dataArray = new Array(dataString[0].split(delimeter).length - 1);
   for (let i = 0; i < dataArray.length; i++) {
     dataArray[i] = new Array(dataString.length);
@@ -202,4 +226,11 @@ function formatDatasets(dataArray, headers, chartType) {
     }
   };
   return datasets;
+}
+
+function updateSubTypes() {
+  chartSubTypeSelect.options.length = 0;
+  for (const subtype in chartTypes[chartTypeSelect.value]) {
+    chartSubTypeSelect.options[chartSubTypeSelect.options.length] = new Option(chartTypes[chartTypeSelect.value][subtype], chartTypes[chartTypeSelect.value][subtype]);
+  }
 }
