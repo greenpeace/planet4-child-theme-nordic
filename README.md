@@ -1,8 +1,22 @@
-# Greenpeace Planet 4 Child Theme for GP Nordic
+# Chart feature for the nordic child theme
 
-Child theme for the Planet 4 Wordpress project.
-The related master theme’s code lives at:
+This is the wip chart feature that was supposed to be implemented as a gutenberg block. I didn't get too far with it; mostly only got to try out the chart.js library, but the file I've worked is located in `assets/src/js/frontend/charts.js`
 
-https://github.com/greenpeace/planet4-master-theme.
+It works by extracting csv data from a published Google sheet. The first column will be the x axis, and any following axes are plotted over the x axis as different data sets. The script can be included as a module in a html file containing two empty `<div>` elemets with `id="chartRender"` and `id="chartConfig"` respectively. An example vite index file could look like the following: 
 
-Please check the master theme code for more information.
+```
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="chartRender"></div>
+    <div id="chartConfig"></div>
+    <script type="module" src="charts.js"></script>
+  </body>
+</html>
+```
