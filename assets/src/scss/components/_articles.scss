@@ -138,6 +138,13 @@ div.query-list-item-body div.query-list-item-post-terms div.wrapper-post-term di
   }
 }
 
+//on single posts
+.wp-block-post-title {
+  @include x-large-and-up {
+    margin-bottom: 24px;
+  }
+}
+
 
 div.wrapper-post-tag ::before,
 .query-list-item-body:has(.taxonomy-p4-page-type):has(.taxonomy-post_tag) .wrapper-post-tag:before {
