@@ -246,20 +246,24 @@ a.external-link {
 }
 
 .wp-block-heading>a, 
-.secondary-menu > a {
+.secondary-menu > a,
+.wp-block-heading.is-style-chevron > a,
+.group-stretched-link > .wp-block-heading > a {
   color: inherit;
   background-image: none;
   background-repeat: no-repeat;
-  border-bottom: none;
+  border-bottom: none!important;
   &:hover {
     border-bottom: 1.5px solid $gp-green-50;
   }
 }
 
 //deep-dive, issues pattern
-// .is-pattern-p4-issues .wp-block-group.container.is-layout-flow h5.wp-block-heading a:hover,
-// .group-stretched-link>h5.wp-block-heading>a:hover,
-// .group-stretched-link>h5.wp-block-heading>strong>a:hover {
+// .is-pattern-p4-issues .wp-block-heading a:hover,
+// .is-pattern-p4-deep-dive .wp-block-heading a:hover,
+// .group-stretched-link>.wp-block-heading>a:hover,
+// .group-stretched-link>.wp-block-heading>strong>a:hover
+//  {
 //   text-decoration: underline;
 //   box-shadow: none;
 //   color: $gp-green-80;
