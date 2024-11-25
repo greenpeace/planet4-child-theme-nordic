@@ -203,6 +203,7 @@ strong>a {
     border-bottom: 3px solid $gp-green-50;
     text-decoration: none;
     box-shadow: none;
+    background-image: none;
   }
 }
 
@@ -245,16 +246,17 @@ a.external-link {
   margin-right: 0.3rem;
 }
 
-.wp-block-heading>a, 
+.wp-block-heading > a, 
 .secondary-menu > a,
 .wp-block-heading.is-style-chevron > a,
 .group-stretched-link > .wp-block-heading > a {
   color: inherit;
   background-image: none;
   background-repeat: no-repeat;
-  border-bottom: none!important;
+  border-bottom: none;
   &:hover {
-    border-bottom: 1.5px solid $gp-green-50;
+    // border-bottom: 1.5px solid $gp-green-50;
+    color: $gp-nor-green-links;
   }
 }
 
