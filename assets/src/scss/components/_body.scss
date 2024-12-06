@@ -53,3 +53,9 @@ li.search-result-list-item:hover {
 .block-editor-block-patterns-list__item[role="option"] {
   height: auto !important;
 }
+
+.page-content p:not(.article-list-item-meta) a,
+.page-content>ol li a,
+.page-content>ul li a {
+  background-image: none !important;
+}

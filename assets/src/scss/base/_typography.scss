@@ -203,6 +203,7 @@ strong>a {
     border-bottom: 3px solid $gp-green-50;
     text-decoration: none;
     box-shadow: none;
+    background-image: none;
   }
 }
 
@@ -245,14 +246,30 @@ a.external-link {
   margin-right: 0.3rem;
 }
 
-//deep-dive, issues pattern
-.is-pattern-p4-issues .wp-block-group.container.is-layout-flow h5.wp-block-heading a:hover,
-.wp-block-group.group-stretched-link.is-layout-flow>h5.wp-block-heading>a:hover,
-.wp-block-group.group-stretched-link.is-layout-flow>h5.wp-block-heading>strong>a:hover {
-  text-decoration: none;
-  box-shadow: none;
-  color: $gp-green-80;
+.wp-block-heading > a, 
+.secondary-menu > a,
+.wp-block-heading.is-style-chevron > a,
+.group-stretched-link > .wp-block-heading > a {
+  color: inherit;
+  background-image: none;
+  background-repeat: no-repeat;
+  border-bottom: none;
+  &:hover {
+    // border-bottom: 1.5px solid $gp-green-50;
+    color: $gp-green-60!important;
+  }
 }
+
+//deep-dive, issues pattern
+// .is-pattern-p4-issues .wp-block-heading a:hover,
+// .is-pattern-p4-deep-dive .wp-block-heading a:hover,
+// .group-stretched-link>.wp-block-heading>a:hover,
+// .group-stretched-link>.wp-block-heading>strong>a:hover
+//  {
+//   text-decoration: underline;
+//   box-shadow: none;
+//   color: $gp-green-80;
+// }
 
 //headings on dynamic blocks
 h2.page-section-header {

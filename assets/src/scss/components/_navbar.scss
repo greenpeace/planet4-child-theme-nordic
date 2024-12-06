@@ -23,13 +23,19 @@ a.nav-link {
 
 }
 
-.nav-submenu .nav-item a.nav-link {
-  font-weight: 500;
+.nav-submenu {
+  width: 300px;
 
-  &:hover {
-    background: $gp-green-5;
-    color: $gp-green-80;
-    font-weight: bolder;
+  .nav-item {
+    a.nav-link {
+      font-weight: 500;
+
+      &:hover {
+        background: $gp-green-5;
+        color: $gp-green-80;
+        font-weight: bolder;
+      }
+    }
   }
 }
 
@@ -60,8 +66,20 @@ a.nav-link {
     font-weight: 700 !important;
   }
 
-  p:hover {
-    color: $gp-green-80;
+  p>a:hover {
+    color: $gp-green-60!important;
+    background-image: none!important;
+  }
+}
+
+.brdr-bottom {
+  border-bottom: #dddada 1px solid;
+  padding-bottom: 0.5rem;
+}
+
+@include large-and-up {
+  .nav-submenu {
+    width: 260px;
   }
 }
 
@@ -70,11 +88,6 @@ a.nav-link {
   .secondary-menu {
     margin-top: -2.5rem;
   }
-}
-
-.brdr-bottom {
-  border-bottom: #dddada 1px solid;
-  padding-bottom: 0.5rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -94,5 +107,11 @@ a.nav-link {
 
   .secondary-menu p:last-child {
     padding-bottom: .7rem;
+  }
+}
+
+@include large-and-up {
+  .hide-item {
+    display: none;
   }
 }

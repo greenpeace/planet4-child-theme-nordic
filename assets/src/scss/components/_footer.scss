@@ -7,8 +7,22 @@
   background: $gp-nor-green;
   font-family: var(--headings--font-family);
 
-  .country-selector-toggle {
+  .footer-menu ul {
+    width: 100%;
+    text-align: start;
+    column-count: 1;
 
+    @include medium-and-up {
+      font-size: $font-size-md;
+      column-count: 2;
+    }
+
+    @include large-and-up {
+      column-count: 3;
+    }
+  }
+
+  .country-selector-toggle {
     &:hover,
     &:active {
       text-decoration: none !important;

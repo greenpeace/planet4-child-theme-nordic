@@ -13,7 +13,8 @@ a[data-ga-action="Navigation Tag"],
 .wrapper-post-tag a,
 a[data-ga-action="Post Type Tag"],
 a[data-ga-action="Post Type Tag"] span,
-a.tag-item.tag-item--main {
+a.tag-item.tag-item--main,
+.taxonomy-category a {
   font-family: $gp-sans;
   color: $gp-green-80;
   font-weight: 500;
@@ -59,14 +60,37 @@ a.btn.post-tag-button span:nth-child(2) {
 
 //article meta
 .query-list-item-meta,
-.article-list-item-meta {
+.article-list-item-meta,
+.posts-list-meta {
 
   span.article-list-item-author,
-  span.article-list-item-author a {
+  span.article-list-item-author a,
+  .wp-block-post-author-name a {
     font-family: $gp-sans;
     color: $grey-70;
     font-weight: var(--font-weight-regular);
   }
+}
+
+.article-list-item-author,
+.taxonomy-category a {
+  font-family: $gp-sans;
+  font-weight: var(--font-weight-regular) !important;
+
+  a:hover {
+    -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+    -o-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+    -moz-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+    transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
+    border-bottom: 2px solid $gp-green-50;
+    text-decoration: none!important;
+    box-shadow: none;
+  }
+}
+
+.posts-list .article-list-item-author::after, 
+.posts-list .wp-block-post-author-name::after {
+  margin-top: -15px;
 }
 
 //post info preview
@@ -74,7 +98,8 @@ a.tag-item.tag,
 .single-post-time,
 a.comment-link,
 a.comment-link>span.quiantity,
-a.comment-link>span.display-text {
+a.comment-link>span.display-text,
+a.external-link {
   font-weight: 400;
 
   &:hover {
@@ -87,21 +112,6 @@ a.comment-link>span.display-text {
 
   &:visited {
     color: $gp-green-80;
-  }
-}
-
-.article-list-item-author {
-  font-family: $gp-sans;
-  font-weight: var(--font-weight-regular) !important;
-
-  a:hover {
-    -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-    -o-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-    -moz-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-    transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-    border-bottom: 2px solid $gp-green-50;
-    text-decoration: none;
-    box-shadow: none;
   }
 }
 
@@ -127,14 +137,24 @@ div.query-list-item-body div.query-list-item-post-terms div.wrapper-post-term di
 
 }
 
-//on listing pages
-.query-list-item-headline.wp-block-post-title a {
+//on listing pages & included articles
+.query-list-item-headline.wp-block-post-title a,
+.wp-block-query.posts-list.p4-query-loop .wp-block-post-title a,
+h2.wp-block-post-title a {
   color: $black;
+  font-weight: 700;
 
   &:hover {
     border-bottom: none;
     text-decoration-color: $gp-green-50;
     box-shadow: none;
+  }
+}
+
+//on single posts
+.wp-block-post-title {
+  @include x-large-and-up {
+    margin-bottom: 24px;
   }
 }
 
