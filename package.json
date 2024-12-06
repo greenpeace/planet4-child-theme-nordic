@@ -23,7 +23,7 @@
     "@greenpeace/dashdash": "^1.2.1",
     "@wordpress/components": "^8.5.0",
     "@wordpress/eslint-plugin": "^14.12.0",
-    "@wordpress/scripts": "^18.0.0",
+    "@wordpress/scripts": "^30.6.0",
     "autoprefixer": "^9.8.8",
     "css-loader": "^3.6.0",
     "css-minimizer-webpack-plugin": "^7.0.0",
