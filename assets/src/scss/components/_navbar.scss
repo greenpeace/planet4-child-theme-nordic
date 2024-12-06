@@ -66,8 +66,10 @@ a.nav-link {
     font-weight: 700 !important;
   }
 
-  p:hover {
+  p>a:hover {
     color: $gp-green-80;
+    border-bottom: 2px solid $gp-green-50;
+    background-image: none!important;
   }
 }
 
