@@ -105,6 +105,11 @@ a.comment-link>span.display-text {
   }
 }
 
+.posts-list .article-list-item-author::after, 
+.posts-list .wp-block-post-author-name::after {
+  margin-top: -15px;
+}
+
 //on listing pages
 div.query-list-item-post-terms div.taxonomy-p4-page-type a[rel="tag"],
 div.wrapper-post-tag div.taxonomy-post_tag.wp-block-post-terms a[rel="tag"],
