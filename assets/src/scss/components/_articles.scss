@@ -176,8 +176,10 @@ div.wrapper-post-tag ::before,
     font-size: .85rem;
   }
 
-  h5.author-block-info-name {
+  .article-list-item-author, 
+  .author-block-info-name {
     margin-bottom: 0;
+    font-family: $gp-sans;
 
     a {
       font-family: $gp-sans;
