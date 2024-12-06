@@ -256,7 +256,7 @@ a.external-link {
   border-bottom: none;
   &:hover {
     // border-bottom: 1.5px solid $gp-green-50;
-    color: $gp-nor-green-links;
+    color: $gp-nor-green-links!important;
   }
 }
 
