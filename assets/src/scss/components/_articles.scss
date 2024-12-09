@@ -138,6 +138,11 @@ div.query-list-item-body div.query-list-item-post-terms div.wrapper-post-term di
 }
 
 //on listing pages & included articles
+
+h2.wp-block-post-title{
+  display: inline-block;
+}
+
 .query-list-item-headline.wp-block-post-title a,
 .wp-block-query.posts-list.p4-query-loop .wp-block-post-title a,
 h2.wp-block-post-title a {
@@ -145,8 +150,8 @@ h2.wp-block-post-title a {
   font-weight: 700;
 
   &:hover {
-    border-bottom: none;
-    text-decoration-color: $gp-green-50;
+    border-bottom: 3px solid $gp-green-60;
+    text-decoration: none;
     box-shadow: none;
   }
 }
