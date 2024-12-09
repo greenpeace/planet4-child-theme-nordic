@@ -34,14 +34,14 @@ a.btn.btn-donate[data-ga-action="Donate"],
 .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
 .btn.btn-primary#hidecookie,
 .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"] {
-  background: $gp-green-60;
+  background: $gp-green-70;
   color: $white;
   border: none;
   background-position: center;
   transition: background 0.8s;
 
   &:hover {
-    background: $gp-green-70 radial-gradient(circle, transparent 1%, $gp-green-70 1%) center/15000%;
+    background: $gp-green-80 radial-gradient(circle, transparent 1%, $gp-green-80 1%) center/15000%;
   }
 
   &:active {
