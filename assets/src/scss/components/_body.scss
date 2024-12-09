@@ -59,3 +59,14 @@ li.search-result-list-item:hover {
 .page-content>ul li a {
   background-image: none !important;
 }
+
+#set-cookie a {
+  color: $gp-green-70;
+  text-decoration: none;
+  background-image: none;
+  border-bottom: none;
+
+  &:hover{
+    border-bottom: 2px solid $gp-green-60;
+  }
+}
