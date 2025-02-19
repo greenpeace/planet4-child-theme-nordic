@@ -10,7 +10,7 @@
  * License URI: https://opensource.org/licenses/MIT
  * Tags: light, accessibility-ready
  * Text Domain: planet4-child-theme-nordic
- * Version: 1.48.3
+ * Version: 1.48.4
  */
 
 // Modify the CSP page header
@@ -32,7 +32,7 @@ function enqueue_child_styles()
 function enqueue_child_scripts()
 {
     // Load scripts for frontend
-    wp_enqueue_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.27.4', true);
+    wp_enqueue_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.27.5', true);
 
     // Enqueue scripts for block editor
     wp_enqueue_script(
@@ -295,13 +295,6 @@ function remove_acf_options_page()
 add_action('admin_init', function () {
     remove_menu_page('edit.php?post_type=acf-field-group');
     remove_menu_page('Custom Fields');
-});
-
-
-//remove the campaign menu item as it is not used
-add_action('admin_init', function () {
-    remove_menu_page('edit.php?post_type=campaign');
-    remove_menu_page('Campaigns');
 });
 
 /**
