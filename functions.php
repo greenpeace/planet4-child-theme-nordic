@@ -297,13 +297,6 @@ add_action('admin_init', function () {
     remove_menu_page('Custom Fields');
 });
 
-
-//remove the campaign menu item as it is not used
-add_action('admin_init', function () {
-    remove_menu_page('edit.php?post_type=campaign');
-    remove_menu_page('Campaigns');
-});
-
 /**
  * Font Awesome Kit Setup
  *
