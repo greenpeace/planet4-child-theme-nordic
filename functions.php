@@ -14,7 +14,7 @@
  */
 
 // Modify the CSP page header
-require_once 'includes/csp-headers.php';
+// require_once 'includes/csp-headers.php';
 
 //load the child theme styles
 add_action('wp_enqueue_scripts', 'enqueue_child_styles', 100);
@@ -27,26 +27,32 @@ function enqueue_child_styles()
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/build/style.min.css', ['parent-style'], $css_creation, 'all', true);
 }
 
-// Load the child theme frontend scripts
-// Enqueue scripts for frontend and block editor
 function enqueue_child_scripts()
 {
-    // Load scripts for frontend
-    wp_enqueue_script('child-js', get_stylesheet_directory_uri() . '/assets/build/index.js', ['jquery'], '0.27.6', true);
+    // Load frontend script
+    wp_enqueue_script(
+        'child-js',
+        get_stylesheet_directory_uri() . '/assets/build/index.js',
+        array('jquery', 'wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'wp-element', 'wp-components'), // Explicit dependencies
+        filemtime(get_stylesheet_directory() . '/assets/build/index.js'),
+        '0.27.6',
+        true // Load in footer
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
 
-    // Enqueue scripts for block editor
+function enqueue_editor_scripts()
+{
+    // Load block editor script
     wp_enqueue_script(
         'gpn_gutenberg_scripts_blocks',
         get_stylesheet_directory_uri() . '/assets/build/index.js',
-        array('wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'p4gbks_admin_script'), // Dependencies: wp-blocks and wp-edit-post
+        array('wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'wp-element', 'wp-components'), // Ensure dependencies are included
         filemtime(get_stylesheet_directory() . '/assets/build/index.js'),
         true
     );
-
-    // Note: You may need to make sure 'p4gbks_admin_script' is a valid dependency for block editor
 }
-add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
-add_action('enqueue_block_editor_assets', 'enqueue_child_scripts'); // Enqueue for block editor too
+add_action('enqueue_block_editor_assets', 'enqueue_editor_scripts');
 
 //Load the child theme gtb editor script
 function p4_child_theme_gpn_gutenberg_scripts()
