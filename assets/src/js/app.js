@@ -1,3 +1,4 @@
+//import main style
 import '../scss/style.scss';
 
 //import $ from the global scope
