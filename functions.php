@@ -10,7 +10,7 @@
  * License URI: https://opensource.org/licenses/MIT
  * Tags: light, accessibility-ready
  * Text Domain: planet4-child-theme-nordic
- * Version: 1.48.5
+ * Version: 1.48.6
  */
 
 // Modify the CSP page header
@@ -35,7 +35,7 @@ function enqueue_child_scripts()
         get_stylesheet_directory_uri() . '/assets/build/index.js',
         array('jquery', 'wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'wp-element', 'wp-components'), // Explicit dependencies
         filemtime(get_stylesheet_directory() . '/assets/build/index.js'),
-        '0.27.6',
+        '0.27.7',
         true // Load in footer
     );
 }
