@@ -180,7 +180,7 @@ a {
 
 .page-content li>a:not(.button--ghost, .submenu-link),
 .page-content p>a:not(.secondary-menu > .nav-link >a, .secondary-menu > .nav-link >a >strong, .acf-label > p > a, small > p > a,
-  .is-pattern-p4-quick-links>a, .is-pattern-p4-quick-links strong a),
+.is-pattern-p4-quick-links>a, .is-pattern-p4-quick-links strong a),
 .post-content li>a,
 .post-content p>a,
 .page-content li>strong>a,
@@ -190,17 +190,14 @@ a {
 .covers-block>.page-section-description>a,
 strong>a {
   text-decoration: none;
-  border-bottom: 1.5px solid $gp-green-50;
+  border-bottom: 2px solid $gp-green-50;
   font-weight: inherit;
   color: inherit;
+  background-image: none !important;
 
   &:hover,
   &:visited {
-    -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-    -o-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-    -moz-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-    transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-    border-bottom: 3px solid $gp-green-50;
+    color: $gp-green-80;
     text-decoration: none;
     box-shadow: none;
     background-image: none;
@@ -246,17 +243,18 @@ a.external-link {
   margin-right: 0.3rem;
 }
 
-.wp-block-heading > a, 
-.secondary-menu > a,
-.wp-block-heading.is-style-chevron > a,
-.group-stretched-link > .wp-block-heading > a {
+.wp-block-heading>a,
+.secondary-menu>a,
+.wp-block-heading.is-style-chevron>a,
+.group-stretched-link>.wp-block-heading>a {
   color: inherit;
   background-image: none;
   background-repeat: no-repeat;
   border-bottom: none;
+
   &:hover {
     // border-bottom: 1.5px solid $gp-green-50;
-    color: $gp-green-80!important;
+    color: $gp-green-80 !important;
   }
 }
 

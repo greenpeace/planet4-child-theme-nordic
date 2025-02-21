@@ -117,9 +117,10 @@ a.external-link {
 
 //on listing pages
 div.query-list-item-post-terms div.taxonomy-p4-page-type a[rel="tag"],
-div.wrapper-post-tag div.taxonomy-post_tag.wp-block-post-terms a[rel="tag"],
+div.article-list-item-tags a.tag-item.tag,
+section.post-articles-block div.taxonomy-post_tag a[rel="tag"],
 div.query-list-item-body div.query-list-item-post-terms div.wrapper-post-term div.taxonomy-p4-page-type.wp-block-post-terms a {
-  font-weight: 400;
+  color: $gp-green-80;
 }
 
 .article-list-item-headline a {
