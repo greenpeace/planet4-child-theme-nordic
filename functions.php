@@ -289,23 +289,22 @@ function p4no_allowed_post_type_blocks($allowed_block_types, $editor_context)
     return $allowed_block_types;
 }
 
-// add_action('admin_menu', function () {
-//     // Remove ACF Options page
-//     if (function_exists('acf_add_options_page')) {
-//         remove_menu_page('acf-options');
-//     }
+add_action('admin_menu', function () {
+    // Remove ACF Options page
+    if (function_exists('acf_add_options_page')) {
+        remove_menu_page('acf-options');
+    }
 
-//     // Remove ACF Custom Fields menu
-//     if (post_type_exists('acf-field-group')) {
-//         remove_menu_page('edit.php?post_type=acf-field-group');
-//     }
+    // Remove ACF Custom Fields menu
+    if (post_type_exists('acf-field-group')) {
+        remove_menu_page('edit.php?post_type=acf-field-group');
+    }
 
-//     // Remove Campaigns menu item
-//     if (post_type_exists('campaign')) {
-//         remove_menu_page('edit.php?post_type=campaign');
-//     }
-// }, 99);
-
+    // Remove Campaigns menu item
+    if (post_type_exists('campaign')) {
+        remove_menu_page('edit.php?post_type=campaign');
+    }
+}, 99);
 
 /**
  * Font Awesome Kit Setup
