@@ -1,61 +1,93 @@
 <?php
-
 /**
- * Theme Name: Greenpeace Planet4 Child Theme Nordic
- * Theme URI: Theme URI: https://github.com/greenpeace/planet4-child-theme-nordic
- * Description: Child theme for the Planet 4 Wordpress project
- * Author: Greenpeace Nordic
- * Author URI: https://github.com/greenpeace
- * License: MIT
- * License URI: https://opensource.org/licenses/MIT
- * Tags: light, accessibility-ready
- * Text Domain: planet4-child-theme-nordic
- * Version: 1.48.7
+ * Greenpeace Planet4 Child Theme Nordic
+ *
+ * Child theme for the Planet 4 WordPress project.
+ *
+ * @category   Theme
+ * @package    Planet4_Child_Theme_Nordic
+ * @author     Greenpeace Nordic, Svilena Koleva <svilena.koleva@greenpeace.org>
+ * @license    MIT, https://opensource.org/licenses/MIT
+ * @version    GIT: 1.48.7
+ * @link       https://github.com/greenpeace/planet4-child-theme-nordic
+ * @since      7.4
+ * @textdomain planet4-child-theme-nordic
  */
 
-// Modify the CSP page header
-// require_once 'includes/csp-headers.php';
+// Include WordPress core files
+if (!defined('ABSPATH')) {
+    define('ABSPATH', dirname(__FILE__) . '/');
+}
+require_once ABSPATH . 'wp-load.php';
+require_once ABSPATH . 'wp-admin/includes/admin.php';
 
-//load the child theme styles
-add_action('wp_enqueue_scripts', 'enqueue_child_styles', 100);
-function enqueue_child_styles()
+// Modify the CSP page header
+require_once 'includes/csp-headers.php';
+
+add_action('wp_enqueue_scripts', 'Enqueue_Child_styles', 100);
+/**
+ * Enqueue child theme styles
+ *
+ * @return void
+ */
+function Enqueue_Child_styles()
 {
     // Enqueue the parent theme's style.css
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 
-    $css_creation = filectime(get_stylesheet_directory() . '/assets/build/style.min.css');
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/build/style.min.css', ['parent-style'], $css_creation, 'all', true);
+    wp_enqueue_style(
+        'child-style',
+        get_stylesheet_directory_uri() . '/assets/build/style.min.css',
+        ['parent-style'],
+        '1.48.7',
+        'all',
+        true
+    );
 }
 
-function enqueue_child_scripts()
+add_action('wp_enqueue_scripts', 'Enqueue_Child_scripts');
+/**
+ * Enqueue child theme scripts
+ *
+ * @return void
+ */
+function Enqueue_Child_scripts()
 {
     // Load frontend script
     wp_enqueue_script(
         'child-js',
         get_stylesheet_directory_uri() . '/assets/build/index.js',
         array('jquery', 'wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'wp-element', 'wp-components'), // Explicit dependencies
-        filemtime(get_stylesheet_directory() . '/assets/build/index.js'),
         '0.27.8',
         true // Load in footer
     );
 }
-add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
 
-function enqueue_editor_scripts()
+add_action('enqueue_block_editor_assets', 'Enqueue_Editor_scripts');
+/**
+ * Enqueue child theme editor scripts
+ *
+ * @return void
+ */
+function Enqueue_Editor_scripts()
 {
     // Load block editor script
     wp_enqueue_script(
         'gpn_gutenberg_scripts_blocks',
         get_stylesheet_directory_uri() . '/assets/build/index.js',
-        array('wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'wp-element', 'wp-components'), // Ensure dependencies are included
+        array('wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'wp-element', 'wp-components'),
         filemtime(get_stylesheet_directory() . '/assets/build/index.js'),
         true
     );
 }
-add_action('enqueue_block_editor_assets', 'enqueue_editor_scripts');
 
-//Load the child theme gtb editor script
-function p4_child_theme_gpn_gutenberg_scripts()
+add_action('enqueue_block_editor_assets', 'P4_Child_Theme_Gpn_Gutenberg_scripts');
+/**
+ * Enqueue child theme gtb editor scripts
+ *
+ * @return void
+ */
+function P4_Child_Theme_Gpn_Gutenberg_scripts()
 {
     wp_enqueue_script(
         'gpn-customizations',
@@ -79,26 +111,33 @@ function p4_child_theme_gpn_gutenberg_scripts()
     wp_localize_script('gpn-customizations', 'gpnUserData', $script_params);
 }
 
-add_action('enqueue_block_editor_assets', 'p4_child_theme_gpn_gutenberg_scripts');
-
-//Load the editor scripts for ACF
-function enqueue_custom_scripts()
+add_action('admin_enqueue_scripts', 'Enqueue_Custom_scripts'); // Hook into admin_enqueue_scripts
+/**
+ * Enqueue child theme admin scripts
+ *
+ * @return void
+ */
+function Enqueue_Custom_scripts()
 {
     if (is_admin()) {
         wp_enqueue_script(
             'custom-acf-editor-script',
             get_stylesheet_directory_uri() . '/assets/src/js/admin/acf-editor.js',
-            array(), // Dependencies (if any)
+            array(),
             filemtime(get_stylesheet_directory() . '/assets/src/js/admin/acf-editor.js'),
-            true // Make sure the script is enqueued in the footer
+            true
         );
     }
 }
-add_action('admin_enqueue_scripts', 'enqueue_custom_scripts'); // Hook into admin_enqueue_scripts
 
-//hide from page search results the published pages with external counter tempate integration
-add_action('wp_head', 'get_all_counter_template_pages');
-function get_all_counter_template_pages()
+add_action('wp_head', 'Get_All_Hidden_Template_pages');
+add_action('wp_head', 'Get_All_Counter_Template_pages');
+/**
+ * Get all hidden template pages and hide them from search
+ *
+ * @return void
+ */
+function Get_All_Counter_Template_pages()
 {
     $args = array(
         'post_type' => 'page',
@@ -111,22 +150,6 @@ function get_all_counter_template_pages()
     $query = new WP_Query($args);
     $counterTemplatePages = $query->posts;
     return $counterTemplatePages;
-}
-
-add_action('wp_head', 'get_all_hidden_template_pages');
-function get_all_hidden_template_pages()
-{
-    $args = array(
-        'post_type' => 'page',
-        'post_status' => 'publish',
-        'meta_key' => '_wp_page_template',
-        'meta_value' => 'page-templates/page-hide-from-search.php',
-        'posts_per_page' => -1,
-        'publicly_queryable' => false
-    );
-    $query = new WP_Query($args);
-    $hiddenTemplatePages = $query->posts;
-    return $hiddenTemplatePages;
 }
 
 //Simplified fix to include posts back to internal search results by @lithrel
@@ -145,18 +168,47 @@ add_action(
     99,
     3
 );
+/**
+ * Get all hidden template pages
+ *
+ * @return void
+ */
+function Get_All_Hidden_Template_pages()
+{
+    $args = array(
+        'post_type' => 'page',
+        'post_status' => 'publish',
+        'meta_key' => '_wp_page_template',
+        'meta_value' => 'page-templates/page-hide-from-search.php',
+        'posts_per_page' => -1,
+        'publicly_queryable' => false
+    );
+    $query = new WP_Query($args);
+    $hiddenTemplatePages = $query->posts;
+    return $hiddenTemplatePages;
+}
+
 
 /**
  * Theme settings modificatons
+ * Filter whitelisted Gutenberg standard blocks
+ *
+ * @return void
  */
-
-// Filter whitelisted Gutenberg standard blocks
-function p4no_setup_block_filter()
+add_action('after_setup_theme', 'P4NO_Setup_Block_filter');
+function P4NO_Setup_Block_filter()
 {
     add_filter('allowed_block_types_all', 'p4no_allowed_post_type_blocks', 10, 2);
 }
-add_action('after_setup_theme', 'p4no_setup_block_filter');
 
+/**
+ * Filter allowed blocks for each post type.
+ *
+ * @param array  $allowed_block_types Array of allowed block types.
+ * @param object $editor_context      The editor context.
+ *
+ * @return array The filtered array of allowed block types.
+ */
 function p4no_allowed_post_type_blocks($allowed_block_types, $editor_context)
 {
 
@@ -289,22 +341,26 @@ function p4no_allowed_post_type_blocks($allowed_block_types, $editor_context)
     return $allowed_block_types;
 }
 
-add_action('admin_menu', function () {
-    // Remove ACF Options page
-    if (function_exists('acf_add_options_page')) {
-        remove_menu_page('acf-options');
-    }
+add_action(
+    'admin_menu',
+    function () {
+        // Remove ACF Options page
+        if (function_exists('acf_add_options_page')) {
+            remove_menu_page('acf-options');
+        }
 
-    // Remove ACF Custom Fields menu
-    if (post_type_exists('acf-field-group')) {
-        remove_menu_page('edit.php?post_type=acf-field-group');
-    }
+        // Remove ACF Custom Fields menu
+        if (post_type_exists('acf-field-group')) {
+            remove_menu_page('edit.php?post_type=acf-field-group');
+        }
 
-    // Remove Campaigns menu item
-    if (post_type_exists('campaign')) {
-        remove_menu_page('edit.php?post_type=campaign');
-    }
-}, 99);
+        // Remove Campaigns menu item
+        if (post_type_exists('campaign')) {
+            remove_menu_page('edit.php?post_type=campaign');
+        }
+    },
+    99
+);
 
 /**
  * Font Awesome Kit Setup
@@ -312,8 +368,15 @@ add_action('admin_menu', function () {
  * This will add the Font Awesome Kit to the front-end, the admin back-end,
  * and the login screen area.
  */
-if (! function_exists('fa_custom_setup_kit')) {
-    function fa_custom_setup_kit($kit_url = '')
+if (! function_exists('Fa_Custom_Setup_kit')) {
+    /**
+     * Font Awesome Kit Setup
+     *
+     * @param string $kit_url The URL to the Font Awesome Kit.
+     *
+     * @return void
+     */
+    function Fa_Custom_Setup_kit($kit_url = '')
     {
         foreach (['wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts'] as $action) {
             add_action(
@@ -325,5 +388,10 @@ if (! function_exists('fa_custom_setup_kit')) {
         }
     }
 }
-
-fa_custom_setup_kit('https://kit.fontawesome.com/508a5d6fe1.js');
+/**
+ * Font Awesome Kit Setup
+ *
+ * This will add the Font Awesome Kit to the front-end, the admin back-end,
+ * and the login screen area.
+ */
+Fa_Custom_Setup_kit('https://kit.fontawesome.com/508a5d6fe1.js');
