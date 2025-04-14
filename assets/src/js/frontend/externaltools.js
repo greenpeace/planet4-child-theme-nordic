@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         const lastChild = document.querySelector('.footer-menu > .list-unstyled').lastElementChild;
         lastChild.insertAdjacentHTML('afterend', '<li><a href="https://www.innsamlingskontrollen.no/organisasjoner/foreningen-greenpeace-norden/" target="_blank"><img src="https://storage.googleapis.com/lib.greenpeace.se/apps/Insamlingskontrollen.svg" alt="Innsamlingskontrollen Foreningen Greenpeace Norden" style="width: 4.5rem; position: initial;"></a></li>');
         //set up Conver for development
-        jQuery('<script id="convert" type="text/javascript" src="//cdn-4.convertexperiments.com/v1/js/100414510-100416144.js?environment=development"> </' + 'script>').appendTo(document.head);
+        jQuery('<script id="convert" type="text/javascript" src="https://cdn-4.convertexperiments.com/v1/js/100414510-100416144.js?environment=development"> </' + 'script>').appendTo(document.head);
         break;
       }
       case "sweden": {
