@@ -4,13 +4,12 @@
  * Update the CSP rules and allow the load of blob objects
  */
 
-add_action('wp_headers', function ($headers): array {
-    // Modify Content-Security-Policy
-    if (isset($headers['Content-Security-Policy'])) {
-        $headers['Content-Security-Policy'] .= "; worker-src 'self' blob: * data: *;";
-        //whitelist the app.convert.com domain
-        $headers['Content-Security-Policy'] .= "; connect-src 'self' blob: * data: * https://app.convert.com;";
-
-    }
+ add_action('wp_headers', function ($headers): array {
+    $headers['Content-Security-Policy'] = implode(' ', [
+        "default-src 'self';",
+        "connect-src 'self' blob: data: https://app.convert.com;",
+        "worker-src 'self' blob:;",
+        "frame-ancestors 'self';"
+    ]);
     return $headers;
 }, 11, 1);
