@@ -24,6 +24,13 @@ require_once ABSPATH . 'wp-admin/includes/admin.php';
 // Modify the CSP page header
 require_once 'includes/csp-headers.php';
 
+//Add Convert first
+add_action('wp_head', function () {
+    ?>
+    <!-- begin Convert Experiences code--><script type="text/javascript" src="//cdn-4.convertexperiments.com/v1/js/100414510-100416144.js"></script><!-- end Convert Experiences code -->
+    <?php
+}, 1);
+
 add_action('wp_enqueue_scripts', 'Enqueue_Child_styles', 100);
 /**
  * Enqueue child theme styles
