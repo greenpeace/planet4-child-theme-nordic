@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Greenpeace Planet4 Child Theme Nordic
  *
@@ -8,7 +9,7 @@
  * @package    Planet4_Child_Theme_Nordic
  * @author     Greenpeace Nordic, Svilena Koleva <svilena.koleva@greenpeace.org>
  * @license    MIT, https://opensource.org/licenses/MIT
- * @version    GIT: 1.48.7
+ * @version    GIT: 1.48.9
  * @link       https://github.com/greenpeace/planet4-child-theme-nordic
  * @since      7.4
  * @textdomain planet4-child-theme-nordic
@@ -26,9 +27,35 @@ require_once 'includes/csp-headers.php';
 
 //Add Convert first
 add_action('wp_head', function () {
-    ?>
-    <!-- begin Convert Experiences code--><script type="text/javascript" src="//cdn-4.convertexperiments.com/v1/js/100414510-100416144.js"></script><!-- end Convert Experiences code -->
-    <?php
+?>
+    <!-- begin Convert Experiences code-->
+    <script type="text/javascript" async src="//cdn-4.convertexperiments.com/v1/js/100414510-100416144.js"></script><!-- end Convert Experiences code -->
+    <!-- Add anti flickering code -->
+    <script>
+        (function() {
+            //disables the automatic body hiding of the convert script
+            var _conv_prevent_bodyhide = true;
+            //the duration, in mili seconds, for which the body is kept hidden if Convert tracking code does not load.
+            var hideTimeout = 500; //modify this to whatever you think it's suitable
+
+            var cssToHide = "body {visibility: hidden !important;}",
+                headElement = document.head || document.getElementsByTagName("headElement")[0],
+                styleElement = document.createElement("style");
+            headElement.appendChild(styleElement);
+            styleElement.type = "text/css";
+            styleElement.id = "convert_hide_body"; //do not change this
+            if (styleElement.styleSheet) {
+                styleElement.styleSheet.cssText = cssToHide;
+            } else {
+                styleElement.appendChild(document.createTextNode(cssToHide));
+            }
+            setTimeout(function() {
+                var c_h = document.getElementById("convert_hide_body");
+                if (c_h) c_h.outerHTML = "";
+            }, hideTimeout)
+        })();
+    </script>
+<?php
 }, 1);
 
 add_action('wp_enqueue_scripts', 'Enqueue_Child_styles', 100);
