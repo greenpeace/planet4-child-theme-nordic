@@ -44,7 +44,7 @@
     "not dead"
   ],
   "dependencies": {
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.3.6",
     "classnames": "^2.5.1",
     "jquery": "^3.7.1",
     "lite-youtube-embed": "^0.3.2",
