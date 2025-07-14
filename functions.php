@@ -55,6 +55,8 @@ add_action('wp_head', function () {
             }, hideTimeout)
         })();
     </script>
+    <!-- iRaiser tracking script -->
+    <script type="text/javascript" src="https://lahjoita.greenpeace.org/libs.iraiser.eu/libs/payment/frame/1.6/IRaiserFrame.js"></script><!-- end iRaiser tracking script -->
 <?php
 }, 1);
 
