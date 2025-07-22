@@ -25,7 +25,7 @@ require_once ABSPATH . 'wp-admin/includes/admin.php';
 // Modify the CSP page header
 require_once 'includes/csp-headers.php';
 
-//Add Convert first
+//Add Convert & iRaiser first
 add_action('wp_head', function () {
 ?>
     <!-- begin Convert Experiences code-->
@@ -56,7 +56,8 @@ add_action('wp_head', function () {
         })();
     </script>
     <!-- iRaiser tracking script -->
-    <script type="text/javascript" src="https://lahjoita.greenpeace.org/libs.iraiser.eu/libs/payment/frame/1.6/IRaiserFrame.js"></script><!-- end iRaiser tracking script -->
+    <script type="text/javascript" src="https://lahjoita.greenpeace.org/libs.iraiser.eu/libs/payment/frame/1.6/IRaiserFrame.js"></script>
+    <!-- end iRaiser tracking script -->
 <?php
 }, 1);
 
