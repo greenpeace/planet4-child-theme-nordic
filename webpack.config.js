@@ -79,7 +79,6 @@ module.exports = {
                     method: (filePath) => {
                         return [
                             'style.deps.json',
-                            'index.asset.php',
                             'style.asset.php',
                         ].some(item => new RegExp(item, 'm').test(filePath));
                     }

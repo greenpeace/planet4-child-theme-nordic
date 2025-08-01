@@ -9,6 +9,7 @@ Template Name: External Counter Integration (GPN)
 *
 */
 
+
 // Example:
 // page-external-counter.php?var=unique_count&url=https://global-petition-counter-v2.appspot.com/counter/protect-oceans-2019
 

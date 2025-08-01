@@ -15,6 +15,11 @@
  * @textdomain planet4-child-theme-nordic
  */
 
+// Prevent direct access to this file
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}   
+
 // Include WordPress core files
 if (!defined('ABSPATH')) {
     define('ABSPATH', dirname(__FILE__) . '/');
@@ -22,8 +27,21 @@ if (!defined('ABSPATH')) {
 require_once ABSPATH . 'wp-load.php';
 require_once ABSPATH . 'wp-admin/includes/admin.php';
 
+
 // Modify the CSP page header
 require_once 'includes/csp-headers.php';
+require_once 'includes/debug-errors.php';
+
+add_filter('timber/locations', function ($paths) {
+    // Add child theme templates **first** so child templates take precedence
+    array_unshift($paths, get_stylesheet_directory() . '/page-templates');
+
+    // Then master theme templates as fallback
+    $paths[] = get_template_directory() . '/templates';
+
+    return $paths;
+});
+
 
 //Add Convert & iRaiser first
 add_action('wp_head', function () {
@@ -271,6 +289,14 @@ function p4no_allowed_post_type_blocks($allowed_block_types, $editor_context)
         'core/paragraph',
         'core/pattern', //Show a block pattern
         'core/quote', //Give quoted text visual emphasis
+        'core/query', //Display a list of posts or pages
+        'core/query-no-results', //Display a message when no posts are found
+        'core/query-pagination', //Add pagination to a query block
+        'core/query-pagination-next', //Add a link to the next page of posts
+        'core/query-pagination-numbers', //Add numbered pagination to a query block
+        'core/query-pagination-previous', //Add a link to the previous page of posts
+        'core/query-total', //Display the total number of posts in a query block
+        'core/query-title', //Add a title to a query block
         'core/separator', //Create a break between ideas or sections with a horizontal separator
         'core/shortcode', //Insert additional custom elements with a WordPress shortcode
         'core/spacer', //Add white space between blocks and customize its height.
@@ -280,6 +306,7 @@ function p4no_allowed_post_type_blocks($allowed_block_types, $editor_context)
     $p4_custom_blocks = [
         //Blocks from planet4-master-theme
         //@see https://github.com/greenpeace/planet4-master-theme/blob/main/src/Loader.php#L194
+        //@see https://github.com/greenpeace/planet4-master-theme/blob/main/src/BlockSettings.php
         'planet4-blocks/accordion', //mt
         'planet4-blocks/articles',
         'planet4-blocks/carousel-header', //mt
@@ -298,6 +325,11 @@ function p4no_allowed_post_type_blocks($allowed_block_types, $editor_context)
         'gravityforms/form', // TODO: Connect to our DB; Contact form, ETT, etc.
         'acf/leads-form',
         // 'acf/p4-gpn-block-testimonial',
+        'p4/post-featured-image',
+        'p4/taxonomy-breadcrumb',
+        'p4/post-author-name',
+        'p4/reading-time',
+
 
     ];
 
@@ -433,3 +465,10 @@ if (! function_exists('Fa_Custom_Setup_kit')) {
  * and the login screen area.
  */
 Fa_Custom_Setup_kit('https://kit.fontawesome.com/508a5d6fe1.js');
+
+
+// Test error
+// trigger_error('Test warning from theme', E_USER_WARNING);
+
+
+

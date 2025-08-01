@@ -1,0 +1,43 @@
+<div class="listing-page-filters">
+    <label for="category" class="visually-hidden">
+        {{ __('Filter by category', 'planet4-master-theme' ) }}
+    </label>
+    <select class="form-select listing-page-select" id="category">
+        <option value="">{{__( 'All topics', 'planet4-master-theme' ) }}</option>
+        {% for key,category in categories %}
+            {% set isSelected = current_category == category.slug %}
+            <option
+                value="{{category.slug}}"
+                {{isSelected ? 'selected' : ''}}
+            >
+                {{ category.name|raw }}
+            </option>
+        {% endfor %}
+    </select>
+    <select class="form-select listing-page-select" id="post-type">
+        <option value="">{{__( 'All posts', 'planet4-master-theme' ) }}</option>
+        {% for key,post_type in post_types %}
+            {% set isSelected = current_post_type == post_type.slug %}
+            <option
+                value="{{post_type.slug}}"
+                {{isSelected ? 'selected' : ''}}
+            >
+                {{ post_type.name|raw }}
+            </option>
+        {% endfor %}
+    </select>
+    <button id="apply-filters" class="btn btn-primary">{{__('Apply', 'planet4-master-theme')}}</button>
+</div>
+<div class="listing-page-posts">
+  {% if posts is not empty %}
+    {% for post in posts %}
+      <article class="listing-post">
+        <h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
+        <p>{{ post.excerpt }}</p>
+        <!-- Add more fields as needed, e.g. date, categories -->
+      </article>
+    {% endfor %}
+  {% else %}
+    <p>{{ __('No posts found.', 'planet4-master-theme') }}</p>
+  {% endif %}
+</div>
