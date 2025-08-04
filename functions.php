@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Greenpeace Planet4 Child Theme Nordic
  *
@@ -30,7 +29,8 @@ require_once ABSPATH . 'wp-admin/includes/admin.php';
 
 // Modify the CSP page header
 require_once 'includes/csp-headers.php';
-require_once 'includes/debug-errors.php';
+// Include debug errors file (Error outout on the UI triggers Qirks mode)
+// require_once 'includes/debug-errors.php';
 
 add_filter('timber/locations', function ($paths) {
     // Add child theme templates **first** so child templates take precedence

@@ -1,9 +1,9 @@
 <?php
-// Enable WordPress debugging
 if ( ! defined( 'WP_DEBUG' ) ) define( 'WP_DEBUG', true );
 if ( ! defined( 'WP_DEBUG_LOG' ) ) define( 'WP_DEBUG_LOG', true );
 if ( ! defined( 'WP_DEBUG_DISPLAY' ) ) define( 'WP_DEBUG_DISPLAY', true );
 if ( ! defined( 'SCRIPT_DEBUG' ) ) define( 'SCRIPT_DEBUG', true );
+// Enable WordPress debugging
 
 // Display all PHP errors on screen
 ini_set( 'display_errors', '1' );

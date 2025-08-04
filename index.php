@@ -49,3 +49,5 @@ if (is_home()) {
     do_action('enqueue_google_tag_manager_script', $context);
     Timber::render($templates, $context);
 }
+
+?>
