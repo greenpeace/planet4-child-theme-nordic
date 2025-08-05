@@ -6,7 +6,7 @@ const RemovePlugin = require('remove-files-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
 const webpack = require('webpack');
-const ProvidePlugin = require('buffer');
+const path = require('path');
 
 module.exports = (env, argv) => {
     const isProduction = argv.mode === 'production';
@@ -30,7 +30,7 @@ module.exports = (env, argv) => {
                             loader: 'css-loader',
                             options: {
                                 url: false,
-                                sourceMap: true,
+                                sourceMap: !isProduction,
                             }
                         },
                         {
@@ -41,13 +41,13 @@ module.exports = (env, argv) => {
                                         require('autoprefixer'),
                                     ],
                                 },
-                                sourceMap: true,
+                                sourceMap: !isProduction,
                             },
                         },
                         {
                             loader: 'sass-loader',
                             options: {
-                                sourceMap: true,
+                                sourceMap: !isProduction,
                             }
                         }
                     ]
@@ -119,7 +119,7 @@ module.exports = (env, argv) => {
                             'default',
                             {
                                 discardComments: { removeAll: true },
-                                sourceMap: true,
+                                sourceMap: !isProduction,
                             },
                         ],
                     },
