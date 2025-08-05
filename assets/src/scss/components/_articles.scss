@@ -146,6 +146,7 @@ h2.wp-block-post-title a {
   font-weight: 700;
 
   &:hover {
+    font-family: var(--font-family-roboto);
     border-bottom: none;
     text-decoration-color: $gp-green-50;
     box-shadow: none;

@@ -3,43 +3,20 @@
 @import "../base/fonts";
 
 //TA cover card
-.actions-list li.wp-block-post.p4_action {
-  border-radius: 1rem !important;
-}
+.actions-list {
 
-.cover-card-content {
-  background: $white;
-  z-index: 100;
-  position: -webkit-sticky;
-  position: sticky;
-
-  .cover-card-heading {
-    font-weight: var(--cover-card-heading--font-weight);
+  li.wp-block-post.p4_action {
+    border-radius: 1rem !important;
   }
-}
 
-.take-action-covers-block .cover .cover-card-content .cover-card-excerpt {
-  font-family: $roboto;
-  font-weight: 400 !important;
-}
-
-span.cover-card-tag {
-  font-family: $gp-sans;
-  font-weight: 500 !important;
-}
-
-// Define your $gp-green-50 variable with the appropriate color value
-// For example: $gp-green-50: #00ff00;
-
-.take-action-covers-block {
-  .cover {
+  .wp-block-post-featured-image {
     position: relative;
     overflow: hidden;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 
-    a[data-ga-action="Image"] {
+    a {
       overflow: hidden;
       width: 220px;
       height: 220px;
@@ -47,7 +24,7 @@ span.cover-card-tag {
     }
 
     // Smooth transition for the image when not hovered
-    a[data-ga-action="Image"] img {
+    a img {
       max-width: 100%;
       max-height: 220px;
       display: block; // Make the image a block-level element to fill its container
@@ -57,52 +34,69 @@ span.cover-card-tag {
       transition: 0.5s all ease-in-out;
     }
 
-    &:hover {
-      a[data-ga-action="Image"] img {
-        max-width: 100%;
-        max-height: 220px;
-        display: block; // Make the image a block-level element to fill its container
-        position: relative; // Reset the positioning to allow smooth scaling
-        transform: scale(1.1);
-        transform-origin: center;
-      }
+  }
 
-      // span.cover-card-tag {
-      //     color: $gp-green-80;
-      // }
+  .actions-list-links:hover {
 
-      a.cover-card-heading[data-ga-action="Title"] {
-        text-decoration: none;
-        font-weight: var(--cover-card-heading--font-weight);
-        color: $black !important;
-
-        // &:hover {
-        //   text-decoration: underline;
-        //   -webkit-text-decoration-color: $gp-green-50;
-        //   /* Safari */
-        //   -moz-text-decoration-color: $gp-green-50;
-        //   text-decoration-color: $gp-green-50;
-        // }
-      }
-    }
-
-    .content-covers-block .content-covers-block-wrap .content-covers-block-info>h5>a {
-      color: $dark-green !important;
-
+    .wp-block-post-featured-image a img {
+      max-width: 100%;
+      max-height: 220px;
+      display: block; // Make the image a block-level element to fill its container
+      position: relative; // Reset the positioning to allow smooth scaling
+      transform: scale(1.1);
+      transform-origin: center;
     }
   }
 
-  a.btn.cover-card-btn.btn-primary {
+  .content-covers-block .content-covers-block-wrap .content-covers-block-info>h5>a {
+    color: $dark-green !important;
+
+  }
+
+  .wp-block-post-terms {
+    padding-bottom: var(--padding-xs);
+
+    & a {
+      font-family: var(--font-family-gp-sans);
+      font-weight: 500 !important;
+    }
+  }
+
+  a.actions-list-links .wp-block-post-title a {
+    text-decoration: none !important;
+    font-weight: var(--cover-card-heading--font-weight);
+
+    // &:hover {
+    //   text-decoration: underline;
+    //   -webkit-text-decoration-color: $gp-green-50;
+    //   /* Safari */
+    //   -moz-text-decoration-color: $gp-green-50;
+    //   text-decoration-color: $gp-green-50;
+    // }
+  }
+
+  .wp-block-post-excerpt p {
+    font-family: var(--font-family-roboto);
+    font-weight: 400 !important;
+    color: $black !important;
+  }
+
+  .wp-block-post:hover .btn-primary {
     background: $gp-green-40;
-    z-index: 101;
-    line-height: 1;
-    font-size: var(--cover-card-btn--font-size);
-
-    &:hover {
-      background-image: linear-gradient(30deg, $gp-green-50 50%, transparent 50%);
-      background-size: 1000px;
-    }
+    color: $black;
   }
+
+  // a.btn-primary {
+  //   background: $gp-green-40;
+  //   z-index: 101;
+  //   line-height: 1;
+  //   font-size: var(--cover-card-btn--font-size);
+
+  //   &:hover {
+  //     background-image: linear-gradient(30deg, $gp-green-50 50%, transparent 50%);
+  //     background-size: 1000px;
+  //   }
+  // }
 }
 
 .content-covers-block .content-covers-block-wrap .content-covers-block-info>h5>a {

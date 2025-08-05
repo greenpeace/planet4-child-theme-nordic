@@ -1,13 +1,13 @@
 @import "../base/colors";
 @import "../base/fonts";
 // Fonts
-$roboto: "Roboto", "Helvetica", "Arial", sans-serif !important;
+$roboto: "Roboto", "Helvetica", "Arial", sans-serif;
 // changed the font from here to make sure it will assigned where it need to
 // $lora:     "Open Sans", sans-serif;
-$gp-sans: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
-$helvetica: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif !important;
-$helvetica-bold: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif !important;
-$lora: "Roboto", "Arial", sans-serif !important;
+$gp-sans: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
+$helvetica: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif;
+$helvetica-bold: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif;
+$lora: "Roboto", "Arial", sans-serif;
 
 
 // Media queries
@@ -32,8 +32,26 @@ $font-size-xxl: 2.5rem;
 $font-size-xxxl: 3rem;
 $font-size-xxxxl: 4rem;
 
+//padding
+$padding-xs: 0.5rem;
+$padding-sm: 0.75rem;
+$padding-md: 1rem;
+$padding-lg: 1.5rem;
+$padding-xl: 2rem;
+$padding-xxl: 3rem;
+
 //NVI tockens
 :root {
+  --font-family-gp-sans: #{$gp-sans};
+  --font-family-helvetica: #{$helvetica};
+  --font-family-helvetica-bold: #{$helvetica-bold};
+  --font-family-roboto: #{$roboto};
+  --padding-xs: #{$padding-xs};
+  --padding-sm: #{$padding-sm};
+  --padding-md: #{$padding-md};
+  --padding-lg: #{$padding-lg};
+  --padding-xl: #{$padding-xl};
+  --padding-xxl: #{$padding-xxl};
   --top-navigation--background: #{$white};
   --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   --top-navigation--color: #{$black};
@@ -53,8 +71,8 @@ $font-size-xxxxl: 4rem;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
   --page-header-title--font-weight: var(--font-weight-bold);
-  --headings-font-wight: 700;
-  --headings--font-family: $roboto;
+  --headings-font-weight: 700;
+  --headings--font-family: #{$roboto};
   --btn-body-font-weight: 600;
 }
 

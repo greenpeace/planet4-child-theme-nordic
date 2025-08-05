@@ -23,8 +23,8 @@ h6,
 .query-list-item-headline.wp-block-post-title a,
 a.search-result-item-headline,
 .page-section-header {
-  font-family: $roboto;
-  font-weight: var(--headings-font-wight);
+  font-family: var(--font-family-roboto);
+  font-weight: var(--headings-font-weight);
   margin-top: 0;
   margin-bottom: .5rem;
   line-height: 1.25;
@@ -178,7 +178,7 @@ a {
   box-shadow: none !important;
 }
 
-.page-content li>a:not(.button--ghost, .submenu-link),
+.page-content li>a:not(.button--ghost, .submenu-link, .actions-list-links),
 .page-content p>a:not(.secondary-menu > .nav-link >a, .secondary-menu > .nav-link >a >strong, .acf-label > p > a, small > p > a,
 .is-pattern-p4-quick-links>a, .is-pattern-p4-quick-links strong a),
 .post-content li>a,
@@ -195,8 +195,7 @@ strong>a {
   color: inherit;
   background-image: none !important;
 
-  &:hover,
-  &:visited {
+  &:hover {
     color: $gp-green-80;
     text-decoration: none;
     box-shadow: none;
