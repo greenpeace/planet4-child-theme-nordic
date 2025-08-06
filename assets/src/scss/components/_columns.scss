@@ -22,6 +22,8 @@
         .column-wrap a {
             border-bottom: none;
             text-decoration: none;
+            font-family: var(--font-family-roboto);
+            font-weight: var(--headings-font-weight);
         }
     }
 
@@ -40,10 +42,14 @@
     h3,
     h5 {
         font-weight: var(--headings-font-weight);
+        font-family: $roboto !important;
+
 
         a[data-ga-action="Title"] {
             color: $black;
             font-weight: var(--headings-font-weight);
+            font-family: $roboto !important;
+
 
             &:hover {
                 color: $gp-green-80;

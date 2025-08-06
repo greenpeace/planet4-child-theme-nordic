@@ -868,11 +868,6 @@ strong {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
-div.carousel-captions-wrapper h2 {
-  font-family: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif !important;
-  font-size: 2rem;
-}
-
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -4588,7 +4583,8 @@ html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
     font-size: 2.5rem;
   }
   .carousel-header .carousel-caption .main-header p {
-    font-weight: 600;
+    padding-top: var(--padding-md);
+    font-size: 1.2rem;
   }
   .container.main-header > .carousel-captions-wrapper {
     width: 600px !important;
@@ -5024,6 +5020,8 @@ and so on...
 .columns-block.block-style-icons .column-wrap a, .columns-block.block-style-image .column-wrap a {
   border-bottom: none;
   text-decoration: none;
+  font-family: var(--font-family-roboto);
+  font-weight: var(--headings-font-weight);
 }
 .columns-block.block-style-tasks .can-do-steps-mobile .card .card-header {
   background: var(--accordion-block-dark-style--background);
@@ -5035,12 +5033,14 @@ and so on...
 .columns-block h3,
 .columns-block h5 {
   font-weight: var(--headings-font-weight);
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
 }
 .columns-block h2 a[data-ga-action=Title],
 .columns-block h3 a[data-ga-action=Title],
 .columns-block h5 a[data-ga-action=Title] {
   color: #000;
   font-weight: var(--headings-font-weight);
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
 }
 .columns-block h2 a[data-ga-action=Title]:hover,
 .columns-block h3 a[data-ga-action=Title]:hover,
@@ -8706,6 +8706,10 @@ div.wrapper-post-tag ::before,
     hyphens: auto;
   }
 }
+.posts-list-meta {
+  margin-top: var(--padding-md);
+}
+
 .author-block {
   background: rgba(217, 241, 197, 0.5019607843) !important;
 }

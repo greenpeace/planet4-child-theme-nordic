@@ -47,7 +47,8 @@ html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
   }
 
   .carousel-header .carousel-caption .main-header p {
-    font-weight: 600;
+    padding-top: var(--padding-md);
+    font-size: 1.2rem;
   }
 
   //content wrapper to facilitate longer headlines

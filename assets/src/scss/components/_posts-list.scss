@@ -201,6 +201,10 @@ div.wrapper-post-tag ::before,
   }
 }
 
+.posts-list-meta {
+  margin-top: var(--padding-md);
+}
+
 //author profile
 .author-block {
   background: $gp-green-5 !important;
