@@ -114,12 +114,8 @@
 .boxout {
   border-radius: 1rem;
 
-  a.boxout-heading[data-ga-category="Take Action Boxout"] {
+  a.cover-card-overlay[data-ga-category="Take Action Boxout"] {
     font-weight: var(--cover-card-heading--font-weight);
-
-    &:hover {
-      text-decoration: none !important;
-    }
   }
 
   a.btn-action.cover-card-btn[data-ga-category="Take Action Boxout"] {
@@ -133,5 +129,12 @@
       border-bottom-left-radius: 1rem;
       border-top-left-radius: 1rem;
     }
+  }
+
+  &:hover {
+    a.cover-card-overlay[data-ga-category="Take Action Boxout"] {
+      text-decoration: none !important;
+    }
+
   }
 }

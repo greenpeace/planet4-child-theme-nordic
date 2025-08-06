@@ -2119,210 +2119,64 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-.article-list-item-content {
-  width: inherit;
+html {
+  scroll-behavior: smooth;
+  transition-duration: 0.4s;
 }
 
-a[data-ga-action="Navigation Tag"],
-.wrapper-post-term a,
-.wrapper-post-tag a,
-a[data-ga-action="Post Type Tag"],
-a[data-ga-action="Post Type Tag"] span,
-a.tag-item.tag-item--main,
-.taxonomy-category a {
-  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
-  color: #198700;
-  font-weight: 500;
-}
-a[data-ga-action="Navigation Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
-.wrapper-post-term a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
-.wrapper-post-tag a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
-a[data-ga-action="Post Type Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
-a[data-ga-action="Post Type Tag"] span:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
-a.tag-item.tag-item--main:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span),
-.taxonomy-category a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span) {
-  color: #000;
-  text-decoration: underline;
-  -webkit-text-decoration-color: #66CC00;
-  text-decoration-color: #66CC00;
-}
-a[data-ga-action="Navigation Tag"]:visited,
-.wrapper-post-term a:visited,
-.wrapper-post-tag a:visited,
-a[data-ga-action="Post Type Tag"]:visited,
-a[data-ga-action="Post Type Tag"] span:visited,
-a.tag-item.tag-item--main:visited,
-.taxonomy-category a:visited {
-  color: #198700;
-}
-
-a[data-ga-action="Navigation Tag"] {
-  border-radius: 2rem;
-}
-a[data-ga-action="Navigation Tag"] span[aria-label=hashtag] {
-  color: #198700;
-}
-
-a.btn.post-tag-button,
-a.btn.post-tag-button span:nth-child(2) {
-  color: #198700;
-  background: rgba(217, 241, 197, 0.5019607843);
-  border: none;
-  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
-  font-weight: var(--font-weight-regular);
-}
-a.btn.post-tag-button:hover,
-a.btn.post-tag-button span:nth-child(2):hover {
-  color: #000;
-}
-a.btn.post-tag-button:visited,
-a.btn.post-tag-button span:nth-child(2):visited {
-  color: #198700;
-}
-
-.query-list-item-meta span.article-list-item-author,
-.query-list-item-meta span.article-list-item-author a,
-.query-list-item-meta .wp-block-post-author-name a,
-.article-list-item-meta span.article-list-item-author,
-.article-list-item-meta span.article-list-item-author a,
-.article-list-item-meta .wp-block-post-author-name a,
-.posts-list-meta span.article-list-item-author,
-.posts-list-meta span.article-list-item-author a,
-.posts-list-meta .wp-block-post-author-name a {
-  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
+body {
   color: #4d4d4d;
-  font-weight: var(--font-weight-regular);
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
-.article-list-item-author,
-.taxonomy-category a {
-  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
-  font-weight: var(--font-weight-regular) !important;
-}
-.article-list-item-author a:hover,
-.taxonomy-category a a:hover {
-  transition: height 0.2s cubic-bezier(0.5, 0, 0, 1);
-  border-bottom: 2px solid #66CC00;
-  text-decoration: none !important;
-  box-shadow: none;
+.error404 .speech-bubble {
+  padding-left: 0;
 }
 
-.posts-list .article-list-item-author::after,
-.posts-list .wp-block-post-author-name::after {
-  margin-top: -15px;
+@media (min-width: 768px) {
+  div.wp-block-media-text.has-media-on-the-right div.wp-block-media-text__content {
+    padding-inline-start: 0;
+  }
 }
-
-a.tag-item.tag,
-.single-post-time,
-a.comment-link,
-a.comment-link > span.quiantity,
-a.comment-link > span.display-text,
-a.external-link {
-  font-weight: 400;
-}
-a.tag-item.tag:hover,
-.single-post-time:hover,
-a.comment-link:hover,
-a.comment-link > span.quiantity:hover,
-a.comment-link > span.display-text:hover,
-a.external-link:hover {
-  color: #000 !important;
-  text-decoration: underline;
-  -webkit-text-decoration-color: #66CC00;
-  /* Safari */
-  text-decoration-color: #66CC00;
-}
-a.tag-item.tag:visited,
-.single-post-time:visited,
-a.comment-link:visited,
-a.comment-link > span.quiantity:visited,
-a.comment-link > span.display-text:visited,
-a.external-link:visited {
-  color: #198700;
-}
-
-div.query-list-item-post-terms div.taxonomy-p4-page-type a[rel=tag],
-div.article-list-item-tags a.tag-item.tag,
-section.post-articles-block div.taxonomy-post_tag a[rel=tag],
-div.query-list-item-body div.query-list-item-post-terms div.wrapper-post-term div.taxonomy-p4-page-type.wp-block-post-terms a {
-  color: #198700;
-}
-
-.article-list-item-headline a {
-  color: #000;
-}
-.article-list-item-headline a:hover {
-  transition: height 0.2s cubic-bezier(0.5, 0, 0, 1);
-  border-bottom: 3px solid #66CC00;
-  text-decoration: none;
-  box-shadow: none;
-}
-
-.query-list-item-headline.wp-block-post-title a,
-.wp-block-query.posts-list.p4-query-loop .wp-block-post-title a,
-h2.wp-block-post-title a {
-  color: #000;
-  font-weight: 700;
-}
-.query-list-item-headline.wp-block-post-title a:hover,
-.wp-block-query.posts-list.p4-query-loop .wp-block-post-title a:hover,
-h2.wp-block-post-title a:hover {
-  font-family: var(--font-family-roboto);
-  border-bottom: none;
+li.search-result-list-item:hover a.search-result-item-headline {
   -webkit-text-decoration-color: #66CC00;
           text-decoration-color: #66CC00;
-  box-shadow: none;
 }
 
-@media (min-width: 1200px) {
-  .wp-block-post-title {
-    margin-bottom: 24px;
-  }
-}
-
-div.wrapper-post-tag ::before,
-.query-list-item-body:has(.taxonomy-p4-page-type):has(.taxonomy-post_tag) .wrapper-post-tag:before {
-  color: #198700;
-}
-
-@media (max-width: 576px) {
-  h1.page-header-title {
-    font-size: 9vw;
-    overflow-wrap: break-word;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-  }
-}
-.author-block {
-  background: rgba(217, 241, 197, 0.5019607843) !important;
-}
-.author-block h2.author-block-info-title {
-  font-weight: 500;
-  color: #6F7376;
-  font-size: 0.85rem;
-}
-.author-block h5.author-block-info-name {
-  margin-bottom: 0;
-}
-.author-block h5.author-block-info-name a {
+.single-post-author,
+.single-post-author a {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
-  color: #198700;
+  font-weight: var(--font-weight-regular);
 }
-.author-block h5.author-block-info-name a:hover {
-  transition: height 0.2s cubic-bezier(0.5, 0, 0, 1);
-  border-bottom: 3px solid #66CC00;
+.single-post-author a:hover, .single-post-author:hover,
+.single-post-author a a:hover,
+.single-post-author a:hover {
+  -webkit-text-decoration-color: #66CC00 !important;
+          text-decoration-color: #66CC00 !important;
+}
+
+.single-post-time:hover {
   text-decoration: none;
-  box-shadow: none;
 }
-.author-block div[itemprop=description] {
-  padding: 1rem 0;
+
+.block-editor-block-patterns-list__item[role=option] {
+  height: auto !important;
 }
-.author-block div[itemprop=description] .author-block-description-button span.show-more,
-.author-block div[itemprop=description] .author-block-description-button span.show-less {
-  font-size: smaller;
-  text-align: right;
-  color: #198700;
-  padding-top: 0.5rem;
+
+.page-content p:not(.article-list-item-meta) a,
+.page-content > ol li a,
+.page-content > ul li a {
+  background-image: none !important;
+}
+
+#set-cookie a {
+  color: #339E00;
+  text-decoration: none;
+  background-image: none;
+  border-bottom: none;
+}
+#set-cookie a:hover {
+  border-bottom: 2px solid #4CB500;
 }
 
 /* Generates mutilevel nested comments
@@ -2735,64 +2589,542 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-html {
-  scroll-behavior: smooth;
-  transition-duration: 0.4s;
+blockquote,
+blockquote > p {
+  font-size: inherit;
+  line-height: 1.4;
+  font-style: normal;
+  width: 100%;
 }
-
-body {
-  color: #4d4d4d;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-}
-
-.error404 .speech-bubble {
-  padding-left: 0;
-}
-
 @media (min-width: 768px) {
-  div.wp-block-media-text.has-media-on-the-right div.wp-block-media-text__content {
-    padding-inline-start: 0;
+  blockquote,
+  blockquote > p {
+    font-size: 1rem;
+    padding-left: 0;
   }
 }
-li.search-result-list-item:hover a.search-result-item-headline {
-  -webkit-text-decoration-color: #66CC00;
-          text-decoration-color: #66CC00;
+@media (min-width: 992px) {
+  blockquote,
+  blockquote > p {
+    max-width: 80%;
+  }
+}
+@media (min-width: 1200px) {
+  blockquote,
+  blockquote > p {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 768px) {
+  blockquote p,
+  blockquote > p p {
+    padding-left: 2vw;
+  }
+}
+blockquote,
+blockquote > p {
+  color: #000;
+  margin: 1rem 0;
+  padding-bottom: 0;
 }
 
-.single-post-author,
-.single-post-author a {
+blockquote > cite {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
-  font-weight: var(--font-weight-regular);
+  font-size: 0.875rem;
+  font-style: normal;
 }
-.single-post-author a:hover, .single-post-author:hover,
-.single-post-author a a:hover,
-.single-post-author a:hover {
-  -webkit-text-decoration-color: #66CC00 !important;
-          text-decoration-color: #66CC00 !important;
+blockquote > cite::before {
+  content: " - ";
+  /* Add the dash symbol */
+  font-size: inherit;
 }
-
-.single-post-time:hover {
-  text-decoration: none;
-}
-
-.block-editor-block-patterns-list__item[role=option] {
-  height: auto !important;
+@media (min-width: 768px) {
+  blockquote > cite {
+    font-size: 0.9375rem;
+    padding-left: 2vw;
+  }
 }
 
-.page-content p:not(.article-list-item-meta) a,
-.page-content > ol li a,
-.page-content > ul li a {
-  background-image: none !important;
-}
-
-#set-cookie a {
-  color: #339E00;
-  text-decoration: none;
-  background-image: none;
+blockquote.wp-block-quote {
+  border-left: 4px solid #66CC00;
+  padding: 0.5rem;
+  border-top: none;
   border-bottom: none;
 }
-#set-cookie a:hover {
-  border-bottom: 2px solid #4CB500;
+
+blockquote.wp-block-quote,
+.wp-block-quote.is-style-default {
+  font-size: inherit;
+  line-height: 1.4;
+  font-style: normal;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  blockquote.wp-block-quote,
+  .wp-block-quote.is-style-default {
+    font-size: 1rem;
+    padding-left: 0;
+  }
+}
+@media (min-width: 992px) {
+  blockquote.wp-block-quote,
+  .wp-block-quote.is-style-default {
+    max-width: 80%;
+  }
+}
+@media (min-width: 1200px) {
+  blockquote.wp-block-quote,
+  .wp-block-quote.is-style-default {
+    font-size: 1.25rem;
+  }
+}
+blockquote.wp-block-quote,
+.wp-block-quote.is-style-default {
+  overflow-wrap: break-word;
+  position: relative;
+}
+blockquote.wp-block-quote.has-text-align-left,
+.wp-block-quote.is-style-default.has-text-align-left {
+  padding: 0.5rem 1rem;
+  border-left: 4px solid #66CC00;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+}
+blockquote.wp-block-quote.has-text-align-center,
+.wp-block-quote.is-style-default.has-text-align-center {
+  padding: 2rem;
+  border-top: 4px solid #66CC00;
+  border-bottom: 4px solid #66CC00;
+  border-left: none;
+  border-right: none;
+}
+@media (min-width: 576px) and (max-width: 992px) {
+  blockquote.wp-block-quote.has-text-align-center cite,
+  .wp-block-quote.is-style-default.has-text-align-center cite {
+    padding-left: 0;
+    margin-left: 3vw;
+  }
+}
+@media (min-width: 992px) {
+  blockquote.wp-block-quote.has-text-align-center,
+  .wp-block-quote.is-style-default.has-text-align-center {
+    margin-left: 0;
+  }
+  blockquote.wp-block-quote.has-text-align-center p,
+  .wp-block-quote.is-style-default.has-text-align-center p {
+    margin-left: 5vw;
+  }
+  blockquote.wp-block-quote.has-text-align-center cite,
+  .wp-block-quote.is-style-default.has-text-align-center cite {
+    margin-left: 0vw;
+    position: relative;
+    padding: inherit;
+  }
+}
+@media (min-width: 1200px) {
+  blockquote.wp-block-quote.has-text-align-center p,
+  .wp-block-quote.is-style-default.has-text-align-center p {
+    margin-left: 5vw;
+  }
+}
+blockquote.wp-block-quote.has-text-align-right,
+.wp-block-quote.is-style-default.has-text-align-right {
+  padding: 0.5rem 1rem;
+  border-right: 4px solid #66CC00;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+@media (min-width: 992px) {
+  blockquote.wp-block-quote.has-text-align-right,
+  .wp-block-quote.is-style-default.has-text-align-right {
+    padding-right: 1vw;
+  }
+}
+@media (min-width: 1600px) {
+  blockquote.wp-block-quote.has-text-align-right,
+  .wp-block-quote.is-style-default.has-text-align-right {
+    padding-right: 2vw !important;
+  }
+}
+@media (max-width: 576px) {
+  blockquote.wp-block-quote.has-text-align-right p,
+  .wp-block-quote.is-style-default.has-text-align-right p {
+    margin-left: 0;
+  }
+}
+@media (min-width: 576px) and (max-width: 992px) {
+  blockquote.wp-block-quote.has-text-align-right p,
+  .wp-block-quote.is-style-default.has-text-align-right p {
+    margin-left: 0;
+  }
+}
+@media (min-width: 992px) {
+  blockquote.wp-block-quote.has-text-align-right p,
+  .wp-block-quote.is-style-default.has-text-align-right p {
+    margin-left: 4vw;
+  }
+}
+@media (min-width: 1600px) {
+  blockquote.wp-block-quote.has-text-align-right p,
+  .wp-block-quote.is-style-default.has-text-align-right p {
+    margin-right: 0;
+    padding-right: inherit;
+    position: inherit;
+  }
+}
+@media screen and (min-width: 2560px) {
+  blockquote.wp-block-quote.has-text-align-right p,
+  .wp-block-quote.is-style-default.has-text-align-right p {
+    margin-right: 0;
+    padding-right: 1vw;
+    position: inherit;
+  }
+}
+blockquote.wp-block-quote.has-text-align-right cite,
+.wp-block-quote.is-style-default.has-text-align-right cite {
+  color: var(--link--color);
+}
+@media (max-width: 576px) {
+  blockquote.wp-block-quote.has-text-align-right cite,
+  .wp-block-quote.is-style-default.has-text-align-right cite {
+    margin-right: inherit;
+  }
+}
+@media (min-width: 576px) and (max-width: 992px) {
+  blockquote.wp-block-quote.has-text-align-right cite,
+  .wp-block-quote.is-style-default.has-text-align-right cite {
+    padding: inherit;
+    margin-right: 0.5rem;
+  }
+}
+@media (min-width: 992px) {
+  blockquote.wp-block-quote.has-text-align-right cite,
+  .wp-block-quote.is-style-default.has-text-align-right cite {
+    margin-left: 4vw;
+  }
+}
+@media (min-width: 1600px) {
+  blockquote.wp-block-quote.has-text-align-right cite,
+  .wp-block-quote.is-style-default.has-text-align-right cite {
+    margin-right: 1vw;
+    padding: inherit;
+  }
+}
+@media screen and (min-width: 2560px) {
+  blockquote.wp-block-quote.has-text-align-right cite,
+  .wp-block-quote.is-style-default.has-text-align-right cite {
+    margin-right: 0;
+    padding-right: 1vw;
+    position: inherit;
+  }
+}
+blockquote.wp-block-quote cite,
+.wp-block-quote.is-style-default cite {
+  color: var(--link--color);
+}
+
+.wp-block-quote.is-style-plain {
+  padding: 0.5rem 0.5rem 0.5rem 2.3rem;
+  border: none;
+}
+.wp-block-quote.is-style-plain p::before {
+  content: "“";
+  font-size: 8rem;
+  margin: -3rem 0 0 -3.3rem;
+  position: absolute;
+  opacity: 0.5;
+  color: #66CC00;
+}
+@media (max-width: 576px) {
+  .wp-block-quote.is-style-plain p::before {
+    margin: -3rem 0 0 -3.1rem;
+  }
+}
+.wp-block-quote.is-style-plain cite::after {
+  content: "”";
+  margin: -2.3rem 0rem 0 0;
+  font-size: 8rem;
+  position: absolute;
+  opacity: 0.5;
+  color: #66CC00;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  padding-left: 0.5rem;
+}
+@media (max-width: 576px) {
+  .wp-block-quote.is-style-plain cite::after {
+    padding-left: 0.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .wp-block-quote.is-style-plain cite::after {
+    margin: -2rem 0rem 0 0;
+  }
+}
+.wp-block-quote.is-style-plain.has-text-align-left {
+  padding: 0.5rem 0.5rem 0.5rem 2.3rem;
+  border: none;
+}
+.wp-block-quote.is-style-plain.has-text-align-left p::before {
+  content: "“";
+  font-size: 8rem;
+  margin: -3rem 0 0 -3.3rem;
+  position: absolute;
+  opacity: 0.5;
+  color: #66CC00;
+}
+@media (max-width: 576px) {
+  .wp-block-quote.is-style-plain.has-text-align-left p::before {
+    margin: -3rem 0 0 -3.1rem;
+  }
+}
+.wp-block-quote.is-style-plain.has-text-align-left cite::after {
+  content: "”";
+  margin: -2.3rem 0rem 0 0;
+  font-size: 8rem;
+  position: absolute;
+  opacity: 0.5;
+  color: #66CC00;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  padding-left: 0.5rem;
+}
+@media (max-width: 576px) {
+  .wp-block-quote.is-style-plain.has-text-align-left cite::after {
+    padding-left: 0.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .wp-block-quote.is-style-plain.has-text-align-left cite::after {
+    margin: -2rem 0rem 0 0;
+  }
+}
+.wp-block-quote.is-style-plain.has-text-align-center {
+  padding: 0.5rem 1.5rem 0.5rem 4.5rem;
+  border: none;
+}
+.wp-block-quote.is-style-plain.has-text-align-center cite {
+  margin-left: -2rem;
+}
+@media (max-width: 576px) {
+  .wp-block-quote.is-style-plain.has-text-align-center {
+    padding: 0 3rem 0 0;
+    margin-left: 2rem;
+  }
+  .wp-block-quote.is-style-plain.has-text-align-center cite {
+    margin-left: -4vw;
+  }
+}
+@media (min-width: 576px) and (max-width: 992px) {
+  .wp-block-quote.is-style-plain.has-text-align-center {
+    padding-left: 4vw;
+  }
+  .wp-block-quote.is-style-plain.has-text-align-center cite {
+    margin-left: 0;
+  }
+}
+@media (min-width: 992px) {
+  .wp-block-quote.is-style-plain.has-text-align-center {
+    margin-left: 1vw;
+  }
+  .wp-block-quote.is-style-plain.has-text-align-center cite {
+    margin-left: -10vw;
+  }
+}
+@media (min-width: 1200px) {
+  .wp-block-quote.is-style-plain.has-text-align-center cite {
+    margin-left: -5vw;
+  }
+}
+@media (min-width: 1600px) {
+  .wp-block-quote.is-style-plain.has-text-align-center {
+    margin-left: -1vw;
+  }
+}
+.wp-block-quote.is-style-plain.has-text-align-center p::before,
+.wp-block-quote.is-style-plain.has-text-align-center cite::after {
+  font-size: 7rem;
+  position: absolute;
+  opacity: 0.5;
+  color: #66CC00;
+}
+.wp-block-quote.is-style-plain.has-text-align-center p::before {
+  content: "“";
+  margin: -3rem 0 0 -3.3rem;
+}
+@media (max-width: 576px) {
+  .wp-block-quote.is-style-plain.has-text-align-center p::before {
+    margin: -3rem 0 0 -2.5rem;
+  }
+}
+.wp-block-quote.is-style-plain.has-text-align-center cite::after {
+  content: "”";
+  margin: -1.3rem 0rem 0 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  padding-left: 0.5rem;
+}
+@media (max-width: 576px) {
+  .wp-block-quote.is-style-plain.has-text-align-center cite::after {
+    padding-left: 0.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .wp-block-quote.is-style-plain.has-text-align-center cite::after {
+    margin: -1rem 0rem 0 0;
+  }
+}
+.wp-block-quote.is-style-plain.has-text-align-right {
+  padding: 0.5rem 0.5rem 0.5rem 2.3rem;
+  border: none;
+}
+@media (max-width: 576px) {
+  .wp-block-quote.is-style-plain.has-text-align-right {
+    padding-left: 0.7rem;
+  }
+  .wp-block-quote.is-style-plain.has-text-align-right cite {
+    margin-right: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .wp-block-quote.is-style-plain.has-text-align-right cite {
+    margin-right: 4.5rem;
+  }
+}
+@media (min-width: 576px) and (max-width: 992px) {
+  .wp-block-quote.is-style-plain.has-text-align-right cite {
+    margin-right: 5vw;
+    position: relative;
+  }
+}
+@media (min-width: 1200px) {
+  .wp-block-quote.is-style-plain.has-text-align-right cite {
+    margin-right: 3vw;
+  }
+}
+@media (min-width: 1600px) {
+  .wp-block-quote.is-style-plain.has-text-align-right cite {
+    margin-right: 2vw;
+  }
+}
+.wp-block-quote.is-style-plain.has-text-align-right p::before,
+.wp-block-quote.is-style-plain.has-text-align-right cite::after {
+  font-size: 7rem;
+  position: absolute;
+  opacity: 0.5;
+  color: #66CC00;
+}
+.wp-block-quote.is-style-plain.has-text-align-right p::before {
+  content: "“";
+  margin: -3rem 0 0 -3.3rem;
+}
+@media (max-width: 576px) {
+  .wp-block-quote.is-style-plain.has-text-align-right p::before {
+    margin: -3rem 0 0 -2.5rem;
+  }
+}
+.wp-block-quote.is-style-plain.has-text-align-right cite::after {
+  content: "”";
+  margin: -1.3rem 0rem 0 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  padding-left: 0.5rem;
+}
+@media (max-width: 576px) {
+  .wp-block-quote.is-style-plain.has-text-align-right cite::after {
+    padding-left: 0.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .wp-block-quote.is-style-plain.has-text-align-right cite::after {
+    margin: -1rem 0rem 0 0;
+  }
+}
+
+.wp-block-quote.is-style-custom {
+  font-size: inherit;
+  line-height: 1.4;
+  font-style: normal;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .wp-block-quote.is-style-custom {
+    font-size: 1rem;
+    padding-left: 0;
+  }
+}
+@media (min-width: 992px) {
+  .wp-block-quote.is-style-custom {
+    max-width: 80%;
+  }
+}
+@media (min-width: 1200px) {
+  .wp-block-quote.is-style-custom {
+    font-size: 1.25rem;
+  }
+}
+.wp-block-quote.is-style-custom {
+  border-left: 4px solid var(--blockquote-border-color);
+  color: inherit;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+}
+.wp-block-quote.is-style-custom.has-text-align-left {
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-left: 4px solid var(--blockquote-border-color);
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+}
+.wp-block-quote.is-style-custom.has-text-align-center {
+  padding: 2rem;
+  border-top: 4px solid var(--blockquote-border-color);
+  border-bottom: 4px solid var(--blockquote-border-color);
+  border-right: none;
+  border-left: none;
+}
+@media (min-width: 576px) and (max-width: 992px) {
+  .wp-block-quote.is-style-custom.has-text-align-center {
+    padding-left: 3vw;
+  }
+}
+@media (min-width: 1600px) {
+  .wp-block-quote.is-style-custom.has-text-align-center p {
+    margin-left: 3vw;
+  }
+}
+.wp-block-quote.is-style-custom.has-text-align-right {
+  padding: 0.5rem 1rem;
+  border-right: 4px solid var(--blockquote-border-color);
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+.wp-block-quote.is-style-custom cite {
+  color: inherit;
+}
+
+.post-content article blockquote.wp-block-quote {
+  max-width: 100%;
+  width: 100%;
+}
+.post-content article blockquote.wp-block-quote p,
+.post-content article blockquote.wp-block-quote cite {
+  max-width: 100%;
+  width: 90%;
+}
+@media (max-width: 576px) {
+  .post-content article blockquote.wp-block-quote p,
+  .post-content article blockquote.wp-block-quote cite {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .post-content article blockquote.wp-block-quote.has-text-align-center.is-style-plain {
+    padding-left: 1rem;
+  }
+  .post-content article blockquote.wp-block-quote.has-text-align-center.is-style-plain cite {
+    margin-left: 0;
+  }
 }
 
 /* Generates mutilevel nested comments
@@ -4702,7 +5034,7 @@ and so on...
 .columns-block h2,
 .columns-block h3,
 .columns-block h5 {
-  font-weight: var(--headings-font-wight);
+  font-weight: var(--headings-font-weight);
 }
 .columns-block h2 a[data-ga-action=Title],
 .columns-block h3 a[data-ga-action=Title],
@@ -5915,7 +6247,7 @@ and so on...
 }
 
 .carousel-wrap .page-section-header {
-  font-weight: var(--headings-font-wight);
+  font-weight: var(--headings-font-weight);
 }
 
 .gfield--type-quiz[data-field-class=gquiz-field] {
@@ -8189,542 +8521,225 @@ and so on...
   font-style: normal;
   font-display: swap;
 }
-blockquote,
-blockquote > p {
-  font-size: inherit;
-  line-height: 1.4;
-  font-style: normal;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  blockquote,
-  blockquote > p {
-    font-size: 1rem;
-    padding-left: 0;
-  }
-}
-@media (min-width: 992px) {
-  blockquote,
-  blockquote > p {
-    max-width: 80%;
-  }
-}
-@media (min-width: 1200px) {
-  blockquote,
-  blockquote > p {
-    font-size: 1.25rem;
-  }
-}
-@media (min-width: 768px) {
-  blockquote p,
-  blockquote > p p {
-    padding-left: 2vw;
-  }
-}
-blockquote,
-blockquote > p {
-  color: #000;
-  margin: 1rem 0;
-  padding-bottom: 0;
+.article-list-item-content {
+  width: inherit;
 }
 
-blockquote > cite {
+a[data-ga-action="Navigation Tag"],
+.wrapper-post-term a,
+.wrapper-post-tag a,
+a[data-ga-action="Post Type Tag"],
+a[data-ga-action="Post Type Tag"] span,
+a.tag-item.tag-item--main,
+.wp-block-post-terms a {
   font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
-  font-size: 0.875rem;
-  font-style: normal;
+  color: #198700;
+  font-weight: 500;
 }
-blockquote > cite::before {
-  content: " - ";
-  /* Add the dash symbol */
-  font-size: inherit;
+a[data-ga-action="Navigation Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span, .wp-block-post-terms a, a[rel=tag]),
+.wrapper-post-term a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span, .wp-block-post-terms a, a[rel=tag]),
+.wrapper-post-tag a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span, .wp-block-post-terms a, a[rel=tag]),
+a[data-ga-action="Post Type Tag"]:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span, .wp-block-post-terms a, a[rel=tag]),
+a[data-ga-action="Post Type Tag"] span:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span, .wp-block-post-terms a, a[rel=tag]),
+a.tag-item.tag-item--main:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span, .wp-block-post-terms a, a[rel=tag]),
+.wp-block-post-terms a:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span, .wp-block-post-terms a, a[rel=tag]) {
+  color: #000;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #66CC00;
+  text-decoration-color: #66CC00;
 }
-@media (min-width: 768px) {
-  blockquote > cite {
-    font-size: 0.9375rem;
-    padding-left: 2vw;
-  }
-}
-
-blockquote.wp-block-quote {
-  border-left: 4px solid #66CC00;
-  padding: 0.5rem;
-  border-top: none;
-  border-bottom: none;
-}
-
-blockquote.wp-block-quote,
-.wp-block-quote.is-style-default {
-  font-size: inherit;
-  line-height: 1.4;
-  font-style: normal;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  blockquote.wp-block-quote,
-  .wp-block-quote.is-style-default {
-    font-size: 1rem;
-    padding-left: 0;
-  }
-}
-@media (min-width: 992px) {
-  blockquote.wp-block-quote,
-  .wp-block-quote.is-style-default {
-    max-width: 80%;
-  }
-}
-@media (min-width: 1200px) {
-  blockquote.wp-block-quote,
-  .wp-block-quote.is-style-default {
-    font-size: 1.25rem;
-  }
-}
-blockquote.wp-block-quote,
-.wp-block-quote.is-style-default {
-  overflow-wrap: break-word;
-  position: relative;
-}
-blockquote.wp-block-quote.has-text-align-left,
-.wp-block-quote.is-style-default.has-text-align-left {
-  padding: 0.5rem 1rem;
-  border-left: 4px solid #66CC00;
-  border-top: none;
-  border-bottom: none;
-  border-right: none;
-}
-blockquote.wp-block-quote.has-text-align-center,
-.wp-block-quote.is-style-default.has-text-align-center {
-  padding: 2rem;
-  border-top: 4px solid #66CC00;
-  border-bottom: 4px solid #66CC00;
-  border-left: none;
-  border-right: none;
-}
-@media (min-width: 576px) and (max-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-center cite,
-  .wp-block-quote.is-style-default.has-text-align-center cite {
-    padding-left: 0;
-    margin-left: 3vw;
-  }
-}
-@media (min-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-center,
-  .wp-block-quote.is-style-default.has-text-align-center {
-    margin-left: 0;
-  }
-  blockquote.wp-block-quote.has-text-align-center p,
-  .wp-block-quote.is-style-default.has-text-align-center p {
-    margin-left: 5vw;
-  }
-  blockquote.wp-block-quote.has-text-align-center cite,
-  .wp-block-quote.is-style-default.has-text-align-center cite {
-    margin-left: 0vw;
-    position: relative;
-    padding: inherit;
-  }
-}
-@media (min-width: 1200px) {
-  blockquote.wp-block-quote.has-text-align-center p,
-  .wp-block-quote.is-style-default.has-text-align-center p {
-    margin-left: 5vw;
-  }
-}
-blockquote.wp-block-quote.has-text-align-right,
-.wp-block-quote.is-style-default.has-text-align-right {
-  padding: 0.5rem 1rem;
-  border-right: 4px solid #66CC00;
-  border-top: none;
-  border-bottom: none;
-  border-left: none;
-}
-@media (min-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-right,
-  .wp-block-quote.is-style-default.has-text-align-right {
-    padding-right: 1vw;
-  }
-}
-@media (min-width: 1600px) {
-  blockquote.wp-block-quote.has-text-align-right,
-  .wp-block-quote.is-style-default.has-text-align-right {
-    padding-right: 2vw !important;
-  }
-}
-@media (max-width: 576px) {
-  blockquote.wp-block-quote.has-text-align-right p,
-  .wp-block-quote.is-style-default.has-text-align-right p {
-    margin-left: 0;
-  }
-}
-@media (min-width: 576px) and (max-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-right p,
-  .wp-block-quote.is-style-default.has-text-align-right p {
-    margin-left: 0;
-  }
-}
-@media (min-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-right p,
-  .wp-block-quote.is-style-default.has-text-align-right p {
-    margin-left: 4vw;
-  }
-}
-@media (min-width: 1600px) {
-  blockquote.wp-block-quote.has-text-align-right p,
-  .wp-block-quote.is-style-default.has-text-align-right p {
-    margin-right: 0;
-    padding-right: inherit;
-    position: inherit;
-  }
-}
-@media screen and (min-width: 2560px) {
-  blockquote.wp-block-quote.has-text-align-right p,
-  .wp-block-quote.is-style-default.has-text-align-right p {
-    margin-right: 0;
-    padding-right: 1vw;
-    position: inherit;
-  }
-}
-blockquote.wp-block-quote.has-text-align-right cite,
-.wp-block-quote.is-style-default.has-text-align-right cite {
-  color: var(--link--color);
-}
-@media (max-width: 576px) {
-  blockquote.wp-block-quote.has-text-align-right cite,
-  .wp-block-quote.is-style-default.has-text-align-right cite {
-    margin-right: inherit;
-  }
-}
-@media (min-width: 576px) and (max-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-right cite,
-  .wp-block-quote.is-style-default.has-text-align-right cite {
-    padding: inherit;
-    margin-right: 0.5rem;
-  }
-}
-@media (min-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-right cite,
-  .wp-block-quote.is-style-default.has-text-align-right cite {
-    margin-left: 4vw;
-  }
-}
-@media (min-width: 1600px) {
-  blockquote.wp-block-quote.has-text-align-right cite,
-  .wp-block-quote.is-style-default.has-text-align-right cite {
-    margin-right: 1vw;
-    padding: inherit;
-  }
-}
-@media screen and (min-width: 2560px) {
-  blockquote.wp-block-quote.has-text-align-right cite,
-  .wp-block-quote.is-style-default.has-text-align-right cite {
-    margin-right: 0;
-    padding-right: 1vw;
-    position: inherit;
-  }
-}
-blockquote.wp-block-quote cite,
-.wp-block-quote.is-style-default cite {
-  color: var(--link--color);
+a[data-ga-action="Navigation Tag"]:visited,
+.wrapper-post-term a:visited,
+.wrapper-post-tag a:visited,
+a[data-ga-action="Post Type Tag"]:visited,
+a[data-ga-action="Post Type Tag"] span:visited,
+a.tag-item.tag-item--main:visited,
+.wp-block-post-terms a:visited {
+  color: #4d4d4d;
 }
 
-.wp-block-quote.is-style-plain {
-  padding: 0.5rem 0.5rem 0.5rem 2.3rem;
+a[data-ga-action="Navigation Tag"] {
+  border-radius: 2rem;
+}
+a[data-ga-action="Navigation Tag"] span[aria-label=hashtag] {
+  color: #198700;
+}
+
+a.btn.post-tag-button,
+a.btn.post-tag-button span:nth-child(2) {
+  color: #198700;
+  background: rgba(217, 241, 197, 0.5019607843);
   border: none;
+  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
+  font-weight: var(--font-weight-regular);
 }
-.wp-block-quote.is-style-plain p::before {
-  content: "“";
-  font-size: 8rem;
-  margin: -3rem 0 0 -3.3rem;
-  position: absolute;
-  opacity: 0.5;
-  color: #66CC00;
+a.btn.post-tag-button:hover,
+a.btn.post-tag-button span:nth-child(2):hover {
+  color: #000;
 }
-@media (max-width: 576px) {
-  .wp-block-quote.is-style-plain p::before {
-    margin: -3rem 0 0 -3.1rem;
-  }
+a.btn.post-tag-button:visited,
+a.btn.post-tag-button span:nth-child(2):visited {
+  color: #198700;
 }
-.wp-block-quote.is-style-plain cite::after {
-  content: "”";
-  margin: -2.3rem 0rem 0 0;
-  font-size: 8rem;
-  position: absolute;
-  opacity: 0.5;
-  color: #66CC00;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  padding-left: 0.5rem;
+
+.query-list-item-meta,
+.wp-block-post-terms a,
+.taxonomy-post_tag a {
+  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
+  color: #4d4d4d;
+  font-weight: var(--font-weight-regular);
 }
-@media (max-width: 576px) {
-  .wp-block-quote.is-style-plain cite::after {
-    padding-left: 0.5rem;
-  }
+.query-list-item-meta:hover,
+.wp-block-post-terms a:hover,
+.taxonomy-post_tag a:hover {
+  color: #000 !important;
+  text-decoration: none;
+  -webkit-text-decoration-color: none;
+  text-decoration-color: none;
 }
+
+.posts-list .article-list-item-author a,
+.posts-list .wp-block-post-author-name a {
+  font-family: var(--font-family-roboto);
+  color: #4d4d4d;
+  font-weight: var(--font-weight-regular);
+  margin-right: 0.5rem;
+}
+.posts-list .article-list-item-author a:hover,
+.posts-list .wp-block-post-author-name a:hover {
+  color: #198700;
+  text-decoration: none;
+}
+.posts-list .article-list-item-author a:after,
+.posts-list .wp-block-post-author-name a:after {
+  margin-left: 0.5rem;
+  color: #4d4d4d;
+}
+
+.posts-list .article-list-item-author::after,
+.posts-list .wp-block-post-author-name::after {
+  margin-top: -15px;
+}
+
+a.tag-item.tag,
+.single-post-time,
+a.comment-link,
+a.comment-link > span.quiantity,
+a.comment-link > span.display-text,
+a.external-link {
+  font-weight: 400;
+}
+a.tag-item.tag:hover,
+.single-post-time:hover,
+a.comment-link:hover,
+a.comment-link > span.quiantity:hover,
+a.comment-link > span.display-text:hover,
+a.external-link:hover {
+  color: #000 !important;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #66CC00;
+  /* Safari */
+  text-decoration-color: #66CC00;
+}
+a.tag-item.tag:visited,
+.single-post-time:visited,
+a.comment-link:visited,
+a.comment-link > span.quiantity:visited,
+a.comment-link > span.display-text:visited,
+a.external-link:visited {
+  color: #198700;
+}
+
+div.query-list-item-post-terms div.taxonomy-p4-page-type a[rel=tag],
+div.article-list-item-tags a.tag-item.tag,
+section.post-articles-block div.taxonomy-post_tag a[rel=tag],
+div.query-list-item-body div.query-list-item-post-terms div.wrapper-post-term div.taxonomy-p4-page-type.wp-block-post-terms a {
+  color: #198700;
+}
+
+.article-list-item-headline a,
+.wp-block-navigation-item__label {
+  color: #000;
+  font-weight: bold;
+}
+.article-list-item-headline a:hover,
+.wp-block-navigation-item__label:hover {
+  transition: height 0.2s cubic-bezier(0.5, 0, 0, 1);
+  border-bottom: 3px solid #66CC00;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.query-list-item-headline.wp-block-post-title a,
+.wp-block-query.posts-list.p4-query-loop .wp-block-post-title a,
+h2.wp-block-post-title a {
+  color: #000;
+  font-weight: 700;
+}
+.query-list-item-headline.wp-block-post-title a:hover,
+.wp-block-query.posts-list.p4-query-loop .wp-block-post-title a:hover,
+h2.wp-block-post-title a:hover {
+  font-family: var(--font-family-roboto);
+  border-bottom: none;
+  -webkit-text-decoration-color: #66CC00;
+          text-decoration-color: #66CC00;
+  text-decoration-thickness: 2.5px;
+  box-shadow: none;
+}
+
 @media (min-width: 1200px) {
-  .wp-block-quote.is-style-plain cite::after {
-    margin: -2rem 0rem 0 0;
-  }
-}
-.wp-block-quote.is-style-plain.has-text-align-left {
-  padding: 0.5rem 0.5rem 0.5rem 2.3rem;
-  border: none;
-}
-.wp-block-quote.is-style-plain.has-text-align-left p::before {
-  content: "“";
-  font-size: 8rem;
-  margin: -3rem 0 0 -3.3rem;
-  position: absolute;
-  opacity: 0.5;
-  color: #66CC00;
-}
-@media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-left p::before {
-    margin: -3rem 0 0 -3.1rem;
-  }
-}
-.wp-block-quote.is-style-plain.has-text-align-left cite::after {
-  content: "”";
-  margin: -2.3rem 0rem 0 0;
-  font-size: 8rem;
-  position: absolute;
-  opacity: 0.5;
-  color: #66CC00;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  padding-left: 0.5rem;
-}
-@media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-left cite::after {
-    padding-left: 0.5rem;
-  }
-}
-@media (min-width: 1200px) {
-  .wp-block-quote.is-style-plain.has-text-align-left cite::after {
-    margin: -2rem 0rem 0 0;
-  }
-}
-.wp-block-quote.is-style-plain.has-text-align-center {
-  padding: 0.5rem 1.5rem 0.5rem 4.5rem;
-  border: none;
-}
-.wp-block-quote.is-style-plain.has-text-align-center cite {
-  margin-left: -2rem;
-}
-@media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-center {
-    padding: 0 3rem 0 0;
-    margin-left: 2rem;
-  }
-  .wp-block-quote.is-style-plain.has-text-align-center cite {
-    margin-left: -4vw;
-  }
-}
-@media (min-width: 576px) and (max-width: 992px) {
-  .wp-block-quote.is-style-plain.has-text-align-center {
-    padding-left: 4vw;
-  }
-  .wp-block-quote.is-style-plain.has-text-align-center cite {
-    margin-left: 0;
-  }
-}
-@media (min-width: 992px) {
-  .wp-block-quote.is-style-plain.has-text-align-center {
-    margin-left: 1vw;
-  }
-  .wp-block-quote.is-style-plain.has-text-align-center cite {
-    margin-left: -10vw;
-  }
-}
-@media (min-width: 1200px) {
-  .wp-block-quote.is-style-plain.has-text-align-center cite {
-    margin-left: -5vw;
-  }
-}
-@media (min-width: 1600px) {
-  .wp-block-quote.is-style-plain.has-text-align-center {
-    margin-left: -1vw;
-  }
-}
-.wp-block-quote.is-style-plain.has-text-align-center p::before,
-.wp-block-quote.is-style-plain.has-text-align-center cite::after {
-  font-size: 7rem;
-  position: absolute;
-  opacity: 0.5;
-  color: #66CC00;
-}
-.wp-block-quote.is-style-plain.has-text-align-center p::before {
-  content: "“";
-  margin: -3rem 0 0 -3.3rem;
-}
-@media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-center p::before {
-    margin: -3rem 0 0 -2.5rem;
-  }
-}
-.wp-block-quote.is-style-plain.has-text-align-center cite::after {
-  content: "”";
-  margin: -1.3rem 0rem 0 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  padding-left: 0.5rem;
-}
-@media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-center cite::after {
-    padding-left: 0.5rem;
-  }
-}
-@media (min-width: 1200px) {
-  .wp-block-quote.is-style-plain.has-text-align-center cite::after {
-    margin: -1rem 0rem 0 0;
-  }
-}
-.wp-block-quote.is-style-plain.has-text-align-right {
-  padding: 0.5rem 0.5rem 0.5rem 2.3rem;
-  border: none;
-}
-@media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-right {
-    padding-left: 0.7rem;
-  }
-  .wp-block-quote.is-style-plain.has-text-align-right cite {
-    margin-right: 3rem;
-  }
-}
-@media (min-width: 768px) {
-  .wp-block-quote.is-style-plain.has-text-align-right cite {
-    margin-right: 4.5rem;
-  }
-}
-@media (min-width: 576px) and (max-width: 992px) {
-  .wp-block-quote.is-style-plain.has-text-align-right cite {
-    margin-right: 5vw;
-    position: relative;
-  }
-}
-@media (min-width: 1200px) {
-  .wp-block-quote.is-style-plain.has-text-align-right cite {
-    margin-right: 3vw;
-  }
-}
-@media (min-width: 1600px) {
-  .wp-block-quote.is-style-plain.has-text-align-right cite {
-    margin-right: 2vw;
-  }
-}
-.wp-block-quote.is-style-plain.has-text-align-right p::before,
-.wp-block-quote.is-style-plain.has-text-align-right cite::after {
-  font-size: 7rem;
-  position: absolute;
-  opacity: 0.5;
-  color: #66CC00;
-}
-.wp-block-quote.is-style-plain.has-text-align-right p::before {
-  content: "“";
-  margin: -3rem 0 0 -3.3rem;
-}
-@media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-right p::before {
-    margin: -3rem 0 0 -2.5rem;
-  }
-}
-.wp-block-quote.is-style-plain.has-text-align-right cite::after {
-  content: "”";
-  margin: -1.3rem 0rem 0 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  padding-left: 0.5rem;
-}
-@media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-right cite::after {
-    padding-left: 0.5rem;
-  }
-}
-@media (min-width: 1200px) {
-  .wp-block-quote.is-style-plain.has-text-align-right cite::after {
-    margin: -1rem 0rem 0 0;
+  .wp-block-post-title {
+    margin-bottom: 24px;
   }
 }
 
-.wp-block-quote.is-style-custom {
-  font-size: inherit;
-  line-height: 1.4;
-  font-style: normal;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .wp-block-quote.is-style-custom {
-    font-size: 1rem;
-    padding-left: 0;
-  }
-}
-@media (min-width: 992px) {
-  .wp-block-quote.is-style-custom {
-    max-width: 80%;
-  }
-}
-@media (min-width: 1200px) {
-  .wp-block-quote.is-style-custom {
-    font-size: 1.25rem;
-  }
-}
-.wp-block-quote.is-style-custom {
-  border-left: 4px solid var(--blockquote-border-color);
-  color: inherit;
-  border-right: none;
-  border-top: none;
-  border-bottom: none;
-}
-.wp-block-quote.is-style-custom.has-text-align-left {
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
-  border-left: 4px solid var(--blockquote-border-color);
-  border-top: none;
-  border-bottom: none;
-  border-right: none;
-}
-.wp-block-quote.is-style-custom.has-text-align-center {
-  padding: 2rem;
-  border-top: 4px solid var(--blockquote-border-color);
-  border-bottom: 4px solid var(--blockquote-border-color);
-  border-right: none;
-  border-left: none;
-}
-@media (min-width: 576px) and (max-width: 992px) {
-  .wp-block-quote.is-style-custom.has-text-align-center {
-    padding-left: 3vw;
-  }
-}
-@media (min-width: 1600px) {
-  .wp-block-quote.is-style-custom.has-text-align-center p {
-    margin-left: 3vw;
-  }
-}
-.wp-block-quote.is-style-custom.has-text-align-right {
-  padding: 0.5rem 1rem;
-  border-right: 4px solid var(--blockquote-border-color);
-  border-top: none;
-  border-bottom: none;
-  border-left: none;
-}
-.wp-block-quote.is-style-custom cite {
-  color: inherit;
+div.wrapper-post-tag ::before,
+.query-list-item-body:has(.taxonomy-p4-page-type):has(.taxonomy-post_tag) .wrapper-post-tag:before {
+  color: #198700;
 }
 
-.post-content article blockquote.wp-block-quote {
-  max-width: 100%;
-  width: 100%;
-}
-.post-content article blockquote.wp-block-quote p,
-.post-content article blockquote.wp-block-quote cite {
-  max-width: 100%;
-  width: 90%;
-}
 @media (max-width: 576px) {
-  .post-content article blockquote.wp-block-quote p,
-  .post-content article blockquote.wp-block-quote cite {
-    width: 100%;
+  h1.page-header-title {
+    font-size: 9vw;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
   }
 }
-@media (min-width: 992px) {
-  .post-content article blockquote.wp-block-quote.has-text-align-center.is-style-plain {
-    padding-left: 1rem;
-  }
-  .post-content article blockquote.wp-block-quote.has-text-align-center.is-style-plain cite {
-    margin-left: 0;
-  }
+.author-block {
+  background: rgba(217, 241, 197, 0.5019607843) !important;
+}
+.author-block h2.author-block-info-title {
+  font-weight: 500;
+  color: #6F7376;
+  font-size: 0.85rem;
+}
+.author-block h5.author-block-info-name {
+  margin-bottom: 0;
+}
+.author-block h5.author-block-info-name a {
+  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
+  color: #198700;
+}
+.author-block h5.author-block-info-name a:hover {
+  transition: height 0.2s cubic-bezier(0.5, 0, 0, 1);
+  border-bottom: 3px solid #66CC00;
+  text-decoration: none;
+  box-shadow: none;
+}
+.author-block div[itemprop=description] {
+  padding: 1rem 0;
+}
+.author-block div[itemprop=description] .author-block-description-button span.show-more,
+.author-block div[itemprop=description] .author-block-description-button span.show-less {
+  font-size: smaller;
+  text-align: right;
+  color: #198700;
+  padding-top: 0.5rem;
+}
+
+.posts-list .see-all-link a {
+  border-bottom: none !important;
 }
 
 .has-dark-shade-black-color {
@@ -9199,11 +9214,8 @@ blockquote.wp-block-quote cite,
 .boxout {
   border-radius: 1rem;
 }
-.boxout a.boxout-heading[data-ga-category="Take Action Boxout"] {
+.boxout a.cover-card-overlay[data-ga-category="Take Action Boxout"] {
   font-weight: var(--cover-card-heading--font-weight);
-}
-.boxout a.boxout-heading[data-ga-category="Take Action Boxout"]:hover {
-  text-decoration: none !important;
 }
 .boxout a.btn-action.cover-card-btn[data-ga-category="Take Action Boxout"] {
   padding: 1rem;
@@ -9216,6 +9228,9 @@ blockquote.wp-block-quote cite,
     border-bottom-left-radius: 1rem;
     border-top-left-radius: 1rem;
   }
+}
+.boxout:hover a.cover-card-overlay[data-ga-category="Take Action Boxout"] {
+  text-decoration: none !important;
 }
 
 /*# sourceMappingURL=style.min.css.map*/
