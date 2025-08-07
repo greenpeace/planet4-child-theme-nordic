@@ -5,7 +5,7 @@
 //TA cover card
 .actions-list {
 
-  li.wp-block-post.p4_action {
+  li.wp-block-post {
     border-radius: 1rem !important;
   }
 
@@ -48,10 +48,10 @@
     }
   }
 
-  .content-covers-block .content-covers-block-wrap .content-covers-block-info>h5>a {
-    color: $dark-green !important;
+  // .content-covers-block .content-covers-block-wrap .content-covers-block-info>h5>a {
+  //   color: $dark-green !important;
 
-  }
+  // }
 
   .wp-block-post-terms {
     padding-bottom: var(--padding-xs);
@@ -65,14 +65,12 @@
   a.actions-list-links .wp-block-post-title a {
     text-decoration: none !important;
     font-weight: var(--cover-card-heading--font-weight);
+    color: $black;
 
-    // &:hover {
-    //   text-decoration: underline;
-    //   -webkit-text-decoration-color: $gp-green-50;
-    //   /* Safari */
-    //   -moz-text-decoration-color: $gp-green-50;
-    //   text-decoration-color: $gp-green-50;
-    // }
+    &:hover {
+      text-decoration: none;
+      color: var(--link--color);
+    }
   }
 
   .wp-block-post-excerpt p {

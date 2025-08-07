@@ -6,25 +6,33 @@
 // Headings
 h1,
 .h1,
+h1 a,
 h2,
 .h2,
+h2 a,
 h3,
 .h3,
+h3 a,
 h4,
 .h4,
+h4 a,
 h5,
 .h5,
+h5 a,
 h6,
 .h6,
+h6 a,
 article h1.page-header-title,
+.page-header h1.page-header-title,
 .cover-card-heading,
 .cover-card-excerpt,
 .articles-block h2,
 .article-list-item-headline a,
 .query-list-item-headline.wp-block-post-title a,
 a.search-result-item-headline,
-.page-section-header {
-  font-family: var(--font-family-roboto);
+.page-section-header,
+.wp-block-heading {
+  font-family: var(--font-family-roboto)!important;
   font-weight: var(--headings-font-weight);
   margin-top: 0;
   margin-bottom: .5rem;

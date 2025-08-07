@@ -60,6 +60,7 @@
 
     .column-wrap a[data-ga-action="Call to Action"]:not(a[data-ga-action="Title"]) {
         color: $gp-green-80;
+        font-family: var(--font-family-roboto);
 
         &:hover:not(a.btn.btn-secondary) {
             color: $black;
