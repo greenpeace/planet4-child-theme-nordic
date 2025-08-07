@@ -9,7 +9,7 @@
  * @package    Planet4_Child_Theme_Nordic
  * @author     Greenpeace Nordic, Svilena Koleva <svilena.koleva@greenpeace.org>
  * @license    MIT, https://opensource.org/licenses/MIT
- * @version    GIT: 1.48.9
+ * @version    GIT: 1.48.10
  * @link       https://github.com/greenpeace/planet4-child-theme-nordic
  * @since      7.4
  * @textdomain planet4-child-theme-nordic
@@ -76,7 +76,7 @@ function Enqueue_Child_styles()
         'child-style',
         get_stylesheet_directory_uri() . '/assets/build/style.min.css',
         ['parent-style'],
-        '1.48.7',
+        '1.48.8',
         'all',
         true
     );
