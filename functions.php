@@ -260,7 +260,7 @@ function p4no_allowed_post_type_blocks($allowed_block_types, $editor_context)
         'core/details', //Hide and show additional content
         'core/embed', //Add a block that displays content pulled from other sites, like Twitter or YouTube
         'core/file', //Add a link to a downloadable file
-        'core/footnote', //Add a footnote to your content
+        'core/footnotes', //Add a footnote to your content
         'core/group', //Gather blocks in a layout container
         'core/heading',
         'core/html', //Add custom HTML code and preview it as you edit
