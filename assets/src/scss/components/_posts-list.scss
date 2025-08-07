@@ -7,86 +7,116 @@
   width: inherit;
 }
 
-//post tag links
+//post tags pills under articles
 a[data-ga-action="Navigation Tag"],
-.wrapper-post-term a,
-.wrapper-post-tag a,
-a[data-ga-action="Post Type Tag"],
-a[data-ga-action="Post Type Tag"] span,
-a.tag-item.tag-item--main,
-.wp-block-post-terms a {
+a[data-ga-action="Post Type Tag"] {
+  //post type top left on posts
+
   font-family: $gp-sans;
   color: $gp-green-80;
-  font-weight: 500;
-
-  &:hover:not(a[data-ga-action="Navigation Tag"], a[data-ga-action="Navigation Tag"] span, .wp-block-post-terms a, a[rel=tag]) {
-    color: $black;
-    text-decoration: underline;
-    -moz-text-decoration-color: $gp-green-50;
-    -webkit-text-decoration-color: $gp-green-50;
-    text-decoration-color: $gp-green-50;
-  }
-
-  &:visited {
-    color: $grey-70;
-  }
-}
-
-a[data-ga-action="Navigation Tag"] {
   border-radius: 2rem;
 
   span[aria-label="hashtag"] {
     color: $gp-green-80;
   }
-}
 
-a.btn.post-tag-button,
-a.btn.post-tag-button span:nth-child(2) {
-  color: $gp-green-80;
-  background: $gp-green-5;
-  border: none;
-  font-family: $gp-sans;
-  font-weight: var(--font-weight-regular);
-
-  &:hover {
-    color: $black;
+  &:hover:not(a[data-ga-action="Navigation Tag"] span[aria-label="hashtag"]) {
+    color: $black !important;
+    text-decoration: none;
   }
 
   &:visited {
     color: $gp-green-80;
   }
-
 }
 
-//article meta
-.query-list-item-meta,
-.wp-block-post-terms a,
-.taxonomy-post_tag a {
+a[data-ga-action="Category Tag"],
+//cathegory link on top left of posts
+a[data-ga-action="Post Type Tag"] span {
+  //category top left on posts
 
-    font-family: $gp-sans;
+  //chevron after the post type
+  font-family: var(--font-family-roboto);
+  color: $gp-green-80;
+  font-weight: var(--font-weight-regular);
+
+  &:hover {
+    color: $black !important;
+    text-decoration: none;
+  }
+
+  &:visited {
     color: $grey-70;
-    font-weight: var(--font-weight-regular);
-    
-    &:hover {
-      color: $black!important;
-      text-decoration: none;
-      -moz-text-decoration-color: none;
-      -webkit-text-decoration-color: none;
-      text-decoration-color: none;
+  }
+}
+
+div.wrapper-post-tag ::before,
+.query-list-item-body:has(.taxonomy-p4-page-type):has(.taxonomy-post_tag) .wrapper-post-tag:before {
+  color: $gp-green-80;
+}
+
+
+// a.btn.post-tag-button,
+// a.btn.post-tag-button span:nth-child(2) {
+//   color: $gp-green-80;
+//   background: $gp-green-5;
+//   border: none;
+//   font-family: $gp-sans;
+//   font-weight: var(--font-weight-regular);
+
+//   &:hover {
+//     color: $black;
+//   }
+
+//   &:visited {
+//     color: $gp-green-80;
+//   }
+
+// }
+
+//article meta only the category links
+// .query-list-item-meta,
+.carousel-controls .wp-block-post-terms a:not(a[rel="tag"]),
+.wp-block-post-terms a:not(a[rel="tag"]) {
+  // .taxonomy-post_tag a {
+
+  font-family: var(--font-family-roboto) !important;
+  // color: $grey-60;
+  font-weight: bold;
+
+  &:hover {
+    color: $black !important;
+    text-decoration: none;
+  }
+}
+
+.taxonomy-post_tag a[rel="tag"] {
+  text-decoration: none;
+  font-weight: var(--font-weight-regular);
+
+  &:hover {
+    color: $black;
+    text-decoration: none;
+
+    &::before {
+      color: $gp-green-80 !important;
     }
-  
+  }
+
 }
 
 .posts-list .article-list-item-author a,
-.posts-list .wp-block-post-author-name a {
+.query-list-item-meta .article-list-item-author a,
+.posts-list .wp-block-post-author-name a,
+.single-post-author a {   //author name on single posts top left
   font-family: var(--font-family-roboto);
   color: $grey-70;
-  font-weight: var(--font-weight-regular);
+  font-weight: bold;
   margin-right: 0.5rem;
 
   &:hover {
     color: $gp-green-80;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 
   &:after {
@@ -95,28 +125,13 @@ a.btn.post-tag-button span:nth-child(2) {
   }
 }
 
-// .wp-block-post-terms a {
-//   font-family: $gp-sans;
-//   font-weight: var(--font-weight-regular) !important;
-
-//   a:hover {
-//     -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-//     -o-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-//     -moz-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-//     transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-//     border-bottom: 2px solid $gp-green-50;
-//     text-decoration: none!important;
-//     box-shadow: none;
-//   }
-// }
-
-.posts-list .article-list-item-author::after, 
+.posts-list .article-list-item-author::after,
 .posts-list .wp-block-post-author-name::after {
   margin-top: -15px;
 }
 
 //post info preview
-a.tag-item.tag,
+// a.tag-item.tag,
 .single-post-time,
 a.comment-link,
 a.comment-link>span.quiantity,
@@ -124,7 +139,7 @@ a.comment-link>span.display-text,
 a.external-link {
   font-weight: 400;
 
-  &:hover {
+  &:hover:not(.single-post-time) {
     color: $black !important;
     text-decoration: underline;
     -webkit-text-decoration-color: $gp-green-50;
@@ -137,32 +152,23 @@ a.external-link {
   }
 }
 
-//on listing pages
-div.query-list-item-post-terms div.taxonomy-p4-page-type a[rel="tag"],
-div.article-list-item-tags a.tag-item.tag,
-section.post-articles-block div.taxonomy-post_tag a[rel="tag"],
-div.query-list-item-body div.query-list-item-post-terms div.wrapper-post-term div.taxonomy-p4-page-type.wp-block-post-terms a {
-  color: $gp-green-80;
-}
-
-.article-list-item-headline a,
-.wp-block-navigation-item__label {
+.wp-block-navigation-item__label, 
+.posts-list .see-all-link a {
   color: $black;
   font-weight: bold;
+  border-bottom: none!important;
 
   &:hover {
-    -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-    -o-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-    -moz-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-    transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
-    border-bottom: 3px solid $gp-green-50;
-    text-decoration: none;
+    text-decoration-line: underline;
+    text-decoration-color: $gp-green-50;
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 4px;
     box-shadow: none;
   }
 
 }
 
-//on listing pages & included articles
+//titles on listing pages & included articles
 .query-list-item-headline.wp-block-post-title a,
 .wp-block-query.posts-list.p4-query-loop .wp-block-post-title a,
 h2.wp-block-post-title a {
@@ -172,8 +178,10 @@ h2.wp-block-post-title a {
   &:hover {
     font-family: var(--font-family-roboto);
     border-bottom: none;
+    text-decoration-line: underline;
     text-decoration-color: $gp-green-50;
     text-decoration-thickness: 2.5px;
+    text-underline-offset: 4px;
     box-shadow: none;
   }
 }
@@ -183,12 +191,6 @@ h2.wp-block-post-title a {
   @include x-large-and-up {
     margin-bottom: 24px;
   }
-}
-
-
-div.wrapper-post-tag ::before,
-.query-list-item-body:has(.taxonomy-p4-page-type):has(.taxonomy-post_tag) .wrapper-post-tag:before {
-  color: $gp-green-80;
 }
 
 @include mobile-only {
@@ -252,8 +254,4 @@ div.wrapper-post-tag ::before,
 
   }
 
-}
-
-.posts-list .see-all-link a {
-  border-bottom: none!important;
 }

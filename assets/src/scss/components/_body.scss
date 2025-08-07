@@ -56,8 +56,10 @@ li.search-result-list-item:hover {
 
 .page-content p:not(.article-list-item-meta) a,
 .page-content>ol li a,
-.page-content>ul li a {
-  background-image: none !important;
+.page-content>ul li a,
+a.standalone-link {
+  background-image: linear-gradient(90deg,#ffffff,#ffffff) !important;
+  transition: none!important;
 }
 
 #set-cookie a {
