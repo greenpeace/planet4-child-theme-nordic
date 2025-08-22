@@ -30,7 +30,7 @@ button[type="submit"]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"],
 a.btn.btn-donate[data-ga-action="Donate"],
 .actions-list a.btn-primary,
-.btn-primary,
+.btn-primary:not(#apply-filters),
 .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
 .btn.btn-primary#hidecookie,
 .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"] {
@@ -162,4 +162,14 @@ a.wp-block-file__button.pdf-link {
 .wp-block-button.is-style-transparent a:active,
 .wp-block-button.is-style-transparent a:hover {
   border-color: $white;
+}
+
+//apply filters button
+button#apply-filters{
+  color: $white;
+  background-color: var(--btn-primary--background);
+
+  &:hover {
+    background-color: var(--btn-primary--hover--background);
+  }
 }

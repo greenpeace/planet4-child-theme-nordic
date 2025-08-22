@@ -74,6 +74,10 @@ $padding-xxl: 3rem;
   --headings-font-weight: 700;
   --headings--font-family: #{$roboto};
   --btn-body-font-weight: 600;
+  --btn-primary--background: #{$gp-green-70};
+  --btn-primary--color: #{$white};
+  --btn-primary--border: none;
+  --btn-primary--hover--background: #{$gp-green-80};
 }
 
 // Units:
