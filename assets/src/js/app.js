@@ -13,7 +13,7 @@ window.dataLayer = window.dataLayer || [];
 import './frontend/blockquote';
 import './frontend/externaltools';
 import './frontend/gfquiz';
-// import './frontend/iraiser';
+import './frontend/iraiser';
 import './frontend/leadsplugin';
 import './frontend/nosearch';
 import './frontend/templates';
