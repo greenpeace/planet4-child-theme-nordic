@@ -15,6 +15,7 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    border-radius: 20px 20px 0 0;
 
     a {
       overflow: hidden;
@@ -32,6 +33,8 @@
       transform: scale(1);
       transform-origin: center;
       transition: 0.5s all ease-in-out;
+      border-radius: 20px 20px 0 0 !important;
+
     }
 
   }
@@ -45,6 +48,7 @@
       position: relative; // Reset the positioning to allow smooth scaling
       transform: scale(1.1);
       transform-origin: center;
+      
     }
   }
 
@@ -95,6 +99,10 @@
   //     background-size: 1000px;
   //   }
   // }
+
+  .load-more-actions-container button {
+    margin-top: var(--padding-md);
+  }
 }
 
 .content-covers-block .content-covers-block-wrap .content-covers-block-info>h5>a {

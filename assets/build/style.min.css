@@ -4094,7 +4094,8 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 .btn-secondary,
 .wp-block-button.is-style-secondary a,
 a.wp-block-button__link,
-.wp-block-button.is-style-secondary a:visited {
+.wp-block-button.is-style-secondary a:visited,
+.wp-block-button.is-style-secondary button {
   border-color: #198700;
   color: #198700;
   box-shadow: none;
@@ -4112,7 +4113,8 @@ a.wp-block-button__link,
 .btn-secondary:hover,
 .wp-block-button.is-style-secondary a:hover,
 a.wp-block-button__link:hover,
-.wp-block-button.is-style-secondary a:visited:hover {
+.wp-block-button.is-style-secondary a:visited:hover,
+.wp-block-button.is-style-secondary button:hover {
   background: #198700 radial-gradient(circle, transparent 1%, #198700 1%) center/15000%;
   border-color: #198700;
   color: #fff;
@@ -4122,7 +4124,8 @@ a.wp-block-button__link:hover,
 .btn-secondary:active,
 .wp-block-button.is-style-secondary a:active,
 a.wp-block-button__link:active,
-.wp-block-button.is-style-secondary a:visited:active {
+.wp-block-button.is-style-secondary a:visited:active,
+.wp-block-button.is-style-secondary button:active {
   background-color: #4CB500;
   border-color: #198700;
   background-size: 100%;
@@ -4144,7 +4147,10 @@ a.wp-block-button__link.disabled,
 a.wp-block-button__link[disabled],
 .wp-block-button.is-style-secondary a:visited:disabled,
 .wp-block-button.is-style-secondary a:visited.disabled,
-.wp-block-button.is-style-secondary a:visited[disabled] {
+.wp-block-button.is-style-secondary a:visited[disabled],
+.wp-block-button.is-style-secondary button:disabled,
+.wp-block-button.is-style-secondary button.disabled,
+.wp-block-button.is-style-secondary button[disabled] {
   background: #fff;
   color: #005c42;
 }
@@ -9235,6 +9241,7 @@ h2.wp-block-post-title a:hover {
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
+  border-radius: 20px 20px 0 0;
 }
 .actions-list .wp-block-post-featured-image a {
   overflow: hidden;
@@ -9250,6 +9257,7 @@ h2.wp-block-post-title a:hover {
   transform: scale(1);
   transform-origin: center;
   transition: 0.5s all ease-in-out;
+  border-radius: 20px 20px 0 0 !important;
 }
 .actions-list .actions-list-links:hover .wp-block-post-featured-image a img {
   max-width: 100%;
@@ -9283,6 +9291,9 @@ h2.wp-block-post-title a:hover {
 .actions-list .wp-block-post:hover .btn-primary {
   background: #80D643;
   color: #000;
+}
+.actions-list .load-more-actions-container button {
+  margin-top: var(--padding-md);
 }
 
 .content-covers-block .content-covers-block-wrap .content-covers-block-info > h5 > a {

@@ -99,7 +99,8 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 .btn-secondary,
 .wp-block-button.is-style-secondary a,
 a.wp-block-button__link,
-.wp-block-button.is-style-secondary a:visited {
+.wp-block-button.is-style-secondary a:visited,
+.wp-block-button.is-style-secondary button {
   border-color: $gp-green-80;
   color: $gp-green-80;
   box-shadow: none;
