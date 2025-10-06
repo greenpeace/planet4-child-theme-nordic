@@ -278,11 +278,34 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ (function() {
 
 try {
-  // Prevent running in WP admin/editor
-  if (!window.location.href.includes('/wp-admin') && !window.location.href.includes('action=edit')) {
-
+  // ✅ Disable in admin/editor
+  if (
+    window.location.href.includes('/wp-admin') ||
+    window.location.href.includes('action=edit')
+  ) {
+    console.log('🧩 iraiser: Script disabled in WP admin/editor.');
+  } else {
     document.addEventListener('DOMContentLoaded', function () {
+      // ✅ Detect iRaiser elements early and exit if none found
+      const nativeAnchor = document.querySelector('#iraiser_native a');
+      const popinAnchor  = document.querySelector('#iraiser_popin a');
 
+      if (!nativeAnchor && !popinAnchor) {
+        console.log('🧩 iraiser: No iRaiser handles found — skipping script.');
+        return; // 🚀 Hard exit — script stops here
+      }
+
+      console.log('🚀 iraiser: Found iRaiser handle(s) on page — initializing...');
+
+      // ✅ Allowed origins for child message
+      const ALLOWED_ORIGINS = [
+        'https://lahjoita.greenpeace.org',
+        'https://stoet.greenpeace.org',
+        'https://bidra.greenpeace.org',
+        'https://stod.greenpeace.org'
+      ];
+
+      // ✅ Wait for iRaiser script to become ready
       function onIRaiserReady(callback) {
         const MAX_ATTEMPTS = 200; // 20 seconds total
         let attempts = 0;
@@ -293,9 +316,7 @@ try {
             (typeof window.IRaiserFrame.setupNativeIframe === 'function' ||
              typeof window.IRaiserFrame.setupPopinIframes === 'function')
           ) {
-            console.log('✅  iraiser: IRaiserFrame available');
-            //console log on which attempt it was found
-            console.log(` iraiser: IRaiserFrame found after ${attempts + 1} attempt(s)`);
+            console.log(`✅ iraiser: IRaiserFrame available (after ${attempts + 1} attempt${attempts > 0 ? 's' : ''})`);
             callback();
             return;
           }
@@ -303,7 +324,6 @@ try {
           if (++attempts < MAX_ATTEMPTS) {
             setTimeout(checkReady, 100);
           } else {
-            console.log(` iraiser: IRaiserFrame not found after ${attempts} attempt(s)`);
             console.error('❌ iraiser: IRaiserFrame.js never loaded.');
           }
         };
@@ -311,28 +331,36 @@ try {
         checkReady();
       }
 
+      // ✅ Main initialization
       onIRaiserReady(() => {
-        console.log('✅  iraiser: iRaiser script fully loaded and ready');
+        console.log('✅ iraiser: iRaiser script ready — processing anchors...');
         window.IRaiserFrame.processAnchors();
 
-        const nativeAnchor = document.querySelector('#iraiser_native a');
-        const popinAnchor = document.querySelector('#iraiser_popin a');
+        if (nativeAnchor) {
+          console.log('🔹 iraiser: Transforming native anchor to iframe');
+          window.IRaiserFrame.transformToIframe(nativeAnchor, 'native');
+        }
 
-        if (nativeAnchor) window.IRaiserFrame.transformToIframe(nativeAnchor, 'native');
-        if (popinAnchor) window.IRaiserFrame.setupPopinIframes(popinAnchor, 'popin');
+        if (popinAnchor) {
+          console.log('🔹 iraiser: Setting up popin iframe');
+          window.IRaiserFrame.setupPopinIframes(popinAnchor, 'popin');
+        }
 
-        // --- Wait for childReady from iframe ---
+        // ✅ Listen for child messages (only from allowed origins)
         window.addEventListener('message', (event) => {
-          if (
-            event.origin === 'https://lahjoita.greenpeace.org' &&
-            event.data?.type === 'childReady'
-          ) {
-            console.log('✅ iraiser: childReady received from:', event.origin);
-            sendUTMtoIframe(event.source);
+          if (!ALLOWED_ORIGINS.includes(event.origin)) {
+            console.warn('⚠️ iraiser: Message from untrusted origin:', event.origin);
+            return;
+          }
+
+          if (event.data?.type === 'childReady') {
+            console.log(`✅ iraiser: childReady received from ${event.origin}`);
+            sendUTMtoIframe(event.source, event.origin);
           }
         });
 
-        function sendUTMtoIframe(targetWindow) {
+        // ✅ Send data to child iframe
+        function sendUTMtoIframe(targetWindow, origin) {
           if (!targetWindow) return;
 
           const params = new URLSearchParams(window.location.search);
@@ -353,20 +381,15 @@ try {
             }
           };
 
-          console.log('📤 iraiser: Sending UTM data to iframe:', message);
-          targetWindow.postMessage(message, 'https://lahjoita.greenpeace.org');
+          console.log(`📤 iraiser: Sending UTM data to iframe (${origin}):`, message);
+          targetWindow.postMessage(message, origin);
         }
-
       });
-
     });
-
-  } else {
-    console.log('🧩 iraiser: iRaiser script disabled in WP admin/editor.');
   }
 
 } catch (err) {
-  console.warn('iraiser: iRaiser script failed silently:', err);
+  console.warn('⚠️ iraiser: Script failed silently:', err);
 }
 
 /***/ }),
