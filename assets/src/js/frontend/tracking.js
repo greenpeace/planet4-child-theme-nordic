@@ -35,20 +35,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }, true);
   }
 
-  //secondary nav clicks
-  const links = document.querySelectorAll(".nav-link");
-  for (let li = 0; li < links.length; li++) {
-    links[li].addEventListener('click', function (e) {
-
-      let shorthdl = links[li].textContent;
-      window.dataLayer.push({
-        'eventCategory': 'Sub Menu',
-        'eventAction': shorthdl,
-        'event': 'navClick'
-      });
-    }, true);
-  }
-
   //other deep-dive topics clicks
   const ddlinks = document.querySelectorAll(".is-pattern-p4-deep-dive");
   for (let li = 0; li < ddlinks.length; li++) {

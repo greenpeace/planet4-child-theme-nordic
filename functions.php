@@ -48,7 +48,7 @@ add_action('wp_head', function () {
             }, hideTimeout)
         })();
     </script>
-    <!-- iRaiser tracking script -->
+    <!-- iRaiser tracking script :: Add all Nordic subdomains -->
     <script type="text/javascript" src="https://lahjoita.greenpeace.org/libs.iraiser.eu/libs/payment/frame/1.6/IRaiserFrame.js"></script>
     <!-- end iRaiser tracking script -->
 <?php
