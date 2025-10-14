@@ -15,13 +15,6 @@
  * @textdomain planet4-child-theme-nordic
  */
 
-// Include WordPress core files
-if (!defined('ABSPATH')) {
-    define('ABSPATH', dirname(__FILE__) . '/');
-}
-require_once ABSPATH . 'wp-load.php';
-require_once ABSPATH . 'wp-admin/includes/admin.php';
-
 // Modify the CSP page header
 require_once 'includes/csp-headers.php';
 

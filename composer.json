@@ -1,8 +1,8 @@
 {
   "name": "greenpeace/planet4-child-theme-nordic",
   "description": "Planet4 Child theme for GP Nordic",
-  "type":"wordpress-theme",
-  "minimum-stability" : "stable",
+  "type": "wordpress-theme",
+  "minimum-stability": "stable",
   "license": "GPL-3.0+",
   "authors": [
     {
@@ -27,7 +27,9 @@
   },
   "extra": {
     "installer-paths": {
-      "vendor/plugins/{$name}/": ["type:wordpress-plugin"]
+      "vendor/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ]
     }
   },
   "require-dev": {
@@ -37,7 +39,6 @@
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
     "laminas/laminas-dom": "^2.12",
     "phpunit/phpunit": "^7.5||^9.5",
-    "wpackagist-plugin/timber-library": "1.22.*",
     "yoast/phpunit-polyfills": "^1.0"
   },
   "scripts": {
