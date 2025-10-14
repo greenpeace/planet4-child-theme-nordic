@@ -69,7 +69,7 @@ function Enqueue_Child_styles()
         'child-style',
         get_stylesheet_directory_uri() . '/assets/build/style.min.css',
         ['parent-style'],
-        '1.48.9',
+        '1.48.10',
         'all',
         true
     );

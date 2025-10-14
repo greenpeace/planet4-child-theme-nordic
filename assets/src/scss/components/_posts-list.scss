@@ -74,6 +74,22 @@ div.wrapper-post-tag ::before,
 
 // }
 
+//Make the same row author name and date of publishing
+.posts-list .article-list-item-meta,
+.query-list-item-meta,
+.posts-list .wp-block-post-date,
+.single-post-date,
+.posts-list-meta {
+justify-content: flex-start;
+flex-direction: row!important;
+  .article-list-item-author a::after {
+    content: "•";
+    margin: 0 -0.4rem 0 0.5rem;
+    color: $grey-70;
+  } 
+
+}
+
 //article meta only the category links
 // .query-list-item-meta,
 .carousel-controls .wp-block-post-terms a:not(a[rel="tag"]),

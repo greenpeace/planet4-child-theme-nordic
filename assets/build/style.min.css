@@ -8660,6 +8660,24 @@ div.wrapper-post-tag ::before,
   color: #198700;
 }
 
+.posts-list .article-list-item-meta,
+.query-list-item-meta,
+.posts-list .wp-block-post-date,
+.single-post-date,
+.posts-list-meta {
+  justify-content: flex-start;
+  flex-direction: row !important;
+}
+.posts-list .article-list-item-meta .article-list-item-author a::after,
+.query-list-item-meta .article-list-item-author a::after,
+.posts-list .wp-block-post-date .article-list-item-author a::after,
+.single-post-date .article-list-item-author a::after,
+.posts-list-meta .article-list-item-author a::after {
+  content: "•";
+  margin: 0 -0.4rem 0 0.5rem;
+  color: #4d4d4d;
+}
+
 .carousel-controls .wp-block-post-terms a:not(a[rel=tag]),
 .wp-block-post-terms a:not(a[rel=tag]) {
   font-family: var(--font-family-roboto) !important;
