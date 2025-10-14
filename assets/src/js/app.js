@@ -15,6 +15,7 @@ import './frontend/externaltools';
 import './frontend/gfquiz';
 import './frontend/iraiser';
 import './frontend/leadsplugin';
+import './frontend/menu';
 import './frontend/nosearch';
 import './frontend/templates';
 import './frontend/tracking';

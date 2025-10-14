@@ -547,6 +547,48 @@ window.onload = function () {
 
 /***/ }),
 
+/***/ "./assets/src/js/frontend/menu.js":
+/*!****************************************!*\
+  !*** ./assets/src/js/frontend/menu.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "jquery");
+//check if the burger menu svg is visible and if so, hide it and show the "Menu" text, use pathname url to change the "Menu" text to the local language in the 4 nordic countries (denmark, finland, norway, sweden)
+//Version 1.0
+window.addEventListener('DOMContentLoaded', (event) => {
+  pathnameUrl();
+
+  function pathnameUrl() {
+    let pathnameUrl = window.location.pathname.split('/')[1];
+
+    switch (pathnameUrl) {
+      case "denmark": {
+        if ($(".nav-menu-toggle>svg").is(":visible")) { $(".nav-menu-toggle>svg").hide(); $(".nav-menu-toggle span").removeClass("visually-hidden").html("MENY"); }
+        break;
+      }
+      case "finland": {
+        if ($(".nav-menu-toggle>svg").is(":visible")) { $(".nav-menu-toggle>svg").hide(); $(".nav-menu-toggle span").removeClass("visually-hidden").html("VALIKKO"); }
+        break;
+      }
+      case "norway": {
+        if ($(".nav-menu-toggle>svg").is(":visible")) { $(".nav-menu-toggle>svg").hide(); $(".nav-menu-toggle span").removeClass("visually-hidden").html("MENY"); }
+        break;
+      }
+      case "sweden": {
+        if ($(".nav-menu-toggle>svg").is(":visible")) { $(".nav-menu-toggle>svg").hide(); $(".nav-menu-toggle span").removeClass("visually-hidden").html("MENY"); }
+        break;
+      }
+      default: {
+        if ($(".nav-menu-toggle>svg").is(":visible")) { $(".nav-menu-toggle>svg").hide(); $(".nav-menu-toggle span").removeClass("visually-hidden").html("MENU"); }
+        break;
+      }
+    }
+  }
+}); 
+
+/***/ }),
+
 /***/ "./assets/src/js/frontend/nosearch.js":
 /*!********************************************!*\
   !*** ./assets/src/js/frontend/nosearch.js ***!
@@ -843,12 +885,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _frontend_iraiser__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_frontend_iraiser__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _frontend_leadsplugin__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./frontend/leadsplugin */ "./assets/src/js/frontend/leadsplugin.js");
 /* harmony import */ var _frontend_leadsplugin__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_frontend_leadsplugin__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./frontend/nosearch */ "./assets/src/js/frontend/nosearch.js");
-/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_frontend_nosearch__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _frontend_templates__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./frontend/templates */ "./assets/src/js/frontend/templates.js");
-/* harmony import */ var _frontend_templates__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./frontend/tracking */ "./assets/src/js/frontend/tracking.js");
-/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_frontend_tracking__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _frontend_menu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./frontend/menu */ "./assets/src/js/frontend/menu.js");
+/* harmony import */ var _frontend_menu__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_frontend_menu__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./frontend/nosearch */ "./assets/src/js/frontend/nosearch.js");
+/* harmony import */ var _frontend_nosearch__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_frontend_nosearch__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _frontend_templates__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./frontend/templates */ "./assets/src/js/frontend/templates.js");
+/* harmony import */ var _frontend_templates__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_frontend_templates__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./frontend/tracking */ "./assets/src/js/frontend/tracking.js");
+/* harmony import */ var _frontend_tracking__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_frontend_tracking__WEBPACK_IMPORTED_MODULE_10__);
 /* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "jquery");
 //import main style
 
@@ -862,6 +906,7 @@ window.$ = (jquery__WEBPACK_IMPORTED_MODULE_1___default()) || jQuery;
 window.dataLayer = window.dataLayer || [];
 
 //adding other scripts
+
 
 
 
