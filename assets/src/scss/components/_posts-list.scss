@@ -82,9 +82,9 @@ div.wrapper-post-tag ::before,
 .posts-list-meta {
 justify-content: flex-start;
 flex-direction: row!important;
-  .article-list-item-author a::after {
+  span.article-list-item-author::after {
     content: "•";
-    margin: 0 -0.4rem 0 0.5rem;
+    margin: 0 0.4rem 0 0.5rem;
     color: $grey-70;
   } 
 

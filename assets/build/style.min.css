@@ -8668,13 +8668,13 @@ div.wrapper-post-tag ::before,
   justify-content: flex-start;
   flex-direction: row !important;
 }
-.posts-list .article-list-item-meta .article-list-item-author a::after,
-.query-list-item-meta .article-list-item-author a::after,
-.posts-list .wp-block-post-date .article-list-item-author a::after,
-.single-post-date .article-list-item-author a::after,
-.posts-list-meta .article-list-item-author a::after {
+.posts-list .article-list-item-meta span.article-list-item-author::after,
+.query-list-item-meta span.article-list-item-author::after,
+.posts-list .wp-block-post-date span.article-list-item-author::after,
+.single-post-date span.article-list-item-author::after,
+.posts-list-meta span.article-list-item-author::after {
   content: "•";
-  margin: 0 -0.4rem 0 0.5rem;
+  margin: 0 0.4rem 0 0.5rem;
   color: #4d4d4d;
 }
 
