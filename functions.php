@@ -88,7 +88,7 @@ function Enqueue_Child_scripts()
         'child-js',
         get_stylesheet_directory_uri() . '/assets/build/index.js',
         array('jquery', 'wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'wp-element', 'wp-components'), // Explicit dependencies
-        '0.27.8',
+        '0.27.9',
         true // Load in footer
     );
 }

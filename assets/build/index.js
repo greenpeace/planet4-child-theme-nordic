@@ -554,7 +554,7 @@ window.onload = function () {
 /***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "jquery");
-//check if the burger menu svg is visible and if so, hide it and show the "Menu" text, use pathname url to change the "Menu" text to the local language in the 4 nordic countries (denmark, finland, norway, sweden)
+//Replace the burger menu svg with the "Menu" text in the local language 
 //Version 1.0
 window.addEventListener('DOMContentLoaded', (event) => {
   pathnameUrl();
