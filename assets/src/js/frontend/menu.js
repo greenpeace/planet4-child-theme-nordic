@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     switch (pathnameUrl) {
       case "denmark": {
-        if ($(".nav-menu-toggle>svg").is(":visible")) { $(".nav-menu-toggle>svg").hide(); $(".nav-menu-toggle span").removeClass("visually-hidden").html("MENY"); }
+        if ($(".nav-menu-toggle>svg").is(":visible")) { $(".nav-menu-toggle>svg").hide(); $(".nav-menu-toggle span").removeClass("visually-hidden").html("MENU"); }
         break;
       }
       case "finland": {
