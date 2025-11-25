@@ -48,11 +48,43 @@ add_action('wp_head', function () {
             }, hideTimeout)
         })();
     </script>
-    <!-- iRaiser tracking script :: Add all Nordic subdomains -->
-    <script type="text/javascript" src="https://lahjoita.greenpeace.org/libs.iraiser.eu/libs/payment/frame/1.6/IRaiserFrame.js"></script>
-    <!-- end iRaiser tracking script -->
 <?php
 }, 1);
+
+// Enqueue the external iRaiserFrame.js script
+add_action('wp_enqueue_scripts', function () {
+    // Determine the correct iRaiser URL based on the current country/URL structure
+    $path = explode('/', trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'));
+    $country_slug = $path[0] ?? '';
+
+    switch ($country_slug) {
+        case 'denmark':
+            $domain = 'stoet.greenpeace.org';
+            break;
+        case 'finland':
+            $domain = 'lahjoita.greenpeace.org';
+            break;
+        case 'norway':
+            $domain = 'bidra.greenpeace.org';
+            break;
+        case 'sweden':
+            $domain = 'stod.greenpeace.org';
+            break;
+        default:
+            $domain = 'lahjoita.greenpeace.org';
+            break;
+    }
+
+    $iraiser_url = "https://{$domain}/libs.iraiser.eu/libs/payment/frame/1.6/IRaiserFrame.js";
+
+    wp_enqueue_script(
+        'iraiser-frame', // Unique handle
+        $iraiser_url,    // Script source URL
+        [],              // No dependencies needed
+        '1.6',           // Version
+        false            // Load in the <head> (set to true for footer)
+    );
+}, 10);
 
 add_action('wp_enqueue_scripts', 'Enqueue_Child_styles', 100);
 /**
