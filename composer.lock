@@ -4,19 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76da37ccafad6a42cf8adb98c00f762b",
+    "content-hash": "921b21d9fe8548431e828ba7210e103b",
     "packages": [
-        {
-            "name": "wpseoai/seoai-client",
-            "version": "2.21.15",
-            "dist": {
-                "type": "zip",
-                "url": "https://storage.googleapis.com/planet4-3rdparty-plugins/seoai-client_v2.21.15.zip"
-            },
-            "type": "wordpress-plugin"
-        }
-    ],
-    "packages-dev": [
         {
             "name": "composer/installers",
             "version": "v2.3.0",
@@ -163,6 +152,17 @@
             ],
             "time": "2024-06-24T20:46:46+00:00"
         },
+        {
+            "name": "wpseoai/seoai-client",
+            "version": "2.21.15",
+            "dist": {
+                "type": "zip",
+                "url": "https://storage.googleapis.com/planet4-3rdparty-plugins/seoai-client_v2.21.15.zip"
+            },
+            "type": "wordpress-plugin"
+        }
+    ],
+    "packages-dev": [
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
             "version": "v0.7.2",
