@@ -250,6 +250,13 @@ function Get_All_Hidden_Template_pages()
     return $hiddenTemplatePages;
 }
 
+// Add SEO AI plugin manually
+$plugin_file = get_stylesheet_directory() . '/vendor/plugins/seoai-client/seoai-client.php'; 
+
+// Include the plugin file to make its functions and plugin header available
+if ( file_exists( $plugin_file ) ) {
+    require_once $plugin_file;
+}
 
 /**
  * Theme settings modificatons
