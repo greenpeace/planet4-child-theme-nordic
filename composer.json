@@ -18,18 +18,6 @@
     {
       "type": "composer",
       "url": "https://packagist.org"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "wpseoai/seoai-client",
-        "version": "2.21.15",
-        "type": "wordpress-plugin",
-        "dist": {
-          "type": "zip",
-          "url": "https://storage.googleapis.com/planet4-3rdparty-plugins/seoai-client_v2.21.15.zip"
-        }
-      }
     }
   ],
   "support": {
@@ -39,16 +27,12 @@
   },
   "extra": {
     "installer-paths": {
-      "../../plugins/seoai-client/": [
-        "wpseoai/seoai-client"
-      ],
       "vendor/plugins/{$name}/": [
         "type:wordpress-plugin"
       ]
     }
   },
   "require": {
-    "wpseoai/seoai-client": "2.21.15",
     "composer/installers": "^2.3"
   },
   "require-dev": {

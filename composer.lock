@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "921b21d9fe8548431e828ba7210e103b",
+    "content-hash": "e927feeb8349744e5440bc0d45317c37",
     "packages": [
         {
             "name": "composer/installers",
@@ -151,15 +151,6 @@
                 }
             ],
             "time": "2024-06-24T20:46:46+00:00"
-        },
-        {
-            "name": "wpseoai/seoai-client",
-            "version": "2.21.15",
-            "dist": {
-                "type": "zip",
-                "url": "https://storage.googleapis.com/planet4-3rdparty-plugins/seoai-client_v2.21.15.zip"
-            },
-            "type": "wordpress-plugin"
         }
     ],
     "packages-dev": [

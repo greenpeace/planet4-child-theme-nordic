@@ -249,48 +249,6 @@ function Get_All_Hidden_Template_pages()
     $hiddenTemplatePages = $query->posts;
     return $hiddenTemplatePages;
 }
-// Add SEO AI plugin manually
-$plugin_file_wp     = WP_PLUGIN_DIR . '/seoai-client/seoai-client.php';
-$plugin_file_rel    = dirname( __DIR__ ) . '/plugins/seoai-client/seoai-client.php'; // wp root relative
-$plugin_file_vendor = __DIR__ . '/vendor/plugins/wpseoai/seoai-client/seoai-client.php';
-
-if ( file_exists( $plugin_file_wp ) ) {
-    // prefer the copy in the WP plugins dir (WP will load it when active)
-    require_once $plugin_file_wp;
-} elseif ( file_exists( $plugin_file_rel ) ) {
-    require_once $plugin_file_rel;
-} elseif ( file_exists( $plugin_file_vendor ) ) {
-    // fallback to vendor-installed copy
-    require_once $plugin_file_vendor;
-}
-
-/**
- * Hide SEO AI admin menu entries when the plugin is not active.
- * This covers the case where the plugin file is required/included by the theme
- * (which would otherwise register its admin menu even when not "active" in WP).
- */
-add_action(
-    'admin_menu',
-    function () {
-        if ( ! function_exists( 'is_plugin_active' ) ) {
-            require_once ABSPATH . 'wp-admin/includes/plugin.php';
-        }
-
-        $plugin_basename = 'seoai-client/seoai-client.php';
-
-        // If plugin is not active (and not network-active), remove any menu entries it added.
-        if ( ! is_plugin_active( $plugin_basename ) && ! is_plugin_active_for_network( $plugin_basename ) ) {
-            global $menu;
-            foreach ( (array) $menu as $item ) {
-                $slug = isset( $item[2] ) ? $item[2] : '';
-                if ( $slug === $plugin_basename || false !== strpos( $slug, 'seoai' ) || false !== strpos( $slug, 'seoai-client' ) ) {
-                    remove_menu_page( $slug );
-                }
-            }
-        }
-    },
-    999
-);
 
 /**
  * Theme settings modificatons
