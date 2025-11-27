@@ -1,26 +1,26 @@
 // Frontend script for iRaiser integration
 // Version: 1.0.0
 try {
-  // ✅ Disable in admin/editor
+  // Disable in admin/editor
   if (
     window.location.href.includes('/wp-admin') ||
     window.location.href.includes('action=edit')
   ) {
-    // console.log('🧩 iraiser: Script disabled in WP admin/editor.');
+    // console.log(' iraiser: Script disabled in WP admin/editor.');
   } else {
     document.addEventListener('DOMContentLoaded', function () {
-      // ✅ Detect iRaiser elements early and exit if none found
+      // Detect iRaiser elements early and exit if none found
       const nativeAnchor = document.querySelector('#iraiser_native a');
       const popinAnchor  = document.querySelector('#iraiser_popin a');
 
       if (!nativeAnchor && !popinAnchor) {
-        // console.log('🧩 iraiser: No iRaiser handles found — skipping script.');
-        return; // 🚀 Hard exit — script stops here
+        // console.log(' iraiser: No iRaiser handles found — skipping script.');
+        return; //  Hard exit — script stops here
       }
 
-      console.log('🚀 iraiser: Found iRaiser handle(s) on page — initializing...');
+      //console.log('iraiser: Found iRaiser handle(s) on page — initializing...');
 
-      // ✅ Allowed origins for child message
+      // Allowed origins for child message
       const ALLOWED_ORIGINS = [
         'https://lahjoita.greenpeace.org',
         'https://stoet.greenpeace.org',
@@ -28,7 +28,7 @@ try {
         'https://stod.greenpeace.org'
       ];
 
-      // ✅ Wait for iRaiser script to become ready
+      // Wait for iRaiser script to become ready
       function onIRaiserReady(callback) {
         const MAX_ATTEMPTS = 200; // 20 seconds total
         let attempts = 0;
@@ -39,7 +39,7 @@ try {
             (typeof window.IRaiserFrame.setupNativeIframe === 'function' ||
              typeof window.IRaiserFrame.setupPopinIframes === 'function')
           ) {
-            // console.log(`✅ iraiser: IRaiserFrame available (after ${attempts + 1} attempt${attempts > 0 ? 's' : ''})`);
+            // console.log(`iraiser: IRaiserFrame available (after ${attempts + 1} attempt${attempts > 0 ? 's' : ''})`);
             callback();
             return;
           }
@@ -47,16 +47,16 @@ try {
           if (++attempts < MAX_ATTEMPTS) {
             setTimeout(checkReady, 100);
           } else {
-            // console.error('❌ iraiser: IRaiserFrame.js never loaded.');
+            // console.error('iraiser: IRaiserFrame.js never loaded.');
           }
         };
 
         checkReady();
       }
 
-      // ✅ Main initialization
+      // Main initialization
       onIRaiserReady(() => {
-        console.log('✅ iraiser: iRaiser script ready — processing anchors...');
+        //console.log('iraiser: iRaiser script ready — processing anchors...');
         window.IRaiserFrame.processAnchors();
 
         if (nativeAnchor) {
@@ -69,20 +69,20 @@ try {
           window.IRaiserFrame.setupPopinIframes(popinAnchor, 'popin');
         }
 
-        // ✅ Listen for child messages (only from allowed origins)
+        // Listen for child messages (only from allowed origins)
         window.addEventListener('message', (event) => {
           if (!ALLOWED_ORIGINS.includes(event.origin)) {
-            // console.warn('⚠️ iraiser: Message from untrusted origin:', event.origin);
+            // console.warn(' iraiser: Message from untrusted origin:', event.origin);
             return;
           }
 
           if (event.data?.type === 'childReady') {
-            // console.log(`✅ iraiser: childReady received from ${event.origin}`);
+            // console.log(`iraiser: childReady received from ${event.origin}`);
             sendUTMtoIframe(event.source, event.origin);
           }
         });
 
-        // ✅ Send data to child iframe
+        // Send data to child iframe
         function sendUTMtoIframe(targetWindow, origin) {
           if (!targetWindow) return;
 
@@ -104,7 +104,7 @@ try {
             }
           };
 
-          // console.log(`📤 iraiser: Sending UTM data to iframe (${origin}):`, message);
+          // console.log(` iraiser: Sending UTM data to iframe (${origin}):`, message);
           targetWindow.postMessage(message, origin);
         }
       });
