@@ -1,15 +1,17 @@
 //tracking the sub-menu block link clicks
 window.addEventListener('DOMContentLoaded', (event) => {
 
-  //adds the script to trigger conversion tracking A/B test in DK {Support us btn}
-  window._conv_q = window._conv_q || [];
-  window._conv_q.push({
-    what: "triggerLocation",
-    params: {
-      locationId: "1004138120"
-    }
+  jQuery("#nav-main .btn-donate").on('click', function () {
+    //adds the script to trigger conversion tracking A/B test in DK {Support us btn}
+    window._conv_q = window._conv_q || [];
+    window._conv_q.push({
+      what: "triggerLocation",
+      params: {
+        locationId: "1004138120"
+      }
+    });
+    console.log(window._conv_q);
   });
-  // console.log(window._conv_q);
 
   jQuery('.submenu-link').on('click', function (e) {
     let submenuLinkHref = jQuery(this).attr('href');
