@@ -2,15 +2,26 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 
   jQuery("#nav-main .btn-donate").on('click', function () {
-    //adds the script to trigger conversion tracking A/B test in DK {Support us btn}
-    window._conv_q = window._conv_q || [];
-    window._conv_q.push({
-      what: "triggerLocation",
-      params: {
-        locationId: "1004138120"
-      }
-    });
-    console.log(window._conv_q);
+    e.preventDefault();
+
+    // Check if the Convert API exec function is available
+    if (typeof window._conv_exec === 'function') {
+
+      // Use _conv_exec to run the command immediately
+      window._conv_exec({
+        what: "triggerLocation",
+        params: {
+          locationId: "1004138120"
+        }
+      });
+      console.log("Convert trigger executed on click.");
+
+    } else {
+      // Fallback: If Convert API isn't ready, let the button perform its default action
+      // or add it to the queue (though this risks the page load issue)
+      console.warn("Convert API not ready, falling back to default action.");
+      window.location.href = jQuery(this).attr('href');
+    }
   });
 
   jQuery('.submenu-link').on('click', function (e) {
