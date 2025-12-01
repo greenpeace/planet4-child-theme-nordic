@@ -1,24 +1,6 @@
 //tracking the sub-menu block link clicks
 window.addEventListener('DOMContentLoaded', (event) => {
 
-  jQuery("#nav-main .btn-donate").on("click", function (e) {
-    e.preventDefault();
-
-    // Only run trigger after Convert is loaded
-    if (window._conv_q && typeof window._conv_q.push === "function") {
-      window._conv_q.push({
-        what: "triggerLocation",
-        params: {
-          locationId: "1004138120"
-        }
-      });
-      console.log("Convert trigger executed on click.");
-    } else {
-      console.warn("Convert not ready, falling back to default.");
-      window.location.href = jQuery(this).attr("href");
-    }
-  });
-
   jQuery('.submenu-link').on('click', function (e) {
     let submenuLinkHref = jQuery(this).attr('href');
     window.dataLayer.push({
