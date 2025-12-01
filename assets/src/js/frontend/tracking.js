@@ -1,26 +1,21 @@
 //tracking the sub-menu block link clicks
 window.addEventListener('DOMContentLoaded', (event) => {
 
-  jQuery("#nav-main .btn-donate").on('click', function () {
+  jQuery("#nav-main .btn-donate").on("click", function (e) {
     e.preventDefault();
 
-    // Check if the Convert API exec function is available
-    if (typeof window._conv_exec === 'function') {
-
-      // Use _conv_exec to run the command immediately
-      window._conv_exec({
+    // Only run trigger after Convert is loaded
+    if (window._conv_q && typeof window._conv_q.push === "function") {
+      window._conv_q.push({
         what: "triggerLocation",
         params: {
           locationId: "1004138120"
         }
       });
       console.log("Convert trigger executed on click.");
-
     } else {
-      // Fallback: If Convert API isn't ready, let the button perform its default action
-      // or add it to the queue (though this risks the page load issue)
-      console.warn("Convert API not ready, falling back to default action.");
-      window.location.href = jQuery(this).attr('href');
+      console.warn("Convert not ready, falling back to default.");
+      window.location.href = jQuery(this).attr("href");
     }
   });
 
