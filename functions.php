@@ -457,3 +457,17 @@ if (! function_exists('Fa_Custom_Setup_kit')) {
  * and the login screen area.
  */
 Fa_Custom_Setup_kit('https://kit.fontawesome.com/508a5d6fe1.js');
+
+// Skip DOM processing when GPN leads forms are present.
+add_filter(
+    'planet4_master_theme_process_buffer',
+    function ($should_process, $buffer) {
+        if (str_contains($buffer, 'leads-form')) {
+            return false;
+        }
+
+        return $should_process;
+    },
+    10,
+    2
+);
