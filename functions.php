@@ -75,13 +75,13 @@ add_action('wp_enqueue_scripts', function () {
             break;
     }
 
-    $iraiser_url = "https://{$domain}/libs.iraiser.eu/libs/payment/frame/1.6/IRaiserFrame.js";
+    $iraiser_url = "https://{$domain}/libs.iraiser.eu/libs/payment/frame/1.7/IRaiserFrame.js";
 
     wp_enqueue_script(
         'iraiser-frame', // Unique handle
         $iraiser_url,    // Script source URL
         [],              // No dependencies needed
-        '1.6',           // Version
+        '1.7',           // Version
         false            // Load in the <head> (set to true for footer)
     );
 }, 10);
