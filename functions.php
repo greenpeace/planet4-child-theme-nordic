@@ -75,7 +75,7 @@ add_action('wp_enqueue_scripts', function () {
             break;
     }
 
-    $iraiser_url = "https://{$domain}/libs.iraiser.eu/libs/payment/frame/1.6/IRaiserFrame.js";
+    $iraiser_url = "https://{$domain}/libs.iraiser.eu/libs/payment/frame/1.7/IRaiserFrame.js";
 
     wp_enqueue_script(
         'iraiser-frame', // Unique handle
