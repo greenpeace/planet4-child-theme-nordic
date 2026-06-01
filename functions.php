@@ -457,3 +457,14 @@ if (! function_exists('Fa_Custom_Setup_kit')) {
  * and the login screen area.
  */
 Fa_Custom_Setup_kit('https://kit.fontawesome.com/508a5d6fe1.js');
+
+//Testing to exclude the post_type=leads-form from the planet4_master_theme_process_buffer filter
+$excluded_type = ['leads-form'];
+add_filter(
+    'planet4_master_theme_process_buffer', 
+    function(bool $should_process, array $context): bool {
+        if (in_array($context['post_type'], $excluded_type, true)) {
+            return false;
+        }
+    return $should_process;
+}, 10, 2);
