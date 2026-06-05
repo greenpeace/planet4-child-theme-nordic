@@ -20,6 +20,28 @@ import './frontend/nosearch';
 import './frontend/templates';
 import './frontend/tracking';
 
+// Include several scripts to the frontend if leads form is present on the page.
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('.leads-form')) {
+    const [
+      {setupExternalLinks},
+      {removeRelatedPostsSection},
+      {removeNoPostText},
+      {setupPDFIcon}
+    ] = await Promise.all([
+      import('./frontend/external_links'),
+      import('./frontend/remove_related_section_no_posts'),
+      import('./frontend/query-no-posts'),
+      import('./frontend/pdf_icon'),
+    ]);
+
+    setupExternalLinks();
+    removeRelatedPostsSection();
+    removeNoPostText();
+    setupPDFIcon();
+  }
+})
+
 // // Function to check if window.wp is ready
 // const waitForWP = (callback) => {
 //     if (window.wp) {
