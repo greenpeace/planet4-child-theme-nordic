@@ -1,26 +1,66 @@
 // Frontend script for iRaiser integration
-// Version: 1.0.0
+// Version: 1.1.0
+window.addEventListener("message", function (event) {
+
+  if (!event.data?.iframeHeight) {
+    return;
+  }
+
+  const iframe = document.querySelector(".iraiser_native");
+
+  if (!iframe) {
+    console.warn('⚠️ iraiser: iframe not found for height update');
+    return;
+  }
+
+  console.log(
+    `📏 iraiser: resizing iframe to ${event.data.iframeHeight}px`,
+    iframe
+  );
+
+  iframe.style.height = event.data.iframeHeight + "px";
+});
+// Frontend script for iRaiser integration
 try {
-  // Disable in admin/editor
+  // ✅ Disable in admin/editor
   if (
     window.location.href.includes('/wp-admin') ||
     window.location.href.includes('action=edit')
   ) {
-    // console.log(' iraiser: Script disabled in WP admin/editor.');
+    console.log('🧩 iraiser: Script disabled in WP admin/editor.');
   } else {
     document.addEventListener('DOMContentLoaded', function () {
-      // Detect iRaiser elements early and exit if none found
-      const nativeAnchor = document.querySelector('#iraiser_native a');
-      const popinAnchor  = document.querySelector('#iraiser_popin a');
+      // ✅ Detect iRaiser elements early and exit if none found
+      document.querySelectorAll('a[href*="#iraiser_native"], a[href*="#iraiser_popin"]')
+        .forEach(link => {
+
+          const url = new URL(link.href, window.location.origin);
+
+          if (url.hash === '#iraiser_native') {
+            link.classList.add('iraiser_native');
+
+            console.log('✅ native trigger detected', link);
+          }
+
+          if (url.hash === '#iraiser_popin') {
+            link.classList.add('iraiser_popin');
+
+            console.log('✅ popin trigger detected', link);
+          }
+        });
+
+      // Use classes instead of ids
+      const nativeAnchor = document.querySelector('.iraiser_native');
+      const popinAnchor = document.querySelector('.iraiser_popin');
 
       if (!nativeAnchor && !popinAnchor) {
-        // console.log(' iraiser: No iRaiser handles found — skipping script.');
-        return; //  Hard exit — script stops here
+        console.log('🧩 iraiser: No iRaiser handles found — skipping script.');
+        return;
       }
 
-      //console.log('iraiser: Found iRaiser handle(s) on page — initializing...');
+      console.log('🚀 iraiser: Found iRaiser handle(s) on page — initializing...');
 
-      // Allowed origins for child message
+      // ✅ Allowed origins for child message
       const ALLOWED_ORIGINS = [
         'https://lahjoita.greenpeace.org',
         'https://stoet.greenpeace.org',
@@ -28,7 +68,7 @@ try {
         'https://stod.greenpeace.org'
       ];
 
-      // Wait for iRaiser script to become ready
+      // ✅ Wait for iRaiser script to become ready
       function onIRaiserReady(callback) {
         const MAX_ATTEMPTS = 200; // 20 seconds total
         let attempts = 0;
@@ -37,9 +77,9 @@ try {
           if (
             window.IRaiserFrame &&
             (typeof window.IRaiserFrame.setupNativeIframe === 'function' ||
-             typeof window.IRaiserFrame.setupPopinIframes === 'function')
+              typeof window.IRaiserFrame.setupPopinIframes === 'function')
           ) {
-            // console.log(`iraiser: IRaiserFrame available (after ${attempts + 1} attempt${attempts > 0 ? 's' : ''})`);
+            console.log(`✅ iraiser: IRaiserFrame available (after ${attempts + 1} attempt${attempts > 0 ? 's' : ''})`);
             callback();
             return;
           }
@@ -47,42 +87,42 @@ try {
           if (++attempts < MAX_ATTEMPTS) {
             setTimeout(checkReady, 100);
           } else {
-            // console.error('iraiser: IRaiserFrame.js never loaded.');
+            console.error('❌ iraiser: IRaiserFrame.js never loaded.');
           }
         };
 
         checkReady();
       }
 
-      // Main initialization
+      // ✅ Main initialization
       onIRaiserReady(() => {
-        //console.log('iraiser: iRaiser script ready — processing anchors...');
+        console.log('✅ iraiser: iRaiser script ready — processing anchors...');
         window.IRaiserFrame.processAnchors();
 
         if (nativeAnchor) {
-          // console.log('🔹 iraiser: Transforming native anchor to iframe');
+          console.log('🔹 iraiser: Transforming native anchor to iframe');
           window.IRaiserFrame.transformToIframe(nativeAnchor, 'native');
         }
 
         if (popinAnchor) {
-          // console.log('🔹 iraiser: Setting up popin iframe');
+          console.log('🔹 iraiser: Setting up popin iframe');
           window.IRaiserFrame.setupPopinIframes(popinAnchor, 'popin');
         }
 
-        // Listen for child messages (only from allowed origins)
+        // ✅ Listen for child messages (only from allowed origins)
         window.addEventListener('message', (event) => {
           if (!ALLOWED_ORIGINS.includes(event.origin)) {
-            // console.warn(' iraiser: Message from untrusted origin:', event.origin);
+            console.warn('⚠️ iraiser: Message from untrusted origin:', event.origin);
             return;
           }
 
           if (event.data?.type === 'childReady') {
-            // console.log(`iraiser: childReady received from ${event.origin}`);
+            console.log(`✅ iraiser: childReady received from ${event.origin}`);
             sendUTMtoIframe(event.source, event.origin);
           }
         });
 
-        // Send data to child iframe
+        // ✅ Send data to child iframe
         function sendUTMtoIframe(targetWindow, origin) {
           if (!targetWindow) return;
 
@@ -104,7 +144,7 @@ try {
             }
           };
 
-          // console.log(` iraiser: Sending UTM data to iframe (${origin}):`, message);
+          console.log(`📤 iraiser: Sending UTM data to iframe (${origin}):`, message);
           targetWindow.postMessage(message, origin);
         }
       });
@@ -112,5 +152,5 @@ try {
   }
 
 } catch (err) {
-  // console.warn('⚠️ iraiser: Script failed silently:', err);
+  console.warn('⚠️ iraiser: Script failed silently:', err);
 }
