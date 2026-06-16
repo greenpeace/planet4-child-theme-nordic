@@ -958,26 +958,6 @@ window.dataLayer = window.dataLayer || [];
 
 
 
-
-// // Function to check if window.wp is ready
-// const waitForWP = (callback) => {
-//     if (window.wp) {
-//         callback();
-//     } else {
-//         console.warn("window.wp is not defined. Retrying...");
-//         setTimeout(() => waitForWP(callback), 100); // Check every 100ms
-//     }
-// };
-
-// // Run when DOM is loaded
-// document.addEventListener("DOMContentLoaded", () => {
-//     waitForWP(() => {
-//         console.log("✅ WordPress is loaded:", window.wp);
-//         console.log("wp.blocks:", window.wp.blocks);
-//         console.log("wp.data:", window.wp.data);
-//     });
-// });
-
 }();
 /******/ })()
 ;
