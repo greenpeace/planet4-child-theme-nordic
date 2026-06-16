@@ -81,7 +81,7 @@ add_action('wp_enqueue_scripts', function () {
         'iraiser-frame', // Unique handle
         $iraiser_url,    // Script source URL
         [],              // No dependencies needed
-        '1.6',           // Version
+        '1.7',           // Version
         false            // Load in the <head> (set to true for footer)
     );
 }, 10);
