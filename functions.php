@@ -9,11 +9,13 @@
  * @package    Planet4_Child_Theme_Nordic
  * @author     Greenpeace Nordic, Svilena Koleva <svilena.koleva@greenpeace.org>
  * @license    MIT, https://opensource.org/licenses/MIT
- * @version    GIT: 1.48.13
+ * @version    1.48.14
  * @link       https://github.com/greenpeace/planet4-child-theme-nordic
  * @since      7.4
  * @textdomain planet4-child-theme-nordic
  */
+
+define('THEME_VERSION', '1.48.14');
 
 // Modify the CSP page header
 require_once 'includes/csp-headers.php';
@@ -101,7 +103,7 @@ function Enqueue_Child_styles()
         'child-style',
         get_stylesheet_directory_uri() . '/assets/build/style.min.css',
         ['parent-style'],
-        '1.48.13',
+        THEME_VERSION,
         'all',
         true
     );
@@ -120,7 +122,7 @@ function Enqueue_Child_scripts()
         'child-js',
         get_stylesheet_directory_uri() . '/assets/build/index.js',
         array('jquery', 'wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'wp-element', 'wp-components'), // Explicit dependencies
-        '1.0.13',
+        THEME_VERSION,
         true // Load in footer
     );
 }
