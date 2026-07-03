@@ -1,4 +1,5 @@
-const defaultConfig = require("./node_modules/@wordpress/scripts/config/webpack.config"); // Require default Webpack config
+const defaultConfig = require("@wordpress/scripts/config/webpack.config"); // Require default Webpack config
+const dashDash = require('@greenpeace/dashdash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserJSPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
@@ -8,10 +9,19 @@ const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extract
 const webpack = require('webpack');
 const path = require('path');
 
+const mediaQueryAliases = {
+  '(max-width: 576px)': 'mobile-only',
+  '(min-width: 576px)': 'small-and-up',
+  '(min-width: 768px)': 'medium-and-up',
+  '(min-width: 992px)': 'large-and-up',
+  '(min-width: 1200px)': 'x-large-and-up',
+  '(min-width: 1600px)': 'xx-large-and-up',
+};
+
 module.exports = (env, argv) => {
     const isProduction = argv.mode === 'production';
     return {
-        // ...defaultConfig,
+        ...defaultConfig,
         entry: {
             index: './assets/src/js/app.js',
         },
@@ -20,7 +30,6 @@ module.exports = (env, argv) => {
             path: __dirname + '/assets/build'
         },
         module: {
-            // ...defaultConfig.module,
             rules: [
                 {
                     test: /\.(sass|scss)$/,
@@ -37,8 +46,10 @@ module.exports = (env, argv) => {
                             loader: 'postcss-loader',
                             options: {
                                 postcssOptions: {
+                                    ident: 'postcss',
                                     plugins: [
-                                        require('autoprefixer'),
+                                        dashDash({ mediaQueryAliases, mediaQueryAtStart: false }),
+                                        require.resolve('autoprefixer'),
                                     ],
                                 },
                                 sourceMap: !isProduction,
@@ -64,6 +75,9 @@ module.exports = (env, argv) => {
             ]
         },
         plugins: [
+            ...defaultConfig.plugins.filter(
+                plugin => plugin.constructor.name !== 'MiniCssExtractPlugin'
+            ),
             new webpack.ProvidePlugin({
                 Buffer: ['buffer', 'Buffer'],
                 $: 'jquery',
@@ -83,6 +97,7 @@ module.exports = (env, argv) => {
                                 'style.deps.json',
                                 'index.asset.php',
                                 'style.asset.php',
+                                'index-rtl.css',
                             ].some(item => new RegExp(item, 'm').test(filePath));
                         }
                     }]
