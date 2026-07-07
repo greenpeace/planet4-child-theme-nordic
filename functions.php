@@ -103,7 +103,7 @@ function Enqueue_Child_styles()
         'child-style',
         get_stylesheet_directory_uri() . '/assets/build/style.min.css',
         ['parent-style'],
-        THEME_VERSION,
+        THEME_VERSION. '-' . filemtime(get_stylesheet_directory() . '/assets/build/style.min.css'),
         'all',
         true
     );
@@ -379,7 +379,7 @@ function p4no_allowed_post_type_blocks($allowed_block_types, $editor_context)
             'planet4-blocks/take-action-boxout', //incl only on posts
             'planet4-blocks/timeline',
             // 'acf/p4-gpn-block-testimonial',
-            // 'acf/leads-form', //TODO: fix issues on posts
+            'acf/leads-form',
             //'gravityforms/form', // TODO: Leads gen connect to our DB; Gravity Forms block quiz, Email to target, etc.
         ];
         return array_merge($allowed_blocks_core, $allowed_blocks_post);

@@ -3,6 +3,29 @@
 @import "../base/colors";
 @import "../base/fonts";
 
+article.container.narrow-container .leads-form {
+  width: 100% !important;
+  margin-left: 0 !important;
+
+  @media only screen and (max-width: 1139px) {
+    & .leads-form__content {
+      grid-column: 2/13 !important;
+      grid-row: 1/3 !important;
+    }
+  }
+
+  @media only screen and (min-width: 1140px) {
+    & .leads-form__content {
+      grid-column: 2/12 !important;
+      grid-row: 1 / -2 !important;  
+    }
+
+    & .leads-form__main-container {
+      grid-column: 3/11 !important;
+    }
+  }
+}
+
 .leads-form__form__container {
   & .acf-label {
     font-family: $roboto;
