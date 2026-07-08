@@ -19,10 +19,6 @@ $text-slide-offset: 50px;
   font-family: $roboto;
 }
 
-html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
-  text-align: right
-}
-
 @media (min-width:576px) {
   .carousel-header .carousel-caption .main-header h2 {
     font-size: $font-size-lg;

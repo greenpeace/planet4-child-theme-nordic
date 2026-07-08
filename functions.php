@@ -452,10 +452,3 @@ if (! function_exists('Fa_Custom_Setup_kit')) {
         }
     }
 }
-/**
- * Font Awesome Kit Setup
- *
- * This will add the Font Awesome Kit to the front-end, the admin back-end,
- * and the login screen area.
- */
-Fa_Custom_Setup_kit('https://kit.fontawesome.com/508a5d6fe1.js');

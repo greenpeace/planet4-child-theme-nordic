@@ -4617,10 +4617,6 @@ and so on...
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
-html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
-  text-align: right;
-}
-
 @media (min-width: 576px) {
   .carousel-header .carousel-caption .main-header h2 {
     font-size: 1.75rem;
