@@ -77,8 +77,11 @@
         text-decoration: none;
         box-shadow: none;
       }
-    }
 
+      &:visited {
+        color: $gp-green-50;
+      }
+    }
   }
 
   a:hover:not(.footer-social-media a.footer-social-media li a, .copyright a:hover) {
