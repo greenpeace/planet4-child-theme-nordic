@@ -203,10 +203,100 @@ document.addEventListener('DOMContentLoaded', function () {
     let gform = document.querySelector('.gform_wrapper');
     const questions = gform.querySelectorAll('.gfield--type-quiz');
     const submitButton = gform.querySelector('.gform_button[type="submit"]');
+    function getCountryIso() {
+
+        const path = window.location.pathname.toLowerCase();
+
+        switch (true) {
+            case path.includes('/denmark/'):
+                return 'DK';
+
+            case path.includes('/finland/'):
+                return 'FI';
+
+            case path.includes('/norway/'):
+                return 'NO';
+
+            case path.includes('/sweden/'):
+                return 'SE';
+
+            default:
+                return null;
+        }
+    }
+
+    const countryIso = getCountryIso();
+
+    const phoneRules = {
+        DK: { code: '45', min: 8, max: 8 },
+        FI: { code: '358', min: 7, max: 10 },
+        NO: { code: '47', min: 8, max: 8 },
+        SE: { code: '46', min: 7, max: 9 }
+    };
+
+    if (!countryIso) {
+        return;
+    }
 
     document.querySelectorAll('.gform_wrapper').forEach(form => {
         const questions = form.querySelectorAll('.gfield--type-quiz');
 
+        //phone validation for all forms
+        const phoneField = [...form.querySelectorAll('.gfield')]
+            .find(field =>
+                field.querySelector('.gfield_label')
+                    ?.textContent
+                    .trim()
+                    .toLowerCase() === 'phone'
+            );
+
+
+        const phoneInput = phoneField.querySelector('input');
+
+        function normalizePhone(value) {
+
+            const rule = phoneRules[countryIso];
+
+            value = value.replace(/\D/g, '');
+
+
+            // remove 00 prefix
+            if (value.startsWith('00')) {
+                value = value.substring(2);
+            }
+
+
+            // remove country code if entered
+            if (value.startsWith(rule.code)) {
+                value = value.substring(rule.code.length);
+            }
+
+
+            // remove local leading zero
+            if (value.startsWith('0')) {
+                value = value.substring(1);
+            }
+
+            // validate length
+            if (
+                value.startsWith(rule.code) &&
+                value.length > rule.max
+            ) {
+                value = value.substring(rule.code.length);
+            }
+
+            return `+${rule.code}${value}`;
+        }
+
+
+        function updatePhone() {
+            phoneInput.value = normalizePhone(phoneInput.value);
+        }
+
+        phoneInput.addEventListener('blur', updatePhone);
+        phoneInput.addEventListener('change', updatePhone);
+
+        //utm fetch for all forms 
         const utmField = [...form.querySelectorAll('.gfield')]
             .find(field =>
                 field.querySelector('.gfield_label')?.textContent.trim().toLowerCase() === 'utm'
@@ -225,7 +315,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!questions.length) {
             return;
         }
-        else {
+
+        if (questions.length > 1) {
 
             // Show only the first question
             questions[0].classList.add('active');
