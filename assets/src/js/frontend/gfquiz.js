@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let gform = document.querySelector('.gform_wrapper');
     const questions = gform.querySelectorAll('.gfield--type-quiz');
     const submitButton = gform.querySelector('.gform_button[type="submit"]');
+
     function getCountryIso() {
 
         const path = window.location.pathname.toLowerCase();
@@ -20,80 +21,236 @@ document.addEventListener('DOMContentLoaded', function () {
                 return 'SE';
 
             default:
-                return null;
+                return 'EN';
         }
     }
 
     const countryIso = getCountryIso();
 
-    const phoneRules = {
-        DK: { code: '45', min: 8, max: 8 },
-        FI: { code: '358', min: 7, max: 10 },
-        NO: { code: '47', min: 8, max: 8 },
-        SE: { code: '46', min: 7, max: 9 }
+    const countryConfig = {
+        DK: {
+            phone: 'Telefon',
+            previous: 'Forrige',
+            next: 'Næste',
+            code: '45',
+            min: 8,
+            max: 8,
+            message: 'Telefonnummeret skal være præcis 8 cifre.'
+        },
+        FI: {
+            phone: 'Puhelinnumero',
+            previous: 'Edellinen',
+            next: 'Seuraava',
+            code: '358',
+            min: 7,
+            max: 10,
+            message: 'Puhelinnumeron tulee sisältää 7–10 numeroa.'
+        },
+        NO: {
+            phone: 'Telefonnummer',
+            previous: 'Forrige',
+            next: 'Neste',
+            code: '47',
+            min: 8,
+            max: 8,
+            message: 'Telefonnummeret må være 8 sifre.'
+        },
+        SE: {
+            phone: 'Telefonnummer',
+            previous: 'Föregående',
+            next: 'Nästa',
+            code: '46',
+            min: 7,
+            max: 9,
+            message: 'Telefonnumret måste innehålla 7–9 siffror.'
+        },
+        EN: {
+            phone: 'Phone',
+            previous: 'Previous',
+            next: 'Next',
+            code: '',
+            min: 0,
+            max: 20,
+            message: 'Please enter a valid phone number.'
+        }
     };
 
-    if (!countryIso) {
-        return;
-    }
+
+    const config = countryConfig[countryIso];
+    const c = config;
 
     document.querySelectorAll('.gform_wrapper').forEach(form => {
-        const questions = form.querySelectorAll('.gfield--type-quiz');
 
         //phone validation for all forms
         const phoneField = [...form.querySelectorAll('.gfield')]
-            .find(field =>
-                field.querySelector('.gfield_label')
-                    ?.textContent
-                    .trim()
-                    .toLowerCase() === 'phone'
-            );
+            .find(field => {
+                const label = field.querySelector('.gfield_label');
+                if (!label) return false;
 
+                const text = label.textContent
+                    .replace(/\(.*?\)/g, '')   // remove "(Required)"
+                    .trim();
 
-        const phoneInput = phoneField.querySelector('input');
+                // console.log(text);
+                // console.log(c.phone.toLowerCase());
+
+                return text.startsWith(c.phone) || text.startsWith('Phone');
+            });
+
+        if (!phoneField) {
+            return;
+        }
+
+        phoneField.querySelector('.gfield_label').textContent = c.phone;
 
         function normalizePhone(value) {
+            // Remove all non-digit characters
+            value = value.trim();
 
-            const rule = phoneRules[countryIso];
-
+            if (/[a-zA-Z]/.test(value)) {
+                return {
+                    valid: false,
+                    value
+                };
+            }
             value = value.replace(/\D/g, '');
 
-
-            // remove 00 prefix
+            // Remove leading zeros and country code
             if (value.startsWith('00')) {
                 value = value.substring(2);
             }
-
-
-            // remove country code if entered
-            if (value.startsWith(rule.code)) {
-                value = value.substring(rule.code.length);
+            // Remove leading country code if present
+            if (value.startsWith(c.code)) {
+                value = value.substring(c.code.length);
             }
-
-
-            // remove local leading zero
+            // Remove leading zero if present
             if (value.startsWith('0')) {
                 value = value.substring(1);
             }
+            // Validate length
+            const valid =
+                value.length >= c.min &&
+                value.length <= c.max;
+            // Return normalized value with country code if valid, otherwise return original value
+            return {
+                valid,
+                value: valid ? `+${c.code}${value}` : value
+            };
+        }
 
-            // validate length
-            if (
-                value.startsWith(rule.code) &&
-                value.length > rule.max
-            ) {
-                value = value.substring(rule.code.length);
+        // Add validation message container if it doesn't exist
+        function showPhoneError(message) {
+
+            phoneField.classList.add(
+                'gfield_error',
+                'gfield_contains_required'
+            );
+
+            let validation = phoneField.querySelector('.validation_message');
+
+            if (!validation) {
+                validation = document.createElement('div');
+                validation.className =
+                    'gfield_description validation_message gfield_validation_message field_validation_below gfield_visibility_visible';
+                phoneField.appendChild(validation);
             }
 
-            return `+${rule.code}${value}`;
+            validation.innerHTML = `<span>${message}</span>`;
         }
 
+        function clearPhoneError() {
+            phoneField.classList.remove('gfield_error');
 
-        function updatePhone() {
-            phoneInput.value = normalizePhone(phoneInput.value);
+            const validation = phoneField.querySelector('.gfield_validation_message');
+            if (validation) {
+                validation.remove();
+            }
         }
 
-        phoneInput.addEventListener('blur', updatePhone);
-        phoneInput.addEventListener('change', updatePhone);
+        const phoneInput = phoneField.querySelector('input');
+        phoneInput.addEventListener('blur', function () {
+
+            console.log('RAW:', phoneInput.value);
+
+            const result = normalizePhone(phoneInput.value);
+
+            console.log('RESULT:', result);
+
+            if (result.valid) {
+                phoneInput.value = result.value;
+                clearPhoneError();
+            } else {
+                showPhoneError(c.message);
+                phoneInput.setAttribute('aria-invalid', 'true');
+            }
+
+        });
+
+        phoneInput.addEventListener('change', function () {
+
+            const result = normalizePhone(phoneInput.value);
+
+            if (result.valid) {
+                phoneInput.value = result.value;
+            }
+
+        });
+
+        phoneInput.addEventListener('input', clearPhoneError);
+
+        jQuery(document).on('gform_post_render', function () {
+
+            const phoneInput = phoneField.querySelector('input');
+
+            if (!phoneInput) {
+                return;
+            }
+
+            phoneInput.closest('form').addEventListener('submit', function (e) {
+
+                const result = normalizePhone(phoneInput.value);
+
+                console.log('GF submit validation:', result);
+
+                if (!result.valid) {
+
+                    e.preventDefault();
+
+                    showPhoneError(c.message);
+
+                    phoneInput.setAttribute('aria-invalid', 'true');
+
+                    return false;
+                }
+
+                phoneInput.value = result.value;
+
+            });
+
+        });
+
+        form.addEventListener('submit', function (e) {
+
+            const result = normalizePhone(phoneInput.value);
+
+            console.log('native submit:', result);
+
+            if (!result.valid) {
+
+                e.preventDefault();
+
+                showPhoneError(c.message);
+
+                phoneInput.setAttribute('aria-invalid', 'true');
+
+                phoneField.classList.add('gfield_error');
+
+                return false;
+            }
+
+            phoneInput.value = result.value;
+
+        });
 
         //utm fetch for all forms 
         const utmField = [...form.querySelectorAll('.gfield')]
@@ -111,6 +268,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
+
+        //quiz style modifcations
+        const questions = form.querySelectorAll('.gfield--type-quiz');
+
         if (!questions.length) {
             return;
         }
@@ -120,31 +281,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // Show only the first question
             questions[0].classList.add('active');
             //make a switch casee for label stranslations if in the url there is /denmark/ or /sweden/ or /norway/ or /finland/, translate it to the respective language, otherwise default to english
-            let labelPrev = 'Previous';
-            let labelNext = 'Next';
+            const labelPrev = c.previous;
+            const labelNext = c.next;
             const url = window.location.href;
-
-            switch (true) {
-                case url.includes('/denmark/'):
-                    labelPrev = 'Forrige';
-                    labelNext = 'Næste';
-                    break;
-                case url.includes('/sweden/'):
-                    labelPrev = 'Föregående';
-                    labelNext = 'Nästa';
-                    break;
-                case url.includes('/norway/'):
-                    labelPrev = 'Forrige';
-                    labelNext = 'Neste';
-                    break;
-                case url.includes('/finland/'):
-                    labelPrev = 'Edellinen';
-                    labelNext = 'Seuraava';
-                    break;
-                default:
-                    // Default to English
-                    break;
-            }
 
             // Loop through questions to append buttons
             questions.forEach(function (question, index) {
