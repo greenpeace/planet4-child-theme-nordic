@@ -6329,11 +6329,13 @@ and so on...
   font-weight: var(--headings-font-weight);
 }
 
-.gfield--type-quiz[data-field-class=gquiz-field] {
+.gfield--type-quiz,
+.gfield--type-image_choice {
   display: none !important;
 }
 
-.gfield--type-quiz[data-field-class=gquiz-field].active {
+.gfield--type-quiz.active,
+.gfield--type-image_choice.active {
   display: block !important;
 }
 

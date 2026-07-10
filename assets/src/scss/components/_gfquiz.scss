@@ -1,7 +1,9 @@
-.gfield--type-quiz[data-field-class="gquiz-field"] {
-    display: none !important;
+.gfield--type-quiz,
+.gfield--type-image_choice {
+    display: none!important;
 }
 
-.gfield--type-quiz[data-field-class="gquiz-field"].active {
-    display: block !important;
+.gfield--type-quiz.active,
+.gfield--type-image_choice.active {
+    display: block!important;
 }
