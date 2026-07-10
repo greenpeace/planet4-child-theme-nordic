@@ -305,6 +305,21 @@ document.addEventListener('DOMContentLoaded', function () {
                         'mt-3'
                     );
 
+                    // Auto advance for radio and image choice questions
+                    const autoNextInputs = question.querySelectorAll(
+                        'input[type="radio"], input[type="checkbox"]'
+                    );
+
+                    autoNextInputs.forEach(input => {
+                        input.addEventListener('change', function () {
+                            setTimeout(() => {
+                                if (index < questions.length - 1) {
+                                    navigateQuestions(index + 1);
+                                }
+                            }, 250);
+                        });
+                    });
+
                     const btnPrev = document.createElement('a');
                     btnPrev.classList.add('btn-prev', 'pr-3', 'mr-3');
                     btnPrev.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
@@ -358,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         questions[index].classList.add('active');
                         updateButtonStates();
                     } else {
-                        console.error('Cannot navigate to question index:', index);
+                        // console.error('Cannot navigate to question index:', index);
                     }
                 }
 
