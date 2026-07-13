@@ -141,6 +141,14 @@
 /*!********************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./assets/src/scss/style.scss (35) ***!
   \********************************************************************************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./assets/src/scss/style.scss (36) ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap);
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./assets/src/scss/style.scss (37) ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
 @charset "UTF-8";
 /*!
 Theme Name: Greenpeace Planet4 Child Theme Nordic
@@ -6099,6 +6107,516 @@ and so on...
   .site-footer .copyright p a {
     font-size: 0.75rem;
   }
+}
+
+/* Generates mutilevel nested comments
+level-1 is the first level comment with a margin of 50px
+level-2 is the first level comment with a margin of 100px
+and so on...
+*/
+.has-dark-shade-black-color {
+  color: #1a1a1a;
+}
+
+.has-dark-shade-black-background-color {
+  background-color: #1a1a1a;
+}
+
+.has-grey-60-color {
+  color: #6F7376;
+}
+
+.has-grey-60-background-color {
+  background-color: #6F7376;
+}
+
+.has-grey-40-color {
+  color: #bebfc2;
+}
+
+.has-grey-40-background-color {
+  background-color: #bebfc2;
+}
+
+.has-grey-20-color {
+  color: #ECECEC;
+}
+
+.has-grey-20-background-color {
+  background-color: #ECECEC;
+}
+
+.has-grey-10-color {
+  color: #F5F7F8;
+}
+
+.has-grey-10-background-color {
+  background-color: #F5F7F8;
+}
+
+.has-grey-color {
+  color: #333;
+}
+
+.has-grey-background-color {
+  background-color: #333;
+}
+
+.has-green-color {
+  color: #003300;
+}
+
+.has-green-background-color {
+  background-color: #003300;
+}
+
+.has-green-80-color {
+  color: #1b4a1b;
+}
+
+.has-green-80-background-color {
+  background-color: #1b4a1b;
+}
+
+.has-gp-green-color {
+  color: #66cc00;
+}
+
+.has-gp-green-background-color {
+  background-color: #66cc00;
+}
+
+.has-dark-tiber-color {
+  color: #052a30;
+}
+
+.has-dark-tiber-background-color {
+  background-color: #052a30;
+}
+
+.has-genoa-color {
+  color: #186a70;
+}
+
+.has-genoa-background-color {
+  background-color: #186a70;
+}
+
+.has-inch-worm-color {
+  color: #a7e021;
+}
+
+.has-inch-worm-background-color {
+  background-color: #a7e021;
+}
+
+.has-x-dark-blue-color {
+  color: #042233;
+}
+
+.has-x-dark-blue-background-color {
+  background-color: #042233;
+}
+
+.has-allports-color {
+  color: #007799;
+}
+
+.has-allports-background-color {
+  background-color: #007799;
+}
+
+.has-spray-color {
+  color: spray;
+}
+
+.has-spray-background-color {
+  background-color: spray;
+}
+
+.has-dark-blue-color {
+  color: #074365;
+}
+
+.has-dark-blue-background-color {
+  background-color: #074365;
+}
+
+.has-blue-color {
+  color: #2980b9;
+}
+
+.has-blue-background-color {
+  background-color: #2980b9;
+}
+
+.has-blue-60-color {
+  color: #63bbfd;
+}
+
+.has-blue-60-background-color {
+  background-color: #63bbfd;
+}
+
+.has-crimson-color {
+  color: #e51538;
+}
+
+.has-crimson-background-color {
+  background-color: #e51538;
+}
+
+.has-orange-hover-color {
+  color: #ee562d;
+}
+
+.has-orange-hover-background-color {
+  background-color: #ee562d;
+}
+
+.has-yellow-color {
+  color: #FFD200;
+}
+
+.has-yellow-background-color {
+  background-color: #FFD200;
+}
+
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --font-family-gp-sans: Greenpeace Sans, Helvetica, Arial, sans-serif;
+  --font-family-helvetica: Helvetica Display Regular, Helvetica, Arial, sans-serif;
+  --font-family-helvetica-bold: Helvetica Now Display Bold, Helvetica, Arial, sans-serif;
+  --font-family-roboto: Roboto, Helvetica, Arial, sans-serif;
+  --padding-xs: 0.5rem;
+  --padding-sm: 0.75rem;
+  --padding-md: 1rem;
+  --padding-lg: 1.5rem;
+  --padding-xl: 2rem;
+  --padding-xxl: 3rem;
+  --top-navigation--background: #fff;
+  --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --top-navigation--color: #000;
+  --top-navigation--separation: 1px solid #d8d8d8;
+  --top-navigation--search-toggle--background: #F5F7F8;
+  --top-navigation--input--placeholder--color: #bebfc2;
+  --link--color: #198700;
+  --nav-link--hover--color: #000;
+  --nav-link--hover--text-decoration: underline 3px #66cc00;
+  --nav-link--hover--text-underline-position: under;
+  --accordion-block-light-style--background: rgba(217, 241, 197, 0.5019607843);
+  --accordion-block-light-style--border-color: transparent;
+  --accordion-block-light-style--hover--background: #D9F1C5;
+  --accordion-block-dark-style--background: #076c50;
+  --accordion-block-dark-style--hover--background: #005c42;
+  --blockquote-border-color: #66CC00;
+  --cover-card-btn--font-size: $font-size-sm;
+  --cover-card-heading--font-weight: 700;
+  --page-header-title--font-weight: var(--font-weight-bold);
+  --headings-font-weight: 700;
+  --headings--font-family: Roboto, Helvetica, Arial, sans-serif;
+  --btn-body-font-weight: 600;
+  --btn-primary--background: #339E00;
+  --btn-primary--color: #fff;
+  --btn-primary--border: none;
+  --btn-primary--hover--background: #198700;
+}
+
+.has-dark-shade-black-color {
+  color: #1a1a1a;
+}
+
+.has-dark-shade-black-background-color {
+  background-color: #1a1a1a;
+}
+
+.has-grey-60-color {
+  color: #6F7376;
+}
+
+.has-grey-60-background-color {
+  background-color: #6F7376;
+}
+
+.has-grey-40-color {
+  color: #bebfc2;
+}
+
+.has-grey-40-background-color {
+  background-color: #bebfc2;
+}
+
+.has-grey-20-color {
+  color: #ECECEC;
+}
+
+.has-grey-20-background-color {
+  background-color: #ECECEC;
+}
+
+.has-grey-10-color {
+  color: #F5F7F8;
+}
+
+.has-grey-10-background-color {
+  background-color: #F5F7F8;
+}
+
+.has-grey-color {
+  color: #333;
+}
+
+.has-grey-background-color {
+  background-color: #333;
+}
+
+.has-green-color {
+  color: #003300;
+}
+
+.has-green-background-color {
+  background-color: #003300;
+}
+
+.has-green-80-color {
+  color: #1b4a1b;
+}
+
+.has-green-80-background-color {
+  background-color: #1b4a1b;
+}
+
+.has-gp-green-color {
+  color: #66cc00;
+}
+
+.has-gp-green-background-color {
+  background-color: #66cc00;
+}
+
+.has-dark-tiber-color {
+  color: #052a30;
+}
+
+.has-dark-tiber-background-color {
+  background-color: #052a30;
+}
+
+.has-genoa-color {
+  color: #186a70;
+}
+
+.has-genoa-background-color {
+  background-color: #186a70;
+}
+
+.has-inch-worm-color {
+  color: #a7e021;
+}
+
+.has-inch-worm-background-color {
+  background-color: #a7e021;
+}
+
+.has-x-dark-blue-color {
+  color: #042233;
+}
+
+.has-x-dark-blue-background-color {
+  background-color: #042233;
+}
+
+.has-allports-color {
+  color: #007799;
+}
+
+.has-allports-background-color {
+  background-color: #007799;
+}
+
+.has-spray-color {
+  color: spray;
+}
+
+.has-spray-background-color {
+  background-color: spray;
+}
+
+.has-dark-blue-color {
+  color: #074365;
+}
+
+.has-dark-blue-background-color {
+  background-color: #074365;
+}
+
+.has-blue-color {
+  color: #2980b9;
+}
+
+.has-blue-background-color {
+  background-color: #2980b9;
+}
+
+.has-blue-60-color {
+  color: #63bbfd;
+}
+
+.has-blue-60-background-color {
+  background-color: #63bbfd;
+}
+
+.has-crimson-color {
+  color: #e51538;
+}
+
+.has-crimson-background-color {
+  background-color: #e51538;
+}
+
+.has-orange-hover-color {
+  color: #ee562d;
+}
+
+.has-orange-hover-background-color {
+  background-color: #ee562d;
+}
+
+.has-yellow-color {
+  color: #FFD200;
+}
+
+.has-yellow-background-color {
+  background-color: #FFD200;
+}
+
+@font-face {
+  font-family: "Greenpeace Sans";
+  src: local("Greenpeace Sans"), local("Greenpeace Sans"), url("../../assets/src/fonts/GreenpeaceSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: local("Helvetica Now Display Regular"), local("Helvetica-Now-Display-Regular"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.woff") format("woff"), url("../../assets/src/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: local("Helvetica Now Display Bold"), local("Helvetica-Now-Display-Bold"), url("../../assets/src/fonts/HelveticaNowDisplay-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+.flip-card {
+  background-color: rgba(255, 255, 255, 0);
+  perspective: 1000px;
+  width: 100%;
+  max-width: 350px;
+  height: 450px;
+  margin: 0 auto;
+}
+@media (min-width: 782px) and (max-width: 991px) {
+  .flip-card {
+    max-width: 300px;
+    height: 267px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .flip-card {
+    max-width: 300px;
+    height: 376px;
+  }
+}
+
+& figcaption {
+  display: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.9s;
+  transform-style: preserve-3d;
+  border-radius: 0.5rem;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background-color: #f9f9f9;
+  color: #f9f9f9;
+  text-align: center;
+}
+.flip-card-front .card-title {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  z-index: 100;
+  font-family: "Greenpeace Sans", "Helvetica", "Arial", sans-serif !important;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .flip-card-front .card-title {
+    font-size: 1.75rem;
+    word-break: break-word;
+  }
+}
+@media (min-width: 768px) {
+  .flip-card-front figure {
+    margin-top: 8px;
+  }
+}
+.flip-card-front figure img {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem 2.5rem 1rem;
+  z-index: 10;
+  display: inline;
+  vertical-align: middle;
+  filter: brightness(0.9) saturate(0.9);
+}
+
+.flip-card-back {
+  background-color: #f9f9f9;
+  color: #333;
+  transform: rotateY(180deg);
+  text-align: left;
+  padding: 2rem;
 }
 
 .has-dark-shade-black-color {
