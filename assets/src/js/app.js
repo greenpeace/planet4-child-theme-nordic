@@ -12,7 +12,7 @@ window.dataLayer = window.dataLayer || [];
 //adding other scripts
 import './frontend/blockquote';
 import './frontend/externaltools';
-import './frontend/gfquiz';
+import './frontend/gravityforms';
 import './frontend/iraiser';
 import './frontend/leadsplugin';
 import './frontend/menu';

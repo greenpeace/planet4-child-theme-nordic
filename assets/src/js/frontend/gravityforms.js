@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let gform = document.querySelector('.gform_wrapper');
-    const questions = gform.querySelectorAll('.gfield--type-quiz');
-    const submitButton = gform.querySelector('.gform_button[type="submit"]');
 
     function getCountryIso() {
 
@@ -78,177 +75,211 @@ document.addEventListener('DOMContentLoaded', function () {
     const config = countryConfig[countryIso];
     const c = config;
 
-    document.querySelectorAll('.gform_wrapper').forEach(form => {
+    document.querySelectorAll('.gform_wrapper').forEach(wrapper => {
 
-        //phone validation for all forms
-        const phoneField = [...form.querySelectorAll('.gfield')]
-            .find(field => {
-                const label = field.querySelector('.gfield_label');
-                if (!label) return false;
+        const form = wrapper.querySelector('form');
+        if (!form) return;
 
-                const text = label.textContent
-                    .replace(/\(.*?\)/g, '')   // remove "(Required)"
-                    .trim();
+        const submitButton = form.querySelector('.gform_button[type="submit"]');
+        // console.log('GF phone init:', form.id);
+        const phoneField = [...form.querySelectorAll('.gfield')].find(field => {
+            const label = field.querySelector('.gfield_label');
+            if (!label) return false;
 
-                // console.log(text);
-                // console.log(c.phone.toLowerCase());
-
-                return text.startsWith(c.phone) || text.startsWith('Phone');
-            });
+            const text = label.textContent.replace(/\(.*?\)/g, '').trim();
+            // console.log('GF field check:', text);
+            return text.startsWith(c.phone) || text.startsWith('Phone');
+        });
 
         if (!phoneField) {
+            // console.log('GF phone field missing');
             return;
         }
 
+        // console.log('GF phone field found:', phoneField.id);
         phoneField.querySelector('.gfield_label').textContent = c.phone;
 
+        function getPhoneInput() {
+            return phoneField.querySelector('input');
+        }
+
         function normalizePhone(value) {
-            // Remove all non-digit characters
+
+            // console.log('PHONE normalize input:', value);
             value = value.trim();
 
             if (/[a-zA-Z]/.test(value)) {
-                return {
-                    valid: false,
-                    value
-                };
+                // console.log('PHONE failed: letters detected');
+                return { valid: false, value };
             }
+
             value = value.replace(/\D/g, '');
 
-            // Remove leading zeros and country code
+            // console.log('PHONE digits only:', value);
             if (value.startsWith('00')) {
                 value = value.substring(2);
+                // console.log('PHONE removed 00:', value);
             }
-            // Remove leading country code if present
-            if (value.startsWith(c.code)) {
+
+            if (c.code && value.startsWith(c.code)) {
                 value = value.substring(c.code.length);
+                // console.log('PHONE removed country:', value);
             }
-            // Remove leading zero if present
+
             if (value.startsWith('0')) {
                 value = value.substring(1);
+                //  console.log('PHONE removed leading zero:', value);
             }
-            // Validate length
+
             const valid =
                 value.length >= c.min &&
                 value.length <= c.max;
-            // Return normalized value with country code if valid, otherwise return original value
-            return {
+
+            const result = {
                 valid,
                 value: valid ? `+${c.code}${value}` : value
             };
+
+            // console.log('PHONE result:', JSON.stringify(result));
+            return result;
         }
 
-        // Add validation message container if it doesn't exist
-        function showPhoneError(message) {
 
+        function showPhoneError() {
+
+            const phoneInput = getPhoneInput();
+
+            // console.log('PHONE error shown');
             phoneField.classList.add(
                 'gfield_error',
                 'gfield_contains_required'
             );
 
-            let validation = phoneField.querySelector('.validation_message');
+            if (phoneInput) {
+                phoneInput.setAttribute('aria-invalid', 'true');
+            }
+
+            let validation = phoneField.querySelector('.gfield_validation_message');
 
             if (!validation) {
+
                 validation = document.createElement('div');
                 validation.className =
                     'gfield_description validation_message gfield_validation_message field_validation_below gfield_visibility_visible';
+
                 phoneField.appendChild(validation);
             }
 
-            validation.innerHTML = `<span>${message}</span>`;
+            validation.innerHTML = `<span>${c.message}</span>`;
         }
 
+
         function clearPhoneError() {
+
+            // console.log('PHONE clear error');
+            const phoneInput = getPhoneInput();
             phoneField.classList.remove('gfield_error');
 
-            const validation = phoneField.querySelector('.gfield_validation_message');
+            if (phoneInput) {
+                phoneInput.removeAttribute('aria-invalid');
+            }
+
+            const validation =
+                phoneField.querySelector('.gfield_validation_message');
+
             if (validation) {
                 validation.remove();
             }
         }
 
-        const phoneInput = phoneField.querySelector('input');
-        phoneInput.addEventListener('blur', function () {
 
-            console.log('RAW:', phoneInput.value);
+        function validatePhone(source) {
 
-            const result = normalizePhone(phoneInput.value);
-
-            console.log('RESULT:', result);
-
-            if (result.valid) {
-                phoneInput.value = result.value;
-                clearPhoneError();
-            } else {
-                showPhoneError(c.message);
-                phoneInput.setAttribute('aria-invalid', 'true');
-            }
-
-        });
-
-        phoneInput.addEventListener('change', function () {
-
-            const result = normalizePhone(phoneInput.value);
-
-            if (result.valid) {
-                phoneInput.value = result.value;
-            }
-
-        });
-
-        phoneInput.addEventListener('input', clearPhoneError);
-
-        jQuery(document).on('gform_post_render', function () {
-
-            const phoneInput = phoneField.querySelector('input');
-
+            const phoneInput = getPhoneInput();
             if (!phoneInput) {
-                return;
+                // console.log('PHONE input missing');
+                return false;
             }
 
-            phoneInput.closest('form').addEventListener('submit', function (e) {
-
-                const result = normalizePhone(phoneInput.value);
-
-                console.log('GF submit validation:', result);
-
-                if (!result.valid) {
-
-                    e.preventDefault();
-
-                    showPhoneError(c.message);
-
-                    phoneInput.setAttribute('aria-invalid', 'true');
-
-                    return false;
-                }
-
-                phoneInput.value = result.value;
-
-            });
-
-        });
-
-        form.addEventListener('submit', function (e) {
-
+            // console.log('PHONE validate from:', source, 'value:', phoneInput.value);
             const result = normalizePhone(phoneInput.value);
-
-            console.log('native submit:', result);
 
             if (!result.valid) {
-
-                e.preventDefault();
-
-                showPhoneError(c.message);
-
-                phoneInput.setAttribute('aria-invalid', 'true');
-
-                phoneField.classList.add('gfield_error');
-
+                // console.log('PHONE blocked');
+                showPhoneError();
                 return false;
             }
 
             phoneInput.value = result.value;
 
+            // console.log('PHONE accepted:', phoneInput.value);
+            clearPhoneError();
+            return true;
+        }
+
+
+        function attachPhoneEvents() {
+
+            const phoneInput = getPhoneInput();
+            if (!phoneInput) {
+                // console.log('PHONE attach failed');
+                return;
+            }
+
+            // console.log('PHONE listeners attached:', phoneInput.id);
+            phoneInput.addEventListener('blur', function () {
+                validatePhone('blur');
+            });
+
+            phoneInput.addEventListener('change', function () {
+                validatePhone('change');
+            });
+
+            phoneInput.addEventListener('input', function () {
+                clearPhoneError();
+            });
+
+            form.addEventListener('submit', function (e) {
+
+                // console.log('PHONE native submit');
+                if (!validatePhone('submit')) {
+
+                    // console.log('PHONE native submit blocked');
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+
+                    return false;
+                }
+
+            }, true);
+
+
+            if (submitButton) {
+
+                submitButton.addEventListener('click', function (e) {
+
+                    // console.log('PHONE submit button clicked');
+                    if (!validatePhone('button click')) {
+
+                        // console.log('PHONE button blocked');
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
+
+                        return false;
+                    }
+
+                }, true);
+            }
+        }
+
+        jQuery(document).on('gform_post_render', function (_, formId) {
+
+            if (form.id !== `gform_${formId}`) {
+                return;
+            }
+
+            // console.log('PHONE GF render:', formId);
+            attachPhoneEvents();
         });
 
         //utm fetch for all forms 
@@ -270,11 +301,11 @@ document.addEventListener('DOMContentLoaded', function () {
         //quiz style modifcations
         jQuery(document).on('gform_post_render', function (event, formId) {
 
-            const questions = document.querySelectorAll(
+            const questions = form.querySelectorAll(
                 '.gfield--type-quiz, .gfield--type-image_choice'
             );
 
-            console.log('Questions found:', questions.length);
+            // console.log('Questions found:', questions.length);
 
 
             if (!questions.length) {
@@ -284,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (questions.length > 1) {
 
                 questions.forEach((q, i) => {
-                    console.log(i, q.className, q.id);
+                    // console.log(i, q.className, q.id);
                 });
 
                 // Show only the first question
@@ -363,7 +394,10 @@ document.addEventListener('DOMContentLoaded', function () {
                             btnNext.style.display = index === questions.length - 1 ? 'none' : 'block';
                         }
                     });
-                    submitButton.style.display = currentIndex === questions.length - 1 ? 'block' : 'none';
+                    if (submitButton !== null) {
+                        submitButton.style.display =
+                            currentIndex === questions.length - 1 ? 'block' : 'none';
+                    }
                 }
 
                 function navigateQuestions(index) {
