@@ -24,7 +24,7 @@
   }
 }
 
-& figcaption {
+.flip-card figcaption {
   display: none;
 }
 
@@ -55,6 +55,8 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   overflow: hidden;
+  transform: translateZ(0);
+  inset: 0; //make sure each side has its own stacking context
 }
 
 .flip-card-front {

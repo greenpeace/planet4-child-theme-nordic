@@ -6616,7 +6616,7 @@ and so on...
   }
 }
 
-& figcaption {
+.flip-card figcaption {
   display: none;
 }
 
@@ -6643,6 +6643,8 @@ and so on...
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   overflow: hidden;
+  transform: translateZ(0);
+  inset: 0;
 }
 
 .flip-card-front {
