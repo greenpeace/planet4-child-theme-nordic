@@ -32,7 +32,7 @@ article h1.page-header-title,
 a.search-result-item-headline,
 .page-section-header,
 .wp-block-heading {
-  font-family: var(--font-family-roboto)!important;
+  font-family: var(--font-family-heading);
   font-weight: var(--headings-font-weight);
   margin-top: 0;
   margin-bottom: .5rem;
@@ -113,7 +113,7 @@ ul,
 li,
 span,
 strong {
-  font-family: $roboto;
+  font-family: var(--font-family-body);
 }
 
 //Text
@@ -144,8 +144,8 @@ p.search-result-item-content,
 #gdpr-comments-compliance,
 .error404 .speech-bubble,
 .error404 .page-header .container .row {
-  font-family: $roboto;
-  font-weight: 400;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
   font-size: 1.06rem;
   line-height: inherit;
 
@@ -280,12 +280,12 @@ h2.page-section-header {
 //reality check block
 .is-pattern-p4-reality-check {
   figure.wp-block-image+h2 {
-    font-family: $gp-sans;
+    font-family: var(--font-family-gp-sans);
   }
 
   figure.wp-block-image~h2:nth-of-type(2) {
-    font-family: $roboto;
-    font-weight: 500;
+    font-family: var(--font-family-body);
+    font-weight: var(--font-weight-medium);
     font-size: medium;
   }
 }

@@ -42,10 +42,17 @@ $padding-xxl: 3rem;
 
 //NVI tockens
 :root {
+  --font-family-heading:  #{$roboto};
+  --font-family-primary: #{$roboto};
+  --font-family-body: #{$roboto};
   --font-family-gp-sans: #{$gp-sans};
   --font-family-helvetica: #{$helvetica};
   --font-family-helvetica-bold: #{$helvetica-bold};
   --font-family-roboto: #{$roboto};
+  --font-family-lora: #{$lora};
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
   --padding-xs: #{$padding-xs};
   --padding-sm: #{$padding-sm};
   --padding-md: #{$padding-md};
@@ -71,8 +78,7 @@ $padding-xxl: 3rem;
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
   --page-header-title--font-weight: var(--font-weight-bold);
-  --headings-font-weight: 700;
-  --headings--font-family: #{$roboto};
+  --headings-font-weight: var(--font-weight-bold);
   --btn-body-font-weight: 600;
   --btn-primary--background: #{$gp-green-70};
   --btn-primary--color: #{$white};

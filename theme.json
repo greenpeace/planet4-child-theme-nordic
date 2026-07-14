@@ -2,25 +2,46 @@
   "$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 3,
   "styles": {
-		"elements": {
-			"link": {
-				"typography": {
-					"textDecoration": "none"
-				},
-				":hover": {
-					"typography": {
-						"textDecoration": "underline"
-					}
-				},
-				":active": {
-					"typography": {
-						"textDecoration": "underline"
-					}
-				}
-			}
-		}
-	},
+    "elements": {
+      "link": {
+        "typography": {
+          "textDecoration": "none"
+        },
+        ":hover": {
+          "typography": {
+            "textDecoration": "underline"
+          }
+        },
+        ":active": {
+          "typography": {
+            "textDecoration": "underline"
+          }
+        }
+      }
+    }
+  },
   "settings": {
+    "typography": {
+      "fontWeight": true,
+      "fontFamilies": [
+        {
+          "slug": "roboto-regular",
+          "name": "Roboto Regular",
+          "fontFamily": "\"Roboto\", sans-serif"
+
+        },
+        {
+          "slug": "roboto-bold",
+          "name": "Roboto Bold",
+          "fontFamily": "\"Roboto Bold\", sans-serif"
+        },
+        {
+          "slug": "gp-sans",
+          "name": "Greenpeace Sans",
+          "fontFamily": "\"Greenpeace Sans\", sans-serif"
+        }
+      ]
+    },
     "color": {
       "custom": false,
       "customDuotone": false,
@@ -53,7 +74,7 @@
           "name": "Grey 30%",
           "slug": "grey-300",
           "color": "#D1D2D3"
-        },       
+        },
         {
           "name": "Grey 20%",
           "slug": "grey-200",
