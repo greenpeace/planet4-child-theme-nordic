@@ -786,6 +786,7 @@ h6,
 .h6,
 h6 a,
 article h1.page-header-title,
+.page-header h1.page-header-title,
 .cover-card-heading,
 .cover-card-excerpt,
 .articles-block h2,
@@ -4161,8 +4162,7 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 .btn-secondary:not(#hidecookie),
 .btn-secondary:not(#commentform),
 .btn-secondary,
-.wp-block-button.is-style-secondary a,
-a.wp-block-button__link,
+.wp-block-button.is-style-secondary a.wp-block-button__link:not([class*=has-]),
 .wp-block-button.is-style-secondary a:visited,
 .wp-block-button.is-style-secondary button {
   border-color: #198700;
@@ -4180,8 +4180,7 @@ a.wp-block-button__link,
 .btn-secondary:not(#hidecookie):hover,
 .btn-secondary:not(#commentform):hover,
 .btn-secondary:hover,
-.wp-block-button.is-style-secondary a:hover,
-a.wp-block-button__link:hover,
+.wp-block-button.is-style-secondary a.wp-block-button__link:not([class*=has-]):hover,
 .wp-block-button.is-style-secondary a:visited:hover,
 .wp-block-button.is-style-secondary button:hover {
   background: #198700 radial-gradient(circle, transparent 1%, #198700 1%) center/15000%;
@@ -4191,8 +4190,7 @@ a.wp-block-button__link:hover,
 .btn-secondary:not(#hidecookie):active,
 .btn-secondary:not(#commentform):active,
 .btn-secondary:active,
-.wp-block-button.is-style-secondary a:active,
-a.wp-block-button__link:active,
+.wp-block-button.is-style-secondary a.wp-block-button__link:not([class*=has-]):active,
 .wp-block-button.is-style-secondary a:visited:active,
 .wp-block-button.is-style-secondary button:active {
   background-color: #4CB500;
@@ -4208,12 +4206,9 @@ a.wp-block-button__link:active,
 .btn-secondary:disabled,
 .btn-secondary.disabled,
 .btn-secondary[disabled],
-.wp-block-button.is-style-secondary a:disabled,
-.wp-block-button.is-style-secondary a.disabled,
-.wp-block-button.is-style-secondary a[disabled],
-a.wp-block-button__link:disabled,
-a.wp-block-button__link.disabled,
-a.wp-block-button__link[disabled],
+.wp-block-button.is-style-secondary a.wp-block-button__link:not([class*=has-]):disabled,
+.wp-block-button.is-style-secondary a.wp-block-button__link:not([class*=has-]).disabled,
+.wp-block-button.is-style-secondary a.wp-block-button__link:not([class*=has-])[disabled],
 .wp-block-button.is-style-secondary a:visited:disabled,
 .wp-block-button.is-style-secondary a:visited.disabled,
 .wp-block-button.is-style-secondary a:visited[disabled],
@@ -4222,6 +4217,27 @@ a.wp-block-button__link[disabled],
 .wp-block-button.is-style-secondary button[disabled] {
   background: #fff;
   color: #005c42;
+}
+
+.wp-block-button.is-style-secondary a.wp-block-button__link[class*=has-background] {
+  position: relative;
+  isolation: isolate;
+}
+
+.wp-block-button.is-style-secondary a.wp-block-button__link[class*=has-background]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.wp-block-button.is-style-secondary a.wp-block-button__link[class*=has-background]:hover::after,
+.wp-block-button.is-style-secondary a.wp-block-button__link[class*=has-background]:active::after {
+  opacity: 1;
 }
 
 a.wp-block-file__button.pdf-link {

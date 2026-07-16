@@ -99,8 +99,7 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 .btn-secondary:not(#hidecookie),
 .btn-secondary:not(#commentform),
 .btn-secondary,
-.wp-block-button.is-style-secondary a,
-a.wp-block-button__link,
+.wp-block-button.is-style-secondary a.wp-block-button__link:not([class*="has-"]),
 .wp-block-button.is-style-secondary a:visited,
 .wp-block-button.is-style-secondary button {
   border-color: $gp-green-80;
@@ -138,6 +137,27 @@ a.wp-block-button__link,
 
 }
 
+// custom color buttons
+.wp-block-button.is-style-secondary a.wp-block-button__link[class*="has-background"] {
+  position: relative;
+  isolation: isolate;
+}
+
+.wp-block-button.is-style-secondary a.wp-block-button__link[class*="has-background"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.wp-block-button.is-style-secondary a.wp-block-button__link[class*="has-background"]:hover::after,
+.wp-block-button.is-style-secondary a.wp-block-button__link[class*="has-background"]:active::after {
+  opacity: 1;
+}
 
 a.wp-block-file__button.pdf-link {
   color: var(--link--color) !important;
@@ -168,7 +188,7 @@ a.wp-block-file__button.pdf-link {
 }
 
 //apply filters button
-button#apply-filters{
+button#apply-filters {
   color: $white;
   background-color: var(--btn-primary--background);
 
