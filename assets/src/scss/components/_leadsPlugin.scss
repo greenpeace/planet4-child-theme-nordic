@@ -17,7 +17,7 @@ article.container.narrow-container .leads-form {
   @media only screen and (min-width: 1140px) {
     & .leads-form__content {
       grid-column: 2/12 !important;
-      grid-row: 1 / -2 !important;  
+      grid-row: 1 / -2 !important;
     }
 
     & .leads-form__main-container {
@@ -66,6 +66,8 @@ article.container.narrow-container .leads-form {
   }
 }
 
-// .leads-form #donate-button {
-//   font-size: 1.5rem;
-// }
+#whatsapp {
+  background-color: #25d366 !important;
+  padding-left: 5%;
+  padding-right: 5%;
+}
