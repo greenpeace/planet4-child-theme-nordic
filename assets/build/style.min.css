@@ -2670,7 +2670,8 @@ and so on...
   font-display: swap;
 }
 blockquote,
-blockquote > p {
+blockquote > p,
+.wp-block-quote > p {
   font-size: inherit;
   line-height: 1.4;
   font-style: normal;
@@ -2678,31 +2679,35 @@ blockquote > p {
 }
 @media (min-width: 768px) {
   blockquote,
-  blockquote > p {
-    font-size: 1rem;
-    padding-left: 0;
+  blockquote > p,
+  .wp-block-quote > p {
+    font-size: 1.25rem;
   }
 }
 @media (min-width: 992px) {
   blockquote,
-  blockquote > p {
+  blockquote > p,
+  .wp-block-quote > p {
     max-width: 80%;
   }
 }
 @media (min-width: 1200px) {
   blockquote,
-  blockquote > p {
-    font-size: 1.25rem;
+  blockquote > p,
+  .wp-block-quote > p {
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 768px) {
   blockquote p,
-  blockquote > p p {
+  blockquote > p p,
+  .wp-block-quote > p p {
     padding-left: 2vw;
   }
 }
 blockquote,
-blockquote > p {
+blockquote > p,
+.wp-block-quote > p {
   color: #000;
   margin: 1rem 0;
   padding-bottom: 0;
@@ -2732,47 +2737,39 @@ blockquote.wp-block-quote {
   border-bottom: none;
 }
 
-blockquote.wp-block-quote,
-.wp-block-quote.is-style-default {
+blockquote.wp-block-quote {
   font-size: inherit;
   line-height: 1.4;
   font-style: normal;
   width: 100%;
 }
 @media (min-width: 768px) {
-  blockquote.wp-block-quote,
-  .wp-block-quote.is-style-default {
-    font-size: 1rem;
-    padding-left: 0;
+  blockquote.wp-block-quote {
+    font-size: 1.25rem;
   }
 }
 @media (min-width: 992px) {
-  blockquote.wp-block-quote,
-  .wp-block-quote.is-style-default {
+  blockquote.wp-block-quote {
     max-width: 80%;
   }
 }
 @media (min-width: 1200px) {
-  blockquote.wp-block-quote,
-  .wp-block-quote.is-style-default {
-    font-size: 1.25rem;
+  blockquote.wp-block-quote {
+    font-size: 1.5rem;
   }
 }
-blockquote.wp-block-quote,
-.wp-block-quote.is-style-default {
+blockquote.wp-block-quote {
   overflow-wrap: break-word;
   position: relative;
 }
-blockquote.wp-block-quote.has-text-align-left,
-.wp-block-quote.is-style-default.has-text-align-left {
-  padding: 0.5rem 1rem;
+blockquote.wp-block-quote.has-text-align-left {
+  padding: 0 0 0.5rem;
   border-left: 4px solid #66CC00;
   border-top: none;
   border-bottom: none;
   border-right: none;
 }
-blockquote.wp-block-quote.has-text-align-center,
-.wp-block-quote.is-style-default.has-text-align-center {
+blockquote.wp-block-quote.has-text-align-center {
   padding: 2rem;
   border-top: 4px solid #66CC00;
   border-bottom: 4px solid #66CC00;
@@ -2780,36 +2777,30 @@ blockquote.wp-block-quote.has-text-align-center,
   border-right: none;
 }
 @media (min-width: 576px) and (max-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-center cite,
-  .wp-block-quote.is-style-default.has-text-align-center cite {
+  blockquote.wp-block-quote.has-text-align-center cite {
     padding-left: 0;
     margin-left: 3vw;
   }
 }
 @media (min-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-center,
-  .wp-block-quote.is-style-default.has-text-align-center {
+  blockquote.wp-block-quote.has-text-align-center {
     margin-left: 0;
   }
-  blockquote.wp-block-quote.has-text-align-center p,
-  .wp-block-quote.is-style-default.has-text-align-center p {
+  blockquote.wp-block-quote.has-text-align-center p {
     margin-left: 5vw;
   }
-  blockquote.wp-block-quote.has-text-align-center cite,
-  .wp-block-quote.is-style-default.has-text-align-center cite {
+  blockquote.wp-block-quote.has-text-align-center cite {
     margin-left: 0vw;
     position: relative;
     padding: inherit;
   }
 }
 @media (min-width: 1200px) {
-  blockquote.wp-block-quote.has-text-align-center p,
-  .wp-block-quote.is-style-default.has-text-align-center p {
+  blockquote.wp-block-quote.has-text-align-center p {
     margin-left: 5vw;
   }
 }
-blockquote.wp-block-quote.has-text-align-right,
-.wp-block-quote.is-style-default.has-text-align-right {
+blockquote.wp-block-quote.has-text-align-right {
   padding: 0.5rem 1rem;
   border-right: 4px solid #66CC00;
   border-top: none;
@@ -2817,112 +2808,98 @@ blockquote.wp-block-quote.has-text-align-right,
   border-left: none;
 }
 @media (min-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-right,
-  .wp-block-quote.is-style-default.has-text-align-right {
+  blockquote.wp-block-quote.has-text-align-right {
     padding-right: 1vw;
   }
 }
 @media (min-width: 1600px) {
-  blockquote.wp-block-quote.has-text-align-right,
-  .wp-block-quote.is-style-default.has-text-align-right {
+  blockquote.wp-block-quote.has-text-align-right {
     padding-right: 2vw !important;
   }
 }
 @media (max-width: 576px) {
-  blockquote.wp-block-quote.has-text-align-right p,
-  .wp-block-quote.is-style-default.has-text-align-right p {
+  blockquote.wp-block-quote.has-text-align-right p {
     margin-left: 0;
   }
 }
 @media (min-width: 576px) and (max-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-right p,
-  .wp-block-quote.is-style-default.has-text-align-right p {
+  blockquote.wp-block-quote.has-text-align-right p {
     margin-left: 0;
   }
 }
 @media (min-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-right p,
-  .wp-block-quote.is-style-default.has-text-align-right p {
+  blockquote.wp-block-quote.has-text-align-right p {
     margin-left: 4vw;
   }
 }
 @media (min-width: 1600px) {
-  blockquote.wp-block-quote.has-text-align-right p,
-  .wp-block-quote.is-style-default.has-text-align-right p {
+  blockquote.wp-block-quote.has-text-align-right p {
     margin-right: 0;
     padding-right: inherit;
     position: inherit;
   }
 }
 @media screen and (min-width: 2560px) {
-  blockquote.wp-block-quote.has-text-align-right p,
-  .wp-block-quote.is-style-default.has-text-align-right p {
+  blockquote.wp-block-quote.has-text-align-right p {
     margin-right: 0;
     padding-right: 1vw;
     position: inherit;
   }
 }
-blockquote.wp-block-quote.has-text-align-right cite,
-.wp-block-quote.is-style-default.has-text-align-right cite {
+blockquote.wp-block-quote.has-text-align-right cite {
   color: var(--link--color);
 }
 @media (max-width: 576px) {
-  blockquote.wp-block-quote.has-text-align-right cite,
-  .wp-block-quote.is-style-default.has-text-align-right cite {
+  blockquote.wp-block-quote.has-text-align-right cite {
     margin-right: inherit;
   }
 }
 @media (min-width: 576px) and (max-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-right cite,
-  .wp-block-quote.is-style-default.has-text-align-right cite {
+  blockquote.wp-block-quote.has-text-align-right cite {
     padding: inherit;
     margin-right: 0.5rem;
   }
 }
 @media (min-width: 992px) {
-  blockquote.wp-block-quote.has-text-align-right cite,
-  .wp-block-quote.is-style-default.has-text-align-right cite {
+  blockquote.wp-block-quote.has-text-align-right cite {
     margin-left: 4vw;
   }
 }
 @media (min-width: 1600px) {
-  blockquote.wp-block-quote.has-text-align-right cite,
-  .wp-block-quote.is-style-default.has-text-align-right cite {
+  blockquote.wp-block-quote.has-text-align-right cite {
     margin-right: 1vw;
     padding: inherit;
   }
 }
 @media screen and (min-width: 2560px) {
-  blockquote.wp-block-quote.has-text-align-right cite,
-  .wp-block-quote.is-style-default.has-text-align-right cite {
+  blockquote.wp-block-quote.has-text-align-right cite {
     margin-right: 0;
     padding-right: 1vw;
     position: inherit;
   }
 }
-blockquote.wp-block-quote cite,
-.wp-block-quote.is-style-default cite {
+blockquote.wp-block-quote cite {
   color: var(--link--color);
 }
 
-.wp-block-quote.is-style-plain {
+blockquote.wp-block-quote.is-style-custom {
   padding: 0.5rem 0.5rem 0.5rem 2.3rem;
   border: none;
 }
-.wp-block-quote.is-style-plain p::before {
+blockquote.wp-block-quote.is-style-custom p::before {
   content: "“";
-  font-size: 8rem;
+  font-size: 8rem !important;
   margin: -3rem 0 0 -3.3rem;
   position: absolute;
   opacity: 0.5;
   color: #66CC00;
 }
 @media (max-width: 576px) {
-  .wp-block-quote.is-style-plain p::before {
+  blockquote.wp-block-quote.is-style-custom p::before {
     margin: -3rem 0 0 -3.1rem;
   }
 }
-.wp-block-quote.is-style-plain cite::after {
+blockquote.wp-block-quote.is-style-custom cite::after {
   content: "”";
   margin: -2.3rem 0rem 0 0;
   font-size: 8rem;
@@ -2933,20 +2910,20 @@ blockquote.wp-block-quote cite,
   padding-left: 0.5rem;
 }
 @media (max-width: 576px) {
-  .wp-block-quote.is-style-plain cite::after {
+  blockquote.wp-block-quote.is-style-custom cite::after {
     padding-left: 0.5rem;
   }
 }
 @media (min-width: 1200px) {
-  .wp-block-quote.is-style-plain cite::after {
+  blockquote.wp-block-quote.is-style-custom cite::after {
     margin: -2rem 0rem 0 0;
   }
 }
-.wp-block-quote.is-style-plain.has-text-align-left {
+blockquote.wp-block-quote.is-style-custom.has-text-align-left {
   padding: 0.5rem 0.5rem 0.5rem 2.3rem;
   border: none;
 }
-.wp-block-quote.is-style-plain.has-text-align-left p::before {
+blockquote.wp-block-quote.is-style-custom.has-text-align-left p::before {
   content: "“";
   font-size: 8rem;
   margin: -3rem 0 0 -3.3rem;
@@ -2955,11 +2932,11 @@ blockquote.wp-block-quote cite,
   color: #66CC00;
 }
 @media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-left p::before {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-left p::before {
     margin: -3rem 0 0 -3.1rem;
   }
 }
-.wp-block-quote.is-style-plain.has-text-align-left cite::after {
+blockquote.wp-block-quote.is-style-custom.has-text-align-left cite::after {
   content: "”";
   margin: -2.3rem 0rem 0 0;
   font-size: 8rem;
@@ -2970,217 +2947,153 @@ blockquote.wp-block-quote cite,
   padding-left: 0.5rem;
 }
 @media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-left cite::after {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-left cite::after {
     padding-left: 0.5rem;
   }
 }
 @media (min-width: 1200px) {
-  .wp-block-quote.is-style-plain.has-text-align-left cite::after {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-left cite::after {
     margin: -2rem 0rem 0 0;
   }
 }
-.wp-block-quote.is-style-plain.has-text-align-center {
+blockquote.wp-block-quote.is-style-custom.has-text-align-center {
   padding: 0.5rem 1.5rem 0.5rem 4.5rem;
   border: none;
 }
-.wp-block-quote.is-style-plain.has-text-align-center cite {
+blockquote.wp-block-quote.is-style-custom.has-text-align-center cite {
   margin-left: -2rem;
 }
 @media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-center {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-center {
     padding: 0 3rem 0 0;
     margin-left: 2rem;
   }
-  .wp-block-quote.is-style-plain.has-text-align-center cite {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-center cite {
     margin-left: -4vw;
   }
 }
 @media (min-width: 576px) and (max-width: 992px) {
-  .wp-block-quote.is-style-plain.has-text-align-center {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-center {
     padding-left: 4vw;
   }
-  .wp-block-quote.is-style-plain.has-text-align-center cite {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-center cite {
     margin-left: 0;
   }
 }
 @media (min-width: 992px) {
-  .wp-block-quote.is-style-plain.has-text-align-center {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-center {
     margin-left: 1vw;
   }
-  .wp-block-quote.is-style-plain.has-text-align-center cite {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-center cite {
     margin-left: -10vw;
   }
 }
 @media (min-width: 1200px) {
-  .wp-block-quote.is-style-plain.has-text-align-center cite {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-center cite {
     margin-left: -5vw;
   }
 }
 @media (min-width: 1600px) {
-  .wp-block-quote.is-style-plain.has-text-align-center {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-center {
     margin-left: -1vw;
   }
 }
-.wp-block-quote.is-style-plain.has-text-align-center p::before,
-.wp-block-quote.is-style-plain.has-text-align-center cite::after {
+blockquote.wp-block-quote.is-style-custom.has-text-align-center p::before,
+blockquote.wp-block-quote.is-style-custom.has-text-align-center cite::after {
   font-size: 7rem;
   position: absolute;
   opacity: 0.5;
   color: #66CC00;
 }
-.wp-block-quote.is-style-plain.has-text-align-center p::before {
+blockquote.wp-block-quote.is-style-custom.has-text-align-center p::before {
   content: "“";
   margin: -3rem 0 0 -3.3rem;
 }
 @media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-center p::before {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-center p::before {
     margin: -3rem 0 0 -2.5rem;
   }
 }
-.wp-block-quote.is-style-plain.has-text-align-center cite::after {
+blockquote.wp-block-quote.is-style-custom.has-text-align-center cite::after {
   content: "”";
   margin: -1.3rem 0rem 0 0;
   font-family: var(--font-family-body);
   padding-left: 0.5rem;
 }
 @media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-center cite::after {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-center cite::after {
     padding-left: 0.5rem;
   }
 }
 @media (min-width: 1200px) {
-  .wp-block-quote.is-style-plain.has-text-align-center cite::after {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-center cite::after {
     margin: -1rem 0rem 0 0;
   }
 }
-.wp-block-quote.is-style-plain.has-text-align-right {
+blockquote.wp-block-quote.is-style-custom.has-text-align-right {
   padding: 0.5rem 0.5rem 0.5rem 2.3rem;
   border: none;
 }
 @media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-right {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-right {
     padding-left: 0.7rem;
   }
-  .wp-block-quote.is-style-plain.has-text-align-right cite {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-right cite {
     margin-right: 3rem;
   }
 }
 @media (min-width: 768px) {
-  .wp-block-quote.is-style-plain.has-text-align-right cite {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-right cite {
     margin-right: 4.5rem;
   }
 }
 @media (min-width: 576px) and (max-width: 992px) {
-  .wp-block-quote.is-style-plain.has-text-align-right cite {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-right cite {
     margin-right: 5vw;
     position: relative;
   }
 }
 @media (min-width: 1200px) {
-  .wp-block-quote.is-style-plain.has-text-align-right cite {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-right cite {
     margin-right: 3vw;
   }
 }
 @media (min-width: 1600px) {
-  .wp-block-quote.is-style-plain.has-text-align-right cite {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-right cite {
     margin-right: 2vw;
   }
 }
-.wp-block-quote.is-style-plain.has-text-align-right p::before,
-.wp-block-quote.is-style-plain.has-text-align-right cite::after {
+blockquote.wp-block-quote.is-style-custom.has-text-align-right p::before,
+blockquote.wp-block-quote.is-style-custom.has-text-align-right cite::after {
   font-size: 7rem;
   position: absolute;
   opacity: 0.5;
   color: #66CC00;
 }
-.wp-block-quote.is-style-plain.has-text-align-right p::before {
+blockquote.wp-block-quote.is-style-custom.has-text-align-right p::before {
   content: "“";
   margin: -3rem 0 0 -3.3rem;
 }
 @media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-right p::before {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-right p::before {
     margin: -3rem 0 0 -2.5rem;
   }
 }
-.wp-block-quote.is-style-plain.has-text-align-right cite::after {
+blockquote.wp-block-quote.is-style-custom.has-text-align-right cite::after {
   content: "”";
   margin: -1.3rem 0rem 0 0;
   font-family: var(--font-family-body);
   padding-left: 0.5rem;
 }
 @media (max-width: 576px) {
-  .wp-block-quote.is-style-plain.has-text-align-right cite::after {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-right cite::after {
     padding-left: 0.5rem;
   }
 }
 @media (min-width: 1200px) {
-  .wp-block-quote.is-style-plain.has-text-align-right cite::after {
+  blockquote.wp-block-quote.is-style-custom.has-text-align-right cite::after {
     margin: -1rem 0rem 0 0;
   }
-}
-
-.wp-block-quote.is-style-custom {
-  font-size: inherit;
-  line-height: 1.4;
-  font-style: normal;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .wp-block-quote.is-style-custom {
-    font-size: 1rem;
-    padding-left: 0;
-  }
-}
-@media (min-width: 992px) {
-  .wp-block-quote.is-style-custom {
-    max-width: 80%;
-  }
-}
-@media (min-width: 1200px) {
-  .wp-block-quote.is-style-custom {
-    font-size: 1.25rem;
-  }
-}
-.wp-block-quote.is-style-custom {
-  border-left: 4px solid var(--blockquote-border-color);
-  color: inherit;
-  border-right: none;
-  border-top: none;
-  border-bottom: none;
-}
-.wp-block-quote.is-style-custom.has-text-align-left {
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
-  border-left: 4px solid var(--blockquote-border-color);
-  border-top: none;
-  border-bottom: none;
-  border-right: none;
-}
-.wp-block-quote.is-style-custom.has-text-align-center {
-  padding: 2rem;
-  border-top: 4px solid var(--blockquote-border-color);
-  border-bottom: 4px solid var(--blockquote-border-color);
-  border-right: none;
-  border-left: none;
-}
-@media (min-width: 576px) and (max-width: 992px) {
-  .wp-block-quote.is-style-custom.has-text-align-center {
-    padding-left: 3vw;
-  }
-}
-@media (min-width: 1600px) {
-  .wp-block-quote.is-style-custom.has-text-align-center p {
-    margin-left: 3vw;
-  }
-}
-.wp-block-quote.is-style-custom.has-text-align-right {
-  padding: 0.5rem 1rem;
-  border-right: 4px solid var(--blockquote-border-color);
-  border-top: none;
-  border-bottom: none;
-  border-left: none;
-}
-.wp-block-quote.is-style-custom cite {
-  color: inherit;
 }
 
 .post-content article blockquote.wp-block-quote {
