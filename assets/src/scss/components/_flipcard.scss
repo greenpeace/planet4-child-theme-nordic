@@ -40,7 +40,7 @@
   transition: transform .9s;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
 }
 
 .flip-card:hover .flip-card-inner {
@@ -75,12 +75,12 @@
     font-size: 2rem;
     margin-bottom: 1rem;
     z-index: 100;
-    font-family: $gp-sans !important;
+    font-family: var(--font-family-display) !important;
     text-transform: uppercase;
 
 
     @include medium-and-up {
-      font-size: 1.75rem;
+      font-size: $font-size-xl;
       word-break: break-word;
     }
   }
@@ -107,5 +107,5 @@
   color: $charcoal;
   transform: rotateY(180deg);
   text-align: left;
-  padding: 2rem;
+  padding: $padding-xl;
 }

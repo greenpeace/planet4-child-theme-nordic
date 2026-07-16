@@ -12,12 +12,12 @@ a[data-ga-action="Navigation Tag"],
 a[data-ga-action="Post Type Tag"] {
   //post type top left on posts
 
-  font-family: $gp-sans;
-  color: $gp-green-80;
+  font-family: var(--font-family-display);
+  color: var(--link--color);
   border-radius: 2rem;
 
   span[aria-label="hashtag"] {
-    color: $gp-green-80;
+    color: var(--link--color);
   }
 
   &:hover:not(a[data-ga-action="Navigation Tag"] span[aria-label="hashtag"]) {
@@ -26,7 +26,7 @@ a[data-ga-action="Post Type Tag"] {
   }
 
   &:visited {
-    color: $gp-green-80;
+    color: var(--link--color);
   }
 }
 
@@ -37,7 +37,7 @@ a[data-ga-action="Post Type Tag"] span {
 
   //chevron after the post type
   font-family: var(--font-family-roboto);
-  color: $gp-green-80;
+  color: var(--link--color);
   font-weight: var(--font-weight-regular);
 
   &:hover {
@@ -52,13 +52,13 @@ a[data-ga-action="Post Type Tag"] span {
 
 div.wrapper-post-tag ::before,
 .query-list-item-body:has(.taxonomy-p4-page-type):has(.taxonomy-post_tag) .wrapper-post-tag:before {
-  color: $gp-green-80;
+  color: var(--link--color);
 }
 
 
 // a.btn.post-tag-button,
 // a.btn.post-tag-button span:nth-child(2) {
-//   color: $gp-green-80;
+//   color: var(--link--color);
 //   background: $gp-green-5;
 //   border: none;
 //   font-family: $gp-sans;
@@ -69,7 +69,7 @@ div.wrapper-post-tag ::before,
 //   }
 
 //   &:visited {
-//     color: $gp-green-80;
+//     color: var(--link--color);
 //   }
 
 // }
@@ -115,7 +115,7 @@ flex-direction: row!important;
     text-decoration: none;
 
     &::before {
-      color: $gp-green-80 !important;
+      color: var(--link--color) !important;
     }
   }
 
@@ -131,7 +131,7 @@ flex-direction: row!important;
   margin-right: 0.5rem;
 
   &:hover {
-    color: $gp-green-80;
+    color: var(--link--color);
     text-decoration: none !important;
   }
 
@@ -153,7 +153,7 @@ a.comment-link,
 a.comment-link>span.quiantity,
 a.comment-link>span.display-text,
 a.external-link {
-  font-weight: 400;
+  font-weight: var(--font-weight-bold);
 
   &:hover:not(.single-post-time) {
     color: $black !important;
@@ -164,14 +164,14 @@ a.external-link {
   }
 
   &:visited:not(.footer a) {
-    color: $gp-green-80;
+    color: var(--link--color);
   }
 }
 
 .wp-block-navigation-item__label, 
 .posts-list .see-all-link a {
   color: $black;
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   border-bottom: none!important;
 
   &:hover {
@@ -189,7 +189,7 @@ a.external-link {
 .wp-block-query.posts-list.p4-query-loop .wp-block-post-title a,
 h2.wp-block-post-title a {
   color: $black;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 
   &:hover {
     font-family: var(--font-family-roboto);
@@ -228,17 +228,17 @@ h2.wp-block-post-title a {
   background: $gp-green-5 !important;
 
   h2.author-block-info-title {
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     color: $grey-60;
-    font-size: .85rem;
+    font-size: var($font-size-xxs);
   }
 
   h5.author-block-info-name {
     margin-bottom: 0;
 
     a {
-      font-family: $gp-sans;
-      color: $gp-green-80;
+      font-family: var(--font-family-display);
+      color: var(--link--color);
 
       &:hover {
         -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
@@ -261,8 +261,8 @@ h2.wp-block-post-title a {
       span.show-less {
         font-size: smaller;
         text-align: right;
-        color: $gp-green-80;
-        padding-top: .5rem;
+        color: var(--link--color);
+        padding-top: $padding-xs;
 
       }
 

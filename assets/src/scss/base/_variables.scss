@@ -2,12 +2,10 @@
 @import "../base/fonts";
 // Fonts
 $roboto: "Roboto", "Helvetica", "Arial", sans-serif;
-// changed the font from here to make sure it will assigned where it need to
-// $lora:     "Open Sans", sans-serif;
 $gp-sans: "Greenpeace Sans", "Helvetica", "Arial", sans-serif;
 $helvetica: "Helvetica Display Regular", "Helvetica", "Arial", sans-serif;
 $helvetica-bold: "Helvetica Now Display Bold", "Helvetica", "Arial", sans-serif;
-$lora: "Roboto", "Arial", sans-serif;
+// $lora: "Roboto", "Arial", sans-serif;
 
 
 // Media queries
@@ -18,19 +16,22 @@ $large-width: 992px;
 $extra-large-width: 1200px;
 $extra-extra-large-width: 1600px;
 
-//font-sizes
+// Font base
 $font-base-size: 16px;
 
-$font-size-xxxs: 0.75rem;
-$font-size-xxs: 0.875rem;
-$font-size-xs: 0.9375rem;
-$font-size-sm: 1rem;
-$font-size-md: 1.25rem;
-$font-size-lg: 1.375rem;
-$font-size-xl: 1.75rem;
-$font-size-xxl: 2.5rem;
-$font-size-xxxl: 3rem;
-$font-size-xxxxl: 4rem;
+// Font sizes
+$font-size-xxxs: 0.75rem;    // 12px
+$font-size-xxs: 0.875rem;    // 14px
+$font-size-xs: 0.9375rem;    // 15px
+$font-size-sm: 1rem;         // 16px
+$font-size-nm: 1.25rem;      // 20px
+$font-size-md: 1.375rem;     // 22px
+$font-size-lg: 1.5rem;       // 24px
+$font-size-xl: 1.75rem;      // 28px
+$font-size-xxl: 2rem;        // 32px
+$font-size-xxxl: 2.5rem;     // 40px
+$font-size-xxxxl: 3rem;      // 48px
+$font-size-xxxxxl: 4rem;     // 64px
 
 //padding
 $padding-xs: 0.5rem;
@@ -40,50 +41,69 @@ $padding-lg: 1.5rem;
 $padding-xl: 2rem;
 $padding-xxl: 3rem;
 
+//margin
+$margin-xs: 0.5rem;
+$margin-sm: 0.75rem;
+$margin-md: 1rem;
+$margin-lg: 1.5rem;
+$margin-xl: 2rem;
+$margin-xxl: 3rem;
+
 //NVI tockens
 :root {
-  --font-family-heading:  #{$roboto};
-  --font-family-primary: #{$roboto};
-  --font-family-body: #{$roboto};
-  --font-family-gp-sans: #{$gp-sans};
-  --font-family-helvetica: #{$helvetica};
-  --font-family-helvetica-bold: #{$helvetica-bold};
-  --font-family-roboto: #{$roboto};
-  --font-family-lora: #{$lora};
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
-  --padding-xs: #{$padding-xs};
-  --padding-sm: #{$padding-sm};
-  --padding-md: #{$padding-md};
-  --padding-lg: #{$padding-lg};
-  --padding-xl: #{$padding-xl};
-  --padding-xxl: #{$padding-xxl};
-  --top-navigation--background: #{$white};
-  --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-  --top-navigation--color: #{$black};
-  --top-navigation--separation: 1px solid #d8d8d8;
-  --top-navigation--search-toggle--background: #{$grey-10};
-  --top-navigation--input--placeholder--color: #{$grey-40};
-  --link--color: #{$gp-green-80};
-  --nav-link--hover--color: #{$black};
-  --nav-link--hover--text-decoration: underline 3px #{$gp-green};
-  --nav-link--hover--text-underline-position: under;
+  --accordion-block-dark-style--background: #{$gp-nor-green-3};
+  --accordion-block-dark-style--hover--background: #{$gp-nor-green};
   --accordion-block-light-style--background: #{$gp-green-5};
   --accordion-block-light-style--border-color: transparent;
   --accordion-block-light-style--hover--background: #{$gp-green-10};
-  --accordion-block-dark-style--background: #{$gp-nor-green-3};
-  --accordion-block-dark-style--hover--background: #{$gp-nor-green};
+
   --blockquote-border-color: #{$gp-green-50};
+
+  --body-text--color: #36454F;
+  --border-radius: 0.5rem;
+
+  --btn-primary--background: #{$gp-green-70};
+  --btn-primary--border: none;
+  --btn-primary--color: #{$white};
+  --btn-primary--hover--background: #{$gp-green-80};
+
   --cover-card-btn--font-size: $font-size-sm;
   --cover-card-heading--font-weight: 700;
+
+  --font-family-body: #{$roboto};
+  --font-family-display: #{$gp-sans};
+  --font-family-heading: #{$roboto};
+  --font-family-helvetica: #{$helvetica};
+  --font-family-helvetica-bold: #{$helvetica-bold};
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+
+  --link--color: #{$gp-green-80};
+
+  --nav-link--hover--color: #{$black};
+  --nav-link--hover--text-decoration: underline 3px #{$gp-green};
+  --nav-link--hover--text-underline-position: under;
+
+  --padding-lg: #{$padding-lg};
+  --padding-md: #{$padding-md};
+  --padding-sm: #{$padding-sm};
+  --padding-xl: #{$padding-xl};
+  --padding-xs: #{$padding-xs};
+  --padding-xxl: #{$padding-xxl};
+
   --page-header-title--font-weight: var(--font-weight-bold);
-  --headings-font-weight: var(--font-weight-bold);
-  --btn-body-font-weight: 600;
-  --btn-primary--background: #{$gp-green-70};
-  --btn-primary--color: #{$white};
-  --btn-primary--border: none;
-  --btn-primary--hover--background: #{$gp-green-80};
+
+  --top-navigation--background: #{$white};
+  --top-navigation--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --top-navigation--color: #{$black};
+  --top-navigation--input--placeholder--color: #{$grey-40};
+  --top-navigation--search-toggle--background: #{$grey-10};
+  --top-navigation--separation: 1px solid #d8d8d8;
 }
 
 // Units:

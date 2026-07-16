@@ -12,8 +12,9 @@ html {
 }
 
 body {
-  color: $grey-70;
-  font-family: $roboto;
+  color: var(--body-text--color);
+  font-family: var(--font-family-body);
+  font-optical-sizing: auto;
 }
 
 .error404 .speech-bubble {
@@ -36,8 +37,7 @@ li.search-result-list-item:hover {
 //single post 
 .single-post-author,
 .single-post-author a {
-  font-family: $gp-sans;
-  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-display);
 
   a:hover,
   &:hover {

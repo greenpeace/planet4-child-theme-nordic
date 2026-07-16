@@ -10,8 +10,8 @@
 // $navbar-default-height: 60px;
 
 a.nav-link {
-  font-family: $helvetica;
-  font-weight: 600;
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-semibold);
 
   @include mobile-only {
     font-size: 3.5vw;
@@ -28,19 +28,19 @@ a.nav-link {
 
   .nav-item {
     a.nav-link {
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
 
       &:hover {
         background: $gp-green-5;
-        color: $gp-green-80;
-        font-weight: bolder;
+        color: var(--link--color)!important;
+        font-weight: var(--font-weight-semibold);
       }
     }
   }
 }
 
 .nav-subitems .nav-item.active a.nav-link {
-  color: $gp-green-80 !important;
+  color: var(--link--color) !important;
 }
 
 .top-navigation .btn-donate {
@@ -63,7 +63,7 @@ a.nav-link {
 
   p.nav-link a,
   p.nav-link a strong {
-    font-weight: 700 !important;
+    font-weight: var(--font-weight-bold) !important;
   }
 
   p>a:hover {
@@ -74,7 +74,7 @@ a.nav-link {
 
 .brdr-bottom {
   border-bottom: #dddada 1px solid;
-  padding-bottom: 0.5rem;
+  padding-bottom: $padding-xs;
 }
 
 @include large-and-up {
@@ -106,7 +106,7 @@ a.nav-link {
   }
 
   .secondary-menu p:last-child {
-    padding-bottom: .7rem;
+    padding-bottom: $padding-sm;
   }
 }
 

@@ -1,0 +1,89 @@
+.gform_wrapper {
+    font-family: var(--font-family-body);
+
+    .ginput_container label:not(.gchoice label) {
+        font-weight: var(--font-weight-semibold);
+    }
+
+    .form-control:focus,
+    .form-select:focus,
+    .gfield input:not([type="file"]):focus,
+    .gfield textarea:focus,
+    .gfield_time_ampm select:focus,
+    .ginput_address_country select:focus,
+    .ginput_container_multiselect select:focus,
+    .ginput_container_select select:focus,
+    .name_prefix_select select:focus {
+        border-color: transparent;
+        box-shadow: inset 0 0 0 1px $gp-green-60;
+        color: var(--color-text-body);
+        outline-offset: -2px;
+    }
+
+    .btn-prev,
+    .btn-next {
+        font-family: var(--font-family-body);
+        font-weight: var(--font-weight-semibold);
+        color: var(--link--color);
+
+        &:hover {
+            text-decoration: none;
+            font-weight: var(--font-weight-bold);
+        }
+    }
+
+    .gfield .gchoice {
+        font-family: var(--font-family-body);
+    }
+
+    .gfield--type-quiz,
+    .gfield--type-image_choice {
+        display: none !important;
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    .gfield--type-quiz.active,
+    .gfield--type-image_choice.active {
+        display: block !important;
+        animation: slideIn 0.45s ease forwards;
+    }
+
+    .gfield.slide-out {
+        animation: slideOut 0.45s ease forwards;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        to {
+            opacity: 0;
+            transform: translateX(-40px);
+        }
+    }
+
+    .gform_body {
+        overflow-x: hidden;
+    }
+
+    .gfield--type-quiz,
+    .gfield--type-image_choice {
+        will-change: transform, opacity;
+    }
+
+}

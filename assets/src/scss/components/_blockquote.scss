@@ -42,7 +42,7 @@ blockquote>p {
 }
 
 blockquote>cite {
-    font-family: $gp-sans;
+    font-family: var(--font-family-display);
     font-size: $font-size-xxs;
     font-style: normal;
 
@@ -61,7 +61,7 @@ blockquote>cite {
 
 blockquote.wp-block-quote {
     border-left: 4px solid $gp-green-50;
-    padding: .5rem;
+    padding: $padding-xs;
     border-top: none;
     border-bottom: none;
 }
@@ -84,7 +84,7 @@ blockquote.wp-block-quote,
     }
 
     &.has-text-align-center {
-        padding: 2rem;
+        padding: $padding-xl;
         border-top: 4px solid $gp-green-50;
         border-bottom: 4px solid $gp-green-50;
         border-left: none;
@@ -171,7 +171,7 @@ blockquote.wp-block-quote,
 
             @include tablet-only {
                 padding: inherit;
-                margin-right: .5rem;
+                margin-right: $margin-xs;
             }
 
             @include large-and-up {
@@ -223,11 +223,11 @@ blockquote.wp-block-quote,
         position: absolute;
         opacity: 0.5;
         color: $gp-green-50;
-        font-family: $roboto;
-        padding-left: .5rem;
+        font-family: var(--font-family-body);
+        padding-left: $padding-xs;
 
         @include mobile-only {
-            padding-left: .5rem;
+            padding-left: $padding-xs;
         }
 
         @include x-large-and-up {
@@ -260,11 +260,11 @@ blockquote.wp-block-quote,
             position: absolute;
             opacity: 0.5;
             color: $gp-green-50;
-            font-family: $roboto;
-            padding-left: .5rem;
+            font-family: var(--font-family-body);
+            padding-left: $padding-xs;
 
             @include mobile-only {
-                padding-left: .5rem;
+                padding-left: $padding-xs;
             }
 
             @include x-large-and-up {
@@ -283,7 +283,7 @@ blockquote.wp-block-quote,
 
         @include mobile-only {
             padding: 0 3rem 0 0;
-            margin-left: 2rem;
+            margin-left: $margin-xl;
 
             cite {
                 margin-left: -4vw;
@@ -337,11 +337,11 @@ blockquote.wp-block-quote,
         cite::after {
             content: "”";
             margin: -1.3rem 0rem 0 0;
-            font-family: $roboto;
-            padding-left: .5rem;
+            font-family: var(--font-family-body);
+            padding-left: $padding-xs;
 
             @include mobile-only {
-                padding-left: .5rem;
+                padding-left: $padding-xs;
             }
 
             @include x-large-and-up {
@@ -404,11 +404,11 @@ blockquote.wp-block-quote,
         cite::after {
             content: "”";
             margin: -1.3rem 0rem 0 0;
-            font-family: $roboto;
-            padding-left: .5rem;
+            font-family: var(--font-family-body);
+            padding-left: $padding-xs;
 
             @include mobile-only {
-                padding-left: .5rem;
+                padding-left: $padding-xs;
             }
 
             @include x-large-and-up {
@@ -487,7 +487,7 @@ blockquote.wp-block-quote,
 
     &.has-text-align-center.is-style-plain {
         @include large-and-up {
-            padding-left: 1rem;
+            padding-left: $padding-md;
 
             cite {
                 margin-left: 0;

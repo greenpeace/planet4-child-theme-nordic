@@ -6,6 +6,7 @@
 .site-footer {
   background: $gp-nor-green;
   font-family: var(--headings--font-family);
+  font-weight: var(--font-weight-bold);
 
   .footer-menu ul {
     width: 100%;
@@ -37,7 +38,7 @@
   .countries-list {
     background: $gp-nor-green;
     font-family: var(--headings--font-family);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
 
     a[data-ga-category="Country Selector"]:hover {
       -webkit-transition: height 0.2s cubic-bezier(.5, 0, 0, 1);
@@ -47,6 +48,7 @@
       border-bottom: 2px solid $gp-green-50;
       text-decoration: none;
       box-shadow: none;
+      color: $white!important;
     }
   }
 
@@ -56,7 +58,7 @@
 
   .copyright {
     background: $gp-nor-green;
-    font-family: $helvetica;
+    font-family: var(--font-family-helvetica);
 
     a,
     a strong,
@@ -64,7 +66,7 @@
     span strong,
     span strong a {
       color: $white;
-      font-size: .75rem;
+      font-size: $font-size-xxxs;
       line-height: 1.4;
       width: auto;
 
@@ -90,7 +92,7 @@
 
   .footer-social-media {
     span {
-      font-weight: 600;
+      font-weight: var(--font-weight-semibold);
     }
 
     li {
@@ -110,7 +112,7 @@
   }
 
   a[data-ga-action="Footer Links"] {
-    font-weight: 500;
+    font-weight: var(--font-weight-meduium);
     text-decoration: none;
 
     &:hover {
@@ -125,14 +127,14 @@
   }
 
   ul.list-unstyled.footer-links li a {
-    font-family: $helvetica;
+    font-family: var(--font-family-body);
     font-weight: inherit;
   }
 
   ul.list-unstyled.footer-links-secondary li a,
   p.copyright-text {
     font-weight: inherit;
-    font-size: .75rem;
+    font-size: $font-size-xxxs;
     line-height: 1;
   }
 
@@ -140,7 +142,7 @@
 
     .copyright a,
     .copyright p a {
-      font-size: .75rem;
+      font-size: $font-size-xxxs;
     }
   }
 

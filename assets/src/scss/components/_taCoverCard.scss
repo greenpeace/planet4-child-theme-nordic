@@ -51,7 +51,7 @@
 
       & a {
         font-family: var(--font-family-gp-sans);
-        font-weight: 500 !important;
+        font-weight: var(--font-weight-medium) !important;
       }
     }
 
@@ -68,7 +68,7 @@
 
     .wp-block-post-excerpt p {
       font-family: var(--font-family-roboto);
-      font-weight: 400 !important;
+      font-weight: var(--font-weight-regular) !important;
       color: $black !important;
     }
 
@@ -103,7 +103,7 @@
   }
 
   a.btn-action.cover-card-btn[data-ga-category="Take Action Boxout"] {
-    padding: 1rem;
+    padding: $padding-md;
   }
 
   &:hover {

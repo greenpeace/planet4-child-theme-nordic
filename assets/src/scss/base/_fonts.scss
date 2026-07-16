@@ -1,18 +1,5 @@
-$font-base-size: 16px;
-$font-size-xxxs: 0.75rem;
-$font-size-xxs: 0.875rem;
-$font-size-xs: 0.9375rem;
-$font-size-sm: 1rem;
-$font-size-nm: 1.25rem;
-$font-size-md: 1.5rem;
-$font-size-lg: 1.75rem;
-$font-size-xl: 2rem;
-$font-size-xxl: 2.5rem;
-$font-size-xxxl: 3rem;
-$font-size-xxxxl: 4rem;
-
 //import font roboto from google fonts
-@import url('https://fonts.googleapis.com/css?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
   font-family: "Greenpeace Sans";

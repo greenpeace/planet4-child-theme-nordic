@@ -31,11 +31,6 @@
 
         },
         {
-          "slug": "roboto-bold",
-          "name": "Roboto Bold",
-          "fontFamily": "\"Roboto Bold\", sans-serif"
-        },
-        {
           "slug": "gp-sans",
           "name": "Greenpeace Sans",
           "fontFamily": "\"Greenpeace Sans\", sans-serif"
