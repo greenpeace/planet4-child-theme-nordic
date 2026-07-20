@@ -17,5 +17,6 @@ import './frontend/iraiser';
 import './frontend/leadsplugin';
 import './frontend/menu';
 import './frontend/nosearch';
+import './frontend/shareblock';
 import './frontend/templates';
 import './frontend/tracking';

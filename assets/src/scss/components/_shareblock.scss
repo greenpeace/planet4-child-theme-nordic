@@ -1,0 +1,51 @@
+@import "../base/colors";
+@import "../base/variables";
+@import "../base/fonts";
+
+.share-block__buttons {
+  & .gp-share-copy .wp-block-button__link {
+    background-color: $yellow-70;
+    color: $black;
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      margin: 0 0.5rem -0.16rem 0rem;
+      background: url("../../assets/images/share-icon.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  & .gp-share-whatsapp .wp-block-button__link {
+    background-color: #25D366;
+    color: $white;
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      margin: 0 .5rem -.2rem 0rem;
+      background: url("../../assets/images/whatsapp-logo.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  & .gp-share-linkedin .wp-block-button__link {
+    background-color: #0077B5;
+    color: $white;
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      margin: 0 .5rem -.1rem 0rem;
+      background: url("../../assets/images/linkedin-logo.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+}
