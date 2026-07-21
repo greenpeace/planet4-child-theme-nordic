@@ -3,6 +3,15 @@
 @import "../base/fonts";
 
 .share-block__buttons {
+  .buttons-row {
+    display: flex;
+    flex-wrap: wrap !important;
+  }
+
+  & .gp-share-copy, .gp-share-whatsapp, .gp-share-linkedin {
+    min-width: 10rem;
+  }
+
   & .gp-share-copy .wp-block-button__link {
     background-color: $yellow-70;
     color: $black;
@@ -24,7 +33,7 @@
   }
 
   & .gp-share-whatsapp .wp-block-button__link {
-    background-color: rgb(42,181,64);
+    background-color: rgb(42, 181, 64);
     color: $white;
 
     &::before {
