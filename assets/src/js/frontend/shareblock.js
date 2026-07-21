@@ -12,34 +12,34 @@ window.addEventListener('DOMContentLoaded', () => {
     switch (country) {
       case 'denmark':
         copyLabel = 'Kopier link';
-        copiedLabel = 'Link kopieret ✓';
+        copiedLabel = 'Link kopieret';
         whatsappMessage =
           'Jeg har lige skrevet under. Vil du også være med?\n\n';
         break;
 
       case 'finland':
         copyLabel = 'Kopioi linkki';
-        copiedLabel = 'Linkki kopioitu ✓';
+        copiedLabel = 'Linkki kopioitu';
         whatsappMessage =
           'Allekirjoitin juuri tämän vetoomuksen. Liity mukaan!\n\n';
         break;
 
       case 'norway':
         copyLabel = 'Kopier lenke';
-        copiedLabel = 'Lenke kopiert ✓';
+        copiedLabel = 'Lenke kopiert';
         whatsappMessage =
           'Jeg har nettopp signert denne kampanjen. Vil du også signere?\n\n';
         break;
 
       case 'sweden':
         copyLabel = 'Kopiera länk';
-        copiedLabel = 'Länken kopierad ✓';
+        copiedLabel = 'Länken kopierad';
         whatsappMessage =
           'Jag har precis skrivit under uppropet.\n\nHoppas du också vill skriva under!\n\n';
         break;
 
       default:
-        copiedLabel = 'Link copied ✓';
+        copiedLabel = 'Link copied';
         copyLabel = 'Copy link';
         whatsappMessage = 'I just signed, would you join me too?';
         break;
@@ -59,14 +59,16 @@ window.addEventListener('DOMContentLoaded', () => {
       link.textContent = copyLabel;
       link.href = '#';
 
-      link.addEventListener('click', async e => {
+      link.addEventListener('click', async (e) => {
         e.preventDefault();
 
         await copyText(pageUrl);
 
+        link.classList.add('is-copied');
         link.textContent = copiedLabel;
 
         setTimeout(() => {
+          link.classList.remove('is-copied');
           link.textContent = copyLabel;
         }, 2000);
       });

@@ -13,13 +13,18 @@
       height: 18px;
       display: inline-block;
       margin: 0 0.5rem -0.16rem 0rem;
-      background: url("../../assets/images/share-icon.svg") no-repeat center;
+      background: url("../../assets/images/share-black.svg") no-repeat center;
       background-size: contain;
     }
+
+    &.is-copied::before {
+      background-image: url("../../assets/images/check-black.svg");
+    }
+
   }
 
   & .gp-share-whatsapp .wp-block-button__link {
-    background-color: #25D366;
+    background-color: rgb(42,181,64);
     color: $white;
 
     &::before {
