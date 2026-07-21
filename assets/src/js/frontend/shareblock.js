@@ -45,6 +45,15 @@ window.addEventListener('DOMContentLoaded', () => {
         break;
     }
 
+    const customMessage = document.querySelector('.share-message');
+    if (customMessage) {
+      const text = customMessage.innerText.trim();
+
+      if (text) {
+        whatsappMessage = text + '\n\n';
+      }
+    }
+
     const pageUrl = window.location.href;
 
     async function copyText(text) {
@@ -90,6 +99,17 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.gp-share-linkedin .wp-block-button__link').forEach(link => {
       link.href =
         'https://www.linkedin.com/sharing/share-offsite/?url=' +
+        encodeURIComponent(pageUrl);
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+
+    //
+    // Facebook
+    //
+    document.querySelectorAll('.gp-share-facebook .wp-block-button__link').forEach(link => {
+      link.href =
+        'https://www.facebook.com/sharer/sharer.php?u=' +
         encodeURIComponent(pageUrl);
       link.target = '_blank';
       link.rel = 'noopener noreferrer';

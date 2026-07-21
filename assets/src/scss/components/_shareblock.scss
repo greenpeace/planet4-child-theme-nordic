@@ -3,12 +3,23 @@
 @import "../base/fonts";
 
 .share-block__buttons {
+  .custom-message-group {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  
   .buttons-row {
     display: flex;
     flex-wrap: wrap !important;
   }
 
-  & .gp-share-copy, .gp-share-whatsapp, .gp-share-linkedin {
+  & .gp-share-copy,
+  .gp-share-whatsapp,
+  .gp-share-linkedin {
     min-width: 10rem;
   }
 
@@ -43,6 +54,21 @@
       display: inline-block;
       margin: 0 .5rem -.2rem 0rem;
       background: url("../../assets/images/whatsapp-logo.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  & .gp-share-facebook .wp-block-button__link {
+    background-color: #1877F2;
+    color: $white;
+
+    &::before {
+      content: "";
+      width: 19px;
+      height: 19px;
+      display: inline-block;
+      margin: 0 .5rem -.2rem 0rem;
+      background: url("../../assets/images/facebook-logo-white.svg") no-repeat center;
       background-size: contain;
     }
   }
