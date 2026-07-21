@@ -45,6 +45,16 @@ window.addEventListener('DOMContentLoaded', () => {
         break;
     }
 
+    function pushShareEvent(channel) {
+      window.dataLayer = window.dataLayer || [];
+
+      window.dataLayer.push({
+        event: "uaevent",
+        eventCategory: "Reusable Share Block",
+        eventAction: channel,
+      });
+    }
+
     const customMessage = document.querySelector('.share-message');
     if (customMessage) {
       const text = customMessage.innerText.trim();
@@ -72,6 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         await copyText(pageUrl);
+        pushShareEvent('copy_link');
 
         link.classList.add('is-copied');
         link.textContent = copiedLabel;
@@ -91,6 +102,9 @@ window.addEventListener('DOMContentLoaded', () => {
         encodeURIComponent(whatsappMessage + pageUrl);
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
+      link.addEventListener('click', () => {
+        pushShareEvent('whatsapp');
+      });
     });
 
     //
@@ -102,6 +116,9 @@ window.addEventListener('DOMContentLoaded', () => {
         encodeURIComponent(pageUrl);
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
+      link.addEventListener('click', () => {
+        pushShareEvent('linkedin');
+      });
     });
 
     //
@@ -113,6 +130,9 @@ window.addEventListener('DOMContentLoaded', () => {
         encodeURIComponent(pageUrl);
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
+      if (typeof pushDataLayer === 'function') {
+        pushDataLayer('action_share', 'Facebook');
+      }
     });
   }
 });
