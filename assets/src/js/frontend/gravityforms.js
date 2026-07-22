@@ -83,12 +83,28 @@ document.addEventListener('DOMContentLoaded', function () {
         const submitButton = form.querySelector('.gform_button[type="submit"]');
         // console.log('GF phone init:', form.id);
         const phoneField = [...form.querySelectorAll('.gfield')].find(field => {
-            const label = field.querySelector('.gfield_label');
-            if (!label) return false;
+            if (field.classList.contains('gfield--type-phone')) {
+                return true;
+            }
 
-            const text = label.textContent.replace(/\(.*?\)/g, '').trim();
-            // console.log('GF field check:', text);
-            return text.startsWith(c.phone) || text.startsWith('Phone');
+            const label = field.querySelector('.gfield_label');
+
+            if (!label) {
+                return false;
+            }
+
+            const text = label.textContent
+                .replace(/\(.*?\)/g, '')
+                .trim()
+                .toLowerCase();
+
+            return [
+                'phone',
+                'telefon',
+                'telefonnummer',
+                'puhelinnumero'
+            ].includes(text);
+
         });
 
         if (!phoneField) {
@@ -97,7 +113,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // console.log('GF phone field found:', phoneField.id);
-        phoneField.querySelector('.gfield_label').textContent = c.phone;
+        // phoneField.querySelector('.gfield_label').textContent = c.phone;
+        const isRequired =
+            phoneField.classList.contains('gfield_contains_required') ||
+            phoneField.querySelector('[aria-required="true"]') !== null;
+
+        // console.log('PHONE required:', isRequired);
 
         function getPhoneInput() {
             return phoneField.querySelector('input');
@@ -192,7 +213,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-
         function validatePhone(source) {
 
             const phoneInput = getPhoneInput();
@@ -201,20 +221,36 @@ document.addEventListener('DOMContentLoaded', function () {
                 return false;
             }
 
-            // console.log('PHONE validate from:', source, 'value:', phoneInput.value);
-            const result = normalizePhone(phoneInput.value);
+            const rawValue = phoneInput.value.trim();
+            // console.log(`[${source}] raw:`, rawValue);
 
+            // Optional + empty = OK
+            if (!rawValue && !isRequired) {
+                clearPhoneError();
+                return true;
+            }
+
+            // Required + empty = let GF handle it
+            if (!rawValue && isRequired) {
+                clearPhoneError();
+                return true;
+            }
+
+            const result = normalizePhone(phoneInput.value);
             if (!result.valid) {
-                // console.log('PHONE blocked');
+                // console.log(`[${source}] invalid`);
+
                 showPhoneError();
                 return false;
             }
 
             phoneInput.value = result.value;
+            // console.log(`[${source}] accepted:`, phoneInput.value);
 
-            // console.log('PHONE accepted:', phoneInput.value);
             clearPhoneError();
+
             return true;
+
         }
 
 
