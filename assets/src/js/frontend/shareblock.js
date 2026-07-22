@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function pathnameUrl() {
     const country = window.location.pathname.split('/')[1];
+    const pageUrl = window.location.origin + window.location.pathname;
     let copyLabel = '';
     let copiedLabel = '';
     let whatsappMessage = '';
@@ -55,17 +56,6 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    const customMessage = document.querySelector('.share-message');
-    if (customMessage) {
-      const text = customMessage.innerText.trim();
-
-      if (text) {
-        whatsappMessage = text + '\n\n';
-      }
-    }
-
-    const pageUrl = window.location.href;
-
     async function copyText(text) {
       await navigator.clipboard.writeText(text);
     }
@@ -81,8 +71,8 @@ window.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', async (e) => {
         e.preventDefault();
 
-        await copyText(pageUrl);
-        pushShareEvent('copy_link');
+        await copyText(pageUrl + '?utm_source=copy_link&utm_medium=share_button');
+        pushShareEvent('copy link');
 
         link.classList.add('is-copied');
         link.textContent = copiedLabel;
@@ -97,15 +87,35 @@ window.addEventListener('DOMContentLoaded', () => {
     //
     // WhatsApp
     //
-    document.querySelectorAll('.gp-share-whatsapp .wp-block-button__link').forEach(link => {
-      link.href = 'https://api.whatsapp.com/send?text=' +
-        encodeURIComponent(whatsappMessage + pageUrl);
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.addEventListener('click', () => {
-        pushShareEvent('whatsapp');
+    document
+      .querySelectorAll('.gp-share-whatsapp .wp-block-button__link')
+      .forEach(link => {
+
+        const shareBlock = link.closest('.share-block__buttons');
+        let message = whatsappMessage; // default translation
+        const customMessage = shareBlock?.querySelector('.share-message');
+
+        if (customMessage) {
+          const text = customMessage.textContent.trim();
+
+          if (text.length) {
+            message = text;
+          }
+        }
+
+        //console.log(message);
+
+        link.href =
+          'https://api.whatsapp.com/send?text=' +
+          encodeURIComponent(message + '\n\n' + pageUrl + '?utm_source=whatsapp&utm_medium=share_button');
+
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+
+        link.addEventListener('click', () => {
+          pushShareEvent('whatsapp');
+        });
       });
-    });
 
     //
     // LinkedIn
@@ -113,7 +123,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.gp-share-linkedin .wp-block-button__link').forEach(link => {
       link.href =
         'https://www.linkedin.com/sharing/share-offsite/?url=' +
-        encodeURIComponent(pageUrl);
+        encodeURIComponent(pageUrl + '?utm_source=linkedin&utm_medium=share_button');
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       link.addEventListener('click', () => {
@@ -127,12 +137,12 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.gp-share-facebook .wp-block-button__link').forEach(link => {
       link.href =
         'https://www.facebook.com/sharer/sharer.php?u=' +
-        encodeURIComponent(pageUrl);
+        encodeURIComponent(pageUrl + '?utm_source=facebook&utm_medium=share_button');
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
-      if (typeof pushDataLayer === 'function') {
-        pushDataLayer('action_share', 'Facebook');
-      }
+      link.addEventListener('click', () => {
+        pushShareEvent('facebook');
+      });
     });
   }
 });
