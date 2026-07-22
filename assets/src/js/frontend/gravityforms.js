@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     function getCountryIso() {
-
         const path = window.location.pathname.toLowerCase();
-
         switch (true) {
             case path.includes('/denmark/'):
                 return 'DK';
@@ -23,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const countryIso = getCountryIso();
-
     const countryConfig = {
         DK: {
             phone: 'Telefon',
@@ -32,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             code: '45',
             min: 8,
             max: 8,
-            message: 'Telefonnummeret skal være præcis 8 cifre.'
+            message: 'Telefonnummeret må være 8 cifre, ingen mellemrum.'
         },
         FI: {
             phone: 'Puhelinnumero',
@@ -41,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             code: '358',
             min: 7,
             max: 10,
-            message: 'Puhelinnumeron tulee sisältää 7–10 numeroa.'
+            message: 'Puhelinnumero sisältää 7–10 numeroa, ei välilyöntejä.'
         },
         NO: {
             phone: 'Telefonnummer',
@@ -50,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             code: '47',
             min: 8,
             max: 8,
-            message: 'Telefonnummeret må være 8 sifre.'
+            message: 'Telefonnummeret må være 8 sifre, uten mellomrom.'
         },
         SE: {
             phone: 'Telefonnummer',
@@ -59,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
             code: '46',
             min: 7,
             max: 9,
-            message: 'Telefonnumret måste innehålla 7–9 siffror.'
+            message: 'Telefonnumret måste innehålla 7–9 siffror, inga mellanslag.'
         },
         EN: {
             phone: 'Phone',
@@ -75,14 +72,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const config = countryConfig[countryIso];
     const c = config;
 
+
     document.querySelectorAll('.gform_wrapper').forEach(wrapper => {
 
         const form = wrapper.querySelector('form');
         if (!form) return;
 
         const submitButton = form.querySelector('.gform_button[type="submit"]');
+
         // console.log('GF phone init:', form.id);
-        const phoneField = [...form.querySelectorAll('.gfield')].find(field => {
+        const phoneField = [...form.querySelectorAll('.gfield.gfield_visibility_visible')].find(field => {
             if (field.classList.contains('gfield--type-phone')) {
                 return true;
             }
@@ -113,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // console.log('GF phone field found:', phoneField.id);
-        // phoneField.querySelector('.gfield_label').textContent = c.phone;
         const isRequired =
             phoneField.classList.contains('gfield_contains_required') ||
             phoneField.querySelector('[aria-required="true"]') !== null;
@@ -165,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return result;
         }
 
-
         function showPhoneError() {
 
             const phoneInput = getPhoneInput();
@@ -193,7 +190,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             validation.innerHTML = `<span>${c.message}</span>`;
         }
-
 
         function clearPhoneError() {
 
@@ -252,7 +248,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return true;
 
         }
-
 
         function attachPhoneEvents() {
 
@@ -323,45 +318,62 @@ document.addEventListener('DOMContentLoaded', function () {
             .find(field =>
                 field.querySelector('.gfield_label')?.textContent.trim().toLowerCase() === 'utm'
             );
-
         // console.log(utmField);
 
         if (utmField) {
             const input = utmField.querySelector('input');
-
             if (input) {
                 input.value = window.location.search.substring(1);
             }
         }
 
-        //quiz style modifcations
+        //Quiz style modifcations
         jQuery(document).on('gform_post_render', function (event, formId) {
 
-            const questions = form.querySelectorAll(
-                '.gfield--type-quiz, .gfield--type-image_choice'
-            );
-
-            // console.log('Questions found:', questions.length);
-
-
-            if (!questions.length) {
+            if (form.id !== `gform_${formId}`) {
                 return;
             }
 
-            if (questions.length > 1) {
+            if (form.classList.contains('quiz-initialized')) {
+                return;
+            }
 
-                questions.forEach((q, i) => {
-                    // console.log(i, q.className, q.id);
-                });
+            form.classList.add('quiz-initialized');
+
+            const formFields = [...form.querySelectorAll('.gfield.gfield_visibility_visible')]
+                .filter(field =>
+                    !field.matches(
+                        '.gfield--type-quiz, .gfield--type-image_choice, .gform_validation_container'
+                    )
+                );
+            const quizFields = form.querySelectorAll(
+                '.gfield.gfield_visibility_visible.gfield--type-quiz, .gfield.gfield_visibility_visible.gfield--type-image_choice'
+            );
+
+            // console.log('quizFields found:', quizFields.length);
+
+            //hide initially all, so only the quiz is visible
+            formFields.forEach(field => {
+                field.style.display = 'none';
+            });
+
+            if (submitButton) {
+                submitButton.style.display = 'none';
+            }
+
+            if (!quizFields.length) {
+                return;
+            }
+
+            if (quizFields.length > 1) {
 
                 // Show only the first question
-                questions[0].classList.add('active');
-                //make a switch casee for label stranslations if in the url there is /denmark/ or /sweden/ or /norway/ or /finland/, translate it to the respective language, otherwise default to english
+                quizFields[0].classList.add('active');
                 const labelPrev = c.previous;
                 const labelNext = c.next;
 
-                // Loop through questions to append buttons
-                questions.forEach(function (question, index) {
+                // Loop through quizFields to append buttons
+                quizFields.forEach(function (question, index) {
 
                     const navigation = document.createElement('div');
                     navigation.classList.add(
@@ -380,9 +392,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     autoNextInputs.forEach(input => {
                         input.addEventListener('change', function () {
                             setTimeout(() => {
-                                if (index < questions.length - 1) {
-                                    navigateQuestions(index + 1);
-                                }
+                                navigateQuestions(index + 1);
                             }, 250);
                         });
                     });
@@ -413,47 +423,55 @@ document.addEventListener('DOMContentLoaded', function () {
                     navigation.appendChild(btnNext);
 
                     question.appendChild(navigation);
+
                 });
 
-                updateButtonStates();
-
-                // Hide submit button initially
-                submitButton.style.display = 'none';
-
-                function updateButtonStates() {
-                    const currentIndex = getCurrentIndex(questions, 'active');
-                    questions.forEach(function (question, index) {
-                        const btnPrev = question.querySelector('.btn-prev');
-                        const btnNext = question.querySelector('.btn-next');
-                        if (btnPrev && btnNext) {
-                            btnPrev.style.display = index === 0 ? 'none' : 'block';
-                            btnNext.style.display = index === questions.length - 1 ? 'none' : 'block';
-                        }
-                    });
-                    if (submitButton !== null) {
-                        submitButton.style.display =
-                            currentIndex === questions.length - 1 ? 'block' : 'none';
-                    }
-                }
-
-                function navigateQuestions(index) {
-                    const currentIndex = getCurrentIndex(questions, 'active');
-                    if (index >= 0 && index < questions.length) {
-                        questions[currentIndex].classList.remove('active');
-                        questions[index].classList.add('active');
-                        updateButtonStates();
-                    } else {
-                        // console.error('Cannot navigate to question index:', index);
-                    }
-                }
-
                 function getCurrentIndex(elements, className) {
-                    for (var i = 0; i < elements.length; i++) {
+                    for (let i = 0; i < elements.length; i++) {
                         if (elements[i].classList.contains(className)) {
                             return i;
                         }
                     }
                     return -1;
+                }
+
+                updateButtonStates();
+
+                function updateButtonStates() {
+                    const currentIndex = getCurrentIndex(quizFields, 'active');
+                    quizFields.forEach(function (question, index) {
+                        const btnPrev = question.querySelector('.btn-prev');
+                        const btnNext = question.querySelector('.btn-next');
+                        if (btnPrev && btnNext) {
+                            btnPrev.style.display = index === 0 ? 'none' : 'block';
+                            btnNext.style.display = index === quizFields.length - 1 ? 'none' : 'block';
+                        }
+                    });
+                }
+
+                function navigateQuestions(index) {
+                    const currentIndex = getCurrentIndex(quizFields, 'active');
+
+                    if (index >= 0 && index < quizFields.length) {
+                        quizFields[currentIndex].classList.remove('active');
+                        quizFields[index].classList.add('active');
+                        updateButtonStates();
+                        return;
+                    }
+
+                    if (index === quizFields.length) {
+                        quizFields[currentIndex].classList.remove('active');
+
+                        formFields.forEach(field => {
+                            field.style.display = '';
+                        });
+
+                        if (submitButton) {
+                            submitButton.style.display = 'block';
+                        }
+
+                        return;
+                    }
                 }
 
             }
