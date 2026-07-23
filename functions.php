@@ -267,6 +267,11 @@ add_action('init', function () {
         'p4/share-on-social',
         require get_stylesheet_directory() . '/block-patterns/share-on-social.php'
     );
+
+    register_block_pattern(
+        'p4/flip-cards',
+        require get_stylesheet_directory() . '/block-patterns/flip-cards.php'
+    );
 }, 30);
 
 /**
