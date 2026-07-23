@@ -195,83 +195,34 @@ function Enqueue_Custom_scripts()
     }
 }
 
-add_action('wp_head', 'Get_All_Hidden_Template_pages');
-add_action('wp_head', 'Get_All_Counter_Template_pages');
 /**
- * Get all hidden template pages and hide them from search
- *
- * @return void
+ * Register child theme block patterns.
  */
-function Get_All_Counter_Template_pages()
-{
-    $args = array(
-        'post_type' => 'page',
-        'post_status' => 'publish',
-        'meta_key' => '_wp_page_template',
-        'meta_value' => 'includes/page-external-counter.php',
-        'posts_per_page' => -1,
-        'publicly_queryable' => false
-    );
-    $query = new WP_Query($args);
-    $counterTemplatePages = $query->posts;
-    return $counterTemplatePages;
-}
 
-//Simplified fix to include posts back to internal search results by @lithrel
-add_action(
-    'save_post',
-    function ($post_id, $post, $update) {
-        $template = get_post_meta($post_id, '_wp_page_template', true);
-        if ('page-templates/page-hide-from-search.php' === $template) {
-            update_post_meta($post_id, 'p4_do_not_index', true);
-        } elseif ('includes/page-external-counter.php' === $template) {
-            update_post_meta($post_id, 'p4_do_not_index', true);
-        } else {
-            delete_post_meta($post_id, 'p4_do_not_index');
-        }
-    },
-    99,
-    3
-);
-/**
- * Get all hidden template pages
- *
- * @return void
- */
-function Get_All_Hidden_Template_pages()
-{
-    $args = array(
-        'post_type' => 'page',
-        'post_status' => 'publish',
-        'meta_key' => '_wp_page_template',
-        'meta_value' => 'page-templates/page-hide-from-search.php',
-        'posts_per_page' => -1,
-        'publicly_queryable' => false
-    );
-    $query = new WP_Query($args);
-    $hiddenTemplatePages = $query->posts;
-    return $hiddenTemplatePages;
-}
-
-/**
- * Register custom block patterns.
- */
 add_action('init', function () {
 
-    register_block_pattern(
-        'p4/slider-quiz',
-        require get_stylesheet_directory() . '/block-patterns/slider-quiz.php'
+    register_block_pattern_category(
+        'planet4-nordic',
+        [
+            'label' => __('Nordic Patterns', 'planet4-child-theme-nordic'),
+        ]
     );
 
-    register_block_pattern(
-        'p4/share-on-social',
-        require get_stylesheet_directory() . '/block-patterns/share-on-social.php'
-    );
 
-    register_block_pattern(
-        'p4/flip-cards',
-        require get_stylesheet_directory() . '/block-patterns/flip-cards.php'
-    );
+    $patterns = [
+        'p4/slider-quiz' => 'slider-quiz.php',
+        'p4/share-on-social' => 'share-on-social.php',
+        'p4/flip-cards' => 'flip-cards.php',
+    ];
+
+
+    foreach ($patterns as $name => $file) {
+
+        register_block_pattern(
+            $name,
+            require __DIR__ . '/block-patterns/' . $file
+        );
+    }
 }, 30);
 
 /**
@@ -448,3 +399,61 @@ add_action(
     },
     99
 );
+
+add_action('wp_head', 'Get_All_Hidden_Template_pages');
+add_action('wp_head', 'Get_All_Counter_Template_pages');
+/**
+ * Get all hidden template pages and hide them from search
+ *
+ * @return void
+ */
+function Get_All_Counter_Template_pages()
+{
+    $args = array(
+        'post_type' => 'page',
+        'post_status' => 'publish',
+        'meta_key' => '_wp_page_template',
+        'meta_value' => 'includes/page-external-counter.php',
+        'posts_per_page' => -1,
+        'publicly_queryable' => false
+    );
+    $query = new WP_Query($args);
+    $counterTemplatePages = $query->posts;
+    return $counterTemplatePages;
+}
+
+//Simplified fix to include posts back to internal search results by @lithrel
+add_action(
+    'save_post',
+    function ($post_id, $post, $update) {
+        $template = get_post_meta($post_id, '_wp_page_template', true);
+        if ('page-templates/page-hide-from-search.php' === $template) {
+            update_post_meta($post_id, 'p4_do_not_index', true);
+        } elseif ('includes/page-external-counter.php' === $template) {
+            update_post_meta($post_id, 'p4_do_not_index', true);
+        } else {
+            delete_post_meta($post_id, 'p4_do_not_index');
+        }
+    },
+    99,
+    3
+);
+/**
+ * Get all hidden template pages
+ *
+ * @return void
+ */
+function Get_All_Hidden_Template_pages()
+{
+    $args = array(
+        'post_type' => 'page',
+        'post_status' => 'publish',
+        'meta_key' => '_wp_page_template',
+        'meta_value' => 'page-templates/page-hide-from-search.php',
+        'posts_per_page' => -1,
+        'publicly_queryable' => false
+    );
+    $query = new WP_Query($args);
+    $hiddenTemplatePages = $query->posts;
+    return $hiddenTemplatePages;
+}

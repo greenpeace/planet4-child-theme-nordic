@@ -9,7 +9,7 @@
 return [
     'title'       => __('Share on Social', 'planet4-child-theme-nordic'),
     'description' => __('Social sharing buttons with heading and description.', 'planet4-child-theme-nordic'),
-    'categories'  => ['planet4'],
+    'categories'  => ['planet4-nordic'],
     'content'     => '
         <!-- wp:group {"metadata":{"name":"Share on Social"},"className":"share-block__buttons","layout":{"type":"constrained"}} -->
         <div class="wp-block-group share-block__buttons"><!-- wp:spacer {"height":"30px"} -->

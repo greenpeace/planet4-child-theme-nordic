@@ -9,7 +9,7 @@
 return [
     'title'       => __('3 Flip Image Cards', 'planet4-child-theme-nordic'),
     'description' => __('Three flip cards with image front and content back.', 'planet4-child-theme-nordic'),
-    'categories'  => ['planet4'],
+    'categories'  => ['planet4-nordic'],
     'content'     => '
     <!-- wp:group {"metadata":{"name":"3 flip image cards","categories":["planet4"],"patternName":"p4/flip-cards"},"layout":{"type":"default"}} -->
     <div class="wp-block-group"><!-- wp:heading -->
