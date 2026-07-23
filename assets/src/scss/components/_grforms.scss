@@ -1,6 +1,13 @@
 .gform_wrapper {
     font-family: var(--font-family-body);
 
+    label.gfield_label.gform-field-label,
+    label.gform-field-label.gform-field-label--type-sub,
+    legend.gfield_label.gform-field-label {
+        font-family: var(--font-family-heading)!important;
+        font-weight: var(--font-weight-semibold)!important;
+    }
+
     .ginput_container label:not(.gchoice label) {
         font-weight: var(--font-weight-semibold);
     }
@@ -20,74 +27,93 @@
         outline-offset: -2px;
     }
 
-    .btn-prev,
-    .btn-next {
-        font-family: var(--font-family-body);
-        font-weight: var(--font-weight-semibold);
-        color: var(--link--color);
-
-        &:hover {
-            text-decoration: none;
-            font-weight: var(--font-weight-bold);
-        }
-    }
-
     .gfield .gchoice {
         font-family: var(--font-family-body);
-    }
-
-    .gfield--type-quiz,
-    .gfield--type-image_choice {
-        display: none !important;
-        opacity: 0;
-        transform: translateX(40px);
-    }
-
-    .gfield--type-quiz.active,
-    .gfield--type-image_choice.active {
-        display: block !important;
-        animation: slideIn 0.45s ease forwards;
-    }
-
-    .gfield.slide-out {
-        animation: slideOut 0.45s ease forwards;
-    }
-
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateX(40px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    @keyframes slideOut {
-        from {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        to {
-            opacity: 0;
-            transform: translateX(-40px);
-        }
-    }
-
-    .gform_body {
-        overflow-x: hidden;
-    }
-
-    .gfield--type-quiz,
-    .gfield--type-image_choice {
-        will-change: transform, opacity;
     }
 
 }
 
 a.gform_validation_error_link {
     border-bottom: none !important;
+}
+
+.form-control,
+.form-select,
+.gfield input:not([type="file"]),
+.gfield textarea,
+.gfield_time_ampm select,
+.ginput_address_country select,
+.ginput_container_multiselect select,
+.ginput_container_select select,
+.name_prefix_select select {
+    font-family: var(--font-family-body);
+}
+
+.slider-quiz {
+
+    & .gform_wrapper {
+
+        .btn-prev,
+        .btn-next {
+            font-family: var(--font-family-body);
+            font-weight: var(--font-weight-semibold);
+            color: var(--link--color);
+
+            &:hover {
+                text-decoration: none;
+                font-weight: var(--font-weight-bold);
+            }
+        }
+
+        .gfield--type-quiz,
+        .gfield--type-image_choice {
+            display: none !important;
+            opacity: 0;
+            transform: translateX(40px);
+        }
+
+        .gfield--type-quiz.active,
+        .gfield--type-image_choice.active {
+            display: block !important;
+            animation: slideIn 0.45s ease forwards;
+        }
+
+        .gfield.slide-out {
+            animation: slideOut 0.45s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+        }
+
+        .gform_body {
+            overflow-x: hidden;
+        }
+
+        .gfield--type-quiz,
+        .gfield--type-image_choice {
+            will-change: transform, opacity;
+        }
+
+    }
 }
