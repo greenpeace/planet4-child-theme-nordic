@@ -19,6 +19,7 @@ define('THEME_VERSION', '1.48.14');
 
 // Modify the CSP page header
 require_once 'includes/csp-headers.php';
+// require_once 'patterns/SliderQuiz.php';
 
 //Add Convert & iRaiser first
 add_action('wp_head', function () {
@@ -253,6 +254,18 @@ function Get_All_Hidden_Template_pages()
 }
 
 /**
+ * Register custom block patterns.
+ */
+add_action('init', function () {
+
+    register_block_pattern(
+        'p4/slider-quiz',
+        require get_stylesheet_directory() . '/block-patterns/slider-quiz.php'
+    );
+
+}, 30);
+
+/**
  * Theme settings modificatons
  * Filter whitelisted Gutenberg standard blocks
  *
@@ -338,6 +351,7 @@ function p4no_allowed_post_type_blocks($allowed_block_types, $editor_context)
         'planet4-block-templates/page-header', //mt
         'planet4-block-templates/page-header-img-left', //mt
         'planet4-block-templates/side-image-with-text-and-cta', //mt
+        'p4/slider-quiz' //ct
     ];
 
     // Includes all custom p4 layouts
@@ -426,29 +440,3 @@ add_action(
     99
 );
 
-/**
- * Font Awesome Kit Setup
- *
- * This will add the Font Awesome Kit to the front-end, the admin back-end,
- * and the login screen area.
- */
-if (! function_exists('Fa_Custom_Setup_kit')) {
-    /**
-     * Font Awesome Kit Setup
-     *
-     * @param string $kit_url The URL to the Font Awesome Kit.
-     *
-     * @return void
-     */
-    function Fa_Custom_Setup_kit($kit_url = '')
-    {
-        foreach (['wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts'] as $action) {
-            add_action(
-                $action,
-                function () use ($kit_url) {
-                    wp_enqueue_script('font-awesome-kit', $kit_url, [], null);
-                }
-            );
-        }
-    }
-}
