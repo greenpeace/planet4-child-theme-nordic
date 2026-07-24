@@ -25,25 +25,25 @@ return [
         <!-- /wp:paragraph -->
 
         <!-- wp:group {"className":"buttons-row","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-        <div class="wp-block-group buttons-row"><!-- wp:buttons {"className":"share-button share-button\u002d\u002dcopy "} -->
+        <div class="wp-block-group buttons-row"><!-- wp:buttons {"className":"share-button share-button--copy "} -->
         <div class="wp-block-buttons share-button share-button--copy"><!-- wp:button {"className":"gp-share-copy"} -->
         <div class="wp-block-button gp-share-copy"><a class="wp-block-button__link wp-element-button">Copy link</a></div>
         <!-- /wp:button --></div>
         <!-- /wp:buttons -->
 
-        <!-- wp:buttons {"className":"share-button share-button\u002d\u002dcopy "} -->
+        <!-- wp:buttons {"className":"share-button share-button--copy "} -->
         <div class="wp-block-buttons share-button share-button--copy"><!-- wp:button {"className":"gp-share-facebook"} -->
         <div class="wp-block-button gp-share-facebook"><a class="wp-block-button__link wp-element-button">Facebook</a></div>
         <!-- /wp:button --></div>
         <!-- /wp:buttons -->
 
-        <!-- wp:buttons {"className":"share-button share-button\u002d\u002dwhatsapp "} -->
+        <!-- wp:buttons {"className":"share-button share-button--whatsapp "} -->
         <div class="wp-block-buttons share-button share-button--whatsapp"><!-- wp:button {"className":"gp-share-whatsapp"} -->
         <div class="wp-block-button gp-share-whatsapp"><a class="wp-block-button__link wp-element-button">WhatsApp</a></div>
         <!-- /wp:button --></div>
         <!-- /wp:buttons -->
 
-        <!-- wp:buttons {"className":"share-button share-button\u002d\u002dlinkedin "} -->
+        <!-- wp:buttons {"className":"share-button share-button--linkedin "} -->
         <div class="wp-block-buttons share-button share-button--linkedin"><!-- wp:button {"className":"gp-share-linkedin"} -->
         <div class="wp-block-button gp-share-linkedin"><a class="wp-block-button__link wp-element-button">LinkedIn</a></div>
         <!-- /wp:button --></div>
@@ -52,7 +52,7 @@ return [
 
         <!-- wp:group {"className":"custom-message-group","layout":{"type":"constrained"}} -->
         <div class="wp-block-group custom-message-group"><!-- wp:paragraph {"metadata":{"name":"Instructions"},"className":"custom-meesage-instructions","style":{"typography":{"textAlign":"center"}},"fontSize":"small"} -->
-        <p class="has-text-align-center custom-meesage-instructions has-small-font-size"><em>Type your custom sharing Whatsapp message in the block below, or leave empty for the default translation of "I just signed this petition, Want to join me?"</em></p>
+        <p class="has-text-align-center custom-meesage-instructions has-small-font-size"><em>Type your custom Whatsapp share message in the grey block below, use plain text only. Leave empty for the default translation of "I just signed this petition. Want to join me?"</em></p>
         <!-- /wp:paragraph -->
 
         <!-- wp:paragraph {"metadata":{"name":"Share message"},"className":"share-message has-grey-200-background-color has-background","style":{"typography":{"textAlign":"center"}},"backgroundColor":"grey-200"} -->

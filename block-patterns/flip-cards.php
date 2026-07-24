@@ -30,7 +30,7 @@ return [
     <!-- /wp:heading -->
 
     <!-- wp:image {"id":348,"aspectRatio":"3/4","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-    <figure class="wp-block-image size-full"><img src="http://www.planet4.test/wp-content/uploads/2018/10/b4dea0a8-nature-gp0stoe2u.jpg" alt="" class="wp-image-348" style="aspect-ratio:3/4;object-fit:cover"/></figure>
+    <figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() . '/images/placeholders/placeholder-546x415.jpg' ) . '" alt="" class="wp-image-348" style="aspect-ratio:3/4;object-fit:cover"/></figure>
     <!-- /wp:image --></div>
     <!-- /wp:group -->
 
@@ -40,7 +40,7 @@ return [
     <!-- /wp:heading -->
 
     <!-- wp:paragraph -->
-    <p>Add here the text displayed on the back of the image. Here is some text with a <a href="http://www.greenpeace.org" data-type="page" data-id="1577">link</a>.</p>
+    <p>Add here the text displayed on the back of the image.</p>
     <!-- /wp:paragraph --></div>
     <!-- /wp:group --></div>
     <!-- /wp:group --></div>
@@ -56,7 +56,7 @@ return [
     <!-- /wp:heading -->
 
     <!-- wp:image {"id":354,"aspectRatio":"3/4","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
-    <figure class="wp-block-image size-large"><img src="https://www.greenpeace.org/static/planet4-defaultcontent-stateless-develop/2018/10/6aa365fe-oceans-gp0stom6c-1024x683.jpg" alt="" class="wp-image-354" style="aspect-ratio:3/4;object-fit:cover"/></figure>
+    <figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() . '/images/placeholders/placeholder-546x415.jpg' ) . '" alt="" class="wp-image-354" style="aspect-ratio:3/4;object-fit:cover"/></figure>
     <!-- /wp:image --></div>
     <!-- /wp:group -->
 
@@ -66,7 +66,7 @@ return [
     <!-- /wp:heading -->
 
     <!-- wp:paragraph -->
-    <p>Add here the text displayed on the back of the image. Here is some text with a <a href="http://www.greenpeace.org" data-type="page" data-id="1577">link</a>.</p>
+    <p>Add here the text displayed on the back of the image.</p>
     <!-- /wp:paragraph --></div>
     <!-- /wp:group --></div>
     <!-- /wp:group --></div>
@@ -82,7 +82,7 @@ return [
     <!-- /wp:heading -->
 
     <!-- wp:image {"id":295,"aspectRatio":"3/4","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
-    <figure class="wp-block-image size-large"><img src="https://www.greenpeace.org/static/planet4-defaultcontent-stateless-develop/2018/05/fc54c126-gp0stqmp3-1024x683.jpg" alt="Lynx Kitten in Canadian Boreal Forest" class="wp-image-295" style="aspect-ratio:3/4;object-fit:cover"/></figure>
+    <figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() . '/images/placeholders/placeholder-546x415.jpg' ) . '" alt="Lynx Kitten in Canadian Boreal Forest" class="wp-image-295" style="aspect-ratio:3/4;object-fit:cover"/></figure>
     <!-- /wp:image --></div>
     <!-- /wp:group -->
 
@@ -92,7 +92,7 @@ return [
     <!-- /wp:heading -->
 
     <!-- wp:paragraph -->
-    <p>Add here the text displayed on the back of the image. Here is some text with a <a href="http://www.greenpeace.org" data-type="page" data-id="1577">link</a>.</p>
+    <p>Add here the text displayed on the back of the image.</p>
     <!-- /wp:paragraph --></div>
     <!-- /wp:group --></div>
     <!-- /wp:group --></div>
