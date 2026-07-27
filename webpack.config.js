@@ -26,7 +26,7 @@ module.exports = (env, argv) => {
             index: './assets/src/js/app.js',
         },
         output: {
-            filename: '[name].js',
+            filename: 'index.min.js',
             path: __dirname + '/assets/build'
         },
         module: {
@@ -95,7 +95,6 @@ module.exports = (env, argv) => {
                         method: (filePath) => {
                             return [
                                 'style.deps.json',
-                                'index.asset.php',
                                 'style.asset.php',
                                 'index-rtl.css',
                             ].some(item => new RegExp(item, 'm').test(filePath));
@@ -150,7 +149,7 @@ module.exports = (env, argv) => {
                 jquery: 'jquery/src/jquery'
             },
         },
-        devtool: isProduction ? false : 'source-map',
+        devtool: isProduction ? 'hidden-source-map' : 'source-map',
         stats: {
             all: true,
         },

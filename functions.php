@@ -9,13 +9,13 @@
  * @package    Planet4_Child_Theme_Nordic
  * @author     Greenpeace Nordic, Svilena Koleva <svilena.koleva@greenpeace.org>
  * @license    MIT, https://opensource.org/licenses/MIT
- * @version    1.48.14
+ * @version    1.47.14
  * @link       https://github.com/greenpeace/planet4-child-theme-nordic
  * @since      7.4
  * @textdomain planet4-child-theme-nordic
  */
 
-define('THEME_VERSION', '1.48.14');
+define('THEME_VERSION', '1.47.14');
 
 // Modify the CSP page header
 require_once 'includes/csp-headers.php';
@@ -104,7 +104,7 @@ function Enqueue_Child_styles()
         'child-style',
         get_stylesheet_directory_uri() . '/assets/build/style.min.css',
         ['parent-style'],
-        THEME_VERSION . '&' . filemtime(get_stylesheet_directory() . '/assets/build/style.min.css'),
+        THEME_VERSION . '.' . filemtime(get_stylesheet_directory() . '/assets/build/style.min.css'),
         'all',
         true
     );
@@ -121,9 +121,9 @@ function Enqueue_Child_scripts()
     // Load frontend script
     wp_enqueue_script(
         'child-js',
-        get_stylesheet_directory_uri() . '/assets/build/index.js',
+        get_stylesheet_directory_uri() . '/assets/build/index.min.js',
         array('jquery', 'wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'wp-element', 'wp-components'), // Explicit dependencies
-        THEME_VERSION . '&' . filemtime(get_stylesheet_directory() . '/assets/build/index.js'),
+        THEME_VERSION . '.' . filemtime(get_stylesheet_directory() . '/assets/build/index.min.js'),
         true // Load in footer
     );
 }
