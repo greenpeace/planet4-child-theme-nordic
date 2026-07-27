@@ -4,8 +4,8 @@
     label.gfield_label.gform-field-label,
     label.gform-field-label.gform-field-label--type-sub,
     legend.gfield_label.gform-field-label {
-        font-family: var(--font-family-heading)!important;
-        font-weight: var(--font-weight-semibold)!important;
+        font-family: var(--font-family-heading) !important;
+        font-weight: var(--font-weight-semibold) !important;
     }
 
     .ginput_container label:not(.gchoice label) {
@@ -65,17 +65,20 @@ a.gform_validation_error_link {
             }
         }
 
+        // Hide all quiz questions by default
         .gfield--type-quiz,
         .gfield--type-image_choice {
             display: none !important;
             opacity: 0;
             transform: translateX(40px);
+            will-change: transform, opacity;
         }
 
+        // Show only the current question
         .gfield--type-quiz.active,
         .gfield--type-image_choice.active {
             display: block !important;
-            animation: slideIn 0.45s ease forwards;
+            animation: slideIn .45s ease forwards;
         }
 
         .gfield.slide-out {
@@ -108,11 +111,6 @@ a.gform_validation_error_link {
 
         .gform_body {
             overflow-x: hidden;
-        }
-
-        .gfield--type-quiz,
-        .gfield--type-image_choice {
-            will-change: transform, opacity;
         }
 
     }

@@ -67,8 +67,16 @@ document.addEventListener('DOMContentLoaded', function () {
         initForm(form);
     });
 
+    jQuery(document).on('gform_confirmation_loaded', function (event, formId) {
+
+        sessionStorage.removeItem(`quizStep_gform_${formId}`);
+
+    });
+
+
+
     function initForm(form) {
-        console.log(form.id, form.closest('.slider-quiz'));
+        // console.log(form.id, form.closest('.slider-quiz'));
 
         initPhone(form);
         initUTM(form);
@@ -289,7 +297,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         }
 
-        // THIS IS THE IMPORTANT BIT
         attachPhoneEvents();
     }
 
@@ -331,15 +338,38 @@ document.addEventListener('DOMContentLoaded', function () {
             '.gfield.gfield_visibility_visible.gfield--type-quiz, .gfield.gfield_visibility_visible.gfield--type-image_choice'
         )];
 
-        if (!quizFields.length) return;
+        const hasErrors = form.querySelector('.gfield_error');
 
-        formFields.forEach(field => field.style.display = 'none');
-
-        if (submitButton) {
-            submitButton.style.display = 'none';
+        function showQuiz() {
+            formFields.forEach(field => field.hidden = true);
+            submitButton.hidden = true;
         }
 
-        quizFields[0].classList.add('active');
+        function showDetails() {
+            quizFields.forEach(field => field.classList.remove('active'));
+            formFields.forEach(field => field.hidden = false);
+            submitButton.hidden = false;
+        }
+
+        if (!quizFields.length) return;
+
+        if (hasErrors) {
+
+            showDetails();
+
+        } else {
+
+            showQuiz();
+
+            const savedStep = sessionStorage.getItem(`quizStep_${form.id}`);
+
+            if (savedStep !== null && quizFields[savedStep]) {
+                quizFields[savedStep].classList.add('active');
+            } else {
+                quizFields[0].classList.add('active');
+            }
+
+        }
 
         const labelPrev = c.previous;
         const labelNext = c.next;
@@ -427,20 +457,24 @@ document.addEventListener('DOMContentLoaded', function () {
             if (index >= 0 && index < quizFields.length) {
                 quizFields[currentIndex].classList.remove('active');
                 quizFields[index].classList.add('active');
+
+                sessionStorage.setItem(
+                    `quizStep_${form.id}`,
+                    index
+                );
+
                 updateButtonStates();
                 return;
             }
 
             if (index === quizFields.length) {
-                quizFields[currentIndex].classList.remove('active');
 
-                formFields.forEach(field => {
-                    field.style.display = '';
-                });
+                sessionStorage.setItem(
+                    `quizStep_${form.id}`,
+                    quizFields.length - 1
+                );
 
-                if (submitButton) {
-                    submitButton.style.display = 'block';
-                }
+                showDetails();
 
                 return;
             }
