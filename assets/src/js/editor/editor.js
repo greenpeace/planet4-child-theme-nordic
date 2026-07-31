@@ -1,9 +1,17 @@
 //import $ from the global scope
 import $ from 'jquery';
-import './acf-editor';
+import './components/acf-editor';
+// import './components/blockquote'
+
+import { registerBlockStyle } from '@wordpress/blocks';
 
 wp.domReady(() => {
-    console.log('WP editor DOM ready.');
-});
 
-// console.log('Editor.js loaded');
+    console.log('Registering quote style');
+
+    registerBlockStyle('core/quote', {
+        name: 'custom',
+        label: 'Custom',
+    });
+
+});

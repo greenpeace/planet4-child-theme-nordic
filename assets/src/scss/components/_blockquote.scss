@@ -24,8 +24,8 @@
 }
 
 blockquote,
-blockquote>p, 
-.wp-block-quote > p {
+blockquote>p,
+.wp-block-quote>p {
     @include blockquote;
 
     @include medium-and-up {
@@ -198,44 +198,74 @@ blockquote.wp-block-quote {
     }
 }
 
+//customises teh deafult style
+blockquote.wp-block-quote.is-style-default {
+
+    p::before,
+    p::after {
+        display: none;
+    }
+}
+
 //swaped with the custom style for now former -plain style
 blockquote.wp-block-quote.is-style-custom {
 
     padding: .5rem .5rem .5rem 2.3rem;
     border: none;
 
-    p::before {
-        content: "“";
-        font-size: 8rem!important;
-        margin: -3rem 0 0 -3.3rem;
-        position: absolute;
-        opacity: 0.5;
-        color: $gp-green-50;
+    p {
 
-        @include mobile-only {
-            margin: -3rem 0 0 -3.1rem;
+        position: relative;
+
+        &::before {
+            content: "“";
+            font-size: 8rem !important;
+            margin: -3rem 0 0 -3.3rem;
+            position: absolute;
+            opacity: 0.5;
+            color: $gp-green-50;
+
+            @include mobile-only {
+                margin: -3rem 0 0 -3.1rem;
+            }
+
+        }
+
+        &::after {
+            content: "”";
+            margin: 0.7rem 0rem 0 0;
+            font-size: 3rem;
+            position: absolute;
+            opacity: 0.5;
+            color: $gp-green-50;
+            font-family: var(--font-family-body);
+            padding-left: $padding-xl;
+
+            @include mobile-only {
+                padding-left: $padding-xs;
+            }
+
+            @include x-large-and-up {
+                margin: -2rem 0rem 0 0;
+            }
         }
 
     }
 
+    // hide the closing quote after citation
     cite::after {
-        content: "”";
-        margin: -2.3rem 0rem 0 0;
-        font-size: 8rem;
-        position: absolute;
-        opacity: 0.5;
-        color: $gp-green-50;
-        font-family: var(--font-family-body);
-        padding-left: $padding-xs;
-
-        @include mobile-only {
-            padding-left: $padding-xs;
-        }
-
-        @include x-large-and-up {
-            margin: -2rem 0rem 0 0;
-        }
+        content: none;
     }
+
+    // only if you want the quote attached visually to citation
+    &:has(cite) {
+
+        p::after {
+            display: block;
+        }
+
+    }
+
 
     &.has-text-align-left {
         padding: .5rem .5rem .5rem 2.3rem;

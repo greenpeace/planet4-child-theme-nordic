@@ -47,3 +47,7 @@ a.search-result-item-headline,
   margin-bottom: .5rem;
   line-height: 1.25;
 }
+
+.wp-block-quote > p.block-editor-rich-text__editable::before, .wp-block-quote > p::before {
+  margin-bottom: 0;
+}
