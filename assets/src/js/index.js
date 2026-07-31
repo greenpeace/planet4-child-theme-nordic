@@ -1,5 +1,4 @@
-//import main style
-import '../scss/style.scss';
+// console.log('Frontend index.js loaded');
 
 //import $ from the global scope
 import $ from 'jquery';

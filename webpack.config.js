@@ -6,6 +6,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const RemovePlugin = require('remove-files-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -23,10 +24,13 @@ module.exports = (env, argv) => {
     return {
         ...defaultConfig,
         entry: {
-            index: './assets/src/js/app.js',
+            index:       './assets/src/js/index.js',
+            editor:      './assets/src/js/editor/editor.js',
+            style:       './assets/src/scss/style.scss',
+            editorStyle: './assets/src/scss/editor/editor.scss',
         },
         output: {
-            filename: 'index.min.js',
+            filename: '[name].min.js',
             path: __dirname + '/assets/build'
         },
         module: {
@@ -83,8 +87,9 @@ module.exports = (env, argv) => {
                 $: 'jquery',
                 jQuery: 'jquery',
             }),
+            new RemoveEmptyScriptsPlugin(),
             new MiniCssExtractPlugin({
-                filename: 'style.min.css',
+                filename: '[name].min.css',
                 chunkFilename: '[id].min.css',
                 ignoreOrder: false,
             }),
@@ -97,6 +102,8 @@ module.exports = (env, argv) => {
                                 'style.deps.json',
                                 'style.asset.php',
                                 'index-rtl.css',
+                                'style-rtl.css',
+                                'editorStyle-rtl.css',
                             ].some(item => new RegExp(item, 'm').test(filePath));
                         }
                     }]

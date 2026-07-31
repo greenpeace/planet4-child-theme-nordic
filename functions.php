@@ -89,114 +89,119 @@ add_action('wp_enqueue_scripts', function () {
     );
 }, 10);
 
-add_action('wp_enqueue_scripts', 'Enqueue_Child_styles', 100);
 /**
- * Enqueue child theme styles
+ * Enqueue frontend styles
  *
  * @return void
  */
-function Enqueue_Child_styles()
+add_action('wp_enqueue_scripts', 'gpn_enqueue_frontend_styles', 100);
+
+function gpn_enqueue_frontend_styles()
 {
+
     // Enqueue the parent theme's style.css
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 
     wp_enqueue_style(
-        'child-style',
+        'gpn-frontend-style',
         get_stylesheet_directory_uri() . '/assets/build/style.min.css',
-        ['parent-style'],
-        THEME_VERSION . '.' . filemtime(get_stylesheet_directory() . '/assets/build/style.min.css'),
-        'all',
-        true
+        array('parent-style'),
+        THEME_VERSION . '.' . filemtime(
+            get_stylesheet_directory() . '/assets/build/style.min.css'
+        )
     );
 }
 
-add_action('wp_enqueue_scripts', 'Enqueue_Child_scripts');
 /**
- * Enqueue child theme scripts
+ * Enqueue block editor styles
  *
  * @return void
  */
-function Enqueue_Child_scripts()
+add_action( 'enqueue_block_editor_assets', 'gpn_enqueue_editor_styles' );
+
+function gpn_enqueue_editor_styles() {
+
+	wp_enqueue_style(
+		'gpn-editor-styles',
+		get_stylesheet_directory_uri() . '/assets/build/editorStyle.min.css',
+		array(),
+		THEME_VERSION . '.' . filemtime(
+			get_stylesheet_directory() . '/assets/build/editorStyle.min.css'
+		)
+	);
+}
+
+/**
+ * Enqueue frontend scripts
+ *
+ * @return void
+ */
+add_action('wp_enqueue_scripts', 'gpn_enqueue_frontend_scripts');
+
+function gpn_enqueue_frontend_scripts()
 {
-    // Load frontend script
+
     wp_enqueue_script(
-        'child-js',
+        'gpn-frontend-scripts',
         get_stylesheet_directory_uri() . '/assets/build/index.min.js',
-        array('jquery', 'wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'wp-element', 'wp-components'), // Explicit dependencies
-        THEME_VERSION . '.' . filemtime(get_stylesheet_directory() . '/assets/build/index.min.js'),
-        true // Load in footer
-    );
-}
-
-add_action('enqueue_block_editor_assets', 'Enqueue_Editor_scripts');
-/**
- * Enqueue child theme editor scripts
- *
- * @return void
- */
-function Enqueue_Editor_scripts()
-{
-    // Load block editor script
-    wp_enqueue_script(
-        'gpn_gutenberg_scripts_blocks',
-        get_stylesheet_directory_uri() . '/assets/build/index.js',
-        array('wp-blocks', 'wp-data', 'wp-dom', 'wp-editor', 'wp-element', 'wp-components'),
-        filemtime(get_stylesheet_directory() . '/assets/build/index.js'),
+        array(
+            'jquery',
+            'wp-blocks',
+            'wp-data',
+            'wp-dom',
+            'wp-editor',
+            'wp-element',
+            'wp-components',
+        ),
+        THEME_VERSION . '.' . filemtime(
+            get_stylesheet_directory() . '/assets/build/index.min.js'
+        ),
         true
     );
 }
 
-add_action('enqueue_block_editor_assets', 'P4_Child_Theme_Gpn_Gutenberg_scripts');
 /**
- * Enqueue child theme gtb editor scripts
+ * Enqueue block editor scripts
+ *
+ * Loads the backend editor bundle for the WordPress block editor.
  *
  * @return void
  */
-function P4_Child_Theme_Gpn_Gutenberg_scripts()
+add_action('admin_enqueue_scripts', 'gpn_enqueue_editor_scripts');
+
+function gpn_enqueue_editor_scripts()
 {
+
     wp_enqueue_script(
-        'gpn-customizations',
-        get_stylesheet_directory_uri() . '/assets/src/js/admin/editor.js',
-        //  p4gbks_admin_script is the JS that is loaded in planet4-plugin-gutenberg-block:
-        //  https://github.com/greenpeace/planet4-plugin-gutenberg-blocks/blob/4ae684660c83361f6d5f9d96744362ea7422cc4f/classes/class-loader.php#L296-L302
-        //  By putting it in the dependency list, we ensure our code gets loaded later so we can overwrite some of it.
-        array('wp-blocks', 'wp-dom', 'p4gbks_admin_script', 'planet4-blocks-editor-script'),
-        filemtime(get_stylesheet_directory() . '/assets/src/js/admin/editor.js'),
+        'gpn-editor-scripts',
+        get_stylesheet_directory_uri() . '/assets/build/editor.min.js',
+        array(
+            'wp-blocks',
+            'wp-data',
+            'wp-dom',
+            'wp-dom-ready',
+            'wp-editor',
+            'wp-element',
+            'wp-components',
+        ),
+        THEME_VERSION . '.' . filemtime(
+            get_stylesheet_directory() . '/assets/build/editor.min.js'
+        ),
         true
     );
 
-    $user  = wp_get_current_user();
-    $roles = (array) $user->roles;
-
-    $script_params = array(
-        'roles'     => $roles,
-        'post_type' => get_post_type(),
+    wp_localize_script(
+        'gpn-editor',
+        'gpnUserData',
+        array(
+            'roles'     => (array) wp_get_current_user()->roles,
+            'post_type' => get_post_type(),
+        )
     );
-
-    wp_localize_script('gpn-customizations', 'gpnUserData', $script_params);
-}
-
-add_action('admin_enqueue_scripts', 'Enqueue_Custom_scripts'); // Hook into admin_enqueue_scripts
-/**
- * Enqueue child theme admin scripts
- *
- * @return void
- */
-function Enqueue_Custom_scripts()
-{
-    if (is_admin()) {
-        wp_enqueue_script(
-            'custom-acf-editor-script',
-            get_stylesheet_directory_uri() . '/assets/src/js/admin/acf-editor.js',
-            array(),
-            filemtime(get_stylesheet_directory() . '/assets/src/js/admin/acf-editor.js'),
-            true
-        );
-    }
 }
 
 /**
- * Register child theme block patterns.
+ * Register child theme block patterns
  */
 
 add_action('init', function () {
