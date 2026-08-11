@@ -163,7 +163,7 @@ a.external-link {
     text-decoration-color: $gp-green-50;
   }
 
-  &:visited:not(.footer a) {
+  &:visited:not(.site-footer a) {
     color: var(--link--color);
   }
 }
