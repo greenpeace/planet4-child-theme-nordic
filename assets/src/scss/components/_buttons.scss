@@ -69,11 +69,6 @@ a.btn.btn-donate[data-ga-action="Donate"],
   transition: background 0s;
 }
 
-
-a.pdf-link:hover::before {
-  background-color: $dark-white;
-}
-
 a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
   color: $gp-green-70;
   -webkit-text-decoration-color: $gp-green-70;

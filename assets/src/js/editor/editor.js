@@ -7,7 +7,7 @@ import { registerBlockStyle } from '@wordpress/blocks';
 
 wp.domReady(() => {
 
-    console.log('Registering quote style');
+    // console.log('Registering quote style');
 
     registerBlockStyle('core/quote', {
         name: 'custom',
