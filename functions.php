@@ -462,3 +462,13 @@ function Get_All_Hidden_Template_pages()
     $hiddenTemplatePages = $query->posts;
     return $hiddenTemplatePages;
 }
+
+/**
+ * Tell visitor browsers to check Cloudflare for the latest version on every load,
+ * while inheriting all default Cloudflare CDN and "Always Online" rules.
+ */
+add_action('send_headers', function () {
+    if (!is_admin() && !is_user_logged_in()) {
+        header('Cache-Control: no-cache');
+    }
+});
