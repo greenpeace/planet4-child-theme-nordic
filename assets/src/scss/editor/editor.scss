@@ -51,3 +51,7 @@ a.search-result-item-headline,
 .wp-block-quote > p.block-editor-rich-text__editable::before, .wp-block-quote > p::before {
   margin-bottom: 0;
 }
+
+.editor-visual-editor__post-title-wrapper>h1>span {
+  font-size: 3rem;
+}
