@@ -10,8 +10,8 @@
     width: 100%;
 
     @include medium-and-up {
-        font-size: $font-size-sm;
-        padding-left: 0;
+        font-size: $font-size-nm;
+        // padding-left: 0;
     }
 
     @include large-and-up {
@@ -19,16 +19,23 @@
     }
 
     @include x-large-and-up {
-        font-size: $font-size-nm;
+        font-size: $font-size-lg;
     }
 }
 
 blockquote,
-blockquote>p {
+blockquote>p,
+.wp-block-quote>p {
     @include blockquote;
 
+    @include medium-and-less {
+        p, cite {
+            padding-left: 2.5vw;
+        }
+    }
+
     @include medium-and-up {
-        p {
+        p, cite {
             padding-left: 2vw;
         }
     }
@@ -42,7 +49,7 @@ blockquote>p {
 }
 
 blockquote>cite {
-    font-family: $gp-sans;
+    font-family: var(--font-family-display);
     font-size: $font-size-xxs;
     font-style: normal;
 
@@ -61,13 +68,12 @@ blockquote>cite {
 
 blockquote.wp-block-quote {
     border-left: 4px solid $gp-green-50;
-    padding: .5rem;
+    padding: $padding-xs;
     border-top: none;
     border-bottom: none;
 }
 
-blockquote.wp-block-quote,
-.wp-block-quote.is-style-default {
+blockquote.wp-block-quote {
     @include blockquote;
 
     & {
@@ -76,7 +82,7 @@ blockquote.wp-block-quote,
     }
 
     &.has-text-align-left {
-        padding: .5rem 1rem;
+        padding: 0 0 .5rem;
         border-left: 4px solid $gp-green-50;
         border-top: none;
         border-bottom: none;
@@ -84,7 +90,7 @@ blockquote.wp-block-quote,
     }
 
     &.has-text-align-center {
-        padding: 2rem;
+        padding: $padding-xl;
         border-top: 4px solid $gp-green-50;
         border-bottom: 4px solid $gp-green-50;
         border-left: none;
@@ -102,7 +108,7 @@ blockquote.wp-block-quote,
             margin-left: 0;
 
             p {
-                margin-left: 5vw;
+                margin-left: 4vw;
             }
 
             cite {
@@ -171,7 +177,7 @@ blockquote.wp-block-quote,
 
             @include tablet-only {
                 padding: inherit;
-                margin-right: .5rem;
+                margin-right: $margin-xs;
             }
 
             @include large-and-up {
@@ -198,42 +204,62 @@ blockquote.wp-block-quote,
     }
 }
 
-.wp-block-quote.is-style-plain {
+//customises the deafult style
+blockquote.wp-block-quote.is-style-default {
+
+    p::before,
+    p::after {
+        display: none;
+    }
+}
+
+//swaped with the custom style for now former -plain style
+blockquote.wp-block-quote.is-style-custom {
+
     padding: .5rem .5rem .5rem 2.3rem;
     border: none;
 
-    p::before {
-        content: "“";
-        font-size: 8rem;
-        margin: -3rem 0 0 -3.3rem;
-        position: absolute;
-        opacity: 0.5;
-        color: $gp-green-50;
+    p {
 
-        @include mobile-only {
-            margin: -3rem 0 0 -3.1rem;
+        position: relative;
+
+        &::before {
+            content: "“";
+            font-size: 8rem !important;
+            margin: -3rem 0 0 -3.3rem;
+            position: absolute;
+            opacity: 0.5;
+            color: $gp-green-50;
+
+            @include mobile-only {
+                margin: -3rem 0 0 -3.1rem;
+            }
+
+        }
+
+        &::after {
+            content: "”";
+            margin: 0.7rem 0rem 0 0;
+            font-size: 3rem;
+            position: absolute;
+            opacity: 0.5;
+            color: $gp-green-50;
+            font-family: var(--font-family-body);
+            // padding-left: $padding-xl;
+
+            @include mobile-only {
+                padding-left: $padding-xs;
+            }
+
+            @include x-large-and-up {
+                // margin: -2rem 0rem 0 0;
+            }
         }
 
     }
 
-    cite::after {
-        content: "”";
-        margin: -2.3rem 0rem 0 0;
-        font-size: 8rem;
-        position: absolute;
-        opacity: 0.5;
-        color: $gp-green-50;
-        font-family: $roboto;
-        padding-left: .5rem;
 
-        @include mobile-only {
-            padding-left: .5rem;
-        }
 
-        @include x-large-and-up {
-            margin: -2rem 0rem 0 0;
-        }
-    }
 
     &.has-text-align-left {
         padding: .5rem .5rem .5rem 2.3rem;
@@ -254,22 +280,23 @@ blockquote.wp-block-quote,
         }
 
         cite::after {
-            content: "”";
-            margin: -2.3rem 0rem 0 0;
-            font-size: 8rem;
-            position: absolute;
-            opacity: 0.5;
-            color: $gp-green-50;
-            font-family: $roboto;
-            padding-left: .5rem;
+            display: none;
+            // content: "”";
+            // margin: -2.3rem 0rem 0 0;
+            // font-size: 8rem;
+            // position: absolute;
+            // opacity: 0.5;
+            // color: $gp-green-50;
+            // font-family: var(--font-family-body);
+            // // padding-left: $padding-xs;
 
-            @include mobile-only {
-                padding-left: .5rem;
-            }
+            // @include mobile-only {
+            //     padding-left: $padding-xs;
+            // }
 
-            @include x-large-and-up {
-                margin: -2rem 0rem 0 0;
-            }
+            // @include x-large-and-up {
+            //     // margin: -2rem 0rem 0 0;
+            // }
         }
     }
 
@@ -282,8 +309,8 @@ blockquote.wp-block-quote,
         }
 
         @include mobile-only {
-            padding: 0 3rem 0 0;
-            margin-left: 2rem;
+            padding: 0 4.5rem 0 0;
+            margin-left: $margin-lg;
 
             cite {
                 margin-left: -4vw;
@@ -327,26 +354,29 @@ blockquote.wp-block-quote,
 
         p::before {
             content: "“";
-            margin: -3rem 0 0 -3.3rem;
+            margin: -4rem 0 0 -2.5rem;
+        }
 
-            @include mobile-only {
-                margin: -3rem 0 0 -2.5rem;
+        @include mobile-only {
+            p::before {
+                margin: -4.5rem 0 0 -1.5rem;
             }
         }
 
         cite::after {
-            content: "”";
-            margin: -1.3rem 0rem 0 0;
-            font-family: $roboto;
-            padding-left: .5rem;
+            display: none;
+            // content: "”";
+            // margin: -1.3rem 0rem 0 0;
+            // font-family: var(--font-family-body);
+            // padding-left: $padding-xs;
 
-            @include mobile-only {
-                padding-left: .5rem;
-            }
+            // @include mobile-only {
+            //     padding-left: $padding-xs;
+            // }
 
-            @include x-large-and-up {
-                margin: -1rem 0rem 0 0;
-            }
+            // @include x-large-and-up {
+            //     margin: -1rem 0rem 0 0;
+            // }
         }
     }
 
@@ -397,100 +427,108 @@ blockquote.wp-block-quote,
             margin: -3rem 0 0 -3.3rem;
 
             @include mobile-only {
-                margin: -3rem 0 0 -2.5rem;
+                margin: -4.5rem 0 0 -0.5rem;
+            }
+        }
+
+        p::after {
+            @include mobile-only {
+                margin: 0.8rem 0rem 0 -1.5rem;
             }
         }
 
         cite::after {
-            content: "”";
-            margin: -1.3rem 0rem 0 0;
-            font-family: $roboto;
-            padding-left: .5rem;
+
+            display: none;
+            // content: "”";
+            // margin: -1.3rem 0rem 0 0;
+            // font-family: var(--font-family-body);
+            // padding-left: $padding-xs;
+
+            // @include mobile-only {
+            //     padding-left: $padding-xs;
+            // }
+
+            // @include x-large-and-up {
+            //     margin: -1rem 0rem 0 0;
+            // }
+        }
+    }
+
+    // blockquote.wp-block-quote.is-style-custom {
+    //     @include blockquote;
+
+    //     & {
+    //         border-left: 4px solid var(--blockquote-border-color);
+    //         color: inherit;
+    //         border-right: none;
+    //         border-top: none;
+    //         border-bottom: none;
+    //     }
+
+    //     &.has-text-align-left {
+    //         padding: .5rem .5rem .5rem 1rem;
+    //         border-left: 4px solid var(--blockquote-border-color);
+    //         border-top: none;
+    //         border-bottom: none;
+    //         border-right: none;
+    //     }
+
+    //     &.has-text-align-center {
+    //         padding: 2rem;
+    //         border-top: 4px solid var(--blockquote-border-color);
+    //         border-bottom: 4px solid var(--blockquote-border-color);
+    //         border-right: none;
+    //         border-left: none;
+
+    //         @include tablet-only {
+    //             padding-left: 3vw;
+    //         }
+
+    //         @include xx-large-and-up {
+    //             p {
+    //                 margin-left: 3vw;
+    //             }
+    //         }
+
+    //     }
+
+    //     &.has-text-align-right {
+    //         padding: .5rem 1rem;
+    //         border-right: 4px solid var(--blockquote-border-color);
+    //         border-top: none;
+    //         border-bottom: none;
+    //         border-left: none;
+    //     }
+
+    //     cite {
+    //         color: inherit;
+    //     }
+
+    // }
+
+    .post-content article blockquote.wp-block-quote {
+        max-width: 100%;
+        width: 100%;
+
+        p,
+        cite {
+            max-width: 100%;
+            width: 90%;
 
             @include mobile-only {
-                padding-left: .5rem;
+                width: 100%;
             }
 
-            @include x-large-and-up {
-                margin: -1rem 0rem 0 0;
-            }
-        }
-    }
-}
-
-.wp-block-quote.is-style-custom {
-    @include blockquote;
-
-    & {
-        border-left: 4px solid var(--blockquote-border-color);
-        color: inherit;
-        border-right: none;
-        border-top: none;
-        border-bottom: none;
-    }
-
-    &.has-text-align-left {
-        padding: .5rem .5rem .5rem 1rem;
-        border-left: 4px solid var(--blockquote-border-color);
-        border-top: none;
-        border-bottom: none;
-        border-right: none;
-    }
-
-    &.has-text-align-center {
-        padding: 2rem;
-        border-top: 4px solid var(--blockquote-border-color);
-        border-bottom: 4px solid var(--blockquote-border-color);
-        border-right: none;
-        border-left: none;
-
-        @include tablet-only {
-            padding-left: 3vw;
         }
 
-        @include xx-large-and-up {
-            p {
-                margin-left: 3vw;
-            }
-        }
+        &.has-text-align-center.is-style-plain {
+            @include large-and-up {
+                padding-left: $padding-md;
 
-    }
-
-    &.has-text-align-right {
-        padding: .5rem 1rem;
-        border-right: 4px solid var(--blockquote-border-color);
-        border-top: none;
-        border-bottom: none;
-        border-left: none;
-    }
-
-    cite {
-        color: inherit;
-    }
-
-}
-
-.post-content article blockquote.wp-block-quote {
-    max-width: 100%;
-    width: 100%;
-
-    p,
-    cite {
-        max-width: 100%;
-        width: 90%;
-
-        @include mobile-only {
-            width: 100%;
-        }
-
-    }
-
-    &.has-text-align-center.is-style-plain {
-        @include large-and-up {
-            padding-left: 1rem;
-
-            cite {
-                margin-left: 0;
+                cite {
+                    margin-left: 0;
+                }
             }
         }
     }

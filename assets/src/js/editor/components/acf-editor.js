@@ -11,7 +11,9 @@
       arrayRemoveRow.removeAttr('href');
     });
 
+    // console.log('ACF is loaded');
+
   } else {
-    console.warn('ACF is not loaded');
+    // console.warn('ACF is not loaded');
   }
 })(jQuery);

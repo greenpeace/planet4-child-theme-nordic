@@ -22,8 +22,8 @@
         .column-wrap a {
             border-bottom: none;
             text-decoration: none;
-            font-family: var(--font-family-roboto);
-            font-weight: var(--headings-font-weight);
+            font-family: var(--font-family-heading);
+            font-weight: var(--font-weight-bold);
         }
     }
 
@@ -38,32 +38,29 @@
     }
 
 
-    h2,
-    h3,
     h5 {
-        font-weight: var(--headings-font-weight);
-        font-family: $roboto !important;
+        font-family: var(--font-family-heading);
 
-
+        .columns-block.block-style-tasks .column-wrap a,
         a[data-ga-action="Title"] {
-            color: $black;
-            font-weight: var(--headings-font-weight);
-            font-family: $roboto !important;
-
+            color: var(--body-text--color);
+            font-family: var(--font-family-heading)!important;
+            font-weight: var(--font-weight-bold);
 
             &:hover {
-                color: $gp-green-80;
+                color: var(--link--color);
                 text-decoration: none;
             }
         }
     }
 
     .column-wrap a[data-ga-action="Call to Action"]:not(a[data-ga-action="Title"]) {
-        color: $gp-green-80;
+        color: var(--link--color);
         font-family: var(--font-family-roboto);
+        font-weight: var(--font-weight-bold);
 
         &:hover:not(a.btn.btn-secondary) {
-            color: $black;
+            color: var(--body-text--color);
         }
     }
 }

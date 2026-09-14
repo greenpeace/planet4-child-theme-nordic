@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     switch (pathnameUrl) {
       case "denmark": {
         jQuery('<script id="optimonkDK" type="text/javascript"> (function(e,a){ var t,r=e.getElementsByTagName("head")[0],c=e.location.protocol; t=e.createElement("script");t.type="text/javascript"; t.charset="utf-8";t.async=!0;t.defer=!0; t.src=c+"//front.optimonk.com/public/"+a+"/js/preload.js";r.appendChild(t); })(document,"118834"); </' + 'script>').appendTo(document.body);
+        jQuery('<meta name="google-site-verification" content="rf7y158SN5B-9halj61qhix9DuU8B3buuLpYzakg638" />').appendTo(document.head);
         break;
       }
       case "finland": {
@@ -29,6 +30,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
       default: {
         jQuery('<script id="optimonkDEV" type="text/javascript"> console.log("Default case Optimonk"); </' + 'script>').appendTo(document.body);
+        jQuery('<meta name="google-site-verification" content="rf7y158SN5B-9halj61qhix9DuU8B3buuLpYzakg638" />').appendTo('head'); //verify ndsu in GSC
         break;
       }
     }

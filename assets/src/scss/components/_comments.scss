@@ -15,12 +15,12 @@
 }
 
 .author-block-info div[itemprop="description"] {
-  font-family: $roboto;
+  font-family: var(--font-family-body);
   color: initial;
 
   span.show-more,
   span.show-less {
-    font-family: $roboto;
+    font-family: var(--font-family-body);
     color: $dark-green;
   }
 }

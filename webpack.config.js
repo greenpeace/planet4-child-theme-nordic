@@ -1,26 +1,39 @@
-const defaultConfig = require("./node_modules/@wordpress/scripts/config/webpack.config"); // Require default Webpack config
+const defaultConfig = require("@wordpress/scripts/config/webpack.config"); // Require default Webpack config
+const dashDash = require('@greenpeace/dashdash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserJSPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const RemovePlugin = require('remove-files-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const webpack = require('webpack');
 const path = require('path');
+
+const mediaQueryAliases = {
+  '(max-width: 576px)': 'mobile-only',
+  '(min-width: 576px)': 'small-and-up',
+  '(min-width: 768px)': 'medium-and-up',
+  '(min-width: 992px)': 'large-and-up',
+  '(min-width: 1200px)': 'x-large-and-up',
+  '(min-width: 1600px)': 'xx-large-and-up',
+};
 
 module.exports = (env, argv) => {
     const isProduction = argv.mode === 'production';
     return {
-        // ...defaultConfig,
+        ...defaultConfig,
         entry: {
-            index: './assets/src/js/app.js',
+            index:       './assets/src/js/index.js',
+            editor:      './assets/src/js/editor/editor.js',
+            style:       './assets/src/scss/style.scss',
+            editorStyle: './assets/src/scss/editor/editor.scss',
         },
         output: {
-            filename: '[name].js',
+            filename: '[name].min.js',
             path: __dirname + '/assets/build'
         },
         module: {
-            // ...defaultConfig.module,
             rules: [
                 {
                     test: /\.(sass|scss)$/,
@@ -37,8 +50,10 @@ module.exports = (env, argv) => {
                             loader: 'postcss-loader',
                             options: {
                                 postcssOptions: {
+                                    ident: 'postcss',
                                     plugins: [
-                                        require('autoprefixer'),
+                                        dashDash({ mediaQueryAliases, mediaQueryAtStart: false }),
+                                        require.resolve('autoprefixer'),
                                     ],
                                 },
                                 sourceMap: !isProduction,
@@ -64,13 +79,17 @@ module.exports = (env, argv) => {
             ]
         },
         plugins: [
+            ...defaultConfig.plugins.filter(
+                plugin => plugin.constructor.name !== 'MiniCssExtractPlugin'
+            ),
             new webpack.ProvidePlugin({
                 Buffer: ['buffer', 'Buffer'],
                 $: 'jquery',
                 jQuery: 'jquery',
             }),
+            new RemoveEmptyScriptsPlugin(),
             new MiniCssExtractPlugin({
-                filename: 'style.min.css',
+                filename: '[name].min.css',
                 chunkFilename: '[id].min.css',
                 ignoreOrder: false,
             }),
@@ -81,8 +100,10 @@ module.exports = (env, argv) => {
                         method: (filePath) => {
                             return [
                                 'style.deps.json',
-                                'index.asset.php',
                                 'style.asset.php',
+                                'index-rtl.css',
+                                'style-rtl.css',
+                                'editorStyle-rtl.css',
                             ].some(item => new RegExp(item, 'm').test(filePath));
                         }
                     }]
@@ -135,7 +156,7 @@ module.exports = (env, argv) => {
                 jquery: 'jquery/src/jquery'
             },
         },
-        devtool: isProduction ? false : 'source-map',
+        devtool: isProduction ? 'hidden-source-map' : 'source-map',
         stats: {
             all: true,
         },

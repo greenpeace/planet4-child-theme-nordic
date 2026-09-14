@@ -16,11 +16,7 @@ $text-slide-offset: 50px;
 }
 
 .carousel-header .carousel-caption .main-header p {
-  font-family: $roboto;
-}
-
-html[dir=rtl] .carousel-header .carousel-caption .main-header h2 {
-  text-align: right
+  font-family: var(--font-family-body);
 }
 
 @media (min-width:576px) {

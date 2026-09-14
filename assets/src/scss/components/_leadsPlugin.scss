@@ -3,15 +3,38 @@
 @import "../base/colors";
 @import "../base/fonts";
 
+article.container.narrow-container .leads-form {
+  width: 100% !important;
+  margin-left: 0 !important;
+
+  @media only screen and (max-width: 1139px) {
+    & .leads-form__content {
+      grid-column: 2/13 !important;
+      grid-row: 1/3 !important;
+    }
+  }
+
+  @media only screen and (min-width: 1140px) {
+    & .leads-form__content {
+      grid-column: 2/12 !important;
+      grid-row: 1 / -2 !important;
+    }
+
+    & .leads-form__main-container {
+      grid-column: 3/11 !important;
+    }
+  }
+}
+
 .leads-form__form__container {
   & .acf-label {
-    font-family: $roboto;
-    margin-bottom: 0.75rem;
+    font-family: var(--font-family-body);
+    margin-bottom: $padding-sm;
 
     a,
     small>p>a {
       border-bottom: none !important;
-      font-weight: bold;
+      font-weight: var(--font-weight-bold);
     }
   }
 
@@ -21,14 +44,14 @@
 
   & span.checkbox-label p {
     line-height: 1.3;
-    font-weight: 300;
-    font-family: $roboto;
-    font-size: 0.75rem !important;
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-body);
+    font-size: $font-size-xxxs !important;
     padding-bottom: 0.2rem;
 
     a {
-      font-weight: 500 !important;
-      font-size: 0.75rem !important;
+      font-weight: var(--font-weight-medium) !important;
+      font-size: $font-size-xxxs !important;
       border-bottom: none !important;
     }
   }
@@ -37,12 +60,14 @@
 
 .leads-form__main-container {
   & small p a.consent {
-    font-weight: 500 !important;
-    font-size: 0.75rem !important;
+    font-weight: var(--font-weight-medium) !important;
+    font-size: $font-size-xxxs !important;
     border-bottom: none !important;
   }
 }
 
-// .leads-form #donate-button {
-//   font-size: 1.5rem;
-// }
+#whatsapp {
+  background-color: #25d366 !important;
+  padding-left: 5%;
+  padding-right: 5%;
+}

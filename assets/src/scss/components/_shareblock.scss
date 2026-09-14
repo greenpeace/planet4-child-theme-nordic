@@ -1,0 +1,91 @@
+@import "../base/colors";
+@import "../base/variables";
+@import "../base/fonts";
+
+.share-block__buttons {
+  .custom-message-group {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  
+  .buttons-row {
+    display: flex;
+    flex-wrap: wrap !important;
+  }
+
+  & .gp-share-copy,
+  .gp-share-whatsapp,
+  .gp-share-linkedin {
+    min-width: 10rem;
+  }
+
+  & .gp-share-copy .wp-block-button__link {
+    background-color: $yellow-70;
+    color: $black;
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      margin: 0 0.5rem -0.16rem 0rem;
+      background: url("../../assets/images/share-black.svg") no-repeat center;
+      background-size: contain;
+    }
+
+    &.is-copied::before {
+      background-image: url("../../assets/images/check-black.svg");
+    }
+
+  }
+
+  & .gp-share-whatsapp .wp-block-button__link {
+    background-color: rgb(42, 181, 64);
+    color: $white;
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      margin: 0 .5rem -.2rem 0rem;
+      background: url("../../assets/images/whatsapp-logo.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  & .gp-share-facebook .wp-block-button__link {
+    background-color: #1877F2;
+    color: $white;
+
+    &::before {
+      content: "";
+      width: 19px;
+      height: 19px;
+      display: inline-block;
+      margin: 0 .5rem -.2rem 0rem;
+      background: url("../../assets/images/facebook-logo-white.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  & .gp-share-linkedin .wp-block-button__link {
+    background-color: #0077B5;
+    color: $white;
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      margin: 0 .5rem -.1rem 0rem;
+      background: url("../../assets/images/linkedin-logo.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+}

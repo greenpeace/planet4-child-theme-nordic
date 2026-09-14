@@ -4,19 +4,32 @@
 @import "../base/fonts";
 
 .accordion-block {
-    font-family: $roboto;
-}
 
-.accordion-block .accordion-content {
-    margin-bottom: -1rem;
-    font-family: var(--headings--font-family);
-    .accordion-headline {
-        line-height: initial;
-        font-weight: 600;
-        font-weight: var(--font-weight-regular);
-        
-        &:hover {
-            font-weight: var(--headings-font-wight);
+    .page-section-header {
+        font-family: var(--font-family-heading);
+        font-weight: var(--font-weight-bold);
+    }
+
+    .page-section-description {
+        font-family: var(--font-family-body);
+    }
+
+    .accordion-content {
+        margin-bottom: -1rem;
+
+        .accordion-headline {
+            font-family: var(--font-family-heading);
+            font-weight: var(--font-weight-medium);
+
+            line-height: initial;
+
+            &:hover {
+                font-weight: var(--font-weight-bold);
+            }
+        }
+
+        .panel p {
+            font-family: var(--font-family-body);
         }
     }
 }
@@ -24,7 +37,9 @@
 .block.accordion-block.wp-block-planet4-blocks-accordion.is-style-dark {
     .accordion-headline {
         background: var(--accordion-block-dark-style--background);
-        font-family: var(--headings--font-family);
+        font-family: var(--font-family-heading);
+        font-weight: var(--font-weight-bold);
+
 
         &:hover {
             background: var(--accordion-block-dark-style--hover--background);
@@ -36,10 +51,17 @@
     .accordion-headline {
         background: var(--accordion-block-light-style--background);
         border-color: var(--accordion-block-light-style--border-color);
-        font-family: var(--headings--font-family);
+        font-family: var(--font-family-heading);
+        font-weight: var(--font-weight-bold);
 
         &:hover {
             background: var(--accordion-block-light-style--hover--background);
         }
     }
+}
+
+//fix for the task wrap
+.tasks-wrap.can-do-steps-mobile .card-accordion .card-header {
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-bold);
 }

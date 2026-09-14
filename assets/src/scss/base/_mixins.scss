@@ -19,6 +19,13 @@
   }
 }
 
+// Medium & small (up to 768px)
+@mixin medium-and-less {
+  @media (max-width: #{$medium-width - 1}) {
+    @content;
+  }
+}
+
 // Tablet & Up (greater than 768px)
 @mixin medium-and-up {
   @media (min-width: #{$medium-width}) {

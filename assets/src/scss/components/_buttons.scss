@@ -13,14 +13,15 @@ button[type="submit"],
 .wp-block-button__link,
 a[data-ga-action="Donate"],
 .btn-primary.allow-all-cookies[data-ga-action="Accept all cookies"],
+.gform_button[type="submit"],
 .post-content .more-link,
 .post-content .page-links a,
 .wp-block-button a.wp-block-button__link,
 .wp-block-file .wp-block-file__button {
   cursor: pointer;
-  font-family: $roboto;
-  font-weight: var(--btn-body-font-weight);
-  border-radius: 4px;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--border-radius);
   font-size: 1rem;
 }
 
@@ -29,6 +30,7 @@ a[data-ga-action="Donate"],
 button[type="submit"]:not(.nav-search-btn, .search-form-btn),
 .btn.btn-primary[data-ga-action="Call to Action"],
 a.btn.btn-donate[data-ga-action="Donate"],
+.gform_button[type="submit"],
 .actions-list a.btn-primary,
 .btn-primary:not(#apply-filters),
 .wp-block-button.is-style-cta a.wp-block-button__link.wp-element-button,
@@ -67,11 +69,6 @@ a.btn.btn-donate[data-ga-action="Donate"],
   transition: background 0s;
 }
 
-
-a.pdf-link:hover::before {
-  background-color: $dark-white;
-}
-
 a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
   color: $gp-green-70;
   -webkit-text-decoration-color: $gp-green-70;
@@ -82,14 +79,14 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 
 @include mobile-only {
   .wp-block-file__button {
-    margin-top: 1rem;
+    margin-top: $margin-md;
   }
 }
 
 @include small-and-up {
   .wp-block-file__button {
     margin-bottom: -.9rem;
-    font-size: .8rem;
+    font-size: $font-size-xxs;
   }
 }
 
@@ -97,21 +94,20 @@ a.pdf-link:hover:not(.wp-block-file__button.pdf-link::after) {
 .btn-secondary:not(#hidecookie),
 .btn-secondary:not(#commentform),
 .btn-secondary,
-.wp-block-button.is-style-secondary a,
-a.wp-block-button__link,
+.wp-block-button.is-style-secondary a.wp-block-button__link:not([class*="has-"]),
 .wp-block-button.is-style-secondary a:visited,
 .wp-block-button.is-style-secondary button {
   border-color: $gp-green-80;
   color: $gp-green-80;
   box-shadow: none;
   background: $white;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   background-position: center;
   transition: background 0.8s;
-  font-weight: var(--btn-body-font-weight);
+  font-weight: var(--font-weight-semibold);
 
   &:hover {
     background: $gp-green-80 radial-gradient(circle, transparent 1%, $gp-green-80 1%) center/15000%;
@@ -136,9 +132,30 @@ a.wp-block-button__link,
 
 }
 
+// custom color buttons
+.wp-block-button.is-style-secondary a.wp-block-button__link[class*="has-background"] {
+  position: relative;
+  isolation: isolate;
+}
+
+.wp-block-button.is-style-secondary a.wp-block-button__link[class*="has-background"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.wp-block-button.is-style-secondary a.wp-block-button__link[class*="has-background"]:hover::after,
+.wp-block-button.is-style-secondary a.wp-block-button__link[class*="has-background"]:active::after {
+  opacity: 1;
+}
 
 a.wp-block-file__button.pdf-link {
-  color: $gp-green-80 !important;
+  color: var(--link--color) !important;
   -webkit-text-decoration-color: $gp-green-80;
   -moz-text-decoration-color: $gp-green-80;
   text-decoration-color: $gp-green-80;
@@ -166,7 +183,7 @@ a.wp-block-file__button.pdf-link {
 }
 
 //apply filters button
-button#apply-filters{
+button#apply-filters {
   color: $white;
   background-color: var(--btn-primary--background);
 
